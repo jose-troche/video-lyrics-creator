@@ -96,6 +96,7 @@ class FreeWorkflowTests(unittest.TestCase):
             self.assertTrue((module_dir / "workspace.py").is_file())
             self.assertTrue((module_dir / "resolve.py").is_file())
             self.assertNotIn("connect_resolve", (module_dir / "resolve.py").read_text(encoding="utf-8"))
+            self.assertIn(str(module_dir.parent), launcher.read_text(encoding="utf-8"))
 
     def test_macos_python_runtime_detection_requires_framework_binary(self):
         with tempfile.TemporaryDirectory() as directory:

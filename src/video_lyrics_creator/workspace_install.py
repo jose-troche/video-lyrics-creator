@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 import os
 import shutil
 import sys
@@ -78,7 +79,14 @@ def install_workspace_script(
     if not dry_run:
         utility_dir.mkdir(parents=True, exist_ok=True)
         module_dir.mkdir(parents=True, exist_ok=True)
-        shutil.copy2(launcher_source, launcher_target)
+        launcher_text = launcher_source.read_text(encoding="utf-8")
+        launcher_text = launcher_text.replace(
+            "_INSTALLED_MODULE_ROOT = None",
+            f"_INSTALLED_MODULE_ROOT = {json.dumps(str(module_dir.parent))}",
+            1,
+        )
+        launcher_target.write_text(launcher_text, encoding="utf-8")
+        launcher_target.chmod(launcher_source.stat().st_mode)
         for source in files:
             shutil.copy2(source, module_dir / source.name)
     return {

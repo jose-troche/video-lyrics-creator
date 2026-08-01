@@ -78,6 +78,20 @@ Resolve's installed scripting documentation lists the same per-user script direc
 the installer. If a `.py` file exists there but no Python menu items appear, the host Python
 runtime—not the script path—is the usual cause on macOS.
 
+### The menu item appears but clicking it has no visible effect
+
+Resolve may run menu scripts without opening the scripting console. The launcher records its
+startup, completion, and full traceback here:
+
+```text
+~/Movies/Video Lyrics Creator/resolve-launcher.log
+```
+
+The most common cause after upgrading this project is a stale launcher. Run
+`video-lyrics install-resolve`, fully quit Resolve, and reopen it. A failed staged job also writes
+`resolve-result.json` beside its `resolve-job.json`; stage a new job with `video-lyrics build` if
+the result says that the latest job already completed.
+
 ### The latest job has already completed
 
 This is intentional replay protection. Stage a fresh job in Terminal:
