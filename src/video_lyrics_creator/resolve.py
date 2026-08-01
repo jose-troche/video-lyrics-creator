@@ -133,14 +133,31 @@ class ResolveTimelineBuilder:
             "timelineResolutionWidth": str(self.plan["width"]),
             "timelineResolutionHeight": str(self.plan["height"]),
             "timelineFrameRate": _fps_string(self.plan["fps"]),
-            "timelinePlaybackFrameRate": _fps_string(self.plan["fps"]),
         }
-        failed = [key for key, value in settings.items() if not self.project.SetSetting(key, value)]
+        failed = []
+        for key, value in settings.items():
+            current = str(self.project.GetSetting(key) or "")
+            if current == value:
+                continue
+            if not self.project.SetSetting(key, value):
+                failed.append(key)
         if failed:
             raise ResolveError(
                 "Resolve rejected project setting(s): "
                 + ", ".join(failed)
                 + ". Use a new project or match the manifest to the existing project."
+            )
+
+        playback_rate = _fps_string(self.plan["fps"])
+        current_playback = str(self.project.GetSetting("timelinePlaybackFrameRate") or "")
+        if current_playback != playback_rate and not self.project.SetSetting(
+            "timelinePlaybackFrameRate", playback_rate
+        ):
+            # Resolve Free accepts the timeline frame rate but may expose playback frame rate as
+            # a read-only setting through the scripting API. Rendering uses the timeline rate.
+            print(
+                "Video Lyrics Creator: Resolve did not allow setting playback frame rate to "
+                f"{playback_rate}; continuing with timeline frame rate {playback_rate}."
             )
 
     def _create_timeline(self, name: str, replace: bool) -> None:

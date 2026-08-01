@@ -13,6 +13,7 @@ from video_lyrics_creator.handoff import load_workspace_job, stage_workspace_job
 from video_lyrics_creator.manifest import new_manifest
 from video_lyrics_creator.overlays import prepare_overlays
 from video_lyrics_creator.planning import plan_scenes
+from video_lyrics_creator.resolve import ResolveTimelineBuilder
 from video_lyrics_creator.workspace import run_workspace_job
 from video_lyrics_creator.workspace_install import (
     install_workspace_script,
@@ -142,6 +143,23 @@ class FreeWorkflowTests(unittest.TestCase):
             self.assertIsNone(result["output"])
             with self.assertRaises(VideoLyricsError):
                 run_workspace_job(object(), job_path)
+
+    def test_resolve_configuration_tolerates_read_only_playback_rate(self):
+        project = Mock()
+        project.GetSetting.side_effect = {
+            "timelineResolutionWidth": "1920",
+            "timelineResolutionHeight": "1080",
+            "timelineFrameRate": "30",
+            "timelinePlaybackFrameRate": "24",
+        }.get
+        project.SetSetting.side_effect = lambda key, value: key != "timelinePlaybackFrameRate"
+        builder = ResolveTimelineBuilder.__new__(ResolveTimelineBuilder)
+        builder.project = project
+        builder.plan = {"width": 1920, "height": 1080, "fps": 30.0}
+
+        builder._configure_project()
+
+        project.SetSetting.assert_called_once_with("timelinePlaybackFrameRate", "30")
 
 
 if __name__ == "__main__":
