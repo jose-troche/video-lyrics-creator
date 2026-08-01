@@ -14,7 +14,7 @@ from video_lyrics_creator.manifest import new_manifest
 from video_lyrics_creator.overlays import prepare_overlays
 from video_lyrics_creator.planning import plan_scenes
 from video_lyrics_creator.resolve import ResolveTimelineBuilder
-from video_lyrics_creator.workspace import run_workspace_job
+from video_lyrics_creator.workspace import _mux_original_audio, run_workspace_job
 from video_lyrics_creator.workspace_install import (
     install_workspace_script,
     macos_resolve_python_runtimes,
@@ -84,6 +84,8 @@ class FreeWorkflowTests(unittest.TestCase):
             self.assertTrue((root / "latest-job.json").is_file())
             self.assertTrue(all(Path(path).is_file() for path in paths))
             self.assertTrue(all(str(Path(path)).startswith(str(root)) for path in paths))
+            self.assertTrue(all(Path(scene["image"]).suffix == ".mp4" for scene in staged["scenes"]))
+            self.assertTrue(Path(staged["resolve_job"]["ffmpeg"]).is_file())
             self.assertTrue(staged["render"]["output"].startswith(str(root / "Output")))
             self.assertEqual(job["job_id"], loaded["job_id"])
 
@@ -160,6 +162,71 @@ class FreeWorkflowTests(unittest.TestCase):
         builder._configure_project()
 
         project.SetSetting.assert_called_once_with("timelinePlaybackFrameRate", "30")
+
+    def test_audio_append_uses_the_complete_source_without_video_frame_trimming(self):
+        media_item = object()
+        timeline_item = object()
+        media_pool = Mock()
+        media_pool.ImportMedia.return_value = [media_item]
+        media_pool.AppendToTimeline.return_value = [timeline_item]
+        timeline = Mock()
+        timeline.GetStartFrame.return_value = 0
+        builder = ResolveTimelineBuilder.__new__(ResolveTimelineBuilder)
+        builder.plan = {"audio": "/tmp/source.wav"}
+        builder.media_pool = media_pool
+        builder.timeline = timeline
+
+        builder._append_audio()
+
+        clip_info = media_pool.AppendToTimeline.call_args.args[0][0]
+        self.assertEqual(clip_info["mediaPoolItem"], media_item)
+        self.assertEqual(clip_info["mediaType"], 2)
+        self.assertNotIn("startFrame", clip_info)
+        self.assertNotIn("endFrame", clip_info)
+
+    def test_final_audio_is_muxed_from_the_original_wav_at_320k(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            output = root / "video.mp4"
+            audio = root / "audio.wav"
+            executable = root / "ffmpeg"
+            output.write_bytes(b"resolve-video")
+            audio.write_bytes(b"source-audio")
+            executable.touch()
+
+            def fake_run(command, **_kwargs):
+                Path(command[-1]).write_bytes(b"final-video")
+                return SimpleNamespace(returncode=0, stdout="", stderr="")
+
+            with patch("video_lyrics_creator.workspace.subprocess.run", side_effect=fake_run) as run:
+                _mux_original_audio(output, audio, str(executable))
+
+            command = run.call_args.args[0]
+            self.assertIn("320k", command)
+            self.assertEqual(output.read_bytes(), b"final-video")
+
+    def test_resolve_render_is_video_only_before_original_audio_mux(self):
+        project = Mock()
+        project.SetCurrentRenderFormatAndCodec.return_value = True
+        project.SetRenderSettings.return_value = True
+        project.AddRenderJob.return_value = "render-job"
+        builder = ResolveTimelineBuilder.__new__(ResolveTimelineBuilder)
+        builder.project = project
+        builder.manifest = {
+            "render": {
+                "output": "/tmp/final.mp4",
+                "format": "mp4",
+                "codec": "H264",
+                "replace_existing": True,
+            }
+        }
+        builder.plan = {"width": 1920, "height": 1080, "fps": 30.0}
+
+        self.assertEqual(builder._queue_render(), "render-job")
+
+        settings = [call.args[0] for call in project.SetRenderSettings.call_args_list]
+        self.assertIn({"ExportVideo": True}, settings)
+        self.assertIn({"ExportAudio": False}, settings)
 
 
 if __name__ == "__main__":

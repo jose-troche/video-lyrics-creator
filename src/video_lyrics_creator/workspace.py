@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import subprocess
 import traceback
 from datetime import datetime, timezone
 from pathlib import Path
@@ -40,6 +41,12 @@ def run_workspace_job(resolve: Any, job_path: str | Path) -> dict[str, Any]:
             render=bool(settings.get("render", True)),
             wait=bool(settings.get("render", True)),
         )
+        if settings.get("render", True):
+            _mux_original_audio(
+                manifest["render"]["output"],
+                manifest["audio"],
+                str(settings.get("ffmpeg") or ""),
+            )
         result = {
             "job_id": job["job_id"],
             "status": "complete",
@@ -78,3 +85,52 @@ def _write_result(path: Path, payload: dict[str, Any]) -> None:
     temporary = path.with_suffix(path.suffix + ".tmp")
     temporary.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     temporary.replace(path)
+
+
+def _mux_original_audio(output_path: str | Path, audio_path: str | Path, ffmpeg: str) -> None:
+    output = Path(output_path).expanduser().resolve()
+    audio = Path(audio_path).expanduser().resolve()
+    if not output.is_file():
+        raise VideoLyricsError(f"Resolve render is missing before audio finalization: {output}")
+    if not audio.is_file():
+        raise VideoLyricsError(f"Original staged audio is missing: {audio}")
+    executable = Path(ffmpeg).expanduser() if ffmpeg else None
+    if not executable or not executable.is_file():
+        raise VideoLyricsError(
+            "The staged ffmpeg executable is unavailable; restage with `video-lyrics build`."
+        )
+
+    temporary = output.with_name(f".{output.stem}.audio-mux{output.suffix}")
+    command = [
+        str(executable),
+        "-v",
+        "error",
+        "-y",
+        "-i",
+        str(output),
+        "-i",
+        str(audio),
+        "-map",
+        "0:v:0",
+        "-map",
+        "1:a:0",
+        "-c:v",
+        "copy",
+        "-c:a",
+        "aac",
+        "-b:a",
+        "320k",
+        "-ar",
+        "48000",
+        "-ac",
+        "2",
+        "-shortest",
+        "-movflags",
+        "+faststart",
+        str(temporary),
+    ]
+    result = subprocess.run(command, text=True, capture_output=True, check=False)
+    if result.returncode or not temporary.is_file():
+        detail = (result.stderr or result.stdout or "unknown ffmpeg error").strip()
+        raise VideoLyricsError(f"Could not mux the original WAV into the final video: {detail}")
+    temporary.replace(output)

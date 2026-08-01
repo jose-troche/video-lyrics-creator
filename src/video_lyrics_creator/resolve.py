@@ -195,17 +195,24 @@ class ResolveTimelineBuilder:
         return items[0]
 
     def _append_clip(
-        self, media_item: Any, *, track: int, start_frame: int, duration_frames: int, media_type: int = 1
+        self,
+        media_item: Any,
+        *,
+        track: int,
+        start_frame: int,
+        duration_frames: int | None,
+        media_type: int = 1,
     ):
         timeline_start = int(self.timeline.GetStartFrame())
         info = {
             "mediaPoolItem": media_item,
-            "startFrame": 0,
-            "endFrame": max(0, duration_frames - 1),
             "mediaType": media_type,
             "trackIndex": track,
             "recordFrame": timeline_start + start_frame,
         }
+        if duration_frames is not None:
+            info["startFrame"] = 0
+            info["endFrame"] = max(0, duration_frames - 1)
         items = self.media_pool.AppendToTimeline([info])
         if not items:
             raise ResolveError("Resolve could not append a clip to the timeline")
@@ -217,7 +224,7 @@ class ResolveTimelineBuilder:
             item,
             track=1,
             start_frame=0,
-            duration_frames=self.plan["duration_frames"],
+            duration_frames=None,
             media_type=2,
         )
 
@@ -325,23 +332,32 @@ class ResolveTimelineBuilder:
                 f"Resolve rejected render format/codec {render_format}/{codec}. "
                 f"Available codecs: {json.dumps(available, sort_keys=True)}"
             )
-        settings = {
+        required_settings = {
             "SelectAllFrames": True,
             "TargetDir": str(target.parent),
             "CustomName": target.stem,
             "ExportVideo": True,
-            "ExportAudio": True,
+            # The original WAV is muxed after Resolve renders, avoiding Resolve's AAC artifacts.
+            "ExportAudio": False,
+        }
+        optional_settings = {
             "FormatWidth": self.plan["width"],
             "FormatHeight": self.plan["height"],
             "FrameRate": self.plan["fps"],
-            "AudioCodec": str(render.get("audio_codec", "aac")),
-            "AudioSampleRate": 48000,
             "VideoQuality": "Best",
             "NetworkOptimization": True,
             "ReplaceExistingFilesInPlace": bool(render.get("replace_existing", True)),
         }
-        if not self.project.SetRenderSettings(settings):
-            raise ResolveError("Resolve rejected the render settings")
+        failed = [
+            key
+            for key, value in required_settings.items()
+            if not self.project.SetRenderSettings({key: value})
+        ]
+        if failed:
+            raise ResolveError("Resolve rejected required render setting(s): " + ", ".join(failed))
+        for key, value in optional_settings.items():
+            if not self.project.SetRenderSettings({key: value}):
+                print(f"Video Lyrics Creator: Resolve ignored optional render setting {key}.")
         job_id = self.project.AddRenderJob()
         if not job_id:
             raise ResolveError("Resolve could not add a render job")

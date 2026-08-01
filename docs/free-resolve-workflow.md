@@ -49,6 +49,11 @@ Windows and Linux use `~/Videos/Video Lyrics Creator` by default. Override the r
 
 `latest-job.json` contains absolute paths to the copied assets. The internal script does not need access to the source repository, virtual environment, API keys, or original media locations.
 
+Scene images are staged as exact-frame-count H.264 clips because Resolve limits imported stills
+to its configured default still duration. The original WAV is copied byte-for-byte. Resolve
+renders picture only, and the launcher then uses the staged `ffmpeg` executable to mux a new
+320 kbps AAC track directly from that WAV into the final MP4.
+
 ## Reinstalling after code updates
 
 Run the installer again and restart Resolve:

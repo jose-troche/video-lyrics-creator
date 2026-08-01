@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 import os
 import shutil
+import subprocess
 import sys
 from copy import deepcopy
 from datetime import datetime, timezone
@@ -10,6 +11,7 @@ from pathlib import Path
 from typing import Any
 
 from .errors import VideoLyricsError
+from .resolve import timeline_plan
 
 
 def default_handoff_root() -> Path:
@@ -48,15 +50,25 @@ def stage_workspace_job(
         directory.mkdir(parents=True, exist_ok=True)
 
     staged = deepcopy(manifest)
+    plan = timeline_plan(staged)
+    ffmpeg = shutil.which("ffmpeg")
+    if not ffmpeg:
+        raise VideoLyricsError("ffmpeg is required to stage duration-safe scene media")
     audio_source = Path(staged["audio"])
     audio_target = media_dir / f"audio{audio_source.suffix.lower()}"
     _copy_file(audio_source, audio_target)
     staged["audio"] = str(audio_target.resolve())
 
-    for index, scene in enumerate(staged["scenes"], 1):
+    for index, (scene, planned_scene) in enumerate(zip(staged["scenes"], plan["scenes"]), 1):
         source = Path(scene["image"])
-        target = scene_dir / f"scene-{index:03d}{source.suffix.lower()}"
-        _copy_file(source, target)
+        target = scene_dir / f"scene-{index:03d}.mp4"
+        _render_still_video(
+            ffmpeg,
+            source,
+            target,
+            fps=float(plan["fps"]),
+            frames=int(planned_scene["duration_frames"]),
+        )
         scene["image"] = str(target.resolve())
 
     title_source = Path(staged["overlays"]["title"])
@@ -77,6 +89,7 @@ def stage_workspace_job(
         "timeline_name": timeline_name,
         "replace_timeline": bool(replace_timeline),
         "render": bool(render),
+        "ffmpeg": ffmpeg,
     }
 
     job = {
@@ -117,6 +130,53 @@ def _copy_file(source: Path, target: Path) -> None:
     if source.resolve() == target.resolve():
         return
     shutil.copy2(source, target)
+
+
+def _render_still_video(
+    ffmpeg: str,
+    source: Path,
+    target: Path,
+    *,
+    fps: float,
+    frames: int,
+) -> None:
+    if not source.is_file():
+        raise VideoLyricsError(f"Cannot stage missing scene image: {source}")
+    if frames <= 0:
+        raise VideoLyricsError(f"Scene video duration must be positive: {frames} frame(s)")
+    target.parent.mkdir(parents=True, exist_ok=True)
+    command = [
+        ffmpeg,
+        "-v",
+        "error",
+        "-y",
+        "-loop",
+        "1",
+        "-framerate",
+        str(fps),
+        "-i",
+        str(source),
+        "-frames:v",
+        str(frames),
+        "-an",
+        "-c:v",
+        "libx264",
+        "-preset",
+        "medium",
+        "-tune",
+        "stillimage",
+        "-crf",
+        "1",
+        "-pix_fmt",
+        "yuv420p",
+        "-movflags",
+        "+faststart",
+        str(target),
+    ]
+    result = subprocess.run(command, text=True, capture_output=True, check=False)
+    if result.returncode or not target.is_file():
+        detail = (result.stderr or result.stdout or "unknown ffmpeg error").strip()
+        raise VideoLyricsError(f"Could not stage scene video {target.name}: {detail}")
 
 
 def _atomic_json(path: Path, payload: dict[str, Any]) -> None:

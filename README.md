@@ -194,6 +194,10 @@ video-lyrics build project.json --render
 
 `build --dry-run` prints the exact frame-level timeline plan. A normal `build` copies the validated inputs into the handoff directory and writes a new internal Resolve job.
 
+During staging, each scene still is converted to a high-quality, exact-frame-count H.264 source
+clip. This avoids Resolve's user-configured default still duration truncating long scenes and
+creating black gaps. Resolve still applies the Ken Burns motion and transitions to those clips.
+
 To prepare an editable timeline without rendering:
 
 ```bash
@@ -242,6 +246,9 @@ For a no-cost process test, use `--provider placeholder`. Placeholder scenes are
 - V4 contains the opening song title and author.
 - A1 contains the original, unprocessed song audio.
 - Default output is 1920×1080, 30 fps, H.264/AAC MP4.
+- Resolve renders the picture without compressed audio; after rendering, the internal launcher
+  muxes a fresh 320 kbps AAC track directly from the staged, byte-identical source WAV. This
+  avoids Resolve AAC artifacts and preserves the original timing.
 
 See [the free Resolve workflow](docs/free-resolve-workflow.md) for handoff and troubleshooting details and [the manifest reference](docs/manifest.md) for configuration fields.
 
