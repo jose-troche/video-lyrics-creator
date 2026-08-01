@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "video-lyrics-creator"
+version = "0.1.0"
+description = "Automated lyric-video assembly and rendering in DaVinci Resolve"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = ["Pillow>=10.0"]
+
+[project.optional-dependencies]
+align = ["faster-whisper>=1.1"]
+openai = ["openai>=2.0"]
+dev = ["pytest>=8.0", "ruff>=0.9"]
+
+[project.scripts]
+video-lyrics = "video_lyrics_creator.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
