@@ -185,6 +185,7 @@ Each terminal stage can run independently:
 
 ```bash
 video-lyrics prepare project.json --whisper-model small
+video-lyrics replan project.json
 video-lyrics images project.json
 video-lyrics overlays project.json
 video-lyrics validate project.json
@@ -194,9 +195,15 @@ video-lyrics build project.json --render
 
 `build --dry-run` prints the exact frame-level timeline plan. A normal `build` copies the validated inputs into the handoff directory and writes a new internal Resolve job.
 
+Use `replan` after changing visual pacing settings when the lyric timings are already good. It
+does not transcribe again: it rebuilds one lyric-led scene per cue, archives one existing artwork
+from each prior scene, and lets the next `images` run generate only newly split scenes.
+
 During staging, each scene still is converted to a high-quality, exact-frame-count H.264 source
 clip. This avoids Resolve's user-configured default still duration truncating long scenes and
 creating black gaps. Resolve still applies the Ken Burns motion and transitions to those clips.
+Scene changes normally follow lyric-line boundaries, so a new image arrives with each confirmed
+line. Lines too short to safely contain the selected dissolve are grouped automatically.
 
 To prepare an editable timeline without rendering:
 
@@ -242,13 +249,26 @@ For a no-cost process test, use `--provider placeholder`. Placeholder scenes are
 
 - V1/V2 alternate scene stills so adjacent clips overlap.
 - Fusion nodes animate scene zoom and opacity, producing Ken Burns motion and cross-dissolves.
-- V3 contains synchronized transparent lyric overlays.
-- V4 contains the opening song title and author.
+- V3/V4 alternate synchronized lyric overlays, allowing smooth fade overlap between lines.
+- V5 contains the opening song title and author; it remains for 12 seconds by default.
 - A1 contains the original, unprocessed song audio.
 - Default output is 1920×1080, 30 fps, H.264/AAC MP4.
 - Resolve renders the picture without compressed audio; after rendering, the internal launcher
   muxes a fresh 320 kbps AAC track directly from the staged, byte-identical source WAV. This
   avoids Resolve AAC artifacts and preserves the original timing.
+
+The default lyric overlay starts fading in 0.55 seconds before its transcription timestamp and is
+fully visible 0.35 seconds early. This compensates for the small perceptual delay common in sung
+word alignment; tune `video.lyric_lead` and `video.lyric_fade` in the manifest if a particular song
+needs a different feel. Fusion animation inputs use explicit Bezier splines, so title/lyric fades,
+Ken Burns motion, and scene cross-dissolves are real keyframed effects rather than static values.
+
+Resolve locks playback and timeline frame rates after timeline media has been created. If a prior
+project previews 30 fps media at 24 fps (slow or broken-up audio), stage under a fresh project name:
+
+```bash
+video-lyrics build project.json --render --project-name "Song Title - Lyric Video 30fps"
+```
 
 See [the free Resolve workflow](docs/free-resolve-workflow.md) for handoff and troubleshooting details and [the manifest reference](docs/manifest.md) for configuration fields.
 

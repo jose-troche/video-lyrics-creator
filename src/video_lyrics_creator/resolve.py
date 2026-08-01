@@ -41,29 +41,47 @@ def timeline_plan(manifest: dict) -> dict:
                 "fade_out": index + 1 < len(manifest["scenes"]),
             }
         )
+    lyric_lead = max(0.0, float(video.get("lyric_lead", 0.35)))
+    lyric_fade = max(0.0, float(video.get("lyric_fade", 0.2)))
+    planned_lyrics = []
+    for index, item in enumerate(manifest["overlays"]["lyrics"]):
+        cue_start = float(item["start"])
+        cue_end = float(item["end"])
+        clip_start = max(0.0, cue_start - lyric_lead - lyric_fade)
+        clip_end = min(duration, cue_end + lyric_fade)
+        duration_frames = max(1, seconds_to_frames(clip_end - clip_start, fps))
+        fade_frames = min(
+            seconds_to_frames(lyric_fade, fps), max(1, (duration_frames - 1) // 2)
+        )
+        planned_lyrics.append(
+            {
+                **item,
+                "track": 3 + index % 2,
+                "start_frame": seconds_to_frames(clip_start, fps),
+                "duration_frames": duration_frames,
+                "fade_frames": fade_frames,
+            }
+        )
+
+    title_duration = min(float(video["title_duration"]), duration)
+    title_frames = max(1, seconds_to_frames(title_duration, fps))
+    title_fade_frames = min(
+        seconds_to_frames(max(0.0, float(video.get("title_fade", 0.75))), fps),
+        max(1, (title_frames - 1) // 2),
+    )
     return {
         "fps": fps,
         "width": int(video["width"]),
         "height": int(video["height"]),
         "duration_frames": seconds_to_frames(duration, fps),
         "scenes": scenes,
-        "lyrics": [
-            {
-                **item,
-                "start_frame": seconds_to_frames(float(item["start"]), fps),
-                "duration_frames": max(
-                    1, seconds_to_frames(float(item["end"]) - float(item["start"]), fps)
-                ),
-            }
-            for item in manifest["overlays"]["lyrics"]
-        ],
+        "lyrics": planned_lyrics,
         "title": {
             "image": manifest["overlays"]["title"],
+            "track": 5,
             "start_frame": 0,
-            "duration_frames": min(
-                seconds_to_frames(float(video["title_duration"]), fps),
-                seconds_to_frames(duration, fps),
-            ),
+            "duration_frames": title_frames,
+            "fade_frames": title_fade_frames,
         },
         "audio": manifest["audio"],
     }
@@ -132,7 +150,11 @@ class ResolveTimelineBuilder:
         settings = {
             "timelineResolutionWidth": str(self.plan["width"]),
             "timelineResolutionHeight": str(self.plan["height"]),
+            # Resolve locks frame-rate settings as soon as timeline media exists. Playback must
+            # be requested before the timeline rate when creating a fresh project.
+            "timelinePlaybackFrameRate": _fps_string(self.plan["fps"]),
             "timelineFrameRate": _fps_string(self.plan["fps"]),
+            "timelineSampleRate": "48000",
         }
         failed = []
         for key, value in settings.items():
@@ -145,19 +167,8 @@ class ResolveTimelineBuilder:
             raise ResolveError(
                 "Resolve rejected project setting(s): "
                 + ", ".join(failed)
-                + ". Use a new project or match the manifest to the existing project."
-            )
-
-        playback_rate = _fps_string(self.plan["fps"])
-        current_playback = str(self.project.GetSetting("timelinePlaybackFrameRate") or "")
-        if current_playback != playback_rate and not self.project.SetSetting(
-            "timelinePlaybackFrameRate", playback_rate
-        ):
-            # Resolve Free accepts the timeline frame rate but may expose playback frame rate as
-            # a read-only setting through the scripting API. Rendering uses the timeline rate.
-            print(
-                "Video Lyrics Creator: Resolve did not allow setting playback frame rate to "
-                f"{playback_rate}; continuing with timeline frame rate {playback_rate}."
+                + ". Resolve locks playback/frame-rate settings after timeline media exists; "
+                "stage this job with a new --project-name."
             )
 
     def _create_timeline(self, name: str, replace: bool) -> None:
@@ -179,12 +190,14 @@ class ResolveTimelineBuilder:
         self.timeline.SetStartTimecode("00:00:00:00")
 
     def _ensure_tracks(self) -> None:
-        while self.timeline.GetTrackCount("video") < 4:
+        while self.timeline.GetTrackCount("video") < 5:
             if not self.timeline.AddTrack("video"):
                 raise ResolveError("Resolve could not add a video track")
         if self.timeline.GetTrackCount("audio") < 1 and not self.timeline.AddTrack("audio", "stereo"):
             raise ResolveError("Resolve could not add an audio track")
-        for index, name in enumerate(("Scenes A", "Scenes B", "Lyrics", "Title"), 1):
+        for index, name in enumerate(
+            ("Scenes A", "Scenes B", "Lyrics A", "Lyrics B", "Title"), 1
+        ):
             self.timeline.SetTrackName("video", index, name)
         self.timeline.SetTrackName("audio", 1, "Original Song")
 
@@ -272,10 +285,12 @@ class ResolveTimelineBuilder:
             start_zoom, end_zoom = (1.0, zoom)
             if scene["motion"] == "zoom_out":
                 start_zoom, end_zoom = end_zoom, start_zoom
+            self._add_spline(comp, transform, "Size", f"scene {scene['index']} zoom")
             transform.Size[0] = start_zoom
             transform.Size[last] = end_zoom
 
             transition = min(int(scene["transition_frames"]), max(1, last // 2))
+            self._add_spline(comp, merge, "Blend", f"scene {scene['index']} dissolve")
             merge.Blend[0] = 0.0 if scene["fade_in"] else 1.0
             if scene["fade_in"]:
                 merge.Blend[min(transition, last)] = 1.0
@@ -287,21 +302,78 @@ class ResolveTimelineBuilder:
         finally:
             comp.Unlock()
 
+    @staticmethod
+    def _add_spline(comp: Any, tool: Any, input_name: str, label: str) -> None:
+        spline = comp.BezierSpline()
+        if not spline:
+            raise ResolveError(f"Fusion could not animate {label}")
+        setattr(tool, input_name, spline)
+
+    def _configure_overlay_fade(
+        self, clip: Any, *, duration_frames: int, fade_frames: int, label: str
+    ) -> None:
+        comp = clip.AddFusionComp()
+        if not comp:
+            raise ResolveError(f"Resolve could not add Fusion fade to {label}")
+        comp.Lock()
+        try:
+            media_in = comp.FindTool("MediaIn1")
+            media_out = comp.FindTool("MediaOut1")
+            if not media_in or not media_out:
+                raise ResolveError(f"Fusion MediaIn/MediaOut missing on {label}")
+            background = comp.AddTool("Background", 0, 1)
+            merge = comp.AddTool("Merge", 1, 1)
+            if not background or not merge:
+                raise ResolveError(f"Fusion could not create fade nodes for {label}")
+            background.SetInput("UseFrameFormatSettings", 1.0)
+            for corner in (
+                "TopLeftAlpha",
+                "TopRightAlpha",
+                "BottomLeftAlpha",
+                "BottomRightAlpha",
+            ):
+                background.SetInput(corner, 0.0)
+            merge.Background = background.Output
+            merge.Foreground = media_in.Output
+            media_out.Input = merge.Output
+
+            last = max(1, int(duration_frames) - 1)
+            fade = min(max(1, int(fade_frames)), max(1, last // 2))
+            self._add_spline(comp, merge, "Blend", f"{label} opacity")
+            merge.Blend[0] = 0.0
+            merge.Blend[min(fade, last)] = 1.0
+            merge.Blend[max(0, last - fade)] = 1.0
+            merge.Blend[last] = 0.0
+        finally:
+            comp.Unlock()
+
     def _append_overlays(self) -> None:
         title = self._import(self.plan["title"]["image"])
-        self._append_clip(
+        title_clip = self._append_clip(
             title,
-            track=4,
+            track=self.plan["title"]["track"],
             start_frame=self.plan["title"]["start_frame"],
             duration_frames=self.plan["title"]["duration_frames"],
         )
-        for cue in self.plan["lyrics"]:
+        self._configure_overlay_fade(
+            title_clip,
+            duration_frames=self.plan["title"]["duration_frames"],
+            fade_frames=self.plan["title"]["fade_frames"],
+            label="title",
+        )
+        for index, cue in enumerate(self.plan["lyrics"], 1):
             item = self._import(cue["image"])
-            self._append_clip(
+            clip = self._append_clip(
                 item,
-                track=3,
+                track=cue["track"],
                 start_frame=cue["start_frame"],
                 duration_frames=cue["duration_frames"],
+            )
+            self._configure_overlay_fade(
+                clip,
+                duration_frames=cue["duration_frames"],
+                fade_frames=cue["fade_frames"],
+                label=f"lyric {index}",
             )
 
     def _add_review_markers(self) -> None:

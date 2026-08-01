@@ -109,6 +109,18 @@ video-lyrics build project.json --render --replace-timeline
 
 The process does not delete a timeline without explicit authorization. Restage with `--replace-timeline`, then run the Workspace script again.
 
+### Resolve preview audio sounds slow or broken up
+
+The final MP4 uses freshly muxed audio and can sound correct even when a project created at the
+wrong playback rate previews poorly. Resolve locks playback/frame-rate controls after timeline
+media exists. Stage under a fresh project name so the launcher can set both rates before creating
+the timeline:
+
+```bash
+video-lyrics build project.json --render \
+  --project-name "Song Title - Lyric Video 30fps"
+```
+
 ### Media cannot be imported
 
 Use the default Movies/Videos handoff folder. It exists specifically to give Resolve Free a predictable, local media location. Confirm that every path inside `latest-job.json` exists.

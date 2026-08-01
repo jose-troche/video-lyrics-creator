@@ -15,7 +15,7 @@ from .alignment import (
 from .errors import VideoLyricsError
 from .google_drive import authorize_google_drive
 from .handoff import stage_workspace_job
-from .images import generate_scene_images
+from .images import generate_scene_images, preserve_scene_images_for_replan
 from .manifest import load_manifest, new_manifest, save_manifest, validate_manifest
 from .media import verify_video
 from .overlays import prepare_overlays
@@ -40,6 +40,12 @@ def build_parser() -> argparse.ArgumentParser:
     prepare = subparsers.add_parser("prepare", help="align lyrics and create a scene plan")
     prepare.add_argument("manifest")
     _alignment_arguments(prepare)
+
+    replan = subparsers.add_parser(
+        "replan", help="rebuild lyric-led scenes without retranscribing existing cues"
+    )
+    replan.add_argument("manifest")
+    replan.add_argument("--scene-seconds", type=float, default=7.0)
 
     images = subparsers.add_parser("images", help="generate all scene images")
     images.add_argument("manifest")
@@ -127,6 +133,8 @@ def main(argv: list[str] | None = None) -> int:
             return _init(args)
         if args.command == "prepare":
             return _prepare(args)
+        if args.command == "replan":
+            return _replan(args)
         if args.command == "images":
             return _images(args)
         if args.command == "overlays":
@@ -202,6 +210,28 @@ def _prepare(args: argparse.Namespace) -> int:
         )
     if low_confidence:
         print(f"Review recommended: {low_confidence} cue(s) have alignment confidence below 60%.")
+    return 0
+
+
+def _replan(args: argparse.Namespace) -> int:
+    path, data = load_manifest(args.manifest)
+    data["duration"] = validate_manifest(data, require_images=False)
+    previous_scenes = data.get("scenes", [])
+    scenes = plan_scenes(
+        data["lyrics"],
+        float(data["duration"]),
+        str(data.get("visual_style", "cinematic realism")),
+        args.scene_seconds,
+        transition_seconds=float(data["video"].get("transition", 0.75)),
+    )
+    reused = preserve_scene_images_for_replan(data, previous_scenes, scenes)
+    data["scenes"] = scenes
+    validate_manifest(data, require_images=False)
+    save_manifest(path, data)
+    print(
+        f"Replanned {len(scenes)} lyric-led scenes; preserved {reused} existing image(s). "
+        "Run `video-lyrics images` to generate only the new scenes."
+    )
     return 0
 
 

@@ -14,7 +14,11 @@ from video_lyrics_creator.alignment import TimedWord
 from video_lyrics_creator.cli import main
 from video_lyrics_creator.envfile import load_project_env
 from video_lyrics_creator.errors import VideoLyricsError
-from video_lyrics_creator.images import _openai_size, generate_scene_images
+from video_lyrics_creator.images import (
+    _openai_size,
+    generate_scene_images,
+    preserve_scene_images_for_replan,
+)
 from video_lyrics_creator.manifest import load_manifest, new_manifest, save_manifest, validate_manifest
 from video_lyrics_creator.overlays import prepare_overlays
 from video_lyrics_creator.planning import plan_scenes
@@ -164,6 +168,7 @@ class PipelineTests(unittest.TestCase):
         self.assertEqual(scenes[-1]["end"], 12.0)
         for left, right in zip(scenes, scenes[1:]):
             self.assertEqual(left["end"], right["start"])
+        self.assertEqual(len(scenes), len(lyrics))
         self.assertNotEqual(scenes[0]["motion"], scenes[1]["motion"])
         self.assertIn("No words", scenes[0]["prompt"])
 
@@ -181,6 +186,34 @@ class PipelineTests(unittest.TestCase):
             self.assertTrue(
                 all(scene["end"] - scene["start"] > transition * 2 for scene in scenes)
             )
+
+    def test_replan_preserves_one_existing_artwork_per_grouped_scene(self):
+        with tempfile.TemporaryDirectory() as directory:
+            base = Path(directory)
+            source = base / "work" / "images" / "scene-001.png"
+            source.parent.mkdir(parents=True)
+            Image.new("RGB", (1920, 1080), "navy").save(source)
+            previous = [
+                {
+                    "start": 0.0,
+                    "end": 8.0,
+                    "prompt": "combined prompt",
+                    "image": str(source),
+                }
+            ]
+            scenes = [
+                {"start": 0.0, "end": 4.0, "prompt": "first", "image": ""},
+                {"start": 4.0, "end": 8.0, "prompt": "second", "image": ""},
+            ]
+
+            reused = preserve_scene_images_for_replan(
+                {"work_dir": str(base / "work")}, previous, scenes
+            )
+
+            self.assertEqual(reused, 1)
+            self.assertTrue(Path(scenes[0]["image"]).is_file())
+            self.assertEqual(scenes[0]["prompt"], "combined prompt")
+            self.assertEqual(scenes[1]["image"], "")
 
     def test_prepare_replaces_invalid_stale_generated_state(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -263,7 +296,10 @@ class PipelineTests(unittest.TestCase):
         self.assertEqual(plan["scenes"][0]["track"], 1)
         self.assertEqual(plan["scenes"][1]["track"], 2)
         self.assertGreater(plan["scenes"][0]["end_frame"], plan["scenes"][1]["start_frame"])
-        self.assertEqual(plan["title"]["duration_frames"], 135)
+        self.assertEqual(plan["title"]["duration_frames"], 360)
+        self.assertEqual([cue["track"] for cue in plan["lyrics"]], [3, 4])
+        self.assertLess(plan["lyrics"][0]["start_frame"], 30)
+        self.assertGreater(plan["lyrics"][0]["fade_frames"], 0)
 
     def test_rounding_is_half_up(self):
         self.assertEqual(seconds_to_frames(0.5, 25), 13)

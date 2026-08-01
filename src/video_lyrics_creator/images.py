@@ -42,10 +42,22 @@ def generate_scene_images(
         codex_marker = output.with_suffix(".codex.sha256")
         if provider == "codex":
             codex_fingerprint = _codex_fingerprint(prompt, config, width, height)
-            can_reuse = (
-                output.is_file()
-                and codex_marker.is_file()
-                and codex_marker.read_text(encoding="utf-8").strip() == codex_fingerprint
+            existing_value = str(scene.get("image", "")).strip()
+            existing = Path(existing_value).expanduser() if existing_value else None
+            existing_marker = existing.with_suffix(".codex.sha256") if existing else None
+            if (
+                existing is not None
+                and existing.is_file()
+                and existing_marker is not None
+                and existing_marker.is_file()
+                and existing_marker.read_text(encoding="utf-8").strip() == codex_fingerprint
+                and not force
+            ):
+                _fit_image(existing, width, height)
+                scene["image"] = str(existing.resolve())
+                continue
+            can_reuse = output.is_file() and codex_marker.is_file() and (
+                codex_marker.read_text(encoding="utf-8").strip() == codex_fingerprint
             )
         else:
             can_reuse = output.is_file()
@@ -91,6 +103,43 @@ def generate_scene_images(
         scene["image"] = str(output.resolve())
         generated += 1
     return generated
+
+
+def preserve_scene_images_for_replan(
+    manifest: dict, previous_scenes: list[dict], scenes: list[dict]
+) -> int:
+    """Preserve one compatible artwork per old scene while splitting it at lyric boundaries."""
+    archive = Path(manifest["work_dir"]).expanduser().resolve() / "images" / "replanned"
+    reused_old_indexes: set[int] = set()
+    reused = 0
+    for scene in scenes:
+        start = float(scene["start"])
+        match = next(
+            (
+                (index, old)
+                for index, old in enumerate(previous_scenes)
+                if float(old.get("start", -1)) <= start < float(old.get("end", -1))
+            ),
+            None,
+        )
+        if not match or match[0] in reused_old_indexes:
+            continue
+        old_index, old = match
+        source = Path(str(old.get("image", ""))).expanduser()
+        if not source.is_file():
+            continue
+        archive.mkdir(parents=True, exist_ok=True)
+        fingerprint = hashlib.sha256(str(source.resolve()).encode("utf-8")).hexdigest()[:16]
+        target = archive / f"scene-{old_index + 1:03d}-{fingerprint}{source.suffix.lower()}"
+        shutil.copy2(source, target)
+        marker = source.with_suffix(".codex.sha256")
+        if marker.is_file():
+            shutil.copy2(marker, target.with_suffix(".codex.sha256"))
+        scene["prompt"] = str(old.get("prompt") or scene["prompt"])
+        scene["image"] = str(target.resolve())
+        reused_old_indexes.add(old_index)
+        reused += 1
+    return reused
 
 
 def _codex_cli() -> str:

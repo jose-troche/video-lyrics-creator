@@ -8,7 +8,7 @@ from unittest.mock import Mock, patch
 
 from PIL import Image
 
-from video_lyrics_creator.errors import VideoLyricsError
+from video_lyrics_creator.errors import ResolveError, VideoLyricsError
 from video_lyrics_creator.handoff import load_workspace_job, stage_workspace_job
 from video_lyrics_creator.manifest import new_manifest
 from video_lyrics_creator.overlays import prepare_overlays
@@ -146,7 +146,7 @@ class FreeWorkflowTests(unittest.TestCase):
             with self.assertRaises(VideoLyricsError):
                 run_workspace_job(object(), job_path)
 
-    def test_resolve_configuration_tolerates_read_only_playback_rate(self):
+    def test_resolve_configuration_rejects_a_locked_mismatched_playback_rate(self):
         project = Mock()
         project.GetSetting.side_effect = {
             "timelineResolutionWidth": "1920",
@@ -159,9 +159,41 @@ class FreeWorkflowTests(unittest.TestCase):
         builder.project = project
         builder.plan = {"width": 1920, "height": 1080, "fps": 30.0}
 
+        with self.assertRaisesRegex(ResolveError, "timelinePlaybackFrameRate"):
+            builder._configure_project()
+
+        self.assertIn(
+            ("timelinePlaybackFrameRate", "30"),
+            [call.args for call in project.SetSetting.call_args_list],
+        )
+
+    def test_resolve_configuration_sets_playback_rate_before_timeline_rate(self):
+        project = Mock()
+        project.GetSetting.return_value = ""
+        project.SetSetting.return_value = True
+        builder = ResolveTimelineBuilder.__new__(ResolveTimelineBuilder)
+        builder.project = project
+        builder.plan = {"width": 1920, "height": 1080, "fps": 30.0}
+
         builder._configure_project()
 
-        project.SetSetting.assert_called_once_with("timelinePlaybackFrameRate", "30")
+        keys = [call.args[0] for call in project.SetSetting.call_args_list]
+        self.assertLess(keys.index("timelinePlaybackFrameRate"), keys.index("timelineFrameRate"))
+        self.assertIn("timelineSampleRate", keys)
+
+    def test_fusion_animation_requires_an_explicit_spline_modifier(self):
+        comp = Mock()
+        tool = Mock()
+        spline = Mock()
+        comp.BezierSpline.return_value = spline
+
+        ResolveTimelineBuilder._add_spline(comp, tool, "Blend", "test fade")
+
+        comp.BezierSpline.assert_called_once_with()
+        self.assertIs(tool.Blend, spline)
+        comp.BezierSpline.return_value = None
+        with self.assertRaisesRegex(ResolveError, "test fade"):
+            ResolveTimelineBuilder._add_spline(comp, tool, "Blend", "test fade")
 
     def test_audio_append_uses_the_complete_source_without_video_frame_trimming(self):
         media_item = object()

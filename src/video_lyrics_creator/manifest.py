@@ -13,11 +13,14 @@ DEFAULT_VIDEO = {
     "height": 1080,
     "fps": 30,
     "transition": 0.75,
-    "title_duration": 4.5,
+    "title_duration": 12.0,
+    "title_fade": 0.75,
     "font": "Avenir Next Demi Bold",
     "font_size": 58,
     "margin_v": 72,
     "zoom": 1.08,
+    "lyric_lead": 0.35,
+    "lyric_fade": 0.2,
 }
 
 
@@ -138,6 +141,13 @@ def validate_manifest(
     transition = video.get("transition", 0)
     if not isinstance(transition, (int, float)) or transition < 0:
         errors.append("video.transition must be zero or positive")
+    for key in ("title_fade", "lyric_lead", "lyric_fade"):
+        value = video.get(key, 0)
+        if not isinstance(value, (int, float)) or value < 0:
+            errors.append(f"video.{key} must be zero or positive")
+    title_duration = video.get("title_duration", 0)
+    if not isinstance(title_duration, (int, float)) or title_duration <= 0:
+        errors.append("video.title_duration must be positive")
 
     lyrics = data.get("lyrics", [])
     scenes = data.get("scenes", [])

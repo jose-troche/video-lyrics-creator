@@ -33,13 +33,15 @@ def plan_scenes(
         )
         next_group_too_long = following_start - scene_start > max_seconds and elapsed >= 4.0
         is_last = index + 1 == len(lyrics)
+        # A new visual normally begins with every lyric line. Very short cues are grouped only
+        # when a standalone scene could not safely contain the configured cross-dissolve.
         should_close = is_last or (
             elapsed >= minimum_scene_seconds
             and (
-                elapsed >= target_seconds
+                len(texts) >= 1
+                or elapsed >= target_seconds
                 or elapsed >= max_seconds
                 or next_group_too_long
-                or len(texts) >= 2
             )
         )
         if should_close:
