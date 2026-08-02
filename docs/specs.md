@@ -1,8 +1,59 @@
 # Video Lyrics Creator
-Automates creation of a video with lyrics and images corresponding to the lyrics. The lyrics are synchronized with an audio song.
 
-Inputs: song lyrics and audio. lyrics can be plain text or gdoc (google doc file). for gdoc use oauth (GOOGLE_DRIVE_CLIENT_ID and GOOGLE_DRIVE_CLIENT_SECRET will be provided. GOOGLE_DRIVE_REFRESH_TOKEN should be obtained after one time login). Google Docs support multiple tabs within one document; when the lyrics gdoc has more than one tab, only use the content of the first tab.
-Synchronization rule: audio transcription determines which lyric cues exist and their timing; the lyrics source confirms the displayed wording for matched lines. Do not create cues for reference text that is not confirmed by the audio. Create one cue per line in the lyrics file
-Intermediate: generate static images that correspond to the lyric lines (1 image per 1 or 2 lyric lines) and synchronized with the audio. Images should be generated using codex cli with its built-in image_gen tool under full-auto mode (no API key required). ALternatively, the images can be suplied
-Output: Video with the song audio, a title at the beginning and author (Jose Troche) the images stitched together, having cross disolve transitions and zoom in / out effect (Ken Burns) so the video looks dynamic. the video should the same length as the audio (no silence at the beginning or end). The title should appear as the song starts, and disappear before the first line of lyrics of the song shows. If possible show one lyric line at a time and use fade in/out effect for each line. Use a text/subtitles track for lyrics. use one track for images and cross disolve between them. Use also ken burn effect, or any other dynamic effect. use one track for the audio. Automate the video creation using the free version of Davinci Resolve 21 automation
+Automates the creation of a lyric video: a video that pairs a song's audio with
+lyrics and corresponding images, synchronized to the audio.
 
+## Inputs
+
+- **Audio**: the song.
+- **Lyrics**: either a plain text file or a Google Doc (`.gdoc`).
+  - Google Docs are accessed via OAuth. `GOOGLE_DRIVE_CLIENT_ID` and
+    `GOOGLE_DRIVE_CLIENT_SECRET` are provided; `GOOGLE_DRIVE_REFRESH_TOKEN` is
+    obtained through a one-time interactive login.
+  - A Google Doc may contain multiple tabs. If the lyrics document has more than
+    one tab, use only the content of the first tab.
+
+## Synchronization
+
+The audio transcription determines which lyric cues exist and their timing; the
+lyrics source confirms the displayed wording for matched lines.
+
+- Do not create a cue for reference text that the audio does not confirm.
+- Create one cue per line in the lyrics file.
+
+## Image Generation
+
+Generate one static image per one or two lyric lines, synchronized with the
+audio.
+
+- Images are generated with the Codex CLI, using its built-in `image_gen` tool in
+  full-auto mode (no API key required).
+- Alternatively, images may be supplied instead of generated.
+
+## Video Output
+
+Produce a video containing:
+
+- The song's audio.
+- A title card at the beginning, showing the song title and author (José
+  Troche).
+- The generated (or supplied) images, stitched together with cross-dissolve
+  transitions and a zoom in/out (Ken Burns) effect for a dynamic look. Other
+  dynamic effects may also be used.
+- Lyrics on a text/subtitles track, shown one line at a time where possible,
+  with a fade in/out effect on each line.
+
+Requirements:
+
+- The video's duration must equal the audio's duration exactly — no silence at
+  the beginning or end.
+- The title appears as the song starts and disappears before the first line of
+  lyrics is shown.
+- Use a separate track for each element: one track for the images (with the
+  cross-dissolve and Ken Burns effects), one track for the lyrics/subtitles,
+  and one track for the audio.
+
+## Automation
+
+Automate the video creation using the free version of DaVinci Resolve 21's
+scripting/automation API.
