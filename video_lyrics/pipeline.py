@@ -2,7 +2,7 @@
 
     lyrics -> transcribe -> align -> plan -> images -> overlays -> bed -> render
 
-Every stage reads and writes project.json, so any stage can be re-run on its own
+Every stage reads and writes the project file, so any stage can be re-run on its own
 and the ones after it pick up the change.
 """
 
@@ -178,6 +178,23 @@ def stage_overlays(project: Project, *, force: bool = False, **_: Any) -> None:
     else:
         log.warning("The first lyric arrives too early for a title card; skipping it.")
 
+    # Bake the fades into alpha movie clips here, while the drawing tools are already
+    # in hand: both render engines - and the script that runs inside Resolve - then
+    # only ever deal with finished media.
+    overlay_clips = project.work_dir / "overlay-clips"
+    overlays_mod.bake_items(
+        lyric_items,
+        directory=overlay_clips,
+        fps=project.fps,
+        fade=float(video["lyric_fade"]),
+        force=force,
+    )
+    if title:
+        overlays_mod.bake_items(
+            [title], directory=overlay_clips, fps=project.fps,
+            fade=float(video["title_fade"]), force=force,
+        )
+
     overlays_mod.write_srt(project.cues, project.srt_path, lead=float(video["lyric_lead"]))
     project.data["overlays"] = {
         "title": title,
@@ -205,9 +222,28 @@ def stage_bed(project: Project, *, force: bool = False, **_: Any) -> None:
     project.save()
 
 
+def _resolve_reachable() -> tuple[bool, str]:
+    """Can this process drive Resolve directly?"""
+    from . import render_resolve
+
+    if not render_resolve.is_running():
+        return False, "DaVinci Resolve is not running"
+    try:
+        render_resolve.connect()
+    except VideoLyricsError as error:
+        return False, str(error)
+    return True, "reachable"
+
+
 def stage_render(
-    project: Project, *, force: bool = False, engine: str | None = None, launch: bool = False, **_: Any
-) -> Path:
+    project: Project,
+    *,
+    force: bool = False,
+    engine: str | None = None,
+    launch: bool = False,
+    handoff_only: bool = False,
+    **_: Any,
+) -> Path | None:
     """Assemble and export the finished video."""
     settings = project.render_settings
     engine = engine or settings.get("engine", "resolve")
@@ -236,50 +272,31 @@ def stage_render(
             force=force,
         )
     elif engine == "resolve":
-        from . import render_resolve
+        from . import handoff, render_resolve
 
         if launch and not render_resolve.is_running():
-            render_resolve.launch_and_wait()
-        overlay_clips_dir = project.work_dir / "overlay-clips"
-        overlays_mod.bake_items(
-            lyric_items,
-            directory=overlay_clips_dir,
-            fps=project.fps,
-            fade=float(project.video["lyric_fade"]),
-            force=force,
-        )
-        if title_item:
-            overlays_mod.bake_items(
-                [title_item],
-                directory=overlay_clips_dir,
-                fps=project.fps,
-                fade=float(title_item.get("fade", project.video["title_fade"])),
-                force=force,
-            )
-        _resolve, resolve_project, _timeline = render_resolve.assemble(
-            clips=clips,
-            lyric_items=lyric_items,
-            title_item=title_item,
-            audio=project.audio,
-            subtitle_file=project.srt_path if settings.get("lyrics_mode") == "subtitle" else None,
-            project_name=project.title,
-            timeline_name=f"{project.title} - lyrics",
-            size=project.size,
-            fps=project.fps,
-            duration=project.duration,
-            replace=bool(settings.get("replace_existing", True)),
-        )
-        width, height = project.size
-        result = render_resolve.render(
-            resolve_project,
-            output=output,
-            fmt=settings.get("format", "mp4"),
-            codec=settings.get("codec", "H264"),
-            audio_codec=settings.get("audio_codec", "aac"),
-            width=width,
-            height=height,
-            fps=project.fps,
-        )
+            try:
+                render_resolve.launch_and_wait()
+            except VideoLyricsError as error:
+                log.debug("Could not wait for Resolve: %s", error)
+
+        if handoff_only:
+            reachable, reason = False, "--handoff was requested"
+        else:
+            reachable, reason = _resolve_reachable()
+
+        if not reachable:
+            # The free edition has no external-scripting switch, so the CLI cannot
+            # drive Resolve. Everything is prepared; Resolve runs the last step
+            # itself from Workspace > Scripts.
+            log.info("Driving Resolve from here is not possible (%s).", reason)
+            handoff.stage(project)
+            handoff.install()
+            project.save()
+            print(handoff.instructions(project))
+            return None
+
+        result = Path(render_resolve.build_and_render(project))
     else:
         raise VideoLyricsError(f"Unknown render engine {engine!r} (use resolve or ffmpeg).")
 

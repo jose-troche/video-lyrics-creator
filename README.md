@@ -21,17 +21,32 @@ python3 -m venv .venv
 Needs **ffmpeg** on the PATH, the **codex** CLI (image generation), and **DaVinci
 Resolve 18+** — the free edition is enough — for the default render engine.
 
-### One-time DaVinci Resolve setup
+### How Resolve gets driven
 
-Resolve ships with automation switched off. In Resolve open **Preferences → System →
-General → "External scripting using" → Local**, save, and restart Resolve. Verify:
+There are two routes, and the tool picks whichever is open:
+
+**Free edition — from inside Resolve.** The free build has no "External scripting
+using" preference, so nothing outside Resolve can drive it. `video-lyrics render`
+notices, prepares every frame of media, and installs a launcher into Resolve's
+script menu. You finish with one click:
+
+> **Workspace → Scripts → Video Lyrics Creator**
+
+It builds the timeline and renders, showing progress in a small window (and in
+`work/resolve-launcher.log`). Restart Resolve once after the first install so the
+menu picks the script up.
+
+**Studio, or free builds that do expose the preference — straight from the CLI.**
+Set **Preferences → System → General → "External scripting using" → Local**, and
+`video-lyrics render` does the whole thing without touching Resolve's UI.
 
 ```bash
-video-lyrics resolve-check
+video-lyrics resolve-check        # which route is open on this machine
+video-lyrics resolve-install      # (re)install the menu launcher
+video-lyrics render --handoff     # always finish from the Resolve menu
 ```
 
-Until that switch is on, render with `--engine ffmpeg`; it produces the same edit
-without Resolve.
+`--engine ffmpeg` renders the same edit without Resolve at all.
 
 ### Google Docs lyrics (optional)
 
@@ -67,18 +82,23 @@ video-lyrics plan                # regroup lines into images
 video-lyrics images --jobs 3     # generate the stills with codex
 video-lyrics overlays            # title card, lyric PNGs, lyrics.srt
 video-lyrics bed                 # bake Ken Burns motion + cross dissolves
-video-lyrics render --launch     # assemble in Resolve and export
+video-lyrics render              # assemble in Resolve and export
 ```
 
 | flag | meaning |
 | --- | --- |
 | `--force` | redo a stage even though its output is cached |
 | `--engine ffmpeg` | render without Resolve |
+| `--handoff` | prepare everything and finish from Resolve's Scripts menu |
 | `--launch` | start Resolve first and wait until it answers |
 | `--images-dir DIR` | use your own images instead of generating them |
 | `--from` / `--to` | run part of the pipeline (`run --from plan --to bed`) |
 
-Settings live in `project.json` and can be changed from the CLI:
+## The project file
+
+Everything about a video — settings *and* the results of every stage — lives in one
+file, `project.yaml`, next to which the `work/` directory is created. Edit it by
+hand, or from the CLI:
 
 ```bash
 video-lyrics set video.zoom 1.12
@@ -86,6 +106,17 @@ video-lyrics set video.font "Optima Bold"
 video-lyrics set alignment.min_confidence 0.4
 video-lyrics set image_generation.lines_per_image 1
 ```
+
+JSON works just as well — the suffix decides the format:
+
+```bash
+video-lyrics init --format json ...    # start out as project.json
+video-lyrics convert --to yaml         # or move an existing one over
+video-lyrics -p songs/grace.yaml run   # any path, any of the two formats
+```
+
+Commands with no `-p` pick up `project.yaml`, then `project.yml`, then
+`project.json` from the current directory.
 
 ## How the timing works
 
@@ -133,7 +164,9 @@ motion and the fades are baked into the media before import:
 * `work/overlay-clips/` — the lyric and title clips as QuickTime Animation movies
   with an alpha channel and their fades already in the pixels.
 
-Resolve then does the edit, the audio, and the export. `work/lyrics.srt` is written
+Resolve then does the edit, the audio, and the export — either driven from the CLI,
+or by the launcher script running inside Resolve, which builds the very same
+timeline through the same code path. `work/lyrics.srt` is written
 too, so the lyrics can also be loaded as a subtitle track
 (`video-lyrics set render.lyrics_mode subtitle`) or uploaded to YouTube.
 

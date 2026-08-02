@@ -11,6 +11,7 @@ requires-python = ">=3.10"
 authors = [{ name = "Jose Troche" }]
 dependencies = [
     "pillow>=10.0",
+    "pyyaml>=6.0",
     "requests>=2.31",
     "faster-whisper>=1.0",
 ]
@@ -27,3 +28,6 @@ include = ["video_lyrics*"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 markers = ["slow: exercises ffmpeg end to end"]
+
+[tool.setuptools.package-data]
+video_lyrics = ["data/*.py"]

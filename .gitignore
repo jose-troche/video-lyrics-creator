@@ -13,3 +13,5 @@ dist/
 work/
 output/
 project.json
+project.yaml
+project.yml

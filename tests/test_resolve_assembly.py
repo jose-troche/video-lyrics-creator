@@ -11,129 +11,12 @@ import pytest
 
 from video_lyrics import render_resolve
 
-TIMELINE_START = 108000  # Resolve timelines start at 01:00:00:00
-
-
-class FakeItem:
-    def __init__(self, path: str):
-        self.path = path
-
-    def GetClipProperty(self, key: str):  # noqa: N802 - mirrors the Resolve API
-        return self.path if key == "File Path" else None
-
-
-class FakeTimeline:
-    def __init__(self, name: str):
-        self.name = name
-        self.tracks = {"video": 1, "audio": 1, "subtitle": 0}
-        self.names: dict[tuple[str, int], str] = {}
-        self.settings: dict[str, str] = {}
-
-    def GetStartFrame(self):  # noqa: N802
-        return TIMELINE_START
-
-    def GetTrackCount(self, track_type):  # noqa: N802
-        return self.tracks[track_type]
-
-    def AddTrack(self, track_type, *_args):  # noqa: N802
-        self.tracks[track_type] += 1
-        return True
-
-    def SetTrackName(self, track_type, index, name):  # noqa: N802
-        self.names[(track_type, index)] = name
-        return True
-
-    def SetSetting(self, key, value):  # noqa: N802
-        self.settings[key] = value
-        return True
-
-
-class FakeMediaPool:
-    def __init__(self):
-        self.appended: list[dict] = []
-        self.timelines: list[FakeTimeline] = []
-
-    def GetRootFolder(self):  # noqa: N802
-        return "root"
-
-    def SetCurrentFolder(self, _folder):  # noqa: N802
-        return True
-
-    def ImportMedia(self, paths):  # noqa: N802
-        return [FakeItem(path) for path in paths]
-
-    def CreateEmptyTimeline(self, name):  # noqa: N802
-        timeline = FakeTimeline(name)
-        self.timelines.append(timeline)
-        return timeline
-
-    def DeleteTimelines(self, _timelines):  # noqa: N802
-        return True
-
-    def AppendToTimeline(self, payload):  # noqa: N802
-        self.appended.extend(payload)
-        return list(payload)
-
-
-class FakeProject:
-    def __init__(self, name):
-        self.name = name
-        self.media_pool = FakeMediaPool()
-        self.settings: dict[str, str] = {}
-
-    def GetName(self):  # noqa: N802
-        return self.name
-
-    def GetMediaPool(self):  # noqa: N802
-        return self.media_pool
-
-    def GetTimelineByName(self, _name):  # noqa: N802
-        return None
-
-    def SetCurrentTimeline(self, _timeline):  # noqa: N802
-        return True
-
-    def SetSetting(self, key, value):  # noqa: N802
-        self.settings[key] = value
-        return True
-
-
-class FakeManager:
-    def __init__(self):
-        self.project = None
-
-    def GotoRootFolder(self):  # noqa: N802
-        return True
-
-    def GetCurrentProject(self):  # noqa: N802
-        return self.project
-
-    def LoadProject(self, _name):  # noqa: N802
-        return None
-
-    def CreateProject(self, name):  # noqa: N802
-        self.project = FakeProject(name)
-        return self.project
-
-    def CloseProject(self, _project):  # noqa: N802
-        return True
-
-    def DeleteProject(self, _name):  # noqa: N802
-        return True
-
-
-class FakeResolve:
-    def __init__(self):
-        self.manager = FakeManager()
-
-    def GetProjectManager(self):  # noqa: N802
-        return self.manager
+from .fakes import TIMELINE_START, FakeResolve
 
 
 @pytest.fixture
-def built(monkeypatch, tmp_path):
+def built(tmp_path):
     fake = FakeResolve()
-    monkeypatch.setattr(render_resolve, "connect", lambda: fake)
 
     clips = [
         {"kind": "scene", "path": str(tmp_path / "bed-001.mp4"), "first_frame": 0, "frames": 300},
@@ -157,6 +40,7 @@ def built(monkeypatch, tmp_path):
         size=(1920, 1080),
         fps=30,
         duration=30.0,
+        resolve=fake,
     )
     return project, timeline, project.GetMediaPool().appended
 
@@ -207,9 +91,8 @@ def test_timeline_and_project_are_set_to_the_video_format(built):
     assert timeline.settings["useCustomSettings"] == "1"
 
 
-def test_a_short_placement_never_collapses_to_zero_frames(monkeypatch, tmp_path):
+def test_a_short_placement_never_collapses_to_zero_frames(tmp_path):
     fake = FakeResolve()
-    monkeypatch.setattr(render_resolve, "connect", lambda: fake)
     _resolve, project, _timeline = render_resolve.assemble(
         clips=[{"kind": "scene", "path": str(tmp_path / "b.mp4"), "first_frame": 0, "frames": 30}],
         lyric_items=[{"start": 0.5, "end": 0.51, "clip": str(tmp_path / "l.mov")}],
@@ -221,6 +104,7 @@ def test_a_short_placement_never_collapses_to_zero_frames(monkeypatch, tmp_path)
         size=(1920, 1080),
         fps=30,
         duration=1.0,
+        resolve=fake,
     )
     lyric = [clip for clip in project.GetMediaPool().appended if clip["trackIndex"] == 2][0]
     assert lyric["endFrame"] == 0  # one frame long, not negative

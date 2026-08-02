@@ -1,8 +1,9 @@
-"""The project file (project.json): the single source of truth for a video.
+"""The project file: the single source of truth for a video.
 
-Every pipeline stage reads the project, does its work, writes its results back and
-saves.  That makes the whole pipeline resumable: re-running a stage reuses whatever
-is already on disk unless `force` is set.
+YAML by default (`project.yaml`), JSON accepted as well (`project.json`) - the
+suffix decides.  Every pipeline stage reads the project, does its work, writes its
+results back and saves, which makes the whole pipeline resumable: re-running a
+stage reuses whatever is already on disk unless `force` is set.
 """
 
 from __future__ import annotations
@@ -14,6 +15,11 @@ from typing import Any
 from .util import VideoLyricsError, ensure_dir, expand, slugify
 
 SCHEMA_VERSION = 1
+
+YAML_SUFFIXES = (".yaml", ".yml")
+JSON_SUFFIXES = (".json",)
+DEFAULT_PROJECT_NAMES = ("project.yaml", "project.yml", "project.json")
+DEFAULT_PROJECT_NAME = DEFAULT_PROJECT_NAMES[0]
 
 DEFAULT_AUTHOR = "Jose Troche"
 DEFAULT_VISUAL_STYLE = "cinematic photographic realism"
@@ -67,6 +73,51 @@ RENDER_DEFAULTS: dict[str, Any] = {
 }
 
 
+def _yaml():
+    try:
+        import yaml
+    except ImportError as exc:  # pragma: no cover - dependency guard
+        raise VideoLyricsError(
+            "PyYAML is needed for .yaml project files (pip install pyyaml), "
+            "or use a project.json file instead."
+        ) from exc
+    return yaml
+
+
+def serialize(data: dict[str, Any], suffix: str) -> str:
+    if suffix.lower() in YAML_SUFFIXES:
+        return _yaml().safe_dump(
+            data,
+            sort_keys=False,      # keep the readable order the pipeline writes in
+            allow_unicode=True,   # curly apostrophes stay curly
+            default_flow_style=False,
+            width=4096,           # never wrap a prompt across lines
+        )
+    return json.dumps(data, indent=2, ensure_ascii=False) + "\n"
+
+
+def deserialize(text: str, suffix: str) -> dict[str, Any]:
+    if suffix.lower() in YAML_SUFFIXES:
+        data = _yaml().safe_load(text)
+    else:
+        data = json.loads(text)
+    if not isinstance(data, dict):
+        raise VideoLyricsError("A project file must contain a mapping of settings.")
+    return data
+
+
+def find_project(explicit: str | Path | None = None, base: Path | None = None) -> Path:
+    """Resolve the project file to use: the given one, or the first default present."""
+    if explicit:
+        return Path(explicit)
+    base = Path(base) if base else Path.cwd()
+    for name in DEFAULT_PROJECT_NAMES:
+        candidate = base / name
+        if candidate.is_file():
+            return candidate
+    return base / DEFAULT_PROJECT_NAME
+
+
 def _merge_defaults(target: dict[str, Any], defaults: dict[str, Any]) -> dict[str, Any]:
     for key, value in defaults.items():
         target.setdefault(key, value)
@@ -74,7 +125,7 @@ def _merge_defaults(target: dict[str, Any], defaults: dict[str, Any]) -> dict[st
 
 
 class Project:
-    """Wrapper around project.json."""
+    """Wrapper around the project file (project.yaml or project.json)."""
 
     def __init__(self, path: Path, data: dict[str, Any]):
         self.path = Path(path)
@@ -128,7 +179,7 @@ class Project:
             raise VideoLyricsError(
                 f"No project file at {path}. Run `video-lyrics init` first."
             )
-        data = json.loads(path.read_text(encoding="utf-8"))
+        data = deserialize(path.read_text(encoding="utf-8"), path.suffix)
         version = data.get("schema_version")
         if version != SCHEMA_VERSION:
             raise VideoLyricsError(
@@ -136,13 +187,14 @@ class Project:
             )
         return cls(path, data)
 
-    def save(self) -> None:
-        self.path.parent.mkdir(parents=True, exist_ok=True)
-        tmp = self.path.with_suffix(self.path.suffix + ".tmp")
-        tmp.write_text(
-            json.dumps(self.data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
-        )
-        tmp.replace(self.path)
+    def save(self, path: Path | str | None = None) -> Path:
+        """Write the project out, in the format its suffix asks for."""
+        target = Path(path) if path else self.path
+        target.parent.mkdir(parents=True, exist_ok=True)
+        tmp = target.with_suffix(target.suffix + ".tmp")
+        tmp.write_text(serialize(self.data, target.suffix), encoding="utf-8")
+        tmp.replace(target)
+        return target
 
     def _apply_defaults(self) -> None:
         self.data.setdefault("schema_version", SCHEMA_VERSION)

@@ -91,7 +91,7 @@ def test_full_pipeline_renders_a_video_the_length_of_the_song(tmp_path):
     build_images(stills)
 
     project = Project.create(
-        tmp_path / "project.json",
+        tmp_path / "project.yaml",
         audio=str(audio),
         lyrics_source=str(words),
         title="Test Song",
