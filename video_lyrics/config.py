@@ -50,7 +50,7 @@ VIDEO_DEFAULTS: dict[str, Any] = {
     "font": "Avenir Next Demi Bold",
     "font_size": 58,
     "margin_v": 72,           # distance from bottom of frame to lyric baseline block (px)
-    "zoom": 1.08,             # Ken Burns zoom factor
+    "zoom": 1.20,             # Ken Burns zoom factor at a 6s scene; scaled by duration
     "lyric_lead": 0.35,       # show a lyric this early (s)
     "lyric_fade": 0.2,        # lyric fade in/out (s)
 }
@@ -160,6 +160,22 @@ def _is_legacy(data: dict[str, Any]) -> bool:
     return "audio" in data
 
 
+def _relocate_paths(value: Any, old_base: str, new_base: str) -> Any:
+    """Rewrite every recorded path under `old_base` to sit under `new_base` instead.
+
+    Earlier stages bake absolute paths into the data (scene images, overlay
+    clips, the bed, the transcript) *before* migration moves the files that
+    those paths point at, so the strings go stale unless they're moved too.
+    """
+    if isinstance(value, dict):
+        return {key: _relocate_paths(item, old_base, new_base) for key, item in value.items()}
+    if isinstance(value, list):
+        return [_relocate_paths(item, old_base, new_base) for item in value]
+    if isinstance(value, str) and value.startswith(old_base + "/") and not value.startswith(new_base + "/"):
+        return new_base + value[len(old_base):]
+    return value
+
+
 def _migrate_legacy(pointer_path: Path, legacy_data: dict[str, Any]) -> Path:
     """Move a pre-split project into <work>/<slug>/ and return the new data path.
 
@@ -188,6 +204,11 @@ def _migrate_legacy(pointer_path: Path, legacy_data: dict[str, Any]) -> Path:
             shutil.move(str(entry), str(target))
             log.info("Moved work/%s into %s/", entry.name, song_dir.name)
 
+    # The files just moved, so every path recorded before now (scene images,
+    # overlay clips, the bed, the transcript) points at where they used to be.
+    old_base, new_base = str(base), str(song_dir)
+    for key in list(legacy_data):
+        legacy_data[key] = _relocate_paths(legacy_data[key], old_base, new_base)
     legacy_data["work_dir"] = str(base)
     data_path = song_dir / f"{DATA_FILE_STEM}{pointer_path.suffix}"
     log.info(

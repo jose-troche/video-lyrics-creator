@@ -174,6 +174,45 @@ def test_a_migrated_project_leaves_a_minimal_pointer_behind(tmp_path):
     assert data["audio"] == str(tmp_path / "song.wav")
 
 
+def test_migration_rewrites_paths_recorded_before_the_move(tmp_path):
+    """The files move; any path a stage already recorded must move with them.
+
+    Scene images, overlay clips, the bed, and the transcript are all recorded as
+    absolute paths *before* migration ever runs - if those strings are not
+    rewritten too, they go stale the moment the files are moved, and the next
+    stage that reads them fails with "no such file".
+    """
+    path, work = _write_legacy(tmp_path)
+    legacy = yaml.safe_load(path.read_text())
+    legacy.update(
+        {
+            "scenes": [{"index": 1, "image": str(work / "images" / "scene-001.png")}],
+            "overlays": {
+                "title": {"image": str(work / "overlays" / "title.png"),
+                          "clip": str(work / "overlay-clips" / "title.mov")},
+                "lyrics": [{"image": str(work / "overlays" / "lyric-001.png"),
+                            "clip": str(work / "overlay-clips" / "lyric-001.mov")}],
+                "srt": str(work / "lyrics.srt"),
+            },
+            "bed": [{"path": str(work / "clips" / "bed-001-scene.mp4")}],
+            "transcript": {"path": str(work / "transcript.json")},
+        }
+    )
+    path.write_text(yaml.safe_dump(legacy), encoding="utf-8")
+
+    project = Project.load(path)
+
+    song_dir = work / "immeasurable-grace"
+    assert project.scenes[0]["image"] == str(song_dir / "images" / "scene-001.png")
+    assert project.data["overlays"]["title"]["clip"] == str(song_dir / "overlay-clips" / "title.mov")
+    assert project.data["overlays"]["lyrics"][0]["image"] == str(song_dir / "overlays" / "lyric-001.png")
+    assert project.data["overlays"]["srt"] == str(song_dir / "lyrics.srt")
+    assert project.data["bed"][0]["path"] == str(song_dir / "clips" / "bed-001-scene.mp4")
+    assert project.data["transcript"]["path"] == str(song_dir / "transcript.json")
+    # and work_dir itself must stay the *base*, not be relocated into the song folder
+    assert project.data["work_dir"] == str(work)
+
+
 def test_migration_is_idempotent(tmp_path):
     path, _work = _write_legacy(tmp_path)
     Project.load(path)

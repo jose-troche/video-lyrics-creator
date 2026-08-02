@@ -123,7 +123,7 @@ Edit settings by hand in either file, or from the CLI — this always edits the
 current song's data file, never the pointer:
 
 ```bash
-video-lyrics set video.zoom 1.12
+video-lyrics set video.zoom 1.3
 video-lyrics set video.font "Optima Bold"
 video-lyrics set alignment.min_confidence 0.4
 video-lyrics set image_generation.lines_per_image 1
@@ -185,6 +185,9 @@ motion and the fades are baked into the media before import:
 * `work/clips/` — the image bed. Each scene is rendered with its Ken Burns move, and
   every scene boundary gets a real cross-dissolve clip whose two halves continue the
   neighbouring moves, so the clips can sit end to end on one track and still dissolve.
+  `video.zoom` scales with how long a scene is actually on screen, so a quick cut
+  and a long instrumental hold both move at a similar, steady rate rather than one
+  crawling and the other racing.
 * `work/overlay-clips/` — the lyric and title clips as QuickTime Animation movies
   with an alpha channel and their fades already in the pixels.
 

@@ -22,12 +22,30 @@ MOTIONS: dict[str, dict[str, float]] = {
     #             zoom start  zoom end  centre x start/end   centre y start/end
     "zoom_in":   {"z0": 0.0, "z1": 1.0, "cx0": 0.50, "cx1": 0.50, "cy0": 0.50, "cy1": 0.50},
     "zoom_out":  {"z0": 1.0, "z1": 0.0, "cx0": 0.50, "cx1": 0.50, "cy0": 0.50, "cy1": 0.50},
-    "pan_right": {"z0": 1.0, "z1": 1.0, "cx0": 0.25, "cx1": 0.75, "cy0": 0.50, "cy1": 0.50},
-    "pan_left":  {"z0": 1.0, "z1": 1.0, "cx0": 0.75, "cx1": 0.25, "cy0": 0.50, "cy1": 0.50},
-    "pan_up":    {"z0": 1.0, "z1": 1.0, "cx0": 0.50, "cx1": 0.50, "cy0": 0.75, "cy1": 0.25},
-    "pan_down":  {"z0": 1.0, "z1": 1.0, "cx0": 0.50, "cx1": 0.50, "cy0": 0.25, "cy1": 0.75},
+    "pan_right": {"z0": 1.0, "z1": 1.0, "cx0": 0.12, "cx1": 0.88, "cy0": 0.50, "cy1": 0.50},
+    "pan_left":  {"z0": 1.0, "z1": 1.0, "cx0": 0.88, "cx1": 0.12, "cy0": 0.50, "cy1": 0.50},
+    "pan_up":    {"z0": 1.0, "z1": 1.0, "cx0": 0.50, "cx1": 0.50, "cy0": 0.88, "cy1": 0.12},
+    "pan_down":  {"z0": 1.0, "z1": 1.0, "cx0": 0.50, "cx1": 0.50, "cy0": 0.12, "cy1": 0.88},
     "still":     {"z0": 0.0, "z1": 0.0, "cx0": 0.50, "cx1": 0.50, "cy0": 0.50, "cy1": 0.50},
 }
+
+# A pan needs crop room to travel through; if the configured zoom is too close to
+# 1.0 there is nothing to pan across, so pans get their own floor independent of
+# the zoom_in/zoom_out setting.
+PAN_MIN_ZOOM = 1.22
+
+# zoompan crops at whole-pixel positions. Spreading a small zoom range across a
+# long scene moves the crop by a fraction of a pixel per frame, which rounds to
+# "holds still for several frames, then jumps one pixel" - reading as both too
+# subtle and jerky at once. Scaling the zoom to the scene's own duration keeps the
+# rate of motion (not just the total amount) consistent whether a scene is on
+# screen for 3 seconds or 20, and the higher supersample factor gives the crop
+# sub-pixel precision before it's downscaled to the output size, which is what
+# actually removes the stepping.
+MOTION_REFERENCE_SECONDS = 6.0
+MOTION_MIN_ZOOM = 1.08
+MOTION_MAX_ZOOM = 1.55
+DEFAULT_SUPERSAMPLE = 3
 
 CODECS = {
     "h264": ["-c:v", "libx264", "-preset", "medium", "-crf", "16", "-pix_fmt", "yuv420p"],
@@ -36,11 +54,26 @@ CODECS = {
 CONTAINER = {"h264": ".mp4", "prores": ".mov"}
 
 
+def scene_zoom(base_zoom: float, duration: float) -> float:
+    """Scale the configured zoom to how long the scene is actually on screen.
+
+    Without this, a fixed zoom value spread over a scene's whole span means quick
+    cuts barely move and long holds crawl even slower - motion that reads as
+    inconsistent rather than steady. Scaling by duration keeps the apparent speed
+    similar across scenes of different lengths.
+    """
+    base_zoom = max(1.001, float(base_zoom))
+    extra = (base_zoom - 1.0) * (max(0.0, duration) / MOTION_REFERENCE_SECONDS)
+    return min(MOTION_MAX_ZOOM, max(MOTION_MIN_ZOOM, 1.0 + extra))
+
+
 def _zoom_levels(motion: str, zoom: float) -> tuple[float, float]:
     """Map the 0/1 markers in MOTIONS onto real zoom factors."""
     zoom = max(1.001, float(zoom))
     spec = MOTIONS[motion]
     pan = motion.startswith("pan")
+    if pan:
+        zoom = max(zoom, PAN_MIN_ZOOM)
     low, high = (zoom, zoom) if pan else (1.0, zoom)
     return (low if spec["z0"] == 0.0 else high, low if spec["z1"] == 0.0 else high)
 
@@ -67,6 +100,7 @@ def zoompan_filter(
 ) -> str:
     """A scale+zoompan chain that renders this clip's slice of a scene's motion."""
     spec = MOTIONS.get(motion) or MOTIONS["zoom_in"]
+    zoom = scene_zoom(zoom, motion_span / fps)
     z0, z1 = _zoom_levels(motion if motion in MOTIONS else "zoom_in", zoom)
     width, height = size
 
@@ -161,7 +195,7 @@ def render_bed(
     transition: float,
     zoom: float,
     codec: str = "h264",
-    supersample: int = 2,
+    supersample: int = DEFAULT_SUPERSAMPLE,
     force: bool = False,
 ) -> list[dict[str, Any]]:
     """Render every clip of the image bed. Returns the clip chain with paths."""

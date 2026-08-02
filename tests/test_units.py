@@ -236,3 +236,41 @@ def test_a_still_motion_has_no_interpolation_term():
         first_frame=0, motion_start=0, motion_span=100, supersample=2,
     )
     assert "on" not in chain.split("zoompan=")[1].split(":d=")[0]
+
+
+def test_scene_zoom_scales_with_duration_between_a_floor_and_a_cap():
+    # a 6s scene (the reference duration) gets exactly the configured zoom
+    assert motion.scene_zoom(1.20, 6.0) == pytest.approx(1.20)
+    # a much shorter scene still gets at least the floor, not something imperceptible
+    assert motion.scene_zoom(1.20, 0.5) == pytest.approx(motion.MOTION_MIN_ZOOM)
+    # a much longer scene is capped rather than zooming in absurdly far
+    assert motion.scene_zoom(1.20, 60.0) == pytest.approx(motion.MOTION_MAX_ZOOM)
+    # roughly double the duration is roughly double the zoom, before the cap
+    assert motion.scene_zoom(1.20, 12.0) == pytest.approx(1.40)
+
+
+def test_pans_get_real_travel_room_even_at_a_low_configured_zoom():
+    """A pan needs crop room; too-low a zoom must not collapse its travel to nothing."""
+    z0, z1 = motion._zoom_levels("pan_right", 1.01)
+    assert z0 == z1 == pytest.approx(motion.PAN_MIN_ZOOM)
+
+    chain = motion.zoompan_filter(
+        motion="pan_right", zoom=1.20, size=(1920, 1080), fps=30,
+        first_frame=0, motion_start=0, motion_span=180, supersample=2,
+    )
+    assert "(iw-iw/zoom)*(0.120000" in chain  # the widened pan range is present
+
+
+def test_a_short_scene_and_a_long_scene_pan_at_a_similar_rate():
+    """The point of scaling by duration: apparent speed stays steady, not just total."""
+    short_zoom = motion.scene_zoom(1.20, 3.0)
+    long_zoom = motion.scene_zoom(1.20, 9.0)
+    short_rate = (short_zoom - 1.0) / 3.0
+    long_rate = (long_zoom - 1.0) / 9.0
+    assert short_rate == pytest.approx(long_rate, rel=0.05)
+
+
+def test_supersampling_defaults_high_enough_to_avoid_pixel_stepping():
+    # at the old default (2x) a multi-second pan moves under a pixel per frame,
+    # which is what read as jerky; the new default must clear that bar comfortably.
+    assert motion.DEFAULT_SUPERSAMPLE >= 3
