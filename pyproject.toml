@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "video-lyrics-creator"
+version = "0.1.0"
+description = "Automates lyric videos: audio-driven lyric timing, AI images, Ken Burns motion, DaVinci Resolve assembly."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "Jose Troche" }]
+dependencies = [
+    "pillow>=10.0",
+    "requests>=2.31",
+    "faster-whisper>=1.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+video-lyrics = "video_lyrics.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["video_lyrics*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["slow: exercises ffmpeg end to end"]

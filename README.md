@@ -1,0 +1,160 @@
+# Video Lyrics Creator
+
+Turns a song plus its lyrics into a finished lyric video: the words are timed from
+the actual recording, each couplet gets its own generated image, the images drift
+with a Ken Burns move and cross dissolve into one another, and DaVinci Resolve
+assembles and exports the result.
+
+```
+audio ─┐
+       ├─ transcribe → align → plan → images → overlays → bed → render → video.mp4
+lyrics ┘
+```
+
+## Install
+
+```bash
+python3 -m venv .venv
+.venv/bin/pip install -e ".[dev]"
+```
+
+Needs **ffmpeg** on the PATH, the **codex** CLI (image generation), and **DaVinci
+Resolve 18+** — the free edition is enough — for the default render engine.
+
+### One-time DaVinci Resolve setup
+
+Resolve ships with automation switched off. In Resolve open **Preferences → System →
+General → "External scripting using" → Local**, save, and restart Resolve. Verify:
+
+```bash
+video-lyrics resolve-check
+```
+
+Until that switch is on, render with `--engine ffmpeg`; it produces the same edit
+without Resolve.
+
+### Google Docs lyrics (optional)
+
+Copy `.env.example` to `.env`, paste a Google Cloud **Desktop app** OAuth client id
+and secret, then log in once:
+
+```bash
+video-lyrics google-auth      # writes GOOGLE_DRIVE_REFRESH_TOKEN back into .env
+```
+
+A Drive-for-desktop `.gdoc` file then works anywhere a `.txt` file does.
+
+## Use
+
+```bash
+video-lyrics init \
+  --audio ~/Music/album/"08 my-song.wav" \
+  --lyrics ~/"Google Drive"/Songs/my-song.gdoc \
+  --title "My Song"
+
+video-lyrics run                 # everything, end to end
+video-lyrics status              # what is done so far
+video-lyrics cues                # the timed lyrics
+```
+
+Every stage is also its own command, so you can iterate on one part without
+redoing the rest:
+
+```bash
+video-lyrics transcribe          # cached in work/transcript.json
+video-lyrics align               # re-time after changing alignment settings
+video-lyrics plan                # regroup lines into images
+video-lyrics images --jobs 3     # generate the stills with codex
+video-lyrics overlays            # title card, lyric PNGs, lyrics.srt
+video-lyrics bed                 # bake Ken Burns motion + cross dissolves
+video-lyrics render --launch     # assemble in Resolve and export
+```
+
+| flag | meaning |
+| --- | --- |
+| `--force` | redo a stage even though its output is cached |
+| `--engine ffmpeg` | render without Resolve |
+| `--launch` | start Resolve first and wait until it answers |
+| `--images-dir DIR` | use your own images instead of generating them |
+| `--from` / `--to` | run part of the pipeline (`run --from plan --to bed`) |
+
+Settings live in `project.json` and can be changed from the CLI:
+
+```bash
+video-lyrics set video.zoom 1.12
+video-lyrics set video.font "Optima Bold"
+video-lyrics set alignment.min_confidence 0.4
+video-lyrics set image_generation.lines_per_image 1
+```
+
+## How the timing works
+
+The rule is that **the audio decides and the lyrics file spells**:
+
+* the recording is transcribed with word-level timestamps (faster-whisper);
+* reference lines are matched to that transcript with a monotonic diff, so a chorus
+  that repeats stays in the order it was actually sung;
+* a line that is heard becomes a cue, timed from its words but displayed with your
+  wording — spelling, punctuation and capitalisation come from your file;
+* a line the audio never confirms (a heading, a scripture reference, an early draft,
+  a verse that was cut) produces **no cue at all**.
+
+A second pass revisits any stretch of audio no cue claimed and offers it to the
+lines that are still unused, picking the best fit. That matters for real lyric
+documents, which often carry drafts and prose above the final words: without it a
+half-matching draft line can swallow the audio that belonged to the real one.
+
+`alignment.min_confidence` is the share of a line's words that must be heard before
+it counts, `alignment.min_matched_words` guards against one-word coincidences, and
+`video-lyrics align` prints every line it could not confirm.
+
+Two transcription settings are deliberately off, because on sung, fully mixed audio
+they each destroy the transcript: `alignment.vad` (voice-activity filtering drops
+most of a vocal) and `alignment.prompt_hint` (priming Whisper with the lyrics makes
+it recite them over the intro).
+
+## What ends up on the timeline
+
+```
+V3  Title      one clip: song title and author, faded out before the first lyric
+V2  Lyrics     one clip per confirmed line, fading in and out
+V1  Images     scene / dissolve / scene / dissolve ... covering the whole song
+A1  Music      the song, from frame 0
+```
+
+The video is exactly as long as the audio — no silence at either end.
+
+Resolve's scripting API can neither add a transition nor keyframe a clip, so the
+motion and the fades are baked into the media before import:
+
+* `work/clips/` — the image bed. Each scene is rendered with its Ken Burns move, and
+  every scene boundary gets a real cross-dissolve clip whose two halves continue the
+  neighbouring moves, so the clips can sit end to end on one track and still dissolve.
+* `work/overlay-clips/` — the lyric and title clips as QuickTime Animation movies
+  with an alpha channel and their fades already in the pixels.
+
+Resolve then does the edit, the audio, and the export. `work/lyrics.srt` is written
+too, so the lyrics can also be loaded as a subtitle track
+(`video-lyrics set render.lyrics_mode subtitle`) or uploaded to YouTube.
+
+## Work directory
+
+```
+work/transcript.json     cached transcription
+work/lyrics.txt          the reference lines as loaded
+work/lyrics.srt          timed lyrics
+work/images/             one still per scene
+work/overlays/           title and lyric PNGs (transparent)
+work/overlay-clips/      the same, as alpha movie clips with fades
+work/clips/              the image bed: scene and dissolve clips
+```
+
+Every artefact is named after a hash of its inputs, so re-running a stage only
+redoes what actually changed.
+
+## Tests
+
+```bash
+.venv/bin/python -m pytest                  # units + a full ffmpeg render
+.venv/bin/python -m pytest -m "not slow"    # units only
+```
