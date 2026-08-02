@@ -16,7 +16,12 @@ lyrics ┘
 ```bash
 python3 -m venv .venv
 .venv/bin/pip install -e ".[dev]"
+source .venv/bin/activate
 ```
+
+`source .venv/bin/activate` puts `video-lyrics` on your PATH for the current shell
+session — run it once per new terminal. Without it, call the script directly as
+`.venv/bin/video-lyrics ...`.
 
 Needs **ffmpeg** on the PATH, the **codex** CLI (image generation), and **DaVinci
 Resolve 18+** — the free edition is enough — for the default render engine.
