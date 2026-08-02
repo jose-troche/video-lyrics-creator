@@ -128,9 +128,7 @@ class ResolveTimelineBuilder:
         self._ensure_tracks()
         self._report("Adding the original audio")
         self._append_audio()
-        self._report(f"Adding {len(self.plan['scenes'])} animated image scenes")
         self._append_scenes()
-        self._report(f"Adding {len(self.plan['lyrics'])} fading lyric overlays")
         self._append_overlays()
         self._report("Adding lyric review markers")
         self._add_review_markers()
@@ -261,6 +259,9 @@ class ResolveTimelineBuilder:
         scale_fill = getattr(self.resolve, "SCALE_FILL", 2)
         zoom = float(self.manifest["video"].get("zoom", 1.08))
         for scene in self.plan["scenes"]:
+            self._report(
+                f"Adding animated image scene {scene['index']}/{len(self.plan['scenes'])}"
+            )
             item = self._import(scene["image"])
             clip = self._append_clip(
                 item,
@@ -364,6 +365,7 @@ class ResolveTimelineBuilder:
             comp.Unlock()
 
     def _append_overlays(self) -> None:
+        self._report("Adding the fading title overlay")
         title = self._import(self.plan["title"]["image"])
         title_clip = self._append_clip(
             title,
@@ -378,6 +380,7 @@ class ResolveTimelineBuilder:
             label="title",
         )
         for index, cue in enumerate(self.plan["lyrics"], 1):
+            self._report(f"Adding fading lyric overlay {index}/{len(self.plan['lyrics'])}")
             item = self._import(cue["image"])
             clip = self._append_clip(
                 item,
@@ -452,9 +455,18 @@ class ResolveTimelineBuilder:
         return job_id
 
     def _wait_for_render(self, job_id: str) -> dict:
+        last_progress_bucket = -1
         while True:
             status = self.project.GetRenderJobStatus(job_id) or {}
             state = str(status.get("JobStatus", ""))
+            try:
+                progress = max(0, min(100, int(float(status.get("CompletionPercentage", 0)))))
+            except (TypeError, ValueError):
+                progress = 0
+            progress_bucket = progress // 5
+            if progress_bucket != last_progress_bucket:
+                self._report(f"Rendering video: {progress}%")
+                last_progress_bucket = progress_bucket
             if state in {"Complete", "Failed", "Cancelled", "Canceled"}:
                 if state != "Complete":
                     raise ResolveError(f"Render ended with status {state}: {status}")
