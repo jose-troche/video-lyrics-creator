@@ -81,6 +81,7 @@ Every stage is also its own command, so you can iterate on one part without
 redoing the rest:
 
 ```bash
+video-lyrics lyrics              # load the reference lyrics, measure the audio
 video-lyrics transcribe          # cached in work/transcript.json
 video-lyrics align               # re-time after changing alignment settings
 video-lyrics plan                # regroup lines into images
