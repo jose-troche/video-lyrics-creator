@@ -82,7 +82,7 @@ redoing the rest:
 
 ```bash
 video-lyrics lyrics              # load the reference lyrics, measure the audio
-video-lyrics transcribe          # cached in work/transcript.json
+video-lyrics transcribe          # cached in work/<song>/transcript.json
 video-lyrics align               # re-time after changing alignment settings
 video-lyrics plan                # regroup lines into images
 video-lyrics images --jobs 3     # generate the stills with codex
@@ -102,9 +102,25 @@ video-lyrics render              # assemble in Resolve and export
 
 ## The project file
 
-Everything about a video — settings *and* the results of every stage — lives in one
-file, `project.yaml`, next to which the `work/` directory is created. Edit it by
-hand, or from the CLI:
+`project.yaml` is a **pointer**, not the project — it holds just enough to find the
+rest: the title, and where the work directory is. Everything else — every setting
+and every stage's results — lives in `work/<song>/project.yaml`, right next to that
+song's own images, transcript, and clips. `<song>` is the title, lower-cased and
+hyphenated (`Immeasurable Grace` → `immeasurable-grace`).
+
+That split is what keeps songs from colliding: starting a new song with
+`video-lyrics init` repoints `project.yaml` at it, but the previous song's folder
+under `work/` — and everything in it — is left exactly as it was. To go back to an
+earlier song, either point `-p` at its folder directly, or edit `project.yaml`'s
+`title:` back to match it — its work is still there, so the pipeline picks up
+where it left off rather than starting over:
+
+```bash
+video-lyrics -p work/an-older-song/project.yaml status
+```
+
+Edit settings by hand in either file, or from the CLI — this always edits the
+current song's data file, never the pointer:
 
 ```bash
 video-lyrics set video.zoom 1.12
@@ -117,12 +133,14 @@ JSON works just as well — the suffix decides the format:
 
 ```bash
 video-lyrics init --format json ...    # start out as project.json
-video-lyrics convert --to yaml         # or move an existing one over
+video-lyrics convert --to yaml         # export the current song as one merged file
 video-lyrics -p songs/grace.yaml run   # any path, any of the two formats
 ```
 
 Commands with no `-p` pick up `project.yaml`, then `project.yml`, then
-`project.json` from the current directory.
+`project.json` from the current directory. A project file from before this split
+existed is migrated automatically the first time it is opened: its flat `work/`
+directory is moved into `work/<song>/` for you, logged as it happens.
 
 ## How the timing works
 
@@ -178,14 +196,18 @@ too, so the lyrics can also be loaded as a subtitle track
 
 ## Work directory
 
+Every song gets its own folder, `work/<song>/`, holding that song's data file and
+all of its intermediate files:
+
 ```
-work/transcript.json     cached transcription
-work/lyrics.txt          the reference lines as loaded
-work/lyrics.srt          timed lyrics
-work/images/             one still per scene
-work/overlays/           title and lyric PNGs (transparent)
-work/overlay-clips/      the same, as alpha movie clips with fades
-work/clips/              the image bed: scene and dissolve clips
+work/<song>/project.yaml        the full project - settings and every stage's results
+work/<song>/transcript.json     cached transcription
+work/<song>/lyrics.txt          the reference lines as loaded
+work/<song>/lyrics.srt          timed lyrics
+work/<song>/images/             one still per scene
+work/<song>/overlays/           title and lyric PNGs (transparent)
+work/<song>/overlay-clips/      the same, as alpha movie clips with fades
+work/<song>/clips/              the image bed: scene and dissolve clips
 ```
 
 Every artefact is named after a hash of its inputs, so re-running a stage only

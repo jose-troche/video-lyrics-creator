@@ -40,9 +40,10 @@ def test_a_yaml_project_round_trips_exactly(tmp_path, song):
     project = make(tmp_path, song)
     project.save()
 
-    body = project.path.read_text(encoding="utf-8")
-    assert body.startswith("schema_version:")          # readable, key order preserved
-    assert "world’s" in body                           # unicode not escaped
+    pointer = project.path.read_text(encoding="utf-8")
+    assert pointer.startswith("schema_version:")        # readable, key order preserved
+    body = project.data_path.read_text(encoding="utf-8")
+    assert "world’s" in body                            # unicode not escaped
     assert Project.load(project.path).data == project.data
 
 
@@ -144,5 +145,7 @@ def test_set_keeps_the_file_in_its_own_format(tmp_path, song, monkeypatch, capsy
     capsys.readouterr()
 
     assert cli.main(["set", "video.zoom", "1.15"]) == 0
-    body = (tmp_path / "project.yaml").read_text(encoding="utf-8")
+    pointer = (tmp_path / "project.yaml").read_text(encoding="utf-8")
+    assert "zoom" not in pointer                        # the pointer stays minimal
+    body = (tmp_path / "work" / "song" / "project.yaml").read_text(encoding="utf-8")
     assert "zoom: 1.15" in body

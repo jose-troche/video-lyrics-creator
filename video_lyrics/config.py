@@ -1,20 +1,36 @@
 """The project file: the single source of truth for a video.
 
-YAML by default (`project.yaml`), JSON accepted as well (`project.json`) - the
-suffix decides.  Every pipeline stage reads the project, does its work, writes its
-results back and saves, which makes the whole pipeline resumable: re-running a
-stage reuses whatever is already on disk unless `force` is set.
+Two files, so that starting a new song never overwrites the last one:
+
+  * ``project.yaml`` (or ``.json``) at the top level - a small pointer holding just
+    enough to find the rest: schema version, title, and the work directory root.
+  * ``<work>/<slugified title>/project.yaml`` - everything else: every setting and
+    every stage's results.  All of that song's working files (images, overlays,
+    clips, the transcript) live in this same per-song folder.
+
+`Project.data` always holds the full merged contents (so the rest of the codebase
+never has to care about the split); `save()` is what writes the two files.  YAML by
+default, JSON accepted as well - the suffix decides.  Every pipeline stage reads
+the project, does its work, writes its results back and saves, which makes the
+whole pipeline resumable: re-running a stage reuses whatever is already on disk
+unless `force` is set.
+
+Loading an older, single-file project (before this split existed) migrates it in
+place: the existing flat work directory is moved into its own
+``<slug>/`` subfolder and the pointer/data files are written out going forward.
 """
 
 from __future__ import annotations
 
 import json
+import shutil
 from pathlib import Path
 from typing import Any
 
-from .util import VideoLyricsError, ensure_dir, expand, slugify
+from .util import VideoLyricsError, ensure_dir, expand, log, slugify
 
 SCHEMA_VERSION = 1
+DATA_FILE_STEM = "project"
 
 YAML_SUFFIXES = (".yaml", ".yml")
 JSON_SUFFIXES = (".json",)
@@ -124,6 +140,64 @@ def _merge_defaults(target: dict[str, Any], defaults: dict[str, Any]) -> dict[st
     return target
 
 
+def _atomic_write(path: Path, text: str) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    tmp = path.with_suffix(path.suffix + ".tmp")
+    tmp.write_text(text, encoding="utf-8")
+    tmp.replace(path)
+
+
+def _check_version(data: dict[str, Any], path: Path) -> None:
+    version = data.get("schema_version")
+    if version != SCHEMA_VERSION:
+        raise VideoLyricsError(
+            f"{path} has schema_version {version!r}; this build expects {SCHEMA_VERSION}."
+        )
+
+
+def _is_legacy(data: dict[str, Any]) -> bool:
+    """A pointer never has an `audio` key; a pre-split project file always does."""
+    return "audio" in data
+
+
+def _migrate_legacy(pointer_path: Path, legacy_data: dict[str, Any]) -> Path:
+    """Move a pre-split project into <work>/<slug>/ and return the new data path.
+
+    `legacy_data` (the old single file's full contents) is mutated in place and
+    is what the caller should treat as the project's data from here on; nothing
+    is written yet - the caller's own `save()` does that once, atomically.
+    """
+    title = legacy_data.get("title") or pointer_path.stem
+    slug = slugify(title)
+    base = expand(legacy_data.get("work_dir") or (pointer_path.parent / "work"))
+    song_dir = base / slug
+
+    if base.is_dir() and base.resolve() != song_dir.resolve():
+        ensure_dir(song_dir)
+        for entry in sorted(base.iterdir()):
+            if entry.resolve() == song_dir.resolve():
+                continue
+            if entry.is_dir() and (entry / f"{DATA_FILE_STEM}.yaml").is_file():
+                continue  # already a migrated song folder - leave other songs alone
+            if entry.is_dir() and (entry / f"{DATA_FILE_STEM}.json").is_file():
+                continue
+            target = song_dir / entry.name
+            if target.exists():
+                log.warning("Not moving %s - %s already exists.", entry, target)
+                continue
+            shutil.move(str(entry), str(target))
+            log.info("Moved work/%s into %s/", entry.name, song_dir.name)
+
+    legacy_data["work_dir"] = str(base)
+    data_path = song_dir / f"{DATA_FILE_STEM}{pointer_path.suffix}"
+    log.info(
+        "Migrated %s to the new layout: a pointer at %s, and this song's data and "
+        "working files under %s.",
+        pointer_path, pointer_path, song_dir,
+    )
+    return data_path
+
+
 class Project:
     """Wrapper around the project file (project.yaml or project.json)."""
 
@@ -179,22 +253,55 @@ class Project:
             raise VideoLyricsError(
                 f"No project file at {path}. Run `video-lyrics init` first."
             )
-        data = deserialize(path.read_text(encoding="utf-8"), path.suffix)
-        version = data.get("schema_version")
-        if version != SCHEMA_VERSION:
+        loaded = deserialize(path.read_text(encoding="utf-8"), path.suffix)
+        _check_version(loaded, path)
+
+        if _is_legacy(loaded):
+            data_path = _migrate_legacy(path, loaded)
+            if data_path.resolve() == path.resolve():
+                # `path` was itself already sitting at the per-song data location
+                # (e.g. opened directly with -p) - nothing to split, just use it.
+                return cls(path, loaded)
+            project = cls(path, loaded)
+            project.save()  # write the new pointer + data files immediately
+            return project
+
+        title = loaded.get("title")
+        if not title:
+            raise VideoLyricsError(f"{path} has no 'title' - is this a project pointer file?")
+        base = expand(loaded.get("work_dir") or (path.parent / "work"))
+        data_path = base / slugify(title) / f"{DATA_FILE_STEM}{path.suffix}"
+        if not data_path.is_file():
             raise VideoLyricsError(
-                f"{path} has schema_version {version!r}; this build expects {SCHEMA_VERSION}."
+                f"{path} points at {data_path}, which does not exist. If you moved "
+                "the project, move its work/<song> folder along with it."
             )
+        data = deserialize(data_path.read_text(encoding="utf-8"), data_path.suffix)
+        _check_version(data, data_path)
         return cls(path, data)
 
     def save(self, path: Path | str | None = None) -> Path:
-        """Write the project out, in the format its suffix asks for."""
+        """Write the project out.
+
+        Saving to the project's own canonical location splits it: a minimal
+        pointer at `self.path`, and everything else at `self.data_path` (inside
+        its own `work/<slug>/` folder). Saving to any other, explicit path
+        instead writes one self-contained file there - used by `convert` and by
+        the Resolve handoff job, which both want a single portable snapshot.
+        """
         target = Path(path) if path else self.path
-        target.parent.mkdir(parents=True, exist_ok=True)
-        tmp = target.with_suffix(target.suffix + ".tmp")
-        tmp.write_text(serialize(self.data, target.suffix), encoding="utf-8")
-        tmp.replace(target)
-        return target
+        if path is not None and target.resolve() != self.path.resolve():
+            _atomic_write(target, serialize(self.data, target.suffix))
+            return target
+
+        _atomic_write(self.data_path, serialize(self.data, self.data_path.suffix))
+        pointer = {
+            "schema_version": SCHEMA_VERSION,
+            "title": self.title,
+            "work_dir": self.data["work_dir"],
+        }
+        _atomic_write(self.path, serialize(pointer, self.path.suffix))
+        return self.path
 
     def _apply_defaults(self) -> None:
         self.data.setdefault("schema_version", SCHEMA_VERSION)
@@ -269,8 +376,18 @@ class Project:
     # ------------------------------------------------------------ work paths
 
     @property
+    def slug(self) -> str:
+        return slugify(self.title)
+
+    @property
+    def data_path(self) -> Path:
+        """Where this song's full project data lives, inside its own work folder."""
+        return Path(self.data["work_dir"]) / self.slug / f"{DATA_FILE_STEM}{self.path.suffix}"
+
+    @property
     def work_dir(self) -> Path:
-        return ensure_dir(self.data["work_dir"])
+        """This song's own working folder - every intermediate file lives under it."""
+        return ensure_dir(Path(self.data["work_dir"]) / self.slug)
 
     @property
     def images_dir(self) -> Path:
@@ -302,7 +419,8 @@ class Project:
             f"author      : {self.author}",
             f"audio       : {self.audio}",
             f"lyrics      : {self.lyrics_source}",
-            f"work dir    : {self.data['work_dir']}",
+            f"project file: {self.path}",
+            f"song folder : {self.work_dir}",
             f"output      : {self.render_settings['output']}",
             f"duration    : {self.data.get('duration', '-')}",
             f"lyric lines : {len(self.data.get('lyric_lines', []))} in source",

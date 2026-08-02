@@ -175,7 +175,7 @@ def main():
             project = Project(Path(job["project"]), job["data"])
         else:
             project = Project.load(job["project"])
-        reporter.attach_log(Path(project.data["work_dir"]) / "resolve-launcher.log")
+        reporter.attach_log(project.work_dir / "resolve-launcher.log")
         reporter("building {!r}".format(project.title))
 
         result = render_resolve.build_and_render(

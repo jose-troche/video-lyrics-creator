@@ -132,7 +132,7 @@ def instructions(project) -> str:
             f"  It will build the timeline for {project.title!r} and render to:",
             f"    {project.output}",
             "",
-            f"  Progress is logged to {Path(project.data['work_dir']) / 'resolve-launcher.log'}",
+            f"  Progress is logged to {project.work_dir / 'resolve-launcher.log'}",
             "",
         ]
     )
