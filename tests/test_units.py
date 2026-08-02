@@ -50,6 +50,66 @@ def test_a_stub_without_an_id_is_an_error(tmp_path):
         google_drive.doc_id_from_gdoc(stub)
 
 
+def _paragraph(*runs: str) -> dict:
+    return {"paragraph": {"elements": [{"textRun": {"content": run}} for run in runs]}}
+
+
+def test_render_body_text_reconstructs_paragraphs_from_the_docs_api_shape():
+    # Each paragraph's own last run already carries its trailing "\n" - the Docs
+    # API's own way of representing a paragraph break.
+    body = {
+        "content": [
+            _paragraph("Once I was dead\n"),
+            _paragraph("Offending ", "God\n"),
+            _paragraph("\n"),  # a blank line
+        ]
+    }
+    assert google_drive.render_body_text(body) == "Once I was dead\nOffending God\n\n"
+
+
+def test_render_body_text_skips_non_paragraph_content_like_tables():
+    body = {"content": [{"sectionBreak": {}}, _paragraph("Immeasurable grace\n")]}
+    assert google_drive.render_body_text(body) == "Immeasurable grace\n"
+
+
+def test_export_document_reads_only_the_first_tab(monkeypatch):
+    """A multi-tab doc must not have every tab's content requested or returned.
+
+    The Docs API's own contract is: without `includeTabsContent`, `body` holds
+    just the first tab. This pins two things - the request never asks for every
+    tab, and the response is read from `body`, not from a `tabs` list.
+    """
+    captured = {}
+
+    class FakeResponse:
+        status_code = 200
+
+        def json(self):
+            return {
+                "body": {"content": [_paragraph("Once I was dead\n")]},
+                # A tabs list would only appear with includeTabsContent=true; the
+                # code must never send that param, so this must never be read.
+                "tabs": [
+                    {"documentTab": {"body": {"content": [_paragraph("Once I was dead\n")]}}},
+                    {"documentTab": {"body": {"content": [_paragraph("A discarded draft\n")]}}},
+                ],
+            }
+
+    def fake_get(url, headers=None, params=None, timeout=None):
+        captured["url"] = url
+        captured["params"] = params
+        return FakeResponse()
+
+    monkeypatch.setattr(google_drive.requests, "get", fake_get)
+    monkeypatch.setattr(google_drive, "access_token", lambda: "token")
+
+    text = google_drive.export_document("doc123")
+
+    assert text == "Once I was dead\n"
+    assert "doc123" in captured["url"]
+    assert not (captured["params"] or {}).get("includeTabsContent")
+
+
 # ------------------------------------------------------------------ project
 
 

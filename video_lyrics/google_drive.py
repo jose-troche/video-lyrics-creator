@@ -1,7 +1,7 @@
 """Minimal Google Drive OAuth + document export.
 
-Only two things are needed: turn a client id/secret into a long-lived refresh
-token (one interactive login), and export a Google Doc as plain text.
+Turn a client id/secret into a long-lived refresh token (one interactive login),
+and read a Google Doc's text - the first tab only when the doc has more than one.
 """
 
 from __future__ import annotations
@@ -25,7 +25,7 @@ from .util import VideoLyricsError, log
 AUTH_URI = "https://accounts.google.com/o/oauth2/v2/auth"
 TOKEN_URI = "https://oauth2.googleapis.com/token"
 SCOPE = "https://www.googleapis.com/auth/drive.readonly"
-EXPORT_URI = "https://www.googleapis.com/drive/v3/files/{file_id}/export"
+DOCUMENT_URI = "https://docs.googleapis.com/v1/documents/{document_id}"
 
 ENV_CLIENT_ID = "GOOGLE_DRIVE_CLIENT_ID"
 ENV_CLIENT_SECRET = "GOOGLE_DRIVE_CLIENT_SECRET"
@@ -95,22 +95,47 @@ def access_token(refresh_token: str | None = None) -> str:
     return response.json()["access_token"]
 
 
-def export_document(doc_id: str, *, mime_type: str = "text/plain") -> str:
-    """Download a Google Doc as text."""
+def export_document(doc_id: str) -> str:
+    """Return a Google Doc's text - the first tab only.
+
+    Uses the Docs API rather than Drive's plain-text export: a doc can hold
+    several tabs (drafts, notes, alternate takes alongside the real lyrics), and
+    the Docs API has an explicit, documented contract for this - call it without
+    `includeTabsContent` and a multi-tab document's `body` holds just the first
+    tab. Passing that parameter would instead return every tab, which is exactly
+    what must not happen here.
+    """
     token = access_token()
     response = requests.get(
-        EXPORT_URI.format(file_id=doc_id),
-        params={"mimeType": mime_type},
+        DOCUMENT_URI.format(document_id=doc_id),
         headers={"Authorization": f"Bearer {token}"},
         timeout=60,
     )
     if response.status_code != 200:
         raise VideoLyricsError(
-            f"Google Doc export failed ({response.status_code}): {response.text.strip()[:300]}"
+            f"Google Doc read failed ({response.status_code}): {response.text.strip()[:300]}"
         )
-    # Drive exports UTF-8, but the response carries no charset so requests would
-    # otherwise fall back to latin-1 and mangle every curly apostrophe.
-    return response.content.decode("utf-8-sig", errors="replace")
+    document = response.json()
+    return render_body_text(document.get("body") or {})
+
+
+def render_body_text(body: dict) -> str:
+    """Flatten a Docs API `body` into plain text, paragraphs only.
+
+    Each paragraph's last text run already carries its own trailing newline (how
+    the Docs API represents paragraph breaks), so paragraphs are simply
+    concatenated - inserting another newline would double them up.
+    """
+    pieces: list[str] = []
+    for element in body.get("content") or []:
+        paragraph = element.get("paragraph")
+        if not paragraph:
+            continue
+        for run in paragraph.get("elements") or []:
+            text = (run.get("textRun") or {}).get("content")
+            if text:
+                pieces.append(text)
+    return "".join(pieces)
 
 
 class _CallbackHandler(http.server.BaseHTTPRequestHandler):
