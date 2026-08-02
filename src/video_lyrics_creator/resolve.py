@@ -4,7 +4,7 @@ import json
 import time
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any
+from typing import Any, Callable
 
 from .errors import ResolveError
 
@@ -96,13 +96,19 @@ class BuildResult:
 
 
 class ResolveTimelineBuilder:
-    def __init__(self, resolve: Any, manifest: dict):
+    def __init__(
+        self,
+        resolve: Any,
+        manifest: dict,
+        progress: Callable[[str], None] | None = None,
+    ):
         self.resolve = resolve
         self.manifest = manifest
         self.plan = timeline_plan(manifest)
         self.project = None
         self.media_pool = None
         self.timeline = None
+        self.progress = progress or (lambda _message: None)
 
     def build(
         self,
@@ -113,13 +119,20 @@ class ResolveTimelineBuilder:
         render: bool = False,
         wait: bool = True,
     ) -> BuildResult:
+        self._report(f"Opening Resolve project: {project_name}")
         self._open_project(project_name)
+        self._report("Configuring 1920x1080 timeline settings")
         self._configure_project()
+        self._report(f"Creating timeline: {timeline_name}")
         self._create_timeline(timeline_name, replace_timeline)
         self._ensure_tracks()
+        self._report("Adding the original audio")
         self._append_audio()
+        self._report(f"Adding {len(self.plan['scenes'])} animated image scenes")
         self._append_scenes()
+        self._report(f"Adding {len(self.plan['lyrics'])} fading lyric overlays")
         self._append_overlays()
+        self._report("Adding lyric review markers")
         self._add_review_markers()
         manager = self.resolve.GetProjectManager()
         if not manager.SaveProject():
@@ -127,12 +140,16 @@ class ResolveTimelineBuilder:
 
         result = BuildResult(project_name=project_name, timeline_name=timeline_name)
         if render:
+            self._report("Starting Resolve video render")
             result.render_job_id = self._queue_render()
             if not self.project.StartRendering([result.render_job_id], False):
                 raise ResolveError("Resolve did not start the render job")
             if wait:
                 result.render_status = self._wait_for_render(result.render_job_id)
         return result
+
+    def _report(self, message: str) -> None:
+        self.progress(message)
 
     def _open_project(self, name: str) -> None:
         manager = self.resolve.GetProjectManager()
@@ -150,9 +167,8 @@ class ResolveTimelineBuilder:
         settings = {
             "timelineResolutionWidth": str(self.plan["width"]),
             "timelineResolutionHeight": str(self.plan["height"]),
-            # Resolve locks frame-rate settings as soon as timeline media exists. Playback must
-            # be requested before the timeline rate when creating a fresh project.
-            "timelinePlaybackFrameRate": _fps_string(self.plan["fps"]),
+            # timelinePlaybackFrameRate is not a supported scripting setting in Resolve 21 Free.
+            # The supported timeline rate must be set before adding timeline media.
             "timelineFrameRate": _fps_string(self.plan["fps"]),
             "timelineSampleRate": "48000",
         }
@@ -167,8 +183,8 @@ class ResolveTimelineBuilder:
             raise ResolveError(
                 "Resolve rejected project setting(s): "
                 + ", ".join(failed)
-                + ". Resolve locks playback/frame-rate settings after timeline media exists; "
-                "stage this job with a new --project-name."
+                + ". Resolve locks timeline settings after timeline media exists; stage this "
+                "job with a new --project-name."
             )
 
     def _create_timeline(self, name: str, replace: bool) -> None:

@@ -5,7 +5,7 @@ import subprocess
 import traceback
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any
+from typing import Any, Callable
 
 from .errors import VideoLyricsError
 from .handoff import default_handoff_root, load_workspace_job, result_path_for_job
@@ -13,11 +13,18 @@ from .manifest import validate_manifest
 from .resolve import ResolveTimelineBuilder
 
 
-def run_latest_workspace_job(resolve: Any) -> dict[str, Any]:
-    return run_workspace_job(resolve, default_handoff_root() / "latest-job.json")
+def run_latest_workspace_job(
+    resolve: Any, progress: Callable[[str], None] | None = None
+) -> dict[str, Any]:
+    return run_workspace_job(resolve, default_handoff_root() / "latest-job.json", progress=progress)
 
 
-def run_workspace_job(resolve: Any, job_path: str | Path) -> dict[str, Any]:
+def run_workspace_job(
+    resolve: Any,
+    job_path: str | Path,
+    *,
+    progress: Callable[[str], None] | None = None,
+) -> dict[str, Any]:
     source = Path(job_path).expanduser().resolve()
     job = load_workspace_job(source)
     result_path = result_path_for_job(source)
@@ -33,7 +40,7 @@ def run_workspace_job(resolve: Any, job_path: str | Path) -> dict[str, Any]:
     settings = manifest.get("resolve_job", {})
     started = datetime.now(timezone.utc).isoformat(timespec="seconds")
     try:
-        builder = ResolveTimelineBuilder(resolve, manifest)
+        builder = ResolveTimelineBuilder(resolve, manifest, progress=progress)
         build = builder.build(
             project_name=str(settings.get("project_name") or f"{manifest['title']} - Lyric Video"),
             timeline_name=str(settings.get("timeline_name") or manifest["title"]),

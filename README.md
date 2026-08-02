@@ -263,12 +263,17 @@ word alignment; tune `video.lyric_lead` and `video.lyric_fade` in the manifest i
 needs a different feel. Fusion animation inputs use explicit Bezier splines, so title/lyric fades,
 Ken Burns motion, and scene cross-dissolves are real keyframed effects rather than static values.
 
-Resolve locks playback and timeline frame rates after timeline media has been created. If a prior
-project previews 30 fps media at 24 fps (slow or broken-up audio), stage under a fresh project name:
+Resolve locks supported timeline settings after timeline media has been created. If a prior
+project has the wrong timeline rate, stage under a fresh project name:
 
 ```bash
 video-lyrics build project.json --render --project-name "Song Title - Lyric Video 30fps"
 ```
+
+Resolve 21 Free does not expose `timelinePlaybackFrameRate` through its scripting API. The
+launcher therefore configures the supported 30 fps timeline rate and 48 kHz audio rate, while the
+final export continues to use the byte-identical staged WAV. The Workspace launcher displays a
+native progress window and reports any failure there as well as in `resolve-launcher.log`.
 
 See [the free Resolve workflow](docs/free-resolve-workflow.md) for handoff and troubleshooting details and [the manifest reference](docs/manifest.md) for configuration fields.
 

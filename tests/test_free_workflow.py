@@ -99,7 +99,10 @@ class FreeWorkflowTests(unittest.TestCase):
             self.assertTrue((module_dir / "workspace.py").is_file())
             self.assertTrue((module_dir / "resolve.py").is_file())
             self.assertNotIn("connect_resolve", (module_dir / "resolve.py").read_text(encoding="utf-8"))
-            self.assertIn(str(module_dir.parent), launcher.read_text(encoding="utf-8"))
+            launcher_text = launcher.read_text(encoding="utf-8")
+            self.assertIn(str(module_dir.parent), launcher_text)
+            self.assertIn("VideoLyricsCreatorStatus", launcher_text)
+            self.assertIn("del sys.modules[module_name]", launcher_text)
 
     def test_macos_python_runtime_detection_requires_framework_binary(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -138,36 +141,39 @@ class FreeWorkflowTests(unittest.TestCase):
             )
             fake_builder = Mock()
             fake_builder.build.return_value = fake_result
-            with patch("video_lyrics_creator.workspace.ResolveTimelineBuilder", return_value=fake_builder):
-                result = run_workspace_job(object(), job_path)
+            progress = Mock()
+            with patch(
+                "video_lyrics_creator.workspace.ResolveTimelineBuilder", return_value=fake_builder
+            ) as builder_factory:
+                result = run_workspace_job(object(), job_path, progress=progress)
 
             self.assertEqual(result["status"], "complete")
             self.assertIsNone(result["output"])
+            self.assertIs(builder_factory.call_args.kwargs["progress"], progress)
             with self.assertRaises(VideoLyricsError):
                 run_workspace_job(object(), job_path)
 
-    def test_resolve_configuration_rejects_a_locked_mismatched_playback_rate(self):
+    def test_resolve_configuration_ignores_unsupported_playback_rate(self):
         project = Mock()
         project.GetSetting.side_effect = {
             "timelineResolutionWidth": "1920",
             "timelineResolutionHeight": "1080",
-            "timelineFrameRate": "30",
-            "timelinePlaybackFrameRate": "24",
+            "timelineFrameRate": "24",
+            "timelineSampleRate": "48000",
         }.get
-        project.SetSetting.side_effect = lambda key, value: key != "timelinePlaybackFrameRate"
+        project.SetSetting.return_value = True
         builder = ResolveTimelineBuilder.__new__(ResolveTimelineBuilder)
         builder.project = project
         builder.plan = {"width": 1920, "height": 1080, "fps": 30.0}
 
-        with self.assertRaisesRegex(ResolveError, "timelinePlaybackFrameRate"):
-            builder._configure_project()
+        builder._configure_project()
 
-        self.assertIn(
-            ("timelinePlaybackFrameRate", "30"),
-            [call.args for call in project.SetSetting.call_args_list],
+        project.SetSetting.assert_called_once_with("timelineFrameRate", "30")
+        self.assertNotIn(
+            "timelinePlaybackFrameRate", [call.args[0] for call in project.GetSetting.call_args_list]
         )
 
-    def test_resolve_configuration_sets_playback_rate_before_timeline_rate(self):
+    def test_resolve_configuration_sets_supported_timeline_and_audio_rates(self):
         project = Mock()
         project.GetSetting.return_value = ""
         project.SetSetting.return_value = True
@@ -178,8 +184,9 @@ class FreeWorkflowTests(unittest.TestCase):
         builder._configure_project()
 
         keys = [call.args[0] for call in project.SetSetting.call_args_list]
-        self.assertLess(keys.index("timelinePlaybackFrameRate"), keys.index("timelineFrameRate"))
+        self.assertIn("timelineFrameRate", keys)
         self.assertIn("timelineSampleRate", keys)
+        self.assertNotIn("timelinePlaybackFrameRate", keys)
 
     def test_fusion_animation_requires_an_explicit_spline_modifier(self):
         comp = Mock()

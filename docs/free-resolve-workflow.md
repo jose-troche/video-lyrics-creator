@@ -111,10 +111,10 @@ The process does not delete a timeline without explicit authorization. Restage w
 
 ### Resolve preview audio sounds slow or broken up
 
-The final MP4 uses freshly muxed audio and can sound correct even when a project created at the
-wrong playback rate previews poorly. Resolve locks playback/frame-rate controls after timeline
-media exists. Stage under a fresh project name so the launcher can set both rates before creating
-the timeline:
+The final MP4 uses freshly muxed audio and can sound correct even when Resolve preview playback is
+poor. Resolve 21 Free does not expose `timelinePlaybackFrameRate` through its scripting API. The
+launcher sets the supported 30 fps timeline rate and 48 kHz audio rate before adding media. If an
+older project has the wrong timeline rate, stage under a fresh project name:
 
 ```bash
 video-lyrics build project.json --render \
