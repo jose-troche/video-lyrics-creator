@@ -1,8 +1,8 @@
 from video_lyrics import scenes
 
 
-def cue(start, end, text):
-    return {"start": start, "end": end, "text": text, "line_index": 0}
+def cue(start, end, text, line_index=0):
+    return {"start": start, "end": end, "text": text, "line_index": line_index}
 
 
 BASIC = [
@@ -41,6 +41,30 @@ def test_a_pair_that_would_run_past_the_maximum_splits_apart():
     cues = [cue(0.0, 10.0, "a"), cue(10.0, 20.0, "b")]  # 10s each, 20s together
     groups = scenes.group_cues(cues, lines_per_image=2, scene_gap=2.5)
     assert [group["lines"] for group in groups] == [["a"], ["b"]]
+
+
+def test_a_section_boundary_always_starts_a_new_image():
+    cues = [
+        cue(0.0, 1.0, "last line of verse", line_index=0),
+        cue(1.0, 2.0, "first line of chorus", line_index=1),
+    ]
+    groups = scenes.group_cues(
+        cues, lines_per_image=2, scene_gap=2.5, section_starts={1}
+    )
+    assert [group["lines"] for group in groups] == [
+        ["last line of verse"], ["first line of chorus"]
+    ]
+
+
+def test_a_cue_with_no_line_index_never_forces_a_section_break():
+    cues = [
+        cue(0.0, 1.0, "a", line_index=None),
+        cue(1.0, 2.0, "b", line_index=None),
+    ]
+    groups = scenes.group_cues(
+        cues, lines_per_image=2, scene_gap=2.5, section_starts={1}
+    )
+    assert [group["lines"] for group in groups] == [["a", "b"]]
 
 
 def test_a_pair_only_slightly_over_the_maximum_still_beats_a_sliver():

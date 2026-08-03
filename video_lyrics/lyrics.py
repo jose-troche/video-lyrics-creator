@@ -29,6 +29,17 @@ TEXT_SUFFIXES = {".txt", ".text", ".md", ".lrc"}
 
 def load_lines(source: Path) -> list[str]:
     """Return the reference lyric lines, in order, one per displayed line."""
+    lines, _sections = load_lines_with_sections(source)
+    return lines
+
+
+def load_lines_with_sections(source: Path) -> tuple[list[str], set[int]]:
+    """As `load_lines`, plus the indices of lines that start a new section.
+
+    A section starts at the first line of the song and at the first line after
+    any marker such as `[Chorus]` or `Verse 2:` - used so an image is never
+    built from lines either side of a section break.
+    """
     source = Path(source)
     if source.suffix.lower() == ".gdoc":
         doc_id = google_drive.doc_id_from_gdoc(source)
@@ -40,23 +51,35 @@ def load_lines(source: Path) -> list[str]:
         raise VideoLyricsError(
             f"Unsupported lyrics source {source.suffix!r}; use a .txt file or a .gdoc file."
         )
-    return clean_lines(raw)
+    return clean_lines_with_sections(raw)
 
 
 def clean_lines(raw: str) -> list[str]:
     """Normalise a lyric document into displayable lines."""
+    lines, _sections = clean_lines_with_sections(raw)
+    return lines
+
+
+def clean_lines_with_sections(raw: str) -> tuple[list[str], set[int]]:
+    """As `clean_lines`, plus the indices of lines that start a new section."""
     raw = raw.replace("\r\n", "\n").replace("\r", "\n")
     raw = raw.replace("﻿", "").replace(" ", " ")
     lines: list[str] = []
+    section_starts: set[int] = set()
+    at_boundary = True
     for line in raw.split("\n"):
         line = unicodedata.normalize("NFC", line).strip()
         line = re.sub(r"\s+", " ", line)
         if not line:
             continue
         if SECTION_RE.match(line):
+            at_boundary = True
             continue
+        if at_boundary:
+            section_starts.add(len(lines))
+            at_boundary = False
         lines.append(line)
-    return lines
+    return lines, section_starts
 
 
 def is_section_marker(line: str) -> bool:

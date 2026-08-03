@@ -275,23 +275,30 @@ any more than it can add a transition, so all three - the motion, the overlay
 fades, and now the audio fade - work the same way: baked into the media up
 front, so assembly is just laying finished clips end to end.
 
-* `work/clips/` — the image bed. Each scene is rendered with its Ken Burns move, and
-  every scene boundary gets a real cross-dissolve clip whose two halves continue the
-  neighbouring moves, so the clips can sit end to end on one track and still dissolve.
-  `video.zoom` scales with how long a scene is actually on screen, so a quick cut
-  and a long instrumental hold both move at a similar, steady rate rather than one
-  crawling and the other racing.
+* `work/clips/` — the image bed. Each scene is rendered with its Ken Burns move -
+  `zoom_in` or `zoom_out` only; a pan crops the same margin off the top and bottom
+  for its whole span rather than relaxing to the full frame the way a zoom does at
+  one end, so it can permanently cut off a subject sitting near the top or bottom
+  of the image, and is left out of the automatic rotation for that reason. Every
+  scene boundary gets a real cross-dissolve clip whose two halves continue the
+  neighbouring moves, so the clips can sit end to end on one track and still
+  dissolve. `video.zoom` scales with how long a scene is actually on screen, so a
+  quick cut and a long instrumental hold both move at a similar, steady rate
+  rather than one crawling and the other racing.
 
   `video-lyrics plan` decides how many lines share each image by how long they
   take to sing, not a fixed count: short lines pair up, a line long enough to
   carry an image alone gets one, and either way an image never sits on screen for
   under `alignment.min_scene_duration` (4s) or over `alignment.max_scene_duration`
-  (15s). A transition only ever falls between lines, never inside one. A long
-  instrumental stretch with no lyrics in it becomes a few evenly-sized images
-  instead of one held far too long. A scene whose lines (or, for an instrumental
-  break, the title or surrounding lines) mention God, Jesus, or Christ gets an
-  extra instruction in its prompt: if a divine figure appears, keep the face
-  blurred, veiled, or turned away rather than sharply detailed.
+  (15s). A transition only ever falls between lines, never inside one, and never
+  between two lines from different sections either - the last line of a verse and
+  the first line of the chorus that follows it never share an image, based on the
+  `[Verse]` / `[Chorus]` / ... markers in the lyrics source. A long instrumental
+  stretch with no lyrics in it becomes a few evenly-sized images instead of one
+  held far too long. A scene whose lines (or, for an instrumental break, the title
+  or surrounding lines) mention God, Jesus, or Christ gets an extra instruction in
+  its prompt: if a divine figure appears, keep the face blurred, veiled, or turned
+  away rather than sharply detailed.
 * `work/overlay-clips/` — the lyric and title clips as QuickTime Animation movies
   with an alpha channel and their fades already in the pixels.
 

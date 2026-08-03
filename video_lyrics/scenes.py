@@ -6,7 +6,11 @@ import math
 import re
 from typing import Any
 
-MOTION_CYCLE = ("zoom_in", "zoom_out", "pan_right", "zoom_in", "pan_left", "zoom_out")
+# pan_left/pan_right are deliberately excluded: a pan holds the same crop margin
+# top and bottom for its whole span (never relaxing to the full frame the way
+# zoom_in/zoom_out do at one end), so it can permanently cut off a subject sitting
+# near the top or bottom of the generated image. zoom_in/zoom_out only, for now.
+MOTION_CYCLE = ("zoom_in", "zoom_out")
 
 MIN_SCENE_DURATION = 4.0    # no image is ever shown for less than this
 MAX_SCENE_DURATION = 15.0   # ... or for longer than this
@@ -42,6 +46,7 @@ def group_cues(
     scene_gap: float = 2.5,
     min_scene: float = MIN_SCENE_DURATION,
     max_scene: float = MAX_SCENE_DURATION,
+    section_starts: frozenset[int] | set[int] = frozenset(),
 ) -> list[dict[str, Any]]:
     """Bundle 1-2 consecutive lyric lines per image.
 
@@ -51,7 +56,9 @@ def group_cues(
     into two - unless the first line is still short of `min_scene` even alone,
     in which case an overlong image beats one that barely shows at all. A gap
     wider than `scene_gap` always starts a new image regardless; it belongs to
-    the next phrase, not this one.
+    the next phrase, not this one. So does a cue whose `line_index` opens a new
+    section (`section_starts`) - a verse and the chorus that follows it never
+    share an image, whatever the timing looks like.
     """
     groups: list[dict[str, Any]] = []
     current: list[dict[str, Any]] = []
@@ -74,10 +81,12 @@ def group_cues(
         if current:
             gap = cue["start"] - current[-1]["end"]
             candidate_span = cue["end"] - current[0]["start"]
+            new_section = cue.get("line_index") in section_starts
             if (
                 len(current) >= max(1, lines_per_image)
                 or gap > scene_gap
                 or (candidate_span > max_scene and own_span() >= min_scene)
+                or new_section
             ):
                 flush()
         current.append(cue)
@@ -156,11 +165,12 @@ def plan(
     scene_gap: float = 2.5,
     min_scene: float = MIN_SCENE_DURATION,
     max_scene: float = MAX_SCENE_DURATION,
+    section_starts: frozenset[int] | set[int] = frozenset(),
 ) -> list[dict[str, Any]]:
     """Return scenes covering [0, duration] with no gaps and no overlaps."""
     groups = group_cues(
         cues, lines_per_image=lines_per_image, scene_gap=scene_gap,
-        min_scene=min_scene, max_scene=max_scene,
+        min_scene=min_scene, max_scene=max_scene, section_starts=section_starts,
     )
 
     scenes: list[dict[str, Any]] = []

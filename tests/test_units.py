@@ -15,6 +15,13 @@ def test_section_markers_and_blank_lines_are_dropped():
     assert lyrics.clean_lines(raw) == ["Once I was dead", "But Christ is rich"]
 
 
+def test_section_starts_mark_the_first_line_of_the_song_and_after_each_marker():
+    raw = "[Verse 1]\nOnce I was dead\nAnd lost\n\nChorus:\nBut Christ is rich\nAnd near\n"
+    lines, sections = lyrics.clean_lines_with_sections(raw)
+    assert lines == ["Once I was dead", "And lost", "But Christ is rich", "And near"]
+    assert sections == {0, 2}
+
+
 def test_whitespace_is_normalised_but_wording_is_untouched():
     assert lyrics.clean_lines("  I  walked   the world’s ways \n") == [
         "I walked the world’s ways"

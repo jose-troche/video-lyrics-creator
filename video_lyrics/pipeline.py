@@ -30,10 +30,11 @@ STAGES = ("lyrics", "transcribe", "align", "tune", "plan", "images", "overlays",
 
 def stage_lyrics(project: Project, *, force: bool = False, **_: Any) -> None:
     """Read the reference lyrics and measure the song."""
-    lines = lyrics_mod.load_lines(project.lyrics_source)
+    lines, section_starts = lyrics_mod.load_lines_with_sections(project.lyrics_source)
     if not lines:
         raise VideoLyricsError(f"No lyric lines found in {project.lyrics_source}")
     project.data["lyric_lines"] = lines
+    project.data["lyric_section_starts"] = sorted(section_starts)
     project.lyrics_text_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
     duration = audio_mod.duration(project.audio)
@@ -141,6 +142,7 @@ def stage_plan(project: Project, *, force: bool = False, **_: Any) -> None:
         scene_gap=float(settings["scene_gap"]),
         min_scene=float(settings["min_scene_duration"]),
         max_scene=float(settings["max_scene_duration"]),
+        section_starts=set(project.data.get("lyric_section_starts", [])),
     )
     if not force:
         planned = scenes_mod.merge_existing_images(planned, project.scenes)
