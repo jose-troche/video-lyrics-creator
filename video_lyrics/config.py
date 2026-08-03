@@ -37,7 +37,7 @@ JSON_SUFFIXES = (".json",)
 DEFAULT_PROJECT_NAMES = ("project.yaml", "project.yml", "project.json")
 DEFAULT_PROJECT_NAME = DEFAULT_PROJECT_NAMES[0]
 
-DEFAULT_AUTHOR = "Jose Troche"
+DEFAULT_AUTHOR = "José Troche"
 DEFAULT_VISUAL_STYLE = "cinematic photographic realism"
 
 VIDEO_DEFAULTS: dict[str, Any] = {
@@ -57,7 +57,7 @@ VIDEO_DEFAULTS: dict[str, Any] = {
 }
 
 IMAGE_DEFAULTS: dict[str, Any] = {
-    "provider": "codex",      # codex | supplied
+    "provider": "codex",      # codex | manual | supplied
     "model": "gpt-image-2",
     "quality": "medium",
     "lines_per_image": 2,

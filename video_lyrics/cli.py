@@ -58,7 +58,9 @@ def build_parser() -> argparse.ArgumentParser:
         stage = subparsers.add_parser(name, help=help_text)
         stage.add_argument("--force", action="store_true", help="redo work even if cached")
 
-    images = subparsers.add_parser("images", help="generate the scene images with codex")
+    images = subparsers.add_parser(
+        "images", help="generate the scene images (codex, manual, or supplied)"
+    )
     images.add_argument("--force", action="store_true")
     images.add_argument("--jobs", type=int, default=1, help="parallel codex runs")
     images.add_argument("--images-dir", help="adopt images from this folder instead")

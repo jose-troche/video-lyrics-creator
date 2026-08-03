@@ -117,6 +117,26 @@ video-lyrics render              # assemble with ffmpeg and export
 | `--images-dir DIR` | use your own images instead of generating them |
 | `--from` / `--to` | run part of the pipeline (`run --from plan --to bed`) |
 
+### Generating images without codex
+
+`image_generation.provider` controls how `video-lyrics images` fills in each scene:
+
+* `codex` (default) — calls the Codex CLI's image_gen tool automatically.
+* `manual` — no generator at all. It writes every scene's prompt, and the exact
+  filename it expects, to `work/<song>/images/prompts.txt`. Paste each prompt into
+  whatever you use by hand (ChatGPT, Midjourney, ...), save the result under that
+  filename in `work/<song>/images/`, then run `video-lyrics images` again — it
+  picks up the files you made and reports anything still missing.
+* `supplied` — same idea, but for images you already have; see `--images-dir`
+  above, they're adopted in filename order instead of matched by name.
+
+```bash
+video-lyrics set image_generation.provider manual
+video-lyrics images
+# ... create work/<song>/images/scene-001-xxxx.png etc by hand ...
+video-lyrics images
+```
+
 ## The project file
 
 `project.yaml` is a **pointer**, not the project — it holds just enough to find the

@@ -1,8 +1,11 @@
 """Produce one still image per scene.
 
-Two providers:
+Three providers:
   * ``codex``    - the Codex CLI's built-in image_gen tool, run in full-auto mode.
   * ``supplied`` - images the user already has, taken in filename order.
+  * ``manual``   - no generator at all: write every scene's prompt and expected
+                   filename to a manifest so the user can create each image by hand
+                   (ChatGPT, Midjourney, ...) and drop it into the images folder.
 """
 
 from __future__ import annotations
@@ -56,8 +59,12 @@ def generate(
 
     if provider == "supplied" or source_dir:
         return _assign_supplied(scenes, source_dir, images_dir, size)
+    if provider == "manual":
+        return _generate_manual(scenes, images_dir, size, force)
     if provider != "codex":
-        raise VideoLyricsError(f"Unknown image provider {provider!r} (use codex or supplied).")
+        raise VideoLyricsError(
+            f"Unknown image provider {provider!r} (use codex, manual, or supplied)."
+        )
 
     pending: list[tuple[dict[str, Any], Path]] = []
     for scene in scenes:
@@ -176,6 +183,51 @@ def _postprocess(path: Path, size: tuple[int, int]) -> None:
         if image.width < width:
             image = image.resize((width, int(round(width / target_ratio))), Image.LANCZOS)
         image.save(path, "PNG")
+
+
+def _manual_image_path(images_dir: Path, scene: dict[str, Any]) -> Path:
+    fingerprint = short_hash(scene["prompt"], "manual")
+    return scene_image_path(images_dir, scene, fingerprint)
+
+
+def _generate_manual(
+    scenes: list[dict[str, Any]],
+    images_dir: Path,
+    size: tuple[int, int],
+    force: bool,
+) -> list[dict[str, Any]]:
+    """Hand the prompts to the user instead of generating anything.
+
+    Writes every outstanding scene's prompt and expected filename to
+    ``prompts.txt``. Once the user has created each image by hand and saved it
+    under the exact filename shown, re-running this (same command) picks the
+    files up from disk - nothing to type back in.
+    """
+    pending: list[tuple[dict[str, Any], Path]] = []
+    for scene in scenes:
+        target = _manual_image_path(images_dir, scene)
+        if target.is_file() and not force:
+            if _valid(target):
+                _postprocess(target, size)
+                scene["image"] = str(target)
+                continue
+            log.warning("  scene %03d: %s is not a readable image, regenerating", scene["index"], target.name)
+        pending.append((scene, target))
+
+    if not pending:
+        log.info("All %d scene images already generated.", len(scenes))
+        return scenes
+
+    manifest = images_dir / "prompts.txt"
+    blocks = [f"File: {target.name}\nPrompt: {scene['prompt']}" for scene, target in pending]
+    manifest.write_text("\n\n".join(blocks) + "\n", encoding="utf-8")
+    log.info(
+        "Manual mode: wrote %d prompt(s) to %s.\n"
+        "Generate each image yourself (ChatGPT, Midjourney, ...), save it under the exact "
+        "filename shown, into %s, then re-run `video-lyrics images`.",
+        len(pending), manifest, images_dir,
+    )
+    return scenes
 
 
 def _assign_supplied(
