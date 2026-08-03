@@ -178,6 +178,56 @@ def test_deleting_a_cue_frees_its_line_again(project):
     assert session.unconfirmed() == [1, 3]
 
 
+def test_a_line_that_was_never_in_the_lyrics_can_be_added_too(project):
+    """Ad-libs, spoken asides - anything the source text never had."""
+    session = tune.Session(project)
+    where = session.insert_text("Yeah, come on!", 20.0)
+    assert where == 2
+    assert session.cues[2]["text"] == "Yeah, come on!"
+    assert session.cues[2]["line_index"] is None
+    assert session.cues[2]["tuned"] is True
+    # It isn't a reference line, so it can't show up as one still needing a cue.
+    assert session.unconfirmed() == [3]
+
+
+def test_a_freely_typed_line_still_respects_the_gap_it_is_dropped_into(project):
+    session = tune.Session(project)
+    assert session.insert_text("Yeah!", 23.5) is not None
+    assert spans(session)[2] == (23.5, 25.0)
+    assert session.insert_text("no room here", 12.0) is None
+
+
+def test_blank_or_whitespace_only_text_is_rejected(project):
+    session = tune.Session(project)
+    assert session.insert_text("   ", 20.0) is None
+    assert session.insert_text("", 20.0) is None
+    assert len(session.cues) == 3
+
+
+def test_a_cues_text_can_be_edited(project):
+    session = tune.Session(project)
+    assert session.set_text(0, "One (edited)")
+    assert session.cues[0]["text"] == "One (edited)"
+    assert session.cues[0]["tuned"] is True
+    # Its slot in the reference lyrics is unaffected - the original line "one"
+    # still counts as confirmed, just displayed differently now.
+    assert session.unconfirmed() == [3]
+
+
+def test_editing_a_freely_typed_lines_text_leaves_it_unconfirmed_to_none(project):
+    session = tune.Session(project)
+    session.insert_text("Yeah!", 20.0)
+    assert session.set_text(2, "Yeah, come on!")
+    assert session.cues[2]["line_index"] is None
+
+
+def test_editing_to_the_same_or_blank_text_is_a_no_op(project):
+    session = tune.Session(project)
+    assert not session.set_text(0, "one")
+    assert not session.set_text(0, "   ")
+    assert "tuned" not in session.cues[0]
+
+
 # ------------------------------------------------------- undo, redo and saving
 
 
@@ -198,6 +248,14 @@ def test_an_edit_after_an_undo_drops_the_redo_trail(project):
     session.undo()
     session.nudge(2, "end", 1.0)
     assert not session.redo()
+
+
+def test_adding_and_editing_text_can_be_undone(project):
+    session = tune.Session(project)
+    session.insert_text("Yeah!", 20.0)
+    session.set_text(0, "One (edited)")
+    assert session.undo() and session.cues[0]["text"] == "one"
+    assert session.undo() and len(session.cues) == 3
 
 
 def test_saving_writes_the_cues_back_into_the_project(project):

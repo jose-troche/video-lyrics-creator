@@ -98,7 +98,7 @@ class Session:
 
     def unconfirmed(self) -> list[int]:
         """Reference lines the aligner never turned into a cue."""
-        used = {cue["line_index"] for cue in self.cues}
+        used = {cue["line_index"] for cue in self.cues if cue.get("line_index") is not None}
         return [index for index in range(len(self.lines)) if index not in used]
 
     # ----------------------------------------------------------------- edits
@@ -178,6 +178,17 @@ class Session:
 
     def insert(self, line_index: int, at: float) -> int | None:
         """Give an unconfirmed reference line a cue, in the free space around `at`."""
+        return self._insert(self.lines[line_index], at, line_index=line_index)
+
+    def insert_text(self, text: str, at: float) -> int | None:
+        """Add a cue for a line that isn't in the reference lyrics at all - an ad-lib,
+        a spoken aside, anything the source text never had."""
+        text = text.strip()
+        if not text:
+            return None
+        return self._insert(text, at, line_index=None)
+
+    def _insert(self, text: str, at: float, *, line_index: int | None) -> int | None:
         position = len([cue for cue in self.cues if cue["start"] <= at])
         low = self.cues[position - 1]["end"] if position else 0.0
         high = self.cues[position]["start"] if position < len(self.cues) else self.duration
@@ -189,12 +200,23 @@ class Session:
         self.cues.insert(position, {
             "start": round(start, 3),
             "end": round(end, 3),
-            "text": self.lines[line_index],
+            "text": text,
             "line_index": line_index,
             "alignment_confidence": 0.0,
             "tuned": True,
         })
         return position
+
+    def set_text(self, index: int, text: str) -> bool:
+        """Change what a cue displays. Free-form - it need not match the reference
+        line it was aligned to, if it has one at all."""
+        text = text.strip()
+        cue = self.cues[index]
+        if not text or text == cue["text"]:
+            return False
+        self._checkpoint()
+        cue["text"], cue["tuned"] = text, True
+        return True
 
     # ------------------------------------------------------- undo and saving
 
@@ -306,6 +328,12 @@ class Tuner:
         # transport
         if key == ord(" "):
             player.toggle()
+            if player.playing:
+                # Starting playback always resumes following: whichever line is
+                # actually sounding is what should be highlighted, in the waveform
+                # and in the list, regardless of whether an earlier ↑/↓ or `f` had
+                # turned that off.
+                self.follow = True
         elif key == curses.KEY_LEFT:
             player.seek(player.position - SEEK_STEP)
         elif key == curses.KEY_RIGHT:
@@ -363,6 +391,12 @@ class Tuner:
                 self.message = f"removed {text!r} - u to undo"
         elif key == ord("a"):
             self._add(screen)
+        elif key == ord("e") and cue:
+            text = self._text_input(screen, "text: ", initial=cue["text"])
+            if text and session.set_text(self.selected, text):
+                self.message = "text updated"
+            else:
+                self.message = "text unchanged"
         elif key == ord("u"):
             self.message = "undone" if session.undo() else "nothing to undo"
         elif key in (ord("y"), 18):  # ^R
@@ -411,11 +445,64 @@ class Tuner:
         finally:
             screen.timeout(FRAME)
 
+    def _text_input(
+        self, screen: "curses._CursesWindow", prompt: str, initial: str = ""
+    ) -> str | None:
+        """A single-line editable prompt on the status bar. None only if cancelled -
+        an empty confirmed line comes back as `""`, for the caller to reject."""
+        height, width = screen.getmaxyx()
+        text = list(initial)
+        cursor = len(text)
+        curses.curs_set(1)
+        screen.timeout(-1)
+        try:
+            while True:
+                line = "".join(text)
+                _put(screen, height - 1, 0, " " * (width - 1), _colour("warn") | curses.A_BOLD)
+                _put(screen, height - 1, 1, prompt + line,
+                     _colour("warn") | curses.A_BOLD, width - 2)
+                try:
+                    screen.move(height - 1, min(width - 2, 1 + len(prompt) + cursor))
+                except curses.error:  # the line ran off the edge of a narrow window
+                    pass
+                screen.refresh()
+                try:
+                    key = screen.get_wch()
+                except curses.error:
+                    continue
+                code = key if isinstance(key, int) else None
+
+                if key in ("\n", "\r") or code in (curses.KEY_ENTER, 10, 13):
+                    return "".join(text).strip()
+                if key == "\x1b":
+                    return None
+                if key in ("\b", "\x7f") or code in (curses.KEY_BACKSPACE, 127, 8):
+                    if cursor > 0:
+                        del text[cursor - 1]
+                        cursor -= 1
+                elif code == curses.KEY_DC and cursor < len(text):
+                    del text[cursor]
+                elif code == curses.KEY_LEFT:
+                    cursor = max(0, cursor - 1)
+                elif code == curses.KEY_RIGHT:
+                    cursor = min(len(text), cursor + 1)
+                elif code == curses.KEY_HOME:
+                    cursor = 0
+                elif code == curses.KEY_END:
+                    cursor = len(text)
+                elif isinstance(key, str) and key.isprintable():
+                    text.insert(cursor, key)
+                    cursor += 1
+        finally:
+            curses.curs_set(0)
+            screen.timeout(FRAME)
+            screen.clear()
+
     def _help(self, screen: "curses._CursesWindow") -> None:
         rows = [
-            ("space", "play / pause"),
+            ("space", "play / pause - highlights the line as it plays"),
             ("← →", f"seek {SEEK_STEP:g}s     ⇧← ⇧→  seek {SEEK_JUMP:g}s"),
-            ("⏎", "play the selected line, with a run-up"),
+            ("⏎", "play just the selected line, with a run-up"),
             ("\\", "play just the edge being edited"),
             ("g", "put the playhead at the line's start"),
             ("↑ ↓", "pick a line          f  follow the song"),
@@ -425,7 +512,8 @@ class Tuner:
             ("- =", "smaller / bigger step"),
             ("[ ]", "set start / end to where the playhead is"),
             ("l", "joined edges move together, on or off"),
-            ("a d", "add a line the audio never confirmed / remove one"),
+            ("a", "add a line - one the audio never confirmed, or type a new one"),
+            ("e d", "edit a line's text / remove it"),
             ("u y", "undo / redo"),
             ("", ""),
             ("z Z", "zoom the waveform out / in"),
@@ -452,15 +540,14 @@ class Tuner:
         screen.clear()
 
     def _add(self, screen: "curses._CursesWindow") -> None:
-        """Pick one of the lines the aligner dropped and give it a cue."""
+        """Give a line a cue - one the aligner dropped, or one typed fresh that was
+        never in the reference lyrics at all."""
         pending = self.session.unconfirmed()
-        if not pending:
-            self.message = "every reference line already has a cue"
-            return
+        labels = ["+ type a new line"] + [self.session.lines[i] for i in pending]
 
         choice, top = 0, 0
         height, width = screen.getmaxyx()
-        rows = min(len(pending), max(3, height - 10))
+        rows = min(len(labels), max(3, height - 10))
         window = curses.newwin(rows + 4, min(width - 4, 78), 2, 2)
         window.bkgd(" ", _colour("panel"))
         screen.timeout(-1)
@@ -472,21 +559,30 @@ class Tuner:
                      _colour("accent") | curses.A_BOLD)
                 top = min(max(top, choice - rows + 1), choice)
                 for row in range(rows):
-                    if top + row >= len(pending):
+                    if top + row >= len(labels):
                         break
-                    line = self.session.lines[pending[top + row]]
                     chosen = top + row == choice
-                    _put(window, row + 2, 3, ("▸ " if chosen else "  ") + line,
-                         curses.A_REVERSE if chosen else 0, window.getmaxyx()[1] - 4)
+                    attr = curses.A_REVERSE if chosen else (
+                        _colour("accent") if top + row == 0 else 0
+                    )
+                    _put(window, row + 2, 3, ("▸ " if chosen else "  ") + labels[top + row],
+                         attr, window.getmaxyx()[1] - 4)
                 _put(window, rows + 2, 3, "↑↓ pick   ⏎ add   esc cancel", curses.A_DIM)
                 window.refresh()
                 key = screen.getch()
                 if key == curses.KEY_UP:
                     choice = max(0, choice - 1)
                 elif key == curses.KEY_DOWN:
-                    choice = min(len(pending) - 1, choice + 1)
+                    choice = min(len(labels) - 1, choice + 1)
                 elif key in (curses.KEY_ENTER, 10, 13):
-                    where = self.session.insert(pending[choice], self.player.position)
+                    if choice == 0:
+                        text = self._text_input(screen, "new line: ")
+                        if not text:
+                            self.message = "cancelled - nothing typed"
+                            return
+                        where = self.session.insert_text(text, self.player.position)
+                    else:
+                        where = self.session.insert(pending[choice - 1], self.player.position)
                     if where is None:
                         self.message = "no free room at the playhead for another line"
                     else:

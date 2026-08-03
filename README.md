@@ -198,19 +198,24 @@ video-lyrics tune
 It draws the song's waveform with the lyric lines laid over it, plays any part of it
 on demand, and writes the adjusted `start`/`end` back into the project file. The loop
 it is built around is: pick a line, press <kbd>⏎</kbd> to hear it, nudge an edge,
-hear it again.
+hear it again. <kbd>space</kbd> plays straight through from wherever the playhead
+is, and as it runs each line highlights - in the waveform and in the list - the
+moment it starts and clears the moment it ends, so a whole pass through the song
+makes a line that comes in early or lingers too long obvious without touching
+another key.
 
 | | |
 | --- | --- |
-| <kbd>space</kbd> | play / pause |
+| <kbd>space</kbd> | play / pause, following whichever line is sounding |
 | <kbd>←</kbd> <kbd>→</kbd> | seek 0.1s (<kbd>⇧</kbd> for 1s) |
-| <kbd>⏎</kbd> | play the selected line, with a run-up |
+| <kbd>⏎</kbd> | play just the selected line, with a run-up |
 | <kbd>\\</kbd> | play just the edge being edited |
 | <kbd>↑</kbd> <kbd>↓</kbd> | pick a line |
 | <kbd>tab</kbd> | edit its start, its end, or the whole line |
 | <kbd>,</kbd> <kbd>.</kbd> | nudge by one step (<kbd>&lt;</kbd> <kbd>&gt;</kbd> by five), <kbd>-</kbd> <kbd>=</kbd> resize the step |
 | <kbd>[</kbd> <kbd>]</kbd> | set start / end to where the playhead is |
-| <kbd>a</kbd> <kbd>d</kbd> | add a line the audio never confirmed / remove one |
+| <kbd>a</kbd> | add a line — one the audio never confirmed, or type one fresh |
+| <kbd>e</kbd> <kbd>d</kbd> | edit a line's text / remove it |
 | <kbd>u</kbd> <kbd>y</kbd> | undo / redo — <kbd>w</kbd> save, <kbd>?</kbd> all the keys |
 
 Editing a line never moves its neighbours — it only ever stops at them, so two lines
