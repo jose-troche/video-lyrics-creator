@@ -44,7 +44,7 @@ audio.
 
 Produce a video containing:
 
-- The song's audio.
+- The song's audio, with a short fade-in and fade-out, its length unchanged.
 - A title card at the beginning, showing the song title and author (José
   Troche).
 - The generated (or supplied) images, stitched together with cross-dissolve

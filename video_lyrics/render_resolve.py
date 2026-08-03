@@ -657,6 +657,11 @@ def build_and_render(project, *, resolve=None, progress: Any = None, replace: bo
     if title_item and not title_item.get("clip"):
         title_item = None
 
+    # `video-lyrics render` bakes the fade in before either engine ever sees the
+    # audio - Resolve's scripting API can no more keyframe a clip's gain than it
+    # can a transition - but fall back to the raw file if that step never ran.
+    audio = project.faded_audio_path if project.faded_audio_path.is_file() else project.audio
+
     missing = [
         clip["path"] for clip in clips if not Path(clip["path"]).is_file()
     ] + [
@@ -664,8 +669,8 @@ def build_and_render(project, *, resolve=None, progress: Any = None, replace: bo
     ]
     if title_item and not Path(title_item["clip"]).is_file():
         missing.append(title_item["clip"])
-    if not Path(project.audio).is_file():
-        missing.append(str(project.audio))
+    if not Path(audio).is_file():
+        missing.append(str(audio))
     if missing:
         raise VideoLyricsError(
             "Prepared media is missing ({} file(s), e.g. {}). "
@@ -677,7 +682,7 @@ def build_and_render(project, *, resolve=None, progress: Any = None, replace: bo
         clips=clips,
         lyric_items=lyric_items,
         title_item=title_item,
-        audio=project.audio,
+        audio=audio,
         subtitle_file=(
             Path(overlay_data["srt"])
             if settings.get("lyrics_mode") == "subtitle" and overlay_data.get("srt")

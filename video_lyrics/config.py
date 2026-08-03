@@ -53,6 +53,7 @@ VIDEO_DEFAULTS: dict[str, Any] = {
     "zoom": 1.20,             # Ken Burns zoom factor at a 6s scene; scaled by duration
     "lyric_lead": 0.35,       # show a lyric this early (s)
     "lyric_fade": 0.2,        # lyric fade in/out (s)
+    "audio_fade": 1.0,        # song fade in/out (s); does not change its length
 }
 
 IMAGE_DEFAULTS: dict[str, Any] = {
@@ -433,6 +434,11 @@ class Project:
     @property
     def srt_path(self) -> Path:
         return self.work_dir / "lyrics.srt"
+
+    @property
+    def faded_audio_path(self) -> Path:
+        """The song with its fade-in/out baked in - what actually gets rendered."""
+        return self.work_dir / "audio-faded.wav"
 
     def describe(self) -> str:
         lines = [

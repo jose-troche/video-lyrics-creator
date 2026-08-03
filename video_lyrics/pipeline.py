@@ -292,12 +292,20 @@ def stage_render(
     if output.exists() and not settings.get("replace_existing", True):
         raise VideoLyricsError(f"{output} already exists and replace_existing is false.")
 
+    audio = audio_mod.bake_fades(
+        project.audio,
+        project.faded_audio_path,
+        duration=project.duration,
+        fade=float(project.video.get("audio_fade", 1.0)),
+        force=force,
+    )
+
     if engine == "ffmpeg":
         items = ([title_item] if title_item else []) + lyric_items
         result = render_ffmpeg.render(
             clips=clips,
             overlay_items=items,
-            audio=project.audio,
+            audio=audio,
             output=output,
             work_dir=project.work_dir,
             size=project.size,

@@ -236,15 +236,18 @@ Needs **ffplay** to hear anything, which comes with ffmpeg.
 V3  Title      one clip: song title and author, faded out before the first lyric
 V2  Lyrics     one clip per confirmed line, fading in and out
 V1  Images     scene / dissolve / scene / dissolve ... covering the whole song
-A1  Music      the song, from frame 0
+A1  Music      the song, faded in and out, from frame 0
 ```
 
-The video is exactly as long as the audio — no silence at either end.
+The video is exactly as long as the audio — no silence at either end, and the
+audio fade does not trim it either: `video.audio_fade` (default 1.0s) is a gain
+ramp baked into a copy of the song, not a cut.
 
 ffmpeg has no keyframe-based motion or transition primitives to hand off to, and
-Resolve's scripting API can neither add a transition nor keyframe a clip either,
-so both engines work the same way: the motion and the fades are baked into the
-media up front, and assembly is just laying finished clips end to end.
+Resolve's scripting API can neither add a transition nor keyframe a clip's gain
+any more than it can add a transition, so all three - the motion, the overlay
+fades, and now the audio fade - work the same way: baked into the media up
+front, so assembly is just laying finished clips end to end.
 
 * `work/clips/` — the image bed. Each scene is rendered with its Ken Burns move, and
   every scene boundary gets a real cross-dissolve clip whose two halves continue the
@@ -272,6 +275,7 @@ work/<song>/project.yaml        the full project - settings and every stage's re
 work/<song>/transcript.json     cached transcription
 work/<song>/lyrics.txt          the reference lines as loaded
 work/<song>/lyrics.srt          timed lyrics
+work/<song>/audio-faded.wav     the song with its fade in/out baked in
 work/<song>/images/             one still per scene
 work/<song>/overlays/           title and lyric PNGs (transparent)
 work/<song>/overlay-clips/      the same, as alpha movie clips with fades
