@@ -40,7 +40,7 @@ def build_parser() -> argparse.ArgumentParser:
     init.add_argument("--font-size", type=int)
     init.add_argument("--whisper-model", help="faster-whisper model, e.g. small.en, medium.en")
     init.add_argument("--images-dir", help="use images from this folder instead of generating")
-    init.add_argument("--engine", choices=("resolve", "ffmpeg"))
+    init.add_argument("--engine", choices=("ffmpeg", "resolve"))
     init.add_argument(
         "--format", choices=("yaml", "json"), default="yaml",
         help="project file format when --project is not given (default yaml)",
@@ -64,7 +64,7 @@ def build_parser() -> argparse.ArgumentParser:
     images.add_argument("--images-dir", help="adopt images from this folder instead")
 
     render = subparsers.add_parser("render", help="assemble and export the video")
-    render.add_argument("--engine", choices=("resolve", "ffmpeg"))
+    render.add_argument("--engine", choices=("ffmpeg", "resolve"))
     render.add_argument("--launch", action="store_true", help="start DaVinci Resolve if needed")
     render.add_argument(
         "--handoff",
@@ -76,7 +76,7 @@ def build_parser() -> argparse.ArgumentParser:
     run = subparsers.add_parser("run", help="run the whole pipeline")
     run.add_argument("--from", dest="first", default="lyrics", choices=pipeline.STAGES)
     run.add_argument("--to", dest="last", default="render", choices=pipeline.STAGES)
-    run.add_argument("--engine", choices=("resolve", "ffmpeg"))
+    run.add_argument("--engine", choices=("ffmpeg", "resolve"))
     run.add_argument("--launch", action="store_true")
     run.add_argument("--handoff", action="store_true")
     run.add_argument("--jobs", type=int, default=1)

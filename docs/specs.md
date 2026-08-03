@@ -65,5 +65,11 @@ Requirements:
 
 ## Automation
 
-Automate the video creation using the free version of DaVinci Resolve 21's
-scripting/automation API.
+Automate the video assembly and export end to end, with no manual step required
+by default.
+
+- ffmpeg is the default render engine: it assembles and exports straight from
+  the CLI.
+- DaVinci Resolve is an optional alternative engine (`--engine resolve`), driven
+  through the free version of Resolve 21's scripting/automation API, for anyone
+  who wants the result as an editable Resolve timeline.

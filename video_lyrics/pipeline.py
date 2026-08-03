@@ -256,7 +256,7 @@ def stage_render(
 ) -> Path | None:
     """Assemble and export the finished video."""
     settings = project.render_settings
-    engine = engine or settings.get("engine", "resolve")
+    engine = engine or settings.get("engine", "ffmpeg")
     clips = project.data.get("bed")
     if not clips:
         raise VideoLyricsError("No image bed. Run `video-lyrics bed` first.")

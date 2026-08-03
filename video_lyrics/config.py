@@ -77,7 +77,7 @@ ALIGN_DEFAULTS: dict[str, Any] = {
 }
 
 RENDER_DEFAULTS: dict[str, Any] = {
-    "engine": "resolve",      # resolve | ffmpeg
+    "engine": "ffmpeg",       # ffmpeg | resolve
     "output": None,
     "format": "mp4",
     "codec": "H264",

@@ -1,8 +1,7 @@
 """Render the finished video with ffmpeg.
 
-This engine is the fallback (and the fast preview path) for when DaVinci Resolve
-is not running.  It consumes exactly the same prepared assets as the Resolve
-engine, so both produce the same edit.
+This is the default render engine. It consumes exactly the same prepared assets
+as the Resolve engine (the optional alternative), so both produce the same edit.
 """
 
 from __future__ import annotations

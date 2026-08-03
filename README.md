@@ -2,8 +2,8 @@
 
 Turns a song plus its lyrics into a finished lyric video: the words are timed from
 the actual recording, each couplet gets its own generated image, the images drift
-with a Ken Burns move and cross dissolve into one another, and DaVinci Resolve
-assembles and exports the result.
+with a Ken Burns move and cross dissolve into one another, and ffmpeg assembles and
+exports the result (DaVinci Resolve is available as an alternative render engine).
 
 ```
 audio ─┐
@@ -23,17 +23,27 @@ source .venv/bin/activate
 session — run it once per new terminal. Without it, call the script directly as
 `.venv/bin/video-lyrics ...`.
 
-Needs **ffmpeg** on the PATH, the **codex** CLI (image generation), and **DaVinci
-Resolve 18+** — the free edition is enough — for the default render engine.
+Needs **ffmpeg** on the PATH and the **codex** CLI (image generation). That is
+enough for the default render engine; **DaVinci Resolve 18+** (the free edition is
+enough) is only needed if you choose `--engine resolve`.
 
-### How Resolve gets driven
+### Rendering with ffmpeg (default)
 
-There are two routes, and the tool picks whichever is open:
+`video-lyrics render` and `video-lyrics run` use ffmpeg unless told otherwise, so
+nothing beyond the install above is required — the video is assembled and exported
+straight from the CLI.
+
+### Rendering with DaVinci Resolve (optional)
+
+Pass `--engine resolve` (or `video-lyrics set render.engine resolve`) to assemble
+and export through Resolve instead — useful if you want to open the timeline
+afterwards and keep editing by hand. There are two routes, and the tool picks
+whichever is open:
 
 **Free edition — from inside Resolve.** The free build has no "External scripting
-using" preference, so nothing outside Resolve can drive it. `video-lyrics render`
-notices, prepares every frame of media, and installs a launcher into Resolve's
-script menu. You finish with one click:
+using" preference, so nothing outside Resolve can drive it. `video-lyrics render
+--engine resolve` notices, prepares every frame of media, and installs a launcher
+into Resolve's script menu. You finish with one click:
 
 > **Workspace → Scripts → Video Lyrics Creator**
 
@@ -43,15 +53,14 @@ menu picks the script up.
 
 **Studio, or free builds that do expose the preference — straight from the CLI.**
 Set **Preferences → System → General → "External scripting using" → Local**, and
-`video-lyrics render` does the whole thing without touching Resolve's UI.
+`video-lyrics render --engine resolve` does the whole thing without touching
+Resolve's UI.
 
 ```bash
-video-lyrics resolve-check        # which route is open on this machine
-video-lyrics resolve-install      # (re)install the menu launcher
-video-lyrics render --handoff     # always finish from the Resolve menu
+video-lyrics resolve-check                    # which route is open on this machine
+video-lyrics resolve-install                  # (re)install the menu launcher
+video-lyrics render --engine resolve --handoff  # always finish from the Resolve menu
 ```
-
-`--engine ffmpeg` renders the same edit without Resolve at all.
 
 ### Google Docs lyrics (optional)
 
@@ -90,15 +99,15 @@ video-lyrics plan                # regroup lines into images
 video-lyrics images --jobs 3     # generate the stills with codex
 video-lyrics overlays            # title card, lyric PNGs, lyrics.srt
 video-lyrics bed                 # bake Ken Burns motion + cross dissolves
-video-lyrics render              # assemble in Resolve and export
+video-lyrics render              # assemble with ffmpeg and export
 ```
 
 | flag | meaning |
 | --- | --- |
 | `--force` | redo a stage even though its output is cached |
-| `--engine ffmpeg` | render without Resolve |
-| `--handoff` | prepare everything and finish from Resolve's Scripts menu |
-| `--launch` | start Resolve first and wait until it answers |
+| `--engine resolve` | render through DaVinci Resolve instead of ffmpeg |
+| `--handoff` | (Resolve) prepare everything and finish from Resolve's Scripts menu |
+| `--launch` | (Resolve) start Resolve first and wait until it answers |
 | `--images-dir DIR` | use your own images instead of generating them |
 | `--from` / `--to` | run part of the pipeline (`run --from plan --to bed`) |
 
@@ -224,8 +233,10 @@ A1  Music      the song, from frame 0
 
 The video is exactly as long as the audio — no silence at either end.
 
-Resolve's scripting API can neither add a transition nor keyframe a clip, so the
-motion and the fades are baked into the media before import:
+ffmpeg has no keyframe-based motion or transition primitives to hand off to, and
+Resolve's scripting API can neither add a transition nor keyframe a clip either,
+so both engines work the same way: the motion and the fades are baked into the
+media up front, and assembly is just laying finished clips end to end.
 
 * `work/clips/` — the image bed. Each scene is rendered with its Ken Burns move, and
   every scene boundary gets a real cross-dissolve clip whose two halves continue the
@@ -236,10 +247,11 @@ motion and the fades are baked into the media before import:
 * `work/overlay-clips/` — the lyric and title clips as QuickTime Animation movies
   with an alpha channel and their fades already in the pixels.
 
-Resolve then does the edit, the audio, and the export — either driven from the CLI,
-or by the launcher script running inside Resolve, which builds the very same
-timeline through the same code path. `work/lyrics.srt` is written
-too, so the lyrics can also be loaded as a subtitle track
+By default ffmpeg then does the edit, the audio, and the export, straight from the
+CLI. `--engine resolve` does the same assembly inside Resolve instead — either
+driven directly from the CLI, or by the launcher script running inside Resolve,
+which builds the very same timeline through the same code path. `work/lyrics.srt`
+is written too, so the lyrics can also be loaded as a subtitle track
 (`video-lyrics set render.lyrics_mode subtitle`) or uploaded to YouTube.
 
 ## Work directory
