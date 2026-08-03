@@ -82,6 +82,10 @@ def build_parser() -> argparse.ArgumentParser:
     run.add_argument("--jobs", type=int, default=1)
     run.add_argument("--images-dir")
     run.add_argument("--force", action="store_true")
+    run.add_argument(
+        "--skip-tune", action="store_true",
+        help="don't pause after align to ask about fine-tuning lyric timing",
+    )
 
     subparsers.add_parser("status", help="show what is done so far")
 
@@ -199,6 +203,7 @@ def dispatch(args: argparse.Namespace, project_path: Path) -> int:
         "engine": getattr(args, "engine", None),
         "launch": getattr(args, "launch", False),
         "handoff_only": getattr(args, "handoff", False),
+        "skip_tune": getattr(args, "skip_tune", False),
     }
 
     if command == "run":

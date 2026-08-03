@@ -1,6 +1,6 @@
 """The stages, in order, and the glue that runs them.
 
-    lyrics -> transcribe -> align -> plan -> images -> overlays -> bed -> render
+    lyrics -> transcribe -> align -> tune -> plan -> images -> overlays -> bed -> render
 
 Every stage reads and writes the project file, so any stage can be re-run on its own
 and the ones after it pick up the change.
@@ -8,6 +8,7 @@ and the ones after it pick up the change.
 
 from __future__ import annotations
 
+import sys
 from pathlib import Path
 from typing import Any, Callable
 
@@ -21,7 +22,7 @@ from . import render_ffmpeg, scenes as scenes_mod, transcribe as transcribe_mod
 from .config import Project
 from .util import VideoLyricsError, log
 
-STAGES = ("lyrics", "transcribe", "align", "plan", "images", "overlays", "bed", "render")
+STAGES = ("lyrics", "transcribe", "align", "tune", "plan", "images", "overlays", "bed", "render")
 
 
 # ------------------------------------------------------------------- stages
@@ -100,6 +101,30 @@ def stage_align(project: Project, *, force: bool = False, **_: Any) -> None:
     project.data["lyrics"] = cues
     log.info("%s", align_mod.report(lines, cues))
     project.save()
+
+
+def stage_tune(project: Project, *, skip_tune: bool = False, **_: Any) -> None:
+    """Offer to open `video-lyrics tune` before the cues are locked into scenes."""
+    if skip_tune:
+        log.info("Skipping the fine-tuning prompt (--skip-tune).")
+        return
+    if not project.cues:
+        return
+    if not (sys.stdin.isatty() and sys.stdout.isatty()):
+        log.debug("Not running interactively - skipping the fine-tuning prompt.")
+        return
+
+    answer = input("Fine-tune lyric line timing by ear now? [y/N] ").strip().lower()
+    if answer not in ("y", "yes"):
+        return
+
+    from . import tune as tune_mod
+
+    saved = tune_mod.tune(project)
+    if saved:
+        log.info("Tuning saved: %s.", saved)
+    else:
+        log.info("No timing changes saved.")
 
 
 def stage_plan(project: Project, *, force: bool = False, **_: Any) -> None:
@@ -319,6 +344,7 @@ HANDLERS: dict[str, Callable[..., Any]] = {
     "lyrics": stage_lyrics,
     "transcribe": stage_transcribe,
     "align": stage_align,
+    "tune": stage_tune,
     "plan": stage_plan,
     "images": stage_images,
     "overlays": stage_overlays,

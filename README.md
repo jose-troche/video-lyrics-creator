@@ -7,7 +7,7 @@ exports the result (DaVinci Resolve is available as an alternative render engine
 
 ```
 audio ─┐
-       ├─ transcribe → align → plan → images → overlays → bed → render → video.mp4
+       ├─ transcribe → align → tune → plan → images → overlays → bed → render → video.mp4
 lyrics ┘
 ```
 
@@ -87,6 +87,11 @@ video-lyrics cues                # the timed lyrics
 video-lyrics tune                # listen, and fix any line that sits wrong
 ```
 
+Right after aligning, `video-lyrics run` pauses to ask whether you want to
+fine-tune lyric timing by ear (`video-lyrics tune`) before it moves on to
+planning scenes; answering no just continues to `plan`. `--skip-tune` skips
+straight past the question, for scripted or unattended runs.
+
 Every stage is also its own command, so you can iterate on one part without
 redoing the rest:
 
@@ -105,6 +110,7 @@ video-lyrics render              # assemble with ffmpeg and export
 | flag | meaning |
 | --- | --- |
 | `--force` | redo a stage even though its output is cached |
+| `--skip-tune` | (`run`) don't ask about fine-tuning lyric timing after align |
 | `--engine resolve` | render through DaVinci Resolve instead of ffmpeg |
 | `--handoff` | (Resolve) prepare everything and finish from Resolve's Scripts menu |
 | `--launch` | (Resolve) start Resolve first and wait until it answers |

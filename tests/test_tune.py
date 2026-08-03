@@ -8,6 +8,7 @@ of curses and ffplay.
 from __future__ import annotations
 
 import io
+import sys
 import threading
 
 import pytest
@@ -240,6 +241,78 @@ def test_realigning_keeps_hand_tuned_cues_unless_forced(project, caplog):
     pipeline.stage_align(project)               # no transcript on disk at all
     assert project.cues[2]["start"] == 24.5
     assert "adjusted by hand" in caplog.text
+
+
+def test_tune_sits_between_align_and_plan_in_the_pipeline():
+    from video_lyrics import pipeline
+
+    assert (
+        pipeline.STAGES.index("align")
+        < pipeline.STAGES.index("tune")
+        < pipeline.STAGES.index("plan")
+    )
+
+
+def test_stage_tune_skips_without_asking_when_told_to(project, monkeypatch, caplog):
+    from video_lyrics import pipeline
+
+    caplog.set_level("INFO")
+    asked = []
+    monkeypatch.setattr("builtins.input", lambda *a: asked.append(1) or "y")
+    pipeline.stage_tune(project, skip_tune=True)
+    assert not asked
+    assert "Skipping the fine-tuning prompt" in caplog.text
+
+
+def test_stage_tune_skips_when_there_are_no_cues_yet(project, monkeypatch):
+    from video_lyrics import pipeline
+
+    project.data["lyrics"] = []
+    asked = []
+    monkeypatch.setattr("builtins.input", lambda *a: asked.append(1) or "y")
+    pipeline.stage_tune(project)
+    assert not asked
+
+
+def test_stage_tune_skips_the_prompt_outside_a_terminal(project, monkeypatch):
+    from video_lyrics import pipeline
+
+    monkeypatch.setattr(sys.stdin, "isatty", lambda: False)
+    monkeypatch.setattr(sys.stdout, "isatty", lambda: True)
+    asked = []
+    monkeypatch.setattr("builtins.input", lambda *a: asked.append(1) or "y")
+    pipeline.stage_tune(project)
+    assert not asked
+
+
+def test_stage_tune_declining_does_not_open_the_editor(project, monkeypatch):
+    from video_lyrics import pipeline
+    from video_lyrics import tune as tune_mod
+
+    monkeypatch.setattr(sys.stdin, "isatty", lambda: True)
+    monkeypatch.setattr(sys.stdout, "isatty", lambda: True)
+    monkeypatch.setattr("builtins.input", lambda *a: "n")
+    opened = []
+    monkeypatch.setattr(tune_mod, "tune", lambda proj: opened.append(proj))
+    pipeline.stage_tune(project)
+    assert not opened
+
+
+def test_stage_tune_accepting_opens_the_editor(project, monkeypatch, caplog):
+    from video_lyrics import pipeline
+    from video_lyrics import tune as tune_mod
+
+    caplog.set_level("INFO")
+    monkeypatch.setattr(sys.stdin, "isatty", lambda: True)
+    monkeypatch.setattr(sys.stdout, "isatty", lambda: True)
+    monkeypatch.setattr("builtins.input", lambda *a: "y")
+    opened = []
+    monkeypatch.setattr(
+        tune_mod, "tune", lambda proj: opened.append(proj) or "1 line retimed"
+    )
+    pipeline.stage_tune(project)
+    assert opened == [project]
+    assert "Tuning saved: 1 line retimed" in caplog.text
 
 
 # ------------------------------------------------------------- the transport
