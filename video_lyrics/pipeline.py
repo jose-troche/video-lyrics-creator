@@ -139,7 +139,8 @@ def stage_plan(project: Project, *, force: bool = False, **_: Any) -> None:
         visual_style=project.data["visual_style"],
         lines_per_image=int(project.image_generation.get("lines_per_image", 2)),
         scene_gap=float(settings["scene_gap"]),
-        interlude=float(settings["interlude"]),
+        min_scene=float(settings["min_scene_duration"]),
+        max_scene=float(settings["max_scene_duration"]),
     )
     if not force:
         planned = scenes_mod.merge_existing_images(planned, project.scenes)

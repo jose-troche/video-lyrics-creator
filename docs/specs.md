@@ -40,6 +40,23 @@ audio.
   full-auto mode (no API key required).
 - Alternatively, images may be supplied instead of generated.
 
+### How long an image is shown
+
+Each image's length is dynamic, decided by how long the line(s) behind it take
+to sing, not a fixed count or duration:
+
+- One image covers one or two consecutive lyric lines - whichever keeps its time
+  on screen closest to a comfortable length. Short lines pair up; a line long
+  enough to carry an image on its own does not need a partner.
+- No image is ever shown for less than 4 seconds or more than 15 seconds.
+  Between those two lines, actual sung duration decides the pairing.
+- A transition between images never happens in the middle of a lyric line - only
+  between lines. An image's boundaries always land on a lyric cue's own start or
+  end, never inside one.
+- A long instrumental section with no lyric lines in it does not become one
+  overlong held image: it is divided into a few images of roughly even length
+  instead, each still within the 4-15 second range.
+
 ## Video Output
 
 Produce a video containing:

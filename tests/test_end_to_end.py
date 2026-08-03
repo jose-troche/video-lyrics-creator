@@ -103,7 +103,7 @@ def test_full_pipeline_renders_a_video_the_length_of_the_song(tmp_path):
         {"width": SIZE[0], "height": SIZE[1], "fps": FPS, "font_size": 28,
          "margin_v": 30, "transition": 0.5, "title_duration": 1.5}
     )
-    project.alignment.update({"model": "stub", "interlude": 6.0})
+    project.alignment.update({"model": "stub"})
     project.image_generation.update({"provider": "supplied", "source_dir": str(stills)})
     project.render_settings.update({"engine": "ffmpeg", "intermediate": "h264"})
     project.save()

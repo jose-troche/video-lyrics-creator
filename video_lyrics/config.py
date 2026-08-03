@@ -74,7 +74,8 @@ ALIGN_DEFAULTS: dict[str, Any] = {
     "min_duration": 1.0,      # shortest cue (s)
     "max_gap_fill": 0.7,      # hold a cue over gaps shorter than this (s)
     "scene_gap": 2.5,         # a musical gap this long starts a new image
-    "interlude": 12.0,        # instrumental stretches longer than this get their own image
+    "min_scene_duration": 4.0,   # no image is shown for less than this (s)
+    "max_scene_duration": 15.0,  # ... or for longer than this (s)
 }
 
 RENDER_DEFAULTS: dict[str, Any] = {

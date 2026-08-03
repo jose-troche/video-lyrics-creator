@@ -260,6 +260,14 @@ front, so assembly is just laying finished clips end to end.
   `video.zoom` scales with how long a scene is actually on screen, so a quick cut
   and a long instrumental hold both move at a similar, steady rate rather than one
   crawling and the other racing.
+
+  `video-lyrics plan` decides how many lines share each image by how long they
+  take to sing, not a fixed count: short lines pair up, a line long enough to
+  carry an image alone gets one, and either way an image never sits on screen for
+  under `alignment.min_scene_duration` (4s) or over `alignment.max_scene_duration`
+  (15s). A transition only ever falls between lines, never inside one. A long
+  instrumental stretch with no lyrics in it becomes a few evenly-sized images
+  instead of one held far too long.
 * `work/overlay-clips/` — the lyric and title clips as QuickTime Animation movies
   with an alpha channel and their fades already in the pixels.
 
