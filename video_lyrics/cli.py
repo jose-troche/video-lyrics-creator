@@ -88,6 +88,10 @@ def build_parser() -> argparse.ArgumentParser:
     show = subparsers.add_parser("cues", help="print the timed lyric cues")
     show.add_argument("--json", action="store_true")
 
+    subparsers.add_parser(
+        "tune", help="hear the song and adjust where each lyric line starts and ends"
+    )
+
     auth = subparsers.add_parser("google-auth", help="one-time Google Drive login")
     auth.add_argument("--no-browser", action="store_true")
 
@@ -179,6 +183,9 @@ def dispatch(args: argparse.Namespace, project_path: Path) -> int:
     if command == "cues":
         return command_cues(project, as_json=args.json)
 
+    if command == "tune":
+        return command_tune(project)
+
     if command == "set":
         return command_set(project, args.key, args.value)
 
@@ -258,10 +265,28 @@ def command_cues(project: Project, *, as_json: bool) -> int:
 
     for index, cue in enumerate(cues, start=1):
         print(
-            f"{index:3d}  {human_time(cue['start'])} → {human_time(cue['end'])}  "
+            f"{index:3d} {'*' if cue.get('tuned') else ' '} "
+            f"{human_time(cue['start'])} → {human_time(cue['end'])}  "
             f"[{cue.get('alignment_confidence', 1):.2f}]  {cue['text']}"
         )
+    tuned = sum(1 for cue in cues if cue.get("tuned"))
     print(f"\n{len(cues)} cues confirmed by the audio.")
+    if tuned:
+        print(f"{tuned} marked * were adjusted by hand in `video-lyrics tune`.")
+    return 0
+
+
+def command_tune(project: Project) -> int:
+    from . import tune as tune_mod
+
+    if not sys.stdin.isatty() or not sys.stdout.isatty():
+        raise VideoLyricsError("`video-lyrics tune` needs a terminal to draw in.")
+    saved = tune_mod.tune(project)
+    if not saved:
+        print("Nothing was saved; the timing is as it was.")
+        return 0
+    print(f"Saved: {saved}.")
+    print("Rebuild the video with the new timing:\n  video-lyrics run --from plan")
     return 0
 
 

@@ -70,6 +70,16 @@ def stage_align(project: Project, *, force: bool = False, **_: Any) -> None:
     """Confirm reference lines against the transcript and time them."""
     import json
 
+    tuned = sum(1 for cue in project.cues if cue.get("tuned"))
+    if tuned and not force:
+        # Re-aligning would throw the hand-tuned timings away, and this stage runs on
+        # the way through every `video-lyrics run`. Keeping them is the safe default.
+        log.warning(
+            "Keeping the existing cues: %d were adjusted by hand in `video-lyrics tune`. "
+            "Use --force to align from the transcript again.", tuned,
+        )
+        return
+
     if not project.transcript_path.is_file():
         raise VideoLyricsError("No transcript yet. Run `video-lyrics transcribe` first.")
     transcript = json.loads(project.transcript_path.read_text(encoding="utf-8"))

@@ -75,6 +75,7 @@ video-lyrics init \
 video-lyrics run                 # everything, end to end
 video-lyrics status              # what is done so far
 video-lyrics cues                # the timed lyrics
+video-lyrics tune                # listen, and fix any line that sits wrong
 ```
 
 Every stage is also its own command, so you can iterate on one part without
@@ -84,6 +85,7 @@ redoing the rest:
 video-lyrics lyrics              # load the reference lyrics, measure the audio
 video-lyrics transcribe          # cached in work/<song>/transcript.json
 video-lyrics align               # re-time after changing alignment settings
+video-lyrics tune                # hear the song and adjust the timing by hand
 video-lyrics plan                # regroup lines into images
 video-lyrics images --jobs 3     # generate the stills with codex
 video-lyrics overlays            # title card, lyric PNGs, lyrics.srt
@@ -167,6 +169,49 @@ Two transcription settings are deliberately off, because on sung, fully mixed au
 they each destroy the transcript: `alignment.vad` (voice-activity filtering drops
 most of a vocal) and `alignment.prompt_hint` (priming Whisper with the lyrics makes
 it recite them over the intro).
+
+## Fixing the timing by hand
+
+The aligner gets most lines right and some of them slightly wrong — and a line that
+lands a third of a second late is obvious the moment you hear it and invisible in a
+column of numbers. So there is an editor for exactly that:
+
+```bash
+video-lyrics tune
+```
+
+It draws the song's waveform with the lyric lines laid over it, plays any part of it
+on demand, and writes the adjusted `start`/`end` back into the project file. The loop
+it is built around is: pick a line, press <kbd>⏎</kbd> to hear it, nudge an edge,
+hear it again.
+
+| | |
+| --- | --- |
+| <kbd>space</kbd> | play / pause |
+| <kbd>←</kbd> <kbd>→</kbd> | seek 2s (<kbd>⇧</kbd> for 10s) |
+| <kbd>⏎</kbd> | play the selected line, with a run-up |
+| <kbd>\\</kbd> | play just the edge being edited |
+| <kbd>↑</kbd> <kbd>↓</kbd> | pick a line |
+| <kbd>tab</kbd> | edit its start, its end, or the whole line |
+| <kbd>,</kbd> <kbd>.</kbd> | nudge by one step (<kbd>&lt;</kbd> <kbd>&gt;</kbd> by five), <kbd>-</kbd> <kbd>=</kbd> resize the step |
+| <kbd>[</kbd> <kbd>]</kbd> | set start / end to where the playhead is |
+| <kbd>a</kbd> <kbd>d</kbd> | add a line the audio never confirmed / remove one |
+| <kbd>u</kbd> <kbd>y</kbd> | undo / redo — <kbd>w</kbd> save, <kbd>?</kbd> all the keys |
+
+Lines that sit end to end — which is most of them, since the aligner closes small
+gaps — share one boundary, so moving the end of one moves the start of the next with
+it. <kbd>l</kbd> turns that off when a line really does need its own gap.
+
+An adjusted line is marked `tuned` in the project file and `*` in `video-lyrics
+cues`. `video-lyrics align` will not overwrite tuned cues, so a later
+`video-lyrics run` cannot quietly undo the work; `align --force` re-times everything
+from the transcript again. After tuning, rebuild from the plan onwards:
+
+```bash
+video-lyrics run --from plan
+```
+
+Needs **ffplay** to hear anything, which comes with ffmpeg.
 
 ## What ends up on the timeline
 

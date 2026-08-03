@@ -58,21 +58,28 @@ def which(program: str) -> str:
 
 def run(cmd: list[str], *, capture: bool = True, check: bool = True,
         cwd: Path | str | None = None, timeout: float | None = None,
-        env: dict[str, str] | None = None) -> subprocess.CompletedProcess:
-    """Run a command, logging it, raising VideoLyricsError on failure."""
+        env: dict[str, str] | None = None,
+        binary: bool = False) -> subprocess.CompletedProcess:
+    """Run a command, logging it, raising VideoLyricsError on failure.
+
+    `binary` keeps stdout as bytes, for the commands that pipe media back.
+    """
     log.debug("run: %s", " ".join(str(c) for c in cmd))
     proc = subprocess.run(
         [str(c) for c in cmd],
         capture_output=capture,
-        text=True,
+        text=not binary,
         cwd=str(cwd) if cwd else None,
         timeout=timeout,
         env=env,
         check=False,
     )
     if check and proc.returncode != 0:
-        detail = (proc.stderr or proc.stdout or "").strip()
-        tail = "\n".join(detail.splitlines()[-25:])
+        # With `binary`, stdout is the media itself - only stderr is worth quoting.
+        detail = proc.stderr if binary else (proc.stderr or proc.stdout)
+        if isinstance(detail, bytes):
+            detail = detail.decode("utf-8", "replace")
+        tail = "\n".join((detail or "").strip().splitlines()[-25:])
         raise VideoLyricsError(
             f"Command failed ({proc.returncode}): {' '.join(str(c) for c in cmd[:4])} ...\n{tail}"
         )

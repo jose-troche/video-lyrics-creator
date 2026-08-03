@@ -21,6 +21,16 @@ lyrics source confirms the displayed wording for matched lines.
 - Do not create a cue for reference text that the audio does not confirm.
 - Create one cue per line in the lyrics file.
 
+Automatic timing is a starting point, not the last word: it must be possible to
+review the result against the audio and correct it.
+
+- Play any part of the song on demand, with play/pause and seek controls, and see
+  where each line's start and end fall relative to what is being heard.
+- Adjust a line's start and end, add a cue for a line the audio never confirmed,
+  and remove one that should not be shown.
+- Corrections are recorded in the project file and survive a later re-run of the
+  pipeline; only an explicit re-alignment discards them.
+
 ## Image Generation
 
 Generate one static image per one or two lyric lines, synchronized with the
