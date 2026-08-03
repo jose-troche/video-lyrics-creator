@@ -50,7 +50,6 @@ def spans(session):
 
 def test_nudging_an_edge_moves_only_that_edge(project):
     session = tune.Session(project)
-    session.link = False
     assert session.nudge(2, "start", -0.5)
     assert spans(session)[2] == (24.5, 30.0)
     assert session.nudge(2, "end", 0.25)
@@ -73,36 +72,42 @@ def test_an_edited_cue_is_marked_as_tuned(project):
 # ---------------------------------------------------------------- neighbours
 
 
-def test_lines_that_share_a_boundary_move_together(project):
-    """Cue 0 ends exactly where cue 1 begins, so one edit fixes both."""
-    session = tune.Session(project)
-    assert session.nudge(0, "end", 0.5)
-    assert spans(session)[:2] == [(10.0, 14.5), (14.5, 18.0)]
+def test_linking_is_off_by_default(project):
+    assert tune.Session(project).link is False
 
 
-def test_a_boundary_can_be_left_alone_when_linking_is_off(project):
-    """The same edit with linking off pulls one edge back and leaves a gap."""
+def test_by_default_a_line_never_moves_its_neighbour(project):
+    """Cue 0 ends exactly where cue 1 begins, but pulling its edge back leaves a gap
+    rather than dragging cue 1's start along with it."""
     session = tune.Session(project)
-    session.link = False
     assert session.nudge(0, "end", -0.5)
     assert spans(session)[:2] == [(10.0, 13.5), (14.0, 18.0)]
 
 
-def test_an_unjoined_line_stops_dead_at_its_neighbour(project):
+def test_by_default_a_line_stops_dead_at_its_neighbour_rather_than_overlap(project):
     session = tune.Session(project)
-    session.link = False
     assert not session.nudge(0, "end", 0.5)   # cue 1 already begins at 14.0
+    assert spans(session)[:2] == [(10.0, 14.0), (14.0, 18.0)]
 
 
-def test_a_line_never_overruns_a_neighbour_it_is_not_joined_to(project):
+def test_a_line_never_overruns_a_neighbour_it_is_not_touching(project):
     session = tune.Session(project)
     session.nudge(2, "start", -30.0)          # cue 2 starts at 25, cue 1 ends at 18
     assert session.cues[2]["start"] == 18.0
     assert session.cues[1]["end"] == 18.0
 
 
-def test_a_joined_neighbour_is_pushed_but_never_swallowed(project):
+def test_turning_link_on_pushes_a_touching_neighbour_along(project):
+    """Cue 0 ends exactly where cue 1 begins, so with linking on one edit fixes both."""
     session = tune.Session(project)
+    session.link = True
+    assert session.nudge(0, "end", 0.5)
+    assert spans(session)[:2] == [(10.0, 14.5), (14.5, 18.0)]
+
+
+def test_a_pushed_neighbour_is_never_swallowed(project):
+    session = tune.Session(project)
+    session.link = True
     session.nudge(1, "start", -30.0)          # would run back over cue 0 entirely
     assert session.cues[0]["start"] == 10.0
     assert session.cues[0]["end"] - session.cues[0]["start"] == pytest.approx(tune.MIN_CUE)
@@ -119,7 +124,6 @@ def test_a_line_stays_inside_the_song(project):
 
 def test_a_line_is_never_squeezed_below_the_minimum(project):
     session = tune.Session(project)
-    session.link = False
     session.nudge(2, "end", -30.0)
     assert session.cues[2]["end"] - session.cues[2]["start"] == pytest.approx(tune.MIN_CUE)
 

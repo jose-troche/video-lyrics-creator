@@ -197,7 +197,7 @@ hear it again.
 | | |
 | --- | --- |
 | <kbd>space</kbd> | play / pause |
-| <kbd>←</kbd> <kbd>→</kbd> | seek 2s (<kbd>⇧</kbd> for 10s) |
+| <kbd>←</kbd> <kbd>→</kbd> | seek 0.1s (<kbd>⇧</kbd> for 1s) |
 | <kbd>⏎</kbd> | play the selected line, with a run-up |
 | <kbd>\\</kbd> | play just the edge being edited |
 | <kbd>↑</kbd> <kbd>↓</kbd> | pick a line |
@@ -207,9 +207,11 @@ hear it again.
 | <kbd>a</kbd> <kbd>d</kbd> | add a line the audio never confirmed / remove one |
 | <kbd>u</kbd> <kbd>y</kbd> | undo / redo — <kbd>w</kbd> save, <kbd>?</kbd> all the keys |
 
-Lines that sit end to end — which is most of them, since the aligner closes small
-gaps — share one boundary, so moving the end of one moves the start of the next with
-it. <kbd>l</kbd> turns that off when a line really does need its own gap.
+Editing a line never moves its neighbours — it only ever stops at them, so two lines
+can never end up overlapping. Lines that sit end to end — which is most of them,
+since the aligner closes small gaps — can instead be dragged together as one shared
+boundary by turning on <kbd>l</kbd> first, for the rarer case where both really need
+to shift together.
 
 An adjusted line is marked `tuned` in the project file and `*` in `video-lyrics
 cues`. `video-lyrics align` will not overwrite tuned cues, so a later

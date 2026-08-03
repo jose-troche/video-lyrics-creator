@@ -34,8 +34,8 @@ ZOOMS = (3.0, 6.0, 12.0, 30.0, 60.0)
 PREVIEW_LEAD = 0.8      # start a preview this far ahead of the line
 PREVIEW_TAIL = 0.4      # ... and let it run this far past the end
 EDGE_WINDOW = 1.5       # a preview of just one edge reaches this far either side
-SEEK_STEP = 2.0
-SEEK_JUMP = 10.0
+SEEK_STEP = 0.1
+SEEK_JUMP = 1.0
 
 FRAME = 60              # ms between redraws, so the playhead visibly moves
 
@@ -62,7 +62,11 @@ class Session:
         self.duration = float(project.duration)
         self.lines: list[str] = list(project.data.get("lyric_lines") or [])
         self.cues: list[dict[str, Any]] = copy.deepcopy(project.cues)
-        self.link = True
+        # Off by default: editing a line should not move its neighbours, only ever be
+        # stopped by them (see `bounds`). `l` turns this on for the rarer case of
+        # dragging a whole shared boundary - e.g. two lines sung back to back that
+        # both need to shift together.
+        self.link = False
         self.step_index = STEPS.index(0.05)
         self._opened = copy.deepcopy(self.cues)   # how the aligner left it
         self._saved = copy.deepcopy(self.cues)    # what is on disk right now
