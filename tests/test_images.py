@@ -60,6 +60,22 @@ def test_manual_provider_accepts_webp_and_converts_it_to_png(tmp_path):
         assert not path.with_suffix(".webp").is_file()
 
 
+def test_manual_provider_accepts_mixed_formats_in_one_run(tmp_path):
+    scenes = make_scenes()
+    images.generate(scenes, images_dir=tmp_path, provider="manual")
+
+    stems = [images._manual_image_stem(scene) for scene in scenes]
+    Image.new("RGB", (100, 100), (10, 20, 30)).save(tmp_path / f"{stems[0]}.png")
+    Image.new("RGB", (100, 100), (40, 50, 60)).save(tmp_path / f"{stems[1]}.webp", "WEBP")
+
+    result = images.generate(scenes, images_dir=tmp_path, provider="manual")
+
+    for scene in result:
+        path = Path(scene["image"])
+        assert path.suffix == ".png"
+        assert path.is_file()
+
+
 def test_unknown_provider_is_rejected(tmp_path):
     with pytest.raises(VideoLyricsError):
         images.generate(make_scenes(), images_dir=tmp_path, provider="nonsense")

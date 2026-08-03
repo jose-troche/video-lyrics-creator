@@ -3,12 +3,20 @@
 from __future__ import annotations
 
 import math
+import re
 from typing import Any
 
 MOTION_CYCLE = ("zoom_in", "zoom_out", "pan_right", "zoom_in", "pan_left", "zoom_out")
 
 MIN_SCENE_DURATION = 4.0    # no image is ever shown for less than this
 MAX_SCENE_DURATION = 15.0   # ... or for longer than this
+
+DIVINE_NAMES = re.compile(r"\b(god|jesus|christ)\b", re.IGNORECASE)
+
+REVERENCE_NOTE = (
+    " This passage speaks of God or Jesus: if a divine figure appears, keep the face "
+    "blurred, veiled, or turned away — never a sharp, detailed likeness."
+)
 
 PROMPT_TEMPLATE = (
     "{style}. Create a cinematic lyric-video scene inspired by this passage: "
@@ -77,6 +85,10 @@ def group_cues(
     return groups
 
 
+def _reverence_note(*texts: str) -> str:
+    return REVERENCE_NOTE if any(DIVINE_NAMES.search(text) for text in texts) else ""
+
+
 def _needs_own_scene(gap: float, natural_duration: float, *, max_scene: float) -> bool:
     """Would silently absorbing this whole gap into the neighbouring image push it
     past `max_scene`? If so, the gap is long enough to deserve its own image
@@ -128,7 +140,7 @@ def _instrumental_scenes(
                 "lines": [],
                 "prompt": INSTRUMENTAL_TEMPLATE.format(
                     style=visual_style, title=title, context=context + suffix
-                ),
+                ) + _reverence_note(title, context),
             }
         )
     return scenes
@@ -183,7 +195,7 @@ def plan(
                     "lines": list(group["lines"]),
                     "prompt": PROMPT_TEMPLATE.format(
                         style=visual_style, passage=" / ".join(group["lines"])
-                    ),
+                    ) + _reverence_note(*group["lines"]),
                 }
             )
             following = groups[index + 1]["start"] if index + 1 < len(groups) else duration
@@ -214,8 +226,9 @@ def plan(
         scene["end"] = scenes[index + 1]["start"] if index + 1 < len(scenes) else duration
     scenes = [scene for scene in scenes if scene["end"] - scene["start"] > 0.05]
     if not scenes:  # a song shorter than a single scene
+        passage = cues[0]["text"] if cues else title
         scenes = [{"start": 0.0, "end": duration, "lines": [], "prompt": PROMPT_TEMPLATE.format(
-            style=visual_style, passage=cues[0]["text"] if cues else title)}]
+            style=visual_style, passage=passage) + _reverence_note(passage)}]
     scenes[-1]["end"] = duration
 
     for index, scene in enumerate(scenes):

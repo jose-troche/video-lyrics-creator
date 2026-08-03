@@ -288,7 +288,10 @@ front, so assembly is just laying finished clips end to end.
   under `alignment.min_scene_duration` (4s) or over `alignment.max_scene_duration`
   (15s). A transition only ever falls between lines, never inside one. A long
   instrumental stretch with no lyrics in it becomes a few evenly-sized images
-  instead of one held far too long.
+  instead of one held far too long. A scene whose lines (or, for an instrumental
+  break, the title or surrounding lines) mention God, Jesus, or Christ gets an
+  extra instruction in its prompt: if a divine figure appears, keep the face
+  blurred, veiled, or turned away rather than sharply detailed.
 * `work/overlay-clips/` — the lyric and title clips as QuickTime Animation movies
   with an alpha channel and their fades already in the pixels.
 
