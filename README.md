@@ -123,10 +123,11 @@ video-lyrics render              # assemble with ffmpeg and export
 
 * `codex` (default) — calls the Codex CLI's image_gen tool automatically.
 * `manual` — no generator at all. It writes every scene's prompt, and the exact
-  filename it expects, to `work/<song>/images/prompts.txt`. Paste each prompt into
-  whatever you use by hand (ChatGPT, Midjourney, ...), save the result under that
-  filename in `work/<song>/images/`, then run `video-lyrics images` again — it
-  picks up the files you made and reports anything still missing.
+  filename stem it expects, to `work/<song>/images/prompts.txt`. Paste each prompt
+  into whatever you use by hand (ChatGPT, Midjourney, ...), save the result under
+  that stem in `work/<song>/images/` — png, jpg, or webp, whichever the tool gives
+  you — then run `video-lyrics images` again; it picks up the files you made
+  (converting them to PNG) and reports anything still missing.
 * `supplied` — same idea, but for images you already have; see `--images-dir`
   above, they're adopted in filename order instead of matched by name.
 

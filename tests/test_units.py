@@ -3,7 +3,7 @@ import json
 import pytest
 
 from video_lyrics import google_drive, lyrics, motion, overlays
-from video_lyrics.config import Project
+from video_lyrics.config import DEFAULT_AUTHOR, Project
 from video_lyrics.util import VideoLyricsError, format_timecode
 
 
@@ -127,7 +127,7 @@ def test_project_round_trips_through_disk(tmp_path):
 
     reloaded = Project.load(tmp_path / "project.json")
     assert reloaded.title == "My Song"
-    assert reloaded.author == "Jose Troche"
+    assert reloaded.author == DEFAULT_AUTHOR
     assert reloaded.duration == 12.5
     assert reloaded.size == (1920, 1080)
     assert reloaded.output.name == "my-song.mp4"

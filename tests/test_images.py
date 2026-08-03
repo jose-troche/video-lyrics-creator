@@ -26,21 +26,38 @@ def test_manual_provider_writes_a_prompt_manifest_and_no_images(tmp_path):
     assert all("image" not in scene for scene in scenes)
 
 
-def test_manual_provider_adopts_hand_made_images_on_a_second_run(tmp_path):
+def test_manual_provider_adopts_hand_made_png_on_a_second_run(tmp_path):
     scenes = make_scenes()
     images.generate(scenes, images_dir=tmp_path, provider="manual")
 
-    manifest_lines = (tmp_path / "prompts.txt").read_text(encoding="utf-8").splitlines()
-    filenames = [line.split("File: ", 1)[1] for line in manifest_lines if line.startswith("File: ")]
-    assert len(filenames) == len(scenes)
-    for name in filenames:
-        Image.new("RGB", (100, 100), (10, 20, 30)).save(tmp_path / name)
+    for scene in scenes:
+        stem = images._manual_image_stem(scene)
+        Image.new("RGB", (100, 100), (10, 20, 30)).save(tmp_path / f"{stem}.png")
 
     result = images.generate(scenes, images_dir=tmp_path, provider="manual")
 
     for scene in result:
         assert scene["image"]
-        assert Path(scene["image"]).is_file()
+        path = Path(scene["image"])
+        assert path.is_file()
+        assert path.suffix == ".png"
+
+
+def test_manual_provider_accepts_webp_and_converts_it_to_png(tmp_path):
+    scenes = make_scenes()
+    images.generate(scenes, images_dir=tmp_path, provider="manual")
+
+    for scene in scenes:
+        stem = images._manual_image_stem(scene)
+        Image.new("RGB", (100, 100), (10, 20, 30)).save(tmp_path / f"{stem}.webp", "WEBP")
+
+    result = images.generate(scenes, images_dir=tmp_path, provider="manual")
+
+    for scene in result:
+        path = Path(scene["image"])
+        assert path.suffix == ".png"
+        assert path.is_file()
+        assert not path.with_suffix(".webp").is_file()
 
 
 def test_unknown_provider_is_rejected(tmp_path):

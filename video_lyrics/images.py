@@ -185,9 +185,18 @@ def _postprocess(path: Path, size: tuple[int, int]) -> None:
         image.save(path, "PNG")
 
 
-def _manual_image_path(images_dir: Path, scene: dict[str, Any]) -> Path:
+def _manual_image_stem(scene: dict[str, Any]) -> str:
     fingerprint = short_hash(scene["prompt"], "manual")
-    return scene_image_path(images_dir, scene, fingerprint)
+    return f"scene-{scene['index']:03d}-{fingerprint}"
+
+
+def _find_manual_image(images_dir: Path, stem: str) -> Path | None:
+    """Any of IMAGE_SUFFIXES counts - the format doesn't matter, only the stem."""
+    for suffix in IMAGE_SUFFIXES:
+        candidate = images_dir / f"{stem}{suffix}"
+        if candidate.is_file():
+            return candidate
+    return None
 
 
 def _generate_manual(
@@ -198,34 +207,43 @@ def _generate_manual(
 ) -> list[dict[str, Any]]:
     """Hand the prompts to the user instead of generating anything.
 
-    Writes every outstanding scene's prompt and expected filename to
-    ``prompts.txt``. Once the user has created each image by hand and saved it
-    under the exact filename shown, re-running this (same command) picks the
-    files up from disk - nothing to type back in.
+    Writes every outstanding scene's prompt and expected filename (stem) to
+    ``prompts.txt``. Once the user has created each image by hand - in any of
+    IMAGE_SUFFIXES - and saved it under that stem, re-running this (same command)
+    picks the files up from disk and normalises them to PNG - nothing to type back in.
     """
-    pending: list[tuple[dict[str, Any], Path]] = []
+    pending: list[tuple[dict[str, Any], str]] = []
     for scene in scenes:
-        target = _manual_image_path(images_dir, scene)
-        if target.is_file() and not force:
-            if _valid(target):
-                _postprocess(target, size)
-                scene["image"] = str(target)
+        stem = _manual_image_stem(scene)
+        canonical = images_dir / f"{stem}.png"
+        found = None if force else _find_manual_image(images_dir, stem)
+        if found is not None:
+            if _valid(found):
+                if found != canonical:
+                    with Image.open(found) as image:
+                        image.convert("RGB").save(canonical, "PNG")
+                    found.unlink()
+                _postprocess(canonical, size)
+                scene["image"] = str(canonical)
                 continue
-            log.warning("  scene %03d: %s is not a readable image, regenerating", scene["index"], target.name)
-        pending.append((scene, target))
+            log.warning("  scene %03d: %s is not a readable image, regenerating", scene["index"], found.name)
+        pending.append((scene, stem))
 
     if not pending:
         log.info("All %d scene images already generated.", len(scenes))
         return scenes
 
     manifest = images_dir / "prompts.txt"
-    blocks = [f"File: {target.name}\nPrompt: {scene['prompt']}" for scene, target in pending]
+    suffixes = "/".join(suffix.lstrip(".") for suffix in IMAGE_SUFFIXES)
+    blocks = [
+        f"File: {stem}.<{suffixes}>\nPrompt: {scene['prompt']}" for scene, stem in pending
+    ]
     manifest.write_text("\n\n".join(blocks) + "\n", encoding="utf-8")
     log.info(
         "Manual mode: wrote %d prompt(s) to %s.\n"
         "Generate each image yourself (ChatGPT, Midjourney, ...), save it under the exact "
-        "filename shown, into %s, then re-run `video-lyrics images`.",
-        len(pending), manifest, images_dir,
+        "filename shown (any of .%s), into %s, then re-run `video-lyrics images`.",
+        len(pending), manifest, suffixes, images_dir,
     )
     return scenes
 
