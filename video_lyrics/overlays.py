@@ -103,13 +103,13 @@ def render_title(
     canvas = Image.new("RGBA", size, (0, 0, 0, 0))
     max_width = width - int(round(width * 0.12)) * 2
 
-    title_font = load_font(font_name, int(font_size * 1.7))
+    title_font = load_font(font_name, int(font_size * 2.0))
     title_lines = wrap(title, title_font, max_width)
     while len(title_lines) > 2 and title_font.size > font_size:
         title_font = load_font(font_name, int(title_font.size * 0.9))
         title_lines = wrap(title, title_font, max_width)
 
-    author_font = load_font(font_name, int(font_size * 0.72))
+    author_font = load_font(font_name, int(font_size * 0.85))
     ascent, descent = title_font.getmetrics()
     title_line_height = int(round((ascent + descent) * 1.2))
     title_block = title_line_height * len(title_lines)
