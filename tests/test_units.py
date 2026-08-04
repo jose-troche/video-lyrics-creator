@@ -22,6 +22,15 @@ def test_section_starts_mark_the_first_line_of_the_song_and_after_each_marker():
     assert sections == {0, 2}
 
 
+def test_a_blank_line_starts_a_new_section_even_without_a_marker():
+    """Not every verse is labelled, but a stanza is always set off from the
+    next one by a blank line - that alone should be enough to mark a break."""
+    raw = "Once I was dead\nAnd lost\n\nBut Christ is rich\nAnd near\n"
+    lines, sections = lyrics.clean_lines_with_sections(raw)
+    assert lines == ["Once I was dead", "And lost", "But Christ is rich", "And near"]
+    assert sections == {0, 2}
+
+
 def test_whitespace_is_normalised_but_wording_is_untouched():
     assert lyrics.clean_lines("  I  walked   the world’s ways \n") == [
         "I walked the world’s ways"

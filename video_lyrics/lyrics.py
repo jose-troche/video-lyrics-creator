@@ -37,8 +37,10 @@ def load_lines_with_sections(source: Path) -> tuple[list[str], set[int]]:
     """As `load_lines`, plus the indices of lines that start a new section.
 
     A section starts at the first line of the song and at the first line after
-    any marker such as `[Chorus]` or `Verse 2:` - used so an image is never
-    built from lines either side of a section break.
+    a section break: either an explicit marker such as `[Chorus]` or `Verse 2:`,
+    or - since not every verse is labelled - a blank line, the way a stanza is
+    always set off from the one after it. Used so an image is never built from
+    lines either side of a section break.
     """
     source = Path(source)
     if source.suffix.lower() == ".gdoc":
@@ -71,6 +73,7 @@ def clean_lines_with_sections(raw: str) -> tuple[list[str], set[int]]:
         line = unicodedata.normalize("NFC", line).strip()
         line = re.sub(r"\s+", " ", line)
         if not line:
+            at_boundary = True
             continue
         if SECTION_RE.match(line):
             at_boundary = True
