@@ -147,7 +147,7 @@ video-lyrics render              # assemble with ffmpeg and export
   If meta.ai's page changes and the composer or the generated image can no longer
   be found, override `image_generation.meta_composer_selector` /
   `meta_image_selector` with a CSS selector for the right element (defaults:
-  `textarea, [contenteditable='true']` and `main img`).
+  `textarea:visible, [contenteditable='true']:visible` and `main img`).
 * `supplied` — same idea, but for images you already have; see `--images-dir`
   above, they're adopted in filename order instead of matched by name.
 

@@ -29,10 +29,14 @@ IMAGE_TIMEOUT_MS = 90_000     # how long one prompt is given to produce an image
 # The prompt composer. `get_by_role("textbox")` alone is too broad - meta.ai also
 # exposes a one-line "Conversation title" <input> with that same accessible role,
 # and being first in the DOM it can win over the actual composer. Textarea /
-# contenteditable narrows it down to the real multi-line chat box. Overridable
-# (image_generation.meta_composer_selector) in case meta.ai's markup has moved on
-# again by the time you read this.
-DEFAULT_COMPOSER_SELECTOR = "textarea, [contenteditable='true']"
+# contenteditable narrows it down to the real multi-line chat box - but meta.ai's
+# React app can keep more than one such element mounted at once (e.g. a hidden
+# duplicate for another breakpoint/layout), so `:visible` is needed too: without
+# it, `.first` can end up pointing at a hidden match instead of the one actually
+# on screen, and every fill() then times out waiting for it to become visible.
+# Overridable (image_generation.meta_composer_selector) in case meta.ai's markup
+# has moved on again by the time you read this.
+DEFAULT_COMPOSER_SELECTOR = "textarea:visible, [contenteditable='true']:visible"
 # The generated image. Overridable (image_generation.meta_image_selector).
 DEFAULT_IMAGE_SELECTOR = "main img"
 
