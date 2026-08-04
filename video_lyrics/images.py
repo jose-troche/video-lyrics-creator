@@ -7,8 +7,8 @@ Four providers:
                    filename to a manifest so the user can create each image by hand
                    (ChatGPT, Midjourney, ...) and drop it into the images folder.
   * ``meta``     - drives meta.ai in a real browser (see meta_ai.py). Raw downloads
-                   land in `images/images.src/` and are converted into the
-                   canonical PNG in `images/` itself, same as `manual`.
+                   land in `images.src/` (a sibling of `images/`) and are converted
+                   into the canonical PNG in `images/`, same as `manual`.
 """
 
 from __future__ import annotations
@@ -54,6 +54,7 @@ def generate(
     model: str = "gpt-image-2",
     quality: str = "medium",
     source_dir: str | Path | None = None,
+    raw_dir: Path | None = None,
     size: tuple[int, int] = (1920, 1080),
     force: bool = False,
     jobs: int = 1,
@@ -74,7 +75,7 @@ def generate(
         return _generate_manual(scenes, images_dir, size, force)
     if provider == "meta":
         return _generate_meta(
-            scenes, images_dir, size, force, limit=limit,
+            scenes, images_dir, raw_dir, size, force, limit=limit,
             headless=meta_headless, profile_dir=meta_profile_dir,
             min_delay=meta_min_delay, max_delay=meta_max_delay,
             composer_selector=meta_composer_selector, image_selector=meta_image_selector,
@@ -291,6 +292,7 @@ def _generate_manual(
 def _generate_meta(
     scenes: list[dict[str, Any]],
     images_dir: Path,
+    raw_dir: Path | None,
     size: tuple[int, int],
     force: bool,
     *,
@@ -304,12 +306,12 @@ def _generate_meta(
 ) -> list[dict[str, Any]]:
     """Drive meta.ai in a real browser to generate each outstanding scene's image.
 
-    Raw downloads land in `images_dir/images.src/<stem>.<ext>` and are kept there
-    (whatever format meta.ai served); each is also converted into the canonical
-    PNG in `images_dir` itself. A run interrupted partway through only asks the
-    browser for what is still missing - anything already in images.src is reused.
+    Raw downloads land in `raw_dir/<stem>.<ext>` and are kept there (whatever
+    format meta.ai served); each is also converted into the canonical PNG in
+    `images_dir`. A run interrupted partway through only asks the browser for what
+    is still missing - anything already downloaded is reused.
     """
-    raw_dir = ensure_dir(images_dir / RAW_SUBDIR)
+    raw_dir = ensure_dir(raw_dir if raw_dir is not None else images_dir.parent / RAW_SUBDIR)
 
     pending: list[tuple[dict[str, Any], str]] = []
     for scene in scenes:

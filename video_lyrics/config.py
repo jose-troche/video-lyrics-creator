@@ -429,6 +429,16 @@ class Project:
         return ensure_dir(self.work_dir / "images")
 
     @property
+    def raw_images_dir(self) -> Path:
+        """Downloads exactly as a generator served them, before any conversion.
+
+        A sibling of `images/`, not a child: everything in `images/` is a finished,
+        normalised PNG the rest of the pipeline can use, and mixing the untouched
+        originals in among them blurs that line.
+        """
+        return ensure_dir(self.work_dir / "images.src")
+
+    @property
     def overlays_dir(self) -> Path:
         return ensure_dir(self.work_dir / "overlays")
 

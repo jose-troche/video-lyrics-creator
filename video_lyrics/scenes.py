@@ -28,6 +28,23 @@ MARGIN_NOTE = (
     "as the view tightens."
 )
 
+# Neighbouring scenes often say almost exactly the same thing: two halves of one
+# instrumental passage differ only by "(part 1 of 2)", and a chorus that comes
+# round again is word-for-word identical. Handed prompts like that, an image
+# generator quite reasonably returns the same picture twice. Giving each scene a
+# different, concrete framing - picked by its position, so it stays deterministic
+# and re-planning still matches up existing images - pulls those neighbours apart
+# without touching the style the whole video shares.
+FRAMING_CYCLE = (
+    "a wide establishing shot",
+    "a low angle close to the ground, looking up",
+    "an intimate mid-shot centred on a single subject",
+    "a high, distant vantage looking down",
+    "a tight foreground detail with the rest falling away soft",
+    "a head-on symmetrical composition",
+    "a view through a natural frame - an arch, branches, a doorway",
+)
+
 PROMPT_TEMPLATE = (
     "{style}. Create a cinematic lyric-video scene inspired by this passage: "
     "'{passage}'. Express its meaning and emotion through a coherent visual metaphor; "
@@ -103,6 +120,15 @@ def group_cues(
 
 def _reverence_note(*texts: str) -> str:
     return REVERENCE_NOTE if any(DIVINE_NAMES.search(text) for text in texts) else ""
+
+
+def _framing_note(position: int) -> str:
+    """A distinct framing for this scene, so it cannot echo the one before it."""
+    return (
+        f" Frame this particular scene as {FRAMING_CYCLE[position % len(FRAMING_CYCLE)]}, "
+        "distinctly different in vantage, subject and composition from the scenes "
+        "either side of it."
+    )
 
 
 def _needs_own_scene(gap: float, natural_duration: float, *, max_scene: float) -> bool:
@@ -251,6 +277,9 @@ def plan(
     for index, scene in enumerate(scenes):
         scene["index"] = index + 1
         scene["motion"] = MOTION_CYCLE[index % len(MOTION_CYCLE)]
+        # Appended only now, once a scene's final position is known - that
+        # position is what guarantees neighbours never draw the same framing.
+        scene["prompt"] += _framing_note(index)
         scene["start"] = round(scene["start"], 3)
         scene["end"] = round(scene["end"], 3)
     return scenes

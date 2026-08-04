@@ -165,6 +165,7 @@ def stage_images(
     images_mod.generate(
         project.scenes,
         images_dir=project.images_dir,
+        raw_dir=project.raw_images_dir,
         provider="supplied" if source else settings.get("provider", "codex"),
         model=settings.get("model", "gpt-image-2"),
         quality=settings.get("quality", "medium"),

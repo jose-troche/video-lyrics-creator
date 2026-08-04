@@ -147,7 +147,7 @@ video-lyrics render              # assemble with ffmpeg and export
   image's own Download control to appear rather than for pixels to exist.) Use
   `--limit N` to try a handful before committing to a whole song. Raw downloads
   are kept in
-  `work/<song>/images/images.src/`, whatever format meta.ai served, and each is
+  `work/<song>/images.src/`, whatever format meta.ai served, and each is
   also converted into the canonical PNG in `work/<song>/images/` itself; a run
   interrupted partway through only asks the browser for what is still missing.
   If meta.ai's page changes and the composer or the generated image can no longer
@@ -328,6 +328,14 @@ front, so assembly is just laying finished clips end to end.
   break, the title or surrounding lines) mention God, Jesus, or Christ - an extra
   instruction to keep any divine figure's face blurred, veiled, or turned away
   rather than sharply detailed.
+
+  Each scene is also given its own **framing** (wide establishing shot, low angle,
+  head-on symmetry, ...), cycled by the scene's position. Without it neighbouring
+  prompts can be nearly or exactly the same text - two halves of one instrumental
+  passage differ only by "(part 1 of 2)", and a chorus that comes round again is
+  word-for-word identical - and an image generator handed the same prompt twice
+  quite reasonably returns the same picture twice. The cycle is deterministic, so
+  re-planning still lines up with images already generated.
 * `work/overlay-clips/` — the lyric and title clips as QuickTime Animation movies
   with an alpha channel and their fades already in the pixels.
 
@@ -349,7 +357,8 @@ work/<song>/transcript.json     cached transcription
 work/<song>/lyrics.txt          the reference lines as loaded
 work/<song>/lyrics.srt          timed lyrics
 work/<song>/audio-faded.wav     the song with its fade in/out baked in
-work/<song>/images/             one still per scene
+work/<song>/images/             one still per scene, normalised to PNG
+work/<song>/images.src/         downloads as the generator served them (meta only)
 work/<song>/overlays/           title and lyric PNGs (transparent)
 work/<song>/overlay-clips/      the same, as alpha movie clips with fades
 work/<song>/clips/              the image bed: scene and dissolve clips

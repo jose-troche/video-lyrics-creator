@@ -154,6 +154,32 @@ def test_prompts_carry_the_style_the_lyrics_and_a_no_text_rule():
     assert "margin" in prompt.lower()
 
 
+def test_neighbouring_scenes_never_share_a_framing():
+    """Two halves of one instrumental passage differ only by "(part N of M)", and a
+    repeated chorus is word-for-word identical - without a per-position framing the
+    generator gets the same prompt twice and returns the same picture twice."""
+    cues = [cue(0.0, 2.0, "first"), cue(42.0, 44.0, "second")]
+    planned = scenes.plan(cues, duration=46.0, title="Song", visual_style="cinematic")
+    assert len(planned) > 2
+    for earlier, later in zip(planned, planned[1:]):
+        assert earlier["prompt"] != later["prompt"]
+
+
+def test_the_same_lyric_line_twice_still_gets_different_prompts():
+    cues = [cue(0.0, 5.0, "Praise Him"), cue(5.0, 10.0, "Praise Him")]
+    planned = scenes.plan(
+        cues, duration=10.0, title="Song", visual_style="cinematic", lines_per_image=1
+    )
+    prompts = [s["prompt"] for s in planned]
+    assert len(prompts) == len(set(prompts))
+
+
+def test_framing_is_deterministic_so_replanning_still_matches_images():
+    planned = scenes.plan(BASIC, duration=40.0, title="Song", visual_style="cinematic")
+    again = scenes.plan(BASIC, duration=40.0, title="Song", visual_style="cinematic")
+    assert [s["prompt"] for s in planned] == [s["prompt"] for s in again]
+
+
 def test_instrumental_prompts_also_ask_for_margin():
     cues = [cue(42.0, 44.0, "second")]
     planned = scenes.plan(cues, duration=46.0, title="Song", visual_style="cinematic")

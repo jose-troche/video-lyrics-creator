@@ -77,27 +77,47 @@ def test_manual_provider_accepts_mixed_formats_in_one_run(tmp_path):
 
 
 def test_meta_provider_adopts_raw_downloads_already_on_disk(tmp_path):
-    """If images.src already has a file for every scene (e.g. from a previous,
-    interrupted run), the meta provider must not need Playwright or a browser at
-    all - it should just convert what is already there."""
+    """If the raw downloads are already there (e.g. from a previous, interrupted
+    run), the meta provider must not need Playwright or a browser at all - it
+    should just convert what is on disk."""
     scenes = make_scenes()
+    images_dir = tmp_path / "images"
+    raw_dir = tmp_path / "images.src"
+    images_dir.mkdir()
+    raw_dir.mkdir()
+    for scene in scenes:
+        stem = images._stem_for(scene, "meta")
+        Image.new("RGB", (100, 100), (5, 10, 15)).save(raw_dir / f"{stem}.webp", "WEBP")
+
+    result = images.generate(
+        scenes, images_dir=images_dir, raw_dir=raw_dir, provider="meta"
+    )
+
+    for scene in result:
+        path = Path(scene["image"])
+        assert path.suffix == ".png"
+        assert path.parent == images_dir
+        assert path.is_file()
+    # the raw download is kept, unlike the manual provider's own-folder file
+    for scene in scenes:
+        stem = images._stem_for(scene, "meta")
+        assert (raw_dir / f"{stem}.webp").is_file()
+
+
+def test_meta_raw_downloads_default_to_a_sibling_of_the_images_folder(tmp_path):
+    scenes = make_scenes()
+    images_dir = tmp_path / "images"
+    images_dir.mkdir()
     raw_dir = tmp_path / "images.src"
     raw_dir.mkdir()
     for scene in scenes:
         stem = images._stem_for(scene, "meta")
         Image.new("RGB", (100, 100), (5, 10, 15)).save(raw_dir / f"{stem}.webp", "WEBP")
 
-    result = images.generate(scenes, images_dir=tmp_path, provider="meta")
+    result = images.generate(scenes, images_dir=images_dir, provider="meta")
 
-    for scene in result:
-        path = Path(scene["image"])
-        assert path.suffix == ".png"
-        assert path.parent == tmp_path
-        assert path.is_file()
-    # the raw download is kept, unlike the manual provider's own-folder file
-    for scene in scenes:
-        stem = images._stem_for(scene, "meta")
-        assert (raw_dir / f"{stem}.webp").is_file()
+    assert all(Path(scene["image"]).parent == images_dir for scene in result)
+    assert not (images_dir / "images.src").exists()
 
 
 def test_unknown_provider_is_rejected(tmp_path):
