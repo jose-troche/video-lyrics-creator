@@ -65,6 +65,10 @@ def clean_lines(raw: str) -> list[str]:
 def clean_lines_with_sections(raw: str) -> tuple[list[str], set[int]]:
     """As `clean_lines`, plus the indices of lines that start a new section."""
     raw = raw.replace("\r\n", "\n").replace("\r", "\n")
+    # A Google Doc "soft" line break (Shift+Enter) comes back from the Docs API as a
+    # vertical tab inside the paragraph's text, not a paragraph break - without this
+    # it reads as ordinary whitespace and several sung lines collapse into one.
+    raw = raw.replace("\v", "\n")
     raw = raw.replace("﻿", "").replace(" ", " ")
     lines: list[str] = []
     section_starts: set[int] = set()

@@ -31,6 +31,16 @@ def test_a_blank_line_starts_a_new_section_even_without_a_marker():
     assert sections == {0, 2}
 
 
+def test_a_google_docs_soft_line_break_is_treated_as_a_real_line_break():
+    """The Docs API returns a Shift+Enter soft break as a vertical tab embedded in
+    the paragraph's text, not a paragraph break - it must not collapse into a
+    space the way ordinary whitespace does."""
+    raw = "Praise the Lord\vBend your knee\vFor his ransom\vForevermore\n"
+    assert lyrics.clean_lines(raw) == [
+        "Praise the Lord", "Bend your knee", "For his ransom", "Forevermore"
+    ]
+
+
 def test_whitespace_is_normalised_but_wording_is_untouched():
     assert lyrics.clean_lines("  I  walked   the world’s ways \n") == [
         "I walked the world’s ways"
