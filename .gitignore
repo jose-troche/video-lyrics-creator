@@ -1,4 +1,3 @@
-.DS_Store
 .env
 .env.*
 !.env.example
@@ -10,8 +9,27 @@ __pycache__/
 build/
 dist/
 *.egg-info/
-work/
+
+# The pointer at the repo root is per-machine (absolute paths) - each clone makes
+# its own with `video-lyrics init`. The per-song data files under work/ are kept,
+# see below, so anchor these to the root only.
+/project.json
+/project.yaml
+/project.yml
+
+# Finished videos - hundreds of MB each, and rebuildable from what is kept below.
 output/
-project.json
-project.yaml
-project.yml
+
+# Working files are intermediates and stay out of git, with three exceptions per
+# song: the project data (settings, cue timings, the scene plan), the timed
+# lyrics, and the generated images. Those are the results worth keeping;
+# everything else under work/ - transcripts, motion clips, overlay PNGs, the raw
+# image downloads in images.src/ - is rebuilt from them.
+work/**
+!work/*/
+!work/*/project.yaml
+!work/*/lyrics.srt
+!work/*/images/
+!work/*/images/**
+
+.DS_Store

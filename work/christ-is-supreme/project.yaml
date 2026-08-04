@@ -1,0 +1,957 @@
+schema_version: 1
+title: Christ is supreme
+author: José Troche
+audio: /Users/jatroche/Music/From beginning to end you are God/09 Christ is Supreme.wav
+lyrics_source: /Users/jatroche/Google Drive/Songs/From beginning to end you are God/Christ is supreme - Colossians 1:13-22.gdoc
+visual_style: cinematic photographic realism
+work_dir: /Users/jatroche/code/video-lyrics-creator/work
+video:
+  width: 1920
+  height: 1080
+  fps: 30
+  transition: 0.75
+  title_duration: 20.0
+  title_fade: 0.75
+  font: Avenir Next Demi Bold
+  font_size: 58
+  margin_v: 72
+  zoom: 1.2
+  lyric_lead: 0.35
+  lyric_fade: 0.2
+  audio_fade: 1.0
+image_generation:
+  provider: manual
+  model: gpt-image-2
+  quality: medium
+  lines_per_image: 2
+  source_dir: null
+alignment:
+  model: medium.en
+  language: en
+  vad: false
+  prompt_hint: false
+  min_confidence: 0.5
+  min_matched_words: 2
+  min_duration: 1.0
+  max_gap_fill: 0.7
+  scene_gap: 2.5
+  min_scene_duration: 4.0
+  max_scene_duration: 15.0
+render:
+  engine: ffmpeg
+  output: /Users/jatroche/code/video-lyrics-creator/output/christ-is-supreme.mp4
+  format: mp4
+  codec: H264
+  audio_codec: aac
+  replace_existing: true
+  motion_backend: prerender
+  lyrics_mode: overlay
+  intermediate: h264
+  last_output: /Users/jatroche/code/video-lyrics-creator/output/christ-is-supreme.mp4
+lyric_lines:
+- Christ is supreme
+- Christ is the image of God yet unseen
+- In Him God’s fullness dwells so serene
+- The perfect imprint of God’s very nature
+- God’s glory shines, through Jesus the Savior
+- He is the God-Son above all creation
+- All things were made by, through and for Him
+- Sustaining the cosmos in full preservation
+- The word of His power shall never grow dim
+- Christ is supreme over all beings
+- God of glory, Lord of kings
+- Christ is supreme over all beings
+- Magnificent Savior, creation sings
+- Christ is supreme
+- We were his foes, suppressing his glory
+- Hostile and proud, rebellious, unworthy
+- Yet at the cross, he poured out his blood
+- Redeeming Shepherd, atoning his flock
+- The grave was defeated, he rose from the dead
+- Now ruling from heaven, the church’s chief head
+- Sovereignly reigning, unbeatable Lord
+- Magnify Jesus, now and forever adored
+- Christ is supreme over all beings
+- God of glory, Lord of kings
+- Christ is supreme over all beings
+- Magnificent Savior, creation sings
+- Christ is supreme
+- Christ is supreme
+- Christ is supreme
+duration: 143.68
+transcript:
+  path: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/transcript.json
+  model: medium.en
+  words: 199
+lyrics:
+- start: 22.5
+  end: 25.54
+  text: Christ is the image of God yet unseen
+  line_index: 1
+  alignment_confidence: 1.0
+  tuned: true
+- start: 25.63
+  end: 28.24
+  text: In Him God’s fullness dwells so serene
+  line_index: 2
+  alignment_confidence: 0.75
+  tuned: true
+- start: 28.33
+  end: 31.19
+  text: The perfect imprint of God’s very nature
+  line_index: 3
+  alignment_confidence: 0.75
+  tuned: true
+- start: 31.19
+  end: 34.14
+  text: God’s glory shines, through Jesus the Savior
+  line_index: 4
+  alignment_confidence: 0.75
+  tuned: true
+- start: 34.14
+  end: 36.8
+  text: He is the God-Son above all creation
+  line_index: 5
+  alignment_confidence: 0.875
+- start: 36.8
+  end: 39.28
+  text: All things were made by, through and for Him
+  line_index: 6
+  alignment_confidence: 1.0
+  tuned: true
+- start: 39.34
+  end: 42.16
+  text: Sustaining the cosmos in full preservation
+  line_index: 7
+  alignment_confidence: 0.667
+  tuned: true
+- start: 42.16
+  end: 45.28
+  text: The word of His power shall never grow dim
+  line_index: 8
+  alignment_confidence: 1.0
+  tuned: true
+- start: 45.48
+  end: 48.84
+  text: Christ is supreme over all beings
+  line_index: 9
+  alignment_confidence: 1.0
+  tuned: true
+- start: 48.94
+  end: 51.14
+  text: God of glory, Lord of kings
+  line_index: 10
+  alignment_confidence: 0.833
+  tuned: true
+- start: 51.14
+  end: 54.2
+  text: Christ is supreme over all beings
+  line_index: 11
+  alignment_confidence: 1.0
+- start: 54.2
+  end: 59.03
+  text: Magnificent Savior, creation sings
+  line_index: 12
+  alignment_confidence: 0.75
+  tuned: true
+- start: 59.21
+  end: 67.83
+  text: Christ is supreme
+  line_index: 13
+  alignment_confidence: 1.0
+  tuned: true
+- start: 70.1
+  end: 73.44
+  text: We were his foes, suppressing his glory
+  line_index: 14
+  alignment_confidence: 1.0
+- start: 73.44
+  end: 76.25
+  text: Hostile and proud, rebellious, unworthy
+  line_index: 15
+  alignment_confidence: 1.0
+  tuned: true
+- start: 76.26
+  end: 78.74
+  text: Yet at the cross, he poured out his blood
+  line_index: 16
+  alignment_confidence: 1.0
+  tuned: true
+- start: 78.74
+  end: 81.46
+  text: Redeeming Shepherd, atoning his flock
+  line_index: 17
+  alignment_confidence: 1.0
+- start: 81.46
+  end: 84.27
+  text: The grave was defeated, he rose from the dead
+  line_index: 18
+  alignment_confidence: 0.889
+  tuned: true
+- start: 84.27
+  end: 87.15
+  text: Now ruling from heaven, the church’s chief head
+  line_index: 19
+  alignment_confidence: 0.889
+  tuned: true
+- start: 87.15
+  end: 89.89
+  text: Sovereignly reigning, unbeatable Lord
+  line_index: 20
+  alignment_confidence: 1.0
+  tuned: true
+- start: 89.89
+  end: 93.28
+  text: Magnify Jesus, now and forever adored
+  line_index: 21
+  alignment_confidence: 1.0
+  tuned: true
+- start: 93.36
+  end: 96.68
+  text: Christ is supreme over all beings
+  line_index: 22
+  alignment_confidence: 1.0
+  tuned: true
+- start: 96.75
+  end: 98.91
+  text: God of glory, Lord of kings
+  line_index: 23
+  alignment_confidence: 0.833
+  tuned: true
+- start: 98.93
+  end: 101.97
+  text: Christ is supreme over all beings
+  line_index: 24
+  alignment_confidence: 1.0
+  tuned: true
+- start: 101.97
+  end: 104.33
+  text: Magnificent Savior, creation sings
+  line_index: 25
+  alignment_confidence: 1.0
+  tuned: true
+- start: 104.33
+  end: 107.51
+  text: Christ is supreme over all beings
+  line_index: null
+  alignment_confidence: 0.0
+  tuned: true
+- start: 107.81
+  end: 109.84
+  text: God of glory, Lord of kings
+  line_index: null
+  alignment_confidence: 0.0
+  tuned: true
+- start: 109.84
+  end: 112.91
+  text: Christ is supreme over all beings
+  line_index: null
+  alignment_confidence: 0.0
+  tuned: true
+- start: 112.91
+  end: 117.38
+  text: Magnificent Savior, creation sings
+  line_index: null
+  alignment_confidence: 0.0
+  tuned: true
+- start: 117.66
+  end: 119.16
+  text: Christ is supreme
+  line_index: 26
+  alignment_confidence: 1.0
+  tuned: true
+- start: 123.46
+  end: 125.9
+  text: Christ is supreme
+  line_index: 27
+  alignment_confidence: 1.0
+  tuned: true
+- start: 128.7
+  end: 137.38
+  text: Christ is supreme
+  line_index: 28
+  alignment_confidence: 1.0
+  tuned: true
+scenes:
+- start: 0.0
+  end: 11.25
+  lines: []
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene for an instrumental passage of the song "Christ is supreme" — the opening, before the first line "Christ is the image of God yet unseen" (part 1 of 2). Wide, atmospheric, no people speaking; intentional composition, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness.'
+  index: 1
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/images/scene-001-2e79f674ea283d1a.png
+  motion_first_frame: 0
+  motion_frames: 349
+- start: 11.25
+  end: 22.5
+  lines: []
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene for an instrumental passage of the song "Christ is supreme" — the opening, before the first line "Christ is the image of God yet unseen" (part 2 of 2). Wide, atmospheric, no people speaking; intentional composition, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness.'
+  index: 2
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/images/scene-002-ecf5440ece8fc8b2.png
+  motion_first_frame: 327
+  motion_frames: 359
+- start: 22.5
+  end: 28.33
+  lines:
+  - Christ is the image of God yet unseen
+  - In Him God’s fullness dwells so serene
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Christ is the image of God yet unseen / In Him God’s fullness dwells so serene''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness.'
+  index: 3
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/images/scene-003-9733f64f33a284e0.png
+  motion_first_frame: 664
+  motion_frames: 197
+- start: 28.33
+  end: 34.14
+  lines:
+  - The perfect imprint of God’s very nature
+  - God’s glory shines, through Jesus the Savior
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''The perfect imprint of God’s very nature / God’s glory shines, through Jesus the Savior''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness.'
+  index: 4
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/images/scene-004-ffd726f520411ee0.png
+  motion_first_frame: 839
+  motion_frames: 196
+- start: 34.14
+  end: 39.34
+  lines:
+  - He is the God-Son above all creation
+  - All things were made by, through and for Him
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''He is the God-Son above all creation / All things were made by, through and for Him''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness.'
+  index: 5
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/images/scene-005-b55342a42a0217ea.png
+  motion_first_frame: 1013
+  motion_frames: 178
+- start: 39.34
+  end: 45.48
+  lines:
+  - Sustaining the cosmos in full preservation
+  - The word of His power shall never grow dim
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Sustaining the cosmos in full preservation / The word of His power shall never grow dim''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography.'
+  index: 6
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/images/scene-006-45eb065a7d2e92e1.png
+  motion_first_frame: 1169
+  motion_frames: 206
+- start: 45.48
+  end: 51.14
+  lines:
+  - Christ is supreme over all beings
+  - God of glory, Lord of kings
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Christ is supreme over all beings / God of glory, Lord of kings''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness.'
+  index: 7
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/images/scene-007-8e6ab697f6a3244d.png
+  motion_first_frame: 1353
+  motion_frames: 192
+- start: 51.14
+  end: 59.21
+  lines:
+  - Christ is supreme over all beings
+  - Magnificent Savior, creation sings
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Christ is supreme over all beings / Magnificent Savior, creation sings''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness.'
+  index: 8
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/images/scene-008-77d58142ed318b9a.png
+  motion_first_frame: 1523
+  motion_frames: 264
+- start: 59.21
+  end: 70.1
+  lines:
+  - Christ is supreme
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Christ is supreme''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness.'
+  index: 9
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/images/scene-009-9bb44cac673a713c.png
+  motion_first_frame: 1765
+  motion_frames: 349
+- start: 70.1
+  end: 76.26
+  lines:
+  - We were his foes, suppressing his glory
+  - Hostile and proud, rebellious, unworthy
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''We were his foes, suppressing his glory / Hostile and proud, rebellious, unworthy''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography.'
+  index: 10
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/images/scene-010-32a62d4a5e536231.png
+  motion_first_frame: 2092
+  motion_frames: 207
+- start: 76.26
+  end: 81.46
+  lines:
+  - Yet at the cross, he poured out his blood
+  - Redeeming Shepherd, atoning his flock
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Yet at the cross, he poured out his blood / Redeeming Shepherd, atoning his flock''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography.'
+  index: 11
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/images/scene-011-ad3d02299dcf9190.png
+  motion_first_frame: 2277
+  motion_frames: 178
+- start: 81.46
+  end: 87.15
+  lines:
+  - The grave was defeated, he rose from the dead
+  - Now ruling from heaven, the church’s chief head
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''The grave was defeated, he rose from the dead / Now ruling from heaven, the church’s chief head''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography.'
+  index: 12
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/images/scene-012-136a64037f9443c5.png
+  motion_first_frame: 2433
+  motion_frames: 192
+- start: 87.15
+  end: 93.36
+  lines:
+  - Sovereignly reigning, unbeatable Lord
+  - Magnify Jesus, now and forever adored
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Sovereignly reigning, unbeatable Lord / Magnify Jesus, now and forever adored''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness.'
+  index: 13
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/images/scene-013-946b8ba3cbb491fa.png
+  motion_first_frame: 2603
+  motion_frames: 209
+- start: 93.36
+  end: 98.93
+  lines:
+  - Christ is supreme over all beings
+  - God of glory, Lord of kings
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Christ is supreme over all beings / God of glory, Lord of kings''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness.'
+  index: 14
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/images/scene-014-5f63c051ab6a7546.png
+  motion_first_frame: 2790
+  motion_frames: 189
+- start: 98.93
+  end: 104.33
+  lines:
+  - Christ is supreme over all beings
+  - Magnificent Savior, creation sings
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Christ is supreme over all beings / Magnificent Savior, creation sings''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness.'
+  index: 15
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/images/scene-015-943eeaba6c242ae3.png
+  motion_first_frame: 2957
+  motion_frames: 184
+- start: 104.33
+  end: 109.84
+  lines:
+  - Christ is supreme over all beings
+  - God of glory, Lord of kings
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Christ is supreme over all beings / God of glory, Lord of kings''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness.'
+  index: 16
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/images/scene-016-356ba9430c6f3218.png
+  motion_first_frame: 3119
+  motion_frames: 187
+- start: 109.84
+  end: 117.66
+  lines:
+  - Christ is supreme over all beings
+  - Magnificent Savior, creation sings
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Christ is supreme over all beings / Magnificent Savior, creation sings''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness.'
+  index: 17
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/images/scene-017-bfd10858e4b62e77.png
+  motion_first_frame: 3284
+  motion_frames: 257
+- start: 117.66
+  end: 123.46
+  lines:
+  - Christ is supreme
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Christ is supreme''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness.'
+  index: 18
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/images/scene-018-e8dbeea2d837a13c.png
+  motion_first_frame: 3519
+  motion_frames: 196
+- start: 123.46
+  end: 128.7
+  lines:
+  - Christ is supreme
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Christ is supreme''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness.'
+  index: 19
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/images/scene-019-4fdb654118e4caeb.png
+  motion_first_frame: 3693
+  motion_frames: 179
+- start: 128.7
+  end: 143.68
+  lines:
+  - Christ is supreme
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Christ is supreme''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness.'
+  index: 20
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/images/scene-020-bd257b2cd7efb387.png
+  motion_first_frame: 3850
+  motion_frames: 460
+overlays:
+  title:
+    image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/overlays/title-0f9ceac81d6f3125.png
+    start: 0.0
+    end: 20.0
+    fade: 0.75
+    clip: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/overlay-clips/title-0f9ceac81d6f3125-919ae8ef23ffa4db.mov
+  lyrics:
+  - start: 22.15
+    end: 25.54
+    text: Christ is the image of God yet unseen
+    image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/overlays/lyric-001-8bae38d08af39dd9.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/overlay-clips/lyric-001-8bae38d08af39dd9-5987113a777986e6.mov
+  - start: 25.54
+    end: 28.24
+    text: In Him God’s fullness dwells so serene
+    image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/overlays/lyric-002-fb115f24e644fc0f.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/overlay-clips/lyric-002-fb115f24e644fc0f-d3100483283d23b2.mov
+  - start: 28.24
+    end: 31.19
+    text: The perfect imprint of God’s very nature
+    image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/overlays/lyric-003-843c2b4153630d0a.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/overlay-clips/lyric-003-843c2b4153630d0a-7f2fe6f621928989.mov
+  - start: 31.19
+    end: 34.14
+    text: God’s glory shines, through Jesus the Savior
+    image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/overlays/lyric-004-88395a145b2761a0.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/overlay-clips/lyric-004-88395a145b2761a0-7f2fe6f621928989.mov
+  - start: 34.14
+    end: 36.8
+    text: He is the God-Son above all creation
+    image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/overlays/lyric-005-a1e0d8c44123e0d1.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/overlay-clips/lyric-005-a1e0d8c44123e0d1-2c17a5149374cc49.mov
+  - start: 36.8
+    end: 39.28
+    text: All things were made by, through and for Him
+    image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/overlays/lyric-006-1501e62c36dbf289.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/overlay-clips/lyric-006-1501e62c36dbf289-35ddd834527b296b.mov
+  - start: 39.28
+    end: 42.16
+    text: Sustaining the cosmos in full preservation
+    image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/overlays/lyric-007-836fdf04c5a847be.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/overlay-clips/lyric-007-836fdf04c5a847be-cbc75dd919aa1754.mov
+  - start: 42.16
+    end: 45.28
+    text: The word of His power shall never grow dim
+    image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/overlays/lyric-008-2649e38d936af905.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/overlay-clips/lyric-008-2649e38d936af905-c0328387cd958f36.mov
+  - start: 45.28
+    end: 48.84
+    text: Christ is supreme over all beings
+    image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/overlays/lyric-009-8304a26cdd6e72c9.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/overlay-clips/lyric-009-8304a26cdd6e72c9-e9ad5b03cf63ed16.mov
+  - start: 48.84
+    end: 51.14
+    text: God of glory, Lord of kings
+    image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/overlays/lyric-010-ce59a1ff59703f51.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/overlay-clips/lyric-010-ce59a1ff59703f51-3df269537e891632.mov
+  - start: 51.14
+    end: 54.2
+    text: Christ is supreme over all beings
+    image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/overlays/lyric-011-8304a26cdd6e72c9.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/overlay-clips/lyric-011-8304a26cdd6e72c9-097ee0b5e07cb86d.mov
+  - start: 54.2
+    end: 59.03
+    text: Magnificent Savior, creation sings
+    image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/overlays/lyric-012-f826dfcd4c4dbbe8.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/overlay-clips/lyric-012-f826dfcd4c4dbbe8-c910caaa102b57b1.mov
+  - start: 59.03
+    end: 67.83
+    text: Christ is supreme
+    image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/overlays/lyric-013-9bcefcd5a6ae9a4c.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/overlay-clips/lyric-013-9bcefcd5a6ae9a4c-91d9b5aca19dda64.mov
+  - start: 69.75
+    end: 73.44
+    text: We were his foes, suppressing his glory
+    image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/overlays/lyric-014-d5a102d3a5589f7d.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/overlay-clips/lyric-014-d5a102d3a5589f7d-8e7d559572c66cc6.mov
+  - start: 73.44
+    end: 76.25
+    text: Hostile and proud, rebellious, unworthy
+    image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/overlays/lyric-015-9d85519e02192173.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/overlay-clips/lyric-015-9d85519e02192173-b790b2edbf9020ed.mov
+  - start: 76.25
+    end: 78.74
+    text: Yet at the cross, he poured out his blood
+    image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/overlays/lyric-016-bb309572a3db761b.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/overlay-clips/lyric-016-bb309572a3db761b-6c7fc50489e80f39.mov
+  - start: 78.74
+    end: 81.46
+    text: Redeeming Shepherd, atoning his flock
+    image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/overlays/lyric-017-ae57020b29aa13c2.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/overlay-clips/lyric-017-ae57020b29aa13c2-1ce71201440d530b.mov
+  - start: 81.46
+    end: 84.27
+    text: The grave was defeated, he rose from the dead
+    image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/overlays/lyric-018-da1eab034d3ddc1a.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/overlay-clips/lyric-018-da1eab034d3ddc1a-b790b2edbf9020ed.mov
+  - start: 84.27
+    end: 87.15
+    text: Now ruling from heaven, the church’s chief head
+    image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/overlays/lyric-019-06345980ceb018d3.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/overlay-clips/lyric-019-06345980ceb018d3-cbc75dd919aa1754.mov
+  - start: 87.15
+    end: 89.89
+    text: Sovereignly reigning, unbeatable Lord
+    image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/overlays/lyric-020-bcf9fcfa1a342fbd.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/overlay-clips/lyric-020-bcf9fcfa1a342fbd-c096477169400ff5.mov
+  - start: 89.89
+    end: 93.28
+    text: Magnify Jesus, now and forever adored
+    image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/overlays/lyric-021-53e9543d301fe9c6.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/overlay-clips/lyric-021-53e9543d301fe9c6-5987113a777986e6.mov
+  - start: 93.28
+    end: 96.68
+    text: Christ is supreme over all beings
+    image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/overlays/lyric-022-8304a26cdd6e72c9.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/overlay-clips/lyric-022-8304a26cdd6e72c9-8092f5fb6ffa4816.mov
+  - start: 96.68
+    end: 98.91
+    text: God of glory, Lord of kings
+    image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/overlays/lyric-023-ce59a1ff59703f51.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/overlay-clips/lyric-023-ce59a1ff59703f51-ab992012ed8b626e.mov
+  - start: 98.91
+    end: 101.97
+    text: Christ is supreme over all beings
+    image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/overlays/lyric-024-8304a26cdd6e72c9.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/overlay-clips/lyric-024-8304a26cdd6e72c9-097ee0b5e07cb86d.mov
+  - start: 101.97
+    end: 104.33
+    text: Magnificent Savior, creation sings
+    image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/overlays/lyric-025-f826dfcd4c4dbbe8.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/overlay-clips/lyric-025-f826dfcd4c4dbbe8-792aedaf2c65c86f.mov
+  - start: 104.33
+    end: 107.51
+    text: Christ is supreme over all beings
+    image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/overlays/lyric-026-8304a26cdd6e72c9.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/overlay-clips/lyric-026-8304a26cdd6e72c9-b50c4bdb9e05382c.mov
+  - start: 107.51
+    end: 109.84
+    text: God of glory, Lord of kings
+    image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/overlays/lyric-027-ce59a1ff59703f51.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/overlay-clips/lyric-027-ce59a1ff59703f51-af99c7e8e9fc5f4e.mov
+  - start: 109.84
+    end: 112.91
+    text: Christ is supreme over all beings
+    image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/overlays/lyric-028-8304a26cdd6e72c9.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/overlay-clips/lyric-028-8304a26cdd6e72c9-8ccb05d6dd322f7d.mov
+  - start: 112.91
+    end: 117.38
+    text: Magnificent Savior, creation sings
+    image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/overlays/lyric-029-f826dfcd4c4dbbe8.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/overlay-clips/lyric-029-f826dfcd4c4dbbe8-75ee3a395b0a9397.mov
+  - start: 117.38
+    end: 119.16
+    text: Christ is supreme
+    image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/overlays/lyric-030-9bcefcd5a6ae9a4c.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/overlay-clips/lyric-030-9bcefcd5a6ae9a4c-7537699a1fb64a47.mov
+  - start: 123.11
+    end: 125.9
+    text: Christ is supreme
+    image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/overlays/lyric-031-9bcefcd5a6ae9a4c.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/overlay-clips/lyric-031-9bcefcd5a6ae9a4c-deec6bbe7b410825.mov
+  - start: 128.35
+    end: 137.38
+    text: Christ is supreme
+    image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/overlays/lyric-032-9bcefcd5a6ae9a4c.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/overlay-clips/lyric-032-9bcefcd5a6ae9a4c-3af709ab57c9c2d7.mov
+  srt: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/lyrics.srt
+bed:
+- kind: scene
+  first_frame: 0
+  frames: 327
+  scene: 0
+  path: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/clips/bed-001-scene-9c57ee663a16395b.mp4
+  start: 0.0
+  end: 10.9
+- kind: transition
+  first_frame: 327
+  frames: 22
+  from_scene: 0
+  to_scene: 1
+  path: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/clips/bed-002-xfade-f8d2b7d2f975e6b2.mp4
+  start: 10.9
+  end: 11.6333
+- kind: scene
+  first_frame: 349
+  frames: 315
+  scene: 1
+  path: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/clips/bed-003-scene-3e44006d209ee612.mp4
+  start: 11.6333
+  end: 22.1333
+- kind: transition
+  first_frame: 664
+  frames: 22
+  from_scene: 1
+  to_scene: 2
+  path: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/clips/bed-004-xfade-29a5ff99a7d30625.mp4
+  start: 22.1333
+  end: 22.8667
+- kind: scene
+  first_frame: 686
+  frames: 153
+  scene: 2
+  path: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/clips/bed-005-scene-b41065a268c9f2a2.mp4
+  start: 22.8667
+  end: 27.9667
+- kind: transition
+  first_frame: 839
+  frames: 22
+  from_scene: 2
+  to_scene: 3
+  path: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/clips/bed-006-xfade-f074ba12d3c1ef0f.mp4
+  start: 27.9667
+  end: 28.7
+- kind: scene
+  first_frame: 861
+  frames: 152
+  scene: 3
+  path: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/clips/bed-007-scene-5611254903cf6835.mp4
+  start: 28.7
+  end: 33.7667
+- kind: transition
+  first_frame: 1013
+  frames: 22
+  from_scene: 3
+  to_scene: 4
+  path: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/clips/bed-008-xfade-6e12748c0aac8f0c.mp4
+  start: 33.7667
+  end: 34.5
+- kind: scene
+  first_frame: 1035
+  frames: 134
+  scene: 4
+  path: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/clips/bed-009-scene-416c84f15d880d28.mp4
+  start: 34.5
+  end: 38.9667
+- kind: transition
+  first_frame: 1169
+  frames: 22
+  from_scene: 4
+  to_scene: 5
+  path: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/clips/bed-010-xfade-c59bdb3bb192cb2e.mp4
+  start: 38.9667
+  end: 39.7
+- kind: scene
+  first_frame: 1191
+  frames: 162
+  scene: 5
+  path: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/clips/bed-011-scene-a1525d083a5de3b0.mp4
+  start: 39.7
+  end: 45.1
+- kind: transition
+  first_frame: 1353
+  frames: 22
+  from_scene: 5
+  to_scene: 6
+  path: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/clips/bed-012-xfade-d2445c6f9255e552.mp4
+  start: 45.1
+  end: 45.8333
+- kind: scene
+  first_frame: 1375
+  frames: 148
+  scene: 6
+  path: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/clips/bed-013-scene-e171b804d68e2519.mp4
+  start: 45.8333
+  end: 50.7667
+- kind: transition
+  first_frame: 1523
+  frames: 22
+  from_scene: 6
+  to_scene: 7
+  path: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/clips/bed-014-xfade-49508a937e0b801e.mp4
+  start: 50.7667
+  end: 51.5
+- kind: scene
+  first_frame: 1545
+  frames: 220
+  scene: 7
+  path: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/clips/bed-015-scene-da85756253a00467.mp4
+  start: 51.5
+  end: 58.8333
+- kind: transition
+  first_frame: 1765
+  frames: 22
+  from_scene: 7
+  to_scene: 8
+  path: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/clips/bed-016-xfade-be0e3008166a963a.mp4
+  start: 58.8333
+  end: 59.5667
+- kind: scene
+  first_frame: 1787
+  frames: 305
+  scene: 8
+  path: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/clips/bed-017-scene-a3be334be44a10b4.mp4
+  start: 59.5667
+  end: 69.7333
+- kind: transition
+  first_frame: 2092
+  frames: 22
+  from_scene: 8
+  to_scene: 9
+  path: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/clips/bed-018-xfade-8e57facd2f5f931b.mp4
+  start: 69.7333
+  end: 70.4667
+- kind: scene
+  first_frame: 2114
+  frames: 163
+  scene: 9
+  path: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/clips/bed-019-scene-3a0d2208c39af4df.mp4
+  start: 70.4667
+  end: 75.9
+- kind: transition
+  first_frame: 2277
+  frames: 22
+  from_scene: 9
+  to_scene: 10
+  path: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/clips/bed-020-xfade-5c3227fb6887d5f0.mp4
+  start: 75.9
+  end: 76.6333
+- kind: scene
+  first_frame: 2299
+  frames: 134
+  scene: 10
+  path: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/clips/bed-021-scene-adccfc7a84dda064.mp4
+  start: 76.6333
+  end: 81.1
+- kind: transition
+  first_frame: 2433
+  frames: 22
+  from_scene: 10
+  to_scene: 11
+  path: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/clips/bed-022-xfade-db4b38390568d633.mp4
+  start: 81.1
+  end: 81.8333
+- kind: scene
+  first_frame: 2455
+  frames: 148
+  scene: 11
+  path: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/clips/bed-023-scene-f16e760e53cdfec2.mp4
+  start: 81.8333
+  end: 86.7667
+- kind: transition
+  first_frame: 2603
+  frames: 22
+  from_scene: 11
+  to_scene: 12
+  path: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/clips/bed-024-xfade-d16c844a7e27069e.mp4
+  start: 86.7667
+  end: 87.5
+- kind: scene
+  first_frame: 2625
+  frames: 165
+  scene: 12
+  path: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/clips/bed-025-scene-0beffb9f364e8f89.mp4
+  start: 87.5
+  end: 93.0
+- kind: transition
+  first_frame: 2790
+  frames: 22
+  from_scene: 12
+  to_scene: 13
+  path: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/clips/bed-026-xfade-8cb94d25f1b1f6d7.mp4
+  start: 93.0
+  end: 93.7333
+- kind: scene
+  first_frame: 2812
+  frames: 145
+  scene: 13
+  path: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/clips/bed-027-scene-28d35fd504657e47.mp4
+  start: 93.7333
+  end: 98.5667
+- kind: transition
+  first_frame: 2957
+  frames: 22
+  from_scene: 13
+  to_scene: 14
+  path: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/clips/bed-028-xfade-dbba2b8c9abf1f7e.mp4
+  start: 98.5667
+  end: 99.3
+- kind: scene
+  first_frame: 2979
+  frames: 140
+  scene: 14
+  path: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/clips/bed-029-scene-767d545be9100aae.mp4
+  start: 99.3
+  end: 103.9667
+- kind: transition
+  first_frame: 3119
+  frames: 22
+  from_scene: 14
+  to_scene: 15
+  path: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/clips/bed-030-xfade-2c35ac50b6bcf621.mp4
+  start: 103.9667
+  end: 104.7
+- kind: scene
+  first_frame: 3141
+  frames: 143
+  scene: 15
+  path: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/clips/bed-031-scene-9e9048a8a1485d85.mp4
+  start: 104.7
+  end: 109.4667
+- kind: transition
+  first_frame: 3284
+  frames: 22
+  from_scene: 15
+  to_scene: 16
+  path: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/clips/bed-032-xfade-995c84953d762945.mp4
+  start: 109.4667
+  end: 110.2
+- kind: scene
+  first_frame: 3306
+  frames: 213
+  scene: 16
+  path: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/clips/bed-033-scene-09b11ac2507b0bfb.mp4
+  start: 110.2
+  end: 117.3
+- kind: transition
+  first_frame: 3519
+  frames: 22
+  from_scene: 16
+  to_scene: 17
+  path: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/clips/bed-034-xfade-c1b8edf92fb9a6e4.mp4
+  start: 117.3
+  end: 118.0333
+- kind: scene
+  first_frame: 3541
+  frames: 152
+  scene: 17
+  path: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/clips/bed-035-scene-6c6d6b272cce2876.mp4
+  start: 118.0333
+  end: 123.1
+- kind: transition
+  first_frame: 3693
+  frames: 22
+  from_scene: 17
+  to_scene: 18
+  path: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/clips/bed-036-xfade-413f077aed1316e2.mp4
+  start: 123.1
+  end: 123.8333
+- kind: scene
+  first_frame: 3715
+  frames: 135
+  scene: 18
+  path: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/clips/bed-037-scene-d0898daba302fa3d.mp4
+  start: 123.8333
+  end: 128.3333
+- kind: transition
+  first_frame: 3850
+  frames: 22
+  from_scene: 18
+  to_scene: 19
+  path: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/clips/bed-038-xfade-91675a5ccbb8809a.mp4
+  start: 128.3333
+  end: 129.0667
+- kind: scene
+  first_frame: 3872
+  frames: 438
+  scene: 19
+  path: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/clips/bed-039-scene-b74201d22fe51629.mp4
+  start: 129.0667
+  end: 143.6667
+lyric_section_starts:
+- 0
+- 1
+- 5
+- 9
+- 14
+- 18
+- 22

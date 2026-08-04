@@ -1,0 +1,938 @@
+schema_version: 1
+title: Praise Him
+author: José Troche
+audio: /Users/jatroche/Downloads/Praise Him - Grunge.wav
+lyrics_source: /Users/jatroche/Google Drive/Songs/From beginning to end you are God/Praise Him - Psalm 150.gdoc
+visual_style: cinematic photographic realism
+work_dir: /Users/jatroche/code/video-lyrics-creator/work
+video:
+  width: 1920
+  height: 1080
+  fps: 30
+  transition: 0.75
+  title_duration: 18.0
+  title_fade: 0.75
+  font: Avenir Next Demi Bold
+  font_size: 58
+  margin_v: 72
+  zoom: 1.2
+  lyric_lead: 0.35
+  lyric_fade: 0.2
+  audio_fade: 1.0
+image_generation:
+  provider: meta
+  model: gpt-image-2
+  quality: medium
+  lines_per_image: 2
+  source_dir: null
+  meta_headless: false
+  meta_profile_dir: null
+  meta_min_delay: 1.0
+  meta_max_delay: 4.0
+  meta_composer_selector: null
+  meta_image_selector: null
+alignment:
+  model: medium.en
+  language: en
+  vad: false
+  prompt_hint: false
+  min_confidence: 0.5
+  min_matched_words: 2
+  min_duration: 1.0
+  max_gap_fill: 0.7
+  scene_gap: 2.5
+  min_scene_duration: 4.0
+  max_scene_duration: 15.0
+render:
+  engine: ffmpeg
+  output: /Users/jatroche/code/video-lyrics-creator/output/praise-him.mp4
+  format: mp4
+  codec: H264
+  audio_codec: aac
+  replace_existing: true
+  motion_backend: prerender
+  lyrics_mode: overlay
+  intermediate: h264
+  last_output: /Users/jatroche/code/video-lyrics-creator/work/praise-him/output/praise-him.mp4
+lyric_lines:
+- Praise Him
+- Praise the Lord with sounding anthem
+- Bend your knees, bow and adore
+- For His acts and gracious ransom
+- Praise His name forevermore
+- Praise Him, let all creation sing
+- Praise Him, to the eternal King
+- Praise Him, his glory shines so bright
+- Praise Him, with all your soul, strength, and mind
+- Strike the strings and blow the trumpet
+- Beat the drums both loud and strong
+- Let the harp and flute sound open
+- Shout and chant this joyful song
+- Praise Him, let all creation sing
+- Praise Him, to the eternal King
+- Praise Him, his glory shines so bright
+- Praise Him, with all your soul, strength, and mind
+- Dance before Him in celebration
+- Proclaim His power, His worth, His fame
+- Flood the cosmos with adoration
+- Let all who breathe exalt His name
+- Praise Him, let all creation sing
+- Praise Him, to the eternal King
+- Praise Him, his glory shines so bright
+- Praise Him, with all your soul, strength, and mind
+lyric_section_starts:
+- 0
+- 1
+- 5
+- 9
+- 13
+- 17
+- 21
+duration: 216.6
+lyrics:
+- start: 21.01
+  end: 25.47
+  text: Praise the Lord with sounding anthem
+  line_index: 1
+  alignment_confidence: 1.0
+  tuned: true
+- start: 26.09
+  end: 30.8
+  text: Bend your knees, bow and adore
+  line_index: 2
+  alignment_confidence: 1.0
+  tuned: true
+- start: 31.16
+  end: 35.8
+  text: For His acts and gracious ransom
+  line_index: 3
+  alignment_confidence: 1.0
+  tuned: true
+- start: 36.15
+  end: 42.84
+  text: Praise His name forevermore
+  line_index: 4
+  alignment_confidence: 1.0
+  tuned: true
+- start: 43.42
+  end: 48.32
+  text: Praise Him, let all creation sing
+  line_index: 5
+  alignment_confidence: 1.0
+- start: 48.32
+  end: 53.4
+  text: Praise Him, to the eternal King
+  line_index: 6
+  alignment_confidence: 1.0
+- start: 53.4
+  end: 58.46
+  text: Praise Him, his glory shines so bright
+  line_index: 7
+  alignment_confidence: 1.0
+- start: 58.46
+  end: 72.25
+  text: Praise Him, with all your soul, strength, and mind
+  line_index: 8
+  alignment_confidence: 1.0
+  tuned: true
+- start: 77.95
+  end: 82.95
+  text: Strike the strings and blow the trumpet
+  line_index: 9
+  alignment_confidence: 1.0
+  tuned: true
+- start: 83.25
+  end: 88.14
+  text: Beat the drums both loud and strong
+  line_index: 10
+  alignment_confidence: 1.0
+  tuned: true
+- start: 88.26
+  end: 92.95
+  text: Let the harp and flute sound open
+  line_index: 11
+  alignment_confidence: 1.0
+  tuned: true
+- start: 93.24
+  end: 99.98
+  text: Shout and chant this joyful song
+  line_index: 12
+  alignment_confidence: 1.0
+  tuned: true
+- start: 100.29
+  end: 105.5
+  text: Praise Him, let all creation sing
+  line_index: 13
+  alignment_confidence: 1.0
+  tuned: true
+- start: 105.5
+  end: 110.54
+  text: Praise Him, to the eternal King
+  line_index: 14
+  alignment_confidence: 1.0
+- start: 110.54
+  end: 115.66
+  text: Praise Him, his glory shines so bright
+  line_index: 15
+  alignment_confidence: 1.0
+- start: 115.66
+  end: 127.84
+  text: Praise Him, with all your soul, strength, and mind
+  line_index: 16
+  alignment_confidence: 1.0
+  tuned: true
+- start: 135.14
+  end: 139.89
+  text: Dance before Him in celebration
+  line_index: 17
+  alignment_confidence: 1.0
+  tuned: true
+- start: 140.18
+  end: 145.12
+  text: Proclaim His power, His worth, His fame
+  line_index: 18
+  alignment_confidence: 1.0
+- start: 145.31
+  end: 149.76
+  text: Flood the cosmos with adoration
+  line_index: 19
+  alignment_confidence: 0.8
+  tuned: true
+- start: 149.84
+  end: 155.04
+  text: Let all who breathe exalt His name
+  line_index: 20
+  alignment_confidence: 1.0
+  tuned: true
+- start: 155.04
+  end: 160.12
+  text: Praise Him, let all creation sing
+  line_index: 21
+  alignment_confidence: 1.0
+- start: 160.12
+  end: 165.2
+  text: Praise Him, to the eternal King
+  line_index: 22
+  alignment_confidence: 1.0
+- start: 165.2
+  end: 170.3
+  text: Praise Him, his glory shines so bright
+  line_index: 23
+  alignment_confidence: 1.0
+- start: 170.3
+  end: 182.37
+  text: Praise Him, with all your soul, strength, and mind
+  line_index: 24
+  alignment_confidence: 0.889
+  tuned: true
+- start: 186.56
+  end: 197.43
+  text: With all your soul, strength, and mind
+  line_index: null
+  alignment_confidence: 0.0
+  tuned: true
+scenes:
+- start: 0.0
+  end: 10.505
+  lines: []
+  prompt: cinematic photographic realism. Create a cinematic lyric-video scene for an instrumental passage of the song "Praise Him" — the opening, before the first line "Praise the Lord with sounding anthem" (part 1 of 2). Wide, atmospheric, no people speaking; intentional composition, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a wide establishing shot, distinctly different in vantage, subject and composition from the scenes either side of it.
+  index: 1
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/praise-him/images/scene-001-c3c1480122df7a26.png
+  motion_first_frame: 0
+  motion_frames: 326
+- start: 10.505
+  end: 21.01
+  lines: []
+  prompt: cinematic photographic realism. Create a cinematic lyric-video scene for an instrumental passage of the song "Praise Him" — the opening, before the first line "Praise the Lord with sounding anthem" (part 2 of 2). Wide, atmospheric, no people speaking; intentional composition, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a low angle close to the ground, looking up, distinctly different in vantage, subject and composition from the scenes either side of it.
+  index: 2
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/praise-him/images/scene-002-afec9db82dafcdb3.png
+  motion_first_frame: 304
+  motion_frames: 337
+- start: 21.01
+  end: 31.16
+  lines:
+  - Praise the Lord with sounding anthem
+  - Bend your knees, bow and adore
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Praise the Lord with sounding anthem / Bend your knees, bow and adore''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as an intimate mid-shot centred on a single subject, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 3
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/praise-him/images/scene-003-94721e4bab3431a6.png
+  motion_first_frame: 619
+  motion_frames: 327
+- start: 31.16
+  end: 43.42
+  lines:
+  - For His acts and gracious ransom
+  - Praise His name forevermore
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''For His acts and gracious ransom / Praise His name forevermore''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a high, distant vantage looking down, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 4
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/praise-him/images/scene-004-99e23680ea7c6391.png
+  motion_first_frame: 924
+  motion_frames: 390
+- start: 43.42
+  end: 53.4
+  lines:
+  - Praise Him, let all creation sing
+  - Praise Him, to the eternal King
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Praise Him, let all creation sing / Praise Him, to the eternal King''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a tight foreground detail with the rest falling away soft, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 5
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/praise-him/images/scene-005-e5228c59b960f4b9.png
+  motion_first_frame: 1292
+  motion_frames: 321
+- start: 53.4
+  end: 58.46
+  lines:
+  - Praise Him, his glory shines so bright
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Praise Him, his glory shines so bright''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a head-on symmetrical composition, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 6
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/praise-him/images/scene-006-369d1de769a41a2d.png
+  motion_first_frame: 1591
+  motion_frames: 174
+- start: 58.46
+  end: 72.25
+  lines:
+  - Praise Him, with all your soul, strength, and mind
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Praise Him, with all your soul, strength, and mind''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a view through a natural frame - an arch, branches, a doorway, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 7
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/praise-him/images/scene-007-fc2ef92b31aa17e9.png
+  motion_first_frame: 1743
+  motion_frames: 436
+- start: 72.25
+  end: 77.95
+  lines: []
+  prompt: cinematic photographic realism. Create a cinematic lyric-video scene for an instrumental passage of the song "Praise Him" — an instrumental break after "Praise Him, with all your soul, strength, and mind". Wide, atmospheric, no people speaking; intentional composition, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a wide establishing shot, distinctly different in vantage, subject and composition from the scenes either side of it.
+  index: 8
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/praise-him/images/scene-008-018624a0423b2b56.png
+  motion_first_frame: 2157
+  motion_frames: 192
+- start: 77.95
+  end: 88.26
+  lines:
+  - Strike the strings and blow the trumpet
+  - Beat the drums both loud and strong
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Strike the strings and blow the trumpet / Beat the drums both loud and strong''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a low angle close to the ground, looking up, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 9
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/praise-him/images/scene-009-e71c670b3f3b336f.png
+  motion_first_frame: 2327
+  motion_frames: 332
+- start: 88.26
+  end: 100.29
+  lines:
+  - Let the harp and flute sound open
+  - Shout and chant this joyful song
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Let the harp and flute sound open / Shout and chant this joyful song''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as an intimate mid-shot centred on a single subject, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 10
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/praise-him/images/scene-010-77ccc957a3e2fc30.png
+  motion_first_frame: 2637
+  motion_frames: 383
+- start: 100.29
+  end: 110.54
+  lines:
+  - Praise Him, let all creation sing
+  - Praise Him, to the eternal King
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Praise Him, let all creation sing / Praise Him, to the eternal King''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a high, distant vantage looking down, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 11
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/praise-him/images/scene-011-c9366b471f318f4b.png
+  motion_first_frame: 2998
+  motion_frames: 329
+- start: 110.54
+  end: 115.66
+  lines:
+  - Praise Him, his glory shines so bright
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Praise Him, his glory shines so bright''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a tight foreground detail with the rest falling away soft, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 12
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/praise-him/images/scene-012-6d1a7255fee74611.png
+  motion_first_frame: 3305
+  motion_frames: 176
+- start: 115.66
+  end: 127.84
+  lines:
+  - Praise Him, with all your soul, strength, and mind
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Praise Him, with all your soul, strength, and mind''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a head-on symmetrical composition, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 13
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/praise-him/images/scene-013-5995ef3591b5ed7c.png
+  motion_first_frame: 3459
+  motion_frames: 387
+- start: 127.84
+  end: 135.14
+  lines: []
+  prompt: cinematic photographic realism. Create a cinematic lyric-video scene for an instrumental passage of the song "Praise Him" — an instrumental break after "Praise Him, with all your soul, strength, and mind". Wide, atmospheric, no people speaking; intentional composition, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a view through a natural frame - an arch, branches, a doorway, distinctly different in vantage, subject and composition from the scenes either side of it.
+  index: 14
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/praise-him/images/scene-014-bbc5de7e0ba32fc1.png
+  motion_first_frame: 3824
+  motion_frames: 241
+- start: 135.14
+  end: 145.31
+  lines:
+  - Dance before Him in celebration
+  - Proclaim His power, His worth, His fame
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Dance before Him in celebration / Proclaim His power, His worth, His fame''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a wide establishing shot, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 15
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/praise-him/images/scene-015-a2a0725ca6395546.png
+  motion_first_frame: 4043
+  motion_frames: 327
+- start: 145.31
+  end: 155.04
+  lines:
+  - Flood the cosmos with adoration
+  - Let all who breathe exalt His name
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Flood the cosmos with adoration / Let all who breathe exalt His name''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a low angle close to the ground, looking up, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 16
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/praise-him/images/scene-016-659a14bf9c07fb75.png
+  motion_first_frame: 4348
+  motion_frames: 314
+- start: 155.04
+  end: 165.2
+  lines:
+  - Praise Him, let all creation sing
+  - Praise Him, to the eternal King
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Praise Him, let all creation sing / Praise Him, to the eternal King''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as an intimate mid-shot centred on a single subject, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 17
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/praise-him/images/scene-017-08abd5d55ecc48b7.png
+  motion_first_frame: 4640
+  motion_frames: 327
+- start: 165.2
+  end: 170.3
+  lines:
+  - Praise Him, his glory shines so bright
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Praise Him, his glory shines so bright''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a high, distant vantage looking down, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 18
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/praise-him/images/scene-018-1743142331cfe7a0.png
+  motion_first_frame: 4945
+  motion_frames: 175
+- start: 170.3
+  end: 182.37
+  lines:
+  - Praise Him, with all your soul, strength, and mind
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Praise Him, with all your soul, strength, and mind''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a tight foreground detail with the rest falling away soft, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 19
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/praise-him/images/scene-019-f30b449a3fcc28ac.png
+  motion_first_frame: 5098
+  motion_frames: 384
+- start: 182.37
+  end: 186.56
+  lines: []
+  prompt: cinematic photographic realism. Create a cinematic lyric-video scene for an instrumental passage of the song "Praise Him" — an instrumental break after "Praise Him, with all your soul, strength, and mind". Wide, atmospheric, no people speaking; intentional composition, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a head-on symmetrical composition, distinctly different in vantage, subject and composition from the scenes either side of it.
+  index: 20
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/praise-him/images/scene-020-b4db868d65943285.png
+  motion_first_frame: 5460
+  motion_frames: 148
+- start: 186.56
+  end: 197.43
+  lines:
+  - With all your soul, strength, and mind
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''With all your soul, strength, and mind''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a view through a natural frame - an arch, branches, a doorway, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 21
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/praise-him/images/scene-021-a8dcb2bbaff73459.png
+  motion_first_frame: 5586
+  motion_frames: 348
+- start: 197.43
+  end: 207.015
+  lines: []
+  prompt: cinematic photographic realism. Create a cinematic lyric-video scene for an instrumental passage of the song "Praise Him" — an instrumental break after "With all your soul, strength, and mind" (part 1 of 2). Wide, atmospheric, no people speaking; intentional composition, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a wide establishing shot, distinctly different in vantage, subject and composition from the scenes either side of it.
+  index: 22
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/praise-him/images/scene-022-3ae7cf6e313ad443.png
+  motion_first_frame: 5912
+  motion_frames: 309
+- start: 207.015
+  end: 216.6
+  lines: []
+  prompt: cinematic photographic realism. Create a cinematic lyric-video scene for an instrumental passage of the song "Praise Him" — an instrumental break after "With all your soul, strength, and mind" (part 2 of 2). Wide, atmospheric, no people speaking; intentional composition, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a low angle close to the ground, looking up, distinctly different in vantage, subject and composition from the scenes either side of it.
+  index: 23
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/praise-him/images/scene-023-9b2d31a3c8ff5737.png
+  motion_first_frame: 6199
+  motion_frames: 299
+overlays:
+  title:
+    image: /Users/jatroche/code/video-lyrics-creator/work/praise-him/overlays/title-27629620fd6657d1.png
+    start: 0.0
+    end: 18.0
+    fade: 0.75
+    clip: /Users/jatroche/code/video-lyrics-creator/work/praise-him/overlay-clips/title-27629620fd6657d1-2b35302c1dab5c01.mov
+  lyrics:
+  - start: 20.66
+    end: 25.47
+    text: Praise the Lord with sounding anthem
+    image: /Users/jatroche/code/video-lyrics-creator/work/praise-him/overlays/lyric-001-52a8fca0d720e6eb.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/praise-him/overlay-clips/lyric-001-52a8fca0d720e6eb-fdea9c1276e9a7b9.mov
+  - start: 25.74
+    end: 30.8
+    text: Bend your knees, bow and adore
+    image: /Users/jatroche/code/video-lyrics-creator/work/praise-him/overlays/lyric-002-53f34f230bb7c4c1.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/praise-him/overlay-clips/lyric-002-53f34f230bb7c4c1-3e82bbe8f982f6ed.mov
+  - start: 30.81
+    end: 35.8
+    text: For His acts and gracious ransom
+    image: /Users/jatroche/code/video-lyrics-creator/work/praise-him/overlays/lyric-003-407579dc60516d1c.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/praise-him/overlay-clips/lyric-003-407579dc60516d1c-65d442d0e69c8cb7.mov
+  - start: 35.8
+    end: 42.84
+    text: Praise His name forevermore
+    image: /Users/jatroche/code/video-lyrics-creator/work/praise-him/overlays/lyric-004-197891b31757d98c.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/praise-him/overlay-clips/lyric-004-197891b31757d98c-3bff8dd4d1803894.mov
+  - start: 43.07
+    end: 48.32
+    text: Praise Him, let all creation sing
+    image: /Users/jatroche/code/video-lyrics-creator/work/praise-him/overlays/lyric-005-f4b94d06bc114c50.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/praise-him/overlay-clips/lyric-005-f4b94d06bc114c50-51be0f84cb257c7d.mov
+  - start: 48.32
+    end: 53.4
+    text: Praise Him, to the eternal King
+    image: /Users/jatroche/code/video-lyrics-creator/work/praise-him/overlays/lyric-006-ce2065e19366fa59.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/praise-him/overlay-clips/lyric-006-ce2065e19366fa59-16eb39689b671ad5.mov
+  - start: 53.4
+    end: 58.46
+    text: Praise Him, his glory shines so bright
+    image: /Users/jatroche/code/video-lyrics-creator/work/praise-him/overlays/lyric-007-3aae61df44c52006.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/praise-him/overlay-clips/lyric-007-3aae61df44c52006-3e82bbe8f982f6ed.mov
+  - start: 58.46
+    end: 72.25
+    text: Praise Him, with all your soul, strength, and mind
+    image: /Users/jatroche/code/video-lyrics-creator/work/praise-him/overlays/lyric-008-87e806e276ccbb90.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/praise-him/overlay-clips/lyric-008-87e806e276ccbb90-26f36e33843cbda9.mov
+  - start: 77.6
+    end: 82.95
+    text: Strike the strings and blow the trumpet
+    image: /Users/jatroche/code/video-lyrics-creator/work/praise-him/overlays/lyric-009-a2f7b8cefe6754db.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/praise-him/overlay-clips/lyric-009-a2f7b8cefe6754db-a58c62988d53dc63.mov
+  - start: 82.95
+    end: 88.14
+    text: Beat the drums both loud and strong
+    image: /Users/jatroche/code/video-lyrics-creator/work/praise-him/overlays/lyric-010-af94c7455447ffcd.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/praise-him/overlay-clips/lyric-010-af94c7455447ffcd-766e6dd9a7a4b22a.mov
+  - start: 88.14
+    end: 92.95
+    text: Let the harp and flute sound open
+    image: /Users/jatroche/code/video-lyrics-creator/work/praise-him/overlays/lyric-011-e5c6585345112c8c.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/praise-him/overlay-clips/lyric-011-e5c6585345112c8c-fdea9c1276e9a7b9.mov
+  - start: 92.95
+    end: 99.98
+    text: Shout and chant this joyful song
+    image: /Users/jatroche/code/video-lyrics-creator/work/praise-him/overlays/lyric-012-4ea85fdf4fef8fcf.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/praise-him/overlay-clips/lyric-012-4ea85fdf4fef8fcf-56c3c85ef3ab08b5.mov
+  - start: 99.98
+    end: 105.5
+    text: Praise Him, let all creation sing
+    image: /Users/jatroche/code/video-lyrics-creator/work/praise-him/overlays/lyric-013-f4b94d06bc114c50.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/praise-him/overlay-clips/lyric-013-f4b94d06bc114c50-ca211ec896e65d4d.mov
+  - start: 105.5
+    end: 110.54
+    text: Praise Him, to the eternal King
+    image: /Users/jatroche/code/video-lyrics-creator/work/praise-him/overlays/lyric-014-ce2065e19366fa59.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/praise-him/overlay-clips/lyric-014-ce2065e19366fa59-a89bde14e98198b9.mov
+  - start: 110.54
+    end: 115.66
+    text: Praise Him, his glory shines so bright
+    image: /Users/jatroche/code/video-lyrics-creator/work/praise-him/overlays/lyric-015-3aae61df44c52006.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/praise-him/overlay-clips/lyric-015-3aae61df44c52006-4b22c17041f77024.mov
+  - start: 115.66
+    end: 127.84
+    text: Praise Him, with all your soul, strength, and mind
+    image: /Users/jatroche/code/video-lyrics-creator/work/praise-him/overlays/lyric-016-87e806e276ccbb90.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/praise-him/overlay-clips/lyric-016-87e806e276ccbb90-6c4e4219bb1e35ab.mov
+  - start: 134.79
+    end: 139.89
+    text: Dance before Him in celebration
+    image: /Users/jatroche/code/video-lyrics-creator/work/praise-him/overlays/lyric-017-6540baa14c792096.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/praise-him/overlay-clips/lyric-017-6540baa14c792096-ca7c12789e9d778c.mov
+  - start: 139.89
+    end: 145.12
+    text: Proclaim His power, His worth, His fame
+    image: /Users/jatroche/code/video-lyrics-creator/work/praise-him/overlays/lyric-018-559ed9608d5c99a2.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/praise-him/overlay-clips/lyric-018-559ed9608d5c99a2-4cc89d97494588fc.mov
+  - start: 145.12
+    end: 149.76
+    text: Flood the cosmos with adoration
+    image: /Users/jatroche/code/video-lyrics-creator/work/praise-him/overlays/lyric-019-3702bafd67e01860.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/praise-him/overlay-clips/lyric-019-3702bafd67e01860-85fc9f58b8c2e6ae.mov
+  - start: 149.76
+    end: 155.04
+    text: Let all who breathe exalt His name
+    image: /Users/jatroche/code/video-lyrics-creator/work/praise-him/overlays/lyric-020-8ffee8b99f6768a8.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/praise-him/overlay-clips/lyric-020-8ffee8b99f6768a8-ec8c6f800495754b.mov
+  - start: 155.04
+    end: 160.12
+    text: Praise Him, let all creation sing
+    image: /Users/jatroche/code/video-lyrics-creator/work/praise-him/overlays/lyric-021-f4b94d06bc114c50.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/praise-him/overlay-clips/lyric-021-f4b94d06bc114c50-16eb39689b671ad5.mov
+  - start: 160.12
+    end: 165.2
+    text: Praise Him, to the eternal King
+    image: /Users/jatroche/code/video-lyrics-creator/work/praise-him/overlays/lyric-022-ce2065e19366fa59.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/praise-him/overlay-clips/lyric-022-ce2065e19366fa59-16eb39689b671ad5.mov
+  - start: 165.2
+    end: 170.3
+    text: Praise Him, his glory shines so bright
+    image: /Users/jatroche/code/video-lyrics-creator/work/praise-him/overlays/lyric-023-3aae61df44c52006.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/praise-him/overlay-clips/lyric-023-3aae61df44c52006-ca7c12789e9d778c.mov
+  - start: 170.3
+    end: 182.37
+    text: Praise Him, with all your soul, strength, and mind
+    image: /Users/jatroche/code/video-lyrics-creator/work/praise-him/overlays/lyric-024-87e806e276ccbb90.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/praise-him/overlay-clips/lyric-024-87e806e276ccbb90-694e058dd8541e45.mov
+  - start: 186.21
+    end: 197.43
+    text: With all your soul, strength, and mind
+    image: /Users/jatroche/code/video-lyrics-creator/work/praise-him/overlays/lyric-025-221320527c13600b.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/praise-him/overlay-clips/lyric-025-221320527c13600b-bf8d1da765190f91.mov
+  srt: /Users/jatroche/code/video-lyrics-creator/work/praise-him/lyrics.srt
+bed:
+- kind: scene
+  first_frame: 0
+  frames: 304
+  scene: 0
+  path: /Users/jatroche/code/video-lyrics-creator/work/praise-him/clips/bed-001-scene-9df391a7c5e563b1.mp4
+  start: 0.0
+  end: 10.1333
+- kind: transition
+  first_frame: 304
+  frames: 22
+  from_scene: 0
+  to_scene: 1
+  path: /Users/jatroche/code/video-lyrics-creator/work/praise-him/clips/bed-002-xfade-483760ef82480b65.mp4
+  start: 10.1333
+  end: 10.8667
+- kind: scene
+  first_frame: 326
+  frames: 293
+  scene: 1
+  path: /Users/jatroche/code/video-lyrics-creator/work/praise-him/clips/bed-003-scene-3041b407c5d92383.mp4
+  start: 10.8667
+  end: 20.6333
+- kind: transition
+  first_frame: 619
+  frames: 22
+  from_scene: 1
+  to_scene: 2
+  path: /Users/jatroche/code/video-lyrics-creator/work/praise-him/clips/bed-004-xfade-39d842e47701eccd.mp4
+  start: 20.6333
+  end: 21.3667
+- kind: scene
+  first_frame: 641
+  frames: 283
+  scene: 2
+  path: /Users/jatroche/code/video-lyrics-creator/work/praise-him/clips/bed-005-scene-fb7cd29679ee6f88.mp4
+  start: 21.3667
+  end: 30.8
+- kind: transition
+  first_frame: 924
+  frames: 22
+  from_scene: 2
+  to_scene: 3
+  path: /Users/jatroche/code/video-lyrics-creator/work/praise-him/clips/bed-006-xfade-ac3c3e9a502b07d2.mp4
+  start: 30.8
+  end: 31.5333
+- kind: scene
+  first_frame: 946
+  frames: 346
+  scene: 3
+  path: /Users/jatroche/code/video-lyrics-creator/work/praise-him/clips/bed-007-scene-6d3af30d9b32e7b8.mp4
+  start: 31.5333
+  end: 43.0667
+- kind: transition
+  first_frame: 1292
+  frames: 22
+  from_scene: 3
+  to_scene: 4
+  path: /Users/jatroche/code/video-lyrics-creator/work/praise-him/clips/bed-008-xfade-9f914f8c09e0fc01.mp4
+  start: 43.0667
+  end: 43.8
+- kind: scene
+  first_frame: 1314
+  frames: 277
+  scene: 4
+  path: /Users/jatroche/code/video-lyrics-creator/work/praise-him/clips/bed-009-scene-4113f7b7ee1ba58a.mp4
+  start: 43.8
+  end: 53.0333
+- kind: transition
+  first_frame: 1591
+  frames: 22
+  from_scene: 4
+  to_scene: 5
+  path: /Users/jatroche/code/video-lyrics-creator/work/praise-him/clips/bed-010-xfade-93c955d2aa8ded04.mp4
+  start: 53.0333
+  end: 53.7667
+- kind: scene
+  first_frame: 1613
+  frames: 130
+  scene: 5
+  path: /Users/jatroche/code/video-lyrics-creator/work/praise-him/clips/bed-011-scene-bd5c9a9d72cf04fe.mp4
+  start: 53.7667
+  end: 58.1
+- kind: transition
+  first_frame: 1743
+  frames: 22
+  from_scene: 5
+  to_scene: 6
+  path: /Users/jatroche/code/video-lyrics-creator/work/praise-him/clips/bed-012-xfade-5e1165a99380ad1a.mp4
+  start: 58.1
+  end: 58.8333
+- kind: scene
+  first_frame: 1765
+  frames: 392
+  scene: 6
+  path: /Users/jatroche/code/video-lyrics-creator/work/praise-him/clips/bed-013-scene-9dc7da11df4b429a.mp4
+  start: 58.8333
+  end: 71.9
+- kind: transition
+  first_frame: 2157
+  frames: 22
+  from_scene: 6
+  to_scene: 7
+  path: /Users/jatroche/code/video-lyrics-creator/work/praise-him/clips/bed-014-xfade-2af626d60e0d03ac.mp4
+  start: 71.9
+  end: 72.6333
+- kind: scene
+  first_frame: 2179
+  frames: 148
+  scene: 7
+  path: /Users/jatroche/code/video-lyrics-creator/work/praise-him/clips/bed-015-scene-0cdc4fbe73b48430.mp4
+  start: 72.6333
+  end: 77.5667
+- kind: transition
+  first_frame: 2327
+  frames: 22
+  from_scene: 7
+  to_scene: 8
+  path: /Users/jatroche/code/video-lyrics-creator/work/praise-him/clips/bed-016-xfade-6efb812cf33f29bd.mp4
+  start: 77.5667
+  end: 78.3
+- kind: scene
+  first_frame: 2349
+  frames: 288
+  scene: 8
+  path: /Users/jatroche/code/video-lyrics-creator/work/praise-him/clips/bed-017-scene-6804afa04bae6f3e.mp4
+  start: 78.3
+  end: 87.9
+- kind: transition
+  first_frame: 2637
+  frames: 22
+  from_scene: 8
+  to_scene: 9
+  path: /Users/jatroche/code/video-lyrics-creator/work/praise-him/clips/bed-018-xfade-20e6c2f0a2ee500f.mp4
+  start: 87.9
+  end: 88.6333
+- kind: scene
+  first_frame: 2659
+  frames: 339
+  scene: 9
+  path: /Users/jatroche/code/video-lyrics-creator/work/praise-him/clips/bed-019-scene-44348fbd6591f947.mp4
+  start: 88.6333
+  end: 99.9333
+- kind: transition
+  first_frame: 2998
+  frames: 22
+  from_scene: 9
+  to_scene: 10
+  path: /Users/jatroche/code/video-lyrics-creator/work/praise-him/clips/bed-020-xfade-499d030038e3a952.mp4
+  start: 99.9333
+  end: 100.6667
+- kind: scene
+  first_frame: 3020
+  frames: 285
+  scene: 10
+  path: /Users/jatroche/code/video-lyrics-creator/work/praise-him/clips/bed-021-scene-fbf5d6ad104dbc83.mp4
+  start: 100.6667
+  end: 110.1667
+- kind: transition
+  first_frame: 3305
+  frames: 22
+  from_scene: 10
+  to_scene: 11
+  path: /Users/jatroche/code/video-lyrics-creator/work/praise-him/clips/bed-022-xfade-f291f24efe3270ec.mp4
+  start: 110.1667
+  end: 110.9
+- kind: scene
+  first_frame: 3327
+  frames: 132
+  scene: 11
+  path: /Users/jatroche/code/video-lyrics-creator/work/praise-him/clips/bed-023-scene-5c41b3ed971d07c8.mp4
+  start: 110.9
+  end: 115.3
+- kind: transition
+  first_frame: 3459
+  frames: 22
+  from_scene: 11
+  to_scene: 12
+  path: /Users/jatroche/code/video-lyrics-creator/work/praise-him/clips/bed-024-xfade-ddecbc1b815edfdf.mp4
+  start: 115.3
+  end: 116.0333
+- kind: scene
+  first_frame: 3481
+  frames: 343
+  scene: 12
+  path: /Users/jatroche/code/video-lyrics-creator/work/praise-him/clips/bed-025-scene-4b38982333c0457e.mp4
+  start: 116.0333
+  end: 127.4667
+- kind: transition
+  first_frame: 3824
+  frames: 22
+  from_scene: 12
+  to_scene: 13
+  path: /Users/jatroche/code/video-lyrics-creator/work/praise-him/clips/bed-026-xfade-8ae3f33dac46ad62.mp4
+  start: 127.4667
+  end: 128.2
+- kind: scene
+  first_frame: 3846
+  frames: 197
+  scene: 13
+  path: /Users/jatroche/code/video-lyrics-creator/work/praise-him/clips/bed-027-scene-d1a3750f62567a4f.mp4
+  start: 128.2
+  end: 134.7667
+- kind: transition
+  first_frame: 4043
+  frames: 22
+  from_scene: 13
+  to_scene: 14
+  path: /Users/jatroche/code/video-lyrics-creator/work/praise-him/clips/bed-028-xfade-244c572d79b4c4ed.mp4
+  start: 134.7667
+  end: 135.5
+- kind: scene
+  first_frame: 4065
+  frames: 283
+  scene: 14
+  path: /Users/jatroche/code/video-lyrics-creator/work/praise-him/clips/bed-029-scene-42eb93b2a0857ed3.mp4
+  start: 135.5
+  end: 144.9333
+- kind: transition
+  first_frame: 4348
+  frames: 22
+  from_scene: 14
+  to_scene: 15
+  path: /Users/jatroche/code/video-lyrics-creator/work/praise-him/clips/bed-030-xfade-6db931493336378a.mp4
+  start: 144.9333
+  end: 145.6667
+- kind: scene
+  first_frame: 4370
+  frames: 270
+  scene: 15
+  path: /Users/jatroche/code/video-lyrics-creator/work/praise-him/clips/bed-031-scene-155b4e7af51d4810.mp4
+  start: 145.6667
+  end: 154.6667
+- kind: transition
+  first_frame: 4640
+  frames: 22
+  from_scene: 15
+  to_scene: 16
+  path: /Users/jatroche/code/video-lyrics-creator/work/praise-him/clips/bed-032-xfade-3f9c1428201f637d.mp4
+  start: 154.6667
+  end: 155.4
+- kind: scene
+  first_frame: 4662
+  frames: 283
+  scene: 16
+  path: /Users/jatroche/code/video-lyrics-creator/work/praise-him/clips/bed-033-scene-d3f582cb2d471c16.mp4
+  start: 155.4
+  end: 164.8333
+- kind: transition
+  first_frame: 4945
+  frames: 22
+  from_scene: 16
+  to_scene: 17
+  path: /Users/jatroche/code/video-lyrics-creator/work/praise-him/clips/bed-034-xfade-ca8a228aa6f4e1b3.mp4
+  start: 164.8333
+  end: 165.5667
+- kind: scene
+  first_frame: 4967
+  frames: 131
+  scene: 17
+  path: /Users/jatroche/code/video-lyrics-creator/work/praise-him/clips/bed-035-scene-1467acbf2943bcdf.mp4
+  start: 165.5667
+  end: 169.9333
+- kind: transition
+  first_frame: 5098
+  frames: 22
+  from_scene: 17
+  to_scene: 18
+  path: /Users/jatroche/code/video-lyrics-creator/work/praise-him/clips/bed-036-xfade-fc96e02d95d542c5.mp4
+  start: 169.9333
+  end: 170.6667
+- kind: scene
+  first_frame: 5120
+  frames: 340
+  scene: 18
+  path: /Users/jatroche/code/video-lyrics-creator/work/praise-him/clips/bed-037-scene-ca6e3f54a74a602d.mp4
+  start: 170.6667
+  end: 182.0
+- kind: transition
+  first_frame: 5460
+  frames: 22
+  from_scene: 18
+  to_scene: 19
+  path: /Users/jatroche/code/video-lyrics-creator/work/praise-him/clips/bed-038-xfade-dc09f142f3d27b42.mp4
+  start: 182.0
+  end: 182.7333
+- kind: scene
+  first_frame: 5482
+  frames: 104
+  scene: 19
+  path: /Users/jatroche/code/video-lyrics-creator/work/praise-him/clips/bed-039-scene-63f0aa538571d006.mp4
+  start: 182.7333
+  end: 186.2
+- kind: transition
+  first_frame: 5586
+  frames: 22
+  from_scene: 19
+  to_scene: 20
+  path: /Users/jatroche/code/video-lyrics-creator/work/praise-him/clips/bed-040-xfade-3da6044f4640248e.mp4
+  start: 186.2
+  end: 186.9333
+- kind: scene
+  first_frame: 5608
+  frames: 304
+  scene: 20
+  path: /Users/jatroche/code/video-lyrics-creator/work/praise-him/clips/bed-041-scene-0542612b158d862c.mp4
+  start: 186.9333
+  end: 197.0667
+- kind: transition
+  first_frame: 5912
+  frames: 22
+  from_scene: 20
+  to_scene: 21
+  path: /Users/jatroche/code/video-lyrics-creator/work/praise-him/clips/bed-042-xfade-99332f1fd19a25ca.mp4
+  start: 197.0667
+  end: 197.8
+- kind: scene
+  first_frame: 5934
+  frames: 265
+  scene: 21
+  path: /Users/jatroche/code/video-lyrics-creator/work/praise-him/clips/bed-043-scene-97522022cf35f995.mp4
+  start: 197.8
+  end: 206.6333
+- kind: transition
+  first_frame: 6199
+  frames: 22
+  from_scene: 21
+  to_scene: 22
+  path: /Users/jatroche/code/video-lyrics-creator/work/praise-him/clips/bed-044-xfade-1a2657c51daa5410.mp4
+  start: 206.6333
+  end: 207.3667
+- kind: scene
+  first_frame: 6221
+  frames: 277
+  scene: 22
+  path: /Users/jatroche/code/video-lyrics-creator/work/praise-him/clips/bed-045-scene-f026fe9cdde7034b.mp4
+  start: 207.3667
+  end: 216.6

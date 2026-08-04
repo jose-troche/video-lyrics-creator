@@ -1,0 +1,1347 @@
+schema_version: 1
+title: Immeasurable grace
+author: José Troche
+audio: /Users/jatroche/Music/From beginning to end you are God/08 Immeasurable grace.wav
+lyrics_source: /Users/jatroche/Google Drive/Songs/From beginning to end you are God/Immeasurable grace - Ephesians 2:1-10.gdoc
+visual_style: cinematic photographic realism
+work_dir: /Users/jatroche/code/video-lyrics-creator/work
+video:
+  width: 1920
+  height: 1080
+  fps: 30
+  transition: 0.75
+  title_duration: 18.0
+  title_fade: 0.75
+  font: Avenir Next Demi Bold
+  font_size: 58
+  margin_v: 72
+  zoom: 1.2
+  lyric_lead: 0.35
+  lyric_fade: 0.2
+  audio_fade: 1.0
+image_generation:
+  provider: codex
+  model: gpt-image-2
+  quality: medium
+  lines_per_image: 2
+  source_dir: null
+alignment:
+  model: medium.en
+  language: en
+  vad: false
+  prompt_hint: false
+  min_confidence: 0.5
+  min_matched_words: 2
+  min_duration: 1.0
+  max_gap_fill: 0.7
+  scene_gap: 2.5
+  interlude: 18.0
+render:
+  engine: ffmpeg
+  output: /Users/jatroche/code/video-lyrics-creator/output/immeasurable-grace.mp4
+  format: mp4
+  codec: H264
+  audio_codec: aac
+  replace_existing: true
+  motion_backend: prerender
+  lyrics_mode: overlay
+  intermediate: h264
+  last_output: /Users/jatroche/code/video-lyrics-creator/output/immeasurable-grace.mp4
+transcript:
+  path: /Users/jatroche/code/video-lyrics-creator/work/transcript.json
+  model: medium.en
+  words: 285
+lyric_lines:
+- Immeasurable grace
+- Once I was dead, I lived for self
+- Offending God, ignoring Him
+- I walked the world’s dark crooked ways
+- Deceived by lies and empty praise
+- I bowed my heart to selfish pride
+- My cravings ruled, they were my guide
+- But Christ so rich in mercy’s grace
+- He paid my sin and took my place
+- His love so great, so deep, so high
+- He raised me up, I'll never die
+- He took my soul from death’s dark helm
+- Now seated with Christ in heaven’s realm
+- Oh-oh, immeasurable grace
+- Oh-oh, how glorious Your ways
+- Oh-oh, forever I'll praise
+- Your goodness in Christ
+- Your mercy that saves
+- Your immeasurable grace
+- I followed darkness, so blind and proud
+- A voice within the rebel crowd
+- I lived to feed my flesh and mind
+- No thought of God, no truth to find
+- By nature I deserved His wrath
+- Stumbling down a fatal path
+- But God displayed His richest grace
+- A love that time will not erase
+- By grace through faith, not by my doing
+- The gift of God, my boast removing
+- In Jesus Christ I’ve been remade
+- For the good works which God ordained
+- Oh-oh, immeasurable grace
+- Oh-oh, how glorious Your ways
+- Oh-oh, forever I'll praise
+- Your goodness in Christ
+- Your mercy that saves
+- Your immeasurable grace
+- From death to life, You called my name
+- Now I’m alive to praise Your name
+- No longer lost, no longer bound
+- In Christ alone, I’ve been made found
+- Oh-oh, immeasurable grace
+- Oh-oh, how glorious Your ways
+- Oh-oh, forever I'll praise
+- Your goodness in Christ
+- Your mercy that saves
+- Your immeasurable grace
+- Immeasurable grace, unfailing and true
+- Forever I’ll live to worship You
+- To sing of your immeasurable grace
+- Immeasurable grace
+- Immeasurable grace
+duration: 282.92
+lyrics:
+- start: 21.94
+  end: 25.78
+  text: Once I was dead, I lived for self
+  line_index: 1
+  alignment_confidence: 1.0
+  tuned: true
+- start: 25.78
+  end: 29.06
+  text: Offending God, ignoring Him
+  line_index: 2
+  alignment_confidence: 1.0
+- start: 29.06
+  end: 32.58
+  text: I walked the world’s dark crooked ways
+  line_index: 3
+  alignment_confidence: 0.625
+- start: 32.58
+  end: 35.9
+  text: Deceived by lies and empty praise
+  line_index: 4
+  alignment_confidence: 1.0
+- start: 35.9
+  end: 39.34
+  text: I bowed my heart to selfish pride
+  line_index: 5
+  alignment_confidence: 0.857
+- start: 39.34
+  end: 42.74
+  text: My cravings ruled, they were my guide
+  line_index: 6
+  alignment_confidence: 1.0
+- start: 42.75
+  end: 46.14
+  text: But Christ so rich in mercy’s grace
+  line_index: 7
+  alignment_confidence: 0.75
+  tuned: true
+- start: 46.14
+  end: 49.7
+  text: He paid my sin and took my place
+  line_index: 8
+  alignment_confidence: 1.0
+- start: 49.7
+  end: 53.08
+  text: His love so great, so deep, so high
+  line_index: 9
+  alignment_confidence: 1.0
+- start: 53.08
+  end: 56.48
+  text: He raised me up, I'll never die
+  line_index: 10
+  alignment_confidence: 1.0
+- start: 56.48
+  end: 59.9
+  text: He took my soul from death’s dark helm
+  line_index: 11
+  alignment_confidence: 0.667
+- start: 59.9
+  end: 63.8
+  text: Now seated with Christ in heaven’s realm
+  line_index: 12
+  alignment_confidence: 0.625
+- start: 64.05
+  end: 69.98
+  text: Oh-oh, immeasurable grace
+  line_index: 13
+  alignment_confidence: 0.75
+  tuned: true
+- start: 70.99
+  end: 77.5
+  text: Oh-oh, how glorious Your ways
+  line_index: 14
+  alignment_confidence: 0.833
+  tuned: true
+- start: 77.85
+  end: 82.52
+  text: Oh-oh, forever I'll praise
+  line_index: 15
+  alignment_confidence: 0.8
+  tuned: true
+- start: 83.04
+  end: 85.82
+  text: Your goodness in Christ
+  line_index: 16
+  alignment_confidence: 1.0
+  tuned: true
+- start: 86.74
+  end: 89.64
+  text: Your mercy that saves
+  line_index: 17
+  alignment_confidence: 1.0
+- start: 89.64
+  end: 97.67
+  text: Your immeasurable grace
+  line_index: 18
+  alignment_confidence: 1.0
+  tuned: true
+- start: 104.27
+  end: 107.98
+  text: I followed darkness, so blind and proud
+  line_index: 19
+  alignment_confidence: 0.857
+  tuned: true
+- start: 107.98
+  end: 111.28
+  text: A voice within the rebel crowd
+  line_index: 20
+  alignment_confidence: 1.0
+- start: 111.28
+  end: 114.84
+  text: I lived to feed my flesh and mind
+  line_index: 21
+  alignment_confidence: 0.875
+- start: 114.84
+  end: 118.3
+  text: No thought of God, no truth to find
+  line_index: 22
+  alignment_confidence: 1.0
+- start: 118.3
+  end: 121.66
+  text: By nature I deserved His wrath
+  line_index: 23
+  alignment_confidence: 1.0
+- start: 121.66
+  end: 124.98
+  text: Stumbling down a fatal path
+  line_index: 24
+  alignment_confidence: 1.0
+- start: 124.98
+  end: 128.46
+  text: But God displayed His richest grace
+  line_index: 25
+  alignment_confidence: 1.0
+- start: 128.46
+  end: 131.82
+  text: A love that time will not erase
+  line_index: 26
+  alignment_confidence: 1.0
+- start: 131.82
+  end: 135.46
+  text: By grace through faith, not by my doing
+  line_index: 27
+  alignment_confidence: 0.875
+- start: 135.46
+  end: 138.8
+  text: The gift of God, my boast removing
+  line_index: 28
+  alignment_confidence: 1.0
+- start: 138.8
+  end: 142.2
+  text: In Jesus Christ I’ve been remade
+  line_index: 29
+  alignment_confidence: 0.714
+- start: 142.2
+  end: 146.32
+  text: For the good works which God ordained
+  line_index: 30
+  alignment_confidence: 1.0
+  tuned: true
+- start: 146.4
+  end: 152.53
+  text: Oh-oh, immeasurable grace
+  line_index: 31
+  alignment_confidence: 0.5
+  tuned: true
+- start: 153.09
+  end: 159.82
+  text: Oh-oh, how glorious Your ways
+  line_index: 32
+  alignment_confidence: 0.667
+  tuned: true
+- start: 160.07
+  end: 165.03
+  text: Oh-oh, forever I'll praise
+  line_index: 33
+  alignment_confidence: 0.6
+  tuned: true
+- start: 165.38
+  end: 168.34
+  text: Your goodness in Christ
+  line_index: 34
+  alignment_confidence: 1.0
+  tuned: true
+- start: 168.61
+  end: 171.84
+  text: Your mercy that saves
+  line_index: 35
+  alignment_confidence: 1.0
+  tuned: true
+- start: 172.07
+  end: 179.27
+  text: Your immeasurable grace
+  line_index: 36
+  alignment_confidence: 1.0
+  tuned: true
+- start: 179.74
+  end: 183.24
+  text: From death to life, You called my name
+  line_index: 37
+  alignment_confidence: 1.0
+  tuned: true
+- start: 183.24
+  end: 186.62
+  text: Now I’m alive to praise Your name
+  line_index: 38
+  alignment_confidence: 0.75
+- start: 186.62
+  end: 190.16
+  text: No longer lost, no longer bound
+  line_index: 39
+  alignment_confidence: 1.0
+- start: 190.16
+  end: 194.22
+  text: In Christ alone, I’ve been made found
+  line_index: 40
+  alignment_confidence: 0.75
+- start: 194.22
+  end: 200.37
+  text: Oh-oh, immeasurable grace
+  line_index: 41
+  alignment_confidence: 0.75
+  tuned: true
+- start: 201.15
+  end: 207.91
+  text: Oh-oh, how glorious Your ways
+  line_index: 42
+  alignment_confidence: 0.833
+  tuned: true
+- start: 208.01
+  end: 212.7
+  text: Oh-oh, forever I'll praise
+  line_index: 43
+  alignment_confidence: 0.8
+  tuned: true
+- start: 213.09
+  end: 216.26
+  text: Your goodness in Christ
+  line_index: 44
+  alignment_confidence: 1.0
+  tuned: true
+- start: 216.71
+  end: 219.6
+  text: Your mercy that saves
+  line_index: 45
+  alignment_confidence: 1.0
+  tuned: true
+- start: 219.94
+  end: 226.93
+  text: Your immeasurable grace
+  line_index: 46
+  alignment_confidence: 1.0
+  tuned: true
+- start: 227.32
+  end: 234.36
+  text: Immeasurable grace, unfailing and true
+  line_index: 47
+  alignment_confidence: 0.6
+  tuned: true
+- start: 234.65
+  end: 241.38
+  text: Forever I’ll live to worship You
+  line_index: 48
+  alignment_confidence: 0.857
+  tuned: true
+- start: 241.79
+  end: 254.16
+  text: To sing of your immeasurable grace
+  line_index: 49
+  alignment_confidence: 1.0
+  tuned: true
+- start: 254.41
+  end: 264.87
+  text: Immeasurable grace
+  line_index: 50
+  alignment_confidence: 1.0
+  tuned: true
+- start: 267.99
+  end: 274.11
+  text: Immeasurable grace
+  line_index: 51
+  alignment_confidence: 1.0
+  tuned: true
+scenes:
+- start: 0.0
+  end: 21.94
+  lines: []
+  prompt: cinematic photographic realism. Create a cinematic lyric-video scene for an instrumental passage of the song "Immeasurable grace" — the opening, before the first line "Once I was dead, I lived for self". Wide, atmospheric, no people speaking; intentional composition, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography.
+  index: 1
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-001-2e79f674ea283d1a.png
+  motion_first_frame: 0
+  motion_frames: 669
+- start: 21.94
+  end: 29.06
+  lines:
+  - Once I was dead, I lived for self
+  - Offending God, ignoring Him
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Once I was dead, I lived for self / Offending God, ignoring Him''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography.'
+  index: 2
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-002-ecf5440ece8fc8b2.png
+  motion_first_frame: 647
+  motion_frames: 236
+- start: 29.06
+  end: 35.9
+  lines:
+  - I walked the world’s dark crooked ways
+  - Deceived by lies and empty praise
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''I walked the world’s dark crooked ways / Deceived by lies and empty praise''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography.'
+  index: 3
+  motion: pan_right
+  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-003-9733f64f33a284e0.png
+  motion_first_frame: 861
+  motion_frames: 227
+- start: 35.9
+  end: 42.75
+  lines:
+  - I bowed my heart to selfish pride
+  - My cravings ruled, they were my guide
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''I bowed my heart to selfish pride / My cravings ruled, they were my guide''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography.'
+  index: 4
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-004-ffd726f520411ee0.png
+  motion_first_frame: 1066
+  motion_frames: 227
+- start: 42.75
+  end: 49.7
+  lines:
+  - But Christ so rich in mercy’s grace
+  - He paid my sin and took my place
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''But Christ so rich in mercy’s grace / He paid my sin and took my place''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography.'
+  index: 5
+  motion: pan_left
+  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-005-b55342a42a0217ea.png
+  motion_first_frame: 1271
+  motion_frames: 231
+- start: 49.7
+  end: 56.48
+  lines:
+  - His love so great, so deep, so high
+  - He raised me up, I'll never die
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''His love so great, so deep, so high / He raised me up, I''ll never die''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography.'
+  index: 6
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-006-45eb065a7d2e92e1.png
+  motion_first_frame: 1480
+  motion_frames: 225
+- start: 56.48
+  end: 64.05
+  lines:
+  - He took my soul from death’s dark helm
+  - Now seated with Christ in heaven’s realm
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''He took my soul from death’s dark helm / Now seated with Christ in heaven’s realm''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography.'
+  index: 7
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-007-8e6ab697f6a3244d.png
+  motion_first_frame: 1683
+  motion_frames: 250
+- start: 64.05
+  end: 77.85
+  lines:
+  - Oh-oh, immeasurable grace
+  - Oh-oh, how glorious Your ways
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Oh-oh, immeasurable grace / Oh-oh, how glorious Your ways''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography.'
+  index: 8
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-008-77d58142ed318b9a.png
+  motion_first_frame: 1911
+  motion_frames: 436
+- start: 77.85
+  end: 86.74
+  lines:
+  - Oh-oh, forever I'll praise
+  - Your goodness in Christ
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Oh-oh, forever I''ll praise / Your goodness in Christ''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography.'
+  index: 9
+  motion: pan_right
+  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-009-9bb44cac673a713c.png
+  motion_first_frame: 2325
+  motion_frames: 288
+- start: 86.74
+  end: 104.27
+  lines:
+  - Your mercy that saves
+  - Your immeasurable grace
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Your mercy that saves / Your immeasurable grace''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography.'
+  index: 10
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-010-32a62d4a5e536231.png
+  motion_first_frame: 2591
+  motion_frames: 548
+- start: 104.27
+  end: 111.28
+  lines:
+  - I followed darkness, so blind and proud
+  - A voice within the rebel crowd
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''I followed darkness, so blind and proud / A voice within the rebel crowd''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography.'
+  index: 11
+  motion: pan_left
+  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-011-ad3d02299dcf9190.png
+  motion_first_frame: 3117
+  motion_frames: 232
+- start: 111.28
+  end: 118.3
+  lines:
+  - I lived to feed my flesh and mind
+  - No thought of God, no truth to find
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''I lived to feed my flesh and mind / No thought of God, no truth to find''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography.'
+  index: 12
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-012-d659ea275bcc5b84.png
+  motion_first_frame: 3327
+  motion_frames: 233
+- start: 118.3
+  end: 124.98
+  lines:
+  - By nature I deserved His wrath
+  - Stumbling down a fatal path
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''By nature I deserved His wrath / Stumbling down a fatal path''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography.'
+  index: 13
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-013-61ce613b281e5ba6.png
+  motion_first_frame: 3538
+  motion_frames: 222
+- start: 124.98
+  end: 131.82
+  lines:
+  - But God displayed His richest grace
+  - A love that time will not erase
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''But God displayed His richest grace / A love that time will not erase''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography.'
+  index: 14
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-014-5f63c051ab6a7546.png
+  motion_first_frame: 3738
+  motion_frames: 228
+- start: 131.82
+  end: 138.8
+  lines:
+  - By grace through faith, not by my doing
+  - The gift of God, my boast removing
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''By grace through faith, not by my doing / The gift of God, my boast removing''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography.'
+  index: 15
+  motion: pan_right
+  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-015-d41a2fff32bffb03.png
+  motion_first_frame: 3944
+  motion_frames: 231
+- start: 138.8
+  end: 146.4
+  lines:
+  - In Jesus Christ I’ve been remade
+  - For the good works which God ordained
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''In Jesus Christ I’ve been remade / For the good works which God ordained''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography.'
+  index: 16
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-016-356ba9430c6f3218.png
+  motion_first_frame: 4153
+  motion_frames: 250
+- start: 146.4
+  end: 160.07
+  lines:
+  - Oh-oh, immeasurable grace
+  - Oh-oh, how glorious Your ways
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Oh-oh, immeasurable grace / Oh-oh, how glorious Your ways''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography.'
+  index: 17
+  motion: pan_left
+  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-017-bfd10858e4b62e77.png
+  motion_first_frame: 4381
+  motion_frames: 432
+- start: 160.07
+  end: 168.61
+  lines:
+  - Oh-oh, forever I'll praise
+  - Your goodness in Christ
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Oh-oh, forever I''ll praise / Your goodness in Christ''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography.'
+  index: 18
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-018-e8dbeea2d837a13c.png
+  motion_first_frame: 4791
+  motion_frames: 278
+- start: 168.61
+  end: 179.74
+  lines:
+  - Your mercy that saves
+  - Your immeasurable grace
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Your mercy that saves / Your immeasurable grace''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography.'
+  index: 19
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-019-4fdb654118e4caeb.png
+  motion_first_frame: 5047
+  motion_frames: 356
+- start: 179.74
+  end: 186.62
+  lines:
+  - From death to life, You called my name
+  - Now I’m alive to praise Your name
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''From death to life, You called my name / Now I’m alive to praise Your name''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography.'
+  index: 20
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-020-bd257b2cd7efb387.png
+  motion_first_frame: 5381
+  motion_frames: 229
+- start: 186.62
+  end: 194.22
+  lines:
+  - No longer lost, no longer bound
+  - In Christ alone, I’ve been made found
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''No longer lost, no longer bound / In Christ alone, I’ve been made found''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography.'
+  index: 21
+  motion: pan_right
+  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-021-8bf65b86b37d2745.png
+  motion_first_frame: 5588
+  motion_frames: 250
+- start: 194.22
+  end: 208.01
+  lines:
+  - Oh-oh, immeasurable grace
+  - Oh-oh, how glorious Your ways
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Oh-oh, immeasurable grace / Oh-oh, how glorious Your ways''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography.'
+  index: 22
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-022-6a9a4d54061275d2.png
+  motion_first_frame: 5816
+  motion_frames: 435
+- start: 208.01
+  end: 216.71
+  lines:
+  - Oh-oh, forever I'll praise
+  - Your goodness in Christ
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Oh-oh, forever I''ll praise / Your goodness in Christ''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography.'
+  index: 23
+  motion: pan_left
+  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-023-f2bf8190f243f6da.png
+  motion_first_frame: 6229
+  motion_frames: 283
+- start: 216.71
+  end: 227.32
+  lines:
+  - Your mercy that saves
+  - Your immeasurable grace
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Your mercy that saves / Your immeasurable grace''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography.'
+  index: 24
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-024-10d76e684f1b4077.png
+  motion_first_frame: 6490
+  motion_frames: 341
+- start: 227.32
+  end: 241.79
+  lines:
+  - Immeasurable grace, unfailing and true
+  - Forever I’ll live to worship You
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Immeasurable grace, unfailing and true / Forever I’ll live to worship You''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography.'
+  index: 25
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-025-d90cdadf2fcaf74b.png
+  motion_first_frame: 6809
+  motion_frames: 456
+- start: 241.79
+  end: 267.99
+  lines:
+  - To sing of your immeasurable grace
+  - Immeasurable grace
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''To sing of your immeasurable grace / Immeasurable grace''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography.'
+  index: 26
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-026-a8be4a41f6cd93e3.png
+  motion_first_frame: 7243
+  motion_frames: 808
+- start: 267.99
+  end: 282.92
+  lines:
+  - Immeasurable grace
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Immeasurable grace''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography.'
+  index: 27
+  motion: pan_right
+  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-027-4e41ec33134e094a.png
+  motion_first_frame: 8029
+  motion_frames: 459
+overlays:
+  title:
+    image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlays/title-bda01bc470014d74.png
+    start: 0.0
+    end: 18.0
+    fade: 0.75
+    clip: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlay-clips/title-bda01bc470014d74-2b35302c1dab5c01.mov
+  lyrics:
+  - start: 21.59
+    end: 25.78
+    text: Once I was dead, I lived for self
+    image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlays/lyric-001-dcfd98561f2f6d15.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlay-clips/lyric-001-dcfd98561f2f6d15-a7c95d0b04c6b0a2.mov
+  - start: 25.78
+    end: 29.06
+    text: Offending God, ignoring Him
+    image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlays/lyric-002-fd204323f009345e.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlay-clips/lyric-002-fd204323f009345e-c1bc3f15541989c1.mov
+  - start: 29.06
+    end: 32.58
+    text: I walked the world’s dark crooked ways
+    image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlays/lyric-003-07ea4637e7998214.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlay-clips/lyric-003-07ea4637e7998214-1db9c36e48321cc5.mov
+  - start: 32.58
+    end: 35.9
+    text: Deceived by lies and empty praise
+    image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlays/lyric-004-730186c7e76246a4.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlay-clips/lyric-004-730186c7e76246a4-d1d6ff8794f8bd7d.mov
+  - start: 35.9
+    end: 39.34
+    text: I bowed my heart to selfish pride
+    image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlays/lyric-005-246415a80bbfafab.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlay-clips/lyric-005-246415a80bbfafab-1a05d785baa86f81.mov
+  - start: 39.34
+    end: 42.74
+    text: My cravings ruled, they were my guide
+    image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlays/lyric-006-f74a90d40bb200d5.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlay-clips/lyric-006-f74a90d40bb200d5-8092f5fb6ffa4816.mov
+  - start: 42.74
+    end: 46.14
+    text: But Christ so rich in mercy’s grace
+    image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlays/lyric-007-1dbd31f2c6fbc612.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlay-clips/lyric-007-1dbd31f2c6fbc612-8092f5fb6ffa4816.mov
+  - start: 46.14
+    end: 49.7
+    text: He paid my sin and took my place
+    image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlays/lyric-008-e146ef05ea2c5707.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlay-clips/lyric-008-e146ef05ea2c5707-e9ad5b03cf63ed16.mov
+  - start: 49.7
+    end: 53.08
+    text: His love so great, so deep, so high
+    image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlays/lyric-009-2a7e87bbc653a7a4.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlay-clips/lyric-009-2a7e87bbc653a7a4-edafaf24aa5892bc.mov
+  - start: 53.08
+    end: 56.48
+    text: He raised me up, I'll never die
+    image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlays/lyric-010-bba4757ab086cfbb.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlay-clips/lyric-010-bba4757ab086cfbb-8092f5fb6ffa4816.mov
+  - start: 56.48
+    end: 59.9
+    text: He took my soul from death’s dark helm
+    image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlays/lyric-011-52d41b93d79f16a3.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlay-clips/lyric-011-52d41b93d79f16a3-077ebc685a06f316.mov
+  - start: 59.9
+    end: 63.8
+    text: Now seated with Christ in heaven’s realm
+    image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlays/lyric-012-1e56392db06a6296.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlay-clips/lyric-012-1e56392db06a6296-982fc90bc8b0e450.mov
+  - start: 63.8
+    end: 69.98
+    text: Oh-oh, immeasurable grace
+    image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlays/lyric-013-3ae74a2330da94a3.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlay-clips/lyric-013-3ae74a2330da94a3-ded1d55f8f2c8466.mov
+  - start: 70.64
+    end: 77.5
+    text: Oh-oh, how glorious Your ways
+    image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlays/lyric-014-c0c78105b38d4469.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlay-clips/lyric-014-c0c78105b38d4469-f6a1bcb7b735bfa2.mov
+  - start: 77.5
+    end: 82.52
+    text: Oh-oh, forever I'll praise
+    image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlays/lyric-015-92554e1e92d56212.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlay-clips/lyric-015-92554e1e92d56212-3f96d5f3687e4708.mov
+  - start: 82.69
+    end: 85.82
+    text: Your goodness in Christ
+    image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlays/lyric-016-c50cf8fe17ed3320.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlay-clips/lyric-016-c50cf8fe17ed3320-f0373512f0f13972.mov
+  - start: 86.39
+    end: 89.64
+    text: Your mercy that saves
+    image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlays/lyric-017-248e9d29295362cf.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlay-clips/lyric-017-248e9d29295362cf-74cfff6e18131552.mov
+  - start: 89.64
+    end: 97.67
+    text: Your immeasurable grace
+    image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlays/lyric-018-df01de0d300f976e.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlay-clips/lyric-018-df01de0d300f976e-9d7aa63ad333e0f0.mov
+  - start: 103.92
+    end: 107.98
+    text: I followed darkness, so blind and proud
+    image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlays/lyric-019-b45d3dd0fe69b78f.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlay-clips/lyric-019-b45d3dd0fe69b78f-adf06280ee2ce613.mov
+  - start: 107.98
+    end: 111.28
+    text: A voice within the rebel crowd
+    image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlays/lyric-020-1ec942bb2c5a19bf.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlay-clips/lyric-020-1ec942bb2c5a19bf-0a30b4bc09e4eab0.mov
+  - start: 111.28
+    end: 114.84
+    text: I lived to feed my flesh and mind
+    image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlays/lyric-021-72f5288b2dd06aae.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlay-clips/lyric-021-72f5288b2dd06aae-e9ad5b03cf63ed16.mov
+  - start: 114.84
+    end: 118.3
+    text: No thought of God, no truth to find
+    image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlays/lyric-022-2ba4b3cc2ea36a20.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlay-clips/lyric-022-2ba4b3cc2ea36a20-4f92a6243ea64cb4.mov
+  - start: 118.3
+    end: 121.66
+    text: By nature I deserved His wrath
+    image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlays/lyric-023-5fe6562496d55c83.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlay-clips/lyric-023-5fe6562496d55c83-a74adab3a082f21c.mov
+  - start: 121.66
+    end: 124.98
+    text: Stumbling down a fatal path
+    image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlays/lyric-024-2ba8bc98dc92bfdd.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlay-clips/lyric-024-2ba8bc98dc92bfdd-d1d6ff8794f8bd7d.mov
+  - start: 124.98
+    end: 128.46
+    text: But God displayed His richest grace
+    image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlays/lyric-025-1e68cd2785739f88.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlay-clips/lyric-025-1e68cd2785739f88-04f1c4d20e056050.mov
+  - start: 128.46
+    end: 131.82
+    text: A love that time will not erase
+    image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlays/lyric-026-f39e863367c08f2d.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlay-clips/lyric-026-f39e863367c08f2d-a74adab3a082f21c.mov
+  - start: 131.82
+    end: 135.46
+    text: By grace through faith, not by my doing
+    image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlays/lyric-027-8aed5eeb4b24205b.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlay-clips/lyric-027-8aed5eeb4b24205b-1e09b2d47107dff1.mov
+  - start: 135.46
+    end: 138.8
+    text: The gift of God, my boast removing
+    image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlays/lyric-028-1ba1ad0475bff639.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlay-clips/lyric-028-1ba1ad0475bff639-18ac3dd93c57b292.mov
+  - start: 138.8
+    end: 142.2
+    text: In Jesus Christ I’ve been remade
+    image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlays/lyric-029-ed40995674f56377.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlay-clips/lyric-029-ed40995674f56377-8092f5fb6ffa4816.mov
+  - start: 142.2
+    end: 146.32
+    text: For the good works which God ordained
+    image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlays/lyric-030-c6ecb266308584f8.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlay-clips/lyric-030-c6ecb266308584f8-522a031feb0b893d.mov
+  - start: 146.32
+    end: 152.53
+    text: Oh-oh, immeasurable grace
+    image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlays/lyric-031-3ae74a2330da94a3.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlay-clips/lyric-031-3ae74a2330da94a3-f48b17fe850418cc.mov
+  - start: 152.74
+    end: 159.82
+    text: Oh-oh, how glorious Your ways
+    image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlays/lyric-032-c0c78105b38d4469.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlay-clips/lyric-032-c0c78105b38d4469-bece61309e3a34b4.mov
+  - start: 159.82
+    end: 165.03
+    text: Oh-oh, forever I'll praise
+    image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlays/lyric-033-92554e1e92d56212.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlay-clips/lyric-033-92554e1e92d56212-80373af5f1b38bc1.mov
+  - start: 165.03
+    end: 168.34
+    text: Your goodness in Christ
+    image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlays/lyric-034-c50cf8fe17ed3320.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlay-clips/lyric-034-c50cf8fe17ed3320-f0536de6ca69f2bf.mov
+  - start: 168.34
+    end: 171.84
+    text: Your mercy that saves
+    image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlays/lyric-035-248e9d29295362cf.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlay-clips/lyric-035-248e9d29295362cf-0f8b2864e8d82b43.mov
+  - start: 171.84
+    end: 179.27
+    text: Your immeasurable grace
+    image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlays/lyric-036-df01de0d300f976e.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlay-clips/lyric-036-df01de0d300f976e-38fab9772a64bb1a.mov
+  - start: 179.39
+    end: 183.24
+    text: From death to life, You called my name
+    image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlays/lyric-037-85ee206ab1d601f0.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlay-clips/lyric-037-85ee206ab1d601f0-6dcba0507b68f6fb.mov
+  - start: 183.24
+    end: 186.62
+    text: Now I’m alive to praise Your name
+    image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlays/lyric-038-42d7ded0c942154b.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlay-clips/lyric-038-42d7ded0c942154b-edafaf24aa5892bc.mov
+  - start: 186.62
+    end: 190.16
+    text: No longer lost, no longer bound
+    image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlays/lyric-039-094a99ec161fc9fa.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlay-clips/lyric-039-094a99ec161fc9fa-5b12862a476d1f3e.mov
+  - start: 190.16
+    end: 194.22
+    text: In Christ alone, I’ve been made found
+    image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlays/lyric-040-89329c2ef4a50684.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlay-clips/lyric-040-89329c2ef4a50684-adf06280ee2ce613.mov
+  - start: 194.22
+    end: 200.37
+    text: Oh-oh, immeasurable grace
+    image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlays/lyric-041-3ae74a2330da94a3.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlay-clips/lyric-041-3ae74a2330da94a3-141cabb93de315cf.mov
+  - start: 200.8
+    end: 207.91
+    text: Oh-oh, how glorious Your ways
+    image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlays/lyric-042-c0c78105b38d4469.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlay-clips/lyric-042-c0c78105b38d4469-a2e2583195253f16.mov
+  - start: 207.91
+    end: 212.7
+    text: Oh-oh, forever I'll praise
+    image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlays/lyric-043-92554e1e92d56212.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlay-clips/lyric-043-92554e1e92d56212-91ba10e74ac0024f.mov
+  - start: 212.74
+    end: 216.26
+    text: Your goodness in Christ
+    image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlays/lyric-044-c50cf8fe17ed3320.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlay-clips/lyric-044-c50cf8fe17ed3320-1db9c36e48321cc5.mov
+  - start: 216.36
+    end: 219.6
+    text: Your mercy that saves
+    image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlays/lyric-045-248e9d29295362cf.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlay-clips/lyric-045-248e9d29295362cf-7c09ff1d88aac27c.mov
+  - start: 219.6
+    end: 226.93
+    text: Your immeasurable grace
+    image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlays/lyric-046-df01de0d300f976e.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlay-clips/lyric-046-df01de0d300f976e-cba341a553bb4835.mov
+  - start: 226.97
+    end: 234.36
+    text: Immeasurable grace, unfailing and true
+    image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlays/lyric-047-31c2aaf083a88099.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlay-clips/lyric-047-31c2aaf083a88099-e9e16598bb2109f7.mov
+  - start: 234.36
+    end: 241.38
+    text: Forever I’ll live to worship You
+    image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlays/lyric-048-2c19e0a46999ea53.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlay-clips/lyric-048-2c19e0a46999ea53-a4d2979c9f2c7427.mov
+  - start: 241.44
+    end: 254.16
+    text: To sing of your immeasurable grace
+    image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlays/lyric-049-ea34af2bbe96daa6.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlay-clips/lyric-049-ea34af2bbe96daa6-75358f6bcc83e4ea.mov
+  - start: 254.16
+    end: 264.87
+    text: Immeasurable grace
+    image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlays/lyric-050-efe8dd62cd2a5af0.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlay-clips/lyric-050-efe8dd62cd2a5af0-45af054e353c2e7b.mov
+  - start: 267.64
+    end: 274.11
+    text: Immeasurable grace
+    image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlays/lyric-051-efe8dd62cd2a5af0.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/overlay-clips/lyric-051-efe8dd62cd2a5af0-c6a344a244b7ccc7.mov
+  srt: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/lyrics.srt
+bed:
+- kind: scene
+  first_frame: 0
+  frames: 647
+  scene: 0
+  path: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/clips/bed-001-scene-5502edb825019ac6.mp4
+  start: 0.0
+  end: 21.5667
+- kind: transition
+  first_frame: 647
+  frames: 22
+  from_scene: 0
+  to_scene: 1
+  path: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/clips/bed-002-xfade-6dc72c353398ad10.mp4
+  start: 21.5667
+  end: 22.3
+- kind: scene
+  first_frame: 669
+  frames: 192
+  scene: 1
+  path: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/clips/bed-003-scene-49f05dbcdbd88b8c.mp4
+  start: 22.3
+  end: 28.7
+- kind: transition
+  first_frame: 861
+  frames: 22
+  from_scene: 1
+  to_scene: 2
+  path: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/clips/bed-004-xfade-1fc7f853b62ce2b1.mp4
+  start: 28.7
+  end: 29.4333
+- kind: scene
+  first_frame: 883
+  frames: 183
+  scene: 2
+  path: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/clips/bed-005-scene-93c372699cefd9db.mp4
+  start: 29.4333
+  end: 35.5333
+- kind: transition
+  first_frame: 1066
+  frames: 22
+  from_scene: 2
+  to_scene: 3
+  path: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/clips/bed-006-xfade-7fdefd8be6b5ed8d.mp4
+  start: 35.5333
+  end: 36.2667
+- kind: scene
+  first_frame: 1088
+  frames: 183
+  scene: 3
+  path: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/clips/bed-007-scene-cc45b472ccf82b79.mp4
+  start: 36.2667
+  end: 42.3667
+- kind: transition
+  first_frame: 1271
+  frames: 22
+  from_scene: 3
+  to_scene: 4
+  path: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/clips/bed-008-xfade-0274ad1846a8a3cb.mp4
+  start: 42.3667
+  end: 43.1
+- kind: scene
+  first_frame: 1293
+  frames: 187
+  scene: 4
+  path: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/clips/bed-009-scene-fdc73d5b01e9dd70.mp4
+  start: 43.1
+  end: 49.3333
+- kind: transition
+  first_frame: 1480
+  frames: 22
+  from_scene: 4
+  to_scene: 5
+  path: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/clips/bed-010-xfade-a728faa3b79955d3.mp4
+  start: 49.3333
+  end: 50.0667
+- kind: scene
+  first_frame: 1502
+  frames: 181
+  scene: 5
+  path: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/clips/bed-011-scene-eeadd82d43929d59.mp4
+  start: 50.0667
+  end: 56.1
+- kind: transition
+  first_frame: 1683
+  frames: 22
+  from_scene: 5
+  to_scene: 6
+  path: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/clips/bed-012-xfade-3e5944017adab101.mp4
+  start: 56.1
+  end: 56.8333
+- kind: scene
+  first_frame: 1705
+  frames: 206
+  scene: 6
+  path: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/clips/bed-013-scene-a425cc6e59ce6e01.mp4
+  start: 56.8333
+  end: 63.7
+- kind: transition
+  first_frame: 1911
+  frames: 22
+  from_scene: 6
+  to_scene: 7
+  path: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/clips/bed-014-xfade-f9f03ca195b6acc1.mp4
+  start: 63.7
+  end: 64.4333
+- kind: scene
+  first_frame: 1933
+  frames: 392
+  scene: 7
+  path: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/clips/bed-015-scene-3254dd337a5326ad.mp4
+  start: 64.4333
+  end: 77.5
+- kind: transition
+  first_frame: 2325
+  frames: 22
+  from_scene: 7
+  to_scene: 8
+  path: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/clips/bed-016-xfade-1875c4df067734b6.mp4
+  start: 77.5
+  end: 78.2333
+- kind: scene
+  first_frame: 2347
+  frames: 244
+  scene: 8
+  path: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/clips/bed-017-scene-fda193efc29d8270.mp4
+  start: 78.2333
+  end: 86.3667
+- kind: transition
+  first_frame: 2591
+  frames: 22
+  from_scene: 8
+  to_scene: 9
+  path: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/clips/bed-018-xfade-d84b33f6210b1a49.mp4
+  start: 86.3667
+  end: 87.1
+- kind: scene
+  first_frame: 2613
+  frames: 504
+  scene: 9
+  path: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/clips/bed-019-scene-50e36fd192fcd763.mp4
+  start: 87.1
+  end: 103.9
+- kind: transition
+  first_frame: 3117
+  frames: 22
+  from_scene: 9
+  to_scene: 10
+  path: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/clips/bed-020-xfade-c98b593333176cdd.mp4
+  start: 103.9
+  end: 104.6333
+- kind: scene
+  first_frame: 3139
+  frames: 188
+  scene: 10
+  path: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/clips/bed-021-scene-949ab4340288170b.mp4
+  start: 104.6333
+  end: 110.9
+- kind: transition
+  first_frame: 3327
+  frames: 22
+  from_scene: 10
+  to_scene: 11
+  path: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/clips/bed-022-xfade-15f01597e7e578db.mp4
+  start: 110.9
+  end: 111.6333
+- kind: scene
+  first_frame: 3349
+  frames: 189
+  scene: 11
+  path: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/clips/bed-023-scene-d805e655735099f3.mp4
+  start: 111.6333
+  end: 117.9333
+- kind: transition
+  first_frame: 3538
+  frames: 22
+  from_scene: 11
+  to_scene: 12
+  path: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/clips/bed-024-xfade-75b4600b18a1c45b.mp4
+  start: 117.9333
+  end: 118.6667
+- kind: scene
+  first_frame: 3560
+  frames: 178
+  scene: 12
+  path: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/clips/bed-025-scene-3224d7297b8006e2.mp4
+  start: 118.6667
+  end: 124.6
+- kind: transition
+  first_frame: 3738
+  frames: 22
+  from_scene: 12
+  to_scene: 13
+  path: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/clips/bed-026-xfade-2320d63751035a5d.mp4
+  start: 124.6
+  end: 125.3333
+- kind: scene
+  first_frame: 3760
+  frames: 184
+  scene: 13
+  path: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/clips/bed-027-scene-6ebb117da8e50a93.mp4
+  start: 125.3333
+  end: 131.4667
+- kind: transition
+  first_frame: 3944
+  frames: 22
+  from_scene: 13
+  to_scene: 14
+  path: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/clips/bed-028-xfade-15649dbdea2dcbdb.mp4
+  start: 131.4667
+  end: 132.2
+- kind: scene
+  first_frame: 3966
+  frames: 187
+  scene: 14
+  path: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/clips/bed-029-scene-32dd1ec9661ed33b.mp4
+  start: 132.2
+  end: 138.4333
+- kind: transition
+  first_frame: 4153
+  frames: 22
+  from_scene: 14
+  to_scene: 15
+  path: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/clips/bed-030-xfade-1f306ebcbd072f15.mp4
+  start: 138.4333
+  end: 139.1667
+- kind: scene
+  first_frame: 4175
+  frames: 206
+  scene: 15
+  path: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/clips/bed-031-scene-0b7e80bbe30fe619.mp4
+  start: 139.1667
+  end: 146.0333
+- kind: transition
+  first_frame: 4381
+  frames: 22
+  from_scene: 15
+  to_scene: 16
+  path: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/clips/bed-032-xfade-94377ed100141710.mp4
+  start: 146.0333
+  end: 146.7667
+- kind: scene
+  first_frame: 4403
+  frames: 388
+  scene: 16
+  path: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/clips/bed-033-scene-f15cb09498b0de1d.mp4
+  start: 146.7667
+  end: 159.7
+- kind: transition
+  first_frame: 4791
+  frames: 22
+  from_scene: 16
+  to_scene: 17
+  path: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/clips/bed-034-xfade-43226f64e0613b4f.mp4
+  start: 159.7
+  end: 160.4333
+- kind: scene
+  first_frame: 4813
+  frames: 234
+  scene: 17
+  path: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/clips/bed-035-scene-1eb0b2d0ec686117.mp4
+  start: 160.4333
+  end: 168.2333
+- kind: transition
+  first_frame: 5047
+  frames: 22
+  from_scene: 17
+  to_scene: 18
+  path: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/clips/bed-036-xfade-8423fc2fad309cc0.mp4
+  start: 168.2333
+  end: 168.9667
+- kind: scene
+  first_frame: 5069
+  frames: 312
+  scene: 18
+  path: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/clips/bed-037-scene-f6b0a65c79f673d5.mp4
+  start: 168.9667
+  end: 179.3667
+- kind: transition
+  first_frame: 5381
+  frames: 22
+  from_scene: 18
+  to_scene: 19
+  path: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/clips/bed-038-xfade-f3325f6bae177ff7.mp4
+  start: 179.3667
+  end: 180.1
+- kind: scene
+  first_frame: 5403
+  frames: 185
+  scene: 19
+  path: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/clips/bed-039-scene-1450d2ff19532773.mp4
+  start: 180.1
+  end: 186.2667
+- kind: transition
+  first_frame: 5588
+  frames: 22
+  from_scene: 19
+  to_scene: 20
+  path: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/clips/bed-040-xfade-887bdefc3dac31c0.mp4
+  start: 186.2667
+  end: 187.0
+- kind: scene
+  first_frame: 5610
+  frames: 206
+  scene: 20
+  path: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/clips/bed-041-scene-0d1580ec6a13073e.mp4
+  start: 187.0
+  end: 193.8667
+- kind: transition
+  first_frame: 5816
+  frames: 22
+  from_scene: 20
+  to_scene: 21
+  path: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/clips/bed-042-xfade-e76622f4169239c6.mp4
+  start: 193.8667
+  end: 194.6
+- kind: scene
+  first_frame: 5838
+  frames: 391
+  scene: 21
+  path: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/clips/bed-043-scene-1a6eb46a40d3c5fc.mp4
+  start: 194.6
+  end: 207.6333
+- kind: transition
+  first_frame: 6229
+  frames: 22
+  from_scene: 21
+  to_scene: 22
+  path: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/clips/bed-044-xfade-8cdc3c12b52b09a9.mp4
+  start: 207.6333
+  end: 208.3667
+- kind: scene
+  first_frame: 6251
+  frames: 239
+  scene: 22
+  path: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/clips/bed-045-scene-2812d2690cce1476.mp4
+  start: 208.3667
+  end: 216.3333
+- kind: transition
+  first_frame: 6490
+  frames: 22
+  from_scene: 22
+  to_scene: 23
+  path: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/clips/bed-046-xfade-15cc4134cc247976.mp4
+  start: 216.3333
+  end: 217.0667
+- kind: scene
+  first_frame: 6512
+  frames: 297
+  scene: 23
+  path: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/clips/bed-047-scene-22a8e9d037e3be9d.mp4
+  start: 217.0667
+  end: 226.9667
+- kind: transition
+  first_frame: 6809
+  frames: 22
+  from_scene: 23
+  to_scene: 24
+  path: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/clips/bed-048-xfade-46b14ae39cbd3501.mp4
+  start: 226.9667
+  end: 227.7
+- kind: scene
+  first_frame: 6831
+  frames: 412
+  scene: 24
+  path: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/clips/bed-049-scene-54fa00f471815459.mp4
+  start: 227.7
+  end: 241.4333
+- kind: transition
+  first_frame: 7243
+  frames: 22
+  from_scene: 24
+  to_scene: 25
+  path: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/clips/bed-050-xfade-a1344582bcdddd04.mp4
+  start: 241.4333
+  end: 242.1667
+- kind: scene
+  first_frame: 7265
+  frames: 764
+  scene: 25
+  path: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/clips/bed-051-scene-3f3fe6c2f0820760.mp4
+  start: 242.1667
+  end: 267.6333
+- kind: transition
+  first_frame: 8029
+  frames: 22
+  from_scene: 25
+  to_scene: 26
+  path: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/clips/bed-052-xfade-91495e4c68e584c1.mp4
+  start: 267.6333
+  end: 268.3667
+- kind: scene
+  first_frame: 8051
+  frames: 437
+  scene: 26
+  path: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/clips/bed-053-scene-3ebb41925545b76f.mp4
+  start: 268.3667
+  end: 282.9333

@@ -367,6 +367,35 @@ work/<song>/clips/              the image bed: scene and dissolve clips
 Every artefact is named after a hash of its inputs, so re-running a stage only
 redoes what actually changed.
 
+The finished video lands in `output/<song>.mp4`, beside `work/` rather than inside
+it — one folder for the things you actually publish.
+
+### What is committed
+
+Most of `work/` is intermediates and stays out of git. Three things per song do
+not, because they are the parts that are slow or impossible to recreate exactly:
+
+```
+work/<song>/project.yaml        settings, cue timings, the scene plan
+work/<song>/lyrics.srt          timed lyrics
+work/<song>/images/             the generated stills
+```
+
+The images are held in **Git LFS** (`work/*/images/*.png` in `.gitattributes`), so
+the history stays small even as scenes are regenerated. A fresh clone therefore
+needs git-lfs before the images arrive as real files rather than pointers:
+
+```bash
+brew install git-lfs && git lfs install     # once per machine
+git clone <repo> && cd video-lyrics-creator
+git lfs pull
+```
+
+Note that `project.yaml` records absolute paths to the audio and lyrics on the
+machine that made it, so another machine will want those two repointed. The root
+`project.yaml` — the pointer at the top of the repo — is per-machine and is not
+committed at all; `video-lyrics init` writes a new one.
+
 ## Tests
 
 ```bash

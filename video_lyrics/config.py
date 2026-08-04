@@ -260,6 +260,7 @@ class Project:
         title = title or audio_path.stem
         # Absolute everywhere: Resolve imports media by path, from its own process.
         base = Path(path).expanduser().resolve().parent
+        work_root = expand(work_dir) if work_dir else base / "work"
         data: dict[str, Any] = {
             "schema_version": SCHEMA_VERSION,
             "title": title,
@@ -267,11 +268,15 @@ class Project:
             "audio": str(audio_path),
             "lyrics_source": str(lyrics_path),
             "visual_style": visual_style,
-            "work_dir": str(expand(work_dir) if work_dir else base / "work"),
+            "work_dir": str(work_root),
         }
         project = cls(Path(path), data)
+        # Beside the work directory, not beside the project file: a project opened
+        # or created at `work/<song>/project.yaml` would otherwise bury its finished
+        # video at `work/<song>/output/`, instead of the one shared output folder.
         project.data["render"]["output"] = str(
-            expand(output) if output else base / "output" / f"{slugify(title)}.mp4"
+            expand(output) if output
+            else work_root.parent / "output" / f"{slugify(title)}.mp4"
         )
         return project
 

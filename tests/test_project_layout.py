@@ -79,6 +79,22 @@ def test_opening_a_song_at_its_own_data_file_and_saving_keeps_the_data(tmp_path,
     assert Project.load(project.path).data["duration"] == 99.0
 
 
+def test_the_video_lands_beside_the_work_dir_however_the_project_was_opened(tmp_path, song):
+    """Creating the project at `work/<song>/project.yaml` must not bury the finished
+    video at `work/<song>/output/` - there is one shared output folder, beside work/."""
+    at_root = make(tmp_path, song)
+    assert at_root.output == tmp_path / "output" / "immeasurable-grace.mp4"
+
+    audio, words = song
+    (tmp_path / "work" / "immeasurable-grace").mkdir(parents=True, exist_ok=True)
+    inside = Project.create(
+        tmp_path / "work" / "immeasurable-grace" / "project.yaml",
+        audio=str(audio), lyrics_source=str(words), title="Immeasurable Grace",
+        work_dir=str(tmp_path / "work"),
+    )
+    assert inside.output == tmp_path / "output" / "immeasurable-grace.mp4"
+
+
 def test_every_work_path_lives_under_the_songs_own_folder(tmp_path, song):
     project = make(tmp_path, song)
     song_dir = tmp_path / "work" / "immeasurable-grace"
