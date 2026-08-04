@@ -120,6 +120,36 @@ def test_meta_raw_downloads_default_to_a_sibling_of_the_images_folder(tmp_path):
     assert not (images_dir / "images.src").exists()
 
 
+def test_limit_backfills_the_earliest_gap_first_then_carries_on(tmp_path, monkeypatch):
+    """`--limit N` takes the first N scenes with no raw download, in scene order.
+
+    So it resumes where it left off, and a file deleted from the middle is picked
+    up before later ones - the existing images either side are left alone.
+    """
+    from video_lyrics import meta_ai
+
+    asked: list[int] = []
+    monkeypatch.setattr(
+        meta_ai, "generate", lambda scenes, **kw: asked.extend(s["index"] for s in scenes)
+    )
+
+    all_scenes = [
+        {"index": i, "prompt": f"prompt {i}", "lines": [f"line {i}"]} for i in range(1, 7)
+    ]
+    images_dir, raw_dir = tmp_path / "images", tmp_path / "images.src"
+    images_dir.mkdir()
+    raw_dir.mkdir()
+    for scene in all_scenes:
+        if scene["index"] in (1, 3):  # 2 is the hole in the middle
+            stem = images._stem_for(scene, "meta")
+            Image.new("RGB", (400, 225), (9, 9, 9)).save(raw_dir / f"{stem}.webp", "WEBP")
+
+    images.generate(
+        list(all_scenes), images_dir=images_dir, raw_dir=raw_dir, provider="meta", limit=2
+    )
+    assert asked == [2, 4]
+
+
 def test_unknown_provider_is_rejected(tmp_path):
     with pytest.raises(VideoLyricsError):
         images.generate(make_scenes(), images_dir=tmp_path, provider="nonsense")
