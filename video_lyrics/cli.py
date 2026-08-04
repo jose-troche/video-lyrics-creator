@@ -64,6 +64,10 @@ def build_parser() -> argparse.ArgumentParser:
     images.add_argument("--force", action="store_true")
     images.add_argument("--jobs", type=int, default=1, help="parallel codex runs")
     images.add_argument("--images-dir", help="adopt images from this folder instead")
+    images.add_argument(
+        "--limit", type=int,
+        help="only generate this many missing images, then stop (try a few first)",
+    )
 
     render = subparsers.add_parser("render", help="assemble and export the video")
     render.add_argument("--engine", choices=("ffmpeg", "resolve"))
@@ -202,6 +206,7 @@ def dispatch(args: argparse.Namespace, project_path: Path) -> int:
         "force": getattr(args, "force", False),
         "jobs": getattr(args, "jobs", 1),
         "images_dir": getattr(args, "images_dir", None),
+        "limit": getattr(args, "limit", None),
         "engine": getattr(args, "engine", None),
         "launch": getattr(args, "launch", False),
         "handoff_only": getattr(args, "handoff", False),

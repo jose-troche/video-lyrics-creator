@@ -156,7 +156,8 @@ def stage_plan(project: Project, *, force: bool = False, **_: Any) -> None:
 
 
 def stage_images(
-    project: Project, *, force: bool = False, jobs: int = 1, images_dir: str | None = None, **_: Any
+    project: Project, *, force: bool = False, jobs: int = 1, images_dir: str | None = None,
+    limit: int | None = None, **_: Any
 ) -> None:
     """Generate (or adopt) one still per scene."""
     settings = project.image_generation
@@ -171,6 +172,7 @@ def stage_images(
         size=project.size,
         force=force,
         jobs=jobs,
+        limit=limit,
         meta_headless=bool(settings.get("meta_headless", False)),
         meta_profile_dir=settings.get("meta_profile_dir"),
         meta_min_delay=float(settings.get("meta_min_delay", 8.0)),

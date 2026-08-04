@@ -57,6 +57,7 @@ def generate(
     size: tuple[int, int] = (1920, 1080),
     force: bool = False,
     jobs: int = 1,
+    limit: int | None = None,
     meta_headless: bool = False,
     meta_profile_dir: str | None = None,
     meta_min_delay: float = 8.0,
@@ -73,7 +74,7 @@ def generate(
         return _generate_manual(scenes, images_dir, size, force)
     if provider == "meta":
         return _generate_meta(
-            scenes, images_dir, size, force,
+            scenes, images_dir, size, force, limit=limit,
             headless=meta_headless, profile_dir=meta_profile_dir,
             min_delay=meta_min_delay, max_delay=meta_max_delay,
             composer_selector=meta_composer_selector, image_selector=meta_image_selector,
@@ -297,6 +298,7 @@ def _generate_meta(
     profile_dir: str | None,
     min_delay: float,
     max_delay: float,
+    limit: int | None = None,
     composer_selector: str | None = None,
     image_selector: str | None = None,
 ) -> list[dict[str, Any]]:
@@ -322,6 +324,10 @@ def _generate_meta(
     if not pending:
         log.info("All %d scene images already generated.", len(scenes))
         return scenes
+
+    if limit is not None and limit < len(pending):
+        log.info("Limiting this run to %d of %d missing image(s).", limit, len(pending))
+        pending = pending[:limit]
 
     from . import meta_ai as meta_mod
 

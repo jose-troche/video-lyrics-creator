@@ -56,6 +56,29 @@ def test_saving_writes_a_minimal_pointer_and_a_full_data_file(tmp_path, song):
     assert reloaded.data == project.data
 
 
+def test_opening_a_song_at_its_own_data_file_and_saving_keeps_the_data(tmp_path, song):
+    """`-p work/<song>/project.yaml` - the README's way back to an earlier song.
+
+    There the pointer path and the data path are the same file, so writing a
+    pointer after the data would replace the whole project with a three-line stub.
+    """
+    project = make(tmp_path, song)
+    project.data["duration"] = 12.5
+    project.save()
+
+    reopened = Project.load(project.data_path)
+    reopened.data["duration"] = 99.0
+    reopened.save()
+
+    assert reopened.path.resolve() == reopened.data_path.resolve()
+    survived = Project.load(project.data_path)
+    assert survived.data["duration"] == 99.0
+    assert survived.title == "Immeasurable Grace"
+    assert survived.audio == project.audio
+    # and the pointer that points here still resolves
+    assert Project.load(project.path).data["duration"] == 99.0
+
+
 def test_every_work_path_lives_under_the_songs_own_folder(tmp_path, song):
     project = make(tmp_path, song)
     song_dir = tmp_path / "work" / "immeasurable-grace"

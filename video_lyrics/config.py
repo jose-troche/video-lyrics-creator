@@ -324,6 +324,12 @@ class Project:
             return target
 
         _atomic_write(self.data_path, serialize(self.data, self.data_path.suffix))
+        if self.path.resolve() == self.data_path.resolve():
+            # Opened directly at its own data file (`-p work/<song>/project.yaml`,
+            # which the README suggests for going back to an earlier song). There is
+            # no separate pointer to write here: writing one would land on the file
+            # just saved above and replace the whole project with a three-line stub.
+            return self.path
         pointer = {
             "schema_version": SCHEMA_VERSION,
             "title": self.title,

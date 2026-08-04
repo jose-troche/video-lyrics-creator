@@ -115,6 +115,7 @@ video-lyrics render              # assemble with ffmpeg and export
 | `--handoff` | (Resolve) prepare everything and finish from Resolve's Scripts menu |
 | `--launch` | (Resolve) start Resolve first and wait until it answers |
 | `--images-dir DIR` | use your own images instead of generating them |
+| `--limit N` | (`images`) generate only N of the missing images, then stop |
 | `--from` / `--to` | run part of the pipeline (`run --from plan --to bed`) |
 
 ### Generating images without codex
@@ -137,10 +138,15 @@ video-lyrics render              # assemble with ffmpeg and export
   opens a browser and waits for you to log in by hand (nothing is automated
   about that); the session is then remembered in `image_generation.meta_profile_dir`
   (default `~/.video-lyrics/meta-ai-profile`) so later runs do not ask again. The
-  next prompt is only submitted once the current scene's image has fully
-  downloaded, plus a random delay between `image_generation.meta_min_delay` and
-  `meta_max_delay` (1-4s by default) on top of that, so requests do not land in
-  an obvious, throttle-inviting pattern. Raw downloads are kept in
+  next prompt is only submitted once the current scene's image has actually
+  finished generating and been written to disk, plus a random delay between
+  `image_generation.meta_min_delay` and `meta_max_delay` (1-4s by default) on top
+  of that, so requests do not land in an obvious, throttle-inviting pattern.
+  ("Finished" is not as obvious as it sounds: while it is still working, meta.ai
+  already shows a preview at the final resolution, so this waits for the finished
+  image's own Download control to appear rather than for pixels to exist.) Use
+  `--limit N` to try a handful before committing to a whole song. Raw downloads
+  are kept in
   `work/<song>/images/images.src/`, whatever format meta.ai served, and each is
   also converted into the canonical PNG in `work/<song>/images/` itself; a run
   interrupted partway through only asks the browser for what is still missing.
