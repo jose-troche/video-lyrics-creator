@@ -1,11 +1,14 @@
 """Produce one still image per scene.
 
-Three providers:
+Four providers:
   * ``codex``    - the Codex CLI's built-in image_gen tool, run in full-auto mode.
   * ``supplied`` - images the user already has, taken in filename order.
   * ``manual``   - no generator at all: write every scene's prompt and expected
                    filename to a manifest so the user can create each image by hand
                    (ChatGPT, Midjourney, ...) and drop it into the images folder.
+  * ``meta``     - drives meta.ai in a real browser (see meta_ai.py). Raw downloads
+                   land in `images/images.src/` and are converted into the
+                   canonical PNG in `images/` itself, same as `manual`.
 """
 
 from __future__ import annotations
@@ -23,6 +26,7 @@ from .util import VideoLyricsError, ensure_dir, log, run, short_hash, which
 IMAGE_SUFFIXES = (".png", ".jpg", ".jpeg", ".webp")
 GENERATION_SIZE = "1536x1024"
 CODEX_TIMEOUT = 900.0
+RAW_SUBDIR = "images.src"
 
 INSTRUCTION = """Generate exactly one image using your built-in image_gen tool.
 
@@ -53,6 +57,10 @@ def generate(
     size: tuple[int, int] = (1920, 1080),
     force: bool = False,
     jobs: int = 1,
+    meta_headless: bool = False,
+    meta_profile_dir: str | None = None,
+    meta_min_delay: float = 8.0,
+    meta_max_delay: float = 20.0,
 ) -> list[dict[str, Any]]:
     """Attach an `image` path to every scene."""
     images_dir = ensure_dir(images_dir)
@@ -61,9 +69,15 @@ def generate(
         return _assign_supplied(scenes, source_dir, images_dir, size)
     if provider == "manual":
         return _generate_manual(scenes, images_dir, size, force)
+    if provider == "meta":
+        return _generate_meta(
+            scenes, images_dir, size, force,
+            headless=meta_headless, profile_dir=meta_profile_dir,
+            min_delay=meta_min_delay, max_delay=meta_max_delay,
+        )
     if provider != "codex":
         raise VideoLyricsError(
-            f"Unknown image provider {provider!r} (use codex, manual, or supplied)."
+            f"Unknown image provider {provider!r} (use codex, manual, meta, or supplied)."
         )
 
     pending: list[tuple[dict[str, Any], Path]] = []
@@ -185,18 +199,47 @@ def _postprocess(path: Path, size: tuple[int, int]) -> None:
         image.save(path, "PNG")
 
 
-def _manual_image_stem(scene: dict[str, Any]) -> str:
-    fingerprint = short_hash(scene["prompt"], "manual")
+def _stem_for(scene: dict[str, Any], tag: str) -> str:
+    fingerprint = short_hash(scene["prompt"], tag)
     return f"scene-{scene['index']:03d}-{fingerprint}"
 
 
-def _find_manual_image(images_dir: Path, stem: str) -> Path | None:
+def _find_image_by_stem(directory: Path, stem: str) -> Path | None:
     """Any of IMAGE_SUFFIXES counts - the format doesn't matter, only the stem."""
     for suffix in IMAGE_SUFFIXES:
-        candidate = images_dir / f"{stem}{suffix}"
+        candidate = directory / f"{stem}{suffix}"
         if candidate.is_file():
             return candidate
     return None
+
+
+def _adopt_by_stem(
+    scene: dict[str, Any],
+    stem: str,
+    *,
+    search_dir: Path,
+    images_dir: Path,
+    size: tuple[int, int],
+    delete_source: bool,
+) -> bool:
+    """If `search_dir` holds a readable file matching `stem`, convert it into the
+    canonical PNG in `images_dir` and attach it to the scene. Returns whether that
+    succeeded - a missing or unreadable file both count as not adopted."""
+    found = _find_image_by_stem(search_dir, stem)
+    if found is None:
+        return False
+    if not _valid(found):
+        log.warning("  scene %03d: %s is not a readable image, regenerating", scene["index"], found.name)
+        return False
+    canonical = images_dir / f"{stem}.png"
+    if found != canonical:
+        with Image.open(found) as image:
+            image.convert("RGB").save(canonical, "PNG")
+        if delete_source:
+            found.unlink()
+    _postprocess(canonical, size)
+    scene["image"] = str(canonical)
+    return True
 
 
 def _generate_manual(
@@ -214,19 +257,12 @@ def _generate_manual(
     """
     pending: list[tuple[dict[str, Any], str]] = []
     for scene in scenes:
-        stem = _manual_image_stem(scene)
-        canonical = images_dir / f"{stem}.png"
-        found = None if force else _find_manual_image(images_dir, stem)
-        if found is not None:
-            if _valid(found):
-                if found != canonical:
-                    with Image.open(found) as image:
-                        image.convert("RGB").save(canonical, "PNG")
-                    found.unlink()
-                _postprocess(canonical, size)
-                scene["image"] = str(canonical)
-                continue
-            log.warning("  scene %03d: %s is not a readable image, regenerating", scene["index"], found.name)
+        stem = _stem_for(scene, "manual")
+        if not force and _adopt_by_stem(
+            scene, stem, search_dir=images_dir, images_dir=images_dir,
+            size=size, delete_source=True,
+        ):
+            continue
         pending.append((scene, stem))
 
     if not pending:
@@ -245,6 +281,63 @@ def _generate_manual(
         "filename shown (any of .%s), into %s, then re-run `video-lyrics images`.",
         len(pending), manifest, suffixes, images_dir,
     )
+    return scenes
+
+
+def _generate_meta(
+    scenes: list[dict[str, Any]],
+    images_dir: Path,
+    size: tuple[int, int],
+    force: bool,
+    *,
+    headless: bool,
+    profile_dir: str | None,
+    min_delay: float,
+    max_delay: float,
+) -> list[dict[str, Any]]:
+    """Drive meta.ai in a real browser to generate each outstanding scene's image.
+
+    Raw downloads land in `images_dir/images.src/<stem>.<ext>` and are kept there
+    (whatever format meta.ai served); each is also converted into the canonical
+    PNG in `images_dir` itself. A run interrupted partway through only asks the
+    browser for what is still missing - anything already in images.src is reused.
+    """
+    raw_dir = ensure_dir(images_dir / RAW_SUBDIR)
+
+    pending: list[tuple[dict[str, Any], str]] = []
+    for scene in scenes:
+        stem = _stem_for(scene, "meta")
+        if not force and _adopt_by_stem(
+            scene, stem, search_dir=raw_dir, images_dir=images_dir,
+            size=size, delete_source=False,
+        ):
+            continue
+        pending.append((scene, stem))
+
+    if not pending:
+        log.info("All %d scene images already generated.", len(scenes))
+        return scenes
+
+    from . import meta_ai as meta_mod
+
+    meta_mod.generate(
+        [scene for scene, _ in pending],
+        raw_dir=raw_dir,
+        headless=headless,
+        profile_dir=profile_dir,
+        min_delay=min_delay,
+        max_delay=max_delay,
+    )
+
+    missing = []
+    for scene, stem in pending:
+        if not _adopt_by_stem(
+            scene, stem, search_dir=raw_dir, images_dir=images_dir,
+            size=size, delete_source=False,
+        ):
+            missing.append(scene["index"])
+    if missing:
+        log.warning("meta.ai produced no usable image for scene(s): %s", missing)
     return scenes
 
 

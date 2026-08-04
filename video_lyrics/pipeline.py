@@ -171,6 +171,10 @@ def stage_images(
         size=project.size,
         force=force,
         jobs=jobs,
+        meta_headless=bool(settings.get("meta_headless", False)),
+        meta_profile_dir=settings.get("meta_profile_dir"),
+        meta_min_delay=float(settings.get("meta_min_delay", 8.0)),
+        meta_max_delay=float(settings.get("meta_max_delay", 20.0)),
     )
     project.save()
 

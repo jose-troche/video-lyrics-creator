@@ -31,7 +31,7 @@ def test_manual_provider_adopts_hand_made_png_on_a_second_run(tmp_path):
     images.generate(scenes, images_dir=tmp_path, provider="manual")
 
     for scene in scenes:
-        stem = images._manual_image_stem(scene)
+        stem = images._stem_for(scene, "manual")
         Image.new("RGB", (100, 100), (10, 20, 30)).save(tmp_path / f"{stem}.png")
 
     result = images.generate(scenes, images_dir=tmp_path, provider="manual")
@@ -48,7 +48,7 @@ def test_manual_provider_accepts_webp_and_converts_it_to_png(tmp_path):
     images.generate(scenes, images_dir=tmp_path, provider="manual")
 
     for scene in scenes:
-        stem = images._manual_image_stem(scene)
+        stem = images._stem_for(scene, "manual")
         Image.new("RGB", (100, 100), (10, 20, 30)).save(tmp_path / f"{stem}.webp", "WEBP")
 
     result = images.generate(scenes, images_dir=tmp_path, provider="manual")
@@ -64,7 +64,7 @@ def test_manual_provider_accepts_mixed_formats_in_one_run(tmp_path):
     scenes = make_scenes()
     images.generate(scenes, images_dir=tmp_path, provider="manual")
 
-    stems = [images._manual_image_stem(scene) for scene in scenes]
+    stems = [images._stem_for(scene, "manual") for scene in scenes]
     Image.new("RGB", (100, 100), (10, 20, 30)).save(tmp_path / f"{stems[0]}.png")
     Image.new("RGB", (100, 100), (40, 50, 60)).save(tmp_path / f"{stems[1]}.webp", "WEBP")
 
@@ -74,6 +74,30 @@ def test_manual_provider_accepts_mixed_formats_in_one_run(tmp_path):
         path = Path(scene["image"])
         assert path.suffix == ".png"
         assert path.is_file()
+
+
+def test_meta_provider_adopts_raw_downloads_already_on_disk(tmp_path):
+    """If images.src already has a file for every scene (e.g. from a previous,
+    interrupted run), the meta provider must not need Playwright or a browser at
+    all - it should just convert what is already there."""
+    scenes = make_scenes()
+    raw_dir = tmp_path / "images.src"
+    raw_dir.mkdir()
+    for scene in scenes:
+        stem = images._stem_for(scene, "meta")
+        Image.new("RGB", (100, 100), (5, 10, 15)).save(raw_dir / f"{stem}.webp", "WEBP")
+
+    result = images.generate(scenes, images_dir=tmp_path, provider="meta")
+
+    for scene in result:
+        path = Path(scene["image"])
+        assert path.suffix == ".png"
+        assert path.parent == tmp_path
+        assert path.is_file()
+    # the raw download is kept, unlike the manual provider's own-folder file
+    for scene in scenes:
+        stem = images._stem_for(scene, "meta")
+        assert (raw_dir / f"{stem}.webp").is_file()
 
 
 def test_unknown_provider_is_rejected(tmp_path):

@@ -18,6 +18,7 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = ["pytest>=8.0"]
+meta = ["playwright>=1.40"]
 
 [project.scripts]
 video-lyrics = "video_lyrics.cli:main"

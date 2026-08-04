@@ -128,6 +128,21 @@ video-lyrics render              # assemble with ffmpeg and export
   that stem in `work/<song>/images/` — png, jpg, or webp, whichever the tool gives
   you — then run `video-lyrics images` again; it picks up the files you made
   (converting them to PNG) and reports anything still missing.
+* `meta` — drives [meta.ai](https://www.meta.ai/) in a real, visible browser
+  (Playwright) and downloads the result automatically, one prompt at a time.
+  Unofficial: there is no API for this, it depends on meta.ai's current page and
+  can break if that changes, and running it is your own call to make against
+  meta.ai's terms of service. Needs the extra installed once:
+  `pip install -e ".[meta]"` and `playwright install chromium`. The first run
+  opens a browser and waits for you to log in by hand (nothing is automated
+  about that); the session is then remembered in `image_generation.meta_profile_dir`
+  (default `~/.video-lyrics/meta-ai-profile`) so later runs do not ask again. A
+  random delay between `image_generation.meta_min_delay` and `meta_max_delay`
+  (8-20s by default) separates each prompt so requests do not land in an obvious,
+  throttle-inviting pattern. Raw downloads are kept in
+  `work/<song>/images/images.src/`, whatever format meta.ai served, and each is
+  also converted into the canonical PNG in `work/<song>/images/` itself; a run
+  interrupted partway through only asks the browser for what is still missing.
 * `supplied` — same idea, but for images you already have; see `--images-dir`
   above, they're adopted in filename order instead of matched by name.
 

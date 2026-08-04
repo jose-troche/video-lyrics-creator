@@ -57,11 +57,15 @@ VIDEO_DEFAULTS: dict[str, Any] = {
 }
 
 IMAGE_DEFAULTS: dict[str, Any] = {
-    "provider": "codex",      # codex | manual | supplied
+    "provider": "codex",      # codex | manual | meta | supplied
     "model": "gpt-image-2",
     "quality": "medium",
     "lines_per_image": 2,
     "source_dir": None,       # used when provider == "supplied"
+    "meta_headless": False,   # provider == "meta": needs a visible window to log in
+    "meta_profile_dir": None, # ... browser profile dir; default: ~/.video-lyrics/meta-ai-profile
+    "meta_min_delay": 8.0,    # ... seconds to wait between prompts, at least
+    "meta_max_delay": 20.0,   # ... and at most - randomised, to avoid a throttling pattern
 }
 
 ALIGN_DEFAULTS: dict[str, Any] = {

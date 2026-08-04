@@ -59,7 +59,7 @@ def build_parser() -> argparse.ArgumentParser:
         stage.add_argument("--force", action="store_true", help="redo work even if cached")
 
     images = subparsers.add_parser(
-        "images", help="generate the scene images (codex, manual, or supplied)"
+        "images", help="generate the scene images (codex, manual, meta, or supplied)"
     )
     images.add_argument("--force", action="store_true")
     images.add_argument("--jobs", type=int, default=1, help="parallel codex runs")
