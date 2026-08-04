@@ -61,6 +61,8 @@ def generate(
     meta_profile_dir: str | None = None,
     meta_min_delay: float = 8.0,
     meta_max_delay: float = 20.0,
+    meta_composer_selector: str | None = None,
+    meta_image_selector: str | None = None,
 ) -> list[dict[str, Any]]:
     """Attach an `image` path to every scene."""
     images_dir = ensure_dir(images_dir)
@@ -74,6 +76,7 @@ def generate(
             scenes, images_dir, size, force,
             headless=meta_headless, profile_dir=meta_profile_dir,
             min_delay=meta_min_delay, max_delay=meta_max_delay,
+            composer_selector=meta_composer_selector, image_selector=meta_image_selector,
         )
     if provider != "codex":
         raise VideoLyricsError(
@@ -294,6 +297,8 @@ def _generate_meta(
     profile_dir: str | None,
     min_delay: float,
     max_delay: float,
+    composer_selector: str | None = None,
+    image_selector: str | None = None,
 ) -> list[dict[str, Any]]:
     """Drive meta.ai in a real browser to generate each outstanding scene's image.
 
@@ -320,14 +325,15 @@ def _generate_meta(
 
     from . import meta_ai as meta_mod
 
-    meta_mod.generate(
-        [scene for scene, _ in pending],
-        raw_dir=raw_dir,
-        headless=headless,
-        profile_dir=profile_dir,
-        min_delay=min_delay,
-        max_delay=max_delay,
+    meta_kwargs: dict[str, Any] = dict(
+        raw_dir=raw_dir, headless=headless, profile_dir=profile_dir,
+        min_delay=min_delay, max_delay=max_delay,
     )
+    if composer_selector:
+        meta_kwargs["composer_selector"] = composer_selector
+    if image_selector:
+        meta_kwargs["image_selector"] = image_selector
+    meta_mod.generate([scene for scene, _ in pending], **meta_kwargs)
 
     missing = []
     for scene, stem in pending:

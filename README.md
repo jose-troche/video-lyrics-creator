@@ -136,13 +136,18 @@ video-lyrics render              # assemble with ffmpeg and export
   `pip install -e ".[meta]"` and `playwright install chromium`. The first run
   opens a browser and waits for you to log in by hand (nothing is automated
   about that); the session is then remembered in `image_generation.meta_profile_dir`
-  (default `~/.video-lyrics/meta-ai-profile`) so later runs do not ask again. A
-  random delay between `image_generation.meta_min_delay` and `meta_max_delay`
-  (8-20s by default) separates each prompt so requests do not land in an obvious,
-  throttle-inviting pattern. Raw downloads are kept in
+  (default `~/.video-lyrics/meta-ai-profile`) so later runs do not ask again. The
+  next prompt is only submitted once the current scene's image has fully
+  downloaded, plus a random delay between `image_generation.meta_min_delay` and
+  `meta_max_delay` (1-4s by default) on top of that, so requests do not land in
+  an obvious, throttle-inviting pattern. Raw downloads are kept in
   `work/<song>/images/images.src/`, whatever format meta.ai served, and each is
   also converted into the canonical PNG in `work/<song>/images/` itself; a run
   interrupted partway through only asks the browser for what is still missing.
+  If meta.ai's page changes and the composer or the generated image can no longer
+  be found, override `image_generation.meta_composer_selector` /
+  `meta_image_selector` with a CSS selector for the right element (defaults:
+  `textarea, [contenteditable='true']` and `main img`).
 * `supplied` — same idea, but for images you already have; see `--images-dir`
   above, they're adopted in filename order instead of matched by name.
 

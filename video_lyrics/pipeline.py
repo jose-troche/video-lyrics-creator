@@ -175,6 +175,8 @@ def stage_images(
         meta_profile_dir=settings.get("meta_profile_dir"),
         meta_min_delay=float(settings.get("meta_min_delay", 8.0)),
         meta_max_delay=float(settings.get("meta_max_delay", 20.0)),
+        meta_composer_selector=settings.get("meta_composer_selector"),
+        meta_image_selector=settings.get("meta_image_selector"),
     )
     project.save()
 

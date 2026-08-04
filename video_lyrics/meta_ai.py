@@ -21,10 +21,20 @@ from .util import VideoLyricsError, ensure_dir, log, short_hash
 
 META_URL = "https://www.meta.ai/"
 DEFAULT_PROFILE_DIR = Path.home() / ".video-lyrics" / "meta-ai-profile"
-DEFAULT_MIN_DELAY = 8.0
-DEFAULT_MAX_DELAY = 20.0
+DEFAULT_MIN_DELAY = 1.0
+DEFAULT_MAX_DELAY = 4.0
 LOGIN_TIMEOUT_MS = 600_000    # how long to wait once the user is told to log in
 IMAGE_TIMEOUT_MS = 90_000     # how long one prompt is given to produce an image
+
+# The prompt composer. `get_by_role("textbox")` alone is too broad - meta.ai also
+# exposes a one-line "Conversation title" <input> with that same accessible role,
+# and being first in the DOM it can win over the actual composer. Textarea /
+# contenteditable narrows it down to the real multi-line chat box. Overridable
+# (image_generation.meta_composer_selector) in case meta.ai's markup has moved on
+# again by the time you read this.
+DEFAULT_COMPOSER_SELECTOR = "textarea, [contenteditable='true']"
+# The generated image. Overridable (image_generation.meta_image_selector).
+DEFAULT_IMAGE_SELECTOR = "main img"
 
 
 def generate(
@@ -35,6 +45,8 @@ def generate(
     profile_dir: str | Path | None = None,
     min_delay: float = DEFAULT_MIN_DELAY,
     max_delay: float = DEFAULT_MAX_DELAY,
+    composer_selector: str = DEFAULT_COMPOSER_SELECTOR,
+    image_selector: str = DEFAULT_IMAGE_SELECTOR,
 ) -> None:
     """Ask meta.ai for one image per scene, saving each to `raw_dir/<stem>.<ext>`.
 
@@ -65,10 +77,12 @@ def generate(
         try:
             page = context.pages[0] if context.pages else context.new_page()
             page.goto(META_URL, wait_until="domcontentloaded")
-            composer = _ensure_logged_in(page)
+            composer = _ensure_logged_in(page, composer_selector)
             for index, scene in enumerate(scenes):
                 stem = f"scene-{scene['index']:03d}-{short_hash(scene['prompt'], 'meta')}"
-                _generate_one(page, composer, scene, stem, raw_dir)
+                # _generate_one blocks until this scene's image is fully downloaded to
+                # disk - the delay below only starts once that is done, never before.
+                _generate_one(page, composer, scene, stem, raw_dir, image_selector)
                 if index + 1 < len(scenes):
                     delay = random.uniform(min_delay, max_delay)
                     log.info("  waiting %.0fs before the next prompt ...", delay)
@@ -77,12 +91,12 @@ def generate(
             context.close()
 
 
-def _composer(page):
-    return page.get_by_role("textbox").first
+def _composer(page, composer_selector: str):
+    return page.locator(composer_selector).first
 
 
-def _ensure_logged_in(page):
-    composer = _composer(page)
+def _ensure_logged_in(page, composer_selector: str):
+    composer = _composer(page, composer_selector)
     try:
         composer.wait_for(timeout=5_000)
         return composer
@@ -94,13 +108,14 @@ def _ensure_logged_in(page):
     return composer
 
 
-def _generate_one(page, composer, scene: dict[str, Any], stem: str, raw_dir: Path) -> None:
+def _generate_one(
+    page, composer, scene: dict[str, Any], stem: str, raw_dir: Path, image_selector: str
+) -> None:
     log.info("  scene %s: %s", stem, scene["prompt"][:70])
-    composer.click()
     composer.fill(scene["prompt"])
     composer.press("Enter")
 
-    image = page.locator("main img").last
+    image = page.locator(image_selector).last
     image.wait_for(state="visible", timeout=IMAGE_TIMEOUT_MS)
     src = image.get_attribute("src")
     if not src:

@@ -64,8 +64,10 @@ IMAGE_DEFAULTS: dict[str, Any] = {
     "source_dir": None,       # used when provider == "supplied"
     "meta_headless": False,   # provider == "meta": needs a visible window to log in
     "meta_profile_dir": None, # ... browser profile dir; default: ~/.video-lyrics/meta-ai-profile
-    "meta_min_delay": 8.0,    # ... seconds to wait between prompts, at least
-    "meta_max_delay": 20.0,   # ... and at most - randomised, to avoid a throttling pattern
+    "meta_min_delay": 1.0,    # ... seconds to wait after each image downloads, at least
+    "meta_max_delay": 4.0,    # ... and at most - randomised, to avoid a throttling pattern
+    "meta_composer_selector": None,  # ... CSS override if meta.ai's markup changes again
+    "meta_image_selector": None,     # ... CSS override for locating the generated image
 }
 
 ALIGN_DEFAULTS: dict[str, Any] = {
