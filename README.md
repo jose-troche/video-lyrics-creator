@@ -296,10 +296,12 @@ front, so assembly is just laying finished clips end to end.
   break is either an explicit `[Verse]` / `[Chorus]` / ... marker in the lyrics
   source, or - since not every verse is labelled - a blank line, the way a stanza
   is always set off from the one after it. A long instrumental stretch with no
-  lyrics in it becomes a few evenly-sized images instead of one held far too long. A scene whose lines (or, for an instrumental break, the title
-  or surrounding lines) mention God, Jesus, or Christ gets an extra instruction in
-  its prompt: if a divine figure appears, keep the face blurred, veiled, or turned
-  away rather than sharply detailed.
+  lyrics in it becomes a few evenly-sized images instead of one held far too long.
+  Every prompt also asks for generous margin around the main subject, since the
+  zoom will crop in on it, and - for a scene whose lines (or, for an instrumental
+  break, the title or surrounding lines) mention God, Jesus, or Christ - an extra
+  instruction to keep any divine figure's face blurred, veiled, or turned away
+  rather than sharply detailed.
 * `work/overlay-clips/` — the lyric and title clips as QuickTime Animation movies
   with an alpha channel and their fades already in the pixels.
 

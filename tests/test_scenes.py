@@ -151,6 +151,14 @@ def test_prompts_carry_the_style_the_lyrics_and_a_no_text_rule():
     assert prompt.startswith("watercolor.")
     assert "line one / line two" in prompt
     assert "No words" in prompt
+    assert "margin" in prompt.lower()
+
+
+def test_instrumental_prompts_also_ask_for_margin():
+    cues = [cue(42.0, 44.0, "second")]
+    planned = scenes.plan(cues, duration=46.0, title="Song", visual_style="cinematic")
+    instrumental = next(s for s in planned if not s["lines"])
+    assert "margin" in instrumental["prompt"].lower()
 
 
 def test_lines_mentioning_god_or_jesus_get_the_reverence_note():

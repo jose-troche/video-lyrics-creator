@@ -22,19 +22,26 @@ REVERENCE_NOTE = (
     "blurred, veiled, or turned away — never a sharp, detailed likeness."
 )
 
+MARGIN_NOTE = (
+    "Leave generous margin all around the main subject - it will be slowly zoomed "
+    "in and out, so nothing important can sit at the very edge or be cropped away "
+    "as the view tightens."
+)
+
 PROMPT_TEMPLATE = (
     "{style}. Create a cinematic lyric-video scene inspired by this passage: "
     "'{passage}'. Express its meaning and emotion through a coherent visual metaphor; "
     "intentional composition, strong subject separation, atmospheric lighting, "
     "consistent palette and era, landscape 16:9 framing with safe space near the lower "
-    "third. No words, letters, captions, logos, watermarks, borders, or typography."
+    "third. " + MARGIN_NOTE + " No words, letters, captions, logos, watermarks, "
+    "borders, or typography."
 )
 
 INSTRUMENTAL_TEMPLATE = (
     "{style}. Create a cinematic lyric-video scene for an instrumental passage of the "
     "song \"{title}\"{context}. Wide, atmospheric, no people speaking; "
     "intentional composition, atmospheric lighting, consistent palette and era, "
-    "landscape 16:9 framing with safe space near the lower third. "
+    "landscape 16:9 framing with safe space near the lower third. " + MARGIN_NOTE + " "
     "No words, letters, captions, logos, watermarks, borders, or typography."
 )
 
