@@ -333,13 +333,19 @@ def _render_transition_clip(
 
 
 def concat_clips(clips: list[dict[str, Any]], out: Path, *, force: bool = False) -> Path:
-    """Join the bed clips into one file (used by the ffmpeg render engine)."""
-    if out.is_file() and not force:
-        return out
+    """Join the bed clips into one file (used by the ffmpeg render engine).
+
+    Cached on the *list* of clip paths, not just on `out` existing: each clip's own
+    filename already carries a content fingerprint (see `render_bed`), so a scene
+    picking up a new image renders a new clip file but leaves the old `bed.mp4`
+    looking perfectly present. Comparing against the listing written last time is
+    what catches that instead of silently concatenating the stale clips again.
+    """
     listing = out.with_suffix(".txt")
-    listing.write_text(
-        "".join(f"file '{Path(clip['path']).as_posix()}'\n" for clip in clips), encoding="utf-8"
-    )
+    manifest = "".join(f"file '{Path(clip['path']).as_posix()}'\n" for clip in clips)
+    if out.is_file() and not force and listing.is_file() and listing.read_text(encoding="utf-8") == manifest:
+        return out
+    listing.write_text(manifest, encoding="utf-8")
     run(
         [
             which("ffmpeg"), "-y", "-loglevel", "error",

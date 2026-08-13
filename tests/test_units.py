@@ -300,3 +300,31 @@ def test_supersampling_defaults_high_enough_to_avoid_pixel_stepping():
     # at the old default (2x) a multi-second pan moves under a pixel per frame,
     # which is what read as jerky; the new default must clear that bar comfortably.
     assert motion.DEFAULT_SUPERSAMPLE >= 3
+
+
+def _fake_ffmpeg(monkeypatch, calls):
+    monkeypatch.setattr(motion, "which", lambda _name: "ffmpeg")
+    monkeypatch.setattr(motion, "run", lambda cmd, **kw: calls.append(cmd))
+
+
+def test_concat_clips_rebuilds_when_the_clip_list_changes(tmp_path, monkeypatch):
+    calls = []
+    _fake_ffmpeg(monkeypatch, calls)
+    out = tmp_path / "bed.mp4"
+    clip_a = tmp_path / "bed-001-scene-aaa.mp4"
+    clip_a.touch()
+    clip_b = tmp_path / "bed-001-scene-bbb.mp4"
+    clip_b.touch()
+
+    motion.concat_clips([{"path": str(clip_a)}], out)
+    assert len(calls) == 1
+    out.touch()  # ffmpeg is faked, so nothing actually wrote `out`
+
+    # Same clip list, `out` already there: no need to run ffmpeg again.
+    motion.concat_clips([{"path": str(clip_a)}], out)
+    assert len(calls) == 1
+
+    # A scene's image changed, so its clip's fingerprinted filename changed too -
+    # `out` is still sitting there from before, but it is now stale.
+    motion.concat_clips([{"path": str(clip_b)}], out)
+    assert len(calls) == 2
