@@ -1,0 +1,1104 @@
+schema_version: 1
+title: By grace alone we are saved
+author: José Troche
+audio: /Users/jatroche/Music/From beginning to end you are God/07 By grace alone we are saved.wav
+lyrics_source: /Users/jatroche/Google Drive/Songs/From beginning to end you are God/By grace alone we're saved - Romans 3:20-28.gdoc
+visual_style: cinematic photographic realism
+work_dir: /Users/jatroche/code/video-lyrics-creator/work
+video:
+  width: 1920
+  height: 1080
+  fps: 30
+  transition: 0.75
+  title_duration: 18.0
+  title_fade: 0.75
+  font: Avenir Next Demi Bold
+  font_size: 58
+  margin_v: 72
+  zoom: 1.2
+  lyric_lead: 0.35
+  lyric_fade: 0.2
+  audio_fade: 1.0
+image_generation:
+  provider: codex
+  model: gpt-image-2
+  quality: medium
+  lines_per_image: 2
+  source_dir: null
+  meta_headless: false
+  meta_profile_dir: null
+  meta_min_delay: 1.0
+  meta_max_delay: 4.0
+  meta_composer_selector: null
+  meta_image_selector: null
+  chatgpt_headless: false
+  chatgpt_profile_dir: null
+  chatgpt_min_delay: 1.0
+  chatgpt_max_delay: 4.0
+  chatgpt_composer_selector: null
+  chatgpt_image_selector: null
+  chatgpt_channel: chrome
+  meta_channel: null
+alignment:
+  model: medium.en
+  language: en
+  vad: false
+  prompt_hint: false
+  min_confidence: 0.5
+  min_matched_words: 2
+  min_duration: 1.0
+  max_gap_fill: 0.7
+  scene_gap: 2.5
+  min_scene_duration: 4.0
+  max_scene_duration: 15.0
+render:
+  engine: ffmpeg
+  output: /Users/jatroche/code/video-lyrics-creator/output/by-grace-alone-we-are-saved.mp4
+  format: mp4
+  codec: H264
+  audio_codec: aac
+  replace_existing: true
+  motion_backend: prerender
+  lyrics_mode: overlay
+  intermediate: h264
+  last_output: /Users/jatroche/code/video-lyrics-creator/output/by-grace-alone-we-are-saved.mp4
+lyric_lines:
+- By grace alone we are saved
+- No one can stand before God’s throne
+- By keeping rules or deeds we’ve shown
+- God’s holy word reveals our blame
+- No work we do can cleanse our shame
+- We all have failed and gone astray
+- We all fall short of God’s glory and way
+- By grace alone, through faith we’re saved
+- In Christ our hope, no more enslaved
+- It was His blood, God’s wrath appeased
+- The price He paid, our souls released
+- By grace alone, this we believe
+- Upon the cross, God’s wrath was poured
+- Its burning force Christ bravely bore
+- He drank the cup that we deserved
+- Soaked up the fury our sins had earned
+- The cross displayed what justice cost
+- Yet grace is free to those who're lost
+- By grace alone, through faith we’re saved
+- In Christ our hope, no more enslaved
+- It was His blood, God’s wrath appeased
+- The price He paid, our souls released
+- By grace alone, this we believe
+- My sin, my debt, His gift, His grace
+- Christ shed His blood, He took my place
+- His life, His death, His work complete
+- There at the cross justice and mercy meet
+- By grace alone, through faith we’re saved
+- In Christ our hope, no more enslaved
+- It was His blood, God’s wrath appeased
+- The price He paid, our souls released
+- By grace alone
+- Through faith alone
+- In Christ alone
+- That’s how we’re saved!
+lyric_section_starts:
+- 0
+- 1
+- 5
+- 7
+- 12
+- 16
+- 18
+- 23
+- 27
+- 31
+duration: 260.64
+transcript:
+  path: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/transcript.json
+  model: medium.en
+  words: 232
+lyrics:
+- start: 22.17
+  end: 27.26
+  text: No one can stand before God’s throne
+  line_index: 1
+  alignment_confidence: 0.75
+  tuned: true
+- start: 27.99
+  end: 33.25
+  text: By keeping rules or deeds we’ve shown
+  line_index: 2
+  alignment_confidence: 0.75
+  tuned: true
+- start: 33.83
+  end: 38.98
+  text: God’s holy word reveals our blame
+  line_index: 3
+  alignment_confidence: 0.714
+  tuned: true
+- start: 39.71
+  end: 45.25
+  text: No work we do can cleanse our shame
+  line_index: 4
+  alignment_confidence: 1.0
+  tuned: true
+- start: 46.2
+  end: 51.72
+  text: We all have failed and gone astray
+  line_index: 5
+  alignment_confidence: 1.0
+  tuned: true
+- start: 52.1
+  end: 57.1
+  text: We all fall short of God’s glory and way
+  line_index: 6
+  alignment_confidence: 0.7
+  tuned: true
+- start: 57.1
+  end: 62.58
+  text: By grace alone, through faith we’re saved
+  line_index: 7
+  alignment_confidence: 0.75
+  tuned: true
+- start: 62.96
+  end: 68.44
+  text: In Christ our hope, no more enslaved
+  line_index: 8
+  alignment_confidence: 1.0
+  tuned: true
+- start: 68.74
+  end: 73.64
+  text: It was His blood, God’s wrath appeased
+  line_index: 9
+  alignment_confidence: 0.5
+  tuned: true
+- start: 74.48
+  end: 80.11
+  text: The price He paid, our souls released
+  line_index: 10
+  alignment_confidence: 1.0
+  tuned: true
+- start: 80.38
+  end: 90.35
+  text: By grace alone, this we believe
+  line_index: 11
+  alignment_confidence: 1.0
+  tuned: true
+- start: 97.77
+  end: 103.2
+  text: Upon the cross, God’s wrath was poured
+  line_index: 12
+  alignment_confidence: 0.75
+  tuned: true
+- start: 103.6
+  end: 108.92
+  text: Its burning force Christ bravely bore
+  line_index: 13
+  alignment_confidence: 1.0
+  tuned: true
+- start: 109.29
+  end: 114.4
+  text: He drank the cup that we deserved
+  line_index: 14
+  alignment_confidence: 0.857
+  tuned: true
+- start: 114.98
+  end: 120.57
+  text: Soaked up the fury our sins had earned
+  line_index: 15
+  alignment_confidence: 1.0
+  tuned: true
+- start: 121.64
+  end: 127.04
+  text: The cross displayed what justice cost
+  line_index: 16
+  alignment_confidence: 1.0
+  tuned: true
+- start: 127.41
+  end: 132.6
+  text: Yet grace is free to those who're lost
+  line_index: 17
+  alignment_confidence: 0.875
+  tuned: true
+- start: 132.6
+  end: 137.92
+  text: By grace alone, through faith we’re saved
+  line_index: 18
+  alignment_confidence: 0.75
+  tuned: true
+- start: 138.41
+  end: 143.83
+  text: In Christ our hope, no more enslaved
+  line_index: 19
+  alignment_confidence: 1.0
+  tuned: true
+- start: 144.12
+  end: 149.5
+  text: It was His blood, God’s wrath appeased
+  line_index: 20
+  alignment_confidence: 0.625
+  tuned: true
+- start: 149.91
+  end: 155.51
+  text: The price He paid, our souls released
+  line_index: 21
+  alignment_confidence: 1.0
+  tuned: true
+- start: 155.86
+  end: 165.92
+  text: By grace alone, this we believe
+  line_index: 22
+  alignment_confidence: 1.0
+  tuned: true
+- start: 168.02
+  end: 173.53
+  text: My sin, my debt, His gift, His grace
+  line_index: 23
+  alignment_confidence: 1.0
+  tuned: true
+- start: 173.89
+  end: 179.49
+  text: Christ shed His blood, He took my place
+  line_index: 24
+  alignment_confidence: 1.0
+  tuned: true
+- start: 179.76
+  end: 185.21
+  text: His life, His death, His work complete
+  line_index: 25
+  alignment_confidence: 0.857
+  tuned: true
+- start: 185.58
+  end: 194.68
+  text: There at the cross justice and mercy meet
+  line_index: 26
+  alignment_confidence: 0.875
+  tuned: true
+- start: 196.24
+  end: 201.99
+  text: By grace alone, through faith we’re saved
+  line_index: 27
+  alignment_confidence: 0.75
+  tuned: true
+- start: 202.23
+  end: 207.8
+  text: In Christ our hope, no more enslaved
+  line_index: 28
+  alignment_confidence: 1.0
+  tuned: true
+- start: 208.15
+  end: 213.08
+  text: It was His blood, God’s wrath appeased
+  line_index: 29
+  alignment_confidence: 0.625
+  tuned: true
+- start: 213.79
+  end: 219.53
+  text: The price He paid, our souls released
+  line_index: 30
+  alignment_confidence: 1.0
+  tuned: true
+- start: 219.79
+  end: 224.86
+  text: By grace alone
+  line_index: 31
+  alignment_confidence: 1.0
+  tuned: true
+- start: 225.37
+  end: 230.64
+  text: Through faith alone
+  line_index: 32
+  alignment_confidence: 1.0
+  tuned: true
+- start: 231.19
+  end: 240.16
+  text: In Christ alone
+  line_index: 33
+  alignment_confidence: 1.0
+  tuned: true
+- start: 241.81
+  end: 248.79
+  text: That's how we are saved
+  line_index: null
+  alignment_confidence: 0.0
+  tuned: true
+scenes:
+- start: 0.0
+  end: 11.085
+  lines: []
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene for an instrumental passage of the song "By grace alone we are saved" — the opening, before the first line "No one can stand before God’s throne" (part 1 of 2). Wide, atmospheric, no people speaking; intentional composition, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness. Frame this particular scene as a wide establishing shot, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 1
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/images/scene-001-89826bbcadf5bdbd.png
+  motion_first_frame: 0
+  motion_frames: 344
+- start: 11.085
+  end: 22.17
+  lines: []
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene for an instrumental passage of the song "By grace alone we are saved" — the opening, before the first line "No one can stand before God’s throne" (part 2 of 2). Wide, atmospheric, no people speaking; intentional composition, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness. Frame this particular scene as a low angle close to the ground, looking up, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 2
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/images/scene-002-6cc9695dcd310b8e.png
+  motion_first_frame: 322
+  motion_frames: 354
+- start: 22.17
+  end: 33.83
+  lines:
+  - No one can stand before God’s throne
+  - By keeping rules or deeds we’ve shown
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''No one can stand before God’s throne / By keeping rules or deeds we’ve shown''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness. Frame this particular scene as an intimate mid-shot centred on a single subject, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 3
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/images/scene-003-9a9efec30a97fd17.png
+  motion_first_frame: 654
+  motion_frames: 372
+- start: 33.83
+  end: 46.2
+  lines:
+  - God’s holy word reveals our blame
+  - No work we do can cleanse our shame
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''God’s holy word reveals our blame / No work we do can cleanse our shame''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness. Frame this particular scene as a high, distant vantage looking down, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 4
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/images/scene-004-2c3ad91de700e0d0.png
+  motion_first_frame: 1004
+  motion_frames: 393
+- start: 46.2
+  end: 57.1
+  lines:
+  - We all have failed and gone astray
+  - We all fall short of God’s glory and way
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''We all have failed and gone astray / We all fall short of God’s glory and way''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness. Frame this particular scene as a tight foreground detail with the rest falling away soft, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 5
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/images/scene-005-daa223e139fe5a93.png
+  motion_first_frame: 1375
+  motion_frames: 349
+- start: 57.1
+  end: 68.74
+  lines:
+  - By grace alone, through faith we’re saved
+  - In Christ our hope, no more enslaved
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''By grace alone, through faith we’re saved / In Christ our hope, no more enslaved''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness. Frame this particular scene as a head-on symmetrical composition, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 6
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/images/scene-006-de9c90fda034f857.png
+  motion_first_frame: 1702
+  motion_frames: 371
+- start: 68.74
+  end: 80.38
+  lines:
+  - It was His blood, God’s wrath appeased
+  - The price He paid, our souls released
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''It was His blood, God’s wrath appeased / The price He paid, our souls released''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness. Frame this particular scene as a view through a natural frame - an arch, branches, a doorway, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 7
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/images/scene-007-b65fe4ca72bbafc7.png
+  motion_first_frame: 2051
+  motion_frames: 371
+- start: 80.38
+  end: 90.35
+  lines:
+  - By grace alone, this we believe
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''By grace alone, this we believe''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a wide establishing shot, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 8
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/images/scene-008-e0f4929ed4db7151.png
+  motion_first_frame: 2400
+  motion_frames: 321
+- start: 90.35
+  end: 97.77
+  lines: []
+  prompt: cinematic photographic realism. Create a cinematic lyric-video scene for an instrumental passage of the song "By grace alone we are saved" — an instrumental break after "By grace alone, this we believe". Wide, atmospheric, no people speaking; intentional composition, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a low angle close to the ground, looking up, distinctly different in vantage, subject and composition from the scenes either side of it.
+  index: 9
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/images/scene-009-bf7df44908aa4954.png
+  motion_first_frame: 2699
+  motion_frames: 245
+- start: 97.77
+  end: 109.29
+  lines:
+  - Upon the cross, God’s wrath was poured
+  - Its burning force Christ bravely bore
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene of jesus christ crucified, the shot is from behind, so his face is not shown, first the cross and his body in front of it; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness. Frame this particular scene as an intimate mid-shot centred on a single subject, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 10
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/images/scene-010-ea71c5a8feb4637b.png
+  motion_first_frame: 2922
+  motion_frames: 368
+- start: 109.29
+  end: 121.64
+  lines:
+  - He drank the cup that we deserved
+  - Soaked up the fury our sins had earned
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''He drank the cup that we deserved / Soaked up the fury our sins had earned''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a high, distant vantage looking down, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 11
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/images/scene-011-391ca1df35b22a01.png
+  motion_first_frame: 3268
+  motion_frames: 392
+- start: 121.64
+  end: 132.6
+  lines:
+  - The cross displayed what justice cost
+  - Yet grace is free to those who're lost
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''The cross displayed what justice cost / Yet grace is free to those who''re lost''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a tight foreground detail with the rest falling away soft, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 12
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/images/scene-012-9a6e90137b53e00b.png
+  motion_first_frame: 3638
+  motion_frames: 351
+- start: 132.6
+  end: 144.12
+  lines:
+  - By grace alone, through faith we’re saved
+  - In Christ our hope, no more enslaved
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''By grace alone, through faith we’re saved / In Christ our hope, no more enslaved''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness. Frame this particular scene as a head-on symmetrical composition, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 13
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/images/scene-013-de9c90fda034f857.png
+  motion_first_frame: 3967
+  motion_frames: 368
+- start: 144.12
+  end: 155.86
+  lines:
+  - It was His blood, God’s wrath appeased
+  - The price He paid, our souls released
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''It was His blood, God’s wrath appeased / The price He paid, our souls released''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness. Frame this particular scene as a view through a natural frame - an arch, branches, a doorway, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 14
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/images/scene-014-b65fe4ca72bbafc7.png
+  motion_first_frame: 4313
+  motion_frames: 374
+- start: 155.86
+  end: 168.02
+  lines:
+  - By grace alone, this we believe
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''By grace alone, this we believe''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a wide establishing shot, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 15
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/images/scene-015-e0f4929ed4db7151.png
+  motion_first_frame: 4665
+  motion_frames: 387
+- start: 168.02
+  end: 179.76
+  lines:
+  - My sin, my debt, His gift, His grace
+  - Christ shed His blood, He took my place
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''My sin, my debt, His gift, His grace / Christ shed His blood, He took my place''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness. Frame this particular scene as a low angle close to the ground, looking up, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 16
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/images/scene-016-ae2fefaf62144739.png
+  motion_first_frame: 5030
+  motion_frames: 374
+- start: 179.76
+  end: 194.68
+  lines:
+  - His life, His death, His work complete
+  - There at the cross justice and mercy meet
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''His life, His death, His work complete / There at the cross justice and mercy meet''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as an intimate mid-shot centred on a single subject, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 17
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/images/scene-017-43aa16cc7d5fd51d.png
+  motion_first_frame: 5382
+  motion_frames: 469
+- start: 194.68
+  end: 196.24
+  lines: []
+  prompt: cinematic photographic realism. Create a cinematic lyric-video scene for an instrumental passage of the song "By grace alone we are saved" — an instrumental break after "There at the cross justice and mercy meet". Wide, atmospheric, no people speaking; intentional composition, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a high, distant vantage looking down, distinctly different in vantage, subject and composition from the scenes either side of it.
+  index: 18
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/images/scene-018-300f8a604d42963b.png
+  motion_first_frame: 5829
+  motion_frames: 69
+- start: 196.24
+  end: 208.15
+  lines:
+  - By grace alone, through faith we’re saved
+  - In Christ our hope, no more enslaved
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''By grace alone, through faith we’re saved / In Christ our hope, no more enslaved''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness. Frame this particular scene as a tight foreground detail with the rest falling away soft, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 19
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/images/scene-019-5ddfe0bffd2bc305.png
+  motion_first_frame: 5876
+  motion_frames: 379
+- start: 208.15
+  end: 219.79
+  lines:
+  - It was His blood, God’s wrath appeased
+  - The price He paid, our souls released
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''It was His blood, God’s wrath appeased / The price He paid, our souls released''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness. Frame this particular scene as a head-on symmetrical composition, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 20
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/images/scene-020-215de18ce3a02063.png
+  motion_first_frame: 6233
+  motion_frames: 372
+- start: 219.79
+  end: 231.19
+  lines:
+  - By grace alone
+  - Through faith alone
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''By grace alone / Through faith alone''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a view through a natural frame - an arch, branches, a doorway, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 21
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/images/scene-021-7bb05f0e11259798.png
+  motion_first_frame: 6583
+  motion_frames: 364
+- start: 231.19
+  end: 241.81
+  lines:
+  - In Christ alone
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''In Christ alone''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness. Frame this particular scene as a wide establishing shot, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 22
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/images/scene-022-57a17b750e550489.png
+  motion_first_frame: 6925
+  motion_frames: 340
+- start: 241.81
+  end: 248.79
+  lines:
+  - That's how we are saved
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''That''s how we are saved''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a low angle close to the ground, looking up, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 23
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/images/scene-023-1c13ed60266c8df6.png
+  motion_first_frame: 7243
+  motion_frames: 232
+- start: 248.79
+  end: 260.64
+  lines: []
+  prompt: cinematic photographic realism. Create a cinematic lyric-video scene for an instrumental passage of the song "By grace alone we are saved" — an instrumental break after "That's how we are saved". Wide, atmospheric, no people speaking; intentional composition, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as an intimate mid-shot centred on a single subject, distinctly different in vantage, subject and composition from the scenes either side of it.
+  index: 24
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/images/scene-024-6a100149df7e8a54.png
+  motion_first_frame: 7453
+  motion_frames: 366
+overlays:
+  title:
+    image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/overlays/title-fe9ca7d0f0384d46.png
+    start: 0.0
+    end: 18.0
+    fade: 0.75
+    clip: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/overlay-clips/title-fe9ca7d0f0384d46-2b35302c1dab5c01.mov
+  lyrics:
+  - start: 21.82
+    end: 27.26
+    text: No one can stand before God’s throne
+    image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/overlays/lyric-001-d7aea146a3487a6f.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/overlay-clips/lyric-001-d7aea146a3487a6f-4b6c4317d12403c5.mov
+  - start: 27.64
+    end: 33.25
+    text: By keeping rules or deeds we’ve shown
+    image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/overlays/lyric-002-4f2b240ae826b7ae.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/overlay-clips/lyric-002-4f2b240ae826b7ae-e0c36dbaf46602c7.mov
+  - start: 33.48
+    end: 38.98
+    text: God’s holy word reveals our blame
+    image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/overlays/lyric-003-f792607ab110f267.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/overlay-clips/lyric-003-f792607ab110f267-6f95e3a72c4b7db6.mov
+  - start: 39.36
+    end: 45.25
+    text: No work we do can cleanse our shame
+    image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/overlays/lyric-004-3a1c2920e0895aa7.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/overlay-clips/lyric-004-3a1c2920e0895aa7-0dff97fcb2e95700.mov
+  - start: 45.85
+    end: 51.72
+    text: We all have failed and gone astray
+    image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/overlays/lyric-005-8428f3fd05e8f248.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/overlay-clips/lyric-005-8428f3fd05e8f248-d6b793ae359a4f7d.mov
+  - start: 51.75
+    end: 57.1
+    text: We all fall short of God’s glory and way
+    image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/overlays/lyric-006-36cee00f68c69d19.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/overlay-clips/lyric-006-36cee00f68c69d19-a58c62988d53dc63.mov
+  - start: 57.1
+    end: 62.58
+    text: By grace alone, through faith we’re saved
+    image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/overlays/lyric-007-e8d91bda387b13a2.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/overlay-clips/lyric-007-e8d91bda387b13a2-857a3cf65676ddaa.mov
+  - start: 62.61
+    end: 68.44
+    text: In Christ our hope, no more enslaved
+    image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/overlays/lyric-008-3bfc2342cdd4aeca.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/overlay-clips/lyric-008-3bfc2342cdd4aeca-fec4994e4700d228.mov
+  - start: 68.44
+    end: 73.64
+    text: It was His blood, God’s wrath appeased
+    image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/overlays/lyric-009-871d71ecdaadb4dc.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/overlay-clips/lyric-009-871d71ecdaadb4dc-9577e227cb2ac754.mov
+  - start: 74.13
+    end: 80.11
+    text: The price He paid, our souls released
+    image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/overlays/lyric-010-f1a72f1ac8f4a4cf.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/overlay-clips/lyric-010-f1a72f1ac8f4a4cf-5b1d28cf38078a65.mov
+  - start: 80.11
+    end: 90.35
+    text: By grace alone, this we believe
+    image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/overlays/lyric-011-382a779370f14242.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/overlay-clips/lyric-011-382a779370f14242-4a336ecbb0f471ad.mov
+  - start: 97.42
+    end: 103.2
+    text: Upon the cross, God’s wrath was poured
+    image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/overlays/lyric-012-dc9b852376c41f6a.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/overlay-clips/lyric-012-dc9b852376c41f6a-c63d18384045b2a3.mov
+  - start: 103.25
+    end: 108.92
+    text: Its burning force Christ bravely bore
+    image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/overlays/lyric-013-2e69507ab0de1f88.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/overlay-clips/lyric-013-2e69507ab0de1f88-87dabf1bdcdbbbc7.mov
+  - start: 108.94
+    end: 114.4
+    text: He drank the cup that we deserved
+    image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/overlays/lyric-014-1ef3aa2673511f37.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/overlay-clips/lyric-014-1ef3aa2673511f37-b65b62709a161cfe.mov
+  - start: 114.63
+    end: 120.57
+    text: Soaked up the fury our sins had earned
+    image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/overlays/lyric-015-60b3554eb2a9e7b9.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/overlay-clips/lyric-015-60b3554eb2a9e7b9-a818cb0ee4df4a2f.mov
+  - start: 121.29
+    end: 127.04
+    text: The cross displayed what justice cost
+    image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/overlays/lyric-016-425595b66fce1b89.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/overlay-clips/lyric-016-425595b66fce1b89-36676016a2142c44.mov
+  - start: 127.06
+    end: 132.6
+    text: Yet grace is free to those who're lost
+    image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/overlays/lyric-017-ddd11759cb37f408.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/overlay-clips/lyric-017-ddd11759cb37f408-e58380f924e2287e.mov
+  - start: 132.6
+    end: 137.92
+    text: By grace alone, through faith we’re saved
+    image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/overlays/lyric-018-e8d91bda387b13a2.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/overlay-clips/lyric-018-e8d91bda387b13a2-1f698e84d417f361.mov
+  - start: 138.06
+    end: 143.83
+    text: In Christ our hope, no more enslaved
+    image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/overlays/lyric-019-3bfc2342cdd4aeca.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/overlay-clips/lyric-019-3bfc2342cdd4aeca-94954c5fa6d356a5.mov
+  - start: 143.83
+    end: 149.5
+    text: It was His blood, God’s wrath appeased
+    image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/overlays/lyric-020-871d71ecdaadb4dc.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/overlay-clips/lyric-020-871d71ecdaadb4dc-87dabf1bdcdbbbc7.mov
+  - start: 149.56
+    end: 155.51
+    text: The price He paid, our souls released
+    image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/overlays/lyric-021-f1a72f1ac8f4a4cf.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/overlay-clips/lyric-021-f1a72f1ac8f4a4cf-fd5f9b0620cb7156.mov
+  - start: 155.51
+    end: 165.92
+    text: By grace alone, this we believe
+    image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/overlays/lyric-022-382a779370f14242.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/overlay-clips/lyric-022-382a779370f14242-17b63a0f9fa9ef1b.mov
+  - start: 167.67
+    end: 173.53
+    text: My sin, my debt, His gift, His grace
+    image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/overlays/lyric-023-51a787e6ab6f54f5.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/overlay-clips/lyric-023-51a787e6ab6f54f5-5fd9f41355fa3cf4.mov
+  - start: 173.54
+    end: 179.49
+    text: Christ shed His blood, He took my place
+    image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/overlays/lyric-024-ba5f2749ac3aafef.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/overlay-clips/lyric-024-ba5f2749ac3aafef-fd5f9b0620cb7156.mov
+  - start: 179.49
+    end: 185.21
+    text: His life, His death, His work complete
+    image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/overlays/lyric-025-c3f9a18c25cfa1ed.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/overlay-clips/lyric-025-c3f9a18c25cfa1ed-d9585c18f6a1d2e8.mov
+  - start: 185.23
+    end: 194.68
+    text: There at the cross justice and mercy meet
+    image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/overlays/lyric-026-1db4b8e608130471.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/overlay-clips/lyric-026-1db4b8e608130471-08eba67cb166e97d.mov
+  - start: 195.89
+    end: 201.99
+    text: By grace alone, through faith we’re saved
+    image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/overlays/lyric-027-e8d91bda387b13a2.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/overlay-clips/lyric-027-e8d91bda387b13a2-d42b83116d47b84b.mov
+  - start: 201.99
+    end: 207.8
+    text: In Christ our hope, no more enslaved
+    image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/overlays/lyric-028-3bfc2342cdd4aeca.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/overlay-clips/lyric-028-3bfc2342cdd4aeca-d5dc1d7b88da96cb.mov
+  - start: 207.8
+    end: 213.08
+    text: It was His blood, God’s wrath appeased
+    image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/overlays/lyric-029-871d71ecdaadb4dc.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/overlay-clips/lyric-029-871d71ecdaadb4dc-ec8c6f800495754b.mov
+  - start: 213.44
+    end: 219.53
+    text: The price He paid, our souls released
+    image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/overlays/lyric-030-f1a72f1ac8f4a4cf.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/overlay-clips/lyric-030-f1a72f1ac8f4a4cf-4a8aba5c06842914.mov
+  - start: 219.53
+    end: 224.86
+    text: By grace alone
+    image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/overlays/lyric-031-c06f446ec8ab1405.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/overlay-clips/lyric-031-c06f446ec8ab1405-0167174b604670b4.mov
+  - start: 225.02
+    end: 230.64
+    text: Through faith alone
+    image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/overlays/lyric-032-ed382e16bb113e68.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/overlay-clips/lyric-032-ed382e16bb113e68-4085c232292fdff4.mov
+  - start: 230.84
+    end: 240.16
+    text: In Christ alone
+    image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/overlays/lyric-033-ba1fe2742dc12b44.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/overlay-clips/lyric-033-ba1fe2742dc12b44-220cfddf7ebb353b.mov
+  - start: 241.46
+    end: 248.79
+    text: That's how we are saved
+    image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/overlays/lyric-034-9083fb643d13cb6e.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/overlay-clips/lyric-034-9083fb643d13cb6e-cba341a553bb4835.mov
+  srt: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/lyrics.srt
+bed:
+- kind: scene
+  first_frame: 0
+  frames: 322
+  scene: 0
+  path: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/clips/bed-001-scene-e68f8f2b6110e0c0.mp4
+  start: 0.0
+  end: 10.7333
+- kind: transition
+  first_frame: 322
+  frames: 22
+  from_scene: 0
+  to_scene: 1
+  path: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/clips/bed-002-xfade-104f90740f94baf7.mp4
+  start: 10.7333
+  end: 11.4667
+- kind: scene
+  first_frame: 344
+  frames: 310
+  scene: 1
+  path: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/clips/bed-003-scene-17d2fda66236e0b7.mp4
+  start: 11.4667
+  end: 21.8
+- kind: transition
+  first_frame: 654
+  frames: 22
+  from_scene: 1
+  to_scene: 2
+  path: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/clips/bed-004-xfade-92c40069e2a8701c.mp4
+  start: 21.8
+  end: 22.5333
+- kind: scene
+  first_frame: 676
+  frames: 328
+  scene: 2
+  path: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/clips/bed-005-scene-b5b0c8c3e2185797.mp4
+  start: 22.5333
+  end: 33.4667
+- kind: transition
+  first_frame: 1004
+  frames: 22
+  from_scene: 2
+  to_scene: 3
+  path: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/clips/bed-006-xfade-d0981efe4bd0ee3c.mp4
+  start: 33.4667
+  end: 34.2
+- kind: scene
+  first_frame: 1026
+  frames: 349
+  scene: 3
+  path: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/clips/bed-007-scene-1851790e43a31dbb.mp4
+  start: 34.2
+  end: 45.8333
+- kind: transition
+  first_frame: 1375
+  frames: 22
+  from_scene: 3
+  to_scene: 4
+  path: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/clips/bed-008-xfade-cc8540d48cd9f7f3.mp4
+  start: 45.8333
+  end: 46.5667
+- kind: scene
+  first_frame: 1397
+  frames: 305
+  scene: 4
+  path: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/clips/bed-009-scene-fe333770bfbd42c3.mp4
+  start: 46.5667
+  end: 56.7333
+- kind: transition
+  first_frame: 1702
+  frames: 22
+  from_scene: 4
+  to_scene: 5
+  path: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/clips/bed-010-xfade-bcbe7d763573fc7f.mp4
+  start: 56.7333
+  end: 57.4667
+- kind: scene
+  first_frame: 1724
+  frames: 327
+  scene: 5
+  path: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/clips/bed-011-scene-3949128b5a7bd939.mp4
+  start: 57.4667
+  end: 68.3667
+- kind: transition
+  first_frame: 2051
+  frames: 22
+  from_scene: 5
+  to_scene: 6
+  path: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/clips/bed-012-xfade-3ebc5242a5d53afa.mp4
+  start: 68.3667
+  end: 69.1
+- kind: scene
+  first_frame: 2073
+  frames: 327
+  scene: 6
+  path: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/clips/bed-013-scene-d84fc24479e997c6.mp4
+  start: 69.1
+  end: 80.0
+- kind: transition
+  first_frame: 2400
+  frames: 22
+  from_scene: 6
+  to_scene: 7
+  path: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/clips/bed-014-xfade-319f3475097ee4b2.mp4
+  start: 80.0
+  end: 80.7333
+- kind: scene
+  first_frame: 2422
+  frames: 277
+  scene: 7
+  path: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/clips/bed-015-scene-52baceacf5a8483c.mp4
+  start: 80.7333
+  end: 89.9667
+- kind: transition
+  first_frame: 2699
+  frames: 22
+  from_scene: 7
+  to_scene: 8
+  path: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/clips/bed-016-xfade-69e26cdf921076d8.mp4
+  start: 89.9667
+  end: 90.7
+- kind: scene
+  first_frame: 2721
+  frames: 201
+  scene: 8
+  path: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/clips/bed-017-scene-5167b1bbfb6f2196.mp4
+  start: 90.7
+  end: 97.4
+- kind: transition
+  first_frame: 2922
+  frames: 22
+  from_scene: 8
+  to_scene: 9
+  path: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/clips/bed-018-xfade-fef3423189f0b2ac.mp4
+  start: 97.4
+  end: 98.1333
+- kind: scene
+  first_frame: 2944
+  frames: 324
+  scene: 9
+  path: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/clips/bed-019-scene-0126a12c55aaac5d.mp4
+  start: 98.1333
+  end: 108.9333
+- kind: transition
+  first_frame: 3268
+  frames: 22
+  from_scene: 9
+  to_scene: 10
+  path: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/clips/bed-020-xfade-266d14c75f0f7def.mp4
+  start: 108.9333
+  end: 109.6667
+- kind: scene
+  first_frame: 3290
+  frames: 348
+  scene: 10
+  path: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/clips/bed-021-scene-f3baa69ef43496ef.mp4
+  start: 109.6667
+  end: 121.2667
+- kind: transition
+  first_frame: 3638
+  frames: 22
+  from_scene: 10
+  to_scene: 11
+  path: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/clips/bed-022-xfade-8efb52d7975928a8.mp4
+  start: 121.2667
+  end: 122.0
+- kind: scene
+  first_frame: 3660
+  frames: 307
+  scene: 11
+  path: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/clips/bed-023-scene-a8048e3d3dc0f789.mp4
+  start: 122.0
+  end: 132.2333
+- kind: transition
+  first_frame: 3967
+  frames: 22
+  from_scene: 11
+  to_scene: 12
+  path: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/clips/bed-024-xfade-feef6305eacae083.mp4
+  start: 132.2333
+  end: 132.9667
+- kind: scene
+  first_frame: 3989
+  frames: 324
+  scene: 12
+  path: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/clips/bed-025-scene-0fcc102a6f844279.mp4
+  start: 132.9667
+  end: 143.7667
+- kind: transition
+  first_frame: 4313
+  frames: 22
+  from_scene: 12
+  to_scene: 13
+  path: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/clips/bed-026-xfade-d1e741e13e56f5d0.mp4
+  start: 143.7667
+  end: 144.5
+- kind: scene
+  first_frame: 4335
+  frames: 330
+  scene: 13
+  path: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/clips/bed-027-scene-ee7b91be00f9f8b8.mp4
+  start: 144.5
+  end: 155.5
+- kind: transition
+  first_frame: 4665
+  frames: 22
+  from_scene: 13
+  to_scene: 14
+  path: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/clips/bed-028-xfade-037c4a2c796db416.mp4
+  start: 155.5
+  end: 156.2333
+- kind: scene
+  first_frame: 4687
+  frames: 343
+  scene: 14
+  path: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/clips/bed-029-scene-7cdf006d05760b1b.mp4
+  start: 156.2333
+  end: 167.6667
+- kind: transition
+  first_frame: 5030
+  frames: 22
+  from_scene: 14
+  to_scene: 15
+  path: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/clips/bed-030-xfade-7c3d8cc0332b323e.mp4
+  start: 167.6667
+  end: 168.4
+- kind: scene
+  first_frame: 5052
+  frames: 330
+  scene: 15
+  path: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/clips/bed-031-scene-2bdcaba472300ba8.mp4
+  start: 168.4
+  end: 179.4
+- kind: transition
+  first_frame: 5382
+  frames: 22
+  from_scene: 15
+  to_scene: 16
+  path: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/clips/bed-032-xfade-01e91f8b9848d22a.mp4
+  start: 179.4
+  end: 180.1333
+- kind: scene
+  first_frame: 5404
+  frames: 425
+  scene: 16
+  path: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/clips/bed-033-scene-d5020fc9b974382f.mp4
+  start: 180.1333
+  end: 194.3
+- kind: transition
+  first_frame: 5829
+  frames: 22
+  from_scene: 16
+  to_scene: 17
+  path: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/clips/bed-034-xfade-e79496f50d655a57.mp4
+  start: 194.3
+  end: 195.0333
+- kind: scene
+  first_frame: 5851
+  frames: 25
+  scene: 17
+  path: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/clips/bed-035-scene-a2b00075cee0edbf.mp4
+  start: 195.0333
+  end: 195.8667
+- kind: transition
+  first_frame: 5876
+  frames: 22
+  from_scene: 17
+  to_scene: 18
+  path: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/clips/bed-036-xfade-111d1410dddfcdc2.mp4
+  start: 195.8667
+  end: 196.6
+- kind: scene
+  first_frame: 5898
+  frames: 335
+  scene: 18
+  path: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/clips/bed-037-scene-b9e067c570caae42.mp4
+  start: 196.6
+  end: 207.7667
+- kind: transition
+  first_frame: 6233
+  frames: 22
+  from_scene: 18
+  to_scene: 19
+  path: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/clips/bed-038-xfade-acef480033b81963.mp4
+  start: 207.7667
+  end: 208.5
+- kind: scene
+  first_frame: 6255
+  frames: 328
+  scene: 19
+  path: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/clips/bed-039-scene-4722c884d618b490.mp4
+  start: 208.5
+  end: 219.4333
+- kind: transition
+  first_frame: 6583
+  frames: 22
+  from_scene: 19
+  to_scene: 20
+  path: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/clips/bed-040-xfade-da6d44cdc4ac522f.mp4
+  start: 219.4333
+  end: 220.1667
+- kind: scene
+  first_frame: 6605
+  frames: 320
+  scene: 20
+  path: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/clips/bed-041-scene-03099e6c5fded28f.mp4
+  start: 220.1667
+  end: 230.8333
+- kind: transition
+  first_frame: 6925
+  frames: 22
+  from_scene: 20
+  to_scene: 21
+  path: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/clips/bed-042-xfade-8b8870bbd909149f.mp4
+  start: 230.8333
+  end: 231.5667
+- kind: scene
+  first_frame: 6947
+  frames: 296
+  scene: 21
+  path: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/clips/bed-043-scene-0c6f3a9bf846c7c9.mp4
+  start: 231.5667
+  end: 241.4333
+- kind: transition
+  first_frame: 7243
+  frames: 22
+  from_scene: 21
+  to_scene: 22
+  path: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/clips/bed-044-xfade-c78694546edc19a8.mp4
+  start: 241.4333
+  end: 242.1667
+- kind: scene
+  first_frame: 7265
+  frames: 188
+  scene: 22
+  path: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/clips/bed-045-scene-e1adb73c5cb651ed.mp4
+  start: 242.1667
+  end: 248.4333
+- kind: transition
+  first_frame: 7453
+  frames: 22
+  from_scene: 22
+  to_scene: 23
+  path: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/clips/bed-046-xfade-e1c5dc9af6209058.mp4
+  start: 248.4333
+  end: 249.1667
+- kind: scene
+  first_frame: 7475
+  frames: 344
+  scene: 23
+  path: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/clips/bed-047-scene-137710c70095098f.mp4
+  start: 249.1667
+  end: 260.6333
