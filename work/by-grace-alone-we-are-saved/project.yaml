@@ -564,10 +564,10 @@ scenes:
 - start: 248.79
   end: 260.64
   lines: []
-  prompt: cinematic photographic realism. Create a cinematic lyric-video scene for an instrumental passage of the song "By grace alone we are saved" — an instrumental break after "That's how we are saved". Wide, atmospheric, no people speaking; intentional composition, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as an intimate mid-shot centred on a single subject, distinctly different in vantage, subject and composition from the scenes either side of it.
+  prompt: cinematic photographic realism. Create a cinematic lyric-video scene for an instrumental passage of the song "By grace alone we are saved" — an instrumental break after "That's how we are saved". Show an empty cross and a bright sun in the background. Broken shackles at its foot. Wide, atmospheric, no people speaking; intentional composition, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as an intimate mid-shot centred on a single subject, distinctly different in vantage, subject and composition from the scenes either side of it.
   index: 24
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/images/scene-024-6a100149df7e8a54.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/images/scene-024-0d3ff7e2608ccf74.png
   motion_first_frame: 7453
   motion_frames: 366
 overlays:
@@ -1092,13 +1092,13 @@ bed:
   frames: 22
   from_scene: 22
   to_scene: 23
-  path: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/clips/bed-046-xfade-e1c5dc9af6209058.mp4
+  path: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/clips/bed-046-xfade-fc30fb0a459ff0e9.mp4
   start: 248.4333
   end: 249.1667
 - kind: scene
   first_frame: 7475
   frames: 344
   scene: 23
-  path: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/clips/bed-047-scene-137710c70095098f.mp4
+  path: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/clips/bed-047-scene-346da5ee0830ac30.mp4
   start: 249.1667
   end: 260.6333
