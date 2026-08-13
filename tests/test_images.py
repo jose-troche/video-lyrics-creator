@@ -1,9 +1,10 @@
+import importlib
 from pathlib import Path
 
 import pytest
 from PIL import Image
 
-from video_lyrics import images
+from video_lyrics import images, pipeline
 from video_lyrics.util import VideoLyricsError
 
 
@@ -76,9 +77,14 @@ def test_manual_provider_accepts_mixed_formats_in_one_run(tmp_path):
         assert path.is_file()
 
 
-def test_meta_provider_adopts_raw_downloads_already_on_disk(tmp_path):
+def site_module(provider):
+    return importlib.import_module(f"video_lyrics.{images.BROWSER_MODULES[provider]}")
+
+
+@pytest.mark.parametrize("provider", images.BROWSER_PROVIDERS)
+def test_browser_provider_adopts_raw_downloads_already_on_disk(tmp_path, provider):
     """If the raw downloads are already there (e.g. from a previous, interrupted
-    run), the meta provider must not need Playwright or a browser at all - it
+    run), a browser provider must not need Playwright or a browser at all - it
     should just convert what is on disk."""
     scenes = make_scenes()
     images_dir = tmp_path / "images"
@@ -86,11 +92,11 @@ def test_meta_provider_adopts_raw_downloads_already_on_disk(tmp_path):
     images_dir.mkdir()
     raw_dir.mkdir()
     for scene in scenes:
-        stem = images._stem_for(scene, "meta")
+        stem = images._stem_for(scene, provider)
         Image.new("RGB", (100, 100), (5, 10, 15)).save(raw_dir / f"{stem}.webp", "WEBP")
 
     result = images.generate(
-        scenes, images_dir=images_dir, raw_dir=raw_dir, provider="meta"
+        scenes, images_dir=images_dir, raw_dir=raw_dir, provider=provider
     )
 
     for scene in result:
@@ -100,11 +106,21 @@ def test_meta_provider_adopts_raw_downloads_already_on_disk(tmp_path):
         assert path.is_file()
     # the raw download is kept, unlike the manual provider's own-folder file
     for scene in scenes:
-        stem = images._stem_for(scene, "meta")
+        stem = images._stem_for(scene, provider)
         assert (raw_dir / f"{stem}.webp").is_file()
 
 
-def test_meta_raw_downloads_default_to_a_sibling_of_the_images_folder(tmp_path):
+@pytest.mark.parametrize("provider", images.BROWSER_PROVIDERS)
+def test_each_provider_has_its_own_fingerprint(tmp_path, provider):
+    """One site's downloads are never mistaken for another's: same prompt, same
+    scene, different stem - so switching provider regenerates rather than
+    silently adopting the other site's picture."""
+    other = next(name for name in images.BROWSER_PROVIDERS if name != provider)
+    scene = make_scenes()[0]
+    assert images._stem_for(scene, provider) != images._stem_for(scene, other)
+
+
+def test_browser_raw_downloads_default_to_a_sibling_of_the_images_folder(tmp_path):
     scenes = make_scenes()
     images_dir = tmp_path / "images"
     images_dir.mkdir()
@@ -120,17 +136,19 @@ def test_meta_raw_downloads_default_to_a_sibling_of_the_images_folder(tmp_path):
     assert not (images_dir / "images.src").exists()
 
 
-def test_limit_backfills_the_earliest_gap_first_then_carries_on(tmp_path, monkeypatch):
+@pytest.mark.parametrize("provider", images.BROWSER_PROVIDERS)
+def test_limit_backfills_the_earliest_gap_first_then_carries_on(
+    tmp_path, monkeypatch, provider
+):
     """`--limit N` takes the first N scenes with no raw download, in scene order.
 
     So it resumes where it left off, and a file deleted from the middle is picked
     up before later ones - the existing images either side are left alone.
     """
-    from video_lyrics import meta_ai
-
     asked: list[int] = []
     monkeypatch.setattr(
-        meta_ai, "generate", lambda scenes, **kw: asked.extend(s["index"] for s in scenes)
+        site_module(provider), "generate",
+        lambda scenes, **kw: asked.extend(s["index"] for s in scenes),
     )
 
     all_scenes = [
@@ -141,15 +159,126 @@ def test_limit_backfills_the_earliest_gap_first_then_carries_on(tmp_path, monkey
     raw_dir.mkdir()
     for scene in all_scenes:
         if scene["index"] in (1, 3):  # 2 is the hole in the middle
-            stem = images._stem_for(scene, "meta")
+            stem = images._stem_for(scene, provider)
             Image.new("RGB", (400, 225), (9, 9, 9)).save(raw_dir / f"{stem}.webp", "WEBP")
 
     images.generate(
-        list(all_scenes), images_dir=images_dir, raw_dir=raw_dir, provider="meta", limit=2
+        list(all_scenes), images_dir=images_dir, raw_dir=raw_dir,
+        provider=provider, limit=2,
     )
     assert asked == [2, 4]
+
+
+def test_a_scene_that_already_has_an_image_is_not_regenerated(tmp_path, monkeypatch):
+    """An image made by another provider (a song generated before chatgpt replaced
+    codex, say) has no chatgpt-stemmed download - but it is still a finished image,
+    and asking the browser to redraw it would throw the work away."""
+    asked: list[int] = []
+    monkeypatch.setattr(
+        site_module("chatgpt"), "generate",
+        lambda scenes, **kw: asked.extend(s["index"] for s in scenes),
+    )
+
+    scenes = make_scenes()
+    images_dir, raw_dir = tmp_path / "images", tmp_path / "images.src"
+    images_dir.mkdir()
+    raw_dir.mkdir()
+    existing = images_dir / "scene-001-fromcodex.png"
+    Image.new("RGB", (400, 225), (7, 7, 7)).save(existing)
+    scenes[0]["image"] = str(existing)
+
+    result = images.generate(
+        scenes, images_dir=images_dir, raw_dir=raw_dir, provider="chatgpt"
+    )
+
+    assert asked == [2]                        # only the scene with nothing on disk
+    assert result[0]["image"] == str(existing)  # ... and the old image is untouched
+
+
+def test_force_regenerates_even_a_scene_that_has_an_image(tmp_path, monkeypatch):
+    asked: list[int] = []
+    monkeypatch.setattr(
+        site_module("chatgpt"), "generate",
+        lambda scenes, **kw: asked.extend(s["index"] for s in scenes),
+    )
+
+    scenes = make_scenes()
+    images_dir, raw_dir = tmp_path / "images", tmp_path / "images.src"
+    images_dir.mkdir()
+    raw_dir.mkdir()
+    existing = images_dir / "scene-001-fromcodex.png"
+    Image.new("RGB", (400, 225), (7, 7, 7)).save(existing)
+    scenes[0]["image"] = str(existing)
+
+    images.generate(
+        scenes, images_dir=images_dir, raw_dir=raw_dir, provider="chatgpt", force=True
+    )
+    assert asked == [1, 2]
+
+
+def test_browser_options_reach_the_site_driver(tmp_path, monkeypatch):
+    """The prefix-stripped settings are passed straight through, and anything the
+    driver does not take (a stray key in an old project file) is dropped."""
+    seen: dict = {}
+    monkeypatch.setattr(
+        site_module("chatgpt"), "generate", lambda scenes, **kw: seen.update(kw)
+    )
+
+    images.generate(
+        make_scenes(), images_dir=tmp_path / "images", raw_dir=tmp_path / "images.src",
+        provider="chatgpt",
+        browser={"headless": False, "min_delay": 2.5, "image_selector": None, "nonsense": 1},
+    )
+
+    assert seen["headless"] is False
+    assert seen["min_delay"] == 2.5
+    assert "nonsense" not in seen
+    assert "image_selector" not in seen  # unset overrides fall back to the site's own
 
 
 def test_unknown_provider_is_rejected(tmp_path):
     with pytest.raises(VideoLyricsError):
         images.generate(make_scenes(), images_dir=tmp_path, provider="nonsense")
+
+
+# ------------------------------------------- what the images stage hands over
+
+def test_a_project_still_asking_for_codex_falls_back_to_chatgpt():
+    """`codex` was the default provider until chatgpt.com replaced it; projects
+    written back then must keep working rather than fail on an unknown name."""
+    assert pipeline._image_provider({"provider": "codex"}) == "chatgpt"
+    assert pipeline._image_provider({"provider": "meta"}) == "meta"
+    assert pipeline._image_provider({}) == "chatgpt"
+
+
+def test_only_the_active_provider_s_settings_are_handed_to_it():
+    settings = {
+        "provider": "meta",
+        "meta_min_delay": 3.0,
+        "meta_profile_dir": "~/elsewhere",
+        "chatgpt_min_delay": 9.0,
+        "lines_per_image": 2,
+    }
+    options = pipeline._browser_options(settings, "meta")
+    assert options == {"min_delay": 3.0, "profile_dir": "~/elsewhere"}
+
+
+def test_the_images_stage_wires_the_project_settings_through(tmp_path, monkeypatch):
+    from video_lyrics.config import Project
+
+    audio, words = tmp_path / "song.wav", tmp_path / "song.txt"
+    audio.write_bytes(b"RIFF")
+    words.write_text("a line", encoding="utf-8")
+    project = Project.create(
+        tmp_path / "project.yaml", audio=str(audio), lyrics_source=str(words), title="Song"
+    )
+    project.data["scenes"] = make_scenes()
+    project.image_generation["chatgpt_max_delay"] = 6.0
+
+    passed: dict = {}
+    monkeypatch.setattr(images, "generate", lambda scenes, **kw: passed.update(kw) or scenes)
+    pipeline.stage_images(project)
+
+    assert passed["provider"] == "chatgpt"
+    assert passed["browser"]["max_delay"] == 6.0
+    assert passed["raw_dir"] == project.work_dir / "images.src"

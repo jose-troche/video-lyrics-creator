@@ -1,70 +1,52 @@
 """Produce one still image per scene.
 
 Four providers:
-  * ``codex``    - the Codex CLI's built-in image_gen tool, run in full-auto mode.
+  * ``chatgpt``  - drives chatgpt.com in a real browser (see chatgpt.py).
+  * ``meta``     - drives meta.ai the same way (see meta_ai.py).
   * ``supplied`` - images the user already has, taken in filename order.
   * ``manual``   - no generator at all: write every scene's prompt and expected
                    filename to a manifest so the user can create each image by hand
-                   (ChatGPT, Midjourney, ...) and drop it into the images folder.
-  * ``meta``     - drives meta.ai in a real browser (see meta_ai.py). Raw downloads
-                   land in `images.src/` (a sibling of `images/`) and are converted
-                   into the canonical PNG in `images/`, same as `manual`.
+                   (Midjourney, an image site, ...) and drop it into the images folder.
+
+Both browser providers keep their raw downloads in `images.src/` (a sibling of
+`images/`) and convert each into the canonical PNG in `images/`, same as `manual`.
 """
 
 from __future__ import annotations
 
-import shutil
-import time
-from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from typing import Any
 
 from PIL import Image
 
-from .util import VideoLyricsError, ensure_dir, log, run, short_hash, which
+from .util import VideoLyricsError, ensure_dir, log, scene_stem, short_hash
 
 IMAGE_SUFFIXES = (".png", ".jpg", ".jpeg", ".webp")
-GENERATION_SIZE = "1536x1024"
-CODEX_TIMEOUT = 900.0
 RAW_SUBDIR = "images.src"
 
-INSTRUCTION = """Generate exactly one image using your built-in image_gen tool.
-
-Image prompt:
-{prompt}
-
-Rules:
-- Request size {size} (landscape).
-- Save the generated image to exactly this path: {target}
-- Overwrite it if it already exists. Create no other files.
-- Do not ask questions, do not write code, do not explain. When the file exists, reply
-  with the single word DONE.
-"""
-
-
-def scene_image_path(images_dir: Path, scene: dict[str, Any], fingerprint: str) -> Path:
-    return images_dir / f"scene-{scene['index']:03d}-{fingerprint}.png"
+# provider -> the module that drives that site. Each exposes a `generate` taking
+# `raw_dir` plus BROWSER_OPTIONS as keyword arguments; the provider name is also
+# the tag in every image's fingerprint, so renaming one orphans its downloads.
+BROWSER_MODULES = {"chatgpt": "chatgpt", "meta": "meta_ai"}
+BROWSER_PROVIDERS = tuple(BROWSER_MODULES)
+BROWSER_OPTIONS = (
+    "headless", "profile_dir", "min_delay", "max_delay",
+    "composer_selector", "image_selector", "channel",
+)
+PROVIDERS = BROWSER_PROVIDERS + ("manual", "supplied")
 
 
 def generate(
     scenes: list[dict[str, Any]],
     *,
     images_dir: Path,
-    provider: str = "codex",
-    model: str = "gpt-image-2",
-    quality: str = "medium",
+    provider: str = "chatgpt",
     source_dir: str | Path | None = None,
     raw_dir: Path | None = None,
     size: tuple[int, int] = (1920, 1080),
     force: bool = False,
-    jobs: int = 1,
     limit: int | None = None,
-    meta_headless: bool = False,
-    meta_profile_dir: str | None = None,
-    meta_min_delay: float = 8.0,
-    meta_max_delay: float = 20.0,
-    meta_composer_selector: str | None = None,
-    meta_image_selector: str | None = None,
+    browser: dict[str, Any] | None = None,
 ) -> list[dict[str, Any]]:
     """Attach an `image` path to every scene."""
     images_dir = ensure_dir(images_dir)
@@ -73,105 +55,15 @@ def generate(
         return _assign_supplied(scenes, source_dir, images_dir, size)
     if provider == "manual":
         return _generate_manual(scenes, images_dir, size, force)
-    if provider == "meta":
-        return _generate_meta(
-            scenes, images_dir, raw_dir, size, force, limit=limit,
-            headless=meta_headless, profile_dir=meta_profile_dir,
-            min_delay=meta_min_delay, max_delay=meta_max_delay,
-            composer_selector=meta_composer_selector, image_selector=meta_image_selector,
+    if provider in BROWSER_PROVIDERS:
+        return _generate_browser(
+            scenes, provider, images_dir, raw_dir, size, force, limit=limit,
+            options={key: value for key, value in (browser or {}).items()
+                     if key in BROWSER_OPTIONS and value is not None},
         )
-    if provider != "codex":
-        raise VideoLyricsError(
-            f"Unknown image provider {provider!r} (use codex, manual, meta, or supplied)."
-        )
-
-    pending: list[tuple[dict[str, Any], Path]] = []
-    for scene in scenes:
-        fingerprint = short_hash(scene["prompt"], model, quality)
-        target = scene_image_path(images_dir, scene, fingerprint)
-        if target.is_file() and _valid(target) and not force:
-            scene["image"] = str(target)
-            continue
-        existing = scene.get("image")
-        if existing and Path(existing).is_file() and _valid(Path(existing)) and not force:
-            continue
-        pending.append((scene, target))
-
-    if not pending:
-        log.info("All %d scene images already generated.", len(scenes))
-        return scenes
-
-    log.info("Generating %d scene image(s) with codex image_gen ...", len(pending))
-    codex = which("codex")
-
-    def worker(item: tuple[dict[str, Any], Path]) -> None:
-        scene, target = item
-        _generate_one(codex, scene, target, images_dir, model, quality, size)
-        scene["image"] = str(target)
-
-    if jobs > 1:
-        with ThreadPoolExecutor(max_workers=jobs) as pool:
-            list(pool.map(worker, pending))
-    else:
-        for item in pending:
-            worker(item)
-    return scenes
-
-
-def _generate_one(
-    codex: str,
-    scene: dict[str, Any],
-    target: Path,
-    images_dir: Path,
-    model: str,
-    quality: str,
-    size: tuple[int, int],
-) -> None:
-    instruction = INSTRUCTION.format(
-        prompt=scene["prompt"], size=GENERATION_SIZE, target=target
+    raise VideoLyricsError(
+        f"Unknown image provider {provider!r} (use {', '.join(PROVIDERS)})."
     )
-    started = time.time()
-    log.info("  scene %03d: %s", scene["index"], _summary(scene))
-    run(
-        [
-            codex, "exec", "--full-auto", "--skip-git-repo-check",
-            "-C", str(images_dir),
-            instruction,
-        ],
-        timeout=CODEX_TIMEOUT,
-    )
-    if not target.is_file():
-        rescued = _rescue(images_dir, started)
-        if rescued is None:
-            raise VideoLyricsError(
-                f"codex did not produce an image for scene {scene['index']}. "
-                f"Expected {target}. Check `codex login` and image_gen availability."
-            )
-        log.info("  scene %03d: recovered generated file %s", scene["index"], rescued.name)
-        shutil.move(str(rescued), target)
-    _postprocess(target, size)
-    log.info("  scene %03d: %s (%.0fs)", scene["index"], target.name, time.time() - started)
-
-
-def _summary(scene: dict[str, Any]) -> str:
-    if scene.get("lines"):
-        return " / ".join(scene["lines"])[:70]
-    return "(instrumental)"
-
-
-def _rescue(images_dir: Path, since: float) -> Path | None:
-    """codex sometimes saves under its own filename; find the newest new image."""
-    candidates: list[Path] = []
-    search_dirs = [images_dir, Path.home() / ".codex" / "generated_images"]
-    for directory in search_dirs:
-        if not directory.is_dir():
-            continue
-        for path in directory.iterdir():
-            if path.suffix.lower() in IMAGE_SUFFIXES and path.stat().st_mtime >= since - 1:
-                candidates.append(path)
-    if not candidates:
-        return None
-    return max(candidates, key=lambda path: path.stat().st_mtime)
 
 
 def _valid(path: Path) -> bool:
@@ -205,8 +97,7 @@ def _postprocess(path: Path, size: tuple[int, int]) -> None:
 
 
 def _stem_for(scene: dict[str, Any], tag: str) -> str:
-    fingerprint = short_hash(scene["prompt"], tag)
-    return f"scene-{scene['index']:03d}-{fingerprint}"
+    return scene_stem(scene, tag)
 
 
 def _find_image_by_stem(directory: Path, stem: str) -> Path | None:
@@ -289,25 +180,28 @@ def _generate_manual(
     return scenes
 
 
-def _generate_meta(
+def _site_module(provider: str):
+    """Import the driver for a browser provider only when it is actually used."""
+    from importlib import import_module
+
+    return import_module(f".{BROWSER_MODULES[provider]}", __package__)
+
+
+def _generate_browser(
     scenes: list[dict[str, Any]],
+    provider: str,
     images_dir: Path,
     raw_dir: Path | None,
     size: tuple[int, int],
     force: bool,
     *,
-    headless: bool,
-    profile_dir: str | None,
-    min_delay: float,
-    max_delay: float,
     limit: int | None = None,
-    composer_selector: str | None = None,
-    image_selector: str | None = None,
+    options: dict[str, Any],
 ) -> list[dict[str, Any]]:
-    """Drive meta.ai in a real browser to generate each outstanding scene's image.
+    """Drive a chat site in a real browser to generate each outstanding scene's image.
 
     Raw downloads land in `raw_dir/<stem>.<ext>` and are kept there (whatever
-    format meta.ai served); each is also converted into the canonical PNG in
+    format the site served); each is also converted into the canonical PNG in
     `images_dir`. A run interrupted partway through only asks the browser for what
     is still missing - anything already downloaded is reused.
     """
@@ -315,11 +209,17 @@ def _generate_meta(
 
     pending: list[tuple[dict[str, Any], str]] = []
     for scene in scenes:
-        stem = _stem_for(scene, "meta")
+        stem = _stem_for(scene, provider)
         if not force and _adopt_by_stem(
             scene, stem, search_dir=raw_dir, images_dir=images_dir,
             size=size, delete_source=False,
         ):
+            continue
+        # Nothing downloaded under this provider's own stem, but the scene may
+        # still have a perfectly good image from another one - a song generated
+        # with codex before this replaced it, or images adopted by hand. Asking a
+        # browser to redraw those would throw away work for no reason.
+        if not force and _keep_existing(scene):
             continue
         pending.append((scene, stem))
 
@@ -331,17 +231,9 @@ def _generate_meta(
         log.info("Limiting this run to %d of %d missing image(s).", limit, len(pending))
         pending = pending[:limit]
 
-    from . import meta_ai as meta_mod
-
-    meta_kwargs: dict[str, Any] = dict(
-        raw_dir=raw_dir, headless=headless, profile_dir=profile_dir,
-        min_delay=min_delay, max_delay=max_delay,
+    _site_module(provider).generate(
+        [scene for scene, _ in pending], raw_dir=raw_dir, **options
     )
-    if composer_selector:
-        meta_kwargs["composer_selector"] = composer_selector
-    if image_selector:
-        meta_kwargs["image_selector"] = image_selector
-    meta_mod.generate([scene for scene, _ in pending], **meta_kwargs)
 
     missing = []
     for scene, stem in pending:
@@ -351,8 +243,14 @@ def _generate_meta(
         ):
             missing.append(scene["index"])
     if missing:
-        log.warning("meta.ai produced no usable image for scene(s): %s", missing)
+        log.warning("%s produced no usable image for scene(s): %s", provider, missing)
     return scenes
+
+
+def _keep_existing(scene: dict[str, Any]) -> bool:
+    """Is this scene already pointing at a readable image on disk?"""
+    existing = scene.get("image")
+    return bool(existing) and Path(existing).is_file() and _valid(Path(existing))
 
 
 def _assign_supplied(

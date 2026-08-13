@@ -98,6 +98,17 @@ def short_hash(*parts: object, length: int = 16) -> str:
     return digest.hexdigest()[:length]
 
 
+def scene_stem(scene: dict, tag: str) -> str:
+    """The filename one scene's image is stored under, for one generator.
+
+    Lives here because two layers have to agree on it exactly: the browser driver
+    writes the download under this name, and the images stage looks for it under
+    this name afterwards. `tag` is the provider, so switching provider asks for a
+    new picture instead of adopting another site's.
+    """
+    return f"scene-{scene['index']:03d}-{short_hash(scene['prompt'], tag)}"
+
+
 def ensure_dir(path: Path | str) -> Path:
     path = Path(path).expanduser()
     path.mkdir(parents=True, exist_ok=True)

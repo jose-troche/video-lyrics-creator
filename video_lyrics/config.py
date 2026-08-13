@@ -56,18 +56,30 @@ VIDEO_DEFAULTS: dict[str, Any] = {
     "audio_fade": 1.0,        # song fade in/out (s); does not change its length
 }
 
+# The two browser-driven providers take the same five settings each, under their
+# own prefix (`<provider>_headless` and so on); the pipeline hands whichever set
+# belongs to the active provider straight to it, so a new one only needs its
+# defaults adding here.
 IMAGE_DEFAULTS: dict[str, Any] = {
-    "provider": "codex",      # codex | manual | meta | supplied
-    "model": "gpt-image-2",
-    "quality": "medium",
+    "provider": "chatgpt",    # chatgpt | manual | meta | supplied
     "lines_per_image": 2,
     "source_dir": None,       # used when provider == "supplied"
+    "chatgpt_headless": False,   # provider == "chatgpt": a visible window to log in
+    "chatgpt_profile_dir": None, # ... default: ~/.video-lyrics/chatgpt-profile
+    "chatgpt_min_delay": 1.0,    # ... seconds to wait after each image downloads, at least
+    "chatgpt_max_delay": 4.0,    # ... and at most - randomised, to avoid a throttling pattern
+    "chatgpt_composer_selector": None,  # ... CSS override if chatgpt.com's markup changes
+    "chatgpt_image_selector": None,     # ... CSS override for locating the generated image
+    "chatgpt_channel": "chrome",         # ... which browser: the installed Google
+                                         #     Chrome, or null for Playwright's own
     "meta_headless": False,   # provider == "meta": needs a visible window to log in
     "meta_profile_dir": None, # ... browser profile dir; default: ~/.video-lyrics/meta-ai-profile
     "meta_min_delay": 1.0,    # ... seconds to wait after each image downloads, at least
     "meta_max_delay": 4.0,    # ... and at most - randomised, to avoid a throttling pattern
     "meta_composer_selector": None,  # ... CSS override if meta.ai's markup changes again
     "meta_image_selector": None,     # ... CSS override for locating the generated image
+    "meta_channel": None,            # ... Playwright's bundled browser; meta.ai's own
+                                     #     login has never needed anything else
 }
 
 ALIGN_DEFAULTS: dict[str, Any] = {

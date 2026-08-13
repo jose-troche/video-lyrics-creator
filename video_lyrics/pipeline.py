@@ -155,31 +155,59 @@ def stage_plan(project: Project, *, force: bool = False, **_: Any) -> None:
     project.save()
 
 
+# The Codex CLI's image_gen tool used to be the default provider; chatgpt.com
+# (same account, one fewer thing to install) took its place. Old project files
+# still say `codex`, and their images are already on disk, so this quietly reads
+# it as the provider that replaced it rather than refusing to run.
+RETIRED_PROVIDERS = {"codex": "chatgpt"}
+
+
+def _image_provider(settings: dict[str, Any]) -> str:
+    provider = settings.get("provider", "chatgpt")
+    replacement = RETIRED_PROVIDERS.get(provider)
+    if replacement:
+        log.warning(
+            "image_generation.provider %r is gone; using %r instead. Scenes that "
+            "already have an image keep it. Make it permanent with "
+            "`video-lyrics set image_generation.provider %s`.",
+            provider, replacement, replacement,
+        )
+        return replacement
+    return provider
+
+
+def _browser_options(settings: dict[str, Any], provider: str) -> dict[str, Any]:
+    """The active provider's own settings, with its prefix stripped off.
+
+    `meta_min_delay` becomes `min_delay` when meta is the provider, and is simply
+    not looked at when it is not.
+    """
+    prefix = f"{provider}_"
+    return {
+        key[len(prefix):]: value
+        for key, value in settings.items()
+        if key.startswith(prefix)
+    }
+
+
 def stage_images(
-    project: Project, *, force: bool = False, jobs: int = 1, images_dir: str | None = None,
+    project: Project, *, force: bool = False, images_dir: str | None = None,
     limit: int | None = None, **_: Any
 ) -> None:
     """Generate (or adopt) one still per scene."""
     settings = project.image_generation
     source = images_dir or settings.get("source_dir")
+    provider = "supplied" if source else _image_provider(settings)
     images_mod.generate(
         project.scenes,
         images_dir=project.images_dir,
         raw_dir=project.raw_images_dir,
-        provider="supplied" if source else settings.get("provider", "codex"),
-        model=settings.get("model", "gpt-image-2"),
-        quality=settings.get("quality", "medium"),
+        provider=provider,
         source_dir=source,
         size=project.size,
         force=force,
-        jobs=jobs,
         limit=limit,
-        meta_headless=bool(settings.get("meta_headless", False)),
-        meta_profile_dir=settings.get("meta_profile_dir"),
-        meta_min_delay=float(settings.get("meta_min_delay", 8.0)),
-        meta_max_delay=float(settings.get("meta_max_delay", 20.0)),
-        meta_composer_selector=settings.get("meta_composer_selector"),
-        meta_image_selector=settings.get("meta_image_selector"),
+        browser=_browser_options(settings, provider),
     )
     project.save()
 

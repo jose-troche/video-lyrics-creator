@@ -3,11 +3,12 @@
 from __future__ import annotations
 
 import argparse
+import importlib
 import json
 import sys
 from pathlib import Path
 
-from . import pipeline
+from . import images, pipeline
 from .config import DEFAULT_AUTHOR, DEFAULT_VISUAL_STYLE, Project, find_project
 from .util import VideoLyricsError, load_dotenv, log, setup_logging
 
@@ -58,13 +59,12 @@ def build_parser() -> argparse.ArgumentParser:
         stage = subparsers.add_parser(name, help=help_text)
         stage.add_argument("--force", action="store_true", help="redo work even if cached")
 
-    images = subparsers.add_parser(
-        "images", help="generate the scene images (codex, manual, meta, or supplied)"
+    images_cmd = subparsers.add_parser(
+        "images", help="generate the scene images (chatgpt, manual, meta, or supplied)"
     )
-    images.add_argument("--force", action="store_true")
-    images.add_argument("--jobs", type=int, default=1, help="parallel codex runs")
-    images.add_argument("--images-dir", help="adopt images from this folder instead")
-    images.add_argument(
+    images_cmd.add_argument("--force", action="store_true")
+    images_cmd.add_argument("--images-dir", help="adopt images from this folder instead")
+    images_cmd.add_argument(
         "--limit", type=int,
         help="only generate this many missing images, then stop (try a few first)",
     )
@@ -85,7 +85,6 @@ def build_parser() -> argparse.ArgumentParser:
     run.add_argument("--engine", choices=("ffmpeg", "resolve"))
     run.add_argument("--launch", action="store_true")
     run.add_argument("--handoff", action="store_true")
-    run.add_argument("--jobs", type=int, default=1)
     run.add_argument("--images-dir")
     run.add_argument("--force", action="store_true")
     run.add_argument(
@@ -104,6 +103,20 @@ def build_parser() -> argparse.ArgumentParser:
 
     auth = subparsers.add_parser("google-auth", help="one-time Google Drive login")
     auth.add_argument("--no-browser", action="store_true")
+
+    login = subparsers.add_parser(
+        "browser-login",
+        help="one-time sign-in to chatgpt.com / meta.ai, in a normal browser window",
+    )
+    login.add_argument(
+        "--provider", default="chatgpt", choices=images.BROWSER_PROVIDERS,
+        help="which site to sign in to (default chatgpt)",
+    )
+    login.add_argument("--profile-dir", help="override where the session is kept")
+    login.add_argument(
+        "--channel",
+        help="browser to open: chrome, msedge, or 'bundled' for Playwright's own",
+    )
 
     subparsers.add_parser("resolve-formats", help="list DaVinci Resolve render formats/codecs")
     subparsers.add_parser("resolve-check", help="report how this machine can drive Resolve")
@@ -158,6 +171,9 @@ def dispatch(args: argparse.Namespace, project_path: Path) -> int:
         print(f"Saved GOOGLE_DRIVE_REFRESH_TOKEN to {args.env}")
         return 0
 
+    if command == "browser-login":
+        return command_browser_login(args)
+
     if command == "resolve-formats":
         from . import render_resolve
 
@@ -204,7 +220,6 @@ def dispatch(args: argparse.Namespace, project_path: Path) -> int:
 
     options = {
         "force": getattr(args, "force", False),
-        "jobs": getattr(args, "jobs", 1),
         "images_dir": getattr(args, "images_dir", None),
         "limit": getattr(args, "limit", None),
         "engine": getattr(args, "engine", None),
@@ -255,6 +270,40 @@ def command_init(args: argparse.Namespace, project_path: Path) -> int:
     print(f"Wrote {project_path}\n")
     print(project.describe())
     return 0
+
+
+def command_browser_login(args: argparse.Namespace) -> int:
+    """Sign in to an image provider's site, once, by hand.
+
+    Deliberately does not need a project: it is about the browser profile, which
+    is shared by every song. A project that keeps its session somewhere else
+    (`<provider>_profile_dir`) needs that path passing in with --profile-dir.
+    """
+    from . import browser_ai
+    from .config import IMAGE_DEFAULTS
+
+    site = importlib.import_module(
+        f".{images.BROWSER_MODULES[args.provider]}", package=__package__
+    ).SITE
+    # "bundled" is how you ask for Playwright's own browser from a command line,
+    # where there is no way to type null.
+    channel = args.channel if args.channel is not None else IMAGE_DEFAULTS.get(
+        f"{args.provider}_channel", site.channel
+    )
+    channel = None if channel == "bundled" else channel
+    profile = browser_ai.login(site, profile_dir=args.profile_dir, channel=channel)
+    print(f"Session profile: {profile}")
+    print("Checking that the session was saved (one more window, briefly) ...")
+    if browser_ai.verify_login(site, profile_dir=args.profile_dir, channel=channel):
+        print(f"Signed in to {site.name}. Now run:  video-lyrics images --limit 1")
+        return 0
+    print(
+        f"That did not take - {site.name} is still signed out in this profile.\n"
+        "A browser only writes its session out when it closes cleanly, so this "
+        "happens if the login was not finished, or if the browser was force-quit "
+        "rather than left to shut down. Run this again and let it close itself."
+    )
+    return 1
 
 
 def command_convert(project: Project, *, target: str, output: str | None) -> int:

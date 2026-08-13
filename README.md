@@ -23,9 +23,16 @@ source .venv/bin/activate
 session — run it once per new terminal. Without it, call the script directly as
 `.venv/bin/video-lyrics ...`.
 
-Needs **ffmpeg** on the PATH and the **codex** CLI (image generation). That is
-enough for the default render engine; **DaVinci Resolve 18+** (the free edition is
-enough) is only needed if you choose `--engine resolve`.
+Needs **ffmpeg** on the PATH. Image generation drives a real browser, so install
+that extra once as well:
+
+```bash
+.venv/bin/pip install -e ".[browser]"
+.venv/bin/playwright install chromium
+```
+
+That is enough for the default render engine; **DaVinci Resolve 18+** (the free
+edition is enough) is only needed if you choose `--engine resolve`.
 
 ### Rendering with ffmpeg (default)
 
@@ -101,7 +108,7 @@ video-lyrics transcribe          # cached in work/<song>/transcript.json
 video-lyrics align               # re-time after changing alignment settings
 video-lyrics tune                # hear the song and adjust the timing by hand
 video-lyrics plan                # regroup lines into images
-video-lyrics images --jobs 3     # generate the stills with codex
+video-lyrics images              # generate the stills (a browser window opens)
 video-lyrics overlays            # title card, lyric PNGs, lyrics.srt
 video-lyrics bed                 # bake Ken Burns motion + cross dissolves
 video-lyrics render              # assemble with ffmpeg and export
@@ -118,51 +125,121 @@ video-lyrics render              # assemble with ffmpeg and export
 | `--limit N` | (`images`) generate only N of the missing images, then stop |
 | `--from` / `--to` | run part of the pipeline (`run --from plan --to bed`) |
 
-### Generating images without codex
+### Where the images come from
 
 `image_generation.provider` controls how `video-lyrics images` fills in each scene:
 
-* `codex` (default) — calls the Codex CLI's image_gen tool automatically.
+* `chatgpt` (default) — drives [chatgpt.com](https://chatgpt.com/) in a real,
+  visible browser and downloads each picture automatically.
+* `meta` — the same, against [meta.ai](https://www.meta.ai/).
 * `manual` — no generator at all. It writes every scene's prompt, and the exact
   filename stem it expects, to `work/<song>/images/prompts.txt`. Paste each prompt
-  into whatever you use by hand (ChatGPT, Midjourney, ...), save the result under
-  that stem in `work/<song>/images/` — png, jpg, or webp, whichever the tool gives
-  you — then run `video-lyrics images` again; it picks up the files you made
+  into whatever you use by hand (Midjourney, an image site, ...), save the result
+  under that stem in `work/<song>/images/` — png, jpg, or webp, whichever the tool
+  gives you — then run `video-lyrics images` again; it picks up the files you made
   (converting them to PNG) and reports anything still missing.
-* `meta` — drives [meta.ai](https://www.meta.ai/) in a real, visible browser
-  (Playwright) and downloads the result automatically, one prompt at a time.
-  Unofficial: there is no API for this, it depends on meta.ai's current page and
-  can break if that changes, and running it is your own call to make against
-  meta.ai's terms of service. Needs the extra installed once:
-  `pip install -e ".[meta]"` and `playwright install chromium`. The first run
-  opens a browser and waits for you to log in by hand (nothing is automated
-  about that); the session is then remembered in `image_generation.meta_profile_dir`
-  (default `~/.video-lyrics/meta-ai-profile`) so later runs do not ask again. The
-  next prompt is only submitted once the current scene's image has actually
-  finished generating and been written to disk, plus a random delay between
-  `image_generation.meta_min_delay` and `meta_max_delay` (1-4s by default) on top
-  of that, so requests do not land in an obvious, throttle-inviting pattern.
-  ("Finished" is not as obvious as it sounds: while it is still working, meta.ai
-  already shows a preview at the final resolution, so this waits for the finished
-  image's own Download control to appear rather than for pixels to exist.) Use
-  `--limit N` to try a handful before committing to a whole song. Raw downloads
-  are kept in
-  `work/<song>/images.src/`, whatever format meta.ai served, and each is
-  also converted into the canonical PNG in `work/<song>/images/` itself; a run
-  interrupted partway through only asks the browser for what is still missing.
-  If meta.ai's page changes and the composer or the generated image can no longer
-  be found, override `image_generation.meta_composer_selector` /
-  `meta_image_selector` with a CSS selector for the right element (defaults:
-  `textarea:visible, [contenteditable='true']:visible` and `main img`).
 * `supplied` — same idea, but for images you already have; see `--images-dir`
   above, they're adopted in filename order instead of matched by name.
 
 ```bash
-video-lyrics set image_generation.provider manual
-video-lyrics images
-# ... create work/<song>/images/scene-001-xxxx.png etc by hand ...
+video-lyrics set image_generation.provider meta
+video-lyrics images --limit 3    # try a few before committing to a whole song
+```
+
+#### The browser providers, in more detail
+
+Both `chatgpt` and `meta` work the same way, and neither is an API: they type
+into a consumer web page and read the answer back off it. That means they depend
+on that page's current markup and can break when it changes, and that running
+them is your own call to make against the site's terms of service — your own
+account, your own project.
+
+Login is never automated. Sign in once, by hand:
+
+```bash
+video-lyrics browser-login                      # chatgpt.com, in Google Chrome
+video-lyrics browser-login --provider meta      # meta.ai
+```
+
+That opens an ordinary browser window — not one the tool is driving — pointed at
+the profile the image provider will use later (`~/.video-lyrics/chatgpt-profile`,
+`~/.video-lyrics/meta-ai-profile`, or wherever `<provider>_profile_dir` points).
+Log in there, then come back to the terminal and press Enter: the command closes
+the browser itself and checks the session really was saved, because a browser
+only writes one out when it shuts down cleanly. (Which is also why a run that
+force-quits its browser can lose the login and ask for it again — let it close
+itself, or Ctrl-C once and wait.)
+
+**Why a separate command:** sign in through Google inside an automated browser
+and Google stops you with *"This browser or app may not be secure"* — a check on
+the browser, which no amount of waiting or retrying gets past. A window nothing
+is driving isn't subject to it. `video-lyrics images` still offers to wait while
+you log in, which is fine for meta.ai; for a Google sign-in, use `browser-login`.
+
+A profile belongs to the browser that created it, and to how that browser locks
+it: Chrome encrypts its cookie database with a key from the OS keychain, and two
+browsers that disagree about which key cannot read each other's session at all —
+it is dropped silently, which looks exactly like "the login was not saved". So
+both commands derive that from one place: the installed Chrome uses the real
+macOS keychain, Playwright's bundled browser keeps Playwright's own fixed key
+(its path changes with every upgrade, and asking the keychain about it would
+raise a dialog mid-run).
+
+Both commands also read the same `<provider>_channel` setting: `"chrome"` (the Google Chrome already installed —
+the default for ChatGPT, because Google is markedly happier with a browser it
+recognises), `"msedge"`, or `null` for Playwright's own bundled browser (the
+default for meta.ai). On the command line, `--channel bundled` means `null`.
+
+Leave `<provider>_headless` off: signed in or not, chatgpt.com serves a headless
+browser a Cloudflare challenge instead of the page.
+
+One prompt at a time. The next is only submitted once the current scene's image
+has actually finished and been written to disk, plus a random delay between
+`<provider>_min_delay` and `<provider>_max_delay` (1–4s by default) on top of
+that, so requests do not land in an obvious, throttle-inviting pattern.
+
+"Finished" is the hard part, and each site says it differently. Both show
+something that looks like the answer well before it is one — meta.ai a preview at
+the final resolution, ChatGPT a series of increasingly sharp versions of the same
+picture — so waiting for "an image appeared" would save a half-drawn frame. The
+meta driver waits for the finished image's own Download control to appear; the
+ChatGPT driver waits for the Stop button to go away. ChatGPT also gets a fresh
+chat per scene: asked for a second picture in a conversation that already has
+one, it tends to edit the first instead of drawing something new.
+
+Raw downloads are kept in `work/<song>/images.src/`, whatever format the site
+served, and each is also converted into the canonical PNG in
+`work/<song>/images/`. A run interrupted partway through only asks the browser
+for what is still missing, and a scene that already has a usable image is never
+redrawn unless you pass `--force`.
+
+**Regenerating just one scene:** `--force` redoes every scene, not one, so to
+redraw a single scene delete its two cached files - same stem, one in each
+folder - and run `images` again; everything else is left alone because it
+still has a usable image:
+
+```bash
+rm work/<song>/images/scene-010-*.png work/<song>/images.src/scene-010-*.png
 video-lyrics images
 ```
+
+Editing that scene's `prompt:` in the project file first works too, and
+doesn't need the delete: a changed prompt hashes to a new stem, so the old
+files are simply orphaned rather than picked up again.
+
+If a site's markup moves on and the composer or the generated image can no longer
+be found, override `image_generation.<provider>_composer_selector` /
+`<provider>_image_selector` with a CSS selector for the right element. The
+defaults live in [`chatgpt.py`](video_lyrics/chatgpt.py) and
+[`meta_ai.py`](video_lyrics/meta_ai.py), next to the ready/busy selectors that
+decide when an image is done — everything site-specific is in those two files,
+and the driver they share is [`browser_ai.py`](video_lyrics/browser_ai.py).
+
+> The `codex` provider (the Codex CLI's `image_gen` tool) was replaced by
+> `chatgpt`: the same account, without a second CLI to install and keep logged
+> in. A project file that still says `codex` runs as `chatgpt`, keeping every
+> image it already has; make it permanent with
+> `video-lyrics set image_generation.provider chatgpt`.
 
 ## The project file
 
@@ -358,7 +435,7 @@ work/<song>/lyrics.txt          the reference lines as loaded
 work/<song>/lyrics.srt          timed lyrics
 work/<song>/audio-faded.wav     the song with its fade in/out baked in
 work/<song>/images/             one still per scene, normalised to PNG
-work/<song>/images.src/         downloads as the generator served them (meta only)
+work/<song>/images.src/         downloads as the generator served them (chatgpt/meta)
 work/<song>/overlays/           title and lyric PNGs (transparent)
 work/<song>/overlay-clips/      the same, as alpha movie clips with fades
 work/<song>/clips/              the image bed: scene and dissolve clips
