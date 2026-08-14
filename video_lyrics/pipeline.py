@@ -128,16 +128,24 @@ def stage_tune(project: Project, *, skip_tune: bool = False, **_: Any) -> None:
         log.info("No timing changes saved.")
 
 
-def stage_plan(project: Project, *, force: bool = False, **_: Any) -> None:
+def stage_plan(
+    project: Project, *, force: bool = False, lines_per_image: int | None = None, **_: Any
+) -> None:
     """Decide which image is on screen when."""
     if not project.cues:
         raise VideoLyricsError("No lyric cues. Run `video-lyrics align` first.")
     settings = project.alignment
+    if lines_per_image is not None:
+        # Kept, not just used for this run: the scenes about to be written were
+        # grouped this way, and a project file that still said otherwise would be
+        # describing a plan it did not produce.
+        project.image_generation["lines_per_image"] = int(lines_per_image)
     planned = scenes_mod.plan(
         project.cues,
         duration=project.duration,
         title=project.title,
         visual_style=project.data["visual_style"],
+        context=str(project.data.get("context") or ""),
         lines_per_image=int(project.image_generation.get("lines_per_image", 2)),
         scene_gap=float(settings["scene_gap"]),
         min_scene=float(settings["min_scene_duration"]),

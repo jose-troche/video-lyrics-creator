@@ -12,6 +12,21 @@ from . import images, pipeline
 from .config import DEFAULT_AUTHOR, DEFAULT_VISUAL_STYLE, Project, find_project
 from .util import VideoLyricsError, load_dotenv, log, setup_logging
 
+# How many lyric lines share one image. An upper bound, not a quota: `plan` still
+# splits a pair that would run past max_scene_duration and still keeps a line
+# that opens a section on its own, so 2 means "up to two" and 1 means "one image
+# per line, always".
+LINES_PER_IMAGE_HELP = (
+    "lyric lines per image: 1 for an image per line, 2 to pair them up (default 2)"
+)
+
+
+def _lines_per_image(value: str) -> int:
+    number = int(value)
+    if number < 1:
+        raise argparse.ArgumentTypeError("needs at least one lyric line per image")
+    return number
+
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
@@ -32,6 +47,11 @@ def build_parser() -> argparse.ArgumentParser:
     init.add_argument("--title", help="song title (defaults to the audio filename)")
     init.add_argument("--author", default=DEFAULT_AUTHOR)
     init.add_argument("--style", default=DEFAULT_VISUAL_STYLE, help="visual style for the images")
+    init.add_argument(
+        "--context", default="",
+        help="what the song is about, added to every image prompt, e.g. "
+             "\"a song after the crossing of the Red Sea in Exodus\"",
+    )
     init.add_argument("--work-dir", help="where intermediates live (default ./work)")
     init.add_argument("--output", help="final video path")
     init.add_argument("--width", type=int)
@@ -40,6 +60,7 @@ def build_parser() -> argparse.ArgumentParser:
     init.add_argument("--font")
     init.add_argument("--font-size", type=int)
     init.add_argument("--whisper-model", help="faster-whisper model, e.g. small.en, medium.en")
+    init.add_argument("--lines-per-image", type=_lines_per_image, help=LINES_PER_IMAGE_HELP)
     init.add_argument("--images-dir", help="use images from this folder instead of generating")
     init.add_argument("--engine", choices=("ffmpeg", "resolve"))
     init.add_argument(
@@ -58,6 +79,10 @@ def build_parser() -> argparse.ArgumentParser:
     ):
         stage = subparsers.add_parser(name, help=help_text)
         stage.add_argument("--force", action="store_true", help="redo work even if cached")
+        if name == "plan":
+            stage.add_argument(
+                "--lines-per-image", type=_lines_per_image, help=LINES_PER_IMAGE_HELP
+            )
 
     images_cmd = subparsers.add_parser(
         "images", help="generate the scene images (chatgpt, manual, meta, or supplied)"
@@ -86,6 +111,7 @@ def build_parser() -> argparse.ArgumentParser:
     run.add_argument("--launch", action="store_true")
     run.add_argument("--handoff", action="store_true")
     run.add_argument("--images-dir")
+    run.add_argument("--lines-per-image", type=_lines_per_image, help=LINES_PER_IMAGE_HELP)
     run.add_argument("--force", action="store_true")
     run.add_argument(
         "--skip-tune", action="store_true",
@@ -223,6 +249,7 @@ def dispatch(args: argparse.Namespace, project_path: Path) -> int:
         "images_dir": getattr(args, "images_dir", None),
         "limit": getattr(args, "limit", None),
         "engine": getattr(args, "engine", None),
+        "lines_per_image": getattr(args, "lines_per_image", None),
         "launch": getattr(args, "launch", False),
         "handoff_only": getattr(args, "handoff", False),
         "skip_tune": getattr(args, "skip_tune", False),
@@ -249,6 +276,7 @@ def command_init(args: argparse.Namespace, project_path: Path) -> int:
         title=args.title,
         author=args.author,
         visual_style=args.style,
+        context=args.context,
         work_dir=args.work_dir,
         output=args.output,
     )
@@ -261,6 +289,8 @@ def command_init(args: argparse.Namespace, project_path: Path) -> int:
             video[key] = value
     if args.whisper_model:
         project.alignment["model"] = args.whisper_model
+    if args.lines_per_image:
+        project.image_generation["lines_per_image"] = args.lines_per_image
     if args.images_dir:
         project.image_generation["provider"] = "supplied"
         project.image_generation["source_dir"] = str(Path(args.images_dir).expanduser())

@@ -86,13 +86,31 @@ A Drive-for-desktop `.gdoc` file then works anywhere a `.txt` file does.
 video-lyrics init \
   --audio ~/Music/album/"08 my-song.wav" \
   --lyrics ~/"Google Drive"/Songs/my-song.gdoc \
-  --title "My Song"
+  --title "My Song" \
+  --context "a song after the crossing of the Red Sea in Exodus"
 
 video-lyrics run                 # everything, end to end
 video-lyrics status              # what is done so far
 video-lyrics cues                # the timed lyrics
 video-lyrics tune                # listen, and fix any line that sits wrong
 ```
+
+`--context` is optional and says, in your own words, what the whole song is
+about. Every image prompt is generated on its own — a couple of lyric lines, in
+their own chat — and lyrics rarely name the story they belong to, so without it
+the generator picks a setting afresh each time and twenty scenes can end up in
+twenty different worlds. With it, each prompt opens with that one frame:
+
+> *Context for the whole video: a song after the crossing of the Red Sea in
+> Exodus. Every scene belongs to that same story, setting and world — keep them
+> consistent with it.*
+
+It's kept in the project file as `context:`, so you can change your mind later —
+`video-lyrics set context "..."` then `video-lyrics plan`. Doing that rewrites
+every prompt, and a changed prompt means a new image, so run `images` afterwards
+to redraw them. Leaving it empty says nothing at all and leaves prompts exactly
+as they were, which is what keeps songs finished before this from asking to be
+redrawn.
 
 Right after aligning, `video-lyrics run` pauses to ask whether you want to
 fine-tune lyric timing by ear (`video-lyrics tune`) before it moves on to
@@ -123,7 +141,24 @@ video-lyrics render              # assemble with ffmpeg and export
 | `--launch` | (Resolve) start Resolve first and wait until it answers |
 | `--images-dir DIR` | use your own images instead of generating them |
 | `--limit N` | (`images`) generate only N of the missing images, then stop |
+| `--lines-per-image N` | (`init`, `plan`, `run`) 1 for an image per lyric line, 2 to pair them up (default) |
 | `--from` / `--to` | run part of the pipeline (`run --from plan --to bed`) |
+
+**How many lines share an image.** Two by default: `plan` bundles consecutive
+lyric lines up to that many, and still splits a pair that would hold one picture
+past `alignment.max_scene_duration` or that crosses into a new section. So `2`
+means *up to* two, while `1` means one image per line, always — twice the
+pictures, twice the generating.
+
+```bash
+video-lyrics init --lines-per-image 1 --audio ... --lyrics ...
+video-lyrics plan --lines-per-image 1      # regroup an existing song
+video-lyrics set image_generation.lines_per_image 1   # same thing, without replanning
+```
+
+Passing the flag saves it, so later runs keep grouping the same way. Regrouping
+changes each scene's prompt, and a changed prompt means a new image: run `plan`
+then `images` to fill in the scenes that no longer have one.
 
 ### Where the images come from
 
@@ -207,6 +242,27 @@ ChatGPT driver waits for the Stop button to go away. ChatGPT also gets a fresh
 chat per scene: asked for a second picture in a conversation that already has
 one, it tends to edit the first instead of drawing something new.
 
+**When a scene doesn't come back.** A site fails to draw one for one of two
+reasons, and they want opposite answers, so the driver reads what the page
+actually said (`main` plus its alert regions) instead of just timing out:
+
+* *It won't draw this prompt* — a refusal, a content-policy line. The prompt is
+  the only thing worth changing, so the same scene is asked again with a slightly
+  reworded prompt (up to three wordings, each keeping the scene's own
+  description and only asking for it less literally), in a fresh chat where the
+  site keeps one. If none of them land, that scene is skipped and the song
+  carries on; rewrite its `prompt:` in the project file and run `images` again.
+* *The site is busy* — capacity, a rate limit, a quota, an image that would not
+  download. No wording helps, so the scene is left as it is, the run waits a
+  little longer before the next one, and it stops altogether after three in a
+  row rather than grinding through the rest.
+
+Either way the run keeps going and reports what it left behind; `video-lyrics
+images` then asks only for the scenes still missing, so retrying later is just
+running the same command again. A failure with *nothing* on the page to explain
+it is different — that is usually markup that has moved on — so one is survived
+and a second in a row stops the run with the selector advice below.
+
 Raw downloads are kept in `work/<song>/images.src/`, whatever format the site
 served, and each is also converted into the canonical PNG in
 `work/<song>/images/`. A run interrupted partway through only asks the browser
@@ -266,6 +322,7 @@ current song's data file, never the pointer:
 ```bash
 video-lyrics set video.zoom 1.3
 video-lyrics set video.font "Optima Bold"
+video-lyrics set context "a song after the crossing of the Red Sea in Exodus"
 video-lyrics set alignment.min_confidence 0.4
 video-lyrics set image_generation.lines_per_image 1
 ```

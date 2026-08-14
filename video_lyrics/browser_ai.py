@@ -64,14 +64,108 @@ PLAYWRIGHT_HINT = (
     "`playwright install chromium` once."
 )
 
+
+# --------------------------------------------------------- when one scene fails
+#
+# A site can fail to draw a scene for two very different reasons, and the right
+# answer to each is the opposite of the other's. If it will not draw *this
+# prompt*, the prompt is the only thing worth changing - so it is reworded and
+# asked again. If the site itself is busy, rate limited or erroring, no wording
+# helps and asking harder only makes it worse - so that scene is left for a later
+# run, which asks for exactly what is still missing. Neither is a reason to throw
+# away the scenes that have not been tried yet, which is what raising here used
+# to do: one refusal in the middle of a song cost every image after it.
+
+
+class ImageAttemptFailed(VideoLyricsError):
+    """One scene's image did not arrive; the rest of the run may still be fine.
+
+    `notice` is the page's own words, already trimmed to something loggable.
+    """
+
+    def __init__(self, message: str, notice: str = ""):
+        super().__init__(message)
+        self.notice = notice
+
+
+class PromptRefused(ImageAttemptFailed):
+    """The site answered in words that it will not draw this prompt."""
+
+
+class SiteBusy(ImageAttemptFailed):
+    """Capacity, a rate limit, a quota, or bytes that are not an image."""
+
+
+# What the page says when *it* is the problem. Checked before the refusal
+# patterns on purpose: "I can't generate images right now, please try again
+# later" is a capacity notice wearing a refusal's clothes, and rewording the
+# prompt would be answering the wrong question.
+BUSY_PATTERNS = (
+    "try again later", "try again in", "please try again", "come back later",
+    "too many requests", "rate limit", "high demand", "at capacity",
+    "overloaded", "servers are busy", "temporarily unavailable",
+    "service unavailable", "reached your limit", "limit for", "quota",
+    "something went wrong", "error generating",
+    # Deliberately not "couldn't generate": that is how a refusal usually opens
+    # ("I couldn't generate that image because it violates ..."), and reading one
+    # as a capacity notice would skip a scene that a reworded prompt would have got.
+)
+
+# What the page says when the *prompt* is the problem.
+REFUSAL_PATTERNS = (
+    "can't create", "cannot create", "can't generate", "cannot generate",
+    "can't make", "cannot make", "can't produce", "cannot produce",
+    "can't help with", "cannot help with", "won't be able to",
+    "unable to create", "unable to generate", "not able to create",
+    "not able to generate", "content policy", "usage polic", "against our",
+    "violates", "isn't allowed", "i won't create", "i won't generate",
+)
+
+# Slight rewordings, tried in order when a site says the prompt itself is the
+# problem. Each keeps the scene's own description intact - the picture still has
+# to match its lyric - and changes only how it is asked for: less literal, less
+# graphic, nobody recognisable. Anything cleverer would mean a second model
+# rewriting the prompt; this is enough for the refusals a lyric video actually
+# runs into (a cross, a chain, blood, a named figure).
+PROMPT_SOFTENERS = (
+    "{prompt}",
+    "{prompt}\n\nKeep it entirely non-graphic and suitable for all audiences: "
+    "symbolic rather than literal, no injury or gore, no recognisable real people.",
+    "A gentle, symbolic illustration evoking this idea - nothing literal, graphic "
+    "or violent in frame, and no recognisable people: {prompt}",
+)
+
+# How many scenes in a row a site may turn away before the run gives up on it.
+# Three consecutive capacity notices is not a run of bad luck, it is the account
+# or the site being done for now.
+MAX_BUSY_SKIPS = 3
+BUSY_BACKOFF_S = 30.0
+
+# ... and how many may fail with nothing on the page to explain it. One scene can
+# be unlucky; twice in a row is the markup having moved, and every scene left
+# would burn its whole timeout finding that out.
+MAX_STALLED_SCENES = 2
+
+# Where a page's own words appear: an answer in text, a capacity notice, an error
+# toast. `main` plus the ARIA live regions covers both sites without either
+# having to describe its own markup, and it is only ever read - never clicked,
+# never matched for the picture itself.
+DEFAULT_REPLY_SELECTOR = "main, [role='alert'], [role='status']"
+
 # Counting *visible* matches, not matches: React apps routinely keep a hidden
 # duplicate of a control mounted (another breakpoint, a closed menu, a torn-down
 # turn), and a hidden node must not be read as "the page is still working" or as
-# "the finished image's controls are here".
-_VISIBLE_COUNT_JS = """
+# "the finished image's controls are here". `texts` reads the same way, and
+# deliberately does not trim what it returns: the whole of a block is what makes
+# it possible to subtract the part that was already there (see `_unseen_text`).
+_PAGE_JS = """
     const visible = (el) => !!(el.offsetParent || el.getClientRects().length);
     const count = (sel) =>
         sel ? Array.from(document.querySelectorAll(sel)).filter(visible).length : 0;
+    const texts = (sel) =>
+        sel ? Array.from(document.querySelectorAll(sel)).filter(visible)
+                  .map((el) => (el.innerText || '').trim()).filter(Boolean)
+            : [];
 """
 
 
@@ -98,6 +192,10 @@ class Site:
     # If any of these are on screen, this is a signed-out page - even if a
     # composer is visible, which on some sites it is either way.
     logged_out_selector: str | None = None
+    # Where this page's own words show up, so a refusal or a capacity notice can
+    # be told apart from a picture that is simply still coming. Set to None to
+    # read nothing, in which case every failure is just a timeout again.
+    reply_selector: str | None = DEFAULT_REPLY_SELECTOR
     prompt_template: str = "{prompt}"
     # Start each prompt in a fresh chat. Worth it where a follow-up prompt would
     # otherwise be read as "edit the picture you just made".
@@ -156,27 +254,102 @@ def generate(
             page = context.pages[0] if context.pages else context.new_page()
             page.goto(site.url, wait_until="domcontentloaded")
             _ensure_logged_in(page, site, composer_selector)
-            # Every image already on the page belongs to an earlier scene (or to the
-            # UI); carrying the set forward across scenes is what stops a later
-            # prompt from "finishing" instantly against an earlier scene's picture.
-            seen = _image_sources(page, image_selector)
-            for index, scene in enumerate(scenes):
-                if index and site.new_chat_per_prompt:
-                    page.goto(site.url, wait_until="domcontentloaded")
-                    seen = _image_sources(page, image_selector)
-                stem = scene_stem(scene, site.name)
-                # This blocks until the new image is finished on screen AND written
-                # to disk - the delay below only starts once that is done.
-                src = _generate_one(
-                    page, site, scene, stem, raw_dir, composer_selector, image_selector, seen
-                )
-                seen.add(src)
-                if index + 1 < len(scenes):
-                    delay = random.uniform(min_delay, max_delay)
-                    log.info("  waiting %.1fs before the next prompt ...", delay)
-                    time.sleep(delay)
+            _run_scenes(
+                page, site, scenes,
+                raw_dir=raw_dir,
+                composer_selector=composer_selector,
+                image_selector=image_selector,
+                min_delay=min_delay,
+                max_delay=max_delay,
+            )
         finally:
             context.close()
+
+
+def _run_scenes(
+    page,
+    site: Site,
+    scenes: list[dict[str, Any]],
+    *,
+    raw_dir: Path,
+    composer_selector: str,
+    image_selector: str,
+    min_delay: float = DEFAULT_MIN_DELAY,
+    max_delay: float = DEFAULT_MAX_DELAY,
+) -> list[int]:
+    """One prompt at a time, on a page that is open and signed in.
+
+    Returns the scenes left without an image. A scene that fails does not end the
+    run: the images stage asks only for what is missing next time round, so the
+    worst a skipped scene costs is another go at it later. What does end the run
+    is evidence that the *next* scene would fail the same way - see MAX_BUSY_SKIPS
+    and MAX_STALLED_SCENES.
+    """
+    # Every image already on the page belongs to an earlier scene (or to the
+    # UI); carrying the set forward across scenes is what stops a later
+    # prompt from "finishing" instantly against an earlier scene's picture.
+    seen = _image_sources(page, image_selector)
+    skipped: list[int] = []
+    busy_runs = 0     # scenes the site has turned away, back to back
+    stalled_runs = 0  # ... and ones that failed with no explanation at all
+    for index, scene in enumerate(scenes):
+        if index:
+            # However the last scene ended: requests should not land in an
+            # obvious, throttle-inviting pattern.
+            delay = random.uniform(min_delay, max_delay)
+            log.info("  waiting %.1fs before the next prompt ...", delay)
+            time.sleep(delay)
+            if site.new_chat_per_prompt:
+                _new_chat(page, site, image_selector, seen)
+        stem = scene_stem(scene, site.name)
+        try:
+            # This blocks until the new image is finished on screen AND written
+            # to disk.
+            src = _generate_one(
+                page, site, scene, stem, raw_dir, composer_selector, image_selector, seen,
+            )
+        except PromptRefused as refusal:
+            # Never a reason to stop: the site is answering perfectly well, it
+            # just will not draw this one. The next scene's prompt is a different
+            # question entirely.
+            log.warning("  scene %03d: skipped - %s", scene["index"], refusal)
+            skipped.append(scene["index"])
+            busy_runs = stalled_runs = 0
+            continue
+        except SiteBusy as busy:
+            log.warning("  scene %03d: skipped - %s", scene["index"], busy)
+            skipped.append(scene["index"])
+            busy_runs += 1
+            if busy_runs >= MAX_BUSY_SKIPS:
+                log.warning(
+                    "%s has turned away %d scenes in a row - it is not going to "
+                    "serve this run. Stopping here; run the same command again "
+                    "later and it asks only for what is still missing.",
+                    site.name, busy_runs,
+                )
+                break
+            if index + 1 < len(scenes):
+                _cool_off(busy_runs)
+            continue
+        except VideoLyricsError as failure:
+            # Undiagnosed: a timeout with nothing on the page to explain it, or a
+            # composer that cannot be typed into. Let one scene be unlucky, but
+            # not two - see MAX_STALLED_SCENES.
+            stalled_runs += 1
+            if stalled_runs >= MAX_STALLED_SCENES:
+                raise
+            log.warning("  scene %03d: skipped - %s", scene["index"], failure)
+            skipped.append(scene["index"])
+            continue
+        seen.add(src)
+        busy_runs = stalled_runs = 0
+
+    if skipped:
+        log.warning(
+            "%s: %d scene(s) left without an image this run: %s",
+            site.name, len(skipped), skipped,
+        )
+    return skipped
 
 
 def _profile_path(site: Site, profile_dir: str | Path | None) -> Path:
@@ -434,7 +607,22 @@ def _visible_count(page, selector: str | None) -> int:
     if not selector:
         return 0
     return page.evaluate(
-        f"(selector) => {{ {_VISIBLE_COUNT_JS} return count(selector); }}", selector
+        f"(selector) => {{ {_PAGE_JS} return count(selector); }}", selector
+    )
+
+
+def _reply_texts(page, site: Site) -> tuple[str, ...]:
+    """Every visible block of text on the page as it stands right now.
+
+    Taken once just before a prompt is sent, so that whatever turns up afterwards
+    can be read on its own - see `_unseen_text`.
+    """
+    if not site.reply_selector:
+        return ()
+    return tuple(
+        page.evaluate(
+            f"(selector) => {{ {_PAGE_JS} return texts(selector); }}", site.reply_selector
+        )
     )
 
 
@@ -498,8 +686,8 @@ def _page_state(page, site: Site, image_selector: str) -> dict[str, Any]:
     picture apart from an avatar or a glyph however it happens to be displayed.
     """
     return page.evaluate(
-        f"""([selector, readySelector, busySelector]) => {{
-            {_VISIBLE_COUNT_JS}
+        f"""([selector, readySelector, busySelector, replySelector]) => {{
+            {_PAGE_JS}
             return {{
                 images: Array.from(document.querySelectorAll(selector)).map((img) => ({{
                     src: img.currentSrc || img.src || '',
@@ -509,9 +697,10 @@ def _page_state(page, site: Site, image_selector: str) -> dict[str, Any]:
                 }})),
                 ready: count(readySelector),
                 busy: count(busySelector),
+                replies: texts(replySelector),
             }};
         }}""",
-        [image_selector, site.ready_selector, site.busy_selector],
+        [image_selector, site.ready_selector, site.busy_selector, site.reply_selector],
     )
 
 
@@ -528,6 +717,24 @@ def _image_sources(page, image_selector: str) -> set[str]:
     }
 
 
+def _new_chat(page, site: Site, image_selector: str, seen: set[str]) -> None:
+    """Start the next prompt in an empty conversation.
+
+    `seen` is added to rather than replaced: an image URL that was on the last
+    page is no less stale for having gone off screen, and one that comes back
+    must not be mistaken for this prompt's answer.
+    """
+    page.goto(site.url, wait_until="domcontentloaded")
+    seen.update(_image_sources(page, image_selector))
+
+
+def _cool_off(busy_runs: int) -> None:
+    """Wait out a site that has just said it is too busy, a little longer each time."""
+    delay = BUSY_BACKOFF_S * busy_runs
+    log.info("  waiting %.0fs before asking for another scene ...", delay)
+    time.sleep(delay)
+
+
 def _finished(state: dict[str, Any], site: Site, ready_before: int) -> bool:
     """Has the page said, in whichever way it has, that it is done?
 
@@ -542,8 +749,73 @@ def _finished(state: dict[str, Any], site: Site, ready_before: int) -> bool:
     return True
 
 
+def _unseen_text(replies, before) -> str:
+    """The page's text with everything that was already on it taken out.
+
+    Each earlier block is removed once, not everywhere: a site that refuses the
+    same prompt twice in one conversation shows the identical sentence twice, and
+    the second one is news. Removing rather than diffing by position also survives
+    a toast appearing or a turn being torn down between the two readings.
+    """
+    text = "\n".join(replies)
+    for earlier in before:
+        if earlier:
+            text = text.replace(earlier, " ", 1)
+    return text
+
+
+def _plain(text: str) -> str:
+    """Lowercased, with the apostrophes these pages actually use folded to ASCII.
+
+    Not a nicety: both sites typeset "I can't" with a curly apostrophe, so a
+    pattern list typed on a keyboard matches not one word of a real refusal.
+    """
+    return text.lower().replace("’", "'").replace("ʼ", "'")
+
+
+def _quote(text: str, pattern: str, limit: int = 200) -> str:
+    """The line a match landed in, tidied down to something worth logging."""
+    for line in text.splitlines():
+        if pattern in _plain(line):
+            line = " ".join(line.split())
+            return line if len(line) <= limit else line[:limit] + "..."
+    return ""
+
+
+def _diagnose(text: str) -> tuple[str, str] | None:
+    """Classify what the page has said, and quote the line that says it."""
+    lowered = _plain(text)
+    for kind, patterns in (("busy", BUSY_PATTERNS), ("refused", REFUSAL_PATTERNS)):
+        for pattern in patterns:
+            if pattern in lowered:
+                return kind, _quote(text, pattern)
+    return None
+
+
+def _check_notice(state: dict[str, Any], site: Site, scene_index: int, said_before) -> None:
+    """Raise if the page has answered this prompt in words instead of drawing it.
+
+    Worth doing on every poll, not just when the wait runs out: a refusal lands in
+    seconds, and the alternative is sitting in front of it for the whole image
+    timeout - seven minutes, on ChatGPT - before anyone finds out.
+    """
+    found = _diagnose(_unseen_text(state.get("replies", ()), said_before))
+    if found is None:
+        return
+    kind, quote = found
+    if kind == "busy":
+        raise SiteBusy(f'{site.name} is not drawing anything right now: "{quote}"', notice=quote)
+    raise PromptRefused(f'{site.name} would not draw this one: "{quote}"', notice=quote)
+
+
 def _wait_for_new_image(
-    page, site: Site, scene_index: int, image_selector: str, seen: set[str], ready_before: int
+    page,
+    site: Site,
+    scene_index: int,
+    image_selector: str,
+    seen: set[str],
+    ready_before: int,
+    said_before: tuple[str, ...] = (),
 ) -> str:
     """Block until this prompt's *finished* image is on screen, and return its URL."""
     started = time.monotonic()
@@ -587,14 +859,22 @@ def _wait_for_new_image(
                 candidate, stable = newest, 1
         else:
             candidate, stable = None, 0
+            # Nothing is on its way in, so whatever the page has said since the
+            # prompt went in is worth reading. Only here: a page part-way through
+            # handing over a picture is not refusing it, whatever else is on screen.
+            _check_notice(state, site, scene_index, said_before)
         time.sleep(POLL_SECONDS)
     composer_setting, image_setting = site.selector_settings
     hint = f" {site.timeout_hint}" if site.timeout_hint else ""
+    said = _unseen_text(state.get("replies", ()), said_before)
     raise VideoLyricsError(
         f"{site.name} did not finish an image for scene {scene_index} within "
         f"{site.image_timeout_ms // 1000}s.{hint}\n"
         f"What the page looked like on the last check: "
         f"{_describe(state, site, ready_before)}\n"
+        + (f"What it said, which matched neither a refusal nor a capacity notice: "
+           f"{' '.join(said.split())[:300]}\n" if said.strip() else "")
+        +
         f"If the finished picture was on screen, the page's markup has moved on. "
         f"'no image matched' means image_generation.{image_setting} needs a CSS "
         f"selector that matches it (the current one is {image_selector!r}); "
@@ -649,22 +929,30 @@ def _download(page, src: str, scene_index: int) -> bytes:
     # Through the page's own request context, so its cookies come along - some of
     # these image URLs are only served to the signed-in session that made them.
     response = page.request.get(src)
+    # SiteBusy, not a plain error: the picture was drawn and accepted, so nothing
+    # about the prompt is in question - the CDN simply did not hand it over. That
+    # is a later run's problem, not this whole run's.
     if not response.ok:
-        raise VideoLyricsError(
-            f"Could not download the image for scene {scene_index} ({response.status})."
+        raise SiteBusy(
+            f"the image for scene {scene_index} would not download ({response.status})",
+            notice=f"HTTP {response.status}",
         )
     return response.body()
 
 
 def _suffix_for(payload: bytes) -> str:
-    """Trust the bytes, not the content-type header the CDN sends."""
+    """Trust the bytes, not the content-type header the CDN sends.
+
+    An error page served in an image's place is the same kind of failure as a
+    refused download, and is skipped the same way (SiteBusy is a VideoLyricsError).
+    """
     if payload.startswith(b"\x89PNG"):
         return ".png"
     if payload.startswith(b"\xff\xd8\xff"):
         return ".jpg"
     if payload[:4] == b"RIFF" and payload[8:12] == b"WEBP":
         return ".webp"
-    raise VideoLyricsError("The page returned something that is not a PNG, JPEG or WebP.")
+    raise SiteBusy("the page returned something that is not a PNG, JPEG or WebP")
 
 
 def _composer_text(composer) -> str:
@@ -718,23 +1006,59 @@ def _generate_one(
     image_selector: str,
     seen: set[str],
 ) -> str:
-    """Submit one prompt and return the image URL, once it is written to disk."""
-    log.info("  scene %03d: %s", scene["index"], scene["prompt"][:70])
-    # Count the finished-image controls *before* asking for another one; the wait
-    # below is looking for that count to rise, which is what says "this one is done".
-    ready_before = _visible_count(page, site.ready_selector)
-    _submit(
-        page,
-        composer_selector,
-        site.prompt_template.format(prompt=scene["prompt"]),
-        scene["index"],
-    )
+    """Submit one prompt and return the image URL, once it is written to disk.
 
-    started = time.monotonic()
-    src = _wait_for_new_image(page, site, scene["index"], image_selector, seen, ready_before)
-    log.info("  scene %03d: finished after %.0fs", scene["index"], time.monotonic() - started)
-    payload = _download(page, src, scene["index"])
-    target = raw_dir / f"{stem}{_suffix_for(payload)}"
-    target.write_bytes(payload)
-    log.info("  scene %03d: saved %s (%.0f KB)", scene["index"], target.name, len(payload) / 1024)
-    return src
+    A prompt the site turns down is reworded and asked again (PROMPT_SOFTENERS);
+    run out of wordings and this raises PromptRefused, for the caller to skip.
+    """
+    log.info("  scene %03d: %s", scene["index"], scene["prompt"][:70])
+    refusal: PromptRefused | None = None
+    for attempt, softener in enumerate(PROMPT_SOFTENERS):
+        if attempt:
+            log.warning(
+                "  scene %03d: %s Rewording the prompt (%d of %d) and asking again.",
+                scene["index"], refusal, attempt + 1, len(PROMPT_SOFTENERS),
+            )
+            if site.new_chat_per_prompt:
+                # A site that has just said no says it again when asked in the same
+                # conversation: it is answering its own last turn as much as the
+                # new prompt.
+                _new_chat(page, site, image_selector, seen)
+        # Count the finished-image controls, and note what the page already says,
+        # *before* asking for another one; the wait below is looking for that count
+        # to rise - which is what says "this one is done" - and for words that were
+        # not there a moment ago.
+        ready_before = _visible_count(page, site.ready_selector)
+        said_before = _reply_texts(page, site)
+        _submit(
+            page,
+            composer_selector,
+            # Only the template and the softener are formatted, never the scene's
+            # own prompt - a stray brace in it would otherwise blow up here.
+            site.prompt_template.format(prompt=softener.format(prompt=scene["prompt"])),
+            scene["index"],
+        )
+
+        started = time.monotonic()
+        try:
+            src = _wait_for_new_image(
+                page, site, scene["index"], image_selector, seen, ready_before, said_before
+            )
+        except PromptRefused as exc:
+            refusal = exc
+            continue
+        log.info("  scene %03d: finished after %.0fs", scene["index"], time.monotonic() - started)
+        payload = _download(page, src, scene["index"])
+        target = raw_dir / f"{stem}{_suffix_for(payload)}"
+        target.write_bytes(payload)
+        log.info("  scene %03d: saved %s (%.0f KB)", scene["index"], target.name, len(payload) / 1024)
+        return src
+
+    notice = refusal.notice if refusal else ""
+    raise PromptRefused(
+        f'{site.name} turned down all {len(PROMPT_SOFTENERS)} wordings of this '
+        f'prompt ("{notice}"). Rewrite the scene\'s `prompt:` in the project file '
+        f"and run `video-lyrics images` again - it asks only for the images that "
+        f"are still missing.",
+        notice=notice,
+    )

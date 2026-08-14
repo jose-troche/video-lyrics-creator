@@ -216,3 +216,124 @@ def test_replanning_keeps_images_whose_prompt_is_unchanged():
     merged = scenes.merge_existing_images(new, old)
     assert merged[0]["image"] == "/tmp/b.png"
     assert "image" not in merged[1]
+
+
+# ------------------------------------------------- one image per line, or two
+
+def make_project(tmp_path):
+    """A project far enough along to plan: cues on the clock, and a duration."""
+    from video_lyrics.config import Project
+
+    audio = tmp_path / "song.wav"
+    audio.write_bytes(b"RIFF")
+    words = tmp_path / "song.txt"
+    words.write_text("line one\nline two\n", encoding="utf-8")
+    project = Project.create(
+        tmp_path / "project.yaml", audio=str(audio), lyrics_source=str(words), title="Song"
+    )
+    project.data["duration"] = 20.0
+    project.data["lyrics"] = BASIC
+    return project
+
+
+def test_planning_pairs_lines_up_by_default(tmp_path):
+    from video_lyrics import pipeline
+    from video_lyrics.config import Project
+
+    project = make_project(tmp_path)
+    pipeline.stage_plan(project)
+    assert [scene["lines"] for scene in project.scenes if scene["lines"]] == [
+        ["line one", "line two"], ["line three", "line four"]
+    ]
+    assert Project.load(tmp_path / "project.yaml").image_generation["lines_per_image"] == 2
+
+
+def test_one_image_per_line_is_asked_for_once_and_then_remembered(tmp_path):
+    """`--lines-per-image` is not a per-run override: the scenes just written were
+    grouped that way, so a project file that still said 2 would be describing a
+    plan it did not produce."""
+    from video_lyrics import pipeline
+    from video_lyrics.config import Project
+
+    project = make_project(tmp_path)
+    pipeline.stage_plan(project, lines_per_image=1)
+    assert [scene["lines"] for scene in project.scenes if scene["lines"]] == [
+        ["line one"], ["line two"], ["line three"], ["line four"]
+    ]
+
+    reloaded = Project.load(tmp_path / "project.yaml")
+    assert reloaded.image_generation["lines_per_image"] == 1
+    pipeline.stage_plan(reloaded)          # ... and the next plan, told nothing, agrees
+    assert len([scene for scene in reloaded.scenes if scene["lines"]]) == 4
+
+
+def test_the_plan_command_takes_it_on_the_command_line(tmp_path, monkeypatch):
+    import pytest
+
+    from video_lyrics import cli
+    from video_lyrics.config import Project
+
+    make_project(tmp_path).save()
+    monkeypatch.chdir(tmp_path)
+    assert cli.main(["plan", "--lines-per-image", "1"]) == 0
+    reloaded = Project.load(tmp_path / "project.yaml")
+    assert [scene["lines"] for scene in reloaded.scenes if scene["lines"]] == [
+        ["line one"], ["line two"], ["line three"], ["line four"]
+    ]
+
+    with pytest.raises(SystemExit):   # an image has to be worth at least one line
+        cli.build_parser().parse_args(["plan", "--lines-per-image", "0"])
+
+
+# ------------------------------------------- what the whole song is about
+
+CONTEXT = "a song after the crossing of the Red Sea in Exodus"
+
+
+def test_the_song_s_context_is_in_every_scene_s_prompt():
+    """Each prompt is generated alone, in its own chat, from two lyric lines that
+    rarely name the story - so the context is the only thing holding twenty
+    separately-drawn scenes in one world."""
+    cues = [cue(0.0, 2.0, "line one"), cue(42.0, 44.0, "line two")]
+    planned = scenes.plan(
+        cues, duration=46.0, title="Song", visual_style="cinematic", context=CONTEXT
+    )
+    assert len(planned) > 2                      # lyric scenes and instrumental ones
+    assert all(CONTEXT in scene["prompt"] for scene in planned)
+
+
+def test_a_song_without_a_context_says_nothing_about_one():
+    """It also has to leave the prompt byte-for-byte as it was: a changed prompt
+    hashes to a new filename, so every finished song would ask to be redrawn."""
+    planned = scenes.plan(BASIC, duration=40.0, title="Song", visual_style="cinematic")
+    assert all("Context for the whole video" not in s["prompt"] for s in planned)
+    assert planned == scenes.plan(
+        BASIC, duration=40.0, title="Song", visual_style="cinematic", context="   "
+    )
+
+
+def test_the_context_is_tidied_before_it_goes_in():
+    planned = scenes.plan(
+        BASIC, duration=40.0, title="Song", visual_style="cinematic",
+        context="  a song after\n  the crossing.  ",
+    )
+    assert "video: a song after the crossing. Every scene" in planned[0]["prompt"]
+
+
+def test_a_context_that_names_god_makes_every_scene_reverent():
+    """The lyric lines of a worship song do not all say so, but the video is still
+    the same video."""
+    planned = scenes.plan(
+        BASIC, duration=40.0, title="Song", visual_style="cinematic",
+        context="a song about Jesus feeding five thousand",
+    )
+    assert all("blurred, veiled, or turned away" in scene["prompt"] for scene in planned)
+
+
+def test_the_context_reaches_the_prompts_from_the_project_file(tmp_path):
+    from video_lyrics import pipeline
+
+    project = make_project(tmp_path)
+    project.data["context"] = CONTEXT
+    pipeline.stage_plan(project)
+    assert all(CONTEXT in scene["prompt"] for scene in project.scenes)

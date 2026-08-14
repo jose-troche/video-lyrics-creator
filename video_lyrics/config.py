@@ -259,6 +259,7 @@ class Project:
         title: str | None = None,
         author: str = DEFAULT_AUTHOR,
         visual_style: str = DEFAULT_VISUAL_STYLE,
+        context: str = "",
         work_dir: str | None = None,
         output: str | None = None,
     ) -> "Project":
@@ -280,6 +281,7 @@ class Project:
             "audio": str(audio_path),
             "lyrics_source": str(lyrics_path),
             "visual_style": visual_style,
+            "context": context,
             "work_dir": str(work_root),
         }
         project = cls(Path(path), data)
@@ -359,6 +361,10 @@ class Project:
         self.data.setdefault("schema_version", SCHEMA_VERSION)
         self.data.setdefault("author", DEFAULT_AUTHOR)
         self.data.setdefault("visual_style", DEFAULT_VISUAL_STYLE)
+        # What the song is about, in the user's own words, added to every image
+        # prompt. Empty by default, and empty has to keep meaning "say nothing":
+        # every finished song predates this setting.
+        self.data.setdefault("context", "")
         _merge_defaults(self.data.setdefault("video", {}), VIDEO_DEFAULTS)
         _merge_defaults(self.data.setdefault("image_generation", {}), IMAGE_DEFAULTS)
         _merge_defaults(self.data.setdefault("alignment", {}), ALIGN_DEFAULTS)

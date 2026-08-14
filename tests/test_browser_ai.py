@@ -473,6 +473,259 @@ def test_an_html_error_page_is_not_saved_as_an_image():
         browser_ai._suffix_for(b"<!doctype html><title>Sorry</title>")
 
 
+# ------------------------------------------ reading what the page said instead
+#
+# A site fails to draw a scene for one of two reasons, and they want opposite
+# answers: it will not draw *this prompt* (reword it and ask again), or it is
+# busy / rate limited / erroring (leave the scene for a later run). Everything
+# below is about telling those apart, and about the rest of the song surviving
+# either - before this, one refusal in the middle cost every scene after it.
+
+def test_a_capacity_notice_is_not_read_as_a_refusal():
+    """"I can't generate images right now, please try again later" is a busy
+    page wearing a refusal's clothes; rewording the prompt would not touch it."""
+    assert browser_ai._diagnose(
+        "I can't create images right now. Please try again later."
+    )[0] == "busy"
+    assert browser_ai._diagnose(
+        "I can't create that image - it violates our content policy."
+    )[0] == "refused"
+    assert browser_ai._diagnose("Here is the image you asked for.") is None
+
+
+def test_a_curly_apostrophe_is_still_a_refusal():
+    """Both sites typeset "I can't" with U+2019, and a pattern list typed on a
+    keyboard matches not one word of it."""
+    kind, quote = browser_ai._diagnose("I can’t create that image.")
+    assert kind == "refused"
+    assert quote == "I can’t create that image."   # quoted as the page wrote it
+
+
+def test_the_quoted_line_is_the_one_that_matched():
+    kind, quote = browser_ai._diagnose(
+        "Sure, let me try.\nI can't create that image.\nAnything else?"
+    )
+    assert (kind, quote) == ("refused", "I can't create that image.")
+
+
+def test_only_what_the_prompt_added_is_read():
+    """The previous scene's refusal is still on screen on a site that keeps one
+    long conversation; read as new, it would condemn every scene after it."""
+    before = ["I can't create that image."]
+    now = ["I can't create that image.\nHere is the image you asked for."]
+    assert browser_ai._diagnose(browser_ai._unseen_text(now, before)) is None
+
+
+def test_the_same_refusal_twice_is_read_the_second_time_too():
+    """Each earlier block is subtracted once, not everywhere - a site that says
+    exactly the same no to the reworded prompt is still saying no."""
+    before = ["I can't create that image."]
+    now = ["I can't create that image.", "I can't create that image."]
+    assert browser_ai._diagnose(browser_ai._unseen_text(now, before))[0] == "refused"
+
+
+# --------------------------------------------------- one prompt after another
+
+PNG_HEADER = b"\x89PNG\r\n\x1a\n"
+
+
+def data_url(payload: bytes) -> str:
+    import base64
+
+    return "data:image/png;base64," + base64.b64encode(payload).decode()
+
+
+class ScriptedComposer:
+    def __init__(self, page):
+        self.page = page
+        self.text = ""
+
+    def wait_for(self, state=None, timeout=None):
+        return None
+
+    def fill(self, text):
+        self.text = text
+
+    def evaluate(self, script):
+        return self.text
+
+    def press(self, key):
+        self.page.submitted(self.text)
+
+
+class ScriptedPage:
+    """A chat page that answers each prompt from a script.
+
+    One entry per prompt sent: `image` draws one, `refuse` says no in words,
+    `busy` pleads capacity, `junk` hands back something that is not an image, and
+    `silent` does nothing at all (which is what a moved selector looks like).
+    """
+
+    def __init__(self, *answers):
+        self.answers = list(answers)
+        self.prompts: list[str] = []
+        self.replies: list[str] = []
+        self.images: list[str] = []
+        self.gotos = 0
+
+    def evaluate(self, script, arg=None):
+        if "images:" in script:                       # _page_state
+            return {
+                "images": [
+                    {"src": src, "width": 1024, "height": 576, "complete": True}
+                    for src in self.images
+                ],
+                "ready": 0,
+                "busy": 0,
+                "replies": list(self.replies),
+            }
+        if "return texts(" in script:                 # _reply_texts
+            return list(self.replies)
+        if "return count(" in script:                 # _visible_count
+            return 0
+        return [{"src": src} for src in self.images]  # _image_sources
+
+    def goto(self, url, wait_until=None):
+        self.gotos += 1
+        self.replies.clear()
+        self.images.clear()
+
+    def locator(self, selector):
+        return self
+
+    @property
+    def first(self):
+        return ScriptedComposer(self)
+
+    def submitted(self, text):
+        self.prompts.append(text)
+        answer = self.answers.pop(0) if self.answers else "silent"
+        if answer == "image":
+            self.images.append(data_url(PNG_HEADER + str(len(self.prompts)).encode()))
+        elif answer == "junk":
+            self.images.append(data_url(b"<!doctype html><title>Sorry</title>"))
+        elif answer == "refuse":
+            self.replies.append("I can't create that image.")
+        elif answer == "busy":
+            self.replies.append("Something went wrong. Please try again later.")
+
+
+def scenes(count: int) -> list[dict]:
+    return [
+        {"index": index, "prompt": f"a lantern in the rain, take {index}"}
+        for index in range(1, count + 1)
+    ]
+
+
+def run(page, scene_list, raw_dir, *, site=None, **overrides):
+    """Drive the per-scene loop with no browser and no waiting."""
+    site = site or dataclasses.replace(
+        chatgpt.SITE,
+        ready_selector=None,   # this fake page has neither signal, so "finished"
+        busy_selector=None,    # rests on the src holding still, as it does live
+        image_timeout_ms=overrides.pop("image_timeout_ms", 200),
+    )
+    return browser_ai._run_scenes(
+        page, site, scene_list,
+        raw_dir=raw_dir,
+        composer_selector=site.composer_selector,
+        image_selector=site.image_selector,
+        min_delay=0, max_delay=0,
+    )
+
+
+@pytest.fixture(autouse=True)
+def no_cooling_off(monkeypatch):
+    monkeypatch.setattr(browser_ai, "BUSY_BACKOFF_S", 0)
+
+
+def test_a_refused_prompt_is_reworded_and_asked_again(tmp_path):
+    page = ScriptedPage("refuse", "image")
+    assert run(page, scenes(1), tmp_path) == []
+
+    assert len(page.prompts) == 2
+    # Same scene, described the same way - only the asking changed.
+    assert all("a lantern in the rain" in prompt for prompt in page.prompts)
+    assert page.prompts[0] != page.prompts[1]
+    assert len(list(tmp_path.iterdir())) == 1
+
+
+def test_a_scene_refused_every_way_is_skipped_and_the_song_carries_on(tmp_path):
+    """The bug this exists to prevent: one refusal mid-song used to raise, and
+    every scene after it was never even asked for."""
+    page = ScriptedPage(*["refuse"] * len(browser_ai.PROMPT_SOFTENERS), "image")
+    assert run(page, scenes(2), tmp_path) == [1]
+
+    assert len(page.prompts) == len(browser_ai.PROMPT_SOFTENERS) + 1
+    assert len(list(tmp_path.iterdir())) == 1   # scene 2's image, and only it
+
+
+def test_a_busy_site_is_not_argued_with_only_skipped(tmp_path):
+    """No wording helps a site that is out of capacity, so the prompt is not
+    reworded: the scene is left for a later run, which asks only for what is
+    missing."""
+    page = ScriptedPage("busy", "image")
+    assert run(page, scenes(2), tmp_path) == [1]
+    assert len(page.prompts) == 2
+
+
+def test_a_download_that_hands_back_something_else_is_skipped_too(tmp_path):
+    """The picture was drawn and accepted - the bytes just did not arrive. That
+    says nothing about the prompt, so it is a later run's problem."""
+    page = ScriptedPage("junk", "image")
+    assert run(page, scenes(2), tmp_path) == [1]
+
+
+def test_a_site_that_keeps_saying_it_is_busy_ends_the_run(tmp_path):
+    """Three capacity notices in a row is not bad luck, and the scenes left
+    unasked are better off waiting than burning a timeout each."""
+    page = ScriptedPage(*["busy"] * 6)
+    assert run(page, scenes(5), tmp_path) == [1, 2, 3]
+    assert len(page.prompts) == browser_ai.MAX_BUSY_SKIPS
+
+
+def test_one_unexplained_failure_is_survived(tmp_path):
+    page = ScriptedPage("silent", "image")
+    assert run(page, scenes(2), tmp_path, image_timeout_ms=1) == [1]
+
+
+def test_two_unexplained_failures_in_a_row_stop_the_run(tmp_path):
+    """Nothing on the page to explain it, twice over, is the markup having moved -
+    and the error naming the selector settings is the only useful thing left."""
+    page = ScriptedPage("silent", "silent", "image")
+    with pytest.raises(VideoLyricsError) as error:
+        run(page, scenes(3), tmp_path, image_timeout_ms=1)
+    assert "chatgpt_image_selector" in str(error.value)
+
+
+def test_a_refusal_does_not_count_towards_giving_up(tmp_path):
+    """Dark subject matter can have several scenes refused in a row; the site is
+    answering fine, and the next prompt is a different question."""
+    refusals = ["refuse"] * len(browser_ai.PROMPT_SOFTENERS)
+    page = ScriptedPage(*refusals, *refusals, *refusals, "image")
+    assert run(page, scenes(4), tmp_path) == [1, 2, 3]
+
+
+def test_a_reworded_prompt_is_asked_in_a_fresh_chat(tmp_path):
+    """Asked again in the same conversation, a site that has just said no is
+    answering its own last turn as much as the new prompt."""
+    page = ScriptedPage("refuse", "image")
+    run(page, scenes(1), tmp_path)
+    assert page.gotos == 1          # ... and only for the retry: scene 1 starts where it is
+
+
+def test_a_bad_response_is_a_skip_not_the_end_of_the_run():
+    class Response:
+        ok = False
+        status = 429
+
+    class Page:
+        request = type("Request", (), {"get": staticmethod(lambda src: Response())})()
+
+    with pytest.raises(browser_ai.SiteBusy):
+        browser_ai._download(Page(), "https://example.test/image.png", 7)
+
+
 # ----------------------------------------------------------- site definitions
 
 @pytest.mark.parametrize("provider", images.BROWSER_PROVIDERS)
@@ -485,6 +738,18 @@ def test_the_driver_writes_the_file_the_images_stage_goes_looking_for(provider):
     ).SITE
     scene = {"index": 3, "prompt": "a lantern in the rain"}
     assert scene_stem(scene, site.name) == images._stem_for(scene, provider)
+
+
+@pytest.mark.parametrize("site", [chatgpt.SITE, meta_ai.SITE])
+def test_every_site_can_read_its_own_words(site):
+    """Without somewhere to read the page's text, a refusal is indistinguishable
+    from a slow site and costs the whole image timeout before anyone finds out."""
+    assert site.reply_selector
+
+
+@pytest.mark.parametrize("softener", browser_ai.PROMPT_SOFTENERS)
+def test_every_rewording_keeps_the_scene_s_own_description(softener):
+    assert "{prompt}" in softener
 
 
 @pytest.mark.parametrize("site", [chatgpt.SITE, meta_ai.SITE])

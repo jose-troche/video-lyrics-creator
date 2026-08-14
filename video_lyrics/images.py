@@ -243,7 +243,10 @@ def _generate_browser(
         ):
             missing.append(scene["index"])
     if missing:
-        log.warning("%s produced no usable image for scene(s): %s", provider, missing)
+        log.warning(
+            "%s produced no usable image for scene(s): %s. Run the same command "
+            "again to ask for just those - everything else is kept.", provider, missing
+        )
     return scenes
 
 

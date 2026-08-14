@@ -45,8 +45,19 @@ FRAMING_CYCLE = (
     "a view through a natural frame - an arch, branches, a doorway",
 )
 
+# What the song is *about*, in the user's own words ("a song after the crossing
+# of the Red Sea in Exodus"). Each prompt is generated on its own, in its own
+# chat, from two lyric lines that rarely name the story they belong to - so
+# without this the generator is guessing the setting afresh every scene, and
+# twenty scenes can end up in twenty different worlds. Said early in the prompt,
+# before the passage, because it is the frame the passage should be read inside.
+CONTEXT_NOTE = (
+    " Context for the whole video: {context}. Every scene belongs to that same "
+    "story, setting and world - keep them consistent with it."
+)
+
 PROMPT_TEMPLATE = (
-    "{style}. Create a cinematic lyric-video scene inspired by this passage: "
+    "{style}.{context} Create a cinematic lyric-video scene inspired by this passage: "
     "'{passage}'. Express its meaning and emotion through a coherent visual metaphor; "
     "intentional composition, strong subject separation, atmospheric lighting, "
     "consistent palette and era, landscape 16:9 framing with safe space near the lower "
@@ -55,8 +66,8 @@ PROMPT_TEMPLATE = (
 )
 
 INSTRUMENTAL_TEMPLATE = (
-    "{style}. Create a cinematic lyric-video scene for an instrumental passage of the "
-    "song \"{title}\"{context}. Wide, atmospheric, no people speaking; "
+    "{style}.{context} Create a cinematic lyric-video scene for an instrumental passage "
+    "of the song \"{title}\"{moment}. Wide, atmospheric, no people speaking; "
     "intentional composition, atmospheric lighting, consistent palette and era, "
     "landscape 16:9 framing with safe space near the lower third. " + MARGIN_NOTE + " "
     "No words, letters, captions, logos, watermarks, borders, or typography."
@@ -122,6 +133,17 @@ def _reverence_note(*texts: str) -> str:
     return REVERENCE_NOTE if any(DIVINE_NAMES.search(text) for text in texts) else ""
 
 
+def _context_note(context: str) -> str:
+    """The song-wide context, ready to drop into a prompt - or nothing at all.
+
+    Nothing at all is the point: a song without a context has to produce exactly
+    the prompt it produced before this existed, or every scene of every finished
+    song would hash to a new stem and ask to be redrawn.
+    """
+    context = " ".join(context.split()).rstrip(".")
+    return CONTEXT_NOTE.format(context=context) if context else ""
+
+
 def _framing_note(position: int) -> str:
     """A distinct framing for this scene, so it cannot echo the one before it."""
     return (
@@ -165,13 +187,17 @@ def _instrumental_scenes(
     start: float,
     end: float,
     *,
-    context: str,
+    moment: str,
     title: str,
     visual_style: str,
     max_scene: float,
     min_scene: float,
+    context: str = "",
 ) -> list[dict[str, Any]]:
+    """`moment` is where in the song this break sits; `context` is what the whole
+    song is about."""
     pieces = _split_evenly(start, end, max_scene=max_scene, min_scene=min_scene)
+    note = _context_note(context)
     scenes = []
     for index, (piece_start, piece_end) in enumerate(pieces):
         suffix = f" (part {index + 1} of {len(pieces)})" if len(pieces) > 1 else ""
@@ -181,8 +207,8 @@ def _instrumental_scenes(
                 "end": piece_end,
                 "lines": [],
                 "prompt": INSTRUMENTAL_TEMPLATE.format(
-                    style=visual_style, title=title, context=context + suffix
-                ) + _reverence_note(title, context),
+                    style=visual_style, title=title, context=note, moment=moment + suffix
+                ) + _reverence_note(title, moment, context),
             }
         )
     return scenes
@@ -194,24 +220,31 @@ def plan(
     duration: float,
     title: str,
     visual_style: str,
+    context: str = "",
     lines_per_image: int = 2,
     scene_gap: float = 2.5,
     min_scene: float = MIN_SCENE_DURATION,
     max_scene: float = MAX_SCENE_DURATION,
     section_starts: frozenset[int] | set[int] = frozenset(),
 ) -> list[dict[str, Any]]:
-    """Return scenes covering [0, duration] with no gaps and no overlaps."""
+    """Return scenes covering [0, duration] with no gaps and no overlaps.
+
+    `context` is what the whole song is about, in the user's own words; it goes
+    into every scene's prompt, so that scenes generated one at a time, each from
+    a couple of lyric lines, still share one story and one world.
+    """
     groups = group_cues(
         cues, lines_per_image=lines_per_image, scene_gap=scene_gap,
         min_scene=min_scene, max_scene=max_scene, section_starts=section_starts,
     )
+    context_note = _context_note(context)
 
     scenes: list[dict[str, Any]] = []
     if not groups:
         scenes.extend(
             _instrumental_scenes(
-                0.0, duration, context="", title=title, visual_style=visual_style,
-                max_scene=max_scene, min_scene=min_scene,
+                0.0, duration, moment="", title=title, visual_style=visual_style,
+                max_scene=max_scene, min_scene=min_scene, context=context,
             )
         )
     else:
@@ -220,13 +253,13 @@ def plan(
         lead = groups[0]["start"]
         first_natural = groups[0]["end"] - groups[0]["start"]
         if lead > 0 and _needs_own_scene(lead, first_natural, max_scene=max_scene):
-            context = (
+            moment = (
                 " — the opening, before the first line \"" + groups[0]["lines"][0] + "\""
             )
             scenes.extend(
                 _instrumental_scenes(
-                    0.0, lead, context=context, title=title, visual_style=visual_style,
-                    max_scene=max_scene, min_scene=min_scene,
+                    0.0, lead, moment=moment, title=title, visual_style=visual_style,
+                    max_scene=max_scene, min_scene=min_scene, context=context,
                 )
             )
 
@@ -237,8 +270,9 @@ def plan(
                     "end": group["end"],
                     "lines": list(group["lines"]),
                     "prompt": PROMPT_TEMPLATE.format(
-                        style=visual_style, passage=" / ".join(group["lines"])
-                    ) + _reverence_note(*group["lines"]),
+                        style=visual_style, context=context_note,
+                        passage=" / ".join(group["lines"]),
+                    ) + _reverence_note(*group["lines"], context),
                 }
             )
             following = groups[index + 1]["start"] if index + 1 < len(groups) else duration
@@ -252,14 +286,14 @@ def plan(
                 donation = max(0.0, min(gap, min_scene - natural))
                 block_start = group["end"] + donation
                 if block_start < following - 0.05:
-                    context = (
+                    moment = (
                         " — an instrumental break after \"" + group["lines"][-1] + "\""
                     )
                     scenes.extend(
                         _instrumental_scenes(
-                            block_start, following, context=context, title=title,
+                            block_start, following, moment=moment, title=title,
                             visual_style=visual_style, max_scene=max_scene,
-                            min_scene=min_scene,
+                            min_scene=min_scene, context=context,
                         )
                     )
 
@@ -271,7 +305,8 @@ def plan(
     if not scenes:  # a song shorter than a single scene
         passage = cues[0]["text"] if cues else title
         scenes = [{"start": 0.0, "end": duration, "lines": [], "prompt": PROMPT_TEMPLATE.format(
-            style=visual_style, passage=passage) + _reverence_note(passage)}]
+            style=visual_style, context=context_note, passage=passage,
+        ) + _reverence_note(passage, context)}]
     scenes[-1]["end"] = duration
 
     for index, scene in enumerate(scenes):
