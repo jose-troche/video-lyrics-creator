@@ -1,7 +1,7 @@
 # Video Lyrics Creator
 
 Turns a song plus its lyrics into a finished lyric video: the words are timed from
-the actual recording, each couplet gets its own generated image, the images drift
+the actual recording, each lyric line gets its own generated image, the images drift
 with a Ken Burns move and cross dissolve into one another, and ffmpeg assembles and
 exports the result (DaVinci Resolve is available as an alternative render engine).
 
@@ -141,19 +141,20 @@ video-lyrics render              # assemble with ffmpeg and export
 | `--launch` | (Resolve) start Resolve first and wait until it answers |
 | `--images-dir DIR` | use your own images instead of generating them |
 | `--limit N` | (`images`) generate only N of the missing images, then stop |
-| `--lines-per-image N` | (`init`, `plan`, `run`) 1 for an image per lyric line, 2 to pair them up (default) |
+| `--lines-per-image N` | (`init`, `plan`, `run`) 1 for an image per lyric line (default), 2 to pair them up |
 | `--from` / `--to` | run part of the pipeline (`run --from plan --to bed`) |
 
-**How many lines share an image.** Two by default: `plan` bundles consecutive
-lyric lines up to that many, and still splits a pair that would hold one picture
-past `alignment.max_scene_duration` or that crosses into a new section. So `2`
-means *up to* two, while `1` means one image per line, always — twice the
-pictures, twice the generating.
+**How many lines share an image.** One by default — every lyric line gets its
+own picture. Ask for `2` and `plan` bundles consecutive lyric lines up to that
+many, still splitting a pair that would hold one picture past
+`alignment.max_scene_duration` or that crosses into a new section. So `2` means
+*up to* two — half the pictures, half the generating, and half the visual
+variety.
 
 ```bash
-video-lyrics init --lines-per-image 1 --audio ... --lyrics ...
-video-lyrics plan --lines-per-image 1      # regroup an existing song
-video-lyrics set image_generation.lines_per_image 1   # same thing, without replanning
+video-lyrics init --lines-per-image 2 --audio ... --lyrics ...
+video-lyrics plan --lines-per-image 2      # regroup an existing song
+video-lyrics set image_generation.lines_per_image 2   # same thing, without replanning
 ```
 
 Passing the flag saves it, so later runs keep grouping the same way. Regrouping
@@ -324,7 +325,7 @@ video-lyrics set video.zoom 1.3
 video-lyrics set video.font "Optima Bold"
 video-lyrics set context "a song after the crossing of the Red Sea in Exodus"
 video-lyrics set alignment.min_confidence 0.4
-video-lyrics set image_generation.lines_per_image 1
+video-lyrics set image_generation.lines_per_image 2
 ```
 
 JSON works just as well — the suffix decides the format:
@@ -458,10 +459,11 @@ front, so assembly is just laying finished clips end to end.
   is always set off from the one after it. A long instrumental stretch with no
   lyrics in it becomes a few evenly-sized images instead of one held far too long.
   Every prompt also asks for generous margin around the main subject, since the
-  zoom will crop in on it, and - for a scene whose lines (or, for an instrumental
-  break, the title or surrounding lines) mention God, Jesus, or Christ - an extra
-  instruction to keep any divine figure's face blurred, veiled, or turned away
-  rather than sharply detailed.
+  zoom will crop in on it, and carries the same note of reverence: *if God or
+  Jesus is portrayed in the image, keep his face naturally blurred, veiled, or
+  turned away — never a sharp, detailed face*. It goes on every scene, not only
+  the ones whose lines name him, because two lines like "he carried it all" can
+  send a picture toward a divine figure without naming one.
 
   Each scene is also given its own **framing** (wide establishing shot, low angle,
   head-on symmetry, ...), cycled by the scene's position. Without it neighbouring

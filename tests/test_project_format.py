@@ -108,15 +108,15 @@ def test_init_writes_yaml_by_default(tmp_path, song, monkeypatch):
     assert Project.load(project).title == "song"
 
 
-def test_init_can_ask_for_one_image_per_lyric_line(tmp_path, song, monkeypatch):
+def test_init_can_ask_for_one_image_per_pair_of_lyric_lines(tmp_path, song, monkeypatch):
     audio, words = song
     monkeypatch.chdir(tmp_path)
     assert cli.main([
-        "init", "--audio", str(audio), "--lyrics", str(words), "--lines-per-image", "1",
+        "init", "--audio", str(audio), "--lyrics", str(words), "--lines-per-image", "2",
     ]) == 0
 
     project = Project.load(tmp_path / "project.yaml")
-    assert project.image_generation["lines_per_image"] == 1
+    assert project.image_generation["lines_per_image"] == 2
 
 
 def test_init_records_what_the_song_is_about(tmp_path, song, monkeypatch):
@@ -139,11 +139,11 @@ def test_a_project_without_a_context_has_an_empty_one(tmp_path, song, monkeypatc
     assert Project.load(tmp_path / "project.yaml").data["context"] == ""
 
 
-def test_lines_per_image_still_defaults_to_two(tmp_path, song, monkeypatch):
+def test_lines_per_image_defaults_to_one(tmp_path, song, monkeypatch):
     audio, words = song
     monkeypatch.chdir(tmp_path)
     cli.main(["init", "--audio", str(audio), "--lyrics", str(words)])
-    assert Project.load(tmp_path / "project.yaml").image_generation["lines_per_image"] == 2
+    assert Project.load(tmp_path / "project.yaml").image_generation["lines_per_image"] == 1
 
 
 def test_init_can_still_write_json(tmp_path, song, monkeypatch):

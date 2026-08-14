@@ -151,7 +151,7 @@ def stage_plan(
         title=project.title,
         visual_style=project.data["visual_style"],
         context=str(project.data.get("context") or ""),
-        lines_per_image=int(project.image_generation.get("lines_per_image", 2)),
+        lines_per_image=int(project.image_generation.get("lines_per_image", 1)),
         scene_gap=float(settings["scene_gap"]),
         min_scene=float(settings["min_scene_duration"]),
         max_scene=float(settings["max_scene_duration"]),

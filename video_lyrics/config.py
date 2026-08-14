@@ -62,7 +62,7 @@ VIDEO_DEFAULTS: dict[str, Any] = {
 # defaults adding here.
 IMAGE_DEFAULTS: dict[str, Any] = {
     "provider": "chatgpt",    # chatgpt | manual | meta | supplied
-    "lines_per_image": 2,
+    "lines_per_image": 1,     # an image per lyric line; 2 pairs them up instead
     "source_dir": None,       # used when provider == "supplied"
     "chatgpt_headless": False,   # provider == "chatgpt": a visible window to log in
     "chatgpt_profile_dir": None, # ... default: ~/.video-lyrics/chatgpt-profile

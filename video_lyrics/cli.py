@@ -17,7 +17,7 @@ from .util import VideoLyricsError, load_dotenv, log, setup_logging
 # that opens a section on its own, so 2 means "up to two" and 1 means "one image
 # per line, always".
 LINES_PER_IMAGE_HELP = (
-    "lyric lines per image: 1 for an image per line, 2 to pair them up (default 2)"
+    "lyric lines per image: 1 for an image per line (default), 2 to pair them up"
 )
 
 

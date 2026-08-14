@@ -146,7 +146,9 @@ def test_a_split_instrumental_breaks_prompt_says_which_part_it_is():
 
 
 def test_prompts_carry_the_style_the_lyrics_and_a_no_text_rule():
-    planned = scenes.plan(BASIC, duration=40.0, title="Song", visual_style="watercolor")
+    planned = scenes.plan(
+        BASIC, duration=40.0, title="Song", visual_style="watercolor", lines_per_image=2
+    )
     prompt = planned[0]["prompt"]
     assert prompt.startswith("watercolor.")
     assert "line one / line two" in prompt
@@ -232,35 +234,35 @@ def make_project(tmp_path):
     return project
 
 
-def test_planning_pairs_lines_up_by_default(tmp_path):
+def test_planning_gives_every_line_its_own_image_by_default(tmp_path):
     from video_lyrics import pipeline
     from video_lyrics.config import Project
 
     project = make_project(tmp_path)
     pipeline.stage_plan(project)
     assert [scene["lines"] for scene in project.scenes if scene["lines"]] == [
-        ["line one", "line two"], ["line three", "line four"]
+        ["line one"], ["line two"], ["line three"], ["line four"]
     ]
-    assert Project.load(tmp_path / "project.yaml").image_generation["lines_per_image"] == 2
+    assert Project.load(tmp_path / "project.yaml").image_generation["lines_per_image"] == 1
 
 
-def test_one_image_per_line_is_asked_for_once_and_then_remembered(tmp_path):
+def test_pairing_lines_up_is_asked_for_once_and_then_remembered(tmp_path):
     """`--lines-per-image` is not a per-run override: the scenes just written were
-    grouped that way, so a project file that still said 2 would be describing a
+    grouped that way, so a project file that still said 1 would be describing a
     plan it did not produce."""
     from video_lyrics import pipeline
     from video_lyrics.config import Project
 
     project = make_project(tmp_path)
-    pipeline.stage_plan(project, lines_per_image=1)
+    pipeline.stage_plan(project, lines_per_image=2)
     assert [scene["lines"] for scene in project.scenes if scene["lines"]] == [
-        ["line one"], ["line two"], ["line three"], ["line four"]
+        ["line one", "line two"], ["line three", "line four"]
     ]
 
     reloaded = Project.load(tmp_path / "project.yaml")
-    assert reloaded.image_generation["lines_per_image"] == 1
+    assert reloaded.image_generation["lines_per_image"] == 2
     pipeline.stage_plan(reloaded)          # ... and the next plan, told nothing, agrees
-    assert len([scene for scene in reloaded.scenes if scene["lines"]]) == 4
+    assert len([scene for scene in reloaded.scenes if scene["lines"]]) == 2
 
 
 def test_the_plan_command_takes_it_on_the_command_line(tmp_path, monkeypatch):
@@ -271,10 +273,10 @@ def test_the_plan_command_takes_it_on_the_command_line(tmp_path, monkeypatch):
 
     make_project(tmp_path).save()
     monkeypatch.chdir(tmp_path)
-    assert cli.main(["plan", "--lines-per-image", "1"]) == 0
+    assert cli.main(["plan", "--lines-per-image", "2"]) == 0
     reloaded = Project.load(tmp_path / "project.yaml")
     assert [scene["lines"] for scene in reloaded.scenes if scene["lines"]] == [
-        ["line one"], ["line two"], ["line three"], ["line four"]
+        ["line one", "line two"], ["line three", "line four"]
     ]
 
     with pytest.raises(SystemExit):   # an image has to be worth at least one line

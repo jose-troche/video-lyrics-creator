@@ -78,13 +78,13 @@ INSTRUMENTAL_TEMPLATE = (
 def group_cues(
     cues: list[dict[str, Any]],
     *,
-    lines_per_image: int = 2,
+    lines_per_image: int = 1,
     scene_gap: float = 2.5,
     min_scene: float = MIN_SCENE_DURATION,
     max_scene: float = MAX_SCENE_DURATION,
     section_starts: frozenset[int] | set[int] = frozenset(),
 ) -> list[dict[str, Any]]:
-    """Bundle 1-2 consecutive lyric lines per image.
+    """Bundle up to `lines_per_image` consecutive lyric lines per image.
 
     How many lines share an image is decided by how long they run, not a fixed
     count: a line short enough on its own to fall under `min_scene` picks up its
@@ -218,7 +218,7 @@ def plan(
     title: str,
     visual_style: str,
     context: str = "",
-    lines_per_image: int = 2,
+    lines_per_image: int = 1,
     scene_gap: float = 2.5,
     min_scene: float = MIN_SCENE_DURATION,
     max_scene: float = MAX_SCENE_DURATION,
