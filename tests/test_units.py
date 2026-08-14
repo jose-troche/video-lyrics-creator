@@ -307,24 +307,20 @@ def _fake_ffmpeg(monkeypatch, calls):
     monkeypatch.setattr(motion, "run", lambda cmd, **kw: calls.append(cmd))
 
 
-def test_concat_clips_rebuilds_when_the_clip_list_changes(tmp_path, monkeypatch):
+def test_concat_clips_always_rebuilds(tmp_path, monkeypatch):
+    # The concat is a stream copy (well under a second), and a `force` bed
+    # rebuild can overwrite a clip's content without changing its fingerprinted
+    # filename - a cache keyed on the clip list would miss that and leave a
+    # stale `bed.mp4` behind. So there is no cache: every call re-concatenates.
     calls = []
     _fake_ffmpeg(monkeypatch, calls)
     out = tmp_path / "bed.mp4"
     clip_a = tmp_path / "bed-001-scene-aaa.mp4"
     clip_a.touch()
-    clip_b = tmp_path / "bed-001-scene-bbb.mp4"
-    clip_b.touch()
 
     motion.concat_clips([{"path": str(clip_a)}], out)
     assert len(calls) == 1
     out.touch()  # ffmpeg is faked, so nothing actually wrote `out`
 
-    # Same clip list, `out` already there: no need to run ffmpeg again.
     motion.concat_clips([{"path": str(clip_a)}], out)
-    assert len(calls) == 1
-
-    # A scene's image changed, so its clip's fingerprinted filename changed too -
-    # `out` is still sitting there from before, but it is now stale.
-    motion.concat_clips([{"path": str(clip_b)}], out)
     assert len(calls) == 2

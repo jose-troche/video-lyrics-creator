@@ -332,19 +332,17 @@ def _render_transition_clip(
     )
 
 
-def concat_clips(clips: list[dict[str, Any]], out: Path, *, force: bool = False) -> Path:
+def concat_clips(clips: list[dict[str, Any]], out: Path) -> Path:
     """Join the bed clips into one file (used by the ffmpeg render engine).
 
-    Cached on the *list* of clip paths, not just on `out` existing: each clip's own
-    filename already carries a content fingerprint (see `render_bed`), so a scene
-    picking up a new image renders a new clip file but leaves the old `bed.mp4`
-    looking perfectly present. Comparing against the listing written last time is
-    what catches that instead of silently concatenating the stale clips again.
+    Always re-concatenated: a `force` bed rebuild can overwrite a clip's content
+    without changing its (fingerprinted) filename, which a manifest-based cache
+    would miss, leaving a stale `bed.mp4` behind. The concat itself is a stream
+    copy and takes well under a second, so there is no cost to just doing it
+    every time.
     """
     listing = out.with_suffix(".txt")
     manifest = "".join(f"file '{Path(clip['path']).as_posix()}'\n" for clip in clips)
-    if out.is_file() and not force and listing.is_file() and listing.read_text(encoding="utf-8") == manifest:
-        return out
     listing.write_text(manifest, encoding="utf-8")
     run(
         [

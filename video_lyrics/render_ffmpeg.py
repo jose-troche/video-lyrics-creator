@@ -103,7 +103,7 @@ def render(
 ) -> Path:
     """Bed + overlays + audio -> final H.264/AAC file, exactly as long as the song."""
     work_dir = ensure_dir(work_dir)
-    bed = concat_clips(clips, work_dir / "bed.mp4", force=force)
+    bed = concat_clips(clips, work_dir / "bed.mp4")
     overlay_track = build_overlay_track(
         overlay_items,
         directory=ensure_dir(work_dir / "overlay-clips"),
