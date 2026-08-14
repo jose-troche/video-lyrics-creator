@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import difflib
 import math
 from typing import Any
 
@@ -320,14 +321,24 @@ def plan(
 def merge_existing_images(
     new_scenes: list[dict[str, Any]], old_scenes: list[dict[str, Any]]
 ) -> list[dict[str, Any]]:
-    """Carry image files over to a re-plan when the prompt is unchanged."""
-    by_prompt = {
-        scene.get("prompt"): scene.get("image")
-        for scene in old_scenes
-        if scene.get("image")
-    }
-    for scene in new_scenes:
-        image = by_prompt.get(scene.get("prompt"))
-        if image:
-            scene["image"] = image
+    """Carry image files over to a re-plan, matched by the lines each scene covers
+    rather than by its exact prompt string.
+
+    The prompt bakes in a framing note keyed to the scene's position (see
+    `_framing_note`), so inserting or removing so much as one lyric line - the
+    normal result of a `video-lyrics tune` session - shifts every scene after it
+    and changes its prompt, even though the lines it covers never moved. Aligning
+    on `lines` in order with `difflib`, instead, survives that: a chorus that
+    repeats verbatim several times still lines up with its own repetition rather
+    than a neighbour's, and only the scenes whose content actually changed come
+    back without an image.
+    """
+    old_keys = [tuple(scene.get("lines") or ()) for scene in old_scenes]
+    new_keys = [tuple(scene.get("lines") or ()) for scene in new_scenes]
+    matcher = difflib.SequenceMatcher(None, old_keys, new_keys, autojunk=False)
+    for block in matcher.get_matching_blocks():
+        for offset in range(block.size):
+            image = old_scenes[block.a + offset].get("image")
+            if image:
+                new_scenes[block.b + offset]["image"] = image
     return new_scenes

@@ -193,14 +193,14 @@ def test_every_scene_carries_the_reverence_note():
     cues = [cue(0.0, 2.0, "first"), cue(42.0, 44.0, "second")]
     planned = scenes.plan(cues, duration=46.0, title="Song", visual_style="cinematic")
     assert len(planned) > 1
-    assert all("blurred, veiled, or turned away" in s["prompt"] for s in planned)
+    assert all(scenes.REVERENCE_NOTE in s["prompt"] for s in planned)
 
 
 def test_an_instrumental_scene_carries_the_reverence_note():
     cues = [cue(0.0, 2.0, "Jesus is Lord"), cue(42.0, 44.0, "second")]
     planned = scenes.plan(cues, duration=46.0, title="Song", visual_style="cinematic")
     instrumental = next(s for s in planned if not s["lines"])
-    assert "blurred, veiled, or turned away" in instrumental["prompt"]
+    assert scenes.REVERENCE_NOTE in instrumental["prompt"]
 
 
 def test_motion_alternates_between_scenes():
@@ -208,12 +208,48 @@ def test_motion_alternates_between_scenes():
     assert planned[0]["motion"] != planned[1]["motion"]
 
 
-def test_replanning_keeps_images_whose_prompt_is_unchanged():
-    old = [{"prompt": "p1", "image": "/tmp/a.png"}, {"prompt": "p2", "image": "/tmp/b.png"}]
-    new = [{"prompt": "p2"}, {"prompt": "p3"}]
+def test_replanning_keeps_images_whose_lines_are_unchanged():
+    old = [
+        {"lines": ["line one"], "image": "/tmp/a.png"},
+        {"lines": ["line two"], "image": "/tmp/b.png"},
+    ]
+    new = [{"lines": ["line two"]}, {"lines": ["line three"]}]
     merged = scenes.merge_existing_images(new, old)
     assert merged[0]["image"] == "/tmp/b.png"
     assert "image" not in merged[1]
+
+
+def test_replanning_survives_a_line_inserted_earlier_in_the_song():
+    """An inserted line shifts every scene after it - and its prompt, since the
+    framing note baked into the prompt is keyed to position - but the lines each
+    scene actually covers do not move, so their images should still carry over."""
+    old = [
+        {"lines": ["a"], "image": "/tmp/a.png"},
+        {"lines": ["b"], "image": "/tmp/b.png"},
+        {"lines": ["c"], "image": "/tmp/c.png"},
+    ]
+    new = [
+        {"lines": ["a"]},
+        {"lines": ["a new line"]},  # inserted by hand-tuning
+        {"lines": ["b"]},
+        {"lines": ["c"]},
+    ]
+    merged = scenes.merge_existing_images(new, old)
+    assert [scene.get("image") for scene in merged] == [
+        "/tmp/a.png", None, "/tmp/b.png", "/tmp/c.png",
+    ]
+
+
+def test_replanning_keeps_repeated_choruses_apart():
+    """The same line repeated verbatim - a chorus - must line up with its own
+    repetition in order, not borrow whichever one happens to share its text."""
+    old = [
+        {"lines": ["chorus"], "image": "/tmp/first.png"},
+        {"lines": ["chorus"], "image": "/tmp/second.png"},
+    ]
+    new = [{"lines": ["chorus"]}, {"lines": ["chorus"]}]
+    merged = scenes.merge_existing_images(new, old)
+    assert [scene["image"] for scene in merged] == ["/tmp/first.png", "/tmp/second.png"]
 
 
 # ------------------------------------------------- one image per line, or two
@@ -325,7 +361,7 @@ def test_a_context_that_names_god_makes_every_scene_reverent():
         BASIC, duration=40.0, title="Song", visual_style="cinematic",
         context="a song about Jesus feeding five thousand",
     )
-    assert all("blurred, veiled, or turned away" in scene["prompt"] for scene in planned)
+    assert all(scenes.REVERENCE_NOTE in scene["prompt"] for scene in planned)
 
 
 def test_the_context_reaches_the_prompts_from_the_project_file(tmp_path):
