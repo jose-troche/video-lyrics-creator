@@ -114,9 +114,12 @@ def build_parser() -> argparse.ArgumentParser:
     run.add_argument("--lines-per-image", type=_lines_per_image, help=LINES_PER_IMAGE_HELP)
     run.add_argument("--force", action="store_true")
     run.add_argument(
-        "--skip-tune", action="store_true",
-        help="don't pause after align to ask about fine-tuning lyric timing",
+        "--tune", action="store_true",
+        help="pause after align to ask about fine-tuning lyric timing",
     )
+    # Skipping is what happens anyway now; the old flag stays accepted so
+    # scripts and habits built around it keep working.
+    run.add_argument("--skip-tune", action="store_true", help=argparse.SUPPRESS)
 
     subparsers.add_parser("status", help="show what is done so far")
 
@@ -252,7 +255,7 @@ def dispatch(args: argparse.Namespace, project_path: Path) -> int:
         "lines_per_image": getattr(args, "lines_per_image", None),
         "launch": getattr(args, "launch", False),
         "handoff_only": getattr(args, "handoff", False),
-        "skip_tune": getattr(args, "skip_tune", False),
+        "tune": getattr(args, "tune", False),
     }
 
     if command == "run":

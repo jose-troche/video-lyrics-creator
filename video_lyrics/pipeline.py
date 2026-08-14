@@ -104,10 +104,15 @@ def stage_align(project: Project, *, force: bool = False, **_: Any) -> None:
     project.save()
 
 
-def stage_tune(project: Project, *, skip_tune: bool = False, **_: Any) -> None:
-    """Offer to open `video-lyrics tune` before the cues are locked into scenes."""
-    if skip_tune:
-        log.info("Skipping the fine-tuning prompt (--skip-tune).")
+def stage_tune(project: Project, *, tune: bool = False, **_: Any) -> None:
+    """Offer to open `video-lyrics tune` before the cues are locked into scenes.
+
+    Only when asked for: a `run` walks straight past this unless `--tune` says
+    otherwise, so an unattended run never stops on a question. Tuning by ear is
+    still there any time you want it, as its own `video-lyrics tune` command.
+    """
+    if not tune:
+        log.info("Skipping the fine-tuning prompt (pass --tune to be asked).")
         return
     if not project.cues:
         return

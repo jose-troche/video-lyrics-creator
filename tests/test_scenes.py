@@ -187,18 +187,14 @@ def test_instrumental_prompts_also_ask_for_margin():
     assert "margin" in instrumental["prompt"].lower()
 
 
-def test_lines_mentioning_god_or_jesus_get_the_reverence_note():
-    cues = [cue(10.0, 12.0, "Christ is supreme"), cue(12.0, 14.0, "over all things")]
-    planned = scenes.plan(cues, duration=40.0, title="Song", visual_style="cinematic")
-    assert "blurred, veiled, or turned away" in planned[0]["prompt"]
+def test_every_scene_carries_the_reverence_note():
+    cues = [cue(0.0, 2.0, "first"), cue(42.0, 44.0, "second")]
+    planned = scenes.plan(cues, duration=46.0, title="Song", visual_style="cinematic")
+    assert len(planned) > 1
+    assert all("blurred, veiled, or turned away" in s["prompt"] for s in planned)
 
 
-def test_lines_without_god_or_jesus_have_no_reverence_note():
-    planned = scenes.plan(BASIC, duration=40.0, title="Song", visual_style="cinematic")
-    assert "blurred, veiled, or turned away" not in planned[0]["prompt"]
-
-
-def test_an_instrumental_break_inherits_the_reverence_note_from_its_context():
+def test_an_instrumental_scene_carries_the_reverence_note():
     cues = [cue(0.0, 2.0, "Jesus is Lord"), cue(42.0, 44.0, "second")]
     planned = scenes.plan(cues, duration=46.0, title="Song", visual_style="cinematic")
     instrumental = next(s for s in planned if not s["lines"])

@@ -112,10 +112,10 @@ to redraw them. Leaving it empty says nothing at all and leaves prompts exactly
 as they were, which is what keeps songs finished before this from asking to be
 redrawn.
 
-Right after aligning, `video-lyrics run` pauses to ask whether you want to
-fine-tune lyric timing by ear (`video-lyrics tune`) before it moves on to
-planning scenes; answering no just continues to `plan`. `--skip-tune` skips
-straight past the question, for scripted or unattended runs.
+`video-lyrics run` goes straight from aligning to planning scenes without
+stopping. Pass `--tune` and it pauses right after aligning to ask whether you
+want to fine-tune lyric timing by ear first; answering no just continues to
+`plan`. Tuning is always available on its own as `video-lyrics tune`.
 
 Every stage is also its own command, so you can iterate on one part without
 redoing the rest:
@@ -135,7 +135,7 @@ video-lyrics render              # assemble with ffmpeg and export
 | flag | meaning |
 | --- | --- |
 | `--force` | redo a stage even though its output is cached |
-| `--skip-tune` | (`run`) don't ask about fine-tuning lyric timing after align |
+| `--tune` | (`run`) pause after align to ask about fine-tuning lyric timing |
 | `--engine resolve` | render through DaVinci Resolve instead of ffmpeg |
 | `--handoff` | (Resolve) prepare everything and finish from Resolve's Scripts menu |
 | `--launch` | (Resolve) start Resolve first and wait until it answers |

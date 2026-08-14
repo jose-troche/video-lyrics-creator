@@ -311,13 +311,13 @@ def test_tune_sits_between_align_and_plan_in_the_pipeline():
     )
 
 
-def test_stage_tune_skips_without_asking_when_told_to(project, monkeypatch, caplog):
+def test_stage_tune_skips_without_asking_unless_asked_for(project, monkeypatch, caplog):
     from video_lyrics import pipeline
 
     caplog.set_level("INFO")
     asked = []
     monkeypatch.setattr("builtins.input", lambda *a: asked.append(1) or "y")
-    pipeline.stage_tune(project, skip_tune=True)
+    pipeline.stage_tune(project)
     assert not asked
     assert "Skipping the fine-tuning prompt" in caplog.text
 
@@ -328,7 +328,7 @@ def test_stage_tune_skips_when_there_are_no_cues_yet(project, monkeypatch):
     project.data["lyrics"] = []
     asked = []
     monkeypatch.setattr("builtins.input", lambda *a: asked.append(1) or "y")
-    pipeline.stage_tune(project)
+    pipeline.stage_tune(project, tune=True)
     assert not asked
 
 
@@ -339,7 +339,7 @@ def test_stage_tune_skips_the_prompt_outside_a_terminal(project, monkeypatch):
     monkeypatch.setattr(sys.stdout, "isatty", lambda: True)
     asked = []
     monkeypatch.setattr("builtins.input", lambda *a: asked.append(1) or "y")
-    pipeline.stage_tune(project)
+    pipeline.stage_tune(project, tune=True)
     assert not asked
 
 
@@ -352,7 +352,7 @@ def test_stage_tune_declining_does_not_open_the_editor(project, monkeypatch):
     monkeypatch.setattr("builtins.input", lambda *a: "n")
     opened = []
     monkeypatch.setattr(tune_mod, "tune", lambda proj: opened.append(proj))
-    pipeline.stage_tune(project)
+    pipeline.stage_tune(project, tune=True)
     assert not opened
 
 
@@ -368,7 +368,7 @@ def test_stage_tune_accepting_opens_the_editor(project, monkeypatch, caplog):
     monkeypatch.setattr(
         tune_mod, "tune", lambda proj: opened.append(proj) or "1 line retimed"
     )
-    pipeline.stage_tune(project)
+    pipeline.stage_tune(project, tune=True)
     assert opened == [project]
     assert "Tuning saved: 1 line retimed" in caplog.text
 

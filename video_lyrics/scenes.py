@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import math
-import re
 from typing import Any
 
 # pan_left/pan_right are deliberately excluded: a pan holds the same crop margin
@@ -15,11 +14,12 @@ MOTION_CYCLE = ("zoom_in", "zoom_out")
 MIN_SCENE_DURATION = 4.0    # no image is ever shown for less than this
 MAX_SCENE_DURATION = 15.0   # ... or for longer than this
 
-DIVINE_NAMES = re.compile(r"\b(god|jesus|christ)\b", re.IGNORECASE)
-
+# Said on every prompt, not only the passages that name him: a scene drawn from
+# "he carried it all" or "the King is coming" can put a divine figure on screen
+# without a single divine name in its two lines.
 REVERENCE_NOTE = (
-    " This passage speaks of God or Jesus: if a divine figure appears, keep the face "
-    "blurred, veiled, or turned away — never a sharp, detailed likeness."
+    " If God or Jesus is portrayed in the image, keep his face naturally blurred, "
+    "veiled, or turned away — never a sharp, detailed face."
 )
 
 MARGIN_NOTE = (
@@ -62,7 +62,7 @@ PROMPT_TEMPLATE = (
     "intentional composition, strong subject separation, atmospheric lighting, "
     "consistent palette and era, landscape 16:9 framing with safe space near the lower "
     "third. " + MARGIN_NOTE + " No words, letters, captions, logos, watermarks, "
-    "borders, or typography."
+    "borders, or typography." + REVERENCE_NOTE
 )
 
 INSTRUMENTAL_TEMPLATE = (
@@ -71,6 +71,7 @@ INSTRUMENTAL_TEMPLATE = (
     "intentional composition, atmospheric lighting, consistent palette and era, "
     "landscape 16:9 framing with safe space near the lower third. " + MARGIN_NOTE + " "
     "No words, letters, captions, logos, watermarks, borders, or typography."
+    + REVERENCE_NOTE
 )
 
 
@@ -127,10 +128,6 @@ def group_cues(
         current.append(cue)
     flush()
     return groups
-
-
-def _reverence_note(*texts: str) -> str:
-    return REVERENCE_NOTE if any(DIVINE_NAMES.search(text) for text in texts) else ""
 
 
 def _context_note(context: str) -> str:
@@ -208,7 +205,7 @@ def _instrumental_scenes(
                 "lines": [],
                 "prompt": INSTRUMENTAL_TEMPLATE.format(
                     style=visual_style, title=title, context=note, moment=moment + suffix
-                ) + _reverence_note(title, moment, context),
+                ),
             }
         )
     return scenes
@@ -272,7 +269,7 @@ def plan(
                     "prompt": PROMPT_TEMPLATE.format(
                         style=visual_style, context=context_note,
                         passage=" / ".join(group["lines"]),
-                    ) + _reverence_note(*group["lines"], context),
+                    ),
                 }
             )
             following = groups[index + 1]["start"] if index + 1 < len(groups) else duration
@@ -306,7 +303,7 @@ def plan(
         passage = cues[0]["text"] if cues else title
         scenes = [{"start": 0.0, "end": duration, "lines": [], "prompt": PROMPT_TEMPLATE.format(
             style=visual_style, context=context_note, passage=passage,
-        ) + _reverence_note(passage, context)}]
+        )}]
     scenes[-1]["end"] = duration
 
     for index, scene in enumerate(scenes):
