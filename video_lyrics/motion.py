@@ -13,6 +13,7 @@ a clip, so anything animated has to arrive as media.
 
 from __future__ import annotations
 
+import hashlib
 from pathlib import Path
 from typing import Any
 
@@ -185,6 +186,24 @@ def plan_bed(
     return clips
 
 
+def _image_signature(path: str) -> str:
+    """A hash of the image's own bytes, so a scene's clip is re-baked when the
+    picture changes and only then.
+
+    Not the path alone: `video-lyrics images --force` regenerates under the same
+    filename (it is hashed from the prompt, not the picture), so an unchanged path
+    says nothing about what is in the file, and the clip would stay stale forever.
+    Not the mtime either: the images stage rewrites every canonical PNG from its
+    raw download on every run (see `_adopt_by_stem`), so a timestamp would re-bake
+    the whole bed each time that stage is re-run, changing nothing.
+    """
+    digest = hashlib.sha1()
+    with open(path, "rb") as handle:
+        for block in iter(lambda: handle.read(1 << 20), b""):
+            digest.update(block)
+    return digest.hexdigest()
+
+
 def render_bed(
     scenes: list[dict[str, Any]],
     *,
@@ -216,8 +235,8 @@ def render_bed(
         if clip["kind"] == "scene":
             scene = scenes[clip["scene"]]
             fingerprint = short_hash(
-                scene["image"], scene["motion"], clip["first_frame"], clip["frames"],
-                fps, size, zoom, codec, supersample,
+                scene["image"], _image_signature(scene["image"]), scene["motion"],
+                clip["first_frame"], clip["frames"], fps, size, zoom, codec, supersample,
             )
             path = directory / f"bed-{position:03d}-scene-{fingerprint}{suffix}"
             if force or not path.is_file():
@@ -229,7 +248,9 @@ def render_bed(
             outgoing = scenes[clip["from_scene"]]
             incoming = scenes[clip["to_scene"]]
             fingerprint = short_hash(
-                outgoing["image"], incoming["image"], outgoing["motion"], incoming["motion"],
+                outgoing["image"], _image_signature(outgoing["image"]),
+                incoming["image"], _image_signature(incoming["image"]),
+                outgoing["motion"], incoming["motion"],
                 clip["first_frame"], clip["frames"], fps, size, zoom, codec, supersample,
             )
             path = directory / f"bed-{position:03d}-xfade-{fingerprint}{suffix}"

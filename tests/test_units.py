@@ -1,4 +1,6 @@
 import json
+import os
+from pathlib import Path
 
 import pytest
 
@@ -243,6 +245,53 @@ def test_motion_spans_extend_through_the_dissolves():
     # scene 2's motion starts 15 frames early so it is already moving when it fades in
     assert scenes[1]["motion_first_frame"] == 285
     assert scenes[1]["motion_frames"] == 315
+
+
+def test_render_bed_rebakes_a_clip_whose_image_was_replaced_in_place(tmp_path, monkeypatch):
+    """`video-lyrics images --force` regenerates under the same filename - it's
+    hashed from the prompt, not the picture - so the fingerprint has to notice the
+    file itself changed, not just trust that an unchanged path means an unchanged
+    clip."""
+    calls = []
+    monkeypatch.setattr(motion, "which", lambda name: "ffmpeg")
+    monkeypatch.setattr(
+        motion, "run",
+        lambda cmd, **kwargs: (calls.append(cmd), Path(cmd[-1]).write_bytes(b"clip"))[0],
+    )
+
+    image = tmp_path / "scene.png"
+    image.write_bytes(b"version one")
+    scenes = [scene(1, 0.0, 5.0)]
+    scenes[0]["image"] = str(image)
+    directory = tmp_path / "clips"
+    kwargs = dict(
+        directory=directory, size=(640, 360), fps=30, duration=5.0,
+        transition=0.0, zoom=1.2,
+    )
+
+    first = motion.render_bed(scenes, **kwargs)
+    assert len(calls) == 1
+    first_path = Path(first[0]["path"])
+    assert first_path.is_file()
+
+    # Re-rendering with the image untouched must not re-invoke ffmpeg.
+    again = motion.render_bed(scenes, **kwargs)
+    assert len(calls) == 1
+    assert again[0]["path"] == first[0]["path"]
+
+    # Nor must a rewrite that leaves the bytes alone: the images stage re-saves
+    # every canonical PNG from its raw download on every run, so a fingerprint
+    # keyed on the timestamp would re-bake the whole bed each time it is re-run.
+    os.utime(image, (0, 0))
+    untouched = motion.render_bed(scenes, **kwargs)
+    assert len(calls) == 1
+    assert untouched[0]["path"] == first[0]["path"]
+
+    # Replacing the image in place - same filename, different bytes - must.
+    image.write_bytes(b"version two, quite different and longer")
+    second = motion.render_bed(scenes, **kwargs)
+    assert len(calls) == 2
+    assert second[0]["path"] != first[0]["path"]
 
 
 def test_zoompan_expressions_interpolate_across_the_scene():
