@@ -1,0 +1,1115 @@
+schema_version: 1
+title: His light casts out my fears
+author: José Troche
+audio: /Users/jatroche/Music/From beginning to end you are God/04 His light casts out my fears.wav
+lyrics_source: /Users/jatroche/Google Drive/Songs/From beginning to end you are God/His light casts out my fears - Psalm 27.gdoc
+visual_style: cinematic photographic realism
+context: ''
+work_dir: /Users/jatroche/code/video-lyrics-creator/work
+video:
+  width: 1920
+  height: 1080
+  fps: 30
+  transition: 0.75
+  title_duration: 12.0
+  title_fade: 0.75
+  font: Avenir Next Demi Bold
+  font_size: 58
+  margin_v: 72
+  zoom: 1.2
+  lyric_lead: 0.35
+  lyric_fade: 0.2
+  audio_fade: 1.0
+image_generation:
+  provider: chatgpt
+  lines_per_image: 1
+  source_dir: null
+  chatgpt_headless: false
+  chatgpt_profile_dir: null
+  chatgpt_min_delay: 1.0
+  chatgpt_max_delay: 4.0
+  chatgpt_composer_selector: null
+  chatgpt_image_selector: null
+  chatgpt_channel: chrome
+  meta_headless: false
+  meta_profile_dir: null
+  meta_min_delay: 1.0
+  meta_max_delay: 4.0
+  meta_composer_selector: null
+  meta_image_selector: null
+  meta_channel: null
+alignment:
+  model: medium.en
+  language: en
+  vad: false
+  prompt_hint: false
+  min_confidence: 0.5
+  min_matched_words: 2
+  min_duration: 1.0
+  max_gap_fill: 0.7
+  scene_gap: 2.5
+  min_scene_duration: 4.0
+  max_scene_duration: 15.0
+render:
+  engine: ffmpeg
+  output: /Users/jatroche/code/video-lyrics-creator/output/his-light-casts-out-my-fears.mp4
+  format: mp4
+  codec: H264
+  audio_codec: aac
+  replace_existing: true
+  motion_backend: prerender
+  lyrics_mode: overlay
+  intermediate: h264
+  last_output: /Users/jatroche/code/video-lyrics-creator/output/his-light-casts-out-my-fears.mp4
+lyric_lines:
+- His light casts out my fears
+- The Lord’s my light, his strength is near
+- Why should I tremble? Why should I fear?
+- When shadows fall and my hopes are gone
+- His love remains, God keeps me strong
+- Though walls may rise and doors seem closed
+- He hides me safe where no one knows
+- Under His shelter, I feel secure
+- His love protects me forever sure
+- Wait for the Lord, His peace will last
+- His steady hand will hold you fast
+- When hope feels lost and night is near
+- His shining light will calm your fear
+- Even in darkness, I will not hide
+- For He's my fortress, my steady guide
+- When all I trusted falls away
+- His faithful love will always stay
+- One thing I ask, to be in His house
+- To seek His face, to quiet my doubts
+- For in His courts, I’ll find my peace
+- His light and love will never cease
+- Wait for the Lord, His peace will last
+- His steady hand will hold you fast
+- When hope feels lost and night is near
+- His shining light will calm your fear
+- The Lord is my light, I will not fear
+- His love surrounds me, He’s always near
+lyric_section_starts:
+- 0
+- 1
+- 5
+- 9
+- 13
+- 17
+- 21
+- 25
+duration: 175.2
+transcript:
+  path: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/transcript.json
+  model: medium.en
+  words: 200
+lyrics:
+- start: 18.28
+  end: 23.76
+  text: The Lord’s my light, his strength is near
+  line_index: 1
+  alignment_confidence: 0.778
+- start: 23.76
+  end: 27.94
+  text: Why should I tremble? Why should I fear?
+  line_index: 2
+  alignment_confidence: 1.0
+- start: 29.18
+  end: 33.54
+  text: When shadows fall and my hopes are gone
+  line_index: 3
+  alignment_confidence: 1.0
+- start: 33.54
+  end: 38.686
+  text: His love remains, God keeps me strong
+  line_index: 4
+  alignment_confidence: 1.0
+- start: 38.686
+  end: 43.12
+  text: Though walls may rise and doors seem closed
+  line_index: 5
+  alignment_confidence: 0.875
+- start: 43.12
+  end: 48.26
+  text: He hides me safe where no one knows
+  line_index: 6
+  alignment_confidence: 1.0
+- start: 48.26
+  end: 52.48
+  text: Under His shelter, I feel secure
+  line_index: 7
+  alignment_confidence: 1.0
+- start: 53.54
+  end: 58.2
+  text: His love protects me forever sure
+  line_index: 8
+  alignment_confidence: 1.0
+- start: 58.2
+  end: 63.04
+  text: Wait for the Lord, His peace will last
+  line_index: 9
+  alignment_confidence: 1.0
+- start: 63.04
+  end: 67.7
+  text: His steady hand will hold you fast
+  line_index: 10
+  alignment_confidence: 1.0
+- start: 67.7
+  end: 72.88
+  text: When hope feels lost and night is near
+  line_index: 11
+  alignment_confidence: 0.875
+- start: 72.88
+  end: 77.453
+  text: His shining light will calm your fear
+  line_index: 12
+  alignment_confidence: 0.857
+- start: 82.4
+  end: 87.6
+  text: Even in darkness, I will not hide
+  line_index: 13
+  alignment_confidence: 1.0
+- start: 87.6
+  end: 92.5
+  text: For He's my fortress, my steady guide
+  line_index: 14
+  alignment_confidence: 1.0
+- start: 92.5
+  end: 97.18
+  text: When all I trusted falls away
+  line_index: 15
+  alignment_confidence: 0.833
+- start: 97.18
+  end: 102.38
+  text: His faithful love will always stay
+  line_index: 16
+  alignment_confidence: 1.0
+- start: 102.38
+  end: 107.36
+  text: One thing I ask, to be in His house
+  line_index: 17
+  alignment_confidence: 1.0
+- start: 107.36
+  end: 112.42
+  text: To seek His face, to quiet my doubts
+  line_index: 18
+  alignment_confidence: 1.0
+- start: 112.42
+  end: 117.42
+  text: For in His courts, I’ll find my peace
+  line_index: 19
+  alignment_confidence: 0.778
+- start: 117.42
+  end: 122.38
+  text: His light and love will never cease
+  line_index: 20
+  alignment_confidence: 1.0
+- start: 122.38
+  end: 127.4
+  text: Wait for the Lord, His peace will last
+  line_index: 21
+  alignment_confidence: 1.0
+- start: 127.4
+  end: 132.14
+  text: His steady hand will hold you fast
+  line_index: 22
+  alignment_confidence: 1.0
+- start: 132.14
+  end: 137.2
+  text: When hope feels lost and night is near
+  line_index: 23
+  alignment_confidence: 1.0
+- start: 137.2
+  end: 143.72
+  text: His shining light will calm your fear
+  line_index: 24
+  alignment_confidence: 1.0
+- start: 146.34
+  end: 151.6
+  text: The Lord is my light, I will not fear
+  line_index: 25
+  alignment_confidence: 1.0
+- start: 151.6
+  end: 159.424
+  text: His love surrounds me, He’s always near
+  line_index: 26
+  alignment_confidence: 0.625
+scenes:
+- start: 0.0
+  end: 9.14
+  lines: []
+  prompt: cinematic photographic realism. Create a cinematic lyric-video scene for an instrumental passage of the song "His light casts out my fears" — the opening, before the first line "The Lord’s my light, his strength is near" (part 1 of 2). Wide, atmospheric, no people speaking; intentional composition, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a wide establishing shot, distinctly different in vantage, subject and composition from the scenes either side of it.
+  index: 1
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/images/scene-001-8a93b55cddb28576.png
+  motion_first_frame: 0
+  motion_frames: 285
+- start: 9.14
+  end: 18.28
+  lines: []
+  prompt: cinematic photographic realism. Create a cinematic lyric-video scene for an instrumental passage of the song "His light casts out my fears" — the opening, before the first line "The Lord’s my light, his strength is near" (part 2 of 2). Wide, atmospheric, no people speaking; intentional composition, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a low angle close to the ground, looking up, distinctly different in vantage, subject and composition from the scenes either side of it.
+  index: 2
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/images/scene-002-5dfe662e5b1f842c.png
+  motion_first_frame: 263
+  motion_frames: 296
+- start: 18.28
+  end: 23.76
+  lines:
+  - The Lord’s my light, his strength is near
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''The Lord’s my light, his strength is near''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as an intimate mid-shot centred on a single subject, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 3
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/images/scene-003-37cbafa58b91f2b4.png
+  motion_first_frame: 537
+  motion_frames: 187
+- start: 23.76
+  end: 29.18
+  lines:
+  - Why should I tremble? Why should I fear?
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Why should I tremble? Why should I fear?''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a high, distant vantage looking down, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 4
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/images/scene-004-51e3893f18941bab.png
+  motion_first_frame: 702
+  motion_frames: 184
+- start: 29.18
+  end: 33.54
+  lines:
+  - When shadows fall and my hopes are gone
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''When shadows fall and my hopes are gone''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a tight foreground detail with the rest falling away soft, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 5
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/images/scene-005-862d2227a5b1bc5d.png
+  motion_first_frame: 864
+  motion_frames: 153
+- start: 33.54
+  end: 38.686
+  lines:
+  - His love remains, God keeps me strong
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''His love remains, God keeps me strong''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness. Frame this particular scene as a head-on symmetrical composition, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 6
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/images/scene-006-1ec41987a15b45ab.png
+  motion_first_frame: 995
+  motion_frames: 177
+- start: 38.686
+  end: 43.12
+  lines:
+  - Though walls may rise and doors seem closed
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Though walls may rise and doors seem closed''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a view through a natural frame - an arch, branches, a doorway, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 7
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/images/scene-007-8c4d4744ff512fc3.png
+  motion_first_frame: 1150
+  motion_frames: 155
+- start: 43.12
+  end: 48.26
+  lines:
+  - He hides me safe where no one knows
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''He hides me safe where no one knows''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a wide establishing shot, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 8
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/images/scene-008-f4aaa69d7b39bbc9.png
+  motion_first_frame: 1283
+  motion_frames: 176
+- start: 48.26
+  end: 53.54
+  lines:
+  - Under His shelter, I feel secure
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Under His shelter, I feel secure''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a low angle close to the ground, looking up, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 9
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/images/scene-009-1819dc8a2a3ee61d.png
+  motion_first_frame: 1437
+  motion_frames: 180
+- start: 53.54
+  end: 58.2
+  lines:
+  - His love protects me forever sure
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''His love protects me forever sure''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as an intimate mid-shot centred on a single subject, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 10
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/images/scene-010-a5490ff1a653e863.png
+  motion_first_frame: 1595
+  motion_frames: 162
+- start: 58.2
+  end: 63.04
+  lines:
+  - Wait for the Lord, His peace will last
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Wait for the Lord, His peace will last''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a high, distant vantage looking down, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 11
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/images/scene-011-20046d79cba212cf.png
+  motion_first_frame: 1735
+  motion_frames: 167
+- start: 63.04
+  end: 67.7
+  lines:
+  - His steady hand will hold you fast
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''His steady hand will hold you fast''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a tight foreground detail with the rest falling away soft, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 12
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/images/scene-012-f9043f1910be4fbf.png
+  motion_first_frame: 1880
+  motion_frames: 162
+- start: 67.7
+  end: 72.88
+  lines:
+  - When hope feels lost and night is near
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''When hope feels lost and night is near''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a head-on symmetrical composition, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 13
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/images/scene-013-b5ca492734c0369e.png
+  motion_first_frame: 2020
+  motion_frames: 177
+- start: 72.88
+  end: 82.4
+  lines:
+  - His shining light will calm your fear
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''His shining light will calm your fear''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a view through a natural frame - an arch, branches, a doorway, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 14
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/images/scene-014-8001124c55bb3997.png
+  motion_first_frame: 2175
+  motion_frames: 308
+- start: 82.4
+  end: 87.6
+  lines:
+  - Even in darkness, I will not hide
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Even in darkness, I will not hide''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a wide establishing shot, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 15
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/images/scene-015-49c5167962235b84.png
+  motion_first_frame: 2461
+  motion_frames: 178
+- start: 87.6
+  end: 92.5
+  lines:
+  - For He's my fortress, my steady guide
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''For He''s my fortress, my steady guide''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a low angle close to the ground, looking up, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 16
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/images/scene-016-32af6c1b50e34453.png
+  motion_first_frame: 2617
+  motion_frames: 169
+- start: 92.5
+  end: 97.18
+  lines:
+  - When all I trusted falls away
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''When all I trusted falls away''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as an intimate mid-shot centred on a single subject, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 17
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/images/scene-017-c4c895bb0d6781b9.png
+  motion_first_frame: 2764
+  motion_frames: 162
+- start: 97.18
+  end: 102.38
+  lines:
+  - His faithful love will always stay
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''His faithful love will always stay''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a high, distant vantage looking down, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 18
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/images/scene-018-58b64048c8b00253.png
+  motion_first_frame: 2904
+  motion_frames: 178
+- start: 102.38
+  end: 107.36
+  lines:
+  - One thing I ask, to be in His house
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''One thing I ask, to be in His house''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a tight foreground detail with the rest falling away soft, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 19
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/images/scene-019-4430e0d1c7a76411.png
+  motion_first_frame: 3060
+  motion_frames: 172
+- start: 107.36
+  end: 112.42
+  lines:
+  - To seek His face, to quiet my doubts
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''To seek His face, to quiet my doubts''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a head-on symmetrical composition, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 20
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/images/scene-020-72183e9699d298be.png
+  motion_first_frame: 3210
+  motion_frames: 174
+- start: 112.42
+  end: 117.42
+  lines:
+  - For in His courts, I’ll find my peace
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''For in His courts, I’ll find my peace''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a view through a natural frame - an arch, branches, a doorway, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 21
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/images/scene-021-143adf80aad75b1f.png
+  motion_first_frame: 3362
+  motion_frames: 172
+- start: 117.42
+  end: 122.38
+  lines:
+  - His light and love will never cease
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''His light and love will never cease''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a wide establishing shot, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 22
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/images/scene-022-215e6e0468eae9a3.png
+  motion_first_frame: 3512
+  motion_frames: 170
+- start: 122.38
+  end: 127.4
+  lines:
+  - Wait for the Lord, His peace will last
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Wait for the Lord, His peace will last''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a low angle close to the ground, looking up, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 23
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/images/scene-023-0af601295b9a312c.png
+  motion_first_frame: 3660
+  motion_frames: 173
+- start: 127.4
+  end: 132.14
+  lines:
+  - His steady hand will hold you fast
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''His steady hand will hold you fast''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as an intimate mid-shot centred on a single subject, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 24
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/images/scene-024-7362424397cb422e.png
+  motion_first_frame: 3811
+  motion_frames: 164
+- start: 132.14
+  end: 137.2
+  lines:
+  - When hope feels lost and night is near
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''When hope feels lost and night is near''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a high, distant vantage looking down, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 25
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/images/scene-025-b54fd4e12c33ddfd.png
+  motion_first_frame: 3953
+  motion_frames: 174
+- start: 137.2
+  end: 146.34
+  lines:
+  - His shining light will calm your fear
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''His shining light will calm your fear''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a tight foreground detail with the rest falling away soft, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 26
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/images/scene-026-0be2c7e5bb0a7fc7.png
+  motion_first_frame: 4105
+  motion_frames: 296
+- start: 146.34
+  end: 151.6
+  lines:
+  - The Lord is my light, I will not fear
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''The Lord is my light, I will not fear''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a head-on symmetrical composition, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 27
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/images/scene-027-ba4788d13f67aa8a.png
+  motion_first_frame: 4379
+  motion_frames: 180
+- start: 151.6
+  end: 159.424
+  lines:
+  - His love surrounds me, He’s always near
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''His love surrounds me, He’s always near''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a view through a natural frame - an arch, branches, a doorway, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 28
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/images/scene-028-6a8254b0944b809f.png
+  motion_first_frame: 4537
+  motion_frames: 257
+- start: 159.424
+  end: 167.312
+  lines: []
+  prompt: cinematic photographic realism. Create a cinematic lyric-video scene for an instrumental passage of the song "His light casts out my fears" — an instrumental break after "His love surrounds me, He’s always near" (part 1 of 2). Wide, atmospheric, no people speaking; intentional composition, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a wide establishing shot, distinctly different in vantage, subject and composition from the scenes either side of it.
+  index: 29
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/images/scene-029-fafc8ec259aee5e5.png
+  motion_first_frame: 4772
+  motion_frames: 258
+- start: 167.312
+  end: 175.2
+  lines: []
+  prompt: cinematic photographic realism. Create a cinematic lyric-video scene for an instrumental passage of the song "His light casts out my fears" — an instrumental break after "His love surrounds me, He’s always near" (part 2 of 2). Wide, atmospheric, no people speaking; intentional composition, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a low angle close to the ground, looking up, distinctly different in vantage, subject and composition from the scenes either side of it.
+  index: 30
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/images/scene-030-54bcd6a60edfaacc.png
+  motion_first_frame: 5008
+  motion_frames: 248
+overlays:
+  title:
+    image: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/overlays/title-b4e545b4317f1d46.png
+    start: 0.0
+    end: 12.0
+    fade: 0.75
+    clip: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/overlay-clips/title-b4e545b4317f1d46-819e4d65f5045246.mov
+  lyrics:
+  - start: 17.93
+    end: 23.76
+    text: The Lord’s my light, his strength is near
+    image: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/overlays/lyric-001-9c8d32a5dbd0c61f.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/overlay-clips/lyric-001-9c8d32a5dbd0c61f-fec4994e4700d228.mov
+  - start: 23.76
+    end: 27.94
+    text: Why should I tremble? Why should I fear?
+    image: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/overlays/lyric-002-b7c9a54874f74fa4.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/overlay-clips/lyric-002-b7c9a54874f74fa4-3fd29cfae9751b2e.mov
+  - start: 28.83
+    end: 33.54
+    text: When shadows fall and my hopes are gone
+    image: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/overlays/lyric-003-fff4830ce617e168.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/overlay-clips/lyric-003-fff4830ce617e168-c6bae7fa86e78147.mov
+  - start: 33.54
+    end: 38.686
+    text: His love remains, God keeps me strong
+    image: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/overlays/lyric-004-a2ed7b8ad8c35113.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/overlay-clips/lyric-004-a2ed7b8ad8c35113-d53ba6a8281c0245.mov
+  - start: 38.686
+    end: 43.12
+    text: Though walls may rise and doors seem closed
+    image: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/overlays/lyric-005-0d189510bb705b46.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/overlay-clips/lyric-005-0d189510bb705b46-6f6224c77187889c.mov
+  - start: 43.12
+    end: 48.26
+    text: He hides me safe where no one knows
+    image: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/overlays/lyric-006-319a7395374be8e4.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/overlay-clips/lyric-006-319a7395374be8e4-4a2bb10c5cd5d7d5.mov
+  - start: 48.26
+    end: 52.48
+    text: Under His shelter, I feel secure
+    image: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/overlays/lyric-007-e119f6f8015fd91a.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/overlay-clips/lyric-007-e119f6f8015fd91a-c29c98d597f86f4f.mov
+  - start: 53.19
+    end: 58.2
+    text: His love protects me forever sure
+    image: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/overlays/lyric-008-7dc21f2fbd600fbc.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/overlay-clips/lyric-008-7dc21f2fbd600fbc-42dad1f309e802d9.mov
+  - start: 58.2
+    end: 63.04
+    text: Wait for the Lord, His peace will last
+    image: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/overlays/lyric-009-6f3e02dbfe584f81.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/overlay-clips/lyric-009-6f3e02dbfe584f81-82ee3e4a3e8835cf.mov
+  - start: 63.04
+    end: 67.7
+    text: His steady hand will hold you fast
+    image: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/overlays/lyric-010-28ad4c46f29f40fd.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/overlay-clips/lyric-010-28ad4c46f29f40fd-8d6b5cd6c75b242a.mov
+  - start: 67.7
+    end: 72.88
+    text: When hope feels lost and night is near
+    image: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/overlays/lyric-011-6c366846cc32ee97.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/overlay-clips/lyric-011-6c366846cc32ee97-944acad3e074917d.mov
+  - start: 72.88
+    end: 77.453
+    text: His shining light will calm your fear
+    image: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/overlays/lyric-012-1ed0c97ba08f5d3f.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/overlay-clips/lyric-012-1ed0c97ba08f5d3f-56f46df05bc6c330.mov
+  - start: 82.05
+    end: 87.6
+    text: Even in darkness, I will not hide
+    image: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/overlays/lyric-013-0831b44c414bf4f5.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/overlay-clips/lyric-013-0831b44c414bf4f5-1e1cf9d523c7a9c6.mov
+  - start: 87.6
+    end: 92.5
+    text: For He's my fortress, my steady guide
+    image: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/overlays/lyric-014-4915060ac5ea5263.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/overlay-clips/lyric-014-4915060ac5ea5263-0b637f41c5061fa1.mov
+  - start: 92.5
+    end: 97.18
+    text: When all I trusted falls away
+    image: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/overlays/lyric-015-ac37bfd6be24aabf.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/overlay-clips/lyric-015-ac37bfd6be24aabf-6071a6524f7b1be8.mov
+  - start: 97.18
+    end: 102.38
+    text: His faithful love will always stay
+    image: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/overlays/lyric-016-1f93bafb62a7b23c.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/overlay-clips/lyric-016-1f93bafb62a7b23c-9577e227cb2ac754.mov
+  - start: 102.38
+    end: 107.36
+    text: One thing I ask, to be in His house
+    image: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/overlays/lyric-017-f59f01b71ed8428c.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/overlay-clips/lyric-017-f59f01b71ed8428c-d698c17069444c0c.mov
+  - start: 107.36
+    end: 112.42
+    text: To seek His face, to quiet my doubts
+    image: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/overlays/lyric-018-2cbfe4e5a192ccc5.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/overlay-clips/lyric-018-2cbfe4e5a192ccc5-3e82bbe8f982f6ed.mov
+  - start: 112.42
+    end: 117.42
+    text: For in His courts, I’ll find my peace
+    image: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/overlays/lyric-019-e57e7f174747a655.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/overlay-clips/lyric-019-e57e7f174747a655-6557c16dae96f13e.mov
+  - start: 117.42
+    end: 122.38
+    text: His light and love will never cease
+    image: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/overlays/lyric-020-8137173779c0196a.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/overlay-clips/lyric-020-8137173779c0196a-66842e31f34b3b78.mov
+  - start: 122.38
+    end: 127.4
+    text: Wait for the Lord, His peace will last
+    image: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/overlays/lyric-021-6f3e02dbfe584f81.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/overlay-clips/lyric-021-6f3e02dbfe584f81-3f96d5f3687e4708.mov
+  - start: 127.4
+    end: 132.14
+    text: His steady hand will hold you fast
+    image: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/overlays/lyric-022-28ad4c46f29f40fd.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/overlay-clips/lyric-022-28ad4c46f29f40fd-7f7096549c65e538.mov
+  - start: 132.14
+    end: 137.2
+    text: When hope feels lost and night is near
+    image: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/overlays/lyric-023-6c366846cc32ee97.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/overlay-clips/lyric-023-6c366846cc32ee97-3e82bbe8f982f6ed.mov
+  - start: 137.2
+    end: 143.72
+    text: His shining light will calm your fear
+    image: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/overlays/lyric-024-1ed0c97ba08f5d3f.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/overlay-clips/lyric-024-1ed0c97ba08f5d3f-a5f859d1dc8ff290.mov
+  - start: 145.99
+    end: 151.6
+    text: The Lord is my light, I will not fear
+    image: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/overlays/lyric-025-782ce0fee58193c9.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/overlay-clips/lyric-025-782ce0fee58193c9-e0c36dbaf46602c7.mov
+  - start: 151.6
+    end: 159.424
+    text: His love surrounds me, He’s always near
+    image: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/overlays/lyric-026-1f8be39be3f0ae22.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/overlay-clips/lyric-026-1f8be39be3f0ae22-743422c7ff120ecb.mov
+  srt: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/lyrics.srt
+bed:
+- kind: scene
+  first_frame: 0
+  frames: 263
+  scene: 0
+  path: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/clips/bed-001-scene-96ef42e92c2a7c44.mp4
+  start: 0.0
+  end: 8.7667
+- kind: transition
+  first_frame: 263
+  frames: 22
+  from_scene: 0
+  to_scene: 1
+  path: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/clips/bed-002-xfade-511e50391a4ade46.mp4
+  start: 8.7667
+  end: 9.5
+- kind: scene
+  first_frame: 285
+  frames: 252
+  scene: 1
+  path: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/clips/bed-003-scene-027aff2b68bd9596.mp4
+  start: 9.5
+  end: 17.9
+- kind: transition
+  first_frame: 537
+  frames: 22
+  from_scene: 1
+  to_scene: 2
+  path: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/clips/bed-004-xfade-7547df124390725c.mp4
+  start: 17.9
+  end: 18.6333
+- kind: scene
+  first_frame: 559
+  frames: 143
+  scene: 2
+  path: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/clips/bed-005-scene-5bfa67311fcfa7d0.mp4
+  start: 18.6333
+  end: 23.4
+- kind: transition
+  first_frame: 702
+  frames: 22
+  from_scene: 2
+  to_scene: 3
+  path: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/clips/bed-006-xfade-450a2a5272795bfa.mp4
+  start: 23.4
+  end: 24.1333
+- kind: scene
+  first_frame: 724
+  frames: 140
+  scene: 3
+  path: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/clips/bed-007-scene-35e5346aae0a5335.mp4
+  start: 24.1333
+  end: 28.8
+- kind: transition
+  first_frame: 864
+  frames: 22
+  from_scene: 3
+  to_scene: 4
+  path: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/clips/bed-008-xfade-aa6e3c63a789a59a.mp4
+  start: 28.8
+  end: 29.5333
+- kind: scene
+  first_frame: 886
+  frames: 109
+  scene: 4
+  path: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/clips/bed-009-scene-960ec2f6eec46bd7.mp4
+  start: 29.5333
+  end: 33.1667
+- kind: transition
+  first_frame: 995
+  frames: 22
+  from_scene: 4
+  to_scene: 5
+  path: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/clips/bed-010-xfade-399c0fc4c004807f.mp4
+  start: 33.1667
+  end: 33.9
+- kind: scene
+  first_frame: 1017
+  frames: 133
+  scene: 5
+  path: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/clips/bed-011-scene-a7588e575cdc1ea2.mp4
+  start: 33.9
+  end: 38.3333
+- kind: transition
+  first_frame: 1150
+  frames: 22
+  from_scene: 5
+  to_scene: 6
+  path: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/clips/bed-012-xfade-66eb7d754b477ef8.mp4
+  start: 38.3333
+  end: 39.0667
+- kind: scene
+  first_frame: 1172
+  frames: 111
+  scene: 6
+  path: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/clips/bed-013-scene-71dd45d4a43dda0f.mp4
+  start: 39.0667
+  end: 42.7667
+- kind: transition
+  first_frame: 1283
+  frames: 22
+  from_scene: 6
+  to_scene: 7
+  path: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/clips/bed-014-xfade-d2e288b14269b638.mp4
+  start: 42.7667
+  end: 43.5
+- kind: scene
+  first_frame: 1305
+  frames: 132
+  scene: 7
+  path: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/clips/bed-015-scene-9e74c7683ba82335.mp4
+  start: 43.5
+  end: 47.9
+- kind: transition
+  first_frame: 1437
+  frames: 22
+  from_scene: 7
+  to_scene: 8
+  path: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/clips/bed-016-xfade-3b7597b678c1d3e4.mp4
+  start: 47.9
+  end: 48.6333
+- kind: scene
+  first_frame: 1459
+  frames: 136
+  scene: 8
+  path: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/clips/bed-017-scene-e21373196768295b.mp4
+  start: 48.6333
+  end: 53.1667
+- kind: transition
+  first_frame: 1595
+  frames: 22
+  from_scene: 8
+  to_scene: 9
+  path: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/clips/bed-018-xfade-020ef8dbeb36fa39.mp4
+  start: 53.1667
+  end: 53.9
+- kind: scene
+  first_frame: 1617
+  frames: 118
+  scene: 9
+  path: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/clips/bed-019-scene-c3e0810005915a20.mp4
+  start: 53.9
+  end: 57.8333
+- kind: transition
+  first_frame: 1735
+  frames: 22
+  from_scene: 9
+  to_scene: 10
+  path: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/clips/bed-020-xfade-979e751ef18402cd.mp4
+  start: 57.8333
+  end: 58.5667
+- kind: scene
+  first_frame: 1757
+  frames: 123
+  scene: 10
+  path: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/clips/bed-021-scene-1d853c0d6e626ffb.mp4
+  start: 58.5667
+  end: 62.6667
+- kind: transition
+  first_frame: 1880
+  frames: 22
+  from_scene: 10
+  to_scene: 11
+  path: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/clips/bed-022-xfade-96afc8a3c7c1949d.mp4
+  start: 62.6667
+  end: 63.4
+- kind: scene
+  first_frame: 1902
+  frames: 118
+  scene: 11
+  path: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/clips/bed-023-scene-9723dddcf1697b61.mp4
+  start: 63.4
+  end: 67.3333
+- kind: transition
+  first_frame: 2020
+  frames: 22
+  from_scene: 11
+  to_scene: 12
+  path: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/clips/bed-024-xfade-75580d2018fbf9d6.mp4
+  start: 67.3333
+  end: 68.0667
+- kind: scene
+  first_frame: 2042
+  frames: 133
+  scene: 12
+  path: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/clips/bed-025-scene-c46f303dc88e5a0d.mp4
+  start: 68.0667
+  end: 72.5
+- kind: transition
+  first_frame: 2175
+  frames: 22
+  from_scene: 12
+  to_scene: 13
+  path: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/clips/bed-026-xfade-b2e24b42205467ac.mp4
+  start: 72.5
+  end: 73.2333
+- kind: scene
+  first_frame: 2197
+  frames: 264
+  scene: 13
+  path: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/clips/bed-027-scene-78e8d5fc87bb724b.mp4
+  start: 73.2333
+  end: 82.0333
+- kind: transition
+  first_frame: 2461
+  frames: 22
+  from_scene: 13
+  to_scene: 14
+  path: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/clips/bed-028-xfade-41a225ebc60b872b.mp4
+  start: 82.0333
+  end: 82.7667
+- kind: scene
+  first_frame: 2483
+  frames: 134
+  scene: 14
+  path: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/clips/bed-029-scene-496c6d24be80d490.mp4
+  start: 82.7667
+  end: 87.2333
+- kind: transition
+  first_frame: 2617
+  frames: 22
+  from_scene: 14
+  to_scene: 15
+  path: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/clips/bed-030-xfade-a9c38b74cb638f34.mp4
+  start: 87.2333
+  end: 87.9667
+- kind: scene
+  first_frame: 2639
+  frames: 125
+  scene: 15
+  path: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/clips/bed-031-scene-77856feb6d871356.mp4
+  start: 87.9667
+  end: 92.1333
+- kind: transition
+  first_frame: 2764
+  frames: 22
+  from_scene: 15
+  to_scene: 16
+  path: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/clips/bed-032-xfade-a68a9b609c9506ec.mp4
+  start: 92.1333
+  end: 92.8667
+- kind: scene
+  first_frame: 2786
+  frames: 118
+  scene: 16
+  path: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/clips/bed-033-scene-df0c9559efe09566.mp4
+  start: 92.8667
+  end: 96.8
+- kind: transition
+  first_frame: 2904
+  frames: 22
+  from_scene: 16
+  to_scene: 17
+  path: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/clips/bed-034-xfade-1589a41219bb8e14.mp4
+  start: 96.8
+  end: 97.5333
+- kind: scene
+  first_frame: 2926
+  frames: 134
+  scene: 17
+  path: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/clips/bed-035-scene-99bff0ac0a060199.mp4
+  start: 97.5333
+  end: 102.0
+- kind: transition
+  first_frame: 3060
+  frames: 22
+  from_scene: 17
+  to_scene: 18
+  path: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/clips/bed-036-xfade-e097118ba776ff00.mp4
+  start: 102.0
+  end: 102.7333
+- kind: scene
+  first_frame: 3082
+  frames: 128
+  scene: 18
+  path: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/clips/bed-037-scene-d32a916e20bf3e36.mp4
+  start: 102.7333
+  end: 107.0
+- kind: transition
+  first_frame: 3210
+  frames: 22
+  from_scene: 18
+  to_scene: 19
+  path: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/clips/bed-038-xfade-a1aaafd09a733326.mp4
+  start: 107.0
+  end: 107.7333
+- kind: scene
+  first_frame: 3232
+  frames: 130
+  scene: 19
+  path: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/clips/bed-039-scene-76d39abbe6067090.mp4
+  start: 107.7333
+  end: 112.0667
+- kind: transition
+  first_frame: 3362
+  frames: 22
+  from_scene: 19
+  to_scene: 20
+  path: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/clips/bed-040-xfade-36881fd311a9d42d.mp4
+  start: 112.0667
+  end: 112.8
+- kind: scene
+  first_frame: 3384
+  frames: 128
+  scene: 20
+  path: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/clips/bed-041-scene-1c18f7eec1febff7.mp4
+  start: 112.8
+  end: 117.0667
+- kind: transition
+  first_frame: 3512
+  frames: 22
+  from_scene: 20
+  to_scene: 21
+  path: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/clips/bed-042-xfade-665a1bc10cd989aa.mp4
+  start: 117.0667
+  end: 117.8
+- kind: scene
+  first_frame: 3534
+  frames: 126
+  scene: 21
+  path: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/clips/bed-043-scene-f9af4e0db94b630d.mp4
+  start: 117.8
+  end: 122.0
+- kind: transition
+  first_frame: 3660
+  frames: 22
+  from_scene: 21
+  to_scene: 22
+  path: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/clips/bed-044-xfade-a729f0b5bd400bbb.mp4
+  start: 122.0
+  end: 122.7333
+- kind: scene
+  first_frame: 3682
+  frames: 129
+  scene: 22
+  path: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/clips/bed-045-scene-983488f174f0d706.mp4
+  start: 122.7333
+  end: 127.0333
+- kind: transition
+  first_frame: 3811
+  frames: 22
+  from_scene: 22
+  to_scene: 23
+  path: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/clips/bed-046-xfade-1462022f3cf3c314.mp4
+  start: 127.0333
+  end: 127.7667
+- kind: scene
+  first_frame: 3833
+  frames: 120
+  scene: 23
+  path: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/clips/bed-047-scene-ebf36d930a5c767e.mp4
+  start: 127.7667
+  end: 131.7667
+- kind: transition
+  first_frame: 3953
+  frames: 22
+  from_scene: 23
+  to_scene: 24
+  path: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/clips/bed-048-xfade-93dd454776ff459e.mp4
+  start: 131.7667
+  end: 132.5
+- kind: scene
+  first_frame: 3975
+  frames: 130
+  scene: 24
+  path: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/clips/bed-049-scene-a09189467833d7f5.mp4
+  start: 132.5
+  end: 136.8333
+- kind: transition
+  first_frame: 4105
+  frames: 22
+  from_scene: 24
+  to_scene: 25
+  path: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/clips/bed-050-xfade-ef68ad55e18f5cad.mp4
+  start: 136.8333
+  end: 137.5667
+- kind: scene
+  first_frame: 4127
+  frames: 252
+  scene: 25
+  path: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/clips/bed-051-scene-7fe0fab9832760a8.mp4
+  start: 137.5667
+  end: 145.9667
+- kind: transition
+  first_frame: 4379
+  frames: 22
+  from_scene: 25
+  to_scene: 26
+  path: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/clips/bed-052-xfade-979b8962d1fa4d62.mp4
+  start: 145.9667
+  end: 146.7
+- kind: scene
+  first_frame: 4401
+  frames: 136
+  scene: 26
+  path: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/clips/bed-053-scene-304aaf4bc7461f0a.mp4
+  start: 146.7
+  end: 151.2333
+- kind: transition
+  first_frame: 4537
+  frames: 22
+  from_scene: 26
+  to_scene: 27
+  path: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/clips/bed-054-xfade-357595b88a34ad28.mp4
+  start: 151.2333
+  end: 151.9667
+- kind: scene
+  first_frame: 4559
+  frames: 213
+  scene: 27
+  path: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/clips/bed-055-scene-dd9d09fd18f8159a.mp4
+  start: 151.9667
+  end: 159.0667
+- kind: transition
+  first_frame: 4772
+  frames: 22
+  from_scene: 27
+  to_scene: 28
+  path: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/clips/bed-056-xfade-6af7422189971c6b.mp4
+  start: 159.0667
+  end: 159.8
+- kind: scene
+  first_frame: 4794
+  frames: 214
+  scene: 28
+  path: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/clips/bed-057-scene-64e00fc8d7edac94.mp4
+  start: 159.8
+  end: 166.9333
+- kind: transition
+  first_frame: 5008
+  frames: 22
+  from_scene: 28
+  to_scene: 29
+  path: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/clips/bed-058-xfade-7c2e4c9e1e6c57e9.mp4
+  start: 166.9333
+  end: 167.6667
+- kind: scene
+  first_frame: 5030
+  frames: 226
+  scene: 29
+  path: /Users/jatroche/code/video-lyrics-creator/work/his-light-casts-out-my-fears/clips/bed-059-scene-b5bf25802947d2a1.mp4
+  start: 167.6667
+  end: 175.2
