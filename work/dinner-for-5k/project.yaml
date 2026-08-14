@@ -1,0 +1,2108 @@
+schema_version: 1
+title: Dinner for 5k
+author: José Troche
+audio: /Users/jatroche/Music/From beginning to end you are God/06 Dinner for 5k.wav
+lyrics_source: /Users/jatroche/Google Drive/Songs/From beginning to end you are God/Dinner for 5k.gdoc
+visual_style: cinematic photographic realism
+work_dir: /Users/jatroche/code/video-lyrics-creator/work
+video:
+  width: 1920
+  height: 1080
+  fps: 30
+  transition: 0.75
+  title_duration: 12.0
+  title_fade: 0.75
+  font: Avenir Next Demi Bold
+  font_size: 58
+  margin_v: 72
+  zoom: 1.2
+  lyric_lead: 0.35
+  lyric_fade: 0.2
+  audio_fade: 1.0
+image_generation:
+  provider: chatgpt
+  lines_per_image: 1
+  source_dir: null
+  chatgpt_headless: false
+  chatgpt_profile_dir: null
+  chatgpt_min_delay: 1.0
+  chatgpt_max_delay: 4.0
+  chatgpt_composer_selector: null
+  chatgpt_image_selector: null
+  chatgpt_channel: chrome
+  meta_headless: false
+  meta_profile_dir: null
+  meta_min_delay: 1.0
+  meta_max_delay: 4.0
+  meta_composer_selector: null
+  meta_image_selector: null
+  meta_channel: null
+alignment:
+  model: medium.en
+  language: en
+  vad: false
+  prompt_hint: false
+  min_confidence: 0.5
+  min_matched_words: 2
+  min_duration: 1.0
+  max_gap_fill: 0.7
+  scene_gap: 2.5
+  min_scene_duration: 4.0
+  max_scene_duration: 15.0
+render:
+  engine: ffmpeg
+  output: /Users/jatroche/code/video-lyrics-creator/output/dinner-for-5k.mp4
+  format: mp4
+  codec: H264
+  audio_codec: aac
+  replace_existing: true
+  motion_backend: prerender
+  lyrics_mode: overlay
+  intermediate: h264
+  last_output: /Users/jatroche/code/video-lyrics-creator/output/dinner-for-5k.mp4
+lyric_lines:
+- Dinner for 5k
+- Out in the wilderness, middle of nowhere
+- No GPS signal, no food trucks to share
+- Jesus was teaching, the crowd kept growing
+- Families with children, the numbers were showing
+- Five thousand people, maybe even more
+- Kids getting cranky, parents getting sore
+- The sun's getting low and the hour is late
+- But where do you get food for this dinner date?
+- What you gonna do when you gotta feed a crowd?
+- And your pantry's empty, wallet's not too proud
+- No Walmart, no Costco, no Amazon Prime
+- Just empty stomachs and dinner time
+- What you gonna do?
+- When impossible seems to be staring at you!
+- Disciples are panicking, doing the math
+- '"Two hundred denarii won''t clear this path!"'
+- That's like a year's salary, maybe even more
+- To feed all these people by the lakeshore
+- They searched through the crowd with a desperate plea
+- '"Anyone got food? We''ll take what we see!"'
+- One little boy stepped up with a grin
+- '"I got five loaves and two fish - let''s begin!"'
+- What you gonna do when you gotta feed a crowd?
+- And your pantry's empty, wallet's not too proud
+- No Walmart, no Costco, no Amazon Prime
+- Just empty stomachs and dinner time
+- What you gonna do? What you gonna do?
+- When impossible seems to be staring at you!
+- Jesus took that lunch, just a humble man
+- But holding in His hands the Creator's plan
+- He spoke one word, the laws of nature bent
+- The God who made the stars, Jesus was there
+- Loaves multiplying by the power of His voice
+- The One who fills the universe made His choice
+- Baskets overflowing, creation obeyed
+- When the Word made flesh authority displayed!
+- Now when life gets crazy and bills pile high
+- When you lose your job and you wonder why
+- We fumble around with our little plans
+- But Jesus holds the universe in His hands
+- Human efforts fail, our strength runs dry
+- But the Lord of heaven hears every cry
+- When we're at our weakest, He shows His might
+- The omnipotent Savior makes everything right!
+- What you gonna do when you gotta feed a crowd?
+- When life gets heavy and troubles get loud
+- No human wisdom, no earthly plan
+- Just Jesus standing as the God-man
+- What you gonna do? What you gonna do?
+- The Creator of all things is here with you!
+- Five loaves, two fish, and the Word made flesh
+- The omnipotent God making all things fresh
+- Behind simple eyes burns the power of stars
+- The almighty Savior who heals all our scars!
+- What you gonna do?
+- Trust the God Jesus - infinite and true!
+lyric_section_starts:
+- 0
+- 1
+- 5
+- 9
+- 15
+- 19
+- 23
+- 29
+- 37
+- 41
+- 45
+- 51
+- 55
+duration: 196.96
+transcript:
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/transcript.json
+  model: medium.en
+  words: 421
+lyrics:
+- start: 9.24
+  end: 12.72
+  text: Out in the wilderness, middle of nowhere
+  line_index: 1
+  alignment_confidence: 1.0
+- start: 12.72
+  end: 15.68
+  text: No GPS signal, no food trucks to share
+  line_index: 2
+  alignment_confidence: 1.0
+- start: 15.68
+  end: 18.28
+  text: Jesus was teaching, the crowd kept growing
+  line_index: 3
+  alignment_confidence: 1.0
+- start: 18.28
+  end: 21.18
+  text: Families with children, the numbers were showing
+  line_index: 4
+  alignment_confidence: 1.0
+- start: 21.18
+  end: 24.0
+  text: Five thousand people, maybe even more
+  line_index: 5
+  alignment_confidence: 1.0
+- start: 24.0
+  end: 26.74
+  text: Kids getting cranky, parents getting sore
+  line_index: 6
+  alignment_confidence: 1.0
+- start: 26.74
+  end: 29.5
+  text: The sun's getting low and the hour is late
+  line_index: 7
+  alignment_confidence: 1.0
+- start: 29.5
+  end: 33.36
+  text: But where do you get food for this dinner date?
+  line_index: 8
+  alignment_confidence: 1.0
+- start: 33.36
+  end: 36.34
+  text: What you gonna do when you gotta feed a crowd?
+  line_index: 9
+  alignment_confidence: 1.0
+- start: 36.34
+  end: 39.1
+  text: And your pantry's empty, wallet's not too proud
+  line_index: 10
+  alignment_confidence: 0.875
+- start: 39.1
+  end: 41.9
+  text: No Walmart, no Costco, no Amazon Prime
+  line_index: 11
+  alignment_confidence: 1.0
+- start: 41.9
+  end: 44.74
+  text: Just empty stomachs and dinner time
+  line_index: 12
+  alignment_confidence: 1.0
+- start: 44.74
+  end: 46.48
+  text: What you gonna do?
+  line_index: 13
+  alignment_confidence: 0.5
+  tuned: true
+- start: 46.48
+  end: 50.3
+  text: When impossible seems to be staring at you!
+  line_index: 14
+  alignment_confidence: 1.0
+- start: 54.54
+  end: 56.96
+  text: Disciples are panicking, doing the math
+  line_index: 15
+  alignment_confidence: 1.0
+- start: 56.96
+  end: 59.7
+  text: '"Two hundred denarii won''t clear this path!"'
+  line_index: 16
+  alignment_confidence: 0.857
+- start: 59.7
+  end: 62.52
+  text: That's like a year's salary, maybe much more
+  line_index: 17
+  alignment_confidence: 0.875
+  tuned: true
+- start: 62.52
+  end: 65.42
+  text: To feed all these people by the lakeshore
+  line_index: 18
+  alignment_confidence: 1.0
+- start: 65.42
+  end: 67.86
+  text: They searched through the crowd with a desperate plea
+  line_index: 19
+  alignment_confidence: 0.889
+- start: 67.86
+  end: 70.66
+  text: '"Anyone got food? We''ll take what we see!"'
+  line_index: 20
+  alignment_confidence: 1.0
+- start: 70.66
+  end: 73.46
+  text: One little boy stepped up with a grin
+  line_index: 21
+  alignment_confidence: 1.0
+- start: 73.46
+  end: 76.72
+  text: '"I got five loaves and two fish - let''s begin!"'
+  line_index: 22
+  alignment_confidence: 0.889
+- start: 76.72
+  end: 80.28
+  text: What you gonna do when you gotta feed a crowd?
+  line_index: 23
+  alignment_confidence: 1.0
+- start: 80.28
+  end: 82.96
+  text: And your pantry's empty, wallet's not too proud
+  line_index: 24
+  alignment_confidence: 0.875
+- start: 82.96
+  end: 85.74
+  text: No Walmart, no Costco, no Amazon Prime
+  line_index: 25
+  alignment_confidence: 1.0
+- start: 85.74
+  end: 88.68
+  text: Just empty stomachs and dinner time
+  line_index: 26
+  alignment_confidence: 1.0
+- start: 88.98
+  end: 91.08
+  text: What you gonna do?
+  line_index: null
+  alignment_confidence: 0.0
+  tuned: true
+- start: 91.08
+  end: 94.04
+  text: When impossible seems to be staring at you!
+  line_index: 28
+  alignment_confidence: 1.0
+- start: 97.88
+  end: 100.96
+  text: Jesus took that lunch, just a humble man
+  line_index: 29
+  alignment_confidence: 1.0
+- start: 100.96
+  end: 103.56
+  text: But holding in His hands the Creator's plan
+  line_index: 30
+  alignment_confidence: 1.0
+- start: 103.56
+  end: 106.28
+  text: He spoke one word, the laws of nature bent
+  line_index: 31
+  alignment_confidence: 0.889
+- start: 106.28
+  end: 109.06
+  text: The God who made the stars, Jesus was there
+  line_index: 32
+  alignment_confidence: 1.0
+- start: 109.06
+  end: 111.86
+  text: Loaves multiplying by the power of His voice
+  line_index: 33
+  alignment_confidence: 1.0
+- start: 111.86
+  end: 114.72
+  text: The One who fills the universe made His choice
+  line_index: 34
+  alignment_confidence: 1.0
+- start: 114.72
+  end: 117.44
+  text: Baskets overflowing, creation obeyed
+  line_index: 35
+  alignment_confidence: 1.0
+- start: 117.44
+  end: 120.24
+  text: When the Word made flesh authority displayed!
+  line_index: 36
+  alignment_confidence: 1.0
+- start: 123.82
+  end: 126.94
+  text: Now when life gets crazy and bills pile high
+  line_index: 37
+  alignment_confidence: 1.0
+- start: 126.94
+  end: 129.76
+  text: When you lose your job and you wonder why
+  line_index: 38
+  alignment_confidence: 1.0
+- start: 129.76
+  end: 132.4
+  text: We fumble around with our little plans
+  line_index: 39
+  alignment_confidence: 1.0
+- start: 132.4
+  end: 135.26
+  text: But Jesus holds the universe in His hands
+  line_index: 40
+  alignment_confidence: 1.0
+- start: 135.26
+  end: 137.92
+  text: Human efforts fail, our strength runs dry
+  line_index: 41
+  alignment_confidence: 1.0
+- start: 137.92
+  end: 140.58
+  text: But the Lord of heaven hears every cry
+  line_index: 42
+  alignment_confidence: 1.0
+- start: 140.58
+  end: 143.22
+  text: When we're at our weakest, He shows His might
+  line_index: 43
+  alignment_confidence: 1.0
+- start: 143.22
+  end: 148.48
+  text: The omnipotent Savior makes everything right!
+  line_index: 44
+  alignment_confidence: 1.0
+- start: 149.42
+  end: 152.52
+  text: What you gonna do when you gotta feed a crowd?
+  line_index: 45
+  alignment_confidence: 1.0
+- start: 152.52
+  end: 155.04
+  text: When life gets heavy and troubles get loud
+  line_index: 46
+  alignment_confidence: 1.0
+- start: 155.04
+  end: 157.74
+  text: No human wisdom, no earthly plan
+  line_index: 47
+  alignment_confidence: 1.0
+- start: 157.74
+  end: 160.54
+  text: Just Jesus standing as the God-man
+  line_index: 48
+  alignment_confidence: 1.0
+- start: 160.54
+  end: 163.28
+  text: What you gonna do?
+  line_index: 49
+  alignment_confidence: 0.5
+  tuned: true
+- start: 163.28
+  end: 167.42
+  text: The Creator of all things is here with you!
+  line_index: 50
+  alignment_confidence: 1.0
+- start: 171.02
+  end: 173.54
+  text: Five loaves, two fish, and the Word made flesh
+  line_index: 51
+  alignment_confidence: 0.556
+- start: 173.54
+  end: 176.42
+  text: The omnipotent God making all things fresh
+  line_index: 52
+  alignment_confidence: 1.0
+- start: 176.42
+  end: 179.06
+  text: Behind simple eyes burns the power of stars
+  line_index: 53
+  alignment_confidence: 0.75
+- start: 179.06
+  end: 183.5
+  text: The almighty Savior who heals all our scars!
+  line_index: 54
+  alignment_confidence: 1.0
+- start: 184.26
+  end: 187.64
+  text: What you gonna do?
+  line_index: 55
+  alignment_confidence: 1.0
+  tuned: true
+- start: 187.88
+  end: 191.36
+  text: Trust the God Jesus - infinite and true!
+  line_index: 56
+  alignment_confidence: 1.0
+scenes:
+- start: 0.0
+  end: 12.72
+  lines:
+  - Out in the wilderness, middle of nowhere
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Out in the wilderness, middle of nowhere''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a wide establishing shot, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 1
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-001-ca568b39926a88b0.png
+  motion_first_frame: 0
+  motion_frames: 393
+- start: 12.72
+  end: 15.68
+  lines:
+  - No GPS signal, no food trucks to share
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''No GPS signal, no food trucks to share''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a low angle close to the ground, looking up, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 2
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-002-bb7754df83807168.png
+  motion_first_frame: 371
+  motion_frames: 110
+- start: 15.68
+  end: 18.28
+  lines:
+  - Jesus was teaching, the crowd kept growing
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Jesus was teaching, the crowd kept growing''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness. Frame this particular scene as an intimate mid-shot centred on a single subject, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 3
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-003-089c8e91659da746.png
+  motion_first_frame: 459
+  motion_frames: 100
+- start: 18.28
+  end: 21.18
+  lines:
+  - Families with children, the numbers were showing
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Families with children, the numbers were showing''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a high, distant vantage looking down, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 4
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-004-cfe47da5955a6b31.png
+  motion_first_frame: 537
+  motion_frames: 109
+- start: 21.18
+  end: 24.0
+  lines:
+  - Five thousand people, maybe even more
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Five thousand people, maybe even more''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a tight foreground detail with the rest falling away soft, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 5
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-005-35dbb5be8a0a784d.png
+  motion_first_frame: 624
+  motion_frames: 107
+- start: 24.0
+  end: 26.74
+  lines:
+  - Kids getting cranky, parents getting sore
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Kids getting cranky, parents getting sore''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a head-on symmetrical composition, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 6
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-006-7e3203104a953f94.png
+  motion_first_frame: 709
+  motion_frames: 104
+- start: 26.74
+  end: 29.5
+  lines:
+  - The sun's getting low and the hour is late
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''The sun''s getting low and the hour is late''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a view through a natural frame - an arch, branches, a doorway, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 7
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-007-3dd27326aa262a76.png
+  motion_first_frame: 791
+  motion_frames: 105
+- start: 29.5
+  end: 33.36
+  lines:
+  - But where do you get food for this dinner date?
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''But where do you get food for this dinner date?''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a wide establishing shot, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 8
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-008-87801eb45dd6c5cc.png
+  motion_first_frame: 874
+  motion_frames: 138
+- start: 33.36
+  end: 36.34
+  lines:
+  - What you gonna do when you gotta feed a crowd?
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''What you gonna do when you gotta feed a crowd?''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a low angle close to the ground, looking up, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 9
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-009-3846a6529a3facb6.png
+  motion_first_frame: 990
+  motion_frames: 111
+- start: 36.34
+  end: 39.1
+  lines:
+  - And your pantry's empty, wallet's not too proud
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''And your pantry''s empty, wallet''s not too proud''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as an intimate mid-shot centred on a single subject, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 10
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-010-49877935736fd061.png
+  motion_first_frame: 1079
+  motion_frames: 105
+- start: 39.1
+  end: 41.9
+  lines:
+  - No Walmart, no Costco, no Amazon Prime
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''No Walmart, no Costco, no Amazon Prime''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a high, distant vantage looking down, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 11
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-011-e3045a62ab0bbc2c.png
+  motion_first_frame: 1162
+  motion_frames: 106
+- start: 41.9
+  end: 44.74
+  lines:
+  - Just empty stomachs and dinner time
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Just empty stomachs and dinner time''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a tight foreground detail with the rest falling away soft, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 12
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-012-12dcf6d5add636e3.png
+  motion_first_frame: 1246
+  motion_frames: 107
+- start: 44.74
+  end: 46.48
+  lines:
+  - What you gonna do?
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''What you gonna do?''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a head-on symmetrical composition, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 13
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-013-f98cdac2ca7b0159.png
+  motion_first_frame: 1331
+  motion_frames: 74
+- start: 46.48
+  end: 54.54
+  lines:
+  - When impossible seems to be staring at you!
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''When impossible seems to be staring at you!''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a view through a natural frame - an arch, branches, a doorway, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 14
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-014-fbd94926e122cfc3.png
+  motion_first_frame: 1383
+  motion_frames: 264
+- start: 54.54
+  end: 56.96
+  lines:
+  - Disciples are panicking, doing the math
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Disciples are panicking, doing the math''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a wide establishing shot, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 15
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-015-5f8416fe700ebf60.png
+  motion_first_frame: 1625
+  motion_frames: 95
+- start: 56.96
+  end: 59.7
+  lines:
+  - '"Two hundred denarii won''t clear this path!"'
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''"Two hundred denarii won''t clear this path!"''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a low angle close to the ground, looking up, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 16
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-016-45454b9c344566f7.png
+  motion_first_frame: 1698
+  motion_frames: 104
+- start: 59.7
+  end: 62.52
+  lines:
+  - That's like a year's salary, maybe much more
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''That''s like a year''s salary, maybe much more''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as an intimate mid-shot centred on a single subject, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 17
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-017-eb485150a3dc31c2.png
+  motion_first_frame: 1780
+  motion_frames: 107
+- start: 62.52
+  end: 65.42
+  lines:
+  - To feed all these people by the lakeshore
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''To feed all these people by the lakeshore''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a high, distant vantage looking down, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 18
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-018-11ec6a4599768acb.png
+  motion_first_frame: 1865
+  motion_frames: 109
+- start: 65.42
+  end: 67.86
+  lines:
+  - They searched through the crowd with a desperate plea
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''They searched through the crowd with a desperate plea''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a tight foreground detail with the rest falling away soft, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 19
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-019-88fb997f88e9314d.png
+  motion_first_frame: 1952
+  motion_frames: 95
+- start: 67.86
+  end: 70.66
+  lines:
+  - '"Anyone got food? We''ll take what we see!"'
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''"Anyone got food? We''ll take what we see!"''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a head-on symmetrical composition, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 20
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-020-293b5a501125ecbb.png
+  motion_first_frame: 2025
+  motion_frames: 106
+- start: 70.66
+  end: 73.46
+  lines:
+  - One little boy stepped up with a grin
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''One little boy stepped up with a grin''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a view through a natural frame - an arch, branches, a doorway, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 21
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-021-6587d9f85969f5ba.png
+  motion_first_frame: 2109
+  motion_frames: 106
+- start: 73.46
+  end: 76.72
+  lines:
+  - '"I got five loaves and two fish - let''s begin!"'
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''"I got five loaves and two fish - let''s begin!"''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a wide establishing shot, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 22
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-022-3bdf4b9a676fba16.png
+  motion_first_frame: 2193
+  motion_frames: 120
+- start: 76.72
+  end: 80.28
+  lines:
+  - What you gonna do when you gotta feed a crowd?
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''What you gonna do when you gotta feed a crowd?''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a low angle close to the ground, looking up, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 23
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-023-3846a6529a3facb6.png
+  motion_first_frame: 2291
+  motion_frames: 128
+- start: 80.28
+  end: 82.96
+  lines:
+  - And your pantry's empty, wallet's not too proud
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''And your pantry''s empty, wallet''s not too proud''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as an intimate mid-shot centred on a single subject, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 24
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-024-49877935736fd061.png
+  motion_first_frame: 2397
+  motion_frames: 103
+- start: 82.96
+  end: 85.74
+  lines:
+  - No Walmart, no Costco, no Amazon Prime
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''No Walmart, no Costco, no Amazon Prime''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a high, distant vantage looking down, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 25
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-025-e3045a62ab0bbc2c.png
+  motion_first_frame: 2478
+  motion_frames: 105
+- start: 85.74
+  end: 88.98
+  lines:
+  - Just empty stomachs and dinner time
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Just empty stomachs and dinner time''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a tight foreground detail with the rest falling away soft, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 26
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-026-12dcf6d5add636e3.png
+  motion_first_frame: 2561
+  motion_frames: 119
+- start: 88.98
+  end: 91.08
+  lines:
+  - What you gonna do?
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''What you gonna do?''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a head-on symmetrical composition, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 27
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-027-f98cdac2ca7b0159.png
+  motion_first_frame: 2658
+  motion_frames: 85
+- start: 91.08
+  end: 97.88
+  lines:
+  - When impossible seems to be staring at you!
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''When impossible seems to be staring at you!''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a view through a natural frame - an arch, branches, a doorway, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 28
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-028-fbd94926e122cfc3.png
+  motion_first_frame: 2721
+  motion_frames: 226
+- start: 97.88
+  end: 100.96
+  lines:
+  - Jesus took that lunch, just a humble man
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Jesus took that lunch, just a humble man''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness. Frame this particular scene as a wide establishing shot, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 29
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-029-ab1aa022eb22ca24.png
+  motion_first_frame: 2925
+  motion_frames: 115
+- start: 100.96
+  end: 103.56
+  lines:
+  - But holding in His hands the Creator's plan
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''But holding in His hands the Creator''s plan''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a low angle close to the ground, looking up, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 30
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-030-0e6217c28ac7b239.png
+  motion_first_frame: 3018
+  motion_frames: 100
+- start: 103.56
+  end: 106.28
+  lines:
+  - He spoke one word, the laws of nature bent
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''He spoke one word, the laws of nature bent''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as an intimate mid-shot centred on a single subject, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 31
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-031-b779a4a46adfcc99.png
+  motion_first_frame: 3096
+  motion_frames: 103
+- start: 106.28
+  end: 109.06
+  lines:
+  - The God who made the stars, Jesus was there
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''The God who made the stars, Jesus was there''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness. Frame this particular scene as a high, distant vantage looking down, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 32
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-032-db3f8c04d4fff3a5.png
+  motion_first_frame: 3177
+  motion_frames: 106
+- start: 109.06
+  end: 111.86
+  lines:
+  - Loaves multiplying by the power of His voice
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Loaves multiplying by the power of His voice''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a tight foreground detail with the rest falling away soft, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 33
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-033-3e853846e1e12b68.png
+  motion_first_frame: 3261
+  motion_frames: 106
+- start: 111.86
+  end: 114.72
+  lines:
+  - The One who fills the universe made His choice
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''The One who fills the universe made His choice''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a head-on symmetrical composition, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 34
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-034-b81f8f10e9d6d6a9.png
+  motion_first_frame: 3345
+  motion_frames: 108
+- start: 114.72
+  end: 117.44
+  lines:
+  - Baskets overflowing, creation obeyed
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Baskets overflowing, creation obeyed''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a view through a natural frame - an arch, branches, a doorway, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 35
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-035-a2a1c6596f39c2de.png
+  motion_first_frame: 3431
+  motion_frames: 103
+- start: 117.44
+  end: 123.82
+  lines:
+  - When the Word made flesh authority displayed!
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''When the Word made flesh authority displayed!''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a wide establishing shot, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 36
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-036-be1feeffa56dffab.png
+  motion_first_frame: 3512
+  motion_frames: 214
+- start: 123.82
+  end: 126.94
+  lines:
+  - Now when life gets crazy and bills pile high
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Now when life gets crazy and bills pile high''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a low angle close to the ground, looking up, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 37
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-037-afc637ed70689380.png
+  motion_first_frame: 3704
+  motion_frames: 115
+- start: 126.94
+  end: 129.76
+  lines:
+  - When you lose your job and you wonder why
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''When you lose your job and you wonder why''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as an intimate mid-shot centred on a single subject, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 38
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-038-1595e04afc9ccd2b.png
+  motion_first_frame: 3797
+  motion_frames: 107
+- start: 129.76
+  end: 132.4
+  lines:
+  - We fumble around with our little plans
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''We fumble around with our little plans''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a high, distant vantage looking down, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 39
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-039-f0a5eb0ab082ad06.png
+  motion_first_frame: 3882
+  motion_frames: 101
+- start: 132.4
+  end: 135.26
+  lines:
+  - But Jesus holds the universe in His hands
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''But Jesus holds the universe in His hands''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness. Frame this particular scene as a tight foreground detail with the rest falling away soft, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 40
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-040-2f744524f80f541e.png
+  motion_first_frame: 3961
+  motion_frames: 108
+- start: 135.26
+  end: 137.92
+  lines:
+  - Human efforts fail, our strength runs dry
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Human efforts fail, our strength runs dry''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a head-on symmetrical composition, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 41
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-041-64b55546e1cafcc1.png
+  motion_first_frame: 4047
+  motion_frames: 102
+- start: 137.92
+  end: 140.58
+  lines:
+  - But the Lord of heaven hears every cry
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''But the Lord of heaven hears every cry''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a view through a natural frame - an arch, branches, a doorway, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 42
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-042-55f3b6dd4660e1d7.png
+  motion_first_frame: 4127
+  motion_frames: 101
+- start: 140.58
+  end: 143.22
+  lines:
+  - When we're at our weakest, He shows His might
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''When we''re at our weakest, He shows His might''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a wide establishing shot, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 43
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-043-827f3ec7932e0574.png
+  motion_first_frame: 4206
+  motion_frames: 102
+- start: 143.22
+  end: 149.42
+  lines:
+  - The omnipotent Savior makes everything right!
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''The omnipotent Savior makes everything right!''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a low angle close to the ground, looking up, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 44
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-044-b7becb6928d4f099.png
+  motion_first_frame: 4286
+  motion_frames: 208
+- start: 149.42
+  end: 152.52
+  lines:
+  - What you gonna do when you gotta feed a crowd?
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''What you gonna do when you gotta feed a crowd?''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as an intimate mid-shot centred on a single subject, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 45
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-045-cdc5af95fa130680.png
+  motion_first_frame: 4472
+  motion_frames: 115
+- start: 152.52
+  end: 155.04
+  lines:
+  - When life gets heavy and troubles get loud
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''When life gets heavy and troubles get loud''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a high, distant vantage looking down, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 46
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-046-4809720da686b0f8.png
+  motion_first_frame: 4565
+  motion_frames: 97
+- start: 155.04
+  end: 157.74
+  lines:
+  - No human wisdom, no earthly plan
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''No human wisdom, no earthly plan''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a tight foreground detail with the rest falling away soft, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 47
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-047-5acb82022acf4827.png
+  motion_first_frame: 4640
+  motion_frames: 103
+- start: 157.74
+  end: 160.54
+  lines:
+  - Just Jesus standing as the God-man
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Just Jesus standing as the God-man''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness. Frame this particular scene as a head-on symmetrical composition, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 48
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-048-7fc7f4ea61969822.png
+  motion_first_frame: 4721
+  motion_frames: 106
+- start: 160.54
+  end: 163.28
+  lines:
+  - What you gonna do?
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''What you gonna do?''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a view through a natural frame - an arch, branches, a doorway, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 49
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-049-47fee0fa0dad671c.png
+  motion_first_frame: 4805
+  motion_frames: 104
+- start: 163.28
+  end: 171.02
+  lines:
+  - The Creator of all things is here with you!
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''The Creator of all things is here with you!''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a wide establishing shot, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 50
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-050-4b289e0b466afed5.png
+  motion_first_frame: 4887
+  motion_frames: 255
+- start: 171.02
+  end: 173.54
+  lines:
+  - Five loaves, two fish, and the Word made flesh
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Five loaves, two fish, and the Word made flesh''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a low angle close to the ground, looking up, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 51
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-051-b868287a2c8040fc.png
+  motion_first_frame: 5120
+  motion_frames: 97
+- start: 173.54
+  end: 176.42
+  lines:
+  - The omnipotent God making all things fresh
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''The omnipotent God making all things fresh''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness. Frame this particular scene as an intimate mid-shot centred on a single subject, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 52
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-052-7124aace2960b92a.png
+  motion_first_frame: 5195
+  motion_frames: 109
+- start: 176.42
+  end: 179.06
+  lines:
+  - Behind simple eyes burns the power of stars
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Behind simple eyes burns the power of stars''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a high, distant vantage looking down, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 53
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-053-156fa7202f4b14c0.png
+  motion_first_frame: 5282
+  motion_frames: 101
+- start: 179.06
+  end: 184.26
+  lines:
+  - The almighty Savior who heals all our scars!
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''The almighty Savior who heals all our scars!''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a tight foreground detail with the rest falling away soft, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 54
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-054-eceb5e045cda65aa.png
+  motion_first_frame: 5361
+  motion_frames: 178
+- start: 184.26
+  end: 187.88
+  lines:
+  - What you gonna do?
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''What you gonna do?''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a head-on symmetrical composition, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 55
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-055-f98cdac2ca7b0159.png
+  motion_first_frame: 5517
+  motion_frames: 130
+- start: 187.88
+  end: 196.96
+  lines:
+  - Trust the God Jesus - infinite and true!
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Trust the God Jesus - infinite and true!''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness. Frame this particular scene as a view through a natural frame - an arch, branches, a doorway, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 56
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-056-7502de73552264ce.png
+  motion_first_frame: 5625
+  motion_frames: 284
+overlays:
+  title:
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlays/title-a2b2dfc377221b77.png
+    start: 0.0
+    end: 8.328
+    fade: 0.75
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlay-clips/title-a2b2dfc377221b77-501c2801ba9cdb72.mov
+  lyrics:
+  - start: 8.89
+    end: 12.72
+    text: Out in the wilderness, middle of nowhere
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlays/lyric-001-5742d6e9d59e8a19.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlay-clips/lyric-001-5742d6e9d59e8a19-b34ea47d4aa91e3c.mov
+  - start: 12.72
+    end: 15.68
+    text: No GPS signal, no food trucks to share
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlays/lyric-002-a5280c867ff84ba0.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlay-clips/lyric-002-a5280c867ff84ba0-68cad902032c770c.mov
+  - start: 15.68
+    end: 18.28
+    text: Jesus was teaching, the crowd kept growing
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlays/lyric-003-338ac0010e8da697.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlay-clips/lyric-003-338ac0010e8da697-53a0cfdbbbf9d0f3.mov
+  - start: 18.28
+    end: 21.18
+    text: Families with children, the numbers were showing
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlays/lyric-004-91d3d598f650785b.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlay-clips/lyric-004-91d3d598f650785b-f5c77e1fd380eff2.mov
+  - start: 21.18
+    end: 24.0
+    text: Five thousand people, maybe even more
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlays/lyric-005-5fe8ca069586f53f.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlay-clips/lyric-005-5fe8ca069586f53f-0bdb6ce76fe76870.mov
+  - start: 24.0
+    end: 26.74
+    text: Kids getting cranky, parents getting sore
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlays/lyric-006-9d04cf49811a5013.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlay-clips/lyric-006-9d04cf49811a5013-c096477169400ff5.mov
+  - start: 26.74
+    end: 29.5
+    text: The sun's getting low and the hour is late
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlays/lyric-007-b6f1695a4583cf20.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlay-clips/lyric-007-b6f1695a4583cf20-ef483149769a1754.mov
+  - start: 29.5
+    end: 33.36
+    text: But where do you get food for this dinner date?
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlays/lyric-008-9c4427d7cf17f040.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlay-clips/lyric-008-9c4427d7cf17f040-c742cd0b1a3bed82.mov
+  - start: 33.36
+    end: 36.34
+    text: What you gonna do when you gotta feed a crowd?
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlays/lyric-009-729949afccad70ba.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlay-clips/lyric-009-729949afccad70ba-f142635009a38de4.mov
+  - start: 36.34
+    end: 39.1
+    text: And your pantry's empty, wallet's not too proud
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlays/lyric-010-838f0bba649b8e57.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlay-clips/lyric-010-838f0bba649b8e57-ef483149769a1754.mov
+  - start: 39.1
+    end: 41.9
+    text: No Walmart, no Costco, no Amazon Prime
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlays/lyric-011-6d63115723201360.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlay-clips/lyric-011-6d63115723201360-f8f95772a72dc9fa.mov
+  - start: 41.9
+    end: 44.74
+    text: Just empty stomachs and dinner time
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlays/lyric-012-e6f97d3e5cf67aab.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlay-clips/lyric-012-e6f97d3e5cf67aab-df6df78dba0422f0.mov
+  - start: 44.74
+    end: 46.48
+    text: What you gonna do?
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlays/lyric-013-e21032e23c72e6b9.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlay-clips/lyric-013-e21032e23c72e6b9-706804e13b5442c0.mov
+  - start: 46.48
+    end: 50.3
+    text: When impossible seems to be staring at you!
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlays/lyric-014-2914fb552c3aed7a.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlay-clips/lyric-014-2914fb552c3aed7a-b1123c41b2e2b941.mov
+  - start: 54.19
+    end: 56.96
+    text: Disciples are panicking, doing the math
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlays/lyric-015-a344d8add857a327.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlay-clips/lyric-015-a344d8add857a327-5c5dd90cdca29161.mov
+  - start: 56.96
+    end: 59.7
+    text: '"Two hundred denarii won''t clear this path!"'
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlays/lyric-016-043faa6ea8323206.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlay-clips/lyric-016-043faa6ea8323206-c096477169400ff5.mov
+  - start: 59.7
+    end: 62.52
+    text: That's like a year's salary, maybe much more
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlays/lyric-017-8427aa25503d759b.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlay-clips/lyric-017-8427aa25503d759b-0bdb6ce76fe76870.mov
+  - start: 62.52
+    end: 65.42
+    text: To feed all these people by the lakeshore
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlays/lyric-018-16fb3a0fd8190bc9.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlay-clips/lyric-018-16fb3a0fd8190bc9-f5c77e1fd380eff2.mov
+  - start: 65.42
+    end: 67.86
+    text: They searched through the crowd with a desperate plea
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlays/lyric-019-65b658921e6e9b96.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlay-clips/lyric-019-65b658921e6e9b96-2e2e4edac9cc5e47.mov
+  - start: 67.86
+    end: 70.66
+    text: '"Anyone got food? We''ll take what we see!"'
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlays/lyric-020-7bdef810af487c55.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlay-clips/lyric-020-7bdef810af487c55-f8f95772a72dc9fa.mov
+  - start: 70.66
+    end: 73.46
+    text: One little boy stepped up with a grin
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlays/lyric-021-efa337e4f5b83d42.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlay-clips/lyric-021-efa337e4f5b83d42-f8f95772a72dc9fa.mov
+  - start: 73.46
+    end: 76.72
+    text: '"I got five loaves and two fish - let''s begin!"'
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlays/lyric-022-d35df053a9b3a5e8.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlay-clips/lyric-022-d35df053a9b3a5e8-f9a6e2da97831e70.mov
+  - start: 76.72
+    end: 80.28
+    text: What you gonna do when you gotta feed a crowd?
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlays/lyric-023-729949afccad70ba.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlay-clips/lyric-023-729949afccad70ba-e9ad5b03cf63ed16.mov
+  - start: 80.28
+    end: 82.96
+    text: And your pantry's empty, wallet's not too proud
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlays/lyric-024-838f0bba649b8e57.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlay-clips/lyric-024-838f0bba649b8e57-409bc8d030d0d79e.mov
+  - start: 82.96
+    end: 85.74
+    text: No Walmart, no Costco, no Amazon Prime
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlays/lyric-025-6d63115723201360.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlay-clips/lyric-025-6d63115723201360-671afdd7a934d9d5.mov
+  - start: 85.74
+    end: 88.68
+    text: Just empty stomachs and dinner time
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlays/lyric-026-e6f97d3e5cf67aab.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlay-clips/lyric-026-e6f97d3e5cf67aab-1941926861f7bfd6.mov
+  - start: 88.68
+    end: 91.08
+    text: What you gonna do?
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlays/lyric-027-e21032e23c72e6b9.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlay-clips/lyric-027-e21032e23c72e6b9-e74cfe1b92693073.mov
+  - start: 91.08
+    end: 94.04
+    text: When impossible seems to be staring at you!
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlays/lyric-028-2914fb552c3aed7a.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlay-clips/lyric-028-2914fb552c3aed7a-68cad902032c770c.mov
+  - start: 97.53
+    end: 100.96
+    text: Jesus took that lunch, just a humble man
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlays/lyric-029-db460675f10223ad.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlay-clips/lyric-029-db460675f10223ad-e05a046aa2f4ccf2.mov
+  - start: 100.96
+    end: 103.56
+    text: But holding in His hands the Creator's plan
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlays/lyric-030-991cfd85bfaaa30e.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlay-clips/lyric-030-991cfd85bfaaa30e-53a0cfdbbbf9d0f3.mov
+  - start: 103.56
+    end: 106.28
+    text: He spoke one word, the laws of nature bent
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlays/lyric-031-d11ed872bff76448.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlay-clips/lyric-031-d11ed872bff76448-1ce71201440d530b.mov
+  - start: 106.28
+    end: 109.06
+    text: The God who made the stars, Jesus was there
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlays/lyric-032-be942d16906def77.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlay-clips/lyric-032-be942d16906def77-671afdd7a934d9d5.mov
+  - start: 109.06
+    end: 111.86
+    text: Loaves multiplying by the power of His voice
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlays/lyric-033-ab78b83222ac070a.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlay-clips/lyric-033-ab78b83222ac070a-f8f95772a72dc9fa.mov
+  - start: 111.86
+    end: 114.72
+    text: The One who fills the universe made His choice
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlays/lyric-034-f6398a4f1062c07b.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlay-clips/lyric-034-f6398a4f1062c07b-a17165535598bfe2.mov
+  - start: 114.72
+    end: 117.44
+    text: Baskets overflowing, creation obeyed
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlays/lyric-035-2333d0eed4ad30a1.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlay-clips/lyric-035-2333d0eed4ad30a1-1ce71201440d530b.mov
+  - start: 117.44
+    end: 120.24
+    text: When the Word made flesh authority displayed!
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlays/lyric-036-1e2259a3caf04e53.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlay-clips/lyric-036-1e2259a3caf04e53-f8f95772a72dc9fa.mov
+  - start: 123.47
+    end: 126.94
+    text: Now when life gets crazy and bills pile high
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlays/lyric-037-22e2635b19de95a7.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlay-clips/lyric-037-22e2635b19de95a7-88b8c5f9a4d1b81e.mov
+  - start: 126.94
+    end: 129.76
+    text: When you lose your job and you wonder why
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlays/lyric-038-29e75ab3fda846de.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlay-clips/lyric-038-29e75ab3fda846de-0bdb6ce76fe76870.mov
+  - start: 129.76
+    end: 132.4
+    text: We fumble around with our little plans
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlays/lyric-039-2b74eb90140e513b.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlay-clips/lyric-039-2b74eb90140e513b-87a105047d83ec94.mov
+  - start: 132.4
+    end: 135.26
+    text: But Jesus holds the universe in His hands
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlays/lyric-040-801cc501d2e74892.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlay-clips/lyric-040-801cc501d2e74892-a17165535598bfe2.mov
+  - start: 135.26
+    end: 137.92
+    text: Human efforts fail, our strength runs dry
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlays/lyric-041-38dc7198b2c90d48.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlay-clips/lyric-041-38dc7198b2c90d48-2c17a5149374cc49.mov
+  - start: 137.92
+    end: 140.58
+    text: But the Lord of heaven hears every cry
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlays/lyric-042-a1c160b010be25fb.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlay-clips/lyric-042-a1c160b010be25fb-2c17a5149374cc49.mov
+  - start: 140.58
+    end: 143.22
+    text: When we're at our weakest, He shows His might
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlays/lyric-043-2aed5e4884cd0a63.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlay-clips/lyric-043-2aed5e4884cd0a63-87a105047d83ec94.mov
+  - start: 143.22
+    end: 148.48
+    text: The omnipotent Savior makes everything right!
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlays/lyric-044-f31d7a54fbca8a81.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlay-clips/lyric-044-f31d7a54fbca8a81-2095a2a2ecda49d1.mov
+  - start: 149.07
+    end: 152.52
+    text: What you gonna do when you gotta feed a crowd?
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlays/lyric-045-729949afccad70ba.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlay-clips/lyric-045-729949afccad70ba-22e7e43daac29cc7.mov
+  - start: 152.52
+    end: 155.04
+    text: When life gets heavy and troubles get loud
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlays/lyric-046-c158a61641849f07.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlay-clips/lyric-046-c158a61641849f07-a17db5f9105c0e26.mov
+  - start: 155.04
+    end: 157.74
+    text: No human wisdom, no earthly plan
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlays/lyric-047-ee6cc824345f7109.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlay-clips/lyric-047-ee6cc824345f7109-d3100483283d23b2.mov
+  - start: 157.74
+    end: 160.54
+    text: Just Jesus standing as the God-man
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlays/lyric-048-042cd9e446e9f4cb.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlay-clips/lyric-048-042cd9e446e9f4cb-f8f95772a72dc9fa.mov
+  - start: 160.54
+    end: 163.28
+    text: What you gonna do?
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlays/lyric-049-e21032e23c72e6b9.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlay-clips/lyric-049-e21032e23c72e6b9-c096477169400ff5.mov
+  - start: 163.28
+    end: 167.42
+    text: The Creator of all things is here with you!
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlays/lyric-050-3495053e004df7e9.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlay-clips/lyric-050-3495053e004df7e9-7428b7a078931aa8.mov
+  - start: 170.67
+    end: 173.54
+    text: Five loaves, two fish, and the Word made flesh
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlays/lyric-051-387732ebe31d1875.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlay-clips/lyric-051-387732ebe31d1875-0f0fd922794309c8.mov
+  - start: 173.54
+    end: 176.42
+    text: The omnipotent God making all things fresh
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlays/lyric-052-3c45fcdd6aa0c93c.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlay-clips/lyric-052-3c45fcdd6aa0c93c-cbc75dd919aa1754.mov
+  - start: 176.42
+    end: 179.06
+    text: Behind simple eyes burns the power of stars
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlays/lyric-053-56060f15e5d79035.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlay-clips/lyric-053-56060f15e5d79035-87a105047d83ec94.mov
+  - start: 179.06
+    end: 183.5
+    text: The almighty Savior who heals all our scars!
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlays/lyric-054-0913bc601f760137.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlay-clips/lyric-054-0913bc601f760137-fbeff55c8b311f5e.mov
+  - start: 183.91
+    end: 187.64
+    text: What you gonna do?
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlays/lyric-055-e21032e23c72e6b9.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlay-clips/lyric-055-e21032e23c72e6b9-4ad4688694403b2d.mov
+  - start: 187.64
+    end: 191.36
+    text: Trust the God Jesus - infinite and true!
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlays/lyric-056-7e4a2eeb506ef44b.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/overlay-clips/lyric-056-7e4a2eeb506ef44b-a8e01e5167e3f107.mov
+  srt: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/lyrics.srt
+bed:
+- kind: scene
+  first_frame: 0
+  frames: 371
+  scene: 0
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-001-scene-1cb5adedb9a28ad9.mp4
+  start: 0.0
+  end: 12.3667
+- kind: transition
+  first_frame: 371
+  frames: 22
+  from_scene: 0
+  to_scene: 1
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-002-xfade-f730df4c3148d297.mp4
+  start: 12.3667
+  end: 13.1
+- kind: scene
+  first_frame: 393
+  frames: 66
+  scene: 1
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-003-scene-1cf0bfcba5fd54bd.mp4
+  start: 13.1
+  end: 15.3
+- kind: transition
+  first_frame: 459
+  frames: 22
+  from_scene: 1
+  to_scene: 2
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-004-xfade-9413cbc083da5594.mp4
+  start: 15.3
+  end: 16.0333
+- kind: scene
+  first_frame: 481
+  frames: 56
+  scene: 2
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-005-scene-b7857f5019010cf0.mp4
+  start: 16.0333
+  end: 17.9
+- kind: transition
+  first_frame: 537
+  frames: 22
+  from_scene: 2
+  to_scene: 3
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-006-xfade-1d04b013eb776f39.mp4
+  start: 17.9
+  end: 18.6333
+- kind: scene
+  first_frame: 559
+  frames: 65
+  scene: 3
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-007-scene-6ce702443aafc1d7.mp4
+  start: 18.6333
+  end: 20.8
+- kind: transition
+  first_frame: 624
+  frames: 22
+  from_scene: 3
+  to_scene: 4
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-008-xfade-f329a074948ec999.mp4
+  start: 20.8
+  end: 21.5333
+- kind: scene
+  first_frame: 646
+  frames: 63
+  scene: 4
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-009-scene-70863269c144c755.mp4
+  start: 21.5333
+  end: 23.6333
+- kind: transition
+  first_frame: 709
+  frames: 22
+  from_scene: 4
+  to_scene: 5
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-010-xfade-2589b0b7cecb9b9e.mp4
+  start: 23.6333
+  end: 24.3667
+- kind: scene
+  first_frame: 731
+  frames: 60
+  scene: 5
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-011-scene-d077ab8832f1116a.mp4
+  start: 24.3667
+  end: 26.3667
+- kind: transition
+  first_frame: 791
+  frames: 22
+  from_scene: 5
+  to_scene: 6
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-012-xfade-1a6999e0d1585ce4.mp4
+  start: 26.3667
+  end: 27.1
+- kind: scene
+  first_frame: 813
+  frames: 61
+  scene: 6
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-013-scene-c9859997246b4904.mp4
+  start: 27.1
+  end: 29.1333
+- kind: transition
+  first_frame: 874
+  frames: 22
+  from_scene: 6
+  to_scene: 7
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-014-xfade-3f160533db1f4614.mp4
+  start: 29.1333
+  end: 29.8667
+- kind: scene
+  first_frame: 896
+  frames: 94
+  scene: 7
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-015-scene-9984a66b93637433.mp4
+  start: 29.8667
+  end: 33.0
+- kind: transition
+  first_frame: 990
+  frames: 22
+  from_scene: 7
+  to_scene: 8
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-016-xfade-cf1d9fe9a9a38b6b.mp4
+  start: 33.0
+  end: 33.7333
+- kind: scene
+  first_frame: 1012
+  frames: 67
+  scene: 8
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-017-scene-a77200e408de0fb0.mp4
+  start: 33.7333
+  end: 35.9667
+- kind: transition
+  first_frame: 1079
+  frames: 22
+  from_scene: 8
+  to_scene: 9
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-018-xfade-3cccfdf964bc0387.mp4
+  start: 35.9667
+  end: 36.7
+- kind: scene
+  first_frame: 1101
+  frames: 61
+  scene: 9
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-019-scene-3530f0ddda3c401e.mp4
+  start: 36.7
+  end: 38.7333
+- kind: transition
+  first_frame: 1162
+  frames: 22
+  from_scene: 9
+  to_scene: 10
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-020-xfade-3958d7d6dbe0c7db.mp4
+  start: 38.7333
+  end: 39.4667
+- kind: scene
+  first_frame: 1184
+  frames: 62
+  scene: 10
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-021-scene-60e87ee2a4163f41.mp4
+  start: 39.4667
+  end: 41.5333
+- kind: transition
+  first_frame: 1246
+  frames: 22
+  from_scene: 10
+  to_scene: 11
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-022-xfade-425816cbfcb6b66c.mp4
+  start: 41.5333
+  end: 42.2667
+- kind: scene
+  first_frame: 1268
+  frames: 63
+  scene: 11
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-023-scene-4863185823e6f65a.mp4
+  start: 42.2667
+  end: 44.3667
+- kind: transition
+  first_frame: 1331
+  frames: 22
+  from_scene: 11
+  to_scene: 12
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-024-xfade-2366bd8bb13a0df9.mp4
+  start: 44.3667
+  end: 45.1
+- kind: scene
+  first_frame: 1353
+  frames: 30
+  scene: 12
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-025-scene-f6168a6ff427983c.mp4
+  start: 45.1
+  end: 46.1
+- kind: transition
+  first_frame: 1383
+  frames: 22
+  from_scene: 12
+  to_scene: 13
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-026-xfade-b4a3c6165e292668.mp4
+  start: 46.1
+  end: 46.8333
+- kind: scene
+  first_frame: 1405
+  frames: 220
+  scene: 13
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-027-scene-de2eef18d997245b.mp4
+  start: 46.8333
+  end: 54.1667
+- kind: transition
+  first_frame: 1625
+  frames: 22
+  from_scene: 13
+  to_scene: 14
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-028-xfade-169778d758b2640e.mp4
+  start: 54.1667
+  end: 54.9
+- kind: scene
+  first_frame: 1647
+  frames: 51
+  scene: 14
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-029-scene-7bcc31507a5da282.mp4
+  start: 54.9
+  end: 56.6
+- kind: transition
+  first_frame: 1698
+  frames: 22
+  from_scene: 14
+  to_scene: 15
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-030-xfade-f9c770119f065e96.mp4
+  start: 56.6
+  end: 57.3333
+- kind: scene
+  first_frame: 1720
+  frames: 60
+  scene: 15
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-031-scene-2bb7adc9bf8fc305.mp4
+  start: 57.3333
+  end: 59.3333
+- kind: transition
+  first_frame: 1780
+  frames: 22
+  from_scene: 15
+  to_scene: 16
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-032-xfade-fdf0ce5405c6fc38.mp4
+  start: 59.3333
+  end: 60.0667
+- kind: scene
+  first_frame: 1802
+  frames: 63
+  scene: 16
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-033-scene-ba1d27234c75b021.mp4
+  start: 60.0667
+  end: 62.1667
+- kind: transition
+  first_frame: 1865
+  frames: 22
+  from_scene: 16
+  to_scene: 17
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-034-xfade-d6d5d80a45767b0c.mp4
+  start: 62.1667
+  end: 62.9
+- kind: scene
+  first_frame: 1887
+  frames: 65
+  scene: 17
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-035-scene-4a46ea3eda198993.mp4
+  start: 62.9
+  end: 65.0667
+- kind: transition
+  first_frame: 1952
+  frames: 22
+  from_scene: 17
+  to_scene: 18
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-036-xfade-c850d84ef55a8ba3.mp4
+  start: 65.0667
+  end: 65.8
+- kind: scene
+  first_frame: 1974
+  frames: 51
+  scene: 18
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-037-scene-a75b81653366f76a.mp4
+  start: 65.8
+  end: 67.5
+- kind: transition
+  first_frame: 2025
+  frames: 22
+  from_scene: 18
+  to_scene: 19
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-038-xfade-aeead7843deda7b0.mp4
+  start: 67.5
+  end: 68.2333
+- kind: scene
+  first_frame: 2047
+  frames: 62
+  scene: 19
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-039-scene-a3fbcf1f15beebd6.mp4
+  start: 68.2333
+  end: 70.3
+- kind: transition
+  first_frame: 2109
+  frames: 22
+  from_scene: 19
+  to_scene: 20
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-040-xfade-3abdb68411da9a3e.mp4
+  start: 70.3
+  end: 71.0333
+- kind: scene
+  first_frame: 2131
+  frames: 62
+  scene: 20
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-041-scene-8c3028421ab97c0d.mp4
+  start: 71.0333
+  end: 73.1
+- kind: transition
+  first_frame: 2193
+  frames: 22
+  from_scene: 20
+  to_scene: 21
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-042-xfade-74720956cc53eb6a.mp4
+  start: 73.1
+  end: 73.8333
+- kind: scene
+  first_frame: 2215
+  frames: 76
+  scene: 21
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-043-scene-97ceae4f67100b0e.mp4
+  start: 73.8333
+  end: 76.3667
+- kind: transition
+  first_frame: 2291
+  frames: 22
+  from_scene: 21
+  to_scene: 22
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-044-xfade-4898b11ae8d8aeae.mp4
+  start: 76.3667
+  end: 77.1
+- kind: scene
+  first_frame: 2313
+  frames: 84
+  scene: 22
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-045-scene-47b1c5f65799f2c7.mp4
+  start: 77.1
+  end: 79.9
+- kind: transition
+  first_frame: 2397
+  frames: 22
+  from_scene: 22
+  to_scene: 23
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-046-xfade-37edc7563bcc4737.mp4
+  start: 79.9
+  end: 80.6333
+- kind: scene
+  first_frame: 2419
+  frames: 59
+  scene: 23
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-047-scene-92df5b4cae611073.mp4
+  start: 80.6333
+  end: 82.6
+- kind: transition
+  first_frame: 2478
+  frames: 22
+  from_scene: 23
+  to_scene: 24
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-048-xfade-dd0127f4a26d66be.mp4
+  start: 82.6
+  end: 83.3333
+- kind: scene
+  first_frame: 2500
+  frames: 61
+  scene: 24
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-049-scene-75520ba9e72592be.mp4
+  start: 83.3333
+  end: 85.3667
+- kind: transition
+  first_frame: 2561
+  frames: 22
+  from_scene: 24
+  to_scene: 25
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-050-xfade-13838bd001b34b17.mp4
+  start: 85.3667
+  end: 86.1
+- kind: scene
+  first_frame: 2583
+  frames: 75
+  scene: 25
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-051-scene-381b82e5c65a93d4.mp4
+  start: 86.1
+  end: 88.6
+- kind: transition
+  first_frame: 2658
+  frames: 22
+  from_scene: 25
+  to_scene: 26
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-052-xfade-11f2bd995a4f97de.mp4
+  start: 88.6
+  end: 89.3333
+- kind: scene
+  first_frame: 2680
+  frames: 41
+  scene: 26
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-053-scene-c1a1a324a5f35cd9.mp4
+  start: 89.3333
+  end: 90.7
+- kind: transition
+  first_frame: 2721
+  frames: 22
+  from_scene: 26
+  to_scene: 27
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-054-xfade-146e9ec366d8875f.mp4
+  start: 90.7
+  end: 91.4333
+- kind: scene
+  first_frame: 2743
+  frames: 182
+  scene: 27
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-055-scene-e37ec9a4e143e901.mp4
+  start: 91.4333
+  end: 97.5
+- kind: transition
+  first_frame: 2925
+  frames: 22
+  from_scene: 27
+  to_scene: 28
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-056-xfade-2dcff05c6f7df8fb.mp4
+  start: 97.5
+  end: 98.2333
+- kind: scene
+  first_frame: 2947
+  frames: 71
+  scene: 28
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-057-scene-a18a79132818fc21.mp4
+  start: 98.2333
+  end: 100.6
+- kind: transition
+  first_frame: 3018
+  frames: 22
+  from_scene: 28
+  to_scene: 29
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-058-xfade-6019a74eea3381dc.mp4
+  start: 100.6
+  end: 101.3333
+- kind: scene
+  first_frame: 3040
+  frames: 56
+  scene: 29
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-059-scene-aef9f0f1e7eb04f1.mp4
+  start: 101.3333
+  end: 103.2
+- kind: transition
+  first_frame: 3096
+  frames: 22
+  from_scene: 29
+  to_scene: 30
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-060-xfade-a82fa84ebe318fe2.mp4
+  start: 103.2
+  end: 103.9333
+- kind: scene
+  first_frame: 3118
+  frames: 59
+  scene: 30
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-061-scene-bec0541d44836777.mp4
+  start: 103.9333
+  end: 105.9
+- kind: transition
+  first_frame: 3177
+  frames: 22
+  from_scene: 30
+  to_scene: 31
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-062-xfade-377ed7a1f717adba.mp4
+  start: 105.9
+  end: 106.6333
+- kind: scene
+  first_frame: 3199
+  frames: 62
+  scene: 31
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-063-scene-144f83a73d159d5f.mp4
+  start: 106.6333
+  end: 108.7
+- kind: transition
+  first_frame: 3261
+  frames: 22
+  from_scene: 31
+  to_scene: 32
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-064-xfade-7063c281de8f963b.mp4
+  start: 108.7
+  end: 109.4333
+- kind: scene
+  first_frame: 3283
+  frames: 62
+  scene: 32
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-065-scene-97ca7914e16dea07.mp4
+  start: 109.4333
+  end: 111.5
+- kind: transition
+  first_frame: 3345
+  frames: 22
+  from_scene: 32
+  to_scene: 33
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-066-xfade-574e1c3719ca9161.mp4
+  start: 111.5
+  end: 112.2333
+- kind: scene
+  first_frame: 3367
+  frames: 64
+  scene: 33
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-067-scene-1810bb930de895b3.mp4
+  start: 112.2333
+  end: 114.3667
+- kind: transition
+  first_frame: 3431
+  frames: 22
+  from_scene: 33
+  to_scene: 34
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-068-xfade-4dc5f5626f285ff3.mp4
+  start: 114.3667
+  end: 115.1
+- kind: scene
+  first_frame: 3453
+  frames: 59
+  scene: 34
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-069-scene-f09e7b8688bf32c5.mp4
+  start: 115.1
+  end: 117.0667
+- kind: transition
+  first_frame: 3512
+  frames: 22
+  from_scene: 34
+  to_scene: 35
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-070-xfade-c0cdeb67720d2984.mp4
+  start: 117.0667
+  end: 117.8
+- kind: scene
+  first_frame: 3534
+  frames: 170
+  scene: 35
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-071-scene-c2d0c1d1c1211c8e.mp4
+  start: 117.8
+  end: 123.4667
+- kind: transition
+  first_frame: 3704
+  frames: 22
+  from_scene: 35
+  to_scene: 36
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-072-xfade-3daac17b65fec7be.mp4
+  start: 123.4667
+  end: 124.2
+- kind: scene
+  first_frame: 3726
+  frames: 71
+  scene: 36
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-073-scene-ba5fb4b517a41f37.mp4
+  start: 124.2
+  end: 126.5667
+- kind: transition
+  first_frame: 3797
+  frames: 22
+  from_scene: 36
+  to_scene: 37
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-074-xfade-e31e37f76c7dd690.mp4
+  start: 126.5667
+  end: 127.3
+- kind: scene
+  first_frame: 3819
+  frames: 63
+  scene: 37
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-075-scene-8ad11eee7243e333.mp4
+  start: 127.3
+  end: 129.4
+- kind: transition
+  first_frame: 3882
+  frames: 22
+  from_scene: 37
+  to_scene: 38
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-076-xfade-2bce1eeb1456b8d1.mp4
+  start: 129.4
+  end: 130.1333
+- kind: scene
+  first_frame: 3904
+  frames: 57
+  scene: 38
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-077-scene-3d22d4a77d957269.mp4
+  start: 130.1333
+  end: 132.0333
+- kind: transition
+  first_frame: 3961
+  frames: 22
+  from_scene: 38
+  to_scene: 39
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-078-xfade-445c96507355a82c.mp4
+  start: 132.0333
+  end: 132.7667
+- kind: scene
+  first_frame: 3983
+  frames: 64
+  scene: 39
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-079-scene-59253f786811da67.mp4
+  start: 132.7667
+  end: 134.9
+- kind: transition
+  first_frame: 4047
+  frames: 22
+  from_scene: 39
+  to_scene: 40
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-080-xfade-c873cfbccdd677dd.mp4
+  start: 134.9
+  end: 135.6333
+- kind: scene
+  first_frame: 4069
+  frames: 58
+  scene: 40
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-081-scene-a7ef425d45482edf.mp4
+  start: 135.6333
+  end: 137.5667
+- kind: transition
+  first_frame: 4127
+  frames: 22
+  from_scene: 40
+  to_scene: 41
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-082-xfade-3cf156f13f113c11.mp4
+  start: 137.5667
+  end: 138.3
+- kind: scene
+  first_frame: 4149
+  frames: 57
+  scene: 41
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-083-scene-3339f9d624578216.mp4
+  start: 138.3
+  end: 140.2
+- kind: transition
+  first_frame: 4206
+  frames: 22
+  from_scene: 41
+  to_scene: 42
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-084-xfade-f762e806e6de164a.mp4
+  start: 140.2
+  end: 140.9333
+- kind: scene
+  first_frame: 4228
+  frames: 58
+  scene: 42
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-085-scene-a25683aa2d57715b.mp4
+  start: 140.9333
+  end: 142.8667
+- kind: transition
+  first_frame: 4286
+  frames: 22
+  from_scene: 42
+  to_scene: 43
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-086-xfade-59da0e6668e824eb.mp4
+  start: 142.8667
+  end: 143.6
+- kind: scene
+  first_frame: 4308
+  frames: 164
+  scene: 43
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-087-scene-a28d344bc94495ec.mp4
+  start: 143.6
+  end: 149.0667
+- kind: transition
+  first_frame: 4472
+  frames: 22
+  from_scene: 43
+  to_scene: 44
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-088-xfade-e3d6ff1e0f878fcd.mp4
+  start: 149.0667
+  end: 149.8
+- kind: scene
+  first_frame: 4494
+  frames: 71
+  scene: 44
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-089-scene-7c2cd8ed2d53cd70.mp4
+  start: 149.8
+  end: 152.1667
+- kind: transition
+  first_frame: 4565
+  frames: 22
+  from_scene: 44
+  to_scene: 45
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-090-xfade-146d8b6745a4e236.mp4
+  start: 152.1667
+  end: 152.9
+- kind: scene
+  first_frame: 4587
+  frames: 53
+  scene: 45
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-091-scene-b107d8e5b799f101.mp4
+  start: 152.9
+  end: 154.6667
+- kind: transition
+  first_frame: 4640
+  frames: 22
+  from_scene: 45
+  to_scene: 46
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-092-xfade-6276b3e823ef577c.mp4
+  start: 154.6667
+  end: 155.4
+- kind: scene
+  first_frame: 4662
+  frames: 59
+  scene: 46
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-093-scene-3401ca59561088d6.mp4
+  start: 155.4
+  end: 157.3667
+- kind: transition
+  first_frame: 4721
+  frames: 22
+  from_scene: 46
+  to_scene: 47
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-094-xfade-e35930b0a7f17693.mp4
+  start: 157.3667
+  end: 158.1
+- kind: scene
+  first_frame: 4743
+  frames: 62
+  scene: 47
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-095-scene-3d5745fac9690c80.mp4
+  start: 158.1
+  end: 160.1667
+- kind: transition
+  first_frame: 4805
+  frames: 22
+  from_scene: 47
+  to_scene: 48
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-096-xfade-74a53124ac7e9b69.mp4
+  start: 160.1667
+  end: 160.9
+- kind: scene
+  first_frame: 4827
+  frames: 60
+  scene: 48
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-097-scene-67b480a714cfa6b0.mp4
+  start: 160.9
+  end: 162.9
+- kind: transition
+  first_frame: 4887
+  frames: 22
+  from_scene: 48
+  to_scene: 49
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-098-xfade-572bf6ea3532a863.mp4
+  start: 162.9
+  end: 163.6333
+- kind: scene
+  first_frame: 4909
+  frames: 211
+  scene: 49
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-099-scene-abb74e26ebcd9290.mp4
+  start: 163.6333
+  end: 170.6667
+- kind: transition
+  first_frame: 5120
+  frames: 22
+  from_scene: 49
+  to_scene: 50
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-100-xfade-c2ce335220e6cee8.mp4
+  start: 170.6667
+  end: 171.4
+- kind: scene
+  first_frame: 5142
+  frames: 53
+  scene: 50
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-101-scene-8169597312353b53.mp4
+  start: 171.4
+  end: 173.1667
+- kind: transition
+  first_frame: 5195
+  frames: 22
+  from_scene: 50
+  to_scene: 51
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-102-xfade-595651a4d10b9135.mp4
+  start: 173.1667
+  end: 173.9
+- kind: scene
+  first_frame: 5217
+  frames: 65
+  scene: 51
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-103-scene-ef57e8e6e09dddf7.mp4
+  start: 173.9
+  end: 176.0667
+- kind: transition
+  first_frame: 5282
+  frames: 22
+  from_scene: 51
+  to_scene: 52
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-104-xfade-562ac906e6930ad7.mp4
+  start: 176.0667
+  end: 176.8
+- kind: scene
+  first_frame: 5304
+  frames: 57
+  scene: 52
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-105-scene-eec5d169e4c27314.mp4
+  start: 176.8
+  end: 178.7
+- kind: transition
+  first_frame: 5361
+  frames: 22
+  from_scene: 52
+  to_scene: 53
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-106-xfade-98d89a9867cb9af4.mp4
+  start: 178.7
+  end: 179.4333
+- kind: scene
+  first_frame: 5383
+  frames: 134
+  scene: 53
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-107-scene-2213383bfc56663f.mp4
+  start: 179.4333
+  end: 183.9
+- kind: transition
+  first_frame: 5517
+  frames: 22
+  from_scene: 53
+  to_scene: 54
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-108-xfade-6f042e1a952485d3.mp4
+  start: 183.9
+  end: 184.6333
+- kind: scene
+  first_frame: 5539
+  frames: 86
+  scene: 54
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-109-scene-5a8e879f043d1a49.mp4
+  start: 184.6333
+  end: 187.5
+- kind: transition
+  first_frame: 5625
+  frames: 22
+  from_scene: 54
+  to_scene: 55
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-110-xfade-39264a7051d4dd00.mp4
+  start: 187.5
+  end: 188.2333
+- kind: scene
+  first_frame: 5647
+  frames: 262
+  scene: 55
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/clips/bed-111-scene-47ecd9143799d1ae.mp4
+  start: 188.2333
+  end: 196.9667
