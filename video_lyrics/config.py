@@ -103,7 +103,6 @@ RENDER_DEFAULTS: dict[str, Any] = {
     "codec": "H264",
     "audio_codec": "aac",
     "replace_existing": True,
-    "motion_backend": "prerender",  # prerender | fusion
     "lyrics_mode": "overlay",       # overlay | subtitle
     "intermediate": "h264",         # h264 | prores
 }
