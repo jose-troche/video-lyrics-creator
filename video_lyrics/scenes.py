@@ -18,8 +18,8 @@ MAX_SCENE_DURATION = 15.0   # ... or for longer than this
 # "he carried it all" or "the King is coming" can put a divine figure on screen
 # without a single divine name in its two lines.
 REVERENCE_NOTE = (
-    " If God or Jesus is portrayed in the image, keep his face naturally blurred, "
-    "veiled, or turned away — never a sharp, detailed face."
+    " If God or Jesus is portrayed in the image, keep his face naturally concealed,"
+    " blurred, or turned away — never a sharp, detailed face."
 )
 
 MARGIN_NOTE = (

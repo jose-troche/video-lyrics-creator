@@ -340,8 +340,8 @@ reach the minimum on its own.
 
 Every prompt asks for generous margin around the main subject, since the zoom will
 crop in on it, and carries the same note of reverence: *if God or Jesus is
-portrayed in the image, keep his face naturally blurred, veiled, or turned away —
-never a sharp, detailed face*. It goes on every scene, not only the ones whose
+portrayed in the image, keep his face naturally concealed, blurred, or turned away
+— never a sharp, detailed face*. It goes on every scene, not only the ones whose
 lines name him, because two lines like "he carried it all" can send a picture
 toward a divine figure without naming one. Each scene is also given its own
 **framing** (wide establishing shot, low angle, head-on symmetry, ...) cycled by
