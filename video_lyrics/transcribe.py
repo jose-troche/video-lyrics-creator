@@ -13,6 +13,20 @@ from typing import Any
 from .util import VideoLyricsError, log
 
 
+def _load(model_class: Any, model: str, compute_type: str) -> Any:
+    """Load the weights from the local cache, reaching for the network only on a miss.
+
+    The weights are already cached under ~/.cache/huggingface, but a plain load still
+    calls Hugging Face on every run to compare revisions: a wait, a wall of progress
+    bars, and an outright failure offline, all for files that are sitting on disk.
+    """
+    try:
+        return model_class(model, device="auto", compute_type=compute_type, local_files_only=True)
+    except Exception:  # not in the cache yet - any other problem resurfaces below
+        log.info("Fetching the %s weights; this only happens once.", model)
+        return model_class(model, device="auto", compute_type=compute_type)
+
+
 def transcribe(
     audio: Path,
     *,
@@ -35,7 +49,7 @@ def transcribe(
         ) from exc
 
     log.info("Transcribing %s with faster-whisper %s ...", audio.name, model)
-    whisper = WhisperModel(model, device="auto", compute_type=compute_type)
+    whisper = _load(WhisperModel, model, compute_type)
     segments, info = whisper.transcribe(
         str(audio),
         language=language,
