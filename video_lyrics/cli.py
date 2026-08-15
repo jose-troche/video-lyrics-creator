@@ -28,6 +28,26 @@ def _lines_per_image(value: str) -> int:
     return number
 
 
+def _scene_indices(value: str) -> tuple[int, ...]:
+    """`--scene 19` or `--scene 19,23` - the numbers `video-lyrics cues` shows."""
+    numbers = []
+    for part in value.replace(" ", "").split(","):
+        if not part:
+            continue
+        try:
+            number = int(part)
+        except ValueError:
+            raise argparse.ArgumentTypeError(
+                f"{part!r} is not a scene number (try `--scene 19` or `--scene 19,23`)"
+            ) from None
+        if number < 1:
+            raise argparse.ArgumentTypeError("scene numbers start at 1")
+        numbers.append(number)
+    if not numbers:
+        raise argparse.ArgumentTypeError("name at least one scene")
+    return tuple(dict.fromkeys(numbers))
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         prog="video-lyrics",
@@ -92,6 +112,10 @@ def build_parser() -> argparse.ArgumentParser:
     images_cmd.add_argument(
         "--limit", type=int,
         help="only generate this many missing images, then stop (try a few first)",
+    )
+    images_cmd.add_argument(
+        "--scene", type=_scene_indices, metavar="N[,N...]",
+        help="redraw exactly these scenes, whatever is already on disk",
     )
 
     render = subparsers.add_parser("render", help="assemble and export the video")
@@ -251,6 +275,7 @@ def dispatch(args: argparse.Namespace, project_path: Path) -> int:
         "force": getattr(args, "force", False),
         "images_dir": getattr(args, "images_dir", None),
         "limit": getattr(args, "limit", None),
+        "scene": getattr(args, "scene", None),
         "engine": getattr(args, "engine", None),
         "lines_per_image": getattr(args, "lines_per_image", None),
         "launch": getattr(args, "launch", False),

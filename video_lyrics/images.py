@@ -17,7 +17,7 @@ from __future__ import annotations
 
 import shutil
 from pathlib import Path
-from typing import Any
+from typing import Any, Sequence
 
 from PIL import Image
 
@@ -53,24 +53,48 @@ def generate(
     size: tuple[int, int] = (1920, 1080),
     force: bool = False,
     limit: int | None = None,
+    redraw: Sequence[int] | None = None,
     browser: dict[str, Any] | None = None,
 ) -> list[dict[str, Any]]:
     """Attach an `image` path to every scene."""
     images_dir = ensure_dir(images_dir)
+    wanted = _only(scenes, redraw)
 
     if provider == "supplied" or source_dir:
         return _assign_supplied(scenes, source_dir, images_dir, size)
     if provider == "manual":
-        return _generate_manual(scenes, images_dir, size, force)
+        return _generate_manual(scenes, images_dir, size, force, wanted)
     if provider in BROWSER_PROVIDERS:
         return _generate_browser(
-            scenes, provider, images_dir, size, force, limit=limit,
+            scenes, provider, images_dir, size, force, limit=limit, wanted=wanted,
             options={key: value for key, value in (browser or {}).items()
                      if key in BROWSER_OPTIONS and value is not None},
         )
     raise VideoLyricsError(
         f"Unknown image provider {provider!r} (use {', '.join(PROVIDERS)})."
     )
+
+
+def _only(
+    scenes: list[dict[str, Any]], redraw: Sequence[int] | None
+) -> list[dict[str, Any]] | None:
+    """The scenes `--scene` named, or None when it was not given at all.
+
+    Naming a scene is the one thing that says "redraw this whatever is on disk",
+    and it has to be said out loud: a scene's prompt no longer matching the image
+    beside it is the normal state of a re-planned song (`plan` rewrites every
+    prompt, `scenes.merge_existing_images` carries the pictures across), so
+    nothing about the files themselves can tell a deliberate edit from that.
+    """
+    if not redraw:
+        return None
+    asked = set(redraw)
+    chosen = [scene for scene in scenes if int(scene["index"]) in asked]
+    log.info(
+        "Redrawing scene(s) %s, and leaving the other %d alone.",
+        ", ".join(str(scene["index"]) for scene in chosen), len(scenes) - len(chosen),
+    )
+    return chosen
 
 
 def _valid(path: Path) -> bool:
@@ -180,6 +204,7 @@ def _generate_manual(
     images_dir: Path,
     size: tuple[int, int],
     force: bool,
+    wanted: list[dict[str, Any]] | None = None,
 ) -> list[dict[str, Any]]:
     """Hand the prompts to the user instead of generating anything.
 
@@ -189,9 +214,11 @@ def _generate_manual(
     picks the files up from disk - nothing to type back in.
     """
     pending: list[tuple[dict[str, Any], str]] = []
-    for scene in scenes:
+    for scene in scenes if wanted is None else wanted:
         stem = _stem_for(scene, "manual")
-        if not force and _adopt_by_stem(scene, stem, images_dir=images_dir, size=size):
+        if not force and wanted is None and _adopt_by_stem(
+            scene, stem, images_dir=images_dir, size=size
+        ):
             continue
         pending.append((scene, stem))
 
@@ -229,6 +256,7 @@ def _generate_browser(
     force: bool,
     *,
     limit: int | None = None,
+    wanted: list[dict[str, Any]] | None = None,
     options: dict[str, Any],
 ) -> list[dict[str, Any]]:
     """Drive a chat site in a real browser to generate each outstanding scene's image.
@@ -236,17 +264,25 @@ def _generate_browser(
     Downloads land in `images_dir/<stem>.<ext>`, in whatever format the site served,
     and stay there. A run interrupted partway through only asks the browser for what
     is still missing - anything already downloaded is reused.
+
+    `wanted` is `--scene`: exactly those are drawn, cache or no cache, and nothing
+    else is - not even a scene that is missing an image. Naming one is a deliberate
+    "this picture, again", so second-guessing it either way would be wrong.
     """
     pending: list[tuple[dict[str, Any], str]] = []
-    for scene in scenes:
+    for scene in scenes if wanted is None else wanted:
         stem = _stem_for(scene, provider)
-        if not force and _adopt_by_stem(scene, stem, images_dir=images_dir, size=size):
+        redrawing = force or wanted is not None
+        if not redrawing and _adopt_by_stem(scene, stem, images_dir=images_dir, size=size):
             continue
         # Nothing downloaded under this provider's own stem, but the scene may
         # still have a perfectly good image from another one - a song generated
-        # with codex before this replaced it, or images adopted by hand. Asking a
-        # browser to redraw those would throw away work for no reason.
-        if not force and _keep_existing(scene):
+        # with codex before this replaced it, images adopted by hand, or (much the
+        # commonest) a re-planned song, where every prompt is rewritten and
+        # scenes.merge_existing_images carries the pictures over. Asking a browser
+        # to redraw those would throw away work for no reason, so an edited prompt
+        # is not enough on its own - say `--scene N` to mean it.
+        if not redrawing and _keep_existing(scene):
             continue
         pending.append((scene, stem))
 

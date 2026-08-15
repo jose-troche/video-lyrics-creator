@@ -275,6 +275,122 @@ def test_a_scene_about_to_be_redrawn_is_cleared_first(tmp_path, monkeypatch):
     assert list(images_dir.iterdir()) == []
 
 
+# ------------------------------------------------------- redrawing one scene
+
+def redraw_fixture(tmp_path, monkeypatch, provider="chatgpt"):
+    """Three scenes, all with an image already, and a record of what was asked for."""
+    asked: list[int] = []
+    monkeypatch.setattr(
+        site_module(provider), "generate",
+        lambda scenes, **kw: asked.extend(s["index"] for s in scenes),
+    )
+    scenes = [
+        {"index": i, "prompt": f"prompt {i}", "lines": [f"line {i}"]} for i in (1, 2, 3)
+    ]
+    images_dir = tmp_path / "images"
+    images_dir.mkdir()
+    for scene in scenes:
+        stem = images._stem_for(scene, provider)
+        Image.new("RGB", (1600, 900), (3, 3, 3)).save(images_dir / f"{stem}.png")
+        scene["image"] = str(images_dir / f"{stem}.png")
+    return scenes, images_dir, asked
+
+
+def test_naming_a_scene_redraws_it_even_though_its_image_is_there(tmp_path, monkeypatch):
+    scenes, images_dir, asked = redraw_fixture(tmp_path, monkeypatch)
+
+    images.generate(scenes, images_dir=images_dir, provider="chatgpt", redraw=(2,))
+
+    assert asked == [2]
+
+
+def test_naming_a_scene_draws_nothing_else(tmp_path, monkeypatch):
+    """Not even a scene with no image at all: `--scene` is a deliberate "this one",
+    and quietly backfilling the rest would be answering a different question."""
+    scenes, images_dir, asked = redraw_fixture(tmp_path, monkeypatch)
+    Path(scenes[2]["image"]).unlink()
+    scenes[2].pop("image")
+
+    images.generate(scenes, images_dir=images_dir, provider="chatgpt", redraw=(1,))
+
+    assert asked == [1]
+
+
+def test_a_prompt_edited_without_naming_the_scene_still_keeps_its_image(tmp_path, monkeypatch):
+    """The check this is guarding: `plan` rewrites every prompt in the song and
+    carries the pictures across, so a prompt that no longer matches its image is
+    the normal state of a re-planned song - not a signal to redraw."""
+    scenes, images_dir, asked = redraw_fixture(tmp_path, monkeypatch)
+    scenes[1]["prompt"] = "edited by hand, but nothing says to redraw it"
+
+    images.generate(scenes, images_dir=images_dir, provider="chatgpt")
+
+    assert asked == []
+
+
+def test_the_scene_being_redrawn_has_its_old_file_cleared_first(tmp_path, monkeypatch):
+    """Same prompt, so the same stem: the file has to go before the browser is
+    asked, or a download in another format would land beside it."""
+    scenes, images_dir, _ = redraw_fixture(tmp_path, monkeypatch)
+    doomed = Path(scenes[1]["image"])
+
+    images.generate(scenes, images_dir=images_dir, provider="chatgpt", redraw=(2,))
+
+    assert not doomed.exists()
+    assert all(Path(scenes[i]["image"]).is_file() for i in (0, 2))
+
+
+def test_naming_several_scenes_redraws_each_of_them(tmp_path, monkeypatch):
+    scenes, images_dir, asked = redraw_fixture(tmp_path, monkeypatch)
+
+    images.generate(scenes, images_dir=images_dir, provider="chatgpt", redraw=(3, 1))
+
+    assert sorted(asked) == [1, 3]
+
+
+def test_the_manual_provider_takes_a_named_scene_too(tmp_path):
+    scenes = make_scenes()
+    for scene in scenes:
+        stem = images._stem_for(scene, "manual")
+        Image.new("RGB", (1600, 900), (3, 3, 3)).save(tmp_path / f"{stem}.png")
+
+    images.generate(scenes, images_dir=tmp_path, provider="manual", redraw=(2,))
+
+    manifest = (tmp_path / "prompts.txt").read_text(encoding="utf-8")
+    assert "a city at night" in manifest        # scene 2, asked for again
+    assert "a quiet field at dawn" not in manifest
+
+
+def test_an_unknown_scene_number_is_rejected_rather_than_ignored(tmp_path, monkeypatch):
+    from video_lyrics.config import Project
+
+    audio, words = tmp_path / "song.wav", tmp_path / "song.txt"
+    audio.write_bytes(b"RIFF")
+    words.write_text("a line", encoding="utf-8")
+    project = Project.create(
+        tmp_path / "project.yaml", audio=str(audio), lyrics_source=str(words), title="Song"
+    )
+    project.data["scenes"] = make_scenes()          # scenes 1 and 2
+    monkeypatch.setattr(images, "generate", lambda scenes, **kw: scenes)
+
+    with pytest.raises(VideoLyricsError) as error:
+        pipeline.stage_images(project, scene=(2, 9))
+    assert "9" in str(error.value)
+
+
+def test_the_scene_flag_is_parsed_as_numbers():
+    from video_lyrics import cli
+
+    parse = lambda argv: cli.build_parser().parse_args(argv).scene
+    assert parse(["images", "--scene", "19"]) == (19,)
+    assert parse(["images", "--scene", "19,23"]) == (19, 23)
+    assert parse(["images", "--scene", "19, 23, 19"]) == (19, 23)   # spaces, duplicates
+    assert parse(["images"]) is None
+    for bad in ("nineteen", "0", "-2", ","):
+        with pytest.raises(SystemExit):
+            cli.build_parser().parse_args(["images", "--scene", bad])
+
+
 def test_browser_options_reach_the_site_driver(tmp_path, monkeypatch):
     """The prefix-stripped settings are passed straight through, and anything the
     driver does not take (a stray key in an old project file) is dropped."""

@@ -10,7 +10,7 @@ from __future__ import annotations
 
 import sys
 from pathlib import Path
-from typing import Any, Callable
+from typing import Any, Callable, Sequence
 
 from . import align as align_mod
 from . import audio as audio_mod
@@ -347,12 +347,20 @@ def _notice_old_raw_dir(work_dir: Path) -> None:
 
 def stage_images(
     project: Project, *, force: bool = False, images_dir: str | None = None,
-    limit: int | None = None, **_: Any
+    limit: int | None = None, scene: Sequence[int] | None = None, **_: Any
 ) -> None:
     """Generate (or adopt) one still per scene."""
     settings = project.image_generation
     source = images_dir or settings.get("source_dir")
     provider = "supplied" if source else _image_provider(settings)
+    if scene:
+        known = {int(item["index"]) for item in project.scenes}
+        unknown = sorted(set(scene) - known)
+        if unknown:
+            raise VideoLyricsError(
+                f"No scene {', '.join(str(index) for index in unknown)} in this song "
+                f"(it has {len(known)}). `video-lyrics cues` lists them."
+            )
     _notice_old_raw_dir(project.work_dir)
     images_mod.generate(
         project.scenes,
@@ -362,6 +370,7 @@ def stage_images(
         size=project.size,
         force=force,
         limit=limit,
+        redraw=scene,
         browser=_browser_options(settings, provider),
     )
     project.save()

@@ -92,6 +92,7 @@ video-lyrics render        # assemble and export
 | `--lines-per-image N` | (`init`, `plan`, `run`) 1 for an image per line (default), 2 to pair them up |
 | `--images-dir DIR` | use your own images instead of generating them |
 | `--limit N` | (`images`) generate only N of the missing images, then stop |
+| `--scene N` | (`images`) redraw exactly these scenes, cached or not: `--scene 19,23` |
 | `--engine resolve` | render through DaVinci Resolve instead of ffmpeg |
 | `--handoff` | (Resolve) prepare everything, finish from Resolve's Scripts menu |
 | `--launch` | (Resolve) start Resolve first and wait until it answers |
@@ -152,15 +153,31 @@ An interrupted run only asks for what is still missing, and a scene that already
 has a usable image is never redrawn without `--force`.
 
 **Regenerating one scene.** `--force` redoes every scene, so to redraw a single
-one delete its cached file and run `images` again:
+one, name it:
 
 ```bash
-rm work/<song>/images/scene-010-*
-video-lyrics images
+video-lyrics images --scene 19        # ... or several: --scene 19,23
 ```
 
-Editing that scene's `prompt:` in the project file works too and needs no delete:
-a changed prompt hashes to a new stem, so the old files are simply orphaned.
+Those scenes are drawn again whatever is already on disk, and no others are —
+not even one that is missing an image. Use it both to change a picture and to
+simply ask for another take of the same prompt. The numbers are the ones
+`video-lyrics cues` shows.
+
+**Editing a scene's prompt is not, on its own, enough to redraw it.** Change the
+`prompt:` in the project file and then say `--scene N`, or the old picture is
+kept. This looks like a missed cache, and is deliberate: `plan` rewrites every
+prompt in the song — the framing note is keyed to a scene's position, so
+inserting one lyric line changes them all — while the scene plan carries the
+pictures across by matching lyric lines. After any re-plan, most scenes hold a
+perfectly good image whose prompt no longer matches it, and treating that as a
+signal to redraw would throw away a whole song's work. Nothing on disk can tell
+a deliberate edit from that, so the deliberate edit says so out loud.
+
+When the prompt changed, the redrawn picture is written under a new stem and the
+old file is left beside it. That orphan is a free undo: put the old prompt back,
+run `images`, and it is adopted again untouched — no browser, no redraw. Delete
+it once you are sure, leaving the one that `image:` names in the project file.
 
 ### The browser providers, in more detail
 
