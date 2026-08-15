@@ -82,6 +82,18 @@ IMAGE_DEFAULTS: dict[str, Any] = {
                                      #     login has never needed anything else
 }
 
+# What a new song starts with.  Held apart from ALIGN_DEFAULTS, which is what a
+# project *without* these keys turns out to have meant: every song finished before
+# forced alignment existed was timed from a transcript of the whole mix, and reading
+# it back has to keep saying so.  Changing how new songs are timed must not re-time
+# the ones already made - their cues are grouped into scenes, and the scenes are
+# hashed into image prompts, so a shifted cue can ask twenty pictures to be redrawn.
+NEW_SONG_ALIGNMENT: dict[str, Any] = {
+    "engine": "forced",       # measured over seven songs: a line lands within 0.28s
+                              # of where it is sung, against 1.02s from the transcript
+    "vocals": True,           # ... which only holds on the isolated voice
+}
+
 ALIGN_DEFAULTS: dict[str, Any] = {
     "engine": "whisper",      # whisper: transcribe the song, then match the lyrics to it
                               # forced:  fit the lyrics we already have onto the audio
@@ -291,6 +303,7 @@ class Project:
             "visual_style": visual_style,
             "context": context,
             "work_dir": str(work_root),
+            "alignment": dict(NEW_SONG_ALIGNMENT),
         }
         project = cls(Path(path), data)
         # Beside the work directory, not beside the project file: a project opened

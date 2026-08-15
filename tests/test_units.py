@@ -4,7 +4,7 @@ from pathlib import Path
 
 import pytest
 
-from video_lyrics import google_drive, lyrics, motion, overlays, transcribe
+from video_lyrics import google_drive, lyrics, motion, overlays, pipeline, transcribe
 from video_lyrics.config import DEFAULT_AUTHOR, Project
 from video_lyrics.util import VideoLyricsError, format_timecode
 
@@ -206,6 +206,75 @@ def test_forced_alignment_forgets_its_transcript_when_the_lyrics_change(tmp_path
 def test_a_transcript_with_no_words_in_it_is_not_worth_reusing(tmp_path):
     transcribe.store(tmp_path / "transcript.json", {"engine": "whisper", "words": []})
     assert transcribe.load(tmp_path / "transcript.json", signature={"engine": "whisper"}) is None
+
+
+# ------------------------------------------------------------ engine choice
+
+
+def song(tmp_path, **alignment):
+    (tmp_path / "song.wav").write_bytes(b"RIFF")
+    (tmp_path / "song.txt").write_text("a line")
+    project = Project.create(
+        tmp_path / "project.json", audio=str(tmp_path / "song.wav"),
+        lyrics_source=str(tmp_path / "song.txt"), title="Song",
+    )
+    project.alignment.update(alignment)
+    return project
+
+
+def installed(monkeypatch, *, align=True, demucs=True):
+    # By dotted path, not by the module object this file imported: the editable install
+    # can hand out two distinct `video_lyrics.forced` objects, and patching the one we
+    # hold would leave the one `pipeline` reaches for untouched.
+    monkeypatch.setattr("video_lyrics.forced.available", lambda: align)
+    monkeypatch.setattr("video_lyrics.vocals.available", lambda: demucs)
+
+
+def test_a_new_song_is_timed_by_forced_alignment_on_the_isolated_voice(tmp_path):
+    assert song(tmp_path).alignment["engine"] == "forced"
+    assert song(tmp_path).alignment["vocals"] is True
+
+
+def test_a_song_from_before_forced_alignment_existed_still_reads_as_a_transcript(tmp_path):
+    # No engine and no vocals in the file: it was timed from a transcript of the whole
+    # mix, and re-timing it would regroup its scenes and ask for new images.
+    (tmp_path / "project.json").write_text(json.dumps({
+        "schema_version": 1, "title": "Old Song", "work_dir": str(tmp_path / "work"),
+        "audio": "a.wav", "lyrics_source": "a.txt", "alignment": {"model": "medium.en"},
+    }))
+    old = Project.load(tmp_path / "project.json")
+    assert old.alignment["engine"] == "whisper"
+    assert old.alignment["vocals"] is False
+
+
+def test_forced_alignment_is_used_when_both_extras_are_installed(tmp_path, monkeypatch):
+    installed(monkeypatch)
+    assert pipeline._engine(song(tmp_path)) == "forced"
+
+
+def test_it_falls_back_to_the_transcript_when_torch_is_missing(tmp_path, monkeypatch):
+    installed(monkeypatch, align=False)
+    assert pipeline._engine(song(tmp_path)) == "whisper"
+
+
+def test_it_falls_back_rather_than_read_a_full_mix_when_demucs_is_missing(tmp_path, monkeypatch):
+    # Forced alignment over a mix is worse than the transcript it would replace, so a
+    # missing demucs goes all the way back rather than settling for half the feature.
+    installed(monkeypatch, demucs=False)
+    assert pipeline._engine(song(tmp_path)) == "whisper"
+
+
+def test_a_stem_already_on_disk_is_enough_without_demucs(tmp_path, monkeypatch):
+    installed(monkeypatch, demucs=False)
+    project = song(tmp_path)
+    project.vocals_path.write_bytes(b"RIFF")
+    assert pipeline._engine(project) == "forced"
+
+
+def test_an_engine_nobody_has_heard_of_is_refused(tmp_path, monkeypatch):
+    installed(monkeypatch)
+    with pytest.raises(VideoLyricsError, match="alignment.engine"):
+        pipeline._engine(song(tmp_path, engine="telepathy"))
 
 
 # ----------------------------------------------------------------- overlays

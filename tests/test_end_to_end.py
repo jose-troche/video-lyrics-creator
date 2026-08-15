@@ -103,7 +103,11 @@ def test_full_pipeline_renders_a_video_the_length_of_the_song(tmp_path):
         {"width": SIZE[0], "height": SIZE[1], "fps": FPS, "font_size": 28,
          "margin_v": 30, "transition": 0.5, "title_duration": 1.5}
     )
-    project.alignment.update({"model": "stub"})
+    # The transcript below is a stub of Whisper's own output, so the song is pinned to
+    # that engine: a new project asks for forced alignment, which on a machine with the
+    # extras installed would separate a vocal and run a neural network over this
+    # 18 second test tone.
+    project.alignment.update({"model": "stub", "engine": "whisper", "vocals": False})
     project.image_generation.update({"provider": "supplied", "source_dir": str(stills)})
     project.render_settings.update({"engine": "ffmpeg", "intermediate": "h264"})
     project.save()

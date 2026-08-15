@@ -18,17 +18,20 @@ own and the ones after it pick up the change.
 
 ```bash
 python3 -m venv .venv
-.venv/bin/pip install -e ".[dev,browser]"
+.venv/bin/pip install -e ".[dev,browser,align,vocals]"
 .venv/bin/playwright install chromium
 source .venv/bin/activate          # puts `video-lyrics` on PATH, once per shell
 ```
 
 Also needs **ffmpeg** (and its `ffplay`, for the tuning editor) on the PATH. The
 `browser` extra is only needed for the `chatgpt` / `meta` image providers, and
-**DaVinci Resolve 18+** only if you choose `--engine resolve`. Two more extras are
-worth having for the timing — `align` for [forced
-alignment](#forced-alignment-optional) and `vocals` to isolate the singer first —
-but both pull in torch, so they are opt-in.
+**DaVinci Resolve 18+** only if you choose `--engine resolve`.
+
+`align` and `vocals` are what a new song is timed with — [forced
+alignment](#forced-alignment-the-default-for-a-new-song) on the isolated voice,
+which lands a lyric about three times closer than the alternative. They pull in
+torch and are the heaviest thing here by far, so they are still extras: leave them
+out and every song falls back to a transcript, with a line in the log saying so.
 
 Lyrics in a Google Doc need a one-time login: copy `.env.example` to `.env`, paste
 a Google Cloud **Desktop app** OAuth client id and secret, then run
@@ -232,14 +235,28 @@ site-specific is in those two files, and the driver they share is
 
 ## How the timing works
 
-There are two ways to work out when a word is sung, and the project can use either.
-The default **transcribes** the song and matches your lines to what it heard. The
-alternative is **forced alignment**, which skips the guessing: it already has the
-words, and only has to find them. See [Forced alignment](#forced-alignment-optional)
-below — measured against the same song, it is roughly three times closer on where a
-line begins.
+There are two ways to work out when a word is sung, and every song records which one
+it used. **Forced alignment** skips the guessing — it already has the words and only
+has to find them — and is what a new song starts with; it needs the two optional
+extras, and falls back on its own if they are not there. **Transcribing** the song
+and matching your lines to what it heard is that fallback, and is what every song
+made before forced alignment existed still uses.
 
-### Transcribing (`alignment.engine = whisper`, the default)
+A song is only ever timed the way its own project file says, so adding forced
+alignment does not re-time anything already finished. To move an old song over:
+
+```bash
+video-lyrics set alignment.engine forced
+video-lyrics set alignment.vocals true
+video-lyrics transcribe --force && video-lyrics align --force
+```
+
+Be deliberate about that on a song you have already rendered: better timings are
+still *different* timings, so the cues shift, `plan` may regroup them into different
+scenes, and a regrouped scene is a new prompt and therefore a new image. On a song
+whose pictures you are happy with, `tune` is the cheaper fix.
+
+### Transcribing (`alignment.engine = whisper`)
 
 The rule is that **the audio decides and the lyrics file spells**:
 
@@ -280,7 +297,7 @@ against the line itself. It reads the isolated vocal when there is one — over 
 full mix the band keeps the level up on its own, and most lines simply run to the
 cap.
 
-### Forced alignment (optional)
+### Forced alignment (the default for a new song)
 
 Transcription asks the recording what was sung and then has to be argued with. But
 the words were never in doubt — they are sitting in the lyrics file. Forced
@@ -289,37 +306,49 @@ was sung, when was each word? A CTC acoustic model scores every 20ms frame again
 every letter, and a Viterbi pass walks the lyrics through those scores along the one
 best path that spells them in order.
 
-```bash
-pip install -e ".[align,vocals]"
-video-lyrics set alignment.engine forced
-video-lyrics set alignment.vocals true      # strongly recommended - see below
-video-lyrics transcribe --force && video-lyrics align --force
-```
+Median error in where a line starts, over seven songs, scored against where the
+vocal actually begins after each silence:
 
-On one 4:45 song, scored against where the vocal actually starts after each silence:
-
-| | lines placed | median error | starts |
+| song | transcript, full mix | transcript, vocal | forced, vocal |
 | --- | --- | --- | --- |
-| transcript (whisper) | 33 of 34 | 1.02s | ~1.0s early |
-| forced, over the mix | half unusable | — | one line landed in the wrong verse |
-| forced, over the vocal | 33 of 34 | **0.28s** | 0.27s late |
+| victorious | 1.52s | 1.15s | **0.05s** |
+| christ-is-supreme | 1.18s | 1.33s | **0.27s** |
+| now-my-eyes-have-seen-the-lord | 1.02s | — | **0.28s** |
+| his-light-casts-out-my-fears | 0.89s | 0.46s | **0.02s** |
+| by-grace-alone | 0.84s | — | **0.38s** |
+| immeasurable-grace | 0.73s | — | **0.17s** |
+| dinner-for-5k | 0.36s | — | **0.07s** |
 
-That last row is the point, and so is the middle one: **isolate the vocal.** The
-acoustic model is listening for consonants and a band plays straight over them.
-`alignment.vocals true` runs [demucs](https://github.com/adefossez/demucs) once (a
-minute or so) and caches the stem in the work directory; everything that *listens* —
-both engines, and the held-note pass — then uses the singer alone. The render never
-does: the video always carries the real mix.
+The middle column is why both settings move together. Isolating the voice barely
+helps a transcript — the two engines are not close, and the stem is not what
+separates them — but forced alignment *without* it is worse than the transcript it
+would be replacing: over a full mix half the lines came back unusable and one landed
+in the wrong verse. The acoustic model is listening for consonants and a band plays
+straight over them. So `alignment.vocals` runs
+[demucs](https://github.com/adefossez/demucs) once (a minute or so) and caches the
+stem in the work directory; everything that *listens* — both engines and the
+held-note pass — then hears the singer alone. The render never does: the video
+always carries the real mix.
 
-Forced alignment is *forced*: hand it a heading or a discarded draft and it will
-place that too, somewhere, because it is not allowed to refuse. What it cannot do is
-make the audio agree, so those words come back with poor scores.
-`alignment.forced_min_score` (0.05) drops them, and a line that loses its words that
-way falls below `min_confidence` and produces no cue — the same rule as before,
-arrived at from the other direction. The second, rescuing pass is skipped for this
-engine: with the words already in the lyrics' own order there is nothing left for it
-to fix, and reaching across the song for an unmatched line only pins it on a distant
-repeat of the same words.
+Because they only work together, they fall back together. With torch missing, or
+demucs missing and no stem already on disk, the song is timed from a transcript and
+the log says which and why — a clone without the extras still runs end to end.
+
+The transcript is also better at one thing. Forced alignment is *forced*: hand it a
+heading or a discarded draft and it will place that too, somewhere, because it is
+not allowed to refuse. What it cannot do is make the audio agree, so those words come
+back with poor scores; `alignment.forced_min_score` (0.05) drops them, and a line
+that loses its words that way falls below `min_confidence` and produces no cue. That
+is the same rule as before arrived at from the other direction, and it is a blunter
+instrument: across those seven songs it also dropped four lines that really were sung
+— `Victorious!`, one word on its own, and `Oh-oh, forever I'll praise` twice. It
+found two the transcript had missed. Roughly a wash in count, but the failure differs:
+a transcript puts a line up a second early, forced alignment occasionally puts none
+up at all. <kbd>a</kbd> in `tune` adds a missing line back in seconds.
+
+The rescuing second pass is skipped for this engine: with the words already in the
+lyrics' own order there is nothing left for it to fix, and reaching across the song
+for an unmatched line only pins it on a distant repeat of the same words.
 
 `alignment.forced_model` chooses the acoustic model (default
 `facebook/wav2vec2-base-960h`, English; any CTC model on Hugging Face works — a

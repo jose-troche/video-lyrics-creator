@@ -39,6 +39,16 @@ DEFAULT_MODEL = "facebook/wav2vec2-base-960h"
 NEGATIVE = -1e30          # "no path reaches this state"
 
 
+def available() -> bool:
+    """Is the optional extra installed?  Asked before a song is timed, not during."""
+    from importlib.util import find_spec
+
+    try:
+        return all(find_spec(name) is not None for name in ("torch", "transformers", "numpy"))
+    except (ImportError, ValueError):  # pragma: no cover - a broken install
+        return False
+
+
 def _require() -> tuple[Any, Any, Any]:
     try:
         import numpy

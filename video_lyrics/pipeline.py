@@ -55,20 +55,62 @@ def _listening_to(project: Project) -> Path:
         return project.audio
     from . import vocals as vocals_mod
 
+    if not vocals_mod.available() and not project.vocals_path.is_file():
+        log.warning(
+            "Isolating the vocal needs demucs (pip install -e '.[vocals]'); "
+            "listening to the whole mix instead."
+        )
+        return project.audio
     return vocals_mod.isolate(project.audio, project.vocals_path)
 
 
-def stage_transcribe(project: Project, *, force: bool = False, **_: Any) -> None:
-    """Work out when each word is sung; everything downstream is timed from this."""
+def _engine(project: Project) -> str:
+    """Which engine will actually run: what the song asks for, or what is installed.
+
+    Both optional extras are opt-in, and a new song asks for forced alignment out of
+    the box, so this is the difference between a clear line in the log and a stack
+    trace on a fresh clone.  The fallback is always the transcript, which needs
+    nothing beyond the base install and holds up on a full mix - which forced
+    alignment, measurably, does not: without the isolated voice it does worse than
+    the transcript it would be replacing, so a missing demucs falls all the way back
+    rather than settling for half the feature.
+    """
     settings = project.alignment
     engine = settings.get("engine", "whisper")
     if engine not in ("whisper", "forced"):
         raise VideoLyricsError(
             f"Unknown alignment.engine {engine!r}; it is either 'whisper' or 'forced'."
         )
+    if engine == "whisper":
+        return engine
+
+    from . import forced as forced_mod
+    from . import vocals as vocals_mod
+
+    if not forced_mod.available():
+        log.warning(
+            "Forced alignment needs torch and transformers (pip install -e '.[align]'); "
+            "timing this song from a transcript instead."
+        )
+        return "whisper"
+    if settings.get("vocals") and not vocals_mod.available() and not project.vocals_path.is_file():
+        log.warning(
+            "Forced alignment wants the isolated voice and demucs is not installed "
+            "(pip install -e '.[vocals]'). Over a full mix it reads worse than a "
+            "transcript does, so this song is timed from a transcript instead."
+        )
+        return "whisper"
+    return engine
+
+
+def stage_transcribe(project: Project, *, force: bool = False, **_: Any) -> None:
+    """Work out when each word is sung; everything downstream is timed from this."""
+    settings = project.alignment
+    engine = _engine(project)
+    listening = _listening_to(project)
 
     if engine == "forced":
-        transcript = _forced_transcript(project, force=force)
+        transcript = _forced_transcript(project, listening, force=force)
     else:
         # Feeding the lyrics in as a prompt makes Whisper recite them over the intro, so
         # it is off unless asked for.
@@ -76,12 +118,13 @@ def stage_transcribe(project: Project, *, force: bool = False, **_: Any) -> None
         if settings.get("prompt_hint"):
             hint = " ".join(project.data.get("lyric_lines", [])[:8]) or None
         transcript = transcribe_mod.load_or_create(
-            _listening_to(project),
+            listening,
             project.transcript_path,
             signature={
                 "engine": "whisper",
                 "model": settings["model"],
-                "vocals": bool(settings.get("vocals")),
+                # What it actually heard, which is not always what was asked for.
+                "vocals": listening != project.audio,
             },
             model=settings["model"],
             language=settings.get("language"),
@@ -99,7 +142,7 @@ def stage_transcribe(project: Project, *, force: bool = False, **_: Any) -> None
     project.save()
 
 
-def _forced_transcript(project: Project, *, force: bool = False) -> dict[str, Any]:
+def _forced_transcript(project: Project, listening: Path, *, force: bool = False) -> dict[str, Any]:
     """Time the reference lyrics directly against the audio (see `forced`)."""
     from . import forced as forced_mod
 
@@ -110,10 +153,11 @@ def _forced_transcript(project: Project, *, force: bool = False) -> dict[str, An
             "Forced alignment needs the lyrics it is aligning. Run `video-lyrics lyrics` first."
         )
 
-    if not settings.get("vocals"):
-        # Measured on a full mix: half the lines come back unusable, and some land in
-        # the wrong verse entirely. The acoustic model is listening for consonants, and
-        # a band plays straight over them.
+    if listening == project.audio:
+        # Turned off deliberately - `_engine` has already sent the case where demucs is
+        # simply missing back to the transcript. Measured on a full mix: half the lines
+        # come back unusable and some land in the wrong verse, because the model is
+        # listening for consonants and a band plays straight over them.
         log.warning(
             "Forced alignment is reading the whole mix. It is markedly better on the "
             "voice alone: video-lyrics set alignment.vocals true"
@@ -125,7 +169,7 @@ def _forced_transcript(project: Project, *, force: bool = False) -> dict[str, An
     signature = {
         "engine": "forced",
         "model": model,
-        "vocals": bool(settings.get("vocals")),
+        "vocals": listening != project.audio,
         "lyrics_fingerprint": short_hash(*lines),
     }
     cached = transcribe_mod.load(project.transcript_path, signature=signature, force=force)
@@ -133,7 +177,7 @@ def _forced_transcript(project: Project, *, force: bool = False) -> dict[str, An
         return cached
 
     payload = forced_mod.align_words(
-        _listening_to(project),
+        listening,
         lines,
         model=model,
         min_score=float(settings.get("forced_min_score", 0.05)),
