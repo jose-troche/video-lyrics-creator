@@ -14,6 +14,11 @@ a clip, so anything animated has to arrive as media.
 from __future__ import annotations
 
 import hashlib
+import os
+from collections.abc import Callable, Iterator
+from concurrent.futures import ThreadPoolExecutor
+from contextlib import contextmanager
+from functools import partial
 from pathlib import Path
 from typing import Any
 
@@ -47,6 +52,27 @@ MOTION_REFERENCE_SECONDS = 6.0
 MOTION_MIN_ZOOM = 1.08
 MOTION_MAX_ZOOM = 1.55
 DEFAULT_SUPERSAMPLE = 3
+
+
+def default_jobs() -> int:
+    """How many clips to bake at once. Two, and there is no point going higher.
+
+    Every clip is an independent ffmpeg process writing to its own fingerprinted
+    path, so any number of them can run at once - but ffmpeg already threads
+    internally and very nearly fills the machine on its own. Measured on a 144s
+    song: 279s with one worker, 229s with two, 225s with four. The second worker
+    soaks up what the first leaves idle; the third and fourth buy nothing and only
+    add resident memory (1.4 GB at two, 2.5 GB at four), which matters on a small
+    container.
+
+    `os.cpu_count()` is no help in picking this - on Apple Silicon it counts the
+    efficiency cores too, so "half the cores" is really all of the fast ones.
+
+    Returning 1 here turns the concurrency off completely; see the note above
+    `_bake` for that and for how to remove it altogether.
+    """
+    return 1 if (os.cpu_count() or 2) < 4 else 2
+
 
 CODECS = {
     "h264": ["-c:v", "libx264", "-preset", "medium", "-crf", "16", "-pix_fmt", "yuv420p"],
@@ -204,6 +230,70 @@ def _image_signature(path: str) -> str:
     return digest.hexdigest()
 
 
+@contextmanager
+def _staged(path: Path) -> Iterator[Path]:
+    """Write to a sibling temp file and move it into place only on success.
+
+    A clip's name is a fingerprint of its inputs, so a half-written file left
+    behind by a failed or interrupted ffmpeg would look like a valid cache hit on
+    the next run and never be rebuilt. The temp file keeps the real suffix because
+    ffmpeg picks its muxer from the extension.
+    """
+    temp = path.with_name(f"{path.stem}.part{path.suffix}")
+    try:
+        yield temp
+        temp.replace(path)
+    finally:
+        temp.unlink(missing_ok=True)
+
+
+# Concurrency here is a bolt-on, and deliberately easy to take back off. If it
+# ever causes trouble - a container that runs out of memory, a machine that
+# thrashes, an interrupt that takes too long to land - there are two levels of
+# retreat, in order of preference:
+#
+#   1. Make `default_jobs` return 1. `_bake` then runs every task inline and no
+#      thread pool is ever constructed. That is the whole of the concurrency,
+#      off, in one line; nothing else needs touching and no output changes.
+#   2. To remove the code entirely: delete `_bake`, `default_jobs` and the `jobs`
+#      parameter of `render_bed`; call `_render_scene_clip` /
+#      `_render_transition_clip` straight from the loop again instead of
+#      collecting `partial`s into `pending`; then drop the `os`, `Callable`,
+#      `ThreadPoolExecutor` and `partial` imports, which nothing else uses.
+#
+# Keep `_staged` either way. It is independent of all of this and fixes a bug
+# that predates it: a half-written clip left behind by a failed ffmpeg still has
+# a valid fingerprinted name, so the next run reads it as a cache hit and never
+# rebuilds it. Deleting it alongside the concurrency would quietly restore that.
+def _bake(tasks: list[Callable[[], None]], *, jobs: int) -> None:
+    """Run the clip renders, several at a time.
+
+    Nothing is shared between them and the order they finish in does not matter -
+    each one's destination is already decided by its fingerprint - so the only
+    thing concurrency changes is the wall clock.
+    """
+    if not tasks:
+        return
+    jobs = max(1, min(jobs, len(tasks)))
+    if jobs == 1:
+        for task in tasks:
+            task()
+        return
+
+    log.info("Baking %d clips, %d at a time", len(tasks), jobs)
+    with ThreadPoolExecutor(max_workers=jobs) as pool:
+        futures = [pool.submit(task) for task in tasks]
+        try:
+            for future in futures:
+                future.result()
+        except BaseException:
+            # Don't start any clip that hasn't begun yet; the pool still waits for
+            # the ones already in flight as it shuts down.
+            for future in futures:
+                future.cancel()
+            raise
+
+
 def render_bed(
     scenes: list[dict[str, Any]],
     *,
@@ -215,6 +305,7 @@ def render_bed(
     zoom: float,
     codec: str = "h264",
     supersample: int = DEFAULT_SUPERSAMPLE,
+    jobs: int | None = None,
     force: bool = False,
 ) -> list[dict[str, Any]]:
     """Render every clip of the image bed. Returns the clip chain with paths."""
@@ -230,6 +321,7 @@ def render_bed(
     clips = plan_bed(scenes, fps=fps, duration=duration, transition=transition)
     ffmpeg = which("ffmpeg")
     suffix = CONTAINER[codec]
+    pending: list[Callable[[], None]] = []
 
     for position, clip in enumerate(clips, start=1):
         if clip["kind"] == "scene":
@@ -240,10 +332,11 @@ def render_bed(
             )
             path = directory / f"bed-{position:03d}-scene-{fingerprint}{suffix}"
             if force or not path.is_file():
-                _render_scene_clip(
+                pending.append(partial(
+                    _render_scene_clip,
                     ffmpeg, scene, clip, path,
                     size=size, fps=fps, zoom=zoom, codec=codec, supersample=supersample,
-                )
+                ))
         else:
             outgoing = scenes[clip["from_scene"]]
             incoming = scenes[clip["to_scene"]]
@@ -255,14 +348,16 @@ def render_bed(
             )
             path = directory / f"bed-{position:03d}-xfade-{fingerprint}{suffix}"
             if force or not path.is_file():
-                _render_transition_clip(
+                pending.append(partial(
+                    _render_transition_clip,
                     ffmpeg, outgoing, incoming, clip, path,
                     size=size, fps=fps, zoom=zoom, codec=codec, supersample=supersample,
-                )
+                ))
         clip["path"] = str(path)
         clip["start"] = round(clip["first_frame"] / fps, 4)
         clip["end"] = round((clip["first_frame"] + clip["frames"]) / fps, 4)
 
+    _bake(pending, jobs=default_jobs() if jobs is None else jobs)
     log.info("Image bed ready: %d clips in %s", len(clips), directory)
     return clips
 
@@ -290,18 +385,19 @@ def _render_scene_clip(
         supersample=supersample,
     )
     log.info("  clip %s (%d frames) from scene %d", path.name, clip["frames"], scene["index"])
-    run(
-        [
-            ffmpeg, "-y", "-loglevel", "error",
-            "-loop", "1", "-framerate", f"{fps:g}", "-i", scene["image"],
-            "-vf", f"{chain},format=yuv420p",
-            "-frames:v", str(clip["frames"]),
-            "-r", f"{fps:g}", "-an",
-            *CODECS[codec],
-            str(path),
-        ],
-        timeout=1800,
-    )
+    with _staged(path) as temp:
+        run(
+            [
+                ffmpeg, "-y", "-loglevel", "error",
+                "-loop", "1", "-framerate", f"{fps:g}", "-i", scene["image"],
+                "-vf", f"{chain},format=yuv420p",
+                "-frames:v", str(clip["frames"]),
+                "-r", f"{fps:g}", "-an",
+                *CODECS[codec],
+                str(temp),
+            ],
+            timeout=1800,
+        )
 
 
 def _render_transition_clip(
@@ -338,19 +434,22 @@ def _render_transition_clip(
         f"[a][b]xfade=transition=fade:duration={seconds:.4f}:offset=0,format=yuv420p[v]"
     )
     log.info("  clip %s (%d frames) cross dissolve", path.name, frames)
-    run(
-        [
-            ffmpeg, "-y", "-loglevel", "error",
-            "-loop", "1", "-framerate", f"{fps:g}", "-t", f"{seconds:.4f}", "-i", outgoing["image"],
-            "-loop", "1", "-framerate", f"{fps:g}", "-t", f"{seconds:.4f}", "-i", incoming["image"],
-            "-filter_complex", graph, "-map", "[v]",
-            "-frames:v", str(frames),
-            "-r", f"{fps:g}", "-an",
-            *CODECS[codec],
-            str(path),
-        ],
-        timeout=1800,
-    )
+    with _staged(path) as temp:
+        run(
+            [
+                ffmpeg, "-y", "-loglevel", "error",
+                "-loop", "1", "-framerate", f"{fps:g}", "-t", f"{seconds:.4f}",
+                "-i", outgoing["image"],
+                "-loop", "1", "-framerate", f"{fps:g}", "-t", f"{seconds:.4f}",
+                "-i", incoming["image"],
+                "-filter_complex", graph, "-map", "[v]",
+                "-frames:v", str(frames),
+                "-r", f"{fps:g}", "-an",
+                *CODECS[codec],
+                str(temp),
+            ],
+            timeout=1800,
+        )
 
 
 def concat_clips(clips: list[dict[str, Any]], out: Path) -> Path:

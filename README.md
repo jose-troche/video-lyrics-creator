@@ -324,6 +324,16 @@ sit end to end on one track and still dissolve. `video.zoom` scales with how lon
 a scene is actually on screen, so a quick cut and a long instrumental hold move at
 a similar, steady rate.
 
+Two clips bake at a time, and each one is written to a `.part` file that is moved
+into place only once ffmpeg exits cleanly — so an interrupted bake leaves finished
+clips and nothing half-written, and re-running picks up where it stopped. Two is
+worth about 279s → 229s on a 144s song; four measured no faster and needs 2.5GB of
+memory instead of 1.4GB. If the concurrency ever causes trouble, `default_jobs` in
+`video_lyrics/motion.py` turns it off by returning 1, and the comment beside it
+says how to strip it out entirely. The `.part` staging is worth keeping either
+way — it is what stops a failed render leaving a partial clip that the next run
+mistakes for a finished one.
+
 **How `plan` cuts the song into scenes.** Consecutive lines are bundled up to
 `image_generation.lines_per_image` (1 by default). A transition only ever falls
 between lines, never inside one, and never between two lines from different
