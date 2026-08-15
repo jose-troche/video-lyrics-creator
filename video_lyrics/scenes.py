@@ -332,13 +332,21 @@ def merge_existing_images(
     repeats verbatim several times still lines up with its own repetition rather
     than a neighbour's, and only the scenes whose content actually changed come
     back without an image.
+
+    The matching is one-to-one, so this cannot hand one picture to two scenes -
+    but it will happily carry a duplicate that was already there (a hand-edited
+    project file is the easy way to make one). `taken` stops that spreading: a file
+    already spoken for is left behind, and the scene that lost it comes back
+    without an image, which is exactly how `images` is asked to draw it.
     """
     old_keys = [tuple(scene.get("lines") or ()) for scene in old_scenes]
     new_keys = [tuple(scene.get("lines") or ()) for scene in new_scenes]
     matcher = difflib.SequenceMatcher(None, old_keys, new_keys, autojunk=False)
+    taken: set[str] = set()
     for block in matcher.get_matching_blocks():
         for offset in range(block.size):
             image = old_scenes[block.a + offset].get("image")
-            if image:
+            if image and image not in taken:
+                taken.add(image)
                 new_scenes[block.b + offset]["image"] = image
     return new_scenes

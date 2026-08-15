@@ -275,6 +275,54 @@ def test_a_scene_about_to_be_redrawn_is_cleared_first(tmp_path, monkeypatch):
     assert list(images_dir.iterdir()) == []
 
 
+# --------------------------------------------- two scenes claiming one picture
+
+def test_a_picture_two_scenes_both_claim_is_redrawn_for_the_second(tmp_path, monkeypatch):
+    """The same file on two scenes is the same picture twice in the video, and
+    both scenes look satisfied, so nothing would otherwise notice. The first
+    claimant keeps it; the other is drawn its own."""
+    asked: list[int] = []
+    monkeypatch.setattr(
+        site_module("chatgpt"), "generate",
+        lambda scenes, **kw: asked.extend(s["index"] for s in scenes),
+    )
+    images_dir = tmp_path / "images"
+    images_dir.mkdir()
+    shared = images_dir / "scene-001-carried00.png"
+    Image.new("RGB", (1600, 900), (4, 4, 4)).save(shared)
+    scenes = [
+        {"index": 1, "prompt": "p1", "lines": ["one"], "image": str(shared)},
+        {"index": 2, "prompt": "p2", "lines": ["two"], "image": str(shared)},
+    ]
+
+    result = images.generate(scenes, images_dir=images_dir, provider="chatgpt")
+
+    assert asked == [2]
+    assert result[0]["image"] == str(shared)   # the first one keeps it
+
+
+def test_scenes_with_their_own_images_are_all_left_alone(tmp_path, monkeypatch):
+    """The claim check must not fire on the ordinary case of every scene holding
+    a different carried-over file."""
+    asked: list[int] = []
+    monkeypatch.setattr(
+        site_module("chatgpt"), "generate",
+        lambda scenes, **kw: asked.extend(s["index"] for s in scenes),
+    )
+    images_dir = tmp_path / "images"
+    images_dir.mkdir()
+    scenes = []
+    for index in (1, 2, 3):
+        path = images_dir / f"scene-{index:03d}-carried0{index}.png"
+        Image.new("RGB", (1600, 900), (index, index, index)).save(path)
+        scenes.append({"index": index, "prompt": f"p{index}",
+                       "lines": [f"line {index}"], "image": str(path)})
+
+    images.generate(scenes, images_dir=images_dir, provider="chatgpt")
+
+    assert asked == []
+
+
 # ------------------------------------------------------- redrawing one scene
 
 def redraw_fixture(tmp_path, monkeypatch, provider="chatgpt"):

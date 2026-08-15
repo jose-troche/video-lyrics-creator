@@ -252,6 +252,21 @@ def test_replanning_keeps_repeated_choruses_apart():
     assert [scene["image"] for scene in merged] == ["/tmp/first.png", "/tmp/second.png"]
 
 
+def test_replanning_does_not_spread_a_duplicate_it_was_handed():
+    """Nothing here makes two scenes share a picture - the matching is one-to-one -
+    but a hand-edited project file can, and carrying that forward would keep the
+    same picture on screen twice. The second claim is dropped, so `images` draws
+    that scene its own."""
+    old = [
+        {"lines": ["one"], "image": "/tmp/shared.png"},
+        {"lines": ["two"], "image": "/tmp/shared.png"},
+    ]
+    new = [{"lines": ["one"]}, {"lines": ["two"]}]
+    merged = scenes.merge_existing_images(new, old)
+    assert merged[0]["image"] == "/tmp/shared.png"
+    assert "image" not in merged[1]
+
+
 # ------------------------------------------------- one image per line, or two
 
 def make_project(tmp_path):

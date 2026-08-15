@@ -270,10 +270,12 @@ def _generate_browser(
     "this picture, again", so second-guessing it either way would be wrong.
     """
     pending: list[tuple[dict[str, Any], str]] = []
+    claimed: set[str] = set()
     for scene in scenes if wanted is None else wanted:
         stem = _stem_for(scene, provider)
         redrawing = force or wanted is not None
         if not redrawing and _adopt_by_stem(scene, stem, images_dir=images_dir, size=size):
+            claimed.add(scene["image"])
             continue
         # Nothing downloaded under this provider's own stem, but the scene may
         # still have a perfectly good image from another one - a song generated
@@ -282,7 +284,8 @@ def _generate_browser(
         # scenes.merge_existing_images carries the pictures over. Asking a browser
         # to redraw those would throw away work for no reason, so an edited prompt
         # is not enough on its own - say `--scene N` to mean it.
-        if not redrawing and _keep_existing(scene):
+        if not redrawing and _keep_existing(scene, claimed):
+            claimed.add(scene["image"])
             continue
         pending.append((scene, stem))
 
@@ -316,10 +319,26 @@ def _generate_browser(
     return scenes
 
 
-def _keep_existing(scene: dict[str, Any]) -> bool:
-    """Is this scene already pointing at a readable image on disk?"""
+def _keep_existing(scene: dict[str, Any], claimed: set[str] = frozenset()) -> bool:
+    """Is this scene already pointing at a readable image of its own?
+
+    Of its *own*: two scenes naming the same file is a picture that shows up twice
+    in the finished video, and nothing here would otherwise notice - both scenes
+    look perfectly satisfied. Nothing in the pipeline creates that state
+    (`scenes.merge_existing_images` hands each file out once), but a hand-edited
+    project file will, so the scene that claims it second gives it up and is drawn
+    its own instead.
+    """
     existing = scene.get("image")
-    return bool(existing) and Path(existing).is_file() and _valid(Path(existing))
+    if not existing:
+        return False
+    if existing in claimed:
+        log.warning(
+            "  scene %03d: %s is already another scene's image - drawing this one "
+            "its own.", scene["index"], Path(existing).name,
+        )
+        return False
+    return Path(existing).is_file() and _valid(Path(existing))
 
 
 def _assign_supplied(
