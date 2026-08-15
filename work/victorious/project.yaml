@@ -1,0 +1,1526 @@
+schema_version: 1
+title: Victorious
+author: José Troche
+audio: /Users/jatroche/Music/From beginning to end you are God/02 Victorious.wav
+lyrics_source: /Users/jatroche/Google Drive/Songs/From beginning to end you are God/Victorious - Exodus 15.gdoc
+visual_style: cinematic photographic realism
+context: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated
+work_dir: /Users/jatroche/code/video-lyrics-creator/work
+video:
+  width: 1920
+  height: 1080
+  fps: 30
+  transition: 0.75
+  title_duration: 12.0
+  title_fade: 0.75
+  font: Avenir Next Demi Bold
+  font_size: 58
+  margin_v: 72
+  zoom: 1.2
+  lyric_lead: 0.35
+  lyric_fade: 0.2
+  audio_fade: 1.0
+image_generation:
+  provider: chatgpt
+  lines_per_image: 1
+  source_dir: null
+  chatgpt_headless: false
+  chatgpt_profile_dir: null
+  chatgpt_min_delay: 1.0
+  chatgpt_max_delay: 4.0
+  chatgpt_composer_selector: null
+  chatgpt_image_selector: null
+  chatgpt_channel: chrome
+  meta_headless: false
+  meta_profile_dir: null
+  meta_min_delay: 1.0
+  meta_max_delay: 4.0
+  meta_composer_selector: null
+  meta_image_selector: null
+  meta_channel: null
+alignment:
+  model: medium.en
+  language: en
+  vad: false
+  prompt_hint: false
+  min_confidence: 0.5
+  min_matched_words: 2
+  min_duration: 1.0
+  max_gap_fill: 0.7
+  scene_gap: 2.5
+  min_scene_duration: 4.0
+  max_scene_duration: 15.0
+render:
+  engine: ffmpeg
+  output: /Users/jatroche/code/video-lyrics-creator/output/victorious.mp4
+  format: mp4
+  codec: H264
+  audio_codec: aac
+  replace_existing: true
+  motion_backend: prerender
+  lyrics_mode: overlay
+  intermediate: h264
+  last_output: /Users/jatroche/code/video-lyrics-creator/output/victorious.mp4
+lyric_lines:
+- Victorious
+- God's victorious!
+- Your mighty right hand, O Lord full of power
+- It shatters the foe, in judgment devoured
+- Your majesty's great, You rise and prevail
+- Your fury consumes; the wicked assail
+- The enemy boasted, “I’ll chase and destroy,
+- I’ll take what I want and carry my ploy
+- I’ll draw my sharp sword and bring them to shame”
+- But You blew Your wind; they sank at Your name
+- God's victorious, His people He saved
+- God's victorious, no more enslaved
+- God's victorious, the rivals He razed
+- God's victorious, triumphant and worthy of praise
+- The nations have heard and trembled with fear,
+- They shake and they scatter as judgment draws near
+- Dread and great terror fall down from Your throne
+- They freeze before You, like a rigid stone
+- You'll bring Your people with sovereign grace
+- You'll plant their feet in Your dwelling place
+- The mountain You formed, Your holy abode
+- There You will reign, with glory untold
+- God's victorious, His people He saved
+- God's victorious, no more enslaved
+- God's victorious, the rivals He razed
+- God's victorious, triumphant and worthy of praise
+- Who is like You, O Lord on high?
+- In power majestic, none can deny
+- Awesome in wonders, Your name is renowned,
+- You stretched out Your hand, the enemy drowned
+- God's victorious, His people He saved
+- God's victorious, no more enslaved
+- God's victorious, the rivals He razed
+- God's victorious, triumphant and worthy of praise
+- Triumphant and worthy of praise
+- God's victorious,
+- He's victorious,
+- Victorious!
+lyric_section_starts:
+- 0
+- 1
+- 2
+- 6
+- 10
+- 14
+- 18
+- 22
+- 26
+- 30
+- 35
+duration: 305.0
+transcript:
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/transcript.json
+  model: medium.en
+  words: 239
+lyrics:
+- start: 12.66
+  end: 17.88
+  text: God's victorious!
+  line_index: 1
+  alignment_confidence: 0.0
+  tuned: true
+- start: 26.41
+  end: 31.92
+  text: Your mighty right hand, O Lord full of power
+  line_index: 2
+  alignment_confidence: 1.0
+  tuned: true
+- start: 32.88
+  end: 39.01
+  text: It shatters the foe, in judgment devoured
+  line_index: 3
+  alignment_confidence: 0.857
+  tuned: true
+- start: 39.46
+  end: 45.63
+  text: Your majesty's great, You rise and prevail
+  line_index: 4
+  alignment_confidence: 1.0
+  tuned: true
+- start: 46.02
+  end: 52.88
+  text: Your fury consumes; the wicked assail
+  line_index: 5
+  alignment_confidence: 1.0
+  tuned: true
+- start: 53.54
+  end: 56.68
+  text: The enemy boasted, “I’ll chase and destroy,
+  line_index: 6
+  alignment_confidence: 0.75
+  tuned: true
+- start: 56.77
+  end: 60.15
+  text: I’ll take what I want and carry my ploy
+  line_index: 7
+  alignment_confidence: 0.7
+  tuned: true
+- start: 60.38
+  end: 63.26
+  text: I’ll draw my sharp sword and bring them to shame”
+  line_index: 8
+  alignment_confidence: 0.818
+  tuned: true
+- start: 63.47
+  end: 70.14
+  text: But You blew Your wind; they sank at Your name
+  line_index: 9
+  alignment_confidence: 1.0
+  tuned: true
+- start: 70.26
+  end: 77.24
+  text: God's victorious, His people He saved
+  line_index: 10
+  alignment_confidence: 1.0
+  tuned: true
+- start: 77.44
+  end: 83.92
+  text: God's victorious, no more enslaved
+  line_index: 11
+  alignment_confidence: 1.0
+  tuned: true
+- start: 84.12
+  end: 95.28
+  text: God's victorious, the rivals He razed
+  line_index: 12
+  alignment_confidence: 0.833
+  tuned: true
+- start: 95.5
+  end: 110.91
+  text: God's victorious, triumphant and worthy of praise
+  line_index: 13
+  alignment_confidence: 1.0
+  tuned: true
+- start: 115.12
+  end: 120.98
+  text: The nations have heard and trembled with fear,
+  line_index: 14
+  alignment_confidence: 1.0
+  tuned: true
+- start: 121.84
+  end: 128.09
+  text: They shake and they scatter as judgment draws near
+  line_index: 15
+  alignment_confidence: 1.0
+  tuned: true
+- start: 128.28
+  end: 134.75
+  text: Dread and great terror fall down from Your throne
+  line_index: 16
+  alignment_confidence: 1.0
+  tuned: true
+- start: 135.08
+  end: 142.22
+  text: They freeze before You, like a rigid stone
+  line_index: 17
+  alignment_confidence: 1.0
+  tuned: true
+- start: 142.46
+  end: 145.68
+  text: You'll bring Your people with sovereign grace
+  line_index: 18
+  alignment_confidence: 1.0
+- start: 145.68
+  end: 148.73
+  text: You'll plant their feet in Your dwelling place
+  line_index: 19
+  alignment_confidence: 1.0
+  tuned: true
+- start: 148.93
+  end: 152.06
+  text: The mountain You formed, Your holy abode
+  line_index: 20
+  alignment_confidence: 0.857
+  tuned: true
+- start: 152.26
+  end: 158.91
+  text: There You will reign, with glory untold
+  line_index: 21
+  alignment_confidence: 1.0
+  tuned: true
+- start: 159.16
+  end: 166.12
+  text: God's victorious, His people He saved
+  line_index: 22
+  alignment_confidence: 1.0
+  tuned: true
+- start: 166.22
+  end: 172.82
+  text: God's victorious, no more enslaved
+  line_index: 23
+  alignment_confidence: 1.0
+  tuned: true
+- start: 172.92
+  end: 184.33
+  text: God's victorious, the rivals He razed
+  line_index: 24
+  alignment_confidence: 0.833
+  tuned: true
+- start: 184.54
+  end: 199.46
+  text: God's victorious, triumphant and worthy of praise
+  line_index: 25
+  alignment_confidence: 1.0
+  tuned: true
+- start: 204.99
+  end: 211.15
+  text: Who is like You, O Lord on high?
+  line_index: 26
+  alignment_confidence: 1.0
+  tuned: true
+- start: 211.36
+  end: 218.04
+  text: In power majestic, none can deny
+  line_index: 27
+  alignment_confidence: 1.0
+  tuned: true
+- start: 218.14
+  end: 223.98
+  text: Awesome in wonders, Your name is renowned,
+  line_index: 28
+  alignment_confidence: 1.0
+  tuned: true
+- start: 224.28
+  end: 234.39
+  text: You stretched out Your hand, the enemy drowned
+  line_index: 29
+  alignment_confidence: 1.0
+  tuned: true
+- start: 234.62
+  end: 241.8
+  text: God's victorious, His people He saved
+  line_index: 30
+  alignment_confidence: 1.0
+  tuned: true
+- start: 242.0
+  end: 248.35
+  text: God's victorious, no more enslaved
+  line_index: 31
+  alignment_confidence: 1.0
+  tuned: true
+- start: 248.65
+  end: 259.71
+  text: God's victorious, the rivals He razed
+  line_index: 32
+  alignment_confidence: 0.833
+  tuned: true
+- start: 260.11
+  end: 270.37
+  text: God's victorious, triumphant and worthy of praise
+  line_index: 33
+  alignment_confidence: 1.0
+  tuned: true
+- start: 270.43
+  end: 279.04
+  text: Triumphant and worthy of praise
+  line_index: 34
+  alignment_confidence: 1.0
+  tuned: true
+- start: 279.04
+  end: 284.46
+  text: God's victorious
+  line_index: 0
+  alignment_confidence: 1.0
+  tuned: true
+- start: 285.49
+  end: 293.15
+  text: He's victorious,
+  line_index: 36
+  alignment_confidence: 1.0
+  tuned: true
+- start: 293.17
+  end: 298.92
+  text: Victorious!
+  line_index: 37
+  alignment_confidence: 1.0
+  tuned: true
+scenes:
+- start: 0.0
+  end: 12.66
+  lines: []
+  prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene for an instrumental passage of the song "Victorious" — the opening, before the first line "God''s victorious!". Wide, atmospheric, no people speaking; intentional composition, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a wide establishing shot, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 1
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-001-2d0299cdbf5cdec6.png
+  motion_first_frame: 0
+  motion_frames: 391
+- start: 12.66
+  end: 26.41
+  lines:
+  - God's victorious!
+  prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''God''s victorious!''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a low angle close to the ground, looking up, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 2
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-002-9b0c859f73a53f80.png
+  motion_first_frame: 369
+  motion_frames: 434
+- start: 26.41
+  end: 32.88
+  lines:
+  - Your mighty right hand, O Lord full of power
+  prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''Your mighty right hand, O Lord full of power''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as an intimate mid-shot centred on a single subject, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 3
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-003-fa04b0b7151d8bb7.png
+  motion_first_frame: 781
+  motion_frames: 216
+- start: 32.88
+  end: 39.46
+  lines:
+  - It shatters the foe, in judgment devoured
+  prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''It shatters the foe, in judgment devoured''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a high, distant vantage looking down, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 4
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-004-31a9899c5b0ee1ee.png
+  motion_first_frame: 975
+  motion_frames: 220
+- start: 39.46
+  end: 46.02
+  lines:
+  - Your majesty's great, You rise and prevail
+  prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''Your majesty''s great, You rise and prevail''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a tight foreground detail with the rest falling away soft, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 5
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-005-04f249798d60ea51.png
+  motion_first_frame: 1173
+  motion_frames: 219
+- start: 46.02
+  end: 53.54
+  lines:
+  - Your fury consumes; the wicked assail
+  prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''Your fury consumes; the wicked assail''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a head-on symmetrical composition, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 6
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-006-e8a30d32fc8d7d90.png
+  motion_first_frame: 1370
+  motion_frames: 247
+- start: 53.54
+  end: 56.77
+  lines:
+  - The enemy boasted, “I’ll chase and destroy,
+  prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''The enemy boasted, “I’ll chase and destroy,''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a view through a natural frame - an arch, branches, a doorway, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 7
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-007-9d650d1b29555dbb.png
+  motion_first_frame: 1595
+  motion_frames: 119
+- start: 56.77
+  end: 60.38
+  lines:
+  - I’ll take what I want and carry my ploy
+  prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''I’ll take what I want and carry my ploy''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a wide establishing shot, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 8
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-008-bf069e84ed25f088.png
+  motion_first_frame: 1692
+  motion_frames: 130
+- start: 60.38
+  end: 63.47
+  lines:
+  - I’ll draw my sharp sword and bring them to shame”
+  prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''I’ll draw my sharp sword and bring them to shame”''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a low angle close to the ground, looking up, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 9
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-009-710e9ded0d46a54c.png
+  motion_first_frame: 1800
+  motion_frames: 115
+- start: 63.47
+  end: 70.26
+  lines:
+  - But You blew Your wind; they sank at Your name
+  prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''But You blew Your wind; they sank at Your name''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as an intimate mid-shot centred on a single subject, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 10
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-010-e5a9f5d83913e696.png
+  motion_first_frame: 1893
+  motion_frames: 226
+- start: 70.26
+  end: 77.44
+  lines:
+  - God's victorious, His people He saved
+  prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''God''s victorious, His people He saved''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a high, distant vantage looking down, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 11
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-011-0719ef59cfb92633.png
+  motion_first_frame: 2097
+  motion_frames: 237
+- start: 77.44
+  end: 84.12
+  lines:
+  - God's victorious, no more enslaved
+  prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''God''s victorious, no more enslaved''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a tight foreground detail with the rest falling away soft, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 12
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-012-8f650ab5a7396a9d.png
+  motion_first_frame: 2312
+  motion_frames: 223
+- start: 84.12
+  end: 95.5
+  lines:
+  - God's victorious, the rivals He razed
+  prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''God''s victorious, the rivals He razed''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a head-on symmetrical composition, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 13
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-013-3ef18b52e4e73239.png
+  motion_first_frame: 2513
+  motion_frames: 363
+- start: 95.5
+  end: 110.91
+  lines:
+  - God's victorious, triumphant and worthy of praise
+  prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''God''s victorious, triumphant and worthy of praise''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a view through a natural frame - an arch, branches, a doorway, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 14
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-014-802668213273bf4e.png
+  motion_first_frame: 2854
+  motion_frames: 484
+- start: 110.91
+  end: 115.12
+  lines: []
+  prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene for an instrumental passage of the song "Victorious" — an instrumental break after "God''s victorious, triumphant and worthy of praise". Wide, atmospheric, no people speaking; intentional composition, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a wide establishing shot, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 15
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-015-5555472761ead34c.png
+  motion_first_frame: 3316
+  motion_frames: 149
+- start: 115.12
+  end: 121.84
+  lines:
+  - The nations have heard and trembled with fear,
+  prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''The nations have heard and trembled with fear,''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a low angle close to the ground, looking up, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 16
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-016-4ac1d94c927bd371.png
+  motion_first_frame: 3443
+  motion_frames: 223
+- start: 121.84
+  end: 128.28
+  lines:
+  - They shake and they scatter as judgment draws near
+  prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''They shake and they scatter as judgment draws near''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as an intimate mid-shot centred on a single subject, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 17
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-017-f5e5a700575b3104.png
+  motion_first_frame: 3644
+  motion_frames: 215
+- start: 128.28
+  end: 135.08
+  lines:
+  - Dread and great terror fall down from Your throne
+  prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''Dread and great terror fall down from Your throne''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a high, distant vantage looking down, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 18
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-018-8d73552b21cebf03.png
+  motion_first_frame: 3837
+  motion_frames: 226
+- start: 135.08
+  end: 142.46
+  lines:
+  - They freeze before You, like a rigid stone
+  prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''They freeze before You, like a rigid stone''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a tight foreground detail with the rest falling away soft, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 19
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-019-eebca81c4de0d28e.png
+  motion_first_frame: 4041
+  motion_frames: 244
+- start: 142.46
+  end: 145.68
+  lines:
+  - You'll bring Your people with sovereign grace
+  prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''You''ll bring Your people with sovereign grace''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a head-on symmetrical composition, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 20
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-020-a11485e34d0bfbc2.png
+  motion_first_frame: 4263
+  motion_frames: 118
+- start: 145.68
+  end: 148.93
+  lines:
+  - You'll plant their feet in Your dwelling place
+  prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''You''ll plant their feet in Your dwelling place''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a view through a natural frame - an arch, branches, a doorway, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 21
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-021-3191cb2d1c981446.png
+  motion_first_frame: 4359
+  motion_frames: 120
+- start: 148.93
+  end: 152.26
+  lines:
+  - The mountain You formed, Your holy abode
+  prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''The mountain You formed, Your holy abode''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a wide establishing shot, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 22
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-022-07f5f75b40cedcda.png
+  motion_first_frame: 4457
+  motion_frames: 122
+- start: 152.26
+  end: 159.16
+  lines:
+  - There You will reign, with glory untold
+  prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''There You will reign, with glory untold''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a low angle close to the ground, looking up, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 23
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-023-8e5ff0380f8c91e9.png
+  motion_first_frame: 4557
+  motion_frames: 229
+- start: 159.16
+  end: 166.22
+  lines:
+  - God's victorious, His people He saved
+  prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''God''s victorious, His people He saved''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as an intimate mid-shot centred on a single subject, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 24
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-024-dffe889e170aa1d7.png
+  motion_first_frame: 4764
+  motion_frames: 234
+- start: 166.22
+  end: 172.92
+  lines:
+  - God's victorious, no more enslaved
+  prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''God''s victorious, no more enslaved''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a high, distant vantage looking down, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 25
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-025-55229749a539a674.png
+  motion_first_frame: 4976
+  motion_frames: 223
+- start: 172.92
+  end: 184.54
+  lines:
+  - God's victorious, the rivals He razed
+  prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''God''s victorious, the rivals He razed''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a tight foreground detail with the rest falling away soft, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 26
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-026-2b8c35057d3abe2d.png
+  motion_first_frame: 5177
+  motion_frames: 370
+- start: 184.54
+  end: 199.46
+  lines:
+  - God's victorious, triumphant and worthy of praise
+  prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''God''s victorious, triumphant and worthy of praise''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a head-on symmetrical composition, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 27
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-027-ecbfbdb6c2f07f2b.png
+  motion_first_frame: 5525
+  motion_frames: 470
+- start: 199.46
+  end: 204.99
+  lines: []
+  prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene for an instrumental passage of the song "Victorious" — an instrumental break after "God''s victorious, triumphant and worthy of praise". Wide, atmospheric, no people speaking; intentional composition, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a view through a natural frame - an arch, branches, a doorway, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 28
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-028-4474543d97d0a944.png
+  motion_first_frame: 5973
+  motion_frames: 188
+- start: 204.99
+  end: 211.36
+  lines:
+  - Who is like You, O Lord on high?
+  prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''Who is like You, O Lord on high?''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a wide establishing shot, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 29
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-029-fce67080408f027e.png
+  motion_first_frame: 6139
+  motion_frames: 213
+- start: 211.36
+  end: 218.14
+  lines:
+  - In power majestic, none can deny
+  prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''In power majestic, none can deny''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a low angle close to the ground, looking up, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 30
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-030-effa20ab3f161299.png
+  motion_first_frame: 6330
+  motion_frames: 225
+- start: 218.14
+  end: 224.28
+  lines:
+  - Awesome in wonders, Your name is renowned,
+  prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''Awesome in wonders, Your name is renowned,''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as an intimate mid-shot centred on a single subject, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 31
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-031-4dbeb7cfd1fd1f1b.png
+  motion_first_frame: 6533
+  motion_frames: 206
+- start: 224.28
+  end: 234.62
+  lines:
+  - You stretched out Your hand, the enemy drowned
+  prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''You stretched out Your hand, the enemy drowned''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a high, distant vantage looking down, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 32
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-032-da30fd0b7519d92a.png
+  motion_first_frame: 6717
+  motion_frames: 333
+- start: 234.62
+  end: 242.0
+  lines:
+  - God's victorious, His people He saved
+  prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''God''s victorious, His people He saved''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a tight foreground detail with the rest falling away soft, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 33
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-033-91b9c744410343f6.png
+  motion_first_frame: 7028
+  motion_frames: 243
+- start: 242.0
+  end: 248.65
+  lines:
+  - God's victorious, no more enslaved
+  prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''God''s victorious, no more enslaved''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a head-on symmetrical composition, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 34
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-034-7cb30117297ddf3c.png
+  motion_first_frame: 7249
+  motion_frames: 222
+- start: 248.65
+  end: 260.11
+  lines:
+  - God's victorious, the rivals He razed
+  prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''God''s victorious, the rivals He razed''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a view through a natural frame - an arch, branches, a doorway, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 35
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-035-ed72f92348d4e4d6.png
+  motion_first_frame: 7449
+  motion_frames: 365
+- start: 260.11
+  end: 270.43
+  lines:
+  - God's victorious, triumphant and worthy of praise
+  prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''God''s victorious, triumphant and worthy of praise''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a wide establishing shot, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 36
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-036-13246d65dbf40a90.png
+  motion_first_frame: 7792
+  motion_frames: 332
+- start: 270.43
+  end: 279.04
+  lines:
+  - Triumphant and worthy of praise
+  prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''Triumphant and worthy of praise''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a low angle close to the ground, looking up, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 37
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-037-47b1367f4be45738.png
+  motion_first_frame: 8102
+  motion_frames: 280
+- start: 279.04
+  end: 285.49
+  lines:
+  - God's victorious
+  prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''God''s victorious''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as an intimate mid-shot centred on a single subject, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 38
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-038-64e5f0e65b8d8687.png
+  motion_first_frame: 8360
+  motion_frames: 216
+- start: 285.49
+  end: 293.17
+  lines:
+  - He's victorious,
+  prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''He''s victorious,''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a high, distant vantage looking down, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 39
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-039-5b5e62cb18ebadba.png
+  motion_first_frame: 8554
+  motion_frames: 252
+- start: 293.17
+  end: 305.0
+  lines:
+  - Victorious!
+  prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''Victorious!''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a tight foreground detail with the rest falling away soft, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 40
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-040-ee7097da5ec434f2.png
+  motion_first_frame: 8784
+  motion_frames: 366
+overlays:
+  title:
+    image: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlays/title-d20f037f0e17522f.png
+    start: 0.0
+    end: 11.748
+    fade: 0.75
+    clip: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlay-clips/title-d20f037f0e17522f-1df028755fadcbb0.mov
+  lyrics:
+  - start: 12.31
+    end: 17.88
+    text: God's victorious!
+    image: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlays/lyric-001-124a67e7b358b88c.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlay-clips/lyric-001-124a67e7b358b88c-9c37d6aad90380a6.mov
+  - start: 26.06
+    end: 31.92
+    text: Your mighty right hand, O Lord full of power
+    image: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlays/lyric-002-8ac91bf19d5786ac.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlay-clips/lyric-002-8ac91bf19d5786ac-5fd9f41355fa3cf4.mov
+  - start: 32.53
+    end: 39.01
+    text: It shatters the foe, in judgment devoured
+    image: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlays/lyric-003-88b4f14d037dd1ee.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlay-clips/lyric-003-88b4f14d037dd1ee-00eee24fa05667f7.mov
+  - start: 39.11
+    end: 45.63
+    text: Your majesty's great, You rise and prevail
+    image: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlays/lyric-004-192c5ab33d672f29.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlay-clips/lyric-004-192c5ab33d672f29-a5f859d1dc8ff290.mov
+  - start: 45.67
+    end: 52.88
+    text: Your fury consumes; the wicked assail
+    image: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlays/lyric-005-4cae8940ae7b4d03.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlay-clips/lyric-005-4cae8940ae7b4d03-5a89ed1964d1a5b6.mov
+  - start: 53.19
+    end: 56.68
+    text: The enemy boasted, “I’ll chase and destroy,
+    image: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlays/lyric-006-ee2a2b5bebb668f0.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlay-clips/lyric-006-ee2a2b5bebb668f0-9435123b548ce9a8.mov
+  - start: 56.68
+    end: 60.15
+    text: I’ll take what I want and carry my ploy
+    image: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlays/lyric-007-92205c1d80116041.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlay-clips/lyric-007-92205c1d80116041-88b8c5f9a4d1b81e.mov
+  - start: 60.15
+    end: 63.26
+    text: I’ll draw my sharp sword and bring them to shame”
+    image: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlays/lyric-008-ebbfbf56463a8e78.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlay-clips/lyric-008-ebbfbf56463a8e78-234dcaf07de49bfe.mov
+  - start: 63.26
+    end: 70.14
+    text: But You blew Your wind; they sank at Your name
+    image: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlays/lyric-009-b336f4107407b098.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlay-clips/lyric-009-b336f4107407b098-539f1aeebca315e8.mov
+  - start: 70.14
+    end: 77.24
+    text: God's victorious, His people He saved
+    image: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlays/lyric-010-49ad0397a906d6b2.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlay-clips/lyric-010-49ad0397a906d6b2-2a832028c46e3fa0.mov
+  - start: 77.24
+    end: 83.92
+    text: God's victorious, no more enslaved
+    image: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlays/lyric-011-e85201abd83ed1fc.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlay-clips/lyric-011-e85201abd83ed1fc-2861f3dd0a8d451e.mov
+  - start: 83.92
+    end: 95.28
+    text: God's victorious, the rivals He razed
+    image: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlays/lyric-012-22fac0421950f042.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlay-clips/lyric-012-22fac0421950f042-944da55683bea235.mov
+  - start: 95.28
+    end: 110.91
+    text: God's victorious, triumphant and worthy of praise
+    image: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlays/lyric-013-3210af0e8fa82d6f.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlay-clips/lyric-013-3210af0e8fa82d6f-35f30c5f1ebd4769.mov
+  - start: 114.77
+    end: 120.98
+    text: The nations have heard and trembled with fear,
+    image: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlays/lyric-014-b7f665f1476dc8aa.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlay-clips/lyric-014-b7f665f1476dc8aa-f48b17fe850418cc.mov
+  - start: 121.49
+    end: 128.09
+    text: They shake and they scatter as judgment draws near
+    image: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlays/lyric-015-45656c93998f2c1c.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlay-clips/lyric-015-45656c93998f2c1c-2aee66975c319768.mov
+  - start: 128.09
+    end: 134.75
+    text: Dread and great terror fall down from Your throne
+    image: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlays/lyric-016-a8022120afcf2e09.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlay-clips/lyric-016-a8022120afcf2e09-6a3c9153816564fa.mov
+  - start: 134.75
+    end: 142.22
+    text: They freeze before You, like a rigid stone
+    image: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlays/lyric-017-1a25bafd09cdc32e.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlay-clips/lyric-017-1a25bafd09cdc32e-cab35c63aa5757f6.mov
+  - start: 142.22
+    end: 145.68
+    text: You'll bring Your people with sovereign grace
+    image: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlays/lyric-018-88372a833d7152e4.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlay-clips/lyric-018-88372a833d7152e4-4f92a6243ea64cb4.mov
+  - start: 145.68
+    end: 148.73
+    text: You'll plant their feet in Your dwelling place
+    image: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlays/lyric-019-07f45aa3672a2e93.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlay-clips/lyric-019-07f45aa3672a2e93-9106a3121cc3f3a4.mov
+  - start: 148.73
+    end: 152.06
+    text: The mountain You formed, Your holy abode
+    image: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlays/lyric-020-ba98e1e5ab3f2e81.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlay-clips/lyric-020-ba98e1e5ab3f2e81-d1c47292ad708804.mov
+  - start: 152.06
+    end: 158.91
+    text: There You will reign, with glory untold
+    image: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlays/lyric-021-1498e2b82ced38d9.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlay-clips/lyric-021-1498e2b82ced38d9-19da1ffd509ef209.mov
+  - start: 158.91
+    end: 166.12
+    text: God's victorious, His people He saved
+    image: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlays/lyric-022-49ad0397a906d6b2.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlay-clips/lyric-022-49ad0397a906d6b2-5a89ed1964d1a5b6.mov
+  - start: 166.12
+    end: 172.82
+    text: God's victorious, no more enslaved
+    image: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlays/lyric-023-e85201abd83ed1fc.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlay-clips/lyric-023-e85201abd83ed1fc-23d71ca9e8e46016.mov
+  - start: 172.82
+    end: 184.33
+    text: God's victorious, the rivals He razed
+    image: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlays/lyric-024-22fac0421950f042.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlay-clips/lyric-024-22fac0421950f042-67524b26d4c94248.mov
+  - start: 184.33
+    end: 199.46
+    text: God's victorious, triumphant and worthy of praise
+    image: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlays/lyric-025-3210af0e8fa82d6f.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlay-clips/lyric-025-3210af0e8fa82d6f-a5b858d2ad287bc7.mov
+  - start: 204.64
+    end: 211.15
+    text: Who is like You, O Lord on high?
+    image: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlays/lyric-026-ff86c2f9d3f9596e.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlay-clips/lyric-026-ff86c2f9d3f9596e-554d746875a87cde.mov
+  - start: 211.15
+    end: 218.04
+    text: In power majestic, none can deny
+    image: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlays/lyric-027-db2502318d2120b7.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlay-clips/lyric-027-db2502318d2120b7-1da898a3167cca9f.mov
+  - start: 218.04
+    end: 223.98
+    text: Awesome in wonders, Your name is renowned,
+    image: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlays/lyric-028-6669159e990a5bb5.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlay-clips/lyric-028-6669159e990a5bb5-a818cb0ee4df4a2f.mov
+  - start: 223.98
+    end: 234.39
+    text: You stretched out Your hand, the enemy drowned
+    image: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlays/lyric-029-941861eba70758bc.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlay-clips/lyric-029-941861eba70758bc-17b63a0f9fa9ef1b.mov
+  - start: 234.39
+    end: 241.8
+    text: God's victorious, His people He saved
+    image: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlays/lyric-030-49ad0397a906d6b2.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlay-clips/lyric-030-49ad0397a906d6b2-97ee86912c94598d.mov
+  - start: 241.8
+    end: 248.35
+    text: God's victorious, no more enslaved
+    image: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlays/lyric-031-e85201abd83ed1fc.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlay-clips/lyric-031-e85201abd83ed1fc-8e7a764c28f84862.mov
+  - start: 248.35
+    end: 259.71
+    text: God's victorious, the rivals He razed
+    image: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlays/lyric-032-22fac0421950f042.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlay-clips/lyric-032-22fac0421950f042-944da55683bea235.mov
+  - start: 259.76
+    end: 270.37
+    text: God's victorious, triumphant and worthy of praise
+    image: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlays/lyric-033-3210af0e8fa82d6f.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlay-clips/lyric-033-3210af0e8fa82d6f-c9c9054a5e09f2d3.mov
+  - start: 270.37
+    end: 279.04
+    text: Triumphant and worthy of praise
+    image: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlays/lyric-034-9f4122d7db55465e.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlay-clips/lyric-034-9f4122d7db55465e-3bff5bc0aea6a136.mov
+  - start: 279.04
+    end: 284.46
+    text: God's victorious
+    image: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlays/lyric-035-a1658371469d9ac2.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlay-clips/lyric-035-a1658371469d9ac2-d7b961564479421a.mov
+  - start: 285.14
+    end: 293.15
+    text: He's victorious,
+    image: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlays/lyric-036-89a1fa52d066942d.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlay-clips/lyric-036-89a1fa52d066942d-1e084041cdb933e2.mov
+  - start: 293.15
+    end: 298.92
+    text: Victorious!
+    image: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlays/lyric-037-e4b5bf195ad12faa.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/victorious/overlay-clips/lyric-037-e4b5bf195ad12faa-94954c5fa6d356a5.mov
+  srt: /Users/jatroche/code/video-lyrics-creator/work/victorious/lyrics.srt
+bed:
+- kind: scene
+  first_frame: 0
+  frames: 369
+  scene: 0
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-001-scene-9762d24b470a43d7.mp4
+  start: 0.0
+  end: 12.3
+- kind: transition
+  first_frame: 369
+  frames: 22
+  from_scene: 0
+  to_scene: 1
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-002-xfade-e99b27301200c1e4.mp4
+  start: 12.3
+  end: 13.0333
+- kind: scene
+  first_frame: 391
+  frames: 390
+  scene: 1
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-003-scene-5f3eb6f5d1f0ef96.mp4
+  start: 13.0333
+  end: 26.0333
+- kind: transition
+  first_frame: 781
+  frames: 22
+  from_scene: 1
+  to_scene: 2
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-004-xfade-57d67c92762e5c63.mp4
+  start: 26.0333
+  end: 26.7667
+- kind: scene
+  first_frame: 803
+  frames: 172
+  scene: 2
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-005-scene-207be285bf163691.mp4
+  start: 26.7667
+  end: 32.5
+- kind: transition
+  first_frame: 975
+  frames: 22
+  from_scene: 2
+  to_scene: 3
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-006-xfade-6b83911ea731a92b.mp4
+  start: 32.5
+  end: 33.2333
+- kind: scene
+  first_frame: 997
+  frames: 176
+  scene: 3
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-007-scene-eeee877e66ba4caa.mp4
+  start: 33.2333
+  end: 39.1
+- kind: transition
+  first_frame: 1173
+  frames: 22
+  from_scene: 3
+  to_scene: 4
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-008-xfade-d0cb45630b2849bd.mp4
+  start: 39.1
+  end: 39.8333
+- kind: scene
+  first_frame: 1195
+  frames: 175
+  scene: 4
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-009-scene-3923d36d8b0c18dd.mp4
+  start: 39.8333
+  end: 45.6667
+- kind: transition
+  first_frame: 1370
+  frames: 22
+  from_scene: 4
+  to_scene: 5
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-010-xfade-f3b0da65bac4b0b1.mp4
+  start: 45.6667
+  end: 46.4
+- kind: scene
+  first_frame: 1392
+  frames: 203
+  scene: 5
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-011-scene-1a7372d3606210e2.mp4
+  start: 46.4
+  end: 53.1667
+- kind: transition
+  first_frame: 1595
+  frames: 22
+  from_scene: 5
+  to_scene: 6
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-012-xfade-b74a06833e1c03e6.mp4
+  start: 53.1667
+  end: 53.9
+- kind: scene
+  first_frame: 1617
+  frames: 75
+  scene: 6
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-013-scene-dc1f0b773bc9a9f4.mp4
+  start: 53.9
+  end: 56.4
+- kind: transition
+  first_frame: 1692
+  frames: 22
+  from_scene: 6
+  to_scene: 7
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-014-xfade-35b8e153e66ac58f.mp4
+  start: 56.4
+  end: 57.1333
+- kind: scene
+  first_frame: 1714
+  frames: 86
+  scene: 7
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-015-scene-8ac82d464ffd84f9.mp4
+  start: 57.1333
+  end: 60.0
+- kind: transition
+  first_frame: 1800
+  frames: 22
+  from_scene: 7
+  to_scene: 8
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-016-xfade-00b557445fd6470c.mp4
+  start: 60.0
+  end: 60.7333
+- kind: scene
+  first_frame: 1822
+  frames: 71
+  scene: 8
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-017-scene-da419d152f00b041.mp4
+  start: 60.7333
+  end: 63.1
+- kind: transition
+  first_frame: 1893
+  frames: 22
+  from_scene: 8
+  to_scene: 9
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-018-xfade-101f169938746bdb.mp4
+  start: 63.1
+  end: 63.8333
+- kind: scene
+  first_frame: 1915
+  frames: 182
+  scene: 9
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-019-scene-c2ca3a7aec4d4f25.mp4
+  start: 63.8333
+  end: 69.9
+- kind: transition
+  first_frame: 2097
+  frames: 22
+  from_scene: 9
+  to_scene: 10
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-020-xfade-730aa6c5674e8a8a.mp4
+  start: 69.9
+  end: 70.6333
+- kind: scene
+  first_frame: 2119
+  frames: 193
+  scene: 10
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-021-scene-d332fb2cc88209c3.mp4
+  start: 70.6333
+  end: 77.0667
+- kind: transition
+  first_frame: 2312
+  frames: 22
+  from_scene: 10
+  to_scene: 11
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-022-xfade-3d66881740ab27de.mp4
+  start: 77.0667
+  end: 77.8
+- kind: scene
+  first_frame: 2334
+  frames: 179
+  scene: 11
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-023-scene-6f99c5c4528a6511.mp4
+  start: 77.8
+  end: 83.7667
+- kind: transition
+  first_frame: 2513
+  frames: 22
+  from_scene: 11
+  to_scene: 12
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-024-xfade-dbe4ee9bc123c08b.mp4
+  start: 83.7667
+  end: 84.5
+- kind: scene
+  first_frame: 2535
+  frames: 319
+  scene: 12
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-025-scene-73fc994cc54c1bf2.mp4
+  start: 84.5
+  end: 95.1333
+- kind: transition
+  first_frame: 2854
+  frames: 22
+  from_scene: 12
+  to_scene: 13
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-026-xfade-234ed841afee1cbc.mp4
+  start: 95.1333
+  end: 95.8667
+- kind: scene
+  first_frame: 2876
+  frames: 440
+  scene: 13
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-027-scene-7c14543556edd8b8.mp4
+  start: 95.8667
+  end: 110.5333
+- kind: transition
+  first_frame: 3316
+  frames: 22
+  from_scene: 13
+  to_scene: 14
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-028-xfade-03ca2d0bf75591c3.mp4
+  start: 110.5333
+  end: 111.2667
+- kind: scene
+  first_frame: 3338
+  frames: 105
+  scene: 14
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-029-scene-d58df30ac9a89afe.mp4
+  start: 111.2667
+  end: 114.7667
+- kind: transition
+  first_frame: 3443
+  frames: 22
+  from_scene: 14
+  to_scene: 15
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-030-xfade-698ec9ab26aadaed.mp4
+  start: 114.7667
+  end: 115.5
+- kind: scene
+  first_frame: 3465
+  frames: 179
+  scene: 15
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-031-scene-c5eacf2aed87795d.mp4
+  start: 115.5
+  end: 121.4667
+- kind: transition
+  first_frame: 3644
+  frames: 22
+  from_scene: 15
+  to_scene: 16
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-032-xfade-be3ace0c20312f2c.mp4
+  start: 121.4667
+  end: 122.2
+- kind: scene
+  first_frame: 3666
+  frames: 171
+  scene: 16
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-033-scene-e15a9c122eedac3f.mp4
+  start: 122.2
+  end: 127.9
+- kind: transition
+  first_frame: 3837
+  frames: 22
+  from_scene: 16
+  to_scene: 17
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-034-xfade-ba0fdcd844a47baf.mp4
+  start: 127.9
+  end: 128.6333
+- kind: scene
+  first_frame: 3859
+  frames: 182
+  scene: 17
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-035-scene-d4551237f42e0180.mp4
+  start: 128.6333
+  end: 134.7
+- kind: transition
+  first_frame: 4041
+  frames: 22
+  from_scene: 17
+  to_scene: 18
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-036-xfade-0bd0022936d82a3b.mp4
+  start: 134.7
+  end: 135.4333
+- kind: scene
+  first_frame: 4063
+  frames: 200
+  scene: 18
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-037-scene-34bb67d98b0e2cb4.mp4
+  start: 135.4333
+  end: 142.1
+- kind: transition
+  first_frame: 4263
+  frames: 22
+  from_scene: 18
+  to_scene: 19
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-038-xfade-21a7f2d046d7f5fc.mp4
+  start: 142.1
+  end: 142.8333
+- kind: scene
+  first_frame: 4285
+  frames: 74
+  scene: 19
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-039-scene-45683822aa8a289d.mp4
+  start: 142.8333
+  end: 145.3
+- kind: transition
+  first_frame: 4359
+  frames: 22
+  from_scene: 19
+  to_scene: 20
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-040-xfade-8935a9923aac1e03.mp4
+  start: 145.3
+  end: 146.0333
+- kind: scene
+  first_frame: 4381
+  frames: 76
+  scene: 20
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-041-scene-ba4a844bd3936f5a.mp4
+  start: 146.0333
+  end: 148.5667
+- kind: transition
+  first_frame: 4457
+  frames: 22
+  from_scene: 20
+  to_scene: 21
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-042-xfade-9666aa86b9382b79.mp4
+  start: 148.5667
+  end: 149.3
+- kind: scene
+  first_frame: 4479
+  frames: 78
+  scene: 21
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-043-scene-cd1456f7ee6a0e2a.mp4
+  start: 149.3
+  end: 151.9
+- kind: transition
+  first_frame: 4557
+  frames: 22
+  from_scene: 21
+  to_scene: 22
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-044-xfade-f6b6b96ecd1f2618.mp4
+  start: 151.9
+  end: 152.6333
+- kind: scene
+  first_frame: 4579
+  frames: 185
+  scene: 22
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-045-scene-b7161b5440e934f4.mp4
+  start: 152.6333
+  end: 158.8
+- kind: transition
+  first_frame: 4764
+  frames: 22
+  from_scene: 22
+  to_scene: 23
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-046-xfade-972999e5269f2193.mp4
+  start: 158.8
+  end: 159.5333
+- kind: scene
+  first_frame: 4786
+  frames: 190
+  scene: 23
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-047-scene-b4bf83dd6f0cd177.mp4
+  start: 159.5333
+  end: 165.8667
+- kind: transition
+  first_frame: 4976
+  frames: 22
+  from_scene: 23
+  to_scene: 24
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-048-xfade-98b4248158e7eb67.mp4
+  start: 165.8667
+  end: 166.6
+- kind: scene
+  first_frame: 4998
+  frames: 179
+  scene: 24
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-049-scene-c2fe62776dfdbdf1.mp4
+  start: 166.6
+  end: 172.5667
+- kind: transition
+  first_frame: 5177
+  frames: 22
+  from_scene: 24
+  to_scene: 25
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-050-xfade-0a1a086c5c041ee7.mp4
+  start: 172.5667
+  end: 173.3
+- kind: scene
+  first_frame: 5199
+  frames: 326
+  scene: 25
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-051-scene-7b4d5d391390117a.mp4
+  start: 173.3
+  end: 184.1667
+- kind: transition
+  first_frame: 5525
+  frames: 22
+  from_scene: 25
+  to_scene: 26
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-052-xfade-6c37789d843963f7.mp4
+  start: 184.1667
+  end: 184.9
+- kind: scene
+  first_frame: 5547
+  frames: 426
+  scene: 26
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-053-scene-b93a2e08e37eb3bd.mp4
+  start: 184.9
+  end: 199.1
+- kind: transition
+  first_frame: 5973
+  frames: 22
+  from_scene: 26
+  to_scene: 27
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-054-xfade-80cd6a3dfe109849.mp4
+  start: 199.1
+  end: 199.8333
+- kind: scene
+  first_frame: 5995
+  frames: 144
+  scene: 27
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-055-scene-daf9f96333523936.mp4
+  start: 199.8333
+  end: 204.6333
+- kind: transition
+  first_frame: 6139
+  frames: 22
+  from_scene: 27
+  to_scene: 28
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-056-xfade-e0627e8e7d3d05e8.mp4
+  start: 204.6333
+  end: 205.3667
+- kind: scene
+  first_frame: 6161
+  frames: 169
+  scene: 28
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-057-scene-67cb20307c58e9cc.mp4
+  start: 205.3667
+  end: 211.0
+- kind: transition
+  first_frame: 6330
+  frames: 22
+  from_scene: 28
+  to_scene: 29
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-058-xfade-a1da828bbe4585a4.mp4
+  start: 211.0
+  end: 211.7333
+- kind: scene
+  first_frame: 6352
+  frames: 181
+  scene: 29
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-059-scene-dcbebc7300d0f439.mp4
+  start: 211.7333
+  end: 217.7667
+- kind: transition
+  first_frame: 6533
+  frames: 22
+  from_scene: 29
+  to_scene: 30
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-060-xfade-834d985f41c07f95.mp4
+  start: 217.7667
+  end: 218.5
+- kind: scene
+  first_frame: 6555
+  frames: 162
+  scene: 30
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-061-scene-0e01bbc6f5142980.mp4
+  start: 218.5
+  end: 223.9
+- kind: transition
+  first_frame: 6717
+  frames: 22
+  from_scene: 30
+  to_scene: 31
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-062-xfade-783962e93e370340.mp4
+  start: 223.9
+  end: 224.6333
+- kind: scene
+  first_frame: 6739
+  frames: 289
+  scene: 31
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-063-scene-46101d869d2a80fc.mp4
+  start: 224.6333
+  end: 234.2667
+- kind: transition
+  first_frame: 7028
+  frames: 22
+  from_scene: 31
+  to_scene: 32
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-064-xfade-fd4af85baa038997.mp4
+  start: 234.2667
+  end: 235.0
+- kind: scene
+  first_frame: 7050
+  frames: 199
+  scene: 32
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-065-scene-d9b2221d0f00dbdc.mp4
+  start: 235.0
+  end: 241.6333
+- kind: transition
+  first_frame: 7249
+  frames: 22
+  from_scene: 32
+  to_scene: 33
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-066-xfade-b04b02d5100ce542.mp4
+  start: 241.6333
+  end: 242.3667
+- kind: scene
+  first_frame: 7271
+  frames: 178
+  scene: 33
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-067-scene-4722a15762c70e25.mp4
+  start: 242.3667
+  end: 248.3
+- kind: transition
+  first_frame: 7449
+  frames: 22
+  from_scene: 33
+  to_scene: 34
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-068-xfade-c026232d1a54f863.mp4
+  start: 248.3
+  end: 249.0333
+- kind: scene
+  first_frame: 7471
+  frames: 321
+  scene: 34
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-069-scene-b220c55ca5544077.mp4
+  start: 249.0333
+  end: 259.7333
+- kind: transition
+  first_frame: 7792
+  frames: 22
+  from_scene: 34
+  to_scene: 35
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-070-xfade-3493c50b85d98eb1.mp4
+  start: 259.7333
+  end: 260.4667
+- kind: scene
+  first_frame: 7814
+  frames: 288
+  scene: 35
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-071-scene-1bce66940bdcfa0e.mp4
+  start: 260.4667
+  end: 270.0667
+- kind: transition
+  first_frame: 8102
+  frames: 22
+  from_scene: 35
+  to_scene: 36
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-072-xfade-7dd5f0fdc6c8fad2.mp4
+  start: 270.0667
+  end: 270.8
+- kind: scene
+  first_frame: 8124
+  frames: 236
+  scene: 36
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-073-scene-6239c939f055aa76.mp4
+  start: 270.8
+  end: 278.6667
+- kind: transition
+  first_frame: 8360
+  frames: 22
+  from_scene: 36
+  to_scene: 37
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-074-xfade-f735bf1126bc7f26.mp4
+  start: 278.6667
+  end: 279.4
+- kind: scene
+  first_frame: 8382
+  frames: 172
+  scene: 37
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-075-scene-1922e965cf6c9d52.mp4
+  start: 279.4
+  end: 285.1333
+- kind: transition
+  first_frame: 8554
+  frames: 22
+  from_scene: 37
+  to_scene: 38
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-076-xfade-20b300f7ffdb21d2.mp4
+  start: 285.1333
+  end: 285.8667
+- kind: scene
+  first_frame: 8576
+  frames: 208
+  scene: 38
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-077-scene-61c1db2e26247fcf.mp4
+  start: 285.8667
+  end: 292.8
+- kind: transition
+  first_frame: 8784
+  frames: 22
+  from_scene: 38
+  to_scene: 39
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-078-xfade-67389f14c51faa80.mp4
+  start: 292.8
+  end: 293.5333
+- kind: scene
+  first_frame: 8806
+  frames: 344
+  scene: 39
+  path: /Users/jatroche/code/video-lyrics-creator/work/victorious/clips/bed-079-scene-41a9f1970fb80a84.mp4
+  start: 293.5333
+  end: 305.0
