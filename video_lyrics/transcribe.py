@@ -87,6 +87,7 @@ def transcribe(
 
     log.info("Transcribed %d words in %d segments.", len(words), len(plain_segments))
     return {
+        "engine": "whisper",
         "model": model,
         "language": getattr(info, "language", language),
         "duration": float(getattr(info, "duration", 0.0) or 0.0),
@@ -95,25 +96,56 @@ def transcribe(
     }
 
 
+# What a transcript written before a field existed was, in fact, made with.  Without
+# these every project on disk would look stale the first time a field is added and
+# re-transcribe itself for nothing.
+LEGACY = {"engine": "whisper", "vocals": False}
+
+
+def load(cache: Path, *, signature: dict[str, Any], force: bool = False) -> dict[str, Any] | None:
+    """The cached transcript, if there is one and it was made the same way.
+
+    `signature` is everything that would invalidate it - which engine listened, which
+    weights, whether it heard the isolated vocal, and for forced alignment the lyrics
+    it was given, those being half of what it aligns.  Shared with `forced`, so both
+    engines cache alike and switching between them re-runs rather than reading the
+    other's answer.
+    """
+    cache = Path(cache)
+    if force or not cache.is_file():
+        return None
+    payload = json.loads(cache.read_text(encoding="utf-8"))
+    if not payload.get("words"):
+        return None
+    if any(payload.get(key, LEGACY.get(key)) != value for key, value in signature.items()):
+        return None
+    log.info("Reusing cached transcript (%d words).", len(payload["words"]))
+    return payload
+
+
+def store(cache: Path, payload: dict[str, Any]) -> dict[str, Any]:
+    cache = Path(cache)
+    cache.parent.mkdir(parents=True, exist_ok=True)
+    cache.write_text(json.dumps(payload, indent=1, ensure_ascii=False), encoding="utf-8")
+    return payload
+
+
 def load_or_create(
     audio: Path,
     cache: Path,
     *,
+    signature: dict[str, Any],
     model: str = "medium.en",
     language: str | None = "en",
     initial_prompt: str | None = None,
     vad: bool = False,
     force: bool = False,
 ) -> dict[str, Any]:
-    cache = Path(cache)
-    if cache.is_file() and not force:
-        payload = json.loads(cache.read_text(encoding="utf-8"))
-        if payload.get("model") == model and payload.get("words"):
-            log.info("Reusing cached transcript (%d words).", len(payload["words"]))
-            return payload
+    payload = load(cache, signature=signature, force=force)
+    if payload is not None:
+        return payload
     payload = transcribe(
         audio, model=model, language=language, initial_prompt=initial_prompt, vad=vad
     )
-    cache.parent.mkdir(parents=True, exist_ok=True)
-    cache.write_text(json.dumps(payload, indent=1, ensure_ascii=False), encoding="utf-8")
-    return payload
+    payload.update(signature)     # what it was made with, so it can be checked again
+    return store(cache, payload)

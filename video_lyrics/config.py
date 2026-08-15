@@ -83,7 +83,12 @@ IMAGE_DEFAULTS: dict[str, Any] = {
 }
 
 ALIGN_DEFAULTS: dict[str, Any] = {
+    "engine": "whisper",      # whisper: transcribe the song, then match the lyrics to it
+                              # forced:  fit the lyrics we already have onto the audio
+    "vocals": False,          # separate the singer out (demucs) before listening
     "model": "medium.en",     # faster-whisper model id
+    "forced_model": "facebook/wav2vec2-base-960h",   # ... engine == "forced"
+    "forced_min_score": 0.05, # ... how well the audio must bear a word out to keep it
     "language": "en",
     "vad": False,             # voice activity detection eats sung vocals; keep it off
     "prompt_hint": False,     # priming Whisper with the lyrics invites hallucination
@@ -475,6 +480,11 @@ class Project:
     @property
     def transcript_path(self) -> Path:
         return self.work_dir / "transcript.json"
+
+    @property
+    def vocals_path(self) -> Path:
+        """The singer alone, when `alignment.vocals` is on - listened to, never rendered."""
+        return self.work_dir / "vocals.wav"
 
     @property
     def lyrics_text_path(self) -> Path:

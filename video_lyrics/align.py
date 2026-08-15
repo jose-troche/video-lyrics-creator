@@ -64,11 +64,18 @@ def align(
     energy: list[float] | None = None,
     tail_extend: float = 0.0,
     tail_level: float = 0.45,
+    rescue: bool = True,
 ) -> list[dict[str, Any]]:
     """Return time-ordered cues: [{start, end, text, line_index, alignment_confidence}].
 
     `energy` is the song's loudness envelope (`audio.envelope`); given one, a line is
     held for as long as its last note is - see `hold_tails`.
+
+    `rescue` is the second pass, and belongs to transcripts.  Words that were forced
+    onto the lyrics are already in the lyrics' own order and spelling, so the first
+    pass has nothing left to get wrong - while the second pass, which is free to
+    reach anywhere in the song for a line the first pass missed, will happily take a
+    line the singer never sang and pin it on some far-off repeat of the same words.
     """
     lyric_tokens, owners = _flatten(lyric_lines)
     asr_tokens_all = [normalize(word["word"]) for word in asr_words]
@@ -110,14 +117,15 @@ def align(
         )
 
     # ---- pass 2: give the unclaimed audio to the lines that fit it ----------
-    cues.extend(
-        _rescue(
-            lyric_lines, tokens_by_line, asr_tokens, asr_times,
-            claimed=cues,
-            min_confidence=min_confidence,
-            min_matched_words=min_matched_words,
+    if rescue:
+        cues.extend(
+            _rescue(
+                lyric_lines, tokens_by_line, asr_tokens, asr_times,
+                claimed=cues,
+                min_confidence=min_confidence,
+                min_matched_words=min_matched_words,
+            )
         )
-    )
 
     cues.sort(key=lambda cue: (cue["start"], cue["line_index"]))
     hold_tails(cues, energy, limit=tail_extend, level=tail_level)

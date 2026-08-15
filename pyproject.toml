@@ -19,6 +19,8 @@ dependencies = [
 [project.optional-dependencies]
 dev = ["pytest>=8.0"]
 browser = ["playwright>=1.40"]   # the chatgpt / meta image providers
+align = ["torch>=2.1", "transformers>=4.35", "numpy>=1.24"]  # alignment.engine = forced
+vocals = ["demucs>=4.0"]         # alignment.vocals = true
 
 [project.scripts]
 video-lyrics = "video_lyrics.cli:main"

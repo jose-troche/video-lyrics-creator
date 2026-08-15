@@ -25,7 +25,10 @@ source .venv/bin/activate          # puts `video-lyrics` on PATH, once per shell
 
 Also needs **ffmpeg** (and its `ffplay`, for the tuning editor) on the PATH. The
 `browser` extra is only needed for the `chatgpt` / `meta` image providers, and
-**DaVinci Resolve 18+** only if you choose `--engine resolve`.
+**DaVinci Resolve 18+** only if you choose `--engine resolve`. Two more extras are
+worth having for the timing — `align` for [forced
+alignment](#forced-alignment-optional) and `vocals` to isolate the singer first —
+but both pull in torch, so they are opt-in.
 
 Lyrics in a Google Doc need a one-time login: copy `.env.example` to `.env`, paste
 a Google Cloud **Desktop app** OAuth client id and secret, then run
@@ -68,7 +71,7 @@ redoing the rest:
 
 ```bash
 video-lyrics lyrics        # load the reference lyrics, measure the audio
-video-lyrics transcribe    # faster-whisper; cached in work/<song>/transcript.json
+video-lyrics transcribe    # time the words; cached in work/<song>/transcript.json
 video-lyrics align         # confirm lines against the transcript and time them
 video-lyrics tune          # hear the song and fix any line that sits wrong
 video-lyrics plan          # group cues into image scenes and write their prompts
@@ -229,6 +232,15 @@ site-specific is in those two files, and the driver they share is
 
 ## How the timing works
 
+There are two ways to work out when a word is sung, and the project can use either.
+The default **transcribes** the song and matches your lines to what it heard. The
+alternative is **forced alignment**, which skips the guessing: it already has the
+words, and only has to find them. See [Forced alignment](#forced-alignment-optional)
+below — measured against the same song, it is roughly three times closer on where a
+line begins.
+
+### Transcribing (`alignment.engine = whisper`, the default)
+
 The rule is that **the audio decides and the lyrics file spells**:
 
 * the recording is transcribed with word-level timestamps (faster-whisper);
@@ -252,6 +264,69 @@ Two transcription settings are deliberately off, because on sung, fully mixed
 audio they each destroy the transcript: `alignment.vad` (voice-activity filtering
 drops most of a vocal) and `alignment.prompt_hint` (priming Whisper with the
 lyrics makes it recite them over the intro).
+
+### Held notes
+
+A word is over, as far as a transcript is concerned, the moment its last consonant
+is — so a line sung out on a long vowel leaves the screen while the note is still
+ringing. The loudness envelope knows better, and after the cues are built each one
+walks on from its end for as long as the sound stays near the level that line
+itself sat at, stopping the moment it falls away. A line that really did stop where
+the transcript says drops below that threshold at once and is left alone.
+
+`alignment.tail_extend` is the most a line may be held (1.2s; `0` turns it off) and
+`alignment.tail_level` how loud the sound must stay to keep holding it, measured
+against the line itself. It reads the isolated vocal when there is one — over a
+full mix the band keeps the level up on its own, and most lines simply run to the
+cap.
+
+### Forced alignment (optional)
+
+Transcription asks the recording what was sung and then has to be argued with. But
+the words were never in doubt — they are sitting in the lyrics file. Forced
+alignment asks only the question that is actually ours: *given* that this is what
+was sung, when was each word? A CTC acoustic model scores every 20ms frame against
+every letter, and a Viterbi pass walks the lyrics through those scores along the one
+best path that spells them in order.
+
+```bash
+pip install -e ".[align,vocals]"
+video-lyrics set alignment.engine forced
+video-lyrics set alignment.vocals true      # strongly recommended - see below
+video-lyrics transcribe --force && video-lyrics align --force
+```
+
+On one 4:45 song, scored against where the vocal actually starts after each silence:
+
+| | lines placed | median error | starts |
+| --- | --- | --- | --- |
+| transcript (whisper) | 33 of 34 | 1.02s | ~1.0s early |
+| forced, over the mix | half unusable | — | one line landed in the wrong verse |
+| forced, over the vocal | 33 of 34 | **0.28s** | 0.27s late |
+
+That last row is the point, and so is the middle one: **isolate the vocal.** The
+acoustic model is listening for consonants and a band plays straight over them.
+`alignment.vocals true` runs [demucs](https://github.com/adefossez/demucs) once (a
+minute or so) and caches the stem in the work directory; everything that *listens* —
+both engines, and the held-note pass — then uses the singer alone. The render never
+does: the video always carries the real mix.
+
+Forced alignment is *forced*: hand it a heading or a discarded draft and it will
+place that too, somewhere, because it is not allowed to refuse. What it cannot do is
+make the audio agree, so those words come back with poor scores.
+`alignment.forced_min_score` (0.05) drops them, and a line that loses its words that
+way falls below `min_confidence` and produces no cue — the same rule as before,
+arrived at from the other direction. The second, rescuing pass is skipped for this
+engine: with the words already in the lyrics' own order there is nothing left for it
+to fix, and reaching across the song for an unmatched line only pins it on a distant
+repeat of the same words.
+
+`alignment.forced_model` chooses the acoustic model (default
+`facebook/wav2vec2-base-960h`, English; any CTC model on Hugging Face works — a
+multilingual one such as `facebook/mms-300m-1130-forced-aligner` for other
+languages). Both weights and stem are cached, so only the first run pays for them.
+
+To go back, at any point: `video-lyrics set alignment.engine whisper`.
 
 ### Fixing the timing by hand
 
@@ -444,7 +519,8 @@ directory is moved into `work/<song>/`, logged as it happens.
 
 ```
 work/<song>/project.yaml        the full project - settings and every stage's results
-work/<song>/transcript.json     cached transcription
+work/<song>/transcript.json     cached word timings, from whichever engine made them
+work/<song>/vocals.wav          the singer alone (alignment.vocals) - listened to, never rendered
 work/<song>/lyrics.txt          the reference lines as loaded
 work/<song>/lyrics.srt          timed lyrics
 work/<song>/audio-faded.wav     the song with its fade in/out baked in

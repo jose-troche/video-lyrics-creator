@@ -4,7 +4,7 @@ from pathlib import Path
 
 import pytest
 
-from video_lyrics import google_drive, lyrics, motion, overlays
+from video_lyrics import google_drive, lyrics, motion, overlays, transcribe
 from video_lyrics.config import DEFAULT_AUTHOR, Project
 from video_lyrics.util import VideoLyricsError, format_timecode
 
@@ -166,6 +166,46 @@ def test_a_missing_audio_file_is_caught_at_init(tmp_path):
     words.write_text("a line")
     with pytest.raises(VideoLyricsError):
         Project.create(tmp_path / "p.json", audio=str(tmp_path / "nope.wav"), lyrics_source=str(words))
+
+
+# --------------------------------------------------------- transcript cache
+
+
+def cached(tmp_path, **payload):
+    return transcribe.store(tmp_path / "transcript.json", {"words": [{"word": "a"}], **payload})
+
+
+def test_a_transcript_is_reused_only_when_it_was_made_the_same_way(tmp_path):
+    cached(tmp_path, engine="whisper", model="medium.en", vocals=False)
+    same = {"engine": "whisper", "model": "medium.en", "vocals": False}
+    assert transcribe.load(tmp_path / "transcript.json", signature=same) is not None
+    for changed in ({"model": "small.en"}, {"engine": "forced"}, {"vocals": True}):
+        assert transcribe.load(tmp_path / "transcript.json", signature={**same, **changed}) is None
+
+
+def test_a_transcript_from_before_a_setting_existed_is_still_good(tmp_path):
+    # Written when "whisper on the whole mix" was the only thing it could have been:
+    # it must not look stale now that both of those are settings.
+    cached(tmp_path, model="medium.en")
+    payload = transcribe.load(
+        tmp_path / "transcript.json",
+        signature={"engine": "whisper", "model": "medium.en", "vocals": False},
+    )
+    assert payload is not None
+
+
+def test_forced_alignment_forgets_its_transcript_when_the_lyrics_change(tmp_path):
+    signature = {"engine": "forced", "model": "w2v", "vocals": True, "lyrics_fingerprint": "abc"}
+    cached(tmp_path, **signature)
+    assert transcribe.load(tmp_path / "transcript.json", signature=signature) is not None
+    assert transcribe.load(
+        tmp_path / "transcript.json", signature={**signature, "lyrics_fingerprint": "xyz"}
+    ) is None
+
+
+def test_a_transcript_with_no_words_in_it_is_not_worth_reusing(tmp_path):
+    transcribe.store(tmp_path / "transcript.json", {"engine": "whisper", "words": []})
+    assert transcribe.load(tmp_path / "transcript.json", signature={"engine": "whisper"}) is None
 
 
 # ----------------------------------------------------------------- overlays

@@ -20,7 +20,7 @@ from . import motion as motion_mod
 from . import overlays as overlays_mod
 from . import render_ffmpeg, scenes as scenes_mod, transcribe as transcribe_mod
 from .config import Project
-from .util import VideoLyricsError, log
+from .util import VideoLyricsError, log, short_hash
 
 STAGES = ("lyrics", "transcribe", "align", "tune", "plan", "images", "overlays", "bed", "render")
 
@@ -43,29 +43,103 @@ def stage_lyrics(project: Project, *, force: bool = False, **_: Any) -> None:
     project.save()
 
 
+def _listening_to(project: Project) -> Path:
+    """The audio the timing is read from: the isolated vocal, or the song as it is.
+
+    Only the listening stages ever ask; the render always uses the real mix.  The
+    stem is separated once and then kept - `--force` on a stage means redo that
+    stage's own work, and separating a file again only ever produces the same file.
+    Delete it to have it made afresh.
+    """
+    if not project.alignment.get("vocals"):
+        return project.audio
+    from . import vocals as vocals_mod
+
+    return vocals_mod.isolate(project.audio, project.vocals_path)
+
+
 def stage_transcribe(project: Project, *, force: bool = False, **_: Any) -> None:
-    """Transcribe the song; the transcript decides the timing of everything."""
+    """Work out when each word is sung; everything downstream is timed from this."""
     settings = project.alignment
-    # Feeding the lyrics in as a prompt makes Whisper recite them over the intro, so
-    # it is off unless asked for.
-    hint = None
-    if settings.get("prompt_hint"):
-        hint = " ".join(project.data.get("lyric_lines", [])[:8]) or None
-    transcript = transcribe_mod.load_or_create(
-        project.audio,
-        project.transcript_path,
-        model=settings["model"],
-        language=settings.get("language"),
-        initial_prompt=hint,
-        vad=bool(settings.get("vad", False)),
-        force=force,
-    )
+    engine = settings.get("engine", "whisper")
+    if engine not in ("whisper", "forced"):
+        raise VideoLyricsError(
+            f"Unknown alignment.engine {engine!r}; it is either 'whisper' or 'forced'."
+        )
+
+    if engine == "forced":
+        transcript = _forced_transcript(project, force=force)
+    else:
+        # Feeding the lyrics in as a prompt makes Whisper recite them over the intro, so
+        # it is off unless asked for.
+        hint = None
+        if settings.get("prompt_hint"):
+            hint = " ".join(project.data.get("lyric_lines", [])[:8]) or None
+        transcript = transcribe_mod.load_or_create(
+            _listening_to(project),
+            project.transcript_path,
+            signature={
+                "engine": "whisper",
+                "model": settings["model"],
+                "vocals": bool(settings.get("vocals")),
+            },
+            model=settings["model"],
+            language=settings.get("language"),
+            initial_prompt=hint,
+            vad=bool(settings.get("vad", False)),
+            force=force,
+        )
+
     project.data["transcript"] = {
         "path": str(project.transcript_path),
+        "engine": transcript.get("engine", "whisper"),
         "model": transcript.get("model"),
         "words": len(transcript.get("words", [])),
     }
     project.save()
+
+
+def _forced_transcript(project: Project, *, force: bool = False) -> dict[str, Any]:
+    """Time the reference lyrics directly against the audio (see `forced`)."""
+    from . import forced as forced_mod
+
+    settings = project.alignment
+    lines = project.data.get("lyric_lines") or []
+    if not lines:
+        raise VideoLyricsError(
+            "Forced alignment needs the lyrics it is aligning. Run `video-lyrics lyrics` first."
+        )
+
+    if not settings.get("vocals"):
+        # Measured on a full mix: half the lines come back unusable, and some land in
+        # the wrong verse entirely. The acoustic model is listening for consonants, and
+        # a band plays straight over them.
+        log.warning(
+            "Forced alignment is reading the whole mix. It is markedly better on the "
+            "voice alone: video-lyrics set alignment.vocals true"
+        )
+
+    model = str(settings.get("forced_model", forced_mod.DEFAULT_MODEL))
+    # The lyrics are half of the input here, so a changed lyric sheet has to invalidate
+    # the cache as surely as a changed model would.
+    signature = {
+        "engine": "forced",
+        "model": model,
+        "vocals": bool(settings.get("vocals")),
+        "lyrics_fingerprint": short_hash(*lines),
+    }
+    cached = transcribe_mod.load(project.transcript_path, signature=signature, force=force)
+    if cached is not None:
+        return cached
+
+    payload = forced_mod.align_words(
+        _listening_to(project),
+        lines,
+        model=model,
+        min_score=float(settings.get("forced_min_score", 0.05)),
+    )
+    payload.update(signature)
+    return transcribe_mod.store(project.transcript_path, payload)
 
 
 def stage_align(project: Project, *, force: bool = False, **_: Any) -> None:
@@ -99,9 +173,10 @@ def stage_align(project: Project, *, force: bool = False, **_: Any) -> None:
         min_matched_words=int(settings.get("min_matched_words", 2)),
         min_duration=float(settings["min_duration"]),
         max_gap_fill=float(settings["max_gap_fill"]),
-        energy=audio_mod.envelope(project.audio) if tail_extend > 0 else None,
+        energy=audio_mod.envelope(_listening_to(project)) if tail_extend > 0 else None,
         tail_extend=tail_extend,
         tail_level=float(settings.get("tail_level", 0.45)),
+        rescue=transcript.get("engine", "whisper") != "forced",
     )
     project.data["lyrics"] = cues
     log.info("%s", align_mod.report(lines, cues))
@@ -441,10 +516,11 @@ def status(project: Project) -> str:
     """A short report of what is done and what is not."""
     data = project.data
     overlays = data.get("overlays") or {}
+    transcript = data.get("transcript") or {}
     checks = [
         ("lyrics", bool(data.get("lyric_lines")), f"{len(data.get('lyric_lines', []))} lines"),
         ("transcribe", project.transcript_path.is_file(),
-         f"{(data.get('transcript') or {}).get('words', 0)} words"),
+         f"{transcript.get('words', 0)} words ({transcript.get('engine', 'whisper')})"),
         ("align", bool(data.get("lyrics")), f"{len(data.get('lyrics', []))} cues"),
         ("plan", bool(data.get("scenes")), f"{len(data.get('scenes', []))} scenes"),
         ("images", all(scene.get("image") for scene in data.get("scenes", [])) and bool(data.get("scenes")),
