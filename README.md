@@ -129,8 +129,8 @@ changes each scene's prompt, so run `plan` then `images`.
 * `manual` — no generator. Every outstanding scene's prompt and the exact filename
   stem it expects are written to `work/<song>/images/prompts.txt`. Create each
   image however you like, save it under that stem in `work/<song>/images/` (png,
-  jpg or webp), and run `images` again — it picks the files up, converts them to
-  PNG, and reports anything still missing.
+  jpg or webp), and run `images` again — it picks the files up and reports anything
+  still missing.
 * `supplied` — for images you already have; see `--images-dir`. They are adopted
   in filename order rather than matched by name.
 
@@ -139,17 +139,23 @@ video-lyrics set image_generation.provider meta
 video-lyrics images --limit 3    # try a few before committing to a whole song
 ```
 
-Raw downloads are kept in `work/<song>/images.src/` in whatever format the site
-served; each is also converted into the canonical PNG in `work/<song>/images/`.
+Every picture lands in `work/<song>/images/`, under the scene's own stem and in
+whatever format the generator served — the file kept is the generator's own,
+untouched. It is only ever re-encoded when something about it would actually break
+the render: a shape that isn't 16:9 is cropped to fit, and a colour mode the
+pipeline can't use is converted, either of which is then written out as PNG so a
+lossy original is never compressed twice. Resolution is deliberately left alone,
+since the motion stage scales every image on its way into ffmpeg anyway — doing it
+here as well would interpolate twice and store the larger of the two.
+
 An interrupted run only asks for what is still missing, and a scene that already
 has a usable image is never redrawn without `--force`.
 
 **Regenerating one scene.** `--force` redoes every scene, so to redraw a single
-one delete its two cached files — same stem, one in each folder — and run `images`
-again:
+one delete its cached file and run `images` again:
 
 ```bash
-rm work/<song>/images/scene-010-*.png work/<song>/images.src/scene-010-*.png
+rm work/<song>/images/scene-010-*
 video-lyrics images
 ```
 
@@ -553,8 +559,7 @@ work/<song>/vocals.wav          the singer alone (alignment.vocals) - listened t
 work/<song>/lyrics.txt          the reference lines as loaded
 work/<song>/lyrics.srt          timed lyrics
 work/<song>/audio-faded.wav     the song with its fade in/out baked in
-work/<song>/images/             one still per scene, normalised to PNG
-work/<song>/images.src/         downloads as the generator served them
+work/<song>/images/             one still per scene, as the generator served it
 work/<song>/overlays/           title and lyric PNGs (transparent)
 work/<song>/overlay-clips/      the same, as alpha movie clips with fades
 work/<song>/clips/              the image bed: scene and dissolve clips
@@ -575,9 +580,9 @@ work/<song>/lyrics.srt          timed lyrics
 work/<song>/images/             the generated stills
 ```
 
-The images are held in **Git LFS** (`work/*/images/*.png` in `.gitattributes`), so
-the history stays small as scenes are regenerated. A fresh clone needs git-lfs
-before they arrive as real files rather than pointers:
+The images are held in **Git LFS** (one `work/*/images/*.<ext>` line per image
+format in `.gitattributes`), so the history stays small as scenes are regenerated.
+A fresh clone needs git-lfs before they arrive as real files rather than pointers:
 
 ```bash
 brew install git-lfs && git lfs install     # once per machine

@@ -8,12 +8,14 @@ Four providers:
                    filename to a manifest so the user can create each image by hand
                    (Midjourney, an image site, ...) and drop it into the images folder.
 
-Both browser providers keep their raw downloads in `images.src/` (a sibling of
-`images/`) and convert each into the canonical PNG in `images/`, same as `manual`.
+Every provider writes into the one `images/` folder, under the scene's own stem and
+in whatever format it was given - the file that lands there is the generator's own,
+kept byte for byte unless its shape or colour mode actually needs fixing.
 """
 
 from __future__ import annotations
 
+import shutil
 from pathlib import Path
 from typing import Any
 
@@ -22,10 +24,14 @@ from PIL import Image
 from .util import VideoLyricsError, ensure_dir, log, scene_stem, short_hash
 
 IMAGE_SUFFIXES = (".png", ".jpg", ".jpeg", ".webp")
-RAW_SUBDIR = "images.src"
+
+# How far below the render's own width an image may be before it is worth saying
+# so. The motion stage upscales whatever it is handed, so a little under is
+# invisible; half is a 2x interpolation and will look soft.
+SOFT_WIDTH_RATIO = 0.5
 
 # provider -> the module that drives that site. Each exposes a `generate` taking
-# `raw_dir` plus BROWSER_OPTIONS as keyword arguments; the provider name is also
+# `images_dir` plus BROWSER_OPTIONS as keyword arguments; the provider name is also
 # the tag in every image's fingerprint, so renaming one orphans its downloads.
 BROWSER_MODULES = {"chatgpt": "chatgpt", "meta": "meta_ai"}
 BROWSER_PROVIDERS = tuple(BROWSER_MODULES)
@@ -42,7 +48,6 @@ def generate(
     images_dir: Path,
     provider: str = "chatgpt",
     source_dir: str | Path | None = None,
-    raw_dir: Path | None = None,
     size: tuple[int, int] = (1920, 1080),
     force: bool = False,
     limit: int | None = None,
@@ -57,7 +62,7 @@ def generate(
         return _generate_manual(scenes, images_dir, size, force)
     if provider in BROWSER_PROVIDERS:
         return _generate_browser(
-            scenes, provider, images_dir, raw_dir, size, force, limit=limit,
+            scenes, provider, images_dir, size, force, limit=limit,
             options={key: value for key, value in (browser or {}).items()
                      if key in BROWSER_OPTIONS and value is not None},
         )
@@ -75,14 +80,33 @@ def _valid(path: Path) -> bool:
         return False
 
 
-def _postprocess(path: Path, size: tuple[int, int]) -> None:
-    """Normalise to RGB, 16:9, and at least the target resolution."""
+def _normalise(path: Path, size: tuple[int, int]) -> Path:
+    """Make the file something the render can use, touching it as little as possible.
+
+    An image that is already RGB and already the target's aspect ratio is left
+    exactly as the generator served it - format, bytes and all - and its own path
+    comes back. Only a wrong shape or an unusable colour mode is worth a re-encode,
+    and that result is written as PNG so a lossy source is never compressed twice.
+
+    Resolution is deliberately not touched. The motion stage scales every image to
+    `size * supersample` on its way into ffmpeg (motion.zoompan_filter), so
+    upscaling here would interpolate twice and store the larger of the two for
+    nothing.
+    """
     width, height = size
-    with Image.open(path) as image:
-        image = image.convert("RGB")
-        target_ratio = width / height
-        source_ratio = image.width / image.height
-        if abs(source_ratio - target_ratio) > 0.01:
+    target_ratio = width / height
+    with Image.open(path) as opened:
+        source_ratio = opened.width / opened.height
+        needs_crop = abs(source_ratio - target_ratio) > 0.01
+        if opened.width < width * SOFT_WIDTH_RATIO:
+            log.warning(
+                "  %s is %dx%d, well under the %dx%d render - it will look soft.",
+                path.name, opened.width, opened.height, width, height,
+            )
+        if not needs_crop and opened.mode == "RGB":
+            return path
+        image = opened.convert("RGB")
+        if needs_crop:
             if source_ratio > target_ratio:  # too wide -> crop sides
                 new_width = int(round(image.height * target_ratio))
                 left = (image.width - new_width) // 2
@@ -91,9 +115,12 @@ def _postprocess(path: Path, size: tuple[int, int]) -> None:
                 new_height = int(round(image.width / target_ratio))
                 top = (image.height - new_height) // 2
                 image = image.crop((0, top, image.width, top + new_height))
-        if image.width < width:
-            image = image.resize((width, int(round(width / target_ratio))), Image.LANCZOS)
-        image.save(path, "PNG")
+
+    canonical = path.with_suffix(".png")
+    image.save(canonical, "PNG")
+    if canonical != path:
+        path.unlink()
+    return canonical
 
 
 def _stem_for(scene: dict[str, Any], tag: str) -> str:
@@ -109,32 +136,40 @@ def _find_image_by_stem(directory: Path, stem: str) -> Path | None:
     return None
 
 
+def _clear_stem(directory: Path, stem: str, *, keep: Path | None = None) -> None:
+    """Remove every file held under `stem` except `keep`, whatever format it is in.
+
+    One folder means the same scene can end up in two formats at once - a fresh
+    download beside the image it replaces - and only the first of them is ever
+    reachable, since _find_image_by_stem picks by IMAGE_SUFFIXES order. So the stem
+    is emptied before a scene is asked for again, and swept of everything but the
+    winner after one is adopted.
+    """
+    for suffix in IMAGE_SUFFIXES:
+        candidate = directory / f"{stem}{suffix}"
+        if candidate != keep and candidate.is_file():
+            candidate.unlink()
+
+
 def _adopt_by_stem(
     scene: dict[str, Any],
     stem: str,
     *,
-    search_dir: Path,
     images_dir: Path,
     size: tuple[int, int],
-    delete_source: bool,
 ) -> bool:
-    """If `search_dir` holds a readable file matching `stem`, convert it into the
-    canonical PNG in `images_dir` and attach it to the scene. Returns whether that
-    succeeded - a missing or unreadable file both count as not adopted."""
-    found = _find_image_by_stem(search_dir, stem)
+    """If `images_dir` holds a readable file matching `stem`, make it this scene's
+    image. Returns whether that succeeded - a missing or unreadable file both count
+    as not adopted."""
+    found = _find_image_by_stem(images_dir, stem)
     if found is None:
         return False
     if not _valid(found):
         log.warning("  scene %03d: %s is not a readable image, regenerating", scene["index"], found.name)
         return False
-    canonical = images_dir / f"{stem}.png"
-    if found != canonical:
-        with Image.open(found) as image:
-            image.convert("RGB").save(canonical, "PNG")
-        if delete_source:
-            found.unlink()
-    _postprocess(canonical, size)
-    scene["image"] = str(canonical)
+    final = _normalise(found, size)
+    _clear_stem(images_dir, stem, keep=final)
+    scene["image"] = str(final)
     return True
 
 
@@ -149,15 +184,12 @@ def _generate_manual(
     Writes every outstanding scene's prompt and expected filename (stem) to
     ``prompts.txt``. Once the user has created each image by hand - in any of
     IMAGE_SUFFIXES - and saved it under that stem, re-running this (same command)
-    picks the files up from disk and normalises them to PNG - nothing to type back in.
+    picks the files up from disk - nothing to type back in.
     """
     pending: list[tuple[dict[str, Any], str]] = []
     for scene in scenes:
         stem = _stem_for(scene, "manual")
-        if not force and _adopt_by_stem(
-            scene, stem, search_dir=images_dir, images_dir=images_dir,
-            size=size, delete_source=True,
-        ):
+        if not force and _adopt_by_stem(scene, stem, images_dir=images_dir, size=size):
             continue
         pending.append((scene, stem))
 
@@ -191,7 +223,6 @@ def _generate_browser(
     scenes: list[dict[str, Any]],
     provider: str,
     images_dir: Path,
-    raw_dir: Path | None,
     size: tuple[int, int],
     force: bool,
     *,
@@ -200,20 +231,14 @@ def _generate_browser(
 ) -> list[dict[str, Any]]:
     """Drive a chat site in a real browser to generate each outstanding scene's image.
 
-    Raw downloads land in `raw_dir/<stem>.<ext>` and are kept there (whatever
-    format the site served); each is also converted into the canonical PNG in
-    `images_dir`. A run interrupted partway through only asks the browser for what
+    Downloads land in `images_dir/<stem>.<ext>`, in whatever format the site served,
+    and stay there. A run interrupted partway through only asks the browser for what
     is still missing - anything already downloaded is reused.
     """
-    raw_dir = ensure_dir(raw_dir if raw_dir is not None else images_dir.parent / RAW_SUBDIR)
-
     pending: list[tuple[dict[str, Any], str]] = []
     for scene in scenes:
         stem = _stem_for(scene, provider)
-        if not force and _adopt_by_stem(
-            scene, stem, search_dir=raw_dir, images_dir=images_dir,
-            size=size, delete_source=False,
-        ):
+        if not force and _adopt_by_stem(scene, stem, images_dir=images_dir, size=size):
             continue
         # Nothing downloaded under this provider's own stem, but the scene may
         # still have a perfectly good image from another one - a song generated
@@ -231,16 +256,19 @@ def _generate_browser(
         log.info("Limiting this run to %d of %d missing image(s).", limit, len(pending))
         pending = pending[:limit]
 
+    # Whatever is under these stems is about to be replaced - an unreadable file,
+    # or (under --force) a perfectly good one being redrawn on purpose. Clearing it
+    # first keeps a download in a new format from landing beside the old one.
+    for _, stem in pending:
+        _clear_stem(images_dir, stem)
+
     _site_module(provider).generate(
-        [scene for scene, _ in pending], raw_dir=raw_dir, **options
+        [scene for scene, _ in pending], images_dir=images_dir, **options
     )
 
     missing = []
     for scene, stem in pending:
-        if not _adopt_by_stem(
-            scene, stem, search_dir=raw_dir, images_dir=images_dir,
-            size=size, delete_source=False,
-        ):
+        if not _adopt_by_stem(scene, stem, images_dir=images_dir, size=size):
             missing.append(scene["index"])
     if missing:
         log.warning(
@@ -278,10 +306,8 @@ def _assign_supplied(
         )
     for index, scene in enumerate(scenes):
         chosen = files[index % len(files)]
-        target = images_dir / f"scene-{scene['index']:03d}-{short_hash(chosen.name)}.png"
-        if not target.is_file():
-            with Image.open(chosen) as image:
-                image.convert("RGB").save(target, "PNG")
-            _postprocess(target, size)
-        scene["image"] = str(target)
+        stem = f"scene-{scene['index']:03d}-{short_hash(chosen.name)}"
+        if _find_image_by_stem(images_dir, stem) is None:
+            shutil.copyfile(chosen, images_dir / f"{stem}{chosen.suffix.lower()}")
+        _adopt_by_stem(scene, stem, images_dir=images_dir, size=size)
     return scenes

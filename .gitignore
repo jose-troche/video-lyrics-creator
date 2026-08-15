@@ -23,13 +23,20 @@ output/
 # Working files are intermediates and stay out of git, with three exceptions per
 # song: the project data (settings, cue timings, the scene plan), the timed
 # lyrics, and the generated images. Those are the results worth keeping;
-# everything else under work/ - transcripts, motion clips, overlay PNGs, the raw
-# image downloads in images.src/ - is rebuilt from them.
+# everything else under work/ - transcripts, motion clips, overlay PNGs - is
+# rebuilt from them.
+#
+# The images are listed by suffix rather than as `images/**`, so that only actual
+# pictures are picked up: the manual provider's prompts.txt, and any half-written
+# download an interrupted run left behind, are scratch and stay out.
 work/**
 !work/*/
 !work/*/project.yaml
 !work/*/lyrics.srt
 !work/*/images/
-!work/*/images/**
+!work/*/images/*.png
+!work/*/images/*.webp
+!work/*/images/*.jpg
+!work/*/images/*.jpeg
 
 .DS_Store

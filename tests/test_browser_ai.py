@@ -617,7 +617,7 @@ def scenes(count: int) -> list[dict]:
     ]
 
 
-def run(page, scene_list, raw_dir, *, site=None, **overrides):
+def run(page, scene_list, images_dir, *, site=None, **overrides):
     """Drive the per-scene loop with no browser and no waiting."""
     site = site or dataclasses.replace(
         chatgpt.SITE,
@@ -627,7 +627,7 @@ def run(page, scene_list, raw_dir, *, site=None, **overrides):
     )
     return browser_ai._run_scenes(
         page, site, scene_list,
-        raw_dir=raw_dir,
+        images_dir=images_dir,
         composer_selector=site.composer_selector,
         image_selector=site.image_selector,
         min_delay=0, max_delay=0,

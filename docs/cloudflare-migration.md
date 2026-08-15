@@ -143,9 +143,9 @@ taken; a GitHub Actions runner's 16 GB is ample.
   [config.py:162](../video_lyrics/config.py#L162).
 - **Sync allowlist — never round-trip intermediates.** Push/pull only `project.yaml`,
   `transcript.json`, `lyrics.txt`, `lyrics.srt`, `images/`, source audio, `output/*.mp4`.
-  `clips/`, `overlay-clips/`, `overlay-track.mov`, `bed.mp4`, `audio-faded.wav`, `images.src/` stay
-  ephemeral on the runner. Store scene images as WebP (~300 KB vs 2.5 MB PNG); the pipeline already
-  normalizes on read.
+  `clips/`, `overlay-clips/`, `overlay-track.mov`, `bed.mp4`, `audio-faded.wav` stay ephemeral on
+  the runner. Scene images are already whatever the generator served — meta.ai's WebP is ~500 KB
+  against a 2.5 MB PNG of the same picture, so prefer that provider for the sync cost.
 - New CLI subcommand `video-lyrics remote-run --project <id> --stages <a,b,c>` in
   [cli.py](../video_lyrics/cli.py) — pull, run, push, report status back.
 - `.github/workflows/render.yml`: `workflow_dispatch` with a project-id input, `ubuntu-latest`,

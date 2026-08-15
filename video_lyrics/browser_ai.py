@@ -215,7 +215,7 @@ def generate(
     site: Site,
     scenes: list[dict[str, Any]],
     *,
-    raw_dir: Path,
+    images_dir: Path,
     headless: bool = False,
     profile_dir: str | Path | None = None,
     min_delay: float = DEFAULT_MIN_DELAY,
@@ -224,7 +224,7 @@ def generate(
     image_selector: str | None = None,
     channel: str | None = None,
 ) -> None:
-    """Ask `site` for one image per scene, saving each to `raw_dir/<stem>.<ext>`.
+    """Ask `site` for one image per scene, saving each to `images_dir/<stem>.<ext>`.
 
     `scenes` should already be filtered down to the ones that actually need a
     fresh image - this always asks the browser, it never checks disk itself.
@@ -238,7 +238,7 @@ def generate(
             f"The {site.name!r} image provider needs Playwright. {PLAYWRIGHT_HINT}"
         ) from exc
 
-    raw_dir = ensure_dir(raw_dir)
+    images_dir = ensure_dir(images_dir)
     profile = _profile_path(site, profile_dir)
     composer_selector = composer_selector or site.composer_selector
     image_selector = image_selector or site.image_selector
@@ -256,7 +256,7 @@ def generate(
             _ensure_logged_in(page, site, composer_selector)
             _run_scenes(
                 page, site, scenes,
-                raw_dir=raw_dir,
+                images_dir=images_dir,
                 composer_selector=composer_selector,
                 image_selector=image_selector,
                 min_delay=min_delay,
@@ -271,7 +271,7 @@ def _run_scenes(
     site: Site,
     scenes: list[dict[str, Any]],
     *,
-    raw_dir: Path,
+    images_dir: Path,
     composer_selector: str,
     image_selector: str,
     min_delay: float = DEFAULT_MIN_DELAY,
@@ -306,7 +306,7 @@ def _run_scenes(
             # This blocks until the new image is finished on screen AND written
             # to disk.
             src = _generate_one(
-                page, site, scene, stem, raw_dir, composer_selector, image_selector, seen,
+                page, site, scene, stem, images_dir, composer_selector, image_selector, seen,
             )
         except PromptRefused as refusal:
             # Never a reason to stop: the site is answering perfectly well, it
@@ -1001,7 +1001,7 @@ def _generate_one(
     site: Site,
     scene: dict[str, Any],
     stem: str,
-    raw_dir: Path,
+    images_dir: Path,
     composer_selector: str,
     image_selector: str,
     seen: set[str],
@@ -1049,7 +1049,7 @@ def _generate_one(
             continue
         log.info("  scene %03d: finished after %.0fs", scene["index"], time.monotonic() - started)
         payload = _download(page, src, scene["index"])
-        target = raw_dir / f"{stem}{_suffix_for(payload)}"
+        target = images_dir / f"{stem}{_suffix_for(payload)}"
         target.write_bytes(payload)
         log.info("  scene %03d: saved %s (%.0f KB)", scene["index"], target.name, len(payload) / 1024)
         return src

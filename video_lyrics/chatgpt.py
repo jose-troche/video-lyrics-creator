@@ -98,7 +98,7 @@ SITE = browser_ai.Site(
 def generate(
     scenes: list[dict[str, Any]],
     *,
-    raw_dir: Path,
+    images_dir: Path,
     headless: bool = False,
     profile_dir: str | Path | None = None,
     min_delay: float = DEFAULT_MIN_DELAY,
@@ -107,11 +107,11 @@ def generate(
     image_selector: str | None = None,
     channel: str | None = None,
 ) -> None:
-    """Ask chatgpt.com for one image per scene, saving each to `raw_dir/<stem>.<ext>`."""
+    """Ask chatgpt.com for one image per scene, saving each to `images_dir/<stem>.<ext>`."""
     browser_ai.generate(
         SITE,
         scenes,
-        raw_dir=raw_dir,
+        images_dir=images_dir,
         headless=headless,
         profile_dir=profile_dir,
         min_delay=min_delay,

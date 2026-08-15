@@ -1,1 +1,7 @@
+# The generated stills, in whatever format the generator served (images.py keeps
+# the original rather than re-encoding it). All four are binary and all four are
+# committed, so all four belong in LFS.
 work/*/images/*.png filter=lfs diff=lfs merge=lfs -text
+work/*/images/*.webp filter=lfs diff=lfs merge=lfs -text
+work/*/images/*.jpg filter=lfs diff=lfs merge=lfs -text
+work/*/images/*.jpeg filter=lfs diff=lfs merge=lfs -text

@@ -326,6 +326,25 @@ def _browser_options(settings: dict[str, Any], provider: str) -> dict[str, Any]:
     }
 
 
+def _notice_old_raw_dir(work_dir: Path) -> None:
+    """Say something about a leftover `images.src/` from before the two merged.
+
+    It used to hold every download in the format the site served, and `images/` a
+    converted, upscaled copy of each. `images/` no longer upscales, so it now holds
+    what `images.src/` used to and the split has nothing left to do. The old folder
+    is not deleted for you: for songs generated before this, its files are the
+    smaller originals and only their owner can say whether they are worth keeping.
+    """
+    stale = work_dir / "images.src"
+    if not stale.is_dir():
+        return
+    size = sum(path.stat().st_size for path in stale.rglob("*") if path.is_file())
+    log.info(
+        "%s is no longer used - images/ now keeps the downloads themselves "
+        "(%.0f MB to reclaim: rm -rf %s).", stale, size / 1e6, stale,
+    )
+
+
 def stage_images(
     project: Project, *, force: bool = False, images_dir: str | None = None,
     limit: int | None = None, **_: Any
@@ -334,10 +353,10 @@ def stage_images(
     settings = project.image_generation
     source = images_dir or settings.get("source_dir")
     provider = "supplied" if source else _image_provider(settings)
+    _notice_old_raw_dir(project.work_dir)
     images_mod.generate(
         project.scenes,
         images_dir=project.images_dir,
-        raw_dir=project.raw_images_dir,
         provider=provider,
         source_dir=source,
         size=project.size,
