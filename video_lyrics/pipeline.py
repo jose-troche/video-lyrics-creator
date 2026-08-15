@@ -90,6 +90,7 @@ def stage_align(project: Project, *, force: bool = False, **_: Any) -> None:
         raise VideoLyricsError("No lyric lines loaded. Run `video-lyrics lyrics` first.")
 
     settings = project.alignment
+    tail_extend = float(settings.get("tail_extend", 0.0))
     cues = align_mod.align(
         lines,
         transcript.get("words", []),
@@ -98,6 +99,9 @@ def stage_align(project: Project, *, force: bool = False, **_: Any) -> None:
         min_matched_words=int(settings.get("min_matched_words", 2)),
         min_duration=float(settings["min_duration"]),
         max_gap_fill=float(settings["max_gap_fill"]),
+        energy=audio_mod.envelope(project.audio) if tail_extend > 0 else None,
+        tail_extend=tail_extend,
+        tail_level=float(settings.get("tail_level", 0.45)),
     )
     project.data["lyrics"] = cues
     log.info("%s", align_mod.report(lines, cues))

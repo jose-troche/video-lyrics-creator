@@ -11,6 +11,9 @@ choruses stay in the order they were actually sung.  A second pass then revisits
 the stretches of audio that ended up unclaimed: lyric documents often hold drafts,
 prose and headings alongside the final words, and in the first pass a half-matching
 draft line can swallow the words that belonged to the line that was really sung.
+
+A last pass hands each line back the tail its singer is still holding; see
+`hold_tails`.
 """
 
 from __future__ import annotations
@@ -19,6 +22,9 @@ import re
 import unicodedata
 from difflib import SequenceMatcher
 from typing import Any, Iterable
+
+from .audio import ENVELOPE_RESOLUTION
+from .util import log
 
 WORD_RE = re.compile(r"[^\W_]+(?:'[^\W_]+)?", re.UNICODE)
 DEFAULT_WORD_DURATION = 0.32
@@ -55,8 +61,15 @@ def align(
     min_matched_words: int = 2,
     min_duration: float = 1.0,
     max_gap_fill: float = 0.7,
+    energy: list[float] | None = None,
+    tail_extend: float = 0.0,
+    tail_level: float = 0.45,
 ) -> list[dict[str, Any]]:
-    """Return time-ordered cues: [{start, end, text, line_index, alignment_confidence}]."""
+    """Return time-ordered cues: [{start, end, text, line_index, alignment_confidence}].
+
+    `energy` is the song's loudness envelope (`audio.envelope`); given one, a line is
+    held for as long as its last note is - see `hold_tails`.
+    """
     lyric_tokens, owners = _flatten(lyric_lines)
     asr_tokens_all = [normalize(word["word"]) for word in asr_words]
     keep = [index for index, token in enumerate(asr_tokens_all) if token]
@@ -107,6 +120,7 @@ def align(
     )
 
     cues.sort(key=lambda cue: (cue["start"], cue["line_index"]))
+    hold_tails(cues, energy, limit=tail_extend, level=tail_level)
     return tidy(cues, duration=duration, min_duration=min_duration, max_gap_fill=max_gap_fill)
 
 
@@ -208,6 +222,58 @@ def _rescue(
         pending.append((low, cue["first_word"]))
         pending.append((cue["last_word"] + 1, high))
     return rescued
+
+
+def hold_tails(
+    cues: list[dict[str, Any]],
+    energy: list[float] | None,
+    *,
+    resolution: int = ENVELOPE_RESOLUTION,
+    limit: float = 0.0,
+    level: float = 0.45,
+) -> int:
+    """Give a line back the tail its singer is still holding.  Returns how many.
+
+    A word is over, as far as the transcript is concerned, once its consonant is: a
+    line sung out on a long vowel is marked finished while the note is still ringing,
+    and the words leave the screen early.  The loudness envelope still knows the note
+    is there, so walk on from the end of the cue while the sound stays within `level`
+    of how loud the line itself was, and stop the moment it falls away.
+
+    That test is the whole safety of this: a line that really did stop where the
+    transcript says drops below the threshold at once and is left exactly as it was.
+    It reads a great deal better on an isolated vocal (`alignment.vocals`), where the
+    band is not there to hold the level up on its own.
+    """
+    if not energy or limit <= 0:
+        return 0
+
+    held = 0
+    for cue in cues:
+        first = int(cue["start"] * resolution)
+        last = int(cue["end"] * resolution)
+        span = energy[first:last]
+        if not span:
+            continue
+        # The median, not the peak: what matters is the level the line sat at, and a
+        # single drum hit inside it should not set the bar for the note that follows.
+        floor = sorted(span)[len(span) // 2] * level
+        if floor <= 0:
+            continue
+
+        ceiling = min(last + int(limit * resolution), len(energy))
+        edge = last
+        while edge < ceiling and energy[edge] >= floor:
+            edge += 1
+        end = max(cue["end"], round(edge / resolution, 3))
+        if end > cue["end"]:
+            cue["end"] = end
+            held += 1
+
+    if held:
+        log.info("Held %d line%s open while the note was still sounding.",
+                 held, "" if held == 1 else "s")
+    return held
 
 
 def tidy(

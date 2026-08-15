@@ -74,5 +74,51 @@ def test_small_gaps_are_closed_but_long_ones_are_kept():
     assert tidied[2]["end"] == 10.0
 
 
+def envelope(*levels, resolution=100):
+    """A loudness envelope from (seconds, level) runs."""
+    peaks = []
+    for seconds, level in levels:
+        peaks.extend([level] * int(seconds * resolution))
+    return peaks
+
+
+def test_a_held_note_keeps_its_line_on_screen():
+    # Sung 1.0-2.0s, but the singer holds the last vowel out to 2.8s.
+    cues = [{"start": 1.0, "end": 2.0, "text": "held", "line_index": 0}]
+    held = align.hold_tails(cues, envelope((1.0, 0.0), (1.8, 0.8), (5.0, 0.02)), limit=1.2)
+    assert held == 1
+    assert cues[0]["end"] == 2.8
+
+
+def test_a_line_that_really_stopped_is_left_alone():
+    cues = [{"start": 1.0, "end": 2.0, "text": "clipped", "line_index": 0}]
+    assert align.hold_tails(cues, envelope((1.0, 0.0), (1.0, 0.8), (5.0, 0.02)), limit=1.2) == 0
+    assert cues[0]["end"] == 2.0
+
+
+def test_a_tail_is_never_held_past_the_limit():
+    cues = [{"start": 1.0, "end": 2.0, "text": "endless", "line_index": 0}]
+    align.hold_tails(cues, envelope((1.0, 0.0), (9.0, 0.8)), limit=1.2)
+    assert cues[0]["end"] == 3.2
+
+
+def test_holding_tails_is_off_without_an_envelope_or_a_limit():
+    cues = [{"start": 1.0, "end": 2.0, "text": "held", "line_index": 0}]
+    full = envelope((1.0, 0.0), (9.0, 0.8))
+    assert align.hold_tails(cues, full, limit=0.0) == 0
+    assert align.hold_tails(cues, None, limit=1.2) == 0
+    assert cues[0]["end"] == 2.0
+
+
+def test_a_held_tail_still_stops_at_the_next_line():
+    lines = ["one", "two"]
+    transcript = words(("one", 1.0, 2.0), ("two", 2.5, 3.0))
+    cues = align.align(
+        lines, transcript, duration=8.0,
+        energy=envelope((1.0, 0.0), (7.0, 0.8)), tail_extend=1.2, min_matched_words=1,
+    )
+    assert cues[0]["end"] <= cues[1]["start"]
+
+
 def test_no_transcript_means_no_cues():
     assert align.align(["anything"], [], duration=5.0) == []

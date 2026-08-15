@@ -91,6 +91,10 @@ ALIGN_DEFAULTS: dict[str, Any] = {
     "min_matched_words": 2,   # ... and at least this many words actually heard
     "min_duration": 1.0,      # shortest cue (s)
     "max_gap_fill": 0.7,      # hold a cue over gaps shorter than this (s)
+    "tail_extend": 1.2,       # hold a line up to this much longer while the singer is
+                              # still on the note (s); 0 turns the whole thing off
+    "tail_level": 0.45,       # ... for as long as the sound stays this loud, against
+                              # how loud that line itself was
     "scene_gap": 2.5,         # a musical gap this long starts a new image
     "min_scene_duration": 4.0,   # no image is shown for less than this (s)
     "max_scene_duration": 15.0,  # ... or for longer than this (s)
