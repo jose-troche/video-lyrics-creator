@@ -30,7 +30,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
 
-from .util import VideoLyricsError, ensure_dir, log, scene_stem
+from .util import VideoLyricsError, ensure_dir, human_time, log, scene_stem
 
 DEFAULT_MIN_DELAY = 1.0
 DEFAULT_MAX_DELAY = 4.0
@@ -996,6 +996,25 @@ def _submit(page, composer_selector: str, prompt: str, scene_index: int) -> None
     )
 
 
+def _scene_label(scene: dict[str, Any], width: int = 70) -> str:
+    """What to call this scene in the log, from the point of view of someone
+    watching a song being drawn.
+
+    Its own lyric lines: every prompt opens with the same paragraph of style and
+    framing instructions, so printing the prompt showed the part that is identical
+    for every scene in the song and cut off before the part that is not. A scene
+    covering an instrumental stretch has no lines of its own, and is named by where
+    it falls instead - there can be several in a row.
+    """
+    lines = " / ".join(scene.get("lines") or ())
+    if not lines:
+        start, end = scene.get("start"), scene.get("end")
+        if start is None or end is None:
+            return "(instrumental)"
+        return f"(instrumental, {human_time(start)}-{human_time(end)})"
+    return lines if len(lines) <= width else f"{lines[:width - 1].rstrip()}…"
+
+
 def _generate_one(
     page,
     site: Site,
@@ -1011,7 +1030,7 @@ def _generate_one(
     A prompt the site turns down is reworded and asked again (PROMPT_SOFTENERS);
     run out of wordings and this raises PromptRefused, for the caller to skip.
     """
-    log.info("  scene %03d: %s", scene["index"], scene["prompt"][:70])
+    log.info("  scene %03d: %s", scene["index"], _scene_label(scene))
     refusal: PromptRefused | None = None
     for attempt, softener in enumerate(PROMPT_SOFTENERS):
         if attempt:

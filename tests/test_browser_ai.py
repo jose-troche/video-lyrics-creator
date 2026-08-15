@@ -127,6 +127,40 @@ def test_running_out_of_time_names_the_setting_that_overrides_the_selector():
     assert site.timeout_hint in str(error.value)
 
 
+# ------------------------------------------------------- naming a scene in the log
+
+def test_a_scene_is_named_by_its_own_lyric_lines():
+    """Not the prompt: every prompt in a song opens with the same paragraph of
+    style and framing, so the first 70 characters of one are the first 70 of them
+    all."""
+    scene = {"index": 3, "prompt": "cinematic photographic realism. Create a ...",
+             "lines": ["Praise the Lord with sounding anthem", "Bend your knees"]}
+    assert browser_ai._scene_label(scene) == (
+        "Praise the Lord with sounding anthem / Bend your knees"
+    )
+
+
+def test_a_long_line_is_cut_short_at_a_readable_width():
+    scene = {"index": 3, "lines": ["a line that runs on " * 10]}
+    described = browser_ai._scene_label(scene, width=30)
+    assert len(described) == 30
+    assert described.endswith("…")
+
+
+def test_an_instrumental_scene_is_named_by_where_it_falls():
+    """It has no lines of its own, and a song can hold several in a row - so the
+    one thing that tells them apart is when they are."""
+    first = {"index": 1, "lines": [], "start": 0.0, "end": 10.505}
+    second = {"index": 2, "lines": [], "start": 10.505, "end": 21.01}
+    assert browser_ai._scene_label(first) == "(instrumental, 0:00.00-0:10.51)"
+    assert browser_ai._scene_label(second) == "(instrumental, 0:10.51-0:21.01)"
+    assert browser_ai._scene_label(first) != browser_ai._scene_label(second)
+
+
+def test_a_scene_with_neither_lines_nor_timing_still_says_something():
+    assert browser_ai._scene_label({"index": 1}) == "(instrumental)"
+
+
 # ------------------------------------------------------------------- signing in
 
 class FakeLoginPage:
