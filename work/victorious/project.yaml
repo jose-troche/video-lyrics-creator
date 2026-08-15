@@ -346,7 +346,7 @@ scenes:
   prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene for an instrumental passage of the song "Victorious" — the opening, before the first line "God''s victorious!". Wide, atmospheric, no people speaking; intentional composition, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a wide establishing shot, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 1
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-001-2d0299cdbf5cdec6.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-001-2d0299cd.png
   motion_first_frame: 0
   motion_frames: 391
 - start: 12.66
@@ -356,7 +356,7 @@ scenes:
   prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''God''s victorious!''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a low angle close to the ground, looking up, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 2
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-002-9b0c859f73a53f80.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-002-9b0c859f.png
   motion_first_frame: 369
   motion_frames: 434
 - start: 26.41
@@ -366,7 +366,7 @@ scenes:
   prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''Your mighty right hand, O Lord full of power''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as an intimate mid-shot centred on a single subject, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 3
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-003-fa04b0b7151d8bb7.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-003-fa04b0b7.png
   motion_first_frame: 781
   motion_frames: 216
 - start: 32.88
@@ -376,7 +376,7 @@ scenes:
   prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''It shatters the foe, in judgment devoured''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a high, distant vantage looking down, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 4
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-004-31a9899c5b0ee1ee.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-004-31a9899c.png
   motion_first_frame: 975
   motion_frames: 220
 - start: 39.46
@@ -386,7 +386,7 @@ scenes:
   prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''Your majesty''s great, You rise and prevail''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a tight foreground detail with the rest falling away soft, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 5
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-005-04f249798d60ea51.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-005-04f24979.png
   motion_first_frame: 1173
   motion_frames: 219
 - start: 46.02
@@ -396,7 +396,7 @@ scenes:
   prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''Your fury consumes; the wicked assail''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a head-on symmetrical composition, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 6
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-006-e8a30d32fc8d7d90.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-006-e8a30d32.png
   motion_first_frame: 1370
   motion_frames: 247
 - start: 53.54
@@ -406,7 +406,7 @@ scenes:
   prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''The enemy boasted, “I’ll chase and destroy,''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a view through a natural frame - an arch, branches, a doorway, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 7
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-007-9d650d1b29555dbb.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-007-9d650d1b.png
   motion_first_frame: 1595
   motion_frames: 119
 - start: 56.77
@@ -416,7 +416,7 @@ scenes:
   prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''I’ll take what I want and carry my ploy''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a wide establishing shot, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 8
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-008-bf069e84ed25f088.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-008-bf069e84.png
   motion_first_frame: 1692
   motion_frames: 130
 - start: 60.38
@@ -426,7 +426,7 @@ scenes:
   prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''I’ll draw my sharp sword and bring them to shame”''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a low angle close to the ground, looking up, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 9
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-009-710e9ded0d46a54c.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-009-710e9ded.png
   motion_first_frame: 1800
   motion_frames: 115
 - start: 63.47
@@ -436,7 +436,7 @@ scenes:
   prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''But You blew Your wind; they sank at Your name''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as an intimate mid-shot centred on a single subject, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 10
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-010-e5a9f5d83913e696.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-010-e5a9f5d8.png
   motion_first_frame: 1893
   motion_frames: 226
 - start: 70.26
@@ -446,7 +446,7 @@ scenes:
   prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''God''s victorious, His people He saved''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a high, distant vantage looking down, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 11
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-011-0719ef59cfb92633.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-011-0719ef59.png
   motion_first_frame: 2097
   motion_frames: 237
 - start: 77.44
@@ -456,7 +456,7 @@ scenes:
   prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''God''s victorious, no more enslaved''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a tight foreground detail with the rest falling away soft, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 12
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-012-8f650ab5a7396a9d.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-012-8f650ab5.png
   motion_first_frame: 2312
   motion_frames: 223
 - start: 84.12
@@ -466,7 +466,7 @@ scenes:
   prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''God''s victorious, the rivals He razed''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a head-on symmetrical composition, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 13
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-013-3ef18b52e4e73239.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-013-3ef18b52.png
   motion_first_frame: 2513
   motion_frames: 363
 - start: 95.5
@@ -476,7 +476,7 @@ scenes:
   prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''God''s victorious, triumphant and worthy of praise''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a view through a natural frame - an arch, branches, a doorway, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 14
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-014-802668213273bf4e.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-014-80266821.png
   motion_first_frame: 2854
   motion_frames: 484
 - start: 110.91
@@ -485,7 +485,7 @@ scenes:
   prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene for an instrumental passage of the song "Victorious" — an instrumental break after "God''s victorious, triumphant and worthy of praise". Wide, atmospheric, no people speaking; intentional composition, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a wide establishing shot, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 15
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-015-5555472761ead34c.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-015-55554727.png
   motion_first_frame: 3316
   motion_frames: 149
 - start: 115.12
@@ -495,7 +495,7 @@ scenes:
   prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''The nations have heard and trembled with fear,''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a low angle close to the ground, looking up, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 16
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-016-4ac1d94c927bd371.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-016-4ac1d94c.png
   motion_first_frame: 3443
   motion_frames: 223
 - start: 121.84
@@ -505,7 +505,7 @@ scenes:
   prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''They shake and they scatter as judgment draws near''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as an intimate mid-shot centred on a single subject, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 17
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-017-f5e5a700575b3104.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-017-f5e5a700.png
   motion_first_frame: 3644
   motion_frames: 215
 - start: 128.28
@@ -515,7 +515,7 @@ scenes:
   prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''Dread and great terror fall down from Your throne''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a high, distant vantage looking down, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 18
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-018-8d73552b21cebf03.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-018-8d73552b.png
   motion_first_frame: 3837
   motion_frames: 226
 - start: 135.08
@@ -525,7 +525,7 @@ scenes:
   prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''They freeze before You, like a rigid stone''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a tight foreground detail with the rest falling away soft, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 19
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-019-eebca81c4de0d28e.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-019-eebca81c.png
   motion_first_frame: 4041
   motion_frames: 244
 - start: 142.46
@@ -535,7 +535,7 @@ scenes:
   prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''You''ll bring Your people with sovereign grace''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a head-on symmetrical composition, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 20
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-020-a11485e34d0bfbc2.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-020-a11485e3.png
   motion_first_frame: 4263
   motion_frames: 118
 - start: 145.68
@@ -545,7 +545,7 @@ scenes:
   prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''You''ll plant their feet in Your dwelling place''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a view through a natural frame - an arch, branches, a doorway, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 21
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-021-3191cb2d1c981446.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-021-3191cb2d.png
   motion_first_frame: 4359
   motion_frames: 120
 - start: 148.93
@@ -555,7 +555,7 @@ scenes:
   prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''The mountain You formed, Your holy abode''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a wide establishing shot, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 22
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-022-07f5f75b40cedcda.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-022-07f5f75b.png
   motion_first_frame: 4457
   motion_frames: 122
 - start: 152.26
@@ -565,7 +565,7 @@ scenes:
   prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''There You will reign, with glory untold''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a low angle close to the ground, looking up, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 23
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-023-8e5ff0380f8c91e9.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-023-8e5ff038.png
   motion_first_frame: 4557
   motion_frames: 229
 - start: 159.16
@@ -575,7 +575,7 @@ scenes:
   prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''God''s victorious, His people He saved''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as an intimate mid-shot centred on a single subject, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 24
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-024-dffe889e170aa1d7.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-024-dffe889e.png
   motion_first_frame: 4764
   motion_frames: 234
 - start: 166.22
@@ -585,7 +585,7 @@ scenes:
   prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''God''s victorious, no more enslaved''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a high, distant vantage looking down, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 25
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-025-55229749a539a674.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-025-55229749.png
   motion_first_frame: 4976
   motion_frames: 223
 - start: 172.92
@@ -595,7 +595,7 @@ scenes:
   prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''God''s victorious, the rivals He razed''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a tight foreground detail with the rest falling away soft, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 26
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-026-2b8c35057d3abe2d.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-026-2b8c3505.png
   motion_first_frame: 5177
   motion_frames: 370
 - start: 184.54
@@ -605,7 +605,7 @@ scenes:
   prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''God''s victorious, triumphant and worthy of praise''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a head-on symmetrical composition, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 27
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-027-ecbfbdb6c2f07f2b.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-027-ecbfbdb6.png
   motion_first_frame: 5525
   motion_frames: 470
 - start: 199.46
@@ -614,7 +614,7 @@ scenes:
   prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene for an instrumental passage of the song "Victorious" — an instrumental break after "God''s victorious, triumphant and worthy of praise". Wide, atmospheric, no people speaking; intentional composition, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a view through a natural frame - an arch, branches, a doorway, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 28
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-028-4474543d97d0a944.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-028-4474543d.png
   motion_first_frame: 5973
   motion_frames: 188
 - start: 204.99
@@ -624,7 +624,7 @@ scenes:
   prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''Who is like You, O Lord on high?''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a wide establishing shot, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 29
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-029-fce67080408f027e.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-029-fce67080.png
   motion_first_frame: 6139
   motion_frames: 213
 - start: 211.36
@@ -634,7 +634,7 @@ scenes:
   prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''In power majestic, none can deny''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a low angle close to the ground, looking up, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 30
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-030-effa20ab3f161299.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-030-effa20ab.png
   motion_first_frame: 6330
   motion_frames: 225
 - start: 218.14
@@ -644,7 +644,7 @@ scenes:
   prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''Awesome in wonders, Your name is renowned,''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as an intimate mid-shot centred on a single subject, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 31
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-031-4dbeb7cfd1fd1f1b.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-031-4dbeb7cf.png
   motion_first_frame: 6533
   motion_frames: 206
 - start: 224.28
@@ -654,7 +654,7 @@ scenes:
   prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''You stretched out Your hand, the enemy drowned''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a high, distant vantage looking down, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 32
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-032-da30fd0b7519d92a.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-032-da30fd0b.png
   motion_first_frame: 6717
   motion_frames: 333
 - start: 234.62
@@ -664,7 +664,7 @@ scenes:
   prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''God''s victorious, His people He saved''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a tight foreground detail with the rest falling away soft, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 33
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-033-91b9c744410343f6.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-033-91b9c744.png
   motion_first_frame: 7028
   motion_frames: 243
 - start: 242.0
@@ -674,7 +674,7 @@ scenes:
   prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''God''s victorious, no more enslaved''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a head-on symmetrical composition, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 34
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-034-7cb30117297ddf3c.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-034-7cb30117.png
   motion_first_frame: 7249
   motion_frames: 222
 - start: 248.65
@@ -684,7 +684,7 @@ scenes:
   prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''God''s victorious, the rivals He razed''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a view through a natural frame - an arch, branches, a doorway, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 35
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-035-ed72f92348d4e4d6.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-035-ed72f923.png
   motion_first_frame: 7449
   motion_frames: 365
 - start: 260.11
@@ -694,7 +694,7 @@ scenes:
   prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''God''s victorious, triumphant and worthy of praise''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a wide establishing shot, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 36
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-036-13246d65dbf40a90.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-036-13246d65.png
   motion_first_frame: 7792
   motion_frames: 332
 - start: 270.43
@@ -704,7 +704,7 @@ scenes:
   prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''Triumphant and worthy of praise''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a low angle close to the ground, looking up, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 37
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-037-47b1367f4be45738.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-037-47b1367f.png
   motion_first_frame: 8102
   motion_frames: 280
 - start: 279.04
@@ -714,7 +714,7 @@ scenes:
   prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''God''s victorious''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as an intimate mid-shot centred on a single subject, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 38
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-038-64e5f0e65b8d8687.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-038-64e5f0e6.png
   motion_first_frame: 8360
   motion_frames: 216
 - start: 285.49
@@ -724,7 +724,7 @@ scenes:
   prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''He''s victorious,''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a high, distant vantage looking down, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 39
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-039-5b5e62cb18ebadba.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-039-5b5e62cb.png
   motion_first_frame: 8554
   motion_frames: 252
 - start: 293.17
@@ -734,7 +734,7 @@ scenes:
   prompt: 'cinematic photographic realism. Context for the whole video: A celebration song after Israel crosses the Red Sea and the Egyptians are defeated. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''Victorious!''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a tight foreground detail with the rest falling away soft, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 40
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-040-ee7097da5ec434f2.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/victorious/images/scene-040-ee7097da.png
   motion_first_frame: 8784
   motion_frames: 366
 overlays:

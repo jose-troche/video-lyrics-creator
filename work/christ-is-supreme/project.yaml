@@ -279,7 +279,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene for an instrumental passage of the song "Christ is supreme" — the opening, before the first line "Christ is the image of God yet unseen" (part 1 of 2). Wide, atmospheric, no people speaking; intentional composition, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness.'
   index: 1
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/images/scene-001-2e79f674ea283d1a.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/images/scene-001-2e79f674.png
   motion_first_frame: 0
   motion_frames: 349
 - start: 11.25
@@ -288,7 +288,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene for an instrumental passage of the song "Christ is supreme" — the opening, before the first line "Christ is the image of God yet unseen" (part 2 of 2). Wide, atmospheric, no people speaking; intentional composition, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness.'
   index: 2
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/images/scene-002-ecf5440ece8fc8b2.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/images/scene-002-ecf5440e.png
   motion_first_frame: 327
   motion_frames: 359
 - start: 22.5
@@ -299,7 +299,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Christ is the image of God yet unseen / In Him God’s fullness dwells so serene''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness.'
   index: 3
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/images/scene-003-9733f64f33a284e0.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/images/scene-003-9733f64f.png
   motion_first_frame: 664
   motion_frames: 197
 - start: 28.33
@@ -310,7 +310,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''The perfect imprint of God’s very nature / God’s glory shines, through Jesus the Savior''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness.'
   index: 4
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/images/scene-004-ffd726f520411ee0.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/images/scene-004-ffd726f5.png
   motion_first_frame: 839
   motion_frames: 196
 - start: 34.14
@@ -321,7 +321,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''He is the God-Son above all creation / All things were made by, through and for Him''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness.'
   index: 5
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/images/scene-005-b55342a42a0217ea.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/images/scene-005-b55342a4.png
   motion_first_frame: 1013
   motion_frames: 178
 - start: 39.34
@@ -332,7 +332,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Sustaining the cosmos in full preservation / The word of His power shall never grow dim''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography.'
   index: 6
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/images/scene-006-45eb065a7d2e92e1.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/images/scene-006-45eb065a.png
   motion_first_frame: 1169
   motion_frames: 206
 - start: 45.48
@@ -343,7 +343,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Christ is supreme over all beings / God of glory, Lord of kings''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness.'
   index: 7
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/images/scene-007-8e6ab697f6a3244d.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/images/scene-007-8e6ab697.png
   motion_first_frame: 1353
   motion_frames: 192
 - start: 51.14
@@ -354,7 +354,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Christ is supreme over all beings / Magnificent Savior, creation sings''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness.'
   index: 8
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/images/scene-008-77d58142ed318b9a.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/images/scene-008-77d58142.png
   motion_first_frame: 1523
   motion_frames: 264
 - start: 59.21
@@ -364,7 +364,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Christ is supreme''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness.'
   index: 9
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/images/scene-009-9bb44cac673a713c.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/images/scene-009-9bb44cac.png
   motion_first_frame: 1765
   motion_frames: 349
 - start: 70.1
@@ -375,7 +375,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''We were his foes, suppressing his glory / Hostile and proud, rebellious, unworthy''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography.'
   index: 10
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/images/scene-010-32a62d4a5e536231.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/images/scene-010-32a62d4a.png
   motion_first_frame: 2092
   motion_frames: 207
 - start: 76.26
@@ -386,7 +386,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Yet at the cross, he poured out his blood / Redeeming Shepherd, atoning his flock''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography.'
   index: 11
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/images/scene-011-ad3d02299dcf9190.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/images/scene-011-ad3d0229.png
   motion_first_frame: 2277
   motion_frames: 178
 - start: 81.46
@@ -397,7 +397,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''The grave was defeated, he rose from the dead / Now ruling from heaven, the church’s chief head''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography.'
   index: 12
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/images/scene-012-136a64037f9443c5.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/images/scene-012-136a6403.png
   motion_first_frame: 2433
   motion_frames: 192
 - start: 87.15
@@ -408,7 +408,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Sovereignly reigning, unbeatable Lord / Magnify Jesus, now and forever adored''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness.'
   index: 13
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/images/scene-013-946b8ba3cbb491fa.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/images/scene-013-946b8ba3.png
   motion_first_frame: 2603
   motion_frames: 209
 - start: 93.36
@@ -419,7 +419,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Christ is supreme over all beings / God of glory, Lord of kings''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness.'
   index: 14
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/images/scene-014-5f63c051ab6a7546.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/images/scene-014-5f63c051.png
   motion_first_frame: 2790
   motion_frames: 189
 - start: 98.93
@@ -430,7 +430,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Christ is supreme over all beings / Magnificent Savior, creation sings''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness.'
   index: 15
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/images/scene-015-943eeaba6c242ae3.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/images/scene-015-943eeaba.png
   motion_first_frame: 2957
   motion_frames: 184
 - start: 104.33
@@ -441,7 +441,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Christ is supreme over all beings / God of glory, Lord of kings''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness.'
   index: 16
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/images/scene-016-356ba9430c6f3218.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/images/scene-016-356ba943.png
   motion_first_frame: 3119
   motion_frames: 187
 - start: 109.84
@@ -452,7 +452,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Christ is supreme over all beings / Magnificent Savior, creation sings''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness.'
   index: 17
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/images/scene-017-bfd10858e4b62e77.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/images/scene-017-bfd10858.png
   motion_first_frame: 3284
   motion_frames: 257
 - start: 117.66
@@ -462,7 +462,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Christ is supreme''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness.'
   index: 18
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/images/scene-018-e8dbeea2d837a13c.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/images/scene-018-e8dbeea2.png
   motion_first_frame: 3519
   motion_frames: 196
 - start: 123.46
@@ -472,7 +472,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Christ is supreme''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness.'
   index: 19
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/images/scene-019-4fdb654118e4caeb.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/images/scene-019-4fdb6541.png
   motion_first_frame: 3693
   motion_frames: 179
 - start: 128.7
@@ -482,7 +482,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Christ is supreme''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness.'
   index: 20
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/images/scene-020-bd257b2cd7efb387.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/christ-is-supreme/images/scene-020-bd257b2c.png
   motion_first_frame: 3850
   motion_frames: 460
 overlays:

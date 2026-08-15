@@ -395,7 +395,7 @@ scenes:
   prompt: cinematic photographic realism. Create a cinematic lyric-video scene for an instrumental passage of the song "Immeasurable grace" — the opening, before the first line "Once I was dead, I lived for self". Wide, atmospheric, no people speaking; intentional composition, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography.
   index: 1
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-001-2e79f674ea283d1a.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-001-2e79f674.png
   motion_first_frame: 0
   motion_frames: 669
 - start: 21.94
@@ -406,7 +406,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Once I was dead, I lived for self / Offending God, ignoring Him''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography.'
   index: 2
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-002-ecf5440ece8fc8b2.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-002-ecf5440e.png
   motion_first_frame: 647
   motion_frames: 236
 - start: 29.06
@@ -417,7 +417,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''I walked the world’s dark crooked ways / Deceived by lies and empty praise''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography.'
   index: 3
   motion: pan_right
-  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-003-9733f64f33a284e0.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-003-9733f64f.png
   motion_first_frame: 861
   motion_frames: 227
 - start: 35.9
@@ -428,7 +428,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''I bowed my heart to selfish pride / My cravings ruled, they were my guide''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography.'
   index: 4
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-004-ffd726f520411ee0.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-004-ffd726f5.png
   motion_first_frame: 1066
   motion_frames: 227
 - start: 42.75
@@ -439,7 +439,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''But Christ so rich in mercy’s grace / He paid my sin and took my place''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography.'
   index: 5
   motion: pan_left
-  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-005-b55342a42a0217ea.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-005-b55342a4.png
   motion_first_frame: 1271
   motion_frames: 231
 - start: 49.7
@@ -450,7 +450,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''His love so great, so deep, so high / He raised me up, I''ll never die''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography.'
   index: 6
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-006-45eb065a7d2e92e1.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-006-45eb065a.png
   motion_first_frame: 1480
   motion_frames: 225
 - start: 56.48
@@ -461,7 +461,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''He took my soul from death’s dark helm / Now seated with Christ in heaven’s realm''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography.'
   index: 7
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-007-8e6ab697f6a3244d.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-007-8e6ab697.png
   motion_first_frame: 1683
   motion_frames: 250
 - start: 64.05
@@ -472,7 +472,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Oh-oh, immeasurable grace / Oh-oh, how glorious Your ways''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography.'
   index: 8
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-008-77d58142ed318b9a.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-008-77d58142.png
   motion_first_frame: 1911
   motion_frames: 436
 - start: 77.85
@@ -483,7 +483,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Oh-oh, forever I''ll praise / Your goodness in Christ''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography.'
   index: 9
   motion: pan_right
-  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-009-9bb44cac673a713c.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-009-9bb44cac.png
   motion_first_frame: 2325
   motion_frames: 288
 - start: 86.74
@@ -494,7 +494,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Your mercy that saves / Your immeasurable grace''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography.'
   index: 10
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-010-32a62d4a5e536231.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-010-32a62d4a.png
   motion_first_frame: 2591
   motion_frames: 548
 - start: 104.27
@@ -505,7 +505,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''I followed darkness, so blind and proud / A voice within the rebel crowd''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography.'
   index: 11
   motion: pan_left
-  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-011-ad3d02299dcf9190.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-011-ad3d0229.png
   motion_first_frame: 3117
   motion_frames: 232
 - start: 111.28
@@ -516,7 +516,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''I lived to feed my flesh and mind / No thought of God, no truth to find''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography.'
   index: 12
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-012-d659ea275bcc5b84.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-012-d659ea27.png
   motion_first_frame: 3327
   motion_frames: 233
 - start: 118.3
@@ -527,7 +527,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''By nature I deserved His wrath / Stumbling down a fatal path''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography.'
   index: 13
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-013-61ce613b281e5ba6.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-013-61ce613b.png
   motion_first_frame: 3538
   motion_frames: 222
 - start: 124.98
@@ -538,7 +538,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''But God displayed His richest grace / A love that time will not erase''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography.'
   index: 14
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-014-5f63c051ab6a7546.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-014-5f63c051.png
   motion_first_frame: 3738
   motion_frames: 228
 - start: 131.82
@@ -549,7 +549,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''By grace through faith, not by my doing / The gift of God, my boast removing''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography.'
   index: 15
   motion: pan_right
-  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-015-d41a2fff32bffb03.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-015-d41a2fff.png
   motion_first_frame: 3944
   motion_frames: 231
 - start: 138.8
@@ -560,7 +560,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''In Jesus Christ I’ve been remade / For the good works which God ordained''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography.'
   index: 16
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-016-356ba9430c6f3218.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-016-356ba943.png
   motion_first_frame: 4153
   motion_frames: 250
 - start: 146.4
@@ -571,7 +571,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Oh-oh, immeasurable grace / Oh-oh, how glorious Your ways''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography.'
   index: 17
   motion: pan_left
-  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-017-bfd10858e4b62e77.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-017-bfd10858.png
   motion_first_frame: 4381
   motion_frames: 432
 - start: 160.07
@@ -582,7 +582,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Oh-oh, forever I''ll praise / Your goodness in Christ''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography.'
   index: 18
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-018-e8dbeea2d837a13c.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-018-e8dbeea2.png
   motion_first_frame: 4791
   motion_frames: 278
 - start: 168.61
@@ -593,7 +593,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Your mercy that saves / Your immeasurable grace''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography.'
   index: 19
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-019-4fdb654118e4caeb.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-019-4fdb6541.png
   motion_first_frame: 5047
   motion_frames: 356
 - start: 179.74
@@ -604,7 +604,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''From death to life, You called my name / Now I’m alive to praise Your name''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography.'
   index: 20
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-020-bd257b2cd7efb387.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-020-bd257b2c.png
   motion_first_frame: 5381
   motion_frames: 229
 - start: 186.62
@@ -615,7 +615,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''No longer lost, no longer bound / In Christ alone, I’ve been made found''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography.'
   index: 21
   motion: pan_right
-  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-021-8bf65b86b37d2745.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-021-8bf65b86.png
   motion_first_frame: 5588
   motion_frames: 250
 - start: 194.22
@@ -626,7 +626,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Oh-oh, immeasurable grace / Oh-oh, how glorious Your ways''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography.'
   index: 22
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-022-6a9a4d54061275d2.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-022-6a9a4d54.png
   motion_first_frame: 5816
   motion_frames: 435
 - start: 208.01
@@ -637,7 +637,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Oh-oh, forever I''ll praise / Your goodness in Christ''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography.'
   index: 23
   motion: pan_left
-  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-023-f2bf8190f243f6da.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-023-f2bf8190.png
   motion_first_frame: 6229
   motion_frames: 283
 - start: 216.71
@@ -648,7 +648,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Your mercy that saves / Your immeasurable grace''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography.'
   index: 24
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-024-10d76e684f1b4077.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-024-10d76e68.png
   motion_first_frame: 6490
   motion_frames: 341
 - start: 227.32
@@ -659,7 +659,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Immeasurable grace, unfailing and true / Forever I’ll live to worship You''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography.'
   index: 25
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-025-d90cdadf2fcaf74b.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-025-d90cdadf.png
   motion_first_frame: 6809
   motion_frames: 456
 - start: 241.79
@@ -670,7 +670,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''To sing of your immeasurable grace / Immeasurable grace''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography.'
   index: 26
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-026-a8be4a41f6cd93e3.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-026-a8be4a41.png
   motion_first_frame: 7243
   motion_frames: 808
 - start: 267.99
@@ -680,7 +680,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Immeasurable grace''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. No words, letters, captions, logos, watermarks, borders, or typography.'
   index: 27
   motion: pan_right
-  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-027-4e41ec33134e094a.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/immeasurable-grace/images/scene-027-4e41ec33.png
   motion_first_frame: 8029
   motion_frames: 459
 overlays:

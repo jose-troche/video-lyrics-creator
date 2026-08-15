@@ -21,7 +21,9 @@ from typing import Any
 
 from PIL import Image
 
-from .util import VideoLyricsError, ensure_dir, log, scene_stem, short_hash
+from .util import (
+    STEM_HASH_LENGTH, VideoLyricsError, ensure_dir, log, scene_stem, short_hash,
+)
 
 IMAGE_SUFFIXES = (".png", ".jpg", ".jpeg", ".webp")
 
@@ -306,7 +308,8 @@ def _assign_supplied(
         )
     for index, scene in enumerate(scenes):
         chosen = files[index % len(files)]
-        stem = f"scene-{scene['index']:03d}-{short_hash(chosen.name)}"
+        fingerprint = short_hash(chosen.name, length=STEM_HASH_LENGTH)
+        stem = f"scene-{scene['index']:03d}-{fingerprint}"
         if _find_image_by_stem(images_dir, stem) is None:
             shutil.copyfile(chosen, images_dir / f"{stem}{chosen.suffix.lower()}")
         _adopt_by_stem(scene, stem, images_dir=images_dir, size=size)

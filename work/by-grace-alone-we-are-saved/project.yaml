@@ -326,7 +326,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene for an instrumental passage of the song "By grace alone we are saved" — the opening, before the first line "No one can stand before God’s throne" (part 1 of 2). Wide, atmospheric, no people speaking; intentional composition, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness. Frame this particular scene as a wide establishing shot, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 1
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/images/scene-001-89826bbcadf5bdbd.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/images/scene-001-89826bbc.png
   motion_first_frame: 0
   motion_frames: 344
 - start: 11.085
@@ -335,7 +335,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene for an instrumental passage of the song "By grace alone we are saved" — the opening, before the first line "No one can stand before God’s throne" (part 2 of 2). Wide, atmospheric, no people speaking; intentional composition, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness. Frame this particular scene as a low angle close to the ground, looking up, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 2
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/images/scene-002-6cc9695dcd310b8e.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/images/scene-002-6cc9695d.png
   motion_first_frame: 322
   motion_frames: 354
 - start: 22.17
@@ -346,7 +346,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''No one can stand before God’s throne / By keeping rules or deeds we’ve shown''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness. Frame this particular scene as an intimate mid-shot centred on a single subject, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 3
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/images/scene-003-9a9efec30a97fd17.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/images/scene-003-9a9efec3.png
   motion_first_frame: 654
   motion_frames: 372
 - start: 33.83
@@ -357,7 +357,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''God’s holy word reveals our blame / No work we do can cleanse our shame''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness. Frame this particular scene as a high, distant vantage looking down, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 4
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/images/scene-004-2c3ad91de700e0d0.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/images/scene-004-2c3ad91d.png
   motion_first_frame: 1004
   motion_frames: 393
 - start: 46.2
@@ -368,7 +368,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''We all have failed and gone astray / We all fall short of God’s glory and way''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness. Frame this particular scene as a tight foreground detail with the rest falling away soft, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 5
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/images/scene-005-daa223e139fe5a93.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/images/scene-005-daa223e1.png
   motion_first_frame: 1375
   motion_frames: 349
 - start: 57.1
@@ -379,7 +379,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''By grace alone, through faith we’re saved / In Christ our hope, no more enslaved''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness. Frame this particular scene as a head-on symmetrical composition, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 6
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/images/scene-006-de9c90fda034f857.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/images/scene-006-de9c90fd.png
   motion_first_frame: 1702
   motion_frames: 371
 - start: 68.74
@@ -390,7 +390,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''It was His blood, God’s wrath appeased / The price He paid, our souls released''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness. Frame this particular scene as a view through a natural frame - an arch, branches, a doorway, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 7
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/images/scene-007-b65fe4ca72bbafc7.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/images/scene-007-b65fe4ca.png
   motion_first_frame: 2051
   motion_frames: 371
 - start: 80.38
@@ -400,7 +400,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''By grace alone, this we believe''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a wide establishing shot, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 8
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/images/scene-008-e0f4929ed4db7151.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/images/scene-008-e0f4929e.png
   motion_first_frame: 2400
   motion_frames: 321
 - start: 90.35
@@ -409,7 +409,7 @@ scenes:
   prompt: cinematic photographic realism. Create a cinematic lyric-video scene for an instrumental passage of the song "By grace alone we are saved" — an instrumental break after "By grace alone, this we believe". Wide, atmospheric, no people speaking; intentional composition, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a low angle close to the ground, looking up, distinctly different in vantage, subject and composition from the scenes either side of it.
   index: 9
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/images/scene-009-bf7df44908aa4954.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/images/scene-009-bf7df449.png
   motion_first_frame: 2699
   motion_frames: 245
 - start: 97.77
@@ -420,7 +420,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene of jesus christ crucified, the shot is from behind, so his face is not shown, first the cross and his body in front of it; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness. Frame this particular scene as an intimate mid-shot centred on a single subject, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 10
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/images/scene-010-ea71c5a8feb4637b.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/images/scene-010-ea71c5a8.png
   motion_first_frame: 2922
   motion_frames: 368
 - start: 109.29
@@ -431,7 +431,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''He drank the cup that we deserved / Soaked up the fury our sins had earned''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a high, distant vantage looking down, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 11
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/images/scene-011-391ca1df35b22a01.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/images/scene-011-391ca1df.png
   motion_first_frame: 3268
   motion_frames: 392
 - start: 121.64
@@ -442,7 +442,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''The cross displayed what justice cost / Yet grace is free to those who''re lost''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a tight foreground detail with the rest falling away soft, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 12
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/images/scene-012-9a6e90137b53e00b.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/images/scene-012-9a6e9013.png
   motion_first_frame: 3638
   motion_frames: 351
 - start: 132.6
@@ -453,7 +453,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''By grace alone, through faith we’re saved / In Christ our hope, no more enslaved''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness. Frame this particular scene as a head-on symmetrical composition, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 13
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/images/scene-013-de9c90fda034f857.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/images/scene-013-de9c90fd.png
   motion_first_frame: 3967
   motion_frames: 368
 - start: 144.12
@@ -464,7 +464,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''It was His blood, God’s wrath appeased / The price He paid, our souls released''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness. Frame this particular scene as a view through a natural frame - an arch, branches, a doorway, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 14
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/images/scene-014-b65fe4ca72bbafc7.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/images/scene-014-b65fe4ca.png
   motion_first_frame: 4313
   motion_frames: 374
 - start: 155.86
@@ -474,7 +474,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''By grace alone, this we believe''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a wide establishing shot, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 15
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/images/scene-015-e0f4929ed4db7151.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/images/scene-015-e0f4929e.png
   motion_first_frame: 4665
   motion_frames: 387
 - start: 168.02
@@ -485,7 +485,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''My sin, my debt, His gift, His grace / Christ shed His blood, He took my place''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness. Frame this particular scene as a low angle close to the ground, looking up, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 16
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/images/scene-016-ae2fefaf62144739.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/images/scene-016-ae2fefaf.png
   motion_first_frame: 5030
   motion_frames: 374
 - start: 179.76
@@ -496,7 +496,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''His life, His death, His work complete / There at the cross justice and mercy meet''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as an intimate mid-shot centred on a single subject, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 17
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/images/scene-017-43aa16cc7d5fd51d.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/images/scene-017-43aa16cc.png
   motion_first_frame: 5382
   motion_frames: 469
 - start: 194.68
@@ -505,7 +505,7 @@ scenes:
   prompt: cinematic photographic realism. Create a cinematic lyric-video scene for an instrumental passage of the song "By grace alone we are saved" — an instrumental break after "There at the cross justice and mercy meet". Wide, atmospheric, no people speaking; intentional composition, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a high, distant vantage looking down, distinctly different in vantage, subject and composition from the scenes either side of it.
   index: 18
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/images/scene-018-300f8a604d42963b.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/images/scene-018-300f8a60.png
   motion_first_frame: 5829
   motion_frames: 69
 - start: 196.24
@@ -516,7 +516,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''By grace alone, through faith we’re saved / In Christ our hope, no more enslaved''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness. Frame this particular scene as a tight foreground detail with the rest falling away soft, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 19
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/images/scene-019-5ddfe0bffd2bc305.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/images/scene-019-5ddfe0bf.png
   motion_first_frame: 5876
   motion_frames: 379
 - start: 208.15
@@ -527,7 +527,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''It was His blood, God’s wrath appeased / The price He paid, our souls released''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness. Frame this particular scene as a head-on symmetrical composition, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 20
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/images/scene-020-215de18ce3a02063.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/images/scene-020-215de18c.png
   motion_first_frame: 6233
   motion_frames: 372
 - start: 219.79
@@ -538,7 +538,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''By grace alone / Through faith alone''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a view through a natural frame - an arch, branches, a doorway, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 21
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/images/scene-021-7bb05f0e11259798.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/images/scene-021-7bb05f0e.png
   motion_first_frame: 6583
   motion_frames: 364
 - start: 231.19
@@ -548,7 +548,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''In Christ alone''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness. Frame this particular scene as a wide establishing shot, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 22
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/images/scene-022-57a17b750e550489.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/images/scene-022-57a17b75.png
   motion_first_frame: 6925
   motion_frames: 340
 - start: 241.81
@@ -558,7 +558,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''That''s how we are saved''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a low angle close to the ground, looking up, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 23
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/images/scene-023-1c13ed60266c8df6.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/images/scene-023-1c13ed60.png
   motion_first_frame: 7243
   motion_frames: 232
 - start: 248.79
@@ -567,7 +567,7 @@ scenes:
   prompt: cinematic photographic realism. Create a cinematic lyric-video scene for an instrumental passage of the song "By grace alone we are saved" — an instrumental break after "That's how we are saved". Show an empty cross and a bright sun in the background. Broken shackles at its foot. Wide, atmospheric, no people speaking; intentional composition, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as an intimate mid-shot centred on a single subject, distinctly different in vantage, subject and composition from the scenes either side of it.
   index: 24
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/images/scene-024-0d3ff7e2608ccf74.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/by-grace-alone-we-are-saved/images/scene-024-0d3ff7e2.png
   motion_first_frame: 7453
   motion_frames: 366
 overlays:

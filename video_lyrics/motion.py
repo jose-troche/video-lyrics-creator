@@ -219,9 +219,9 @@ def _image_signature(path: str) -> str:
     Not the path alone: `video-lyrics images --force` regenerates under the same
     filename (it is hashed from the prompt, not the picture), so an unchanged path
     says nothing about what is in the file, and the clip would stay stale forever.
-    Not the mtime either: the images stage rewrites every canonical PNG from its
-    raw download on every run (see `_adopt_by_stem`), so a timestamp would re-bake
-    the whole bed each time that stage is re-run, changing nothing.
+    Not the mtime either: it moves for reasons the picture does not - a re-encode
+    the images stage decided was needed, a fresh clone, a file copied between
+    machines - and every one of those would re-bake the whole bed for nothing.
     """
     digest = hashlib.sha1()
     with open(path, "rb") as handle:

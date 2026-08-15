@@ -98,6 +98,13 @@ def short_hash(*parts: object, length: int = 16) -> str:
     return digest.hexdigest()[:length]
 
 
+# How much of the fingerprint a scene image's filename carries. Short, because
+# these names are read and typed by hand - they are what `manual` mode asks for and
+# what you delete to redraw one scene. 32 bits against a few dozen scenes is not a
+# collision anyone will meet, and the images stage checks nothing but the stem.
+STEM_HASH_LENGTH = 8
+
+
 def scene_stem(scene: dict, tag: str) -> str:
     """The filename one scene's image is stored under, for one generator.
 
@@ -106,7 +113,8 @@ def scene_stem(scene: dict, tag: str) -> str:
     this name afterwards. `tag` is the provider, so switching provider asks for a
     new picture instead of adopting another site's.
     """
-    return f"scene-{scene['index']:03d}-{short_hash(scene['prompt'], tag)}"
+    fingerprint = short_hash(scene["prompt"], tag, length=STEM_HASH_LENGTH)
+    return f"scene-{scene['index']:03d}-{fingerprint}"
 
 
 def ensure_dir(path: Path | str) -> Path:

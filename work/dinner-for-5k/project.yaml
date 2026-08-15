@@ -431,7 +431,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Out in the wilderness, middle of nowhere''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a wide establishing shot, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 1
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-001-ca568b39926a88b0.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-001-ca568b39.png
   motion_first_frame: 0
   motion_frames: 393
 - start: 12.72
@@ -441,7 +441,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''No GPS signal, no food trucks to share''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a low angle close to the ground, looking up, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 2
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-002-bb7754df83807168.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-002-bb7754df.png
   motion_first_frame: 371
   motion_frames: 110
 - start: 15.68
@@ -451,7 +451,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Jesus was teaching, the crowd kept growing''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness. Frame this particular scene as an intimate mid-shot centred on a single subject, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 3
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-003-089c8e91659da746.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-003-089c8e91.png
   motion_first_frame: 459
   motion_frames: 100
 - start: 18.28
@@ -461,7 +461,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Families with children, the numbers were showing''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a high, distant vantage looking down, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 4
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-004-cfe47da5955a6b31.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-004-cfe47da5.png
   motion_first_frame: 537
   motion_frames: 109
 - start: 21.18
@@ -471,7 +471,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Five thousand people, maybe even more''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a tight foreground detail with the rest falling away soft, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 5
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-005-35dbb5be8a0a784d.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-005-35dbb5be.png
   motion_first_frame: 624
   motion_frames: 107
 - start: 24.0
@@ -481,7 +481,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Kids getting cranky, parents getting sore''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a head-on symmetrical composition, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 6
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-006-7e3203104a953f94.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-006-7e320310.png
   motion_first_frame: 709
   motion_frames: 104
 - start: 26.74
@@ -491,7 +491,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''The sun''s getting low and the hour is late''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a view through a natural frame - an arch, branches, a doorway, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 7
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-007-3dd27326aa262a76.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-007-3dd27326.png
   motion_first_frame: 791
   motion_frames: 105
 - start: 29.5
@@ -501,7 +501,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''But where do you get food for this dinner date?''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a wide establishing shot, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 8
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-008-87801eb45dd6c5cc.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-008-87801eb4.png
   motion_first_frame: 874
   motion_frames: 138
 - start: 33.36
@@ -511,7 +511,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''What you gonna do when you gotta feed a crowd?''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a low angle close to the ground, looking up, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 9
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-009-3846a6529a3facb6.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-009-3846a652.png
   motion_first_frame: 990
   motion_frames: 111
 - start: 36.34
@@ -521,7 +521,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''And your pantry''s empty, wallet''s not too proud''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as an intimate mid-shot centred on a single subject, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 10
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-010-49877935736fd061.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-010-49877935.png
   motion_first_frame: 1079
   motion_frames: 105
 - start: 39.1
@@ -531,7 +531,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''No Walmart, no Costco, no Amazon Prime''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a high, distant vantage looking down, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 11
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-011-e3045a62ab0bbc2c.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-011-e3045a62.png
   motion_first_frame: 1162
   motion_frames: 106
 - start: 41.9
@@ -541,7 +541,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Just empty stomachs and dinner time''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a tight foreground detail with the rest falling away soft, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 12
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-012-12dcf6d5add636e3.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-012-12dcf6d5.png
   motion_first_frame: 1246
   motion_frames: 107
 - start: 44.74
@@ -551,7 +551,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''What you gonna do?''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a head-on symmetrical composition, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 13
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-013-f98cdac2ca7b0159.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-013-f98cdac2.png
   motion_first_frame: 1331
   motion_frames: 74
 - start: 46.48
@@ -561,7 +561,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''When impossible seems to be staring at you!''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a view through a natural frame - an arch, branches, a doorway, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 14
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-014-fbd94926e122cfc3.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-014-fbd94926.png
   motion_first_frame: 1383
   motion_frames: 264
 - start: 54.54
@@ -571,7 +571,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Disciples are panicking, doing the math''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a wide establishing shot, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 15
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-015-5f8416fe700ebf60.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-015-5f8416fe.png
   motion_first_frame: 1625
   motion_frames: 95
 - start: 56.96
@@ -581,7 +581,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''"Two hundred denarii won''t clear this path!"''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a low angle close to the ground, looking up, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 16
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-016-45454b9c344566f7.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-016-45454b9c.png
   motion_first_frame: 1698
   motion_frames: 104
 - start: 59.7
@@ -591,7 +591,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''That''s like a year''s salary, maybe much more''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as an intimate mid-shot centred on a single subject, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 17
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-017-eb485150a3dc31c2.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-017-eb485150.png
   motion_first_frame: 1780
   motion_frames: 107
 - start: 62.52
@@ -601,7 +601,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''To feed all these people by the lakeshore''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a high, distant vantage looking down, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 18
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-018-11ec6a4599768acb.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-018-11ec6a45.png
   motion_first_frame: 1865
   motion_frames: 109
 - start: 65.42
@@ -611,7 +611,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''They searched through the crowd with a desperate plea''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a tight foreground detail with the rest falling away soft, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 19
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-019-88fb997f88e9314d.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-019-88fb997f.png
   motion_first_frame: 1952
   motion_frames: 95
 - start: 67.86
@@ -621,7 +621,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''"Anyone got food? We''ll take what we see!"''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a head-on symmetrical composition, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 20
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-020-293b5a501125ecbb.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-020-293b5a50.png
   motion_first_frame: 2025
   motion_frames: 106
 - start: 70.66
@@ -631,7 +631,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''One little boy stepped up with a grin''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a view through a natural frame - an arch, branches, a doorway, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 21
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-021-6587d9f85969f5ba.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-021-6587d9f8.png
   motion_first_frame: 2109
   motion_frames: 106
 - start: 73.46
@@ -641,7 +641,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''"I got five loaves and two fish - let''s begin!"''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a wide establishing shot, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 22
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-022-3bdf4b9a676fba16.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-022-3bdf4b9a.png
   motion_first_frame: 2193
   motion_frames: 120
 - start: 76.72
@@ -651,7 +651,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''What you gonna do when you gotta feed a crowd?''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a low angle close to the ground, looking up, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 23
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-023-3846a6529a3facb6.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-023-3846a652.png
   motion_first_frame: 2291
   motion_frames: 128
 - start: 80.28
@@ -661,7 +661,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''And your pantry''s empty, wallet''s not too proud''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as an intimate mid-shot centred on a single subject, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 24
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-024-49877935736fd061.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-024-49877935.png
   motion_first_frame: 2397
   motion_frames: 103
 - start: 82.96
@@ -671,7 +671,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''No Walmart, no Costco, no Amazon Prime''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a high, distant vantage looking down, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 25
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-025-e3045a62ab0bbc2c.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-025-e3045a62.png
   motion_first_frame: 2478
   motion_frames: 105
 - start: 85.74
@@ -681,7 +681,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Just empty stomachs and dinner time''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a tight foreground detail with the rest falling away soft, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 26
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-026-12dcf6d5add636e3.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-026-12dcf6d5.png
   motion_first_frame: 2561
   motion_frames: 119
 - start: 88.98
@@ -691,7 +691,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''What you gonna do?''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a head-on symmetrical composition, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 27
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-027-f98cdac2ca7b0159.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-027-f98cdac2.png
   motion_first_frame: 2658
   motion_frames: 85
 - start: 91.08
@@ -701,7 +701,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''When impossible seems to be staring at you!''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a view through a natural frame - an arch, branches, a doorway, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 28
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-028-fbd94926e122cfc3.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-028-fbd94926.png
   motion_first_frame: 2721
   motion_frames: 226
 - start: 97.88
@@ -711,7 +711,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Jesus took that lunch, just a humble man''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness. Frame this particular scene as a wide establishing shot, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 29
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-029-ab1aa022eb22ca24.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-029-ab1aa022.png
   motion_first_frame: 2925
   motion_frames: 115
 - start: 100.96
@@ -721,7 +721,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''But holding in His hands the Creator''s plan''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a low angle close to the ground, looking up, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 30
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-030-0e6217c28ac7b239.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-030-0e6217c2.png
   motion_first_frame: 3018
   motion_frames: 100
 - start: 103.56
@@ -731,7 +731,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''He spoke one word, the laws of nature bent''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as an intimate mid-shot centred on a single subject, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 31
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-031-b779a4a46adfcc99.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-031-b779a4a4.png
   motion_first_frame: 3096
   motion_frames: 103
 - start: 106.28
@@ -741,7 +741,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''The God who made the stars, Jesus was there''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness. Frame this particular scene as a high, distant vantage looking down, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 32
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-032-db3f8c04d4fff3a5.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-032-db3f8c04.png
   motion_first_frame: 3177
   motion_frames: 106
 - start: 109.06
@@ -751,7 +751,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Loaves multiplying by the power of His voice''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a tight foreground detail with the rest falling away soft, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 33
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-033-3e853846e1e12b68.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-033-3e853846.png
   motion_first_frame: 3261
   motion_frames: 106
 - start: 111.86
@@ -761,7 +761,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''The One who fills the universe made His choice''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a head-on symmetrical composition, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 34
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-034-b81f8f10e9d6d6a9.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-034-b81f8f10.png
   motion_first_frame: 3345
   motion_frames: 108
 - start: 114.72
@@ -771,7 +771,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Baskets overflowing, creation obeyed''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a view through a natural frame - an arch, branches, a doorway, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 35
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-035-a2a1c6596f39c2de.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-035-a2a1c659.png
   motion_first_frame: 3431
   motion_frames: 103
 - start: 117.44
@@ -781,7 +781,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''When the Word made flesh authority displayed!''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a wide establishing shot, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 36
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-036-be1feeffa56dffab.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-036-be1feeff.png
   motion_first_frame: 3512
   motion_frames: 214
 - start: 123.82
@@ -791,7 +791,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Now when life gets crazy and bills pile high''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a low angle close to the ground, looking up, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 37
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-037-afc637ed70689380.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-037-afc637ed.png
   motion_first_frame: 3704
   motion_frames: 115
 - start: 126.94
@@ -801,7 +801,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''When you lose your job and you wonder why''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as an intimate mid-shot centred on a single subject, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 38
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-038-1595e04afc9ccd2b.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-038-1595e04a.png
   motion_first_frame: 3797
   motion_frames: 107
 - start: 129.76
@@ -811,7 +811,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''We fumble around with our little plans''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a high, distant vantage looking down, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 39
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-039-f0a5eb0ab082ad06.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-039-f0a5eb0a.png
   motion_first_frame: 3882
   motion_frames: 101
 - start: 132.4
@@ -821,7 +821,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''But Jesus holds the universe in His hands''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness. Frame this particular scene as a tight foreground detail with the rest falling away soft, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 40
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-040-2f744524f80f541e.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-040-2f744524.png
   motion_first_frame: 3961
   motion_frames: 108
 - start: 135.26
@@ -831,7 +831,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Human efforts fail, our strength runs dry''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a head-on symmetrical composition, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 41
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-041-64b55546e1cafcc1.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-041-64b55546.png
   motion_first_frame: 4047
   motion_frames: 102
 - start: 137.92
@@ -841,7 +841,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''But the Lord of heaven hears every cry''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a view through a natural frame - an arch, branches, a doorway, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 42
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-042-55f3b6dd4660e1d7.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-042-55f3b6dd.png
   motion_first_frame: 4127
   motion_frames: 101
 - start: 140.58
@@ -851,7 +851,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''When we''re at our weakest, He shows His might''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a wide establishing shot, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 43
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-043-827f3ec7932e0574.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-043-827f3ec7.png
   motion_first_frame: 4206
   motion_frames: 102
 - start: 143.22
@@ -861,7 +861,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''The omnipotent Savior makes everything right!''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a low angle close to the ground, looking up, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 44
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-044-b7becb6928d4f099.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-044-b7becb69.png
   motion_first_frame: 4286
   motion_frames: 208
 - start: 149.42
@@ -871,7 +871,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''What you gonna do when you gotta feed a crowd?''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as an intimate mid-shot centred on a single subject, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 45
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-045-cdc5af95fa130680.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-045-cdc5af95.png
   motion_first_frame: 4472
   motion_frames: 115
 - start: 152.52
@@ -881,7 +881,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''When life gets heavy and troubles get loud''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a high, distant vantage looking down, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 46
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-046-4809720da686b0f8.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-046-4809720d.png
   motion_first_frame: 4565
   motion_frames: 97
 - start: 155.04
@@ -891,7 +891,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''No human wisdom, no earthly plan''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a tight foreground detail with the rest falling away soft, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 47
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-047-5acb82022acf4827.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-047-5acb8202.png
   motion_first_frame: 4640
   motion_frames: 103
 - start: 157.74
@@ -901,7 +901,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Just Jesus standing as the God-man''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness. Frame this particular scene as a head-on symmetrical composition, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 48
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-048-7fc7f4ea61969822.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-048-7fc7f4ea.png
   motion_first_frame: 4721
   motion_frames: 106
 - start: 160.54
@@ -911,7 +911,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''What you gonna do?''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a view through a natural frame - an arch, branches, a doorway, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 49
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-049-47fee0fa0dad671c.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-049-47fee0fa.png
   motion_first_frame: 4805
   motion_frames: 104
 - start: 163.28
@@ -921,7 +921,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''The Creator of all things is here with you!''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a wide establishing shot, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 50
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-050-4b289e0b466afed5.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-050-4b289e0b.png
   motion_first_frame: 4887
   motion_frames: 255
 - start: 171.02
@@ -931,7 +931,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Five loaves, two fish, and the Word made flesh''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a low angle close to the ground, looking up, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 51
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-051-b868287a2c8040fc.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-051-b868287a.png
   motion_first_frame: 5120
   motion_frames: 97
 - start: 173.54
@@ -941,7 +941,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''The omnipotent God making all things fresh''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness. Frame this particular scene as an intimate mid-shot centred on a single subject, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 52
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-052-7124aace2960b92a.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-052-7124aace.png
   motion_first_frame: 5195
   motion_frames: 109
 - start: 176.42
@@ -951,7 +951,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Behind simple eyes burns the power of stars''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a high, distant vantage looking down, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 53
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-053-156fa7202f4b14c0.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-053-156fa720.png
   motion_first_frame: 5282
   motion_frames: 101
 - start: 179.06
@@ -961,7 +961,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''The almighty Savior who heals all our scars!''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a tight foreground detail with the rest falling away soft, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 54
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-054-eceb5e045cda65aa.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-054-eceb5e04.png
   motion_first_frame: 5361
   motion_frames: 178
 - start: 184.26
@@ -971,7 +971,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''What you gonna do?''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. Frame this particular scene as a head-on symmetrical composition, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 55
   motion: zoom_in
-  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-055-f98cdac2ca7b0159.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-055-f98cdac2.png
   motion_first_frame: 5517
   motion_frames: 130
 - start: 187.88
@@ -981,7 +981,7 @@ scenes:
   prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Trust the God Jesus - infinite and true!''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. This passage speaks of God or Jesus: if a divine figure appears, keep the face blurred, veiled, or turned away — never a sharp, detailed likeness. Frame this particular scene as a view through a natural frame - an arch, branches, a doorway, distinctly different in vantage, subject and composition from the scenes either side of it.'
   index: 56
   motion: zoom_out
-  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-056-7502de73552264ce.png
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5k/images/scene-056-7502de73.png
   motion_first_frame: 5625
   motion_frames: 284
 overlays:
