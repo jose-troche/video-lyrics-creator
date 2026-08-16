@@ -1,0 +1,1386 @@
+schema_version: 1
+title: In the end
+author: José Troche
+audio: /Users/jatroche/Music/From beginning to end you are God/10 In the end.wav
+lyrics_source: /Users/jatroche/Google Drive/Songs/From beginning to end you are God/In the end - Revelation 21, 22.gdoc
+visual_style: cinematic photographic realism
+context: The book of Revelation
+work_dir: /Users/jatroche/code/video-lyrics-creator/work
+alignment:
+  engine: forced
+  vocals: true
+  model: medium.en
+  forced_model: facebook/wav2vec2-base-960h
+  forced_min_score: 0.05
+  language: en
+  vad: false
+  prompt_hint: false
+  min_confidence: 0.5
+  min_matched_words: 2
+  min_duration: 1.0
+  max_gap_fill: 0.7
+  tail_extend: 1.2
+  tail_level: 0.45
+  scene_gap: 2.5
+  min_scene_duration: 4.0
+  max_scene_duration: 15.0
+video:
+  width: 1920
+  height: 1080
+  fps: 30
+  transition: 0.75
+  title_duration: 12.0
+  title_fade: 0.75
+  font: Avenir Next Demi Bold
+  font_size: 58
+  margin_v: 72
+  zoom: 1.2
+  lyric_lead: 0.35
+  lyric_fade: 0.2
+  audio_fade: 1.0
+image_generation:
+  provider: chatgpt
+  lines_per_image: 1
+  source_dir: null
+  chatgpt_headless: false
+  chatgpt_profile_dir: null
+  chatgpt_min_delay: 1.0
+  chatgpt_max_delay: 4.0
+  chatgpt_composer_selector: null
+  chatgpt_image_selector: null
+  chatgpt_channel: chrome
+  meta_headless: false
+  meta_profile_dir: null
+  meta_min_delay: 1.0
+  meta_max_delay: 4.0
+  meta_composer_selector: null
+  meta_image_selector: null
+  meta_channel: null
+render:
+  engine: ffmpeg
+  output: /Users/jatroche/code/video-lyrics-creator/output/in-the-end.mp4
+  format: mp4
+  codec: H264
+  audio_codec: aac
+  replace_existing: true
+  lyrics_mode: overlay
+  intermediate: h264
+  last_output: /Users/jatroche/code/video-lyrics-creator/output/in-the-end.mp4
+lyric_lines:
+- In the end
+- In the end, Christ on earth will reign
+- He will wipe our tears, remove all pain
+- In the end, death shall be no more
+- No crying, no sadness to endure
+- In the end, wrongs will be made right
+- No more darkness, no more night
+- The former things have passed away
+- He’s making all things new that day
+- In the end, God’s with us
+- In the end, no more tears
+- In the end, He walks with us
+- In the end, no more fears
+- Bright as crystal, the river of God flows
+- The tree of life on each side grows
+- Blessed are the people who wash their robes
+- To enter God’s city of endless hopes
+- They’ll worship God and see His face
+- His name upon them, stamp of grace
+- No night remains, no lamp or sun
+- God is their light, His reign’s begun!
+- In the end, God’s with us
+- In the end, no more tears
+- In the end, He walks with us
+- In the end, no more fears
+- In the end, God’s with us
+- In the end, no more tears
+- In the end, He walks with us
+- In the end, no more fears
+- When grief and sorrow pull us down
+- Behold the end where hope is found
+- Though trials come and strength grows dim
+- In the end, we’ll forever be with Him
+- In the end, we’ll forever be with Him
+- In the end, we’ll forever be with Him
+lyric_section_starts:
+- 0
+- 1
+- 5
+- 9
+- 13
+- 17
+- 21
+- 25
+- 29
+duration: 266.0
+transcript:
+  path: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/transcript.json
+  engine: forced
+  model: facebook/wav2vec2-base-960h
+  words: 233
+lyrics:
+- start: 13.489
+  end: 17.93
+  text: In the end, Christ on earth will reign
+  line_index: 1
+  alignment_confidence: 1.0
+- start: 20.074
+  end: 24.42
+  text: He will wipe our tears, remove all pain
+  line_index: 2
+  alignment_confidence: 1.0
+- start: 26.758
+  end: 31.16
+  text: In the end, death shall be no more
+  line_index: 3
+  alignment_confidence: 1.0
+- start: 33.703
+  end: 37.96
+  text: No crying, no sadness to endure
+  line_index: 4
+  alignment_confidence: 1.0
+- start: 39.987
+  end: 44.33
+  text: In the end, wrongs will be made right
+  line_index: 5
+  alignment_confidence: 1.0
+- start: 46.552
+  end: 51.475
+  text: No more darkness, no more night
+  line_index: 6
+  alignment_confidence: 1.0
+- start: 52.956
+  end: 57.63
+  text: The former things have passed away
+  line_index: 7
+  alignment_confidence: 1.0
+- start: 59.32
+  end: 63.91
+  text: He’s making all things new that day
+  line_index: 8
+  alignment_confidence: 0.75
+- start: 66.525
+  end: 71.448
+  text: In the end, God’s with us
+  line_index: 9
+  alignment_confidence: 0.714
+- start: 73.149
+  end: 78.153
+  text: In the end, no more tears
+  line_index: 10
+  alignment_confidence: 1.0
+- start: 79.774
+  end: 84.577
+  text: In the end, He walks with us
+  line_index: 11
+  alignment_confidence: 1.0
+- start: 86.699
+  end: 92.102
+  text: In the end, no more fears
+  line_index: 12
+  alignment_confidence: 1.0
+- start: 96.165
+  end: 100.89
+  text: Bright as crystal, the river of God flows
+  line_index: 13
+  alignment_confidence: 1.0
+- start: 102.609
+  end: 107.673
+  text: The tree of life on each side grows
+  line_index: 14
+  alignment_confidence: 1.0
+- start: 109.374
+  end: 114.137
+  text: Blessed are the people who wash their robes
+  line_index: 15
+  alignment_confidence: 0.875
+- start: 115.858
+  end: 121.082
+  text: To enter God’s city of endless hopes
+  line_index: 16
+  alignment_confidence: 0.75
+- start: 121.082
+  end: 127.406
+  text: They’ll worship God and see His face
+  line_index: 17
+  alignment_confidence: 0.75
+- start: 128.747
+  end: 133.871
+  text: His name upon them, stamp of grace
+  line_index: 18
+  alignment_confidence: 1.0
+- start: 135.312
+  end: 141.956
+  text: No night remains, no lamp or sun
+  line_index: 19
+  alignment_confidence: 1.0
+- start: 141.956
+  end: 148.32
+  text: God is their light, His reign’s begun!
+  line_index: 20
+  alignment_confidence: 0.75
+- start: 149.301
+  end: 154.24
+  text: In the end, God’s with us
+  line_index: 21
+  alignment_confidence: 0.714
+- start: 155.926
+  end: 160.929
+  text: In the end, no more tears
+  line_index: 22
+  alignment_confidence: 1.0
+- start: 162.55
+  end: 167.033
+  text: In the end, He walks with us
+  line_index: 23
+  alignment_confidence: 1.0
+- start: 169.415
+  end: 174.778
+  text: In the end, no more fears
+  line_index: 24
+  alignment_confidence: 1.0
+- start: 175.819
+  end: 180.742
+  text: In the end, God’s with us
+  line_index: 25
+  alignment_confidence: 0.714
+- start: 182.423
+  end: 187.507
+  text: In the end, no more tears
+  line_index: 26
+  alignment_confidence: 1.0
+- start: 189.048
+  end: 193.511
+  text: In the end, He walks with us
+  line_index: 27
+  alignment_confidence: 0.857
+- start: 195.953
+  end: 201.757
+  text: In the end, no more fears
+  line_index: 28
+  alignment_confidence: 1.0
+- start: 205.079
+  end: 210.49
+  text: When grief and sorrow pull us down
+  line_index: 29
+  alignment_confidence: 1.0
+- start: 211.683
+  end: 217.027
+  text: Behold the end where hope is found
+  line_index: 30
+  alignment_confidence: 1.0
+- start: 218.288
+  end: 224.07
+  text: Though trials come and strength grows dim
+  line_index: 31
+  alignment_confidence: 1.0
+- start: 225.393
+  end: 230.74
+  text: In the end, we’ll forever be with Him
+  line_index: 32
+  alignment_confidence: 0.778
+- start: 232.017
+  end: 237.26
+  text: In the end, we’ll forever be with Him
+  line_index: 33
+  alignment_confidence: 0.778
+- start: 238.621
+  end: 245.906
+  text: In the end, we’ll forever be with Him
+  line_index: 34
+  alignment_confidence: 0.667
+scenes:
+- start: 0.0
+  end: 13.489
+  lines: []
+  prompt: 'cinematic photographic realism. Context for the whole video: The book of Revelation. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene for an instrumental passage of the song "In the end" — the opening, before the first line "In the end, Christ on earth will reign". Wide, atmospheric, no people speaking; intentional composition, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a wide establishing shot, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 1
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/images/scene-001-0857841c.png
+  motion_first_frame: 0
+  motion_frames: 416
+- start: 13.489
+  end: 20.074
+  lines:
+  - In the end, Christ on earth will reign
+  prompt: 'cinematic photographic realism. Context for the whole video: The book of Revelation. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''In the end, Christ on earth will reign''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a low angle close to the ground, looking up, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 2
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/images/scene-002-d6a9647c.png
+  motion_first_frame: 394
+  motion_frames: 219
+- start: 20.074
+  end: 26.758
+  lines:
+  - He will wipe our tears, remove all pain
+  prompt: 'cinematic photographic realism. Context for the whole video: The book of Revelation. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''He will wipe our tears, remove all pain''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as an intimate mid-shot centred on a single subject, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 3
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/images/scene-003-f64735ea.png
+  motion_first_frame: 591
+  motion_frames: 223
+- start: 26.758
+  end: 33.703
+  lines:
+  - In the end, death shall be no more
+  prompt: 'cinematic photographic realism. Context for the whole video: The book of Revelation. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''In the end, death shall be no more''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a high, distant vantage looking down, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 4
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/images/scene-004-cf9c46b4.png
+  motion_first_frame: 792
+  motion_frames: 230
+- start: 33.703
+  end: 39.987
+  lines:
+  - No crying, no sadness to endure
+  prompt: 'cinematic photographic realism. Context for the whole video: The book of Revelation. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''No crying, no sadness to endure''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a tight foreground detail with the rest falling away soft, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 5
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/images/scene-005-45eb9204.png
+  motion_first_frame: 1000
+  motion_frames: 211
+- start: 39.987
+  end: 46.552
+  lines:
+  - In the end, wrongs will be made right
+  prompt: 'cinematic photographic realism. Context for the whole video: The book of Revelation. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''In the end, wrongs will be made right''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a head-on symmetrical composition, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 6
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/images/scene-006-b18e298b.png
+  motion_first_frame: 1189
+  motion_frames: 219
+- start: 46.552
+  end: 52.956
+  lines:
+  - No more darkness, no more night
+  prompt: 'cinematic photographic realism. Context for the whole video: The book of Revelation. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''No more darkness, no more night''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a view through a natural frame - an arch, branches, a doorway, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 7
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/images/scene-007-8e6fdecb.png
+  motion_first_frame: 1386
+  motion_frames: 214
+- start: 52.956
+  end: 59.32
+  lines:
+  - The former things have passed away
+  prompt: 'cinematic photographic realism. Context for the whole video: The book of Revelation. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''The former things have passed away''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a wide establishing shot, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 8
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/images/scene-008-8add4ebb.png
+  motion_first_frame: 1578
+  motion_frames: 213
+- start: 59.32
+  end: 66.525
+  lines:
+  - He’s making all things new that day
+  prompt: 'cinematic photographic realism. Context for the whole video: The book of Revelation. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''He’s making all things new that day''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a low angle close to the ground, looking up, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 9
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/images/scene-009-bf9c4f32.png
+  motion_first_frame: 1769
+  motion_frames: 238
+- start: 66.525
+  end: 73.149
+  lines:
+  - In the end, God’s with us
+  prompt: 'cinematic photographic realism. Context for the whole video: The book of Revelation. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''In the end, God’s with us''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as an intimate mid-shot centred on a single subject, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 10
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/images/scene-010-5fbe3264.png
+  motion_first_frame: 1985
+  motion_frames: 220
+- start: 73.149
+  end: 79.774
+  lines:
+  - In the end, no more tears
+  prompt: 'cinematic photographic realism. Context for the whole video: The book of Revelation. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''In the end, no more tears''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a high, distant vantage looking down, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 11
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/images/scene-011-e8c74a49.png
+  motion_first_frame: 2183
+  motion_frames: 221
+- start: 79.774
+  end: 86.699
+  lines:
+  - In the end, He walks with us
+  prompt: 'cinematic photographic realism. Context for the whole video: The book of Revelation. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''In the end, He walks with us''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a tight foreground detail with the rest falling away soft, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 12
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/images/scene-012-5faa9746.png
+  motion_first_frame: 2382
+  motion_frames: 230
+- start: 86.699
+  end: 96.165
+  lines:
+  - In the end, no more fears
+  prompt: 'cinematic photographic realism. Context for the whole video: The book of Revelation. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''In the end, no more fears''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a head-on symmetrical composition, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 13
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/images/scene-013-f3cfabf0.png
+  motion_first_frame: 2590
+  motion_frames: 306
+- start: 96.165
+  end: 102.609
+  lines:
+  - Bright as crystal, the river of God flows
+  prompt: 'cinematic photographic realism. Context for the whole video: The book of Revelation. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''Bright as crystal, the river of God flows''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a view through a natural frame - an arch, branches, a doorway, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 14
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/images/scene-014-fd0cff99.png
+  motion_first_frame: 2874
+  motion_frames: 215
+- start: 102.609
+  end: 109.374
+  lines:
+  - The tree of life on each side grows
+  prompt: 'cinematic photographic realism. Context for the whole video: The book of Revelation. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''The tree of life on each side grows''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a wide establishing shot, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 15
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/images/scene-015-520f16d6.png
+  motion_first_frame: 3067
+  motion_frames: 225
+- start: 109.374
+  end: 115.858
+  lines:
+  - Blessed are the people who wash their robes
+  prompt: 'cinematic photographic realism. Context for the whole video: The book of Revelation. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''Blessed are the people who wash their robes''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a low angle close to the ground, looking up, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 16
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/images/scene-016-778d4ad2.png
+  motion_first_frame: 3270
+  motion_frames: 217
+- start: 115.858
+  end: 121.082
+  lines:
+  - To enter God’s city of endless hopes
+  prompt: 'cinematic photographic realism. Context for the whole video: The book of Revelation. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''To enter God’s city of endless hopes''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as an intimate mid-shot centred on a single subject, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 17
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/images/scene-017-b4d8c05e.png
+  motion_first_frame: 3465
+  motion_frames: 178
+- start: 121.082
+  end: 128.747
+  lines:
+  - They’ll worship God and see His face
+  prompt: 'cinematic photographic realism. Context for the whole video: The book of Revelation. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''They’ll worship God and see His face''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a high, distant vantage looking down, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 18
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/images/scene-018-1fc7aae1.png
+  motion_first_frame: 3621
+  motion_frames: 252
+- start: 128.747
+  end: 135.312
+  lines:
+  - His name upon them, stamp of grace
+  prompt: 'cinematic photographic realism. Context for the whole video: The book of Revelation. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''His name upon them, a sign of grace''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a tight foreground detail with the rest falling away soft, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 19
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/images/scene-019-1bdd954c.png
+  motion_first_frame: 3851
+  motion_frames: 219
+- start: 135.312
+  end: 141.956
+  lines:
+  - No night remains, no lamp or sun
+  prompt: 'cinematic photographic realism. Context for the whole video: The book of Revelation. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''No night remains, no lamp or sun''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a head-on symmetrical composition, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 20
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/images/scene-020-534cdda9.png
+  motion_first_frame: 4048
+  motion_frames: 222
+- start: 141.956
+  end: 149.301
+  lines:
+  - God is their light, His reign’s begun!
+  prompt: 'cinematic photographic realism. Context for the whole video: The book of Revelation. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''God is their light, His reign’s begun!''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a view through a natural frame - an arch, branches, a doorway, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 21
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/images/scene-021-a503a6d2.png
+  motion_first_frame: 4248
+  motion_frames: 242
+- start: 149.301
+  end: 155.926
+  lines:
+  - In the end, God’s with us
+  prompt: 'cinematic photographic realism. Context for the whole video: The book of Revelation. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''In the end, God’s with us''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a wide establishing shot, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 22
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/images/scene-022-6ed79edd.png
+  motion_first_frame: 4468
+  motion_frames: 221
+- start: 155.926
+  end: 162.55
+  lines:
+  - In the end, no more tears
+  prompt: 'cinematic photographic realism. Context for the whole video: The book of Revelation. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''In the end, no more tears''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a low angle close to the ground, looking up, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 23
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/images/scene-023-7708d0da.png
+  motion_first_frame: 4667
+  motion_frames: 220
+- start: 162.55
+  end: 169.415
+  lines:
+  - In the end, He walks with us
+  prompt: 'cinematic photographic realism. Context for the whole video: The book of Revelation. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''In the end, He walks with us''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as an intimate mid-shot centred on a single subject, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 24
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/images/scene-024-be2054c3.png
+  motion_first_frame: 4865
+  motion_frames: 228
+- start: 169.415
+  end: 175.819
+  lines:
+  - In the end, no more fears
+  prompt: 'cinematic photographic realism. Context for the whole video: The book of Revelation. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''In the end, no more fears''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a high, distant vantage looking down, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 25
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/images/scene-025-d116b8a4.png
+  motion_first_frame: 5071
+  motion_frames: 215
+- start: 175.819
+  end: 182.423
+  lines:
+  - In the end, God’s with us
+  prompt: 'cinematic photographic realism. Context for the whole video: The book of Revelation. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''In the end, God’s with us''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a tight foreground detail with the rest falling away soft, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 26
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/images/scene-026-41644388.png
+  motion_first_frame: 5264
+  motion_frames: 220
+- start: 182.423
+  end: 189.048
+  lines:
+  - In the end, no more tears
+  prompt: 'cinematic photographic realism. Context for the whole video: The book of Revelation. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''In the end, no more tears''. Someone sheding a tear and a hand gently wiping it. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a head-on symmetrical composition, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 27
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/images/scene-027-c29a59c1.png
+  motion_first_frame: 5462
+  motion_frames: 220
+- start: 189.048
+  end: 195.953
+  lines:
+  - In the end, He walks with us
+  prompt: 'cinematic photographic realism. Context for the whole video: The book of Revelation. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''In the end, He walks with us''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a view through a natural frame - an arch, branches, a doorway, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 28
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/images/scene-028-421b205a.png
+  motion_first_frame: 5660
+  motion_frames: 230
+- start: 195.953
+  end: 205.079
+  lines:
+  - In the end, no more fears
+  prompt: 'cinematic photographic realism. Context for the whole video: The book of Revelation. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''In the end, no more fears''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a wide establishing shot, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 29
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/images/scene-029-9747d7a0.png
+  motion_first_frame: 5868
+  motion_frames: 295
+- start: 205.079
+  end: 211.683
+  lines:
+  - When grief and sorrow pull us down
+  prompt: 'cinematic photographic realism. Context for the whole video: The book of Revelation. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''When grief and sorrow pull us down''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a low angle close to the ground, looking up, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 30
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/images/scene-030-a4cd02a3.png
+  motion_first_frame: 6141
+  motion_frames: 220
+- start: 211.683
+  end: 218.288
+  lines:
+  - Behold the end where hope is found
+  prompt: 'cinematic photographic realism. Context for the whole video: The book of Revelation. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''Behold the end where hope is found''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as an intimate mid-shot centred on a single subject, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 31
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/images/scene-031-c347b783.png
+  motion_first_frame: 6339
+  motion_frames: 221
+- start: 218.288
+  end: 225.393
+  lines:
+  - Though trials come and strength grows dim
+  prompt: 'cinematic photographic realism. Context for the whole video: The book of Revelation. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''Though trials come and strength grows dim''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a high, distant vantage looking down, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 32
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/images/scene-032-ce3fc5cf.png
+  motion_first_frame: 6538
+  motion_frames: 235
+- start: 225.393
+  end: 232.017
+  lines:
+  - In the end, we’ll forever be with Him
+  prompt: 'cinematic photographic realism. Context for the whole video: The book of Revelation. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''In the end, we’ll forever be with Him''. Jesus walking with somea couple in the city of God, having an animated conversation. The view is from behind, so they are walking away. You do not see the face of Jesus, but you see the profile of one or both of them warmly laughing. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a tight foreground detail with the rest falling away soft, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 33
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/images/scene-033-3473b1f0.png
+  motion_first_frame: 6751
+  motion_frames: 221
+- start: 232.017
+  end: 238.621
+  lines:
+  - In the end, we’ll forever be with Him
+  prompt: 'cinematic photographic realism. Context for the whole video: The book of Revelation. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''In the end, we’ll forever be with Him''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a head-on symmetrical composition, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 34
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/images/scene-034-42213272.png
+  motion_first_frame: 6950
+  motion_frames: 220
+- start: 238.621
+  end: 245.906
+  lines:
+  - In the end, we’ll forever be with Him
+  prompt: 'cinematic photographic realism. Context for the whole video: The book of Revelation. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''In the end, we’ll forever be with Him''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a view through a natural frame - an arch, branches, a doorway, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 35
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/images/scene-035-7b780a87.png
+  motion_first_frame: 7148
+  motion_frames: 240
+- start: 245.906
+  end: 255.953
+  lines: []
+  prompt: 'cinematic photographic realism. Context for the whole video: The book of Revelation. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene for an instrumental passage of the song "In the end" — an instrumental break after "In the end, we’ll forever be with Him" (part 1 of 2). Wide, atmospheric, no people speaking; intentional composition, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a wide establishing shot, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 36
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/images/scene-036-9e253bd1.png
+  motion_first_frame: 7366
+  motion_frames: 324
+- start: 255.953
+  end: 266.0
+  lines: []
+  prompt: 'cinematic photographic realism. Context for the whole video: The book of Revelation. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene for an instrumental passage of the song "In the end" — an instrumental break after "In the end, we’ll forever be with Him" (part 2 of 2). Wide, atmospheric, no people speaking; intentional composition, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a low angle close to the ground, looking up, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 37
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/images/scene-037-f18c9b39.png
+  motion_first_frame: 7668
+  motion_frames: 312
+overlays:
+  title:
+    image: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/overlays/title-73fe1786f634cd6c.png
+    start: 0.0
+    end: 12.0
+    fade: 0.75
+    clip: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/overlay-clips/title-73fe1786f634cd6c-819e4d65f5045246.mov
+  lyrics:
+  - start: 13.139
+    end: 17.93
+    text: In the end, Christ on earth will reign
+    image: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/overlays/lyric-001-d7ec73e87231b8a8.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/overlay-clips/lyric-001-d7ec73e87231b8a8-79b3f485cd62fe57.mov
+  - start: 19.724
+    end: 24.42
+    text: He will wipe our tears, remove all pain
+    image: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/overlays/lyric-002-f530a2a08e3aa9cd.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/overlay-clips/lyric-002-f530a2a08e3aa9cd-d64336265862051f.mov
+  - start: 26.408
+    end: 31.16
+    text: In the end, death shall be no more
+    image: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/overlays/lyric-003-292a3aa3cbae12b0.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/overlay-clips/lyric-003-292a3aa3cbae12b0-f1272b78286fbb74.mov
+  - start: 33.353
+    end: 37.96
+    text: No crying, no sadness to endure
+    image: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/overlays/lyric-004-a1ca7b73fc03fd02.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/overlay-clips/lyric-004-a1ca7b73fc03fd02-a346ec61b5f92f91.mov
+  - start: 39.637
+    end: 44.33
+    text: In the end, wrongs will be made right
+    image: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/overlays/lyric-005-fada87abced22a8a.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/overlay-clips/lyric-005-fada87abced22a8a-ef633677ca6707bd.mov
+  - start: 46.202
+    end: 51.475
+    text: No more darkness, no more night
+    image: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/overlays/lyric-006-272f0ad075c210fd.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/overlay-clips/lyric-006-272f0ad075c210fd-afd682f5af720efd.mov
+  - start: 52.606
+    end: 57.63
+    text: The former things have passed away
+    image: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/overlays/lyric-007-21ed8c5d158a929b.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/overlay-clips/lyric-007-21ed8c5d158a929b-2bd42fe30b8fb498.mov
+  - start: 58.97
+    end: 63.91
+    text: He’s making all things new that day
+    image: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/overlays/lyric-008-31f70126d67fb1ce.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/overlay-clips/lyric-008-31f70126d67fb1ce-492801bfdb020c50.mov
+  - start: 66.175
+    end: 71.448
+    text: In the end, God’s with us
+    image: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/overlays/lyric-009-ef365467373db8dd.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/overlay-clips/lyric-009-ef365467373db8dd-afd682f5af720efd.mov
+  - start: 72.799
+    end: 78.153
+    text: In the end, no more tears
+    image: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/overlays/lyric-010-789f4be91fd96c1e.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/overlay-clips/lyric-010-789f4be91fd96c1e-606ba8d31721485c.mov
+  - start: 79.424
+    end: 84.577
+    text: In the end, He walks with us
+    image: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/overlays/lyric-011-5e651730e7f54373.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/overlay-clips/lyric-011-5e651730e7f54373-a3291f6fa0493648.mov
+  - start: 86.349
+    end: 92.102
+    text: In the end, no more fears
+    image: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/overlays/lyric-012-c88c9c6413aff968.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/overlay-clips/lyric-012-c88c9c6413aff968-1a66893b64c2c32d.mov
+  - start: 95.815
+    end: 100.89
+    text: Bright as crystal, the river of God flows
+    image: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/overlays/lyric-013-09fcfb5c14e35e46.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/overlay-clips/lyric-013-09fcfb5c14e35e46-6d6b005ce1ecb067.mov
+  - start: 102.259
+    end: 107.673
+    text: The tree of life on each side grows
+    image: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/overlays/lyric-014-2afc8750b1a18910.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/overlay-clips/lyric-014-2afc8750b1a18910-0806634f89dfc125.mov
+  - start: 109.024
+    end: 114.137
+    text: Blessed are the people who wash their robes
+    image: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/overlays/lyric-015-8243e321a5666407.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/overlay-clips/lyric-015-8243e321a5666407-4d2ab30c54f867a0.mov
+  - start: 115.508
+    end: 121.082
+    text: To enter God’s city of endless hopes
+    image: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/overlays/lyric-016-d0d72b64b84bc3e0.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/overlay-clips/lyric-016-d0d72b64b84bc3e0-823d61da9237db61.mov
+  - start: 121.082
+    end: 127.406
+    text: They’ll worship God and see His face
+    image: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/overlays/lyric-017-073ac1ab3a8e28b9.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/overlay-clips/lyric-017-073ac1ab3a8e28b9-8e366f079e33ea58.mov
+  - start: 128.397
+    end: 133.871
+    text: His name upon them, stamp of grace
+    image: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/overlays/lyric-018-3bfbb2c681b334ea.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/overlay-clips/lyric-018-3bfbb2c681b334ea-f9971d9ea21937fa.mov
+  - start: 134.962
+    end: 141.956
+    text: No night remains, no lamp or sun
+    image: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/overlays/lyric-019-d7a18cee2917fa49.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/overlay-clips/lyric-019-d7a18cee2917fa49-fe145257a3068db0.mov
+  - start: 141.956
+    end: 148.32
+    text: God is their light, His reign’s begun!
+    image: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/overlays/lyric-020-52c259234fdd5ade.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/overlay-clips/lyric-020-52c259234fdd5ade-a483835959869d03.mov
+  - start: 148.951
+    end: 154.24
+    text: In the end, God’s with us
+    image: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/overlays/lyric-021-ef365467373db8dd.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/overlay-clips/lyric-021-ef365467373db8dd-b93112c9f94bfe72.mov
+  - start: 155.576
+    end: 160.929
+    text: In the end, no more tears
+    image: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/overlays/lyric-022-789f4be91fd96c1e.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/overlay-clips/lyric-022-789f4be91fd96c1e-d41a0b2a923c288a.mov
+  - start: 162.2
+    end: 167.033
+    text: In the end, He walks with us
+    image: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/overlays/lyric-023-5e651730e7f54373.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/overlay-clips/lyric-023-5e651730e7f54373-2d7767aab7133030.mov
+  - start: 169.065
+    end: 174.778
+    text: In the end, no more fears
+    image: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/overlays/lyric-024-c88c9c6413aff968.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/overlay-clips/lyric-024-c88c9c6413aff968-1738987e5b1d3e02.mov
+  - start: 175.469
+    end: 180.742
+    text: In the end, God’s with us
+    image: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/overlays/lyric-025-ef365467373db8dd.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/overlay-clips/lyric-025-ef365467373db8dd-afd682f5af720efd.mov
+  - start: 182.073
+    end: 187.507
+    text: In the end, no more tears
+    image: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/overlays/lyric-026-789f4be91fd96c1e.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/overlay-clips/lyric-026-789f4be91fd96c1e-52f6fbf5b3d05355.mov
+  - start: 188.698
+    end: 193.511
+    text: In the end, He walks with us
+    image: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/overlays/lyric-027-5e651730e7f54373.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/overlay-clips/lyric-027-5e651730e7f54373-dd830888167eb729.mov
+  - start: 195.603
+    end: 201.757
+    text: In the end, no more fears
+    image: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/overlays/lyric-028-c88c9c6413aff968.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/overlay-clips/lyric-028-c88c9c6413aff968-e76f29ebb5c26056.mov
+  - start: 204.729
+    end: 210.49
+    text: When grief and sorrow pull us down
+    image: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/overlays/lyric-029-a1a35fef5e8904c4.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/overlay-clips/lyric-029-a1a35fef5e8904c4-3374a37d14366546.mov
+  - start: 211.333
+    end: 217.027
+    text: Behold the end where hope is found
+    image: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/overlays/lyric-030-183ae67269171657.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/overlay-clips/lyric-030-183ae67269171657-5a886333140f6d92.mov
+  - start: 217.938
+    end: 224.07
+    text: Though trials come and strength grows dim
+    image: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/overlays/lyric-031-9b95f65c03f7551b.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/overlay-clips/lyric-031-9b95f65c03f7551b-6d14d68d03c5cb7f.mov
+  - start: 225.043
+    end: 230.74
+    text: In the end, we’ll forever be with Him
+    image: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/overlays/lyric-032-1717315b160db186.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/overlay-clips/lyric-032-1717315b160db186-2e418b04cab8e2d2.mov
+  - start: 231.667
+    end: 237.26
+    text: In the end, we’ll forever be with Him
+    image: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/overlays/lyric-033-1717315b160db186.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/overlay-clips/lyric-033-1717315b160db186-be456b457fe59aca.mov
+  - start: 238.271
+    end: 245.906
+    text: In the end, we’ll forever be with Him
+    image: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/overlays/lyric-034-1717315b160db186.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/overlay-clips/lyric-034-1717315b160db186-0e52f40640f47f8d.mov
+  srt: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/lyrics.srt
+bed:
+- kind: scene
+  first_frame: 0
+  frames: 394
+  scene: 0
+  path: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/clips/bed-001-scene-b60f9da0e5d88db8.mp4
+  start: 0.0
+  end: 13.1333
+- kind: transition
+  first_frame: 394
+  frames: 22
+  from_scene: 0
+  to_scene: 1
+  path: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/clips/bed-002-xfade-89f4c839077b78e0.mp4
+  start: 13.1333
+  end: 13.8667
+- kind: scene
+  first_frame: 416
+  frames: 175
+  scene: 1
+  path: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/clips/bed-003-scene-ea61432264c4ea52.mp4
+  start: 13.8667
+  end: 19.7
+- kind: transition
+  first_frame: 591
+  frames: 22
+  from_scene: 1
+  to_scene: 2
+  path: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/clips/bed-004-xfade-80297491073803b5.mp4
+  start: 19.7
+  end: 20.4333
+- kind: scene
+  first_frame: 613
+  frames: 179
+  scene: 2
+  path: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/clips/bed-005-scene-bbfa80b456f0ffe8.mp4
+  start: 20.4333
+  end: 26.4
+- kind: transition
+  first_frame: 792
+  frames: 22
+  from_scene: 2
+  to_scene: 3
+  path: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/clips/bed-006-xfade-352c19e89b214b6d.mp4
+  start: 26.4
+  end: 27.1333
+- kind: scene
+  first_frame: 814
+  frames: 186
+  scene: 3
+  path: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/clips/bed-007-scene-c4bbb2a99434bfda.mp4
+  start: 27.1333
+  end: 33.3333
+- kind: transition
+  first_frame: 1000
+  frames: 22
+  from_scene: 3
+  to_scene: 4
+  path: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/clips/bed-008-xfade-20af83303aa33c1d.mp4
+  start: 33.3333
+  end: 34.0667
+- kind: scene
+  first_frame: 1022
+  frames: 167
+  scene: 4
+  path: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/clips/bed-009-scene-d3562212342852aa.mp4
+  start: 34.0667
+  end: 39.6333
+- kind: transition
+  first_frame: 1189
+  frames: 22
+  from_scene: 4
+  to_scene: 5
+  path: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/clips/bed-010-xfade-a7c71037f9a99da9.mp4
+  start: 39.6333
+  end: 40.3667
+- kind: scene
+  first_frame: 1211
+  frames: 175
+  scene: 5
+  path: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/clips/bed-011-scene-22ed0444e02b1166.mp4
+  start: 40.3667
+  end: 46.2
+- kind: transition
+  first_frame: 1386
+  frames: 22
+  from_scene: 5
+  to_scene: 6
+  path: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/clips/bed-012-xfade-5ac180e01fccb240.mp4
+  start: 46.2
+  end: 46.9333
+- kind: scene
+  first_frame: 1408
+  frames: 170
+  scene: 6
+  path: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/clips/bed-013-scene-4217a3b85d09dfae.mp4
+  start: 46.9333
+  end: 52.6
+- kind: transition
+  first_frame: 1578
+  frames: 22
+  from_scene: 6
+  to_scene: 7
+  path: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/clips/bed-014-xfade-231e43f723654f38.mp4
+  start: 52.6
+  end: 53.3333
+- kind: scene
+  first_frame: 1600
+  frames: 169
+  scene: 7
+  path: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/clips/bed-015-scene-73085f2fe3011ae7.mp4
+  start: 53.3333
+  end: 58.9667
+- kind: transition
+  first_frame: 1769
+  frames: 22
+  from_scene: 7
+  to_scene: 8
+  path: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/clips/bed-016-xfade-13d49ee7329d701f.mp4
+  start: 58.9667
+  end: 59.7
+- kind: scene
+  first_frame: 1791
+  frames: 194
+  scene: 8
+  path: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/clips/bed-017-scene-cdea6e21640aa6c2.mp4
+  start: 59.7
+  end: 66.1667
+- kind: transition
+  first_frame: 1985
+  frames: 22
+  from_scene: 8
+  to_scene: 9
+  path: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/clips/bed-018-xfade-ac27a8aca5b5cf93.mp4
+  start: 66.1667
+  end: 66.9
+- kind: scene
+  first_frame: 2007
+  frames: 176
+  scene: 9
+  path: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/clips/bed-019-scene-397334c50a41ffd5.mp4
+  start: 66.9
+  end: 72.7667
+- kind: transition
+  first_frame: 2183
+  frames: 22
+  from_scene: 9
+  to_scene: 10
+  path: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/clips/bed-020-xfade-f01caf269aa98552.mp4
+  start: 72.7667
+  end: 73.5
+- kind: scene
+  first_frame: 2205
+  frames: 177
+  scene: 10
+  path: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/clips/bed-021-scene-9c86f84ee242384a.mp4
+  start: 73.5
+  end: 79.4
+- kind: transition
+  first_frame: 2382
+  frames: 22
+  from_scene: 10
+  to_scene: 11
+  path: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/clips/bed-022-xfade-d1691679966ba366.mp4
+  start: 79.4
+  end: 80.1333
+- kind: scene
+  first_frame: 2404
+  frames: 186
+  scene: 11
+  path: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/clips/bed-023-scene-72f85e01336cee6f.mp4
+  start: 80.1333
+  end: 86.3333
+- kind: transition
+  first_frame: 2590
+  frames: 22
+  from_scene: 11
+  to_scene: 12
+  path: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/clips/bed-024-xfade-2ae277ebc6e311e7.mp4
+  start: 86.3333
+  end: 87.0667
+- kind: scene
+  first_frame: 2612
+  frames: 262
+  scene: 12
+  path: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/clips/bed-025-scene-5fb0db191b0c2ca3.mp4
+  start: 87.0667
+  end: 95.8
+- kind: transition
+  first_frame: 2874
+  frames: 22
+  from_scene: 12
+  to_scene: 13
+  path: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/clips/bed-026-xfade-04067376097a5a2a.mp4
+  start: 95.8
+  end: 96.5333
+- kind: scene
+  first_frame: 2896
+  frames: 171
+  scene: 13
+  path: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/clips/bed-027-scene-83196e1dd39daf63.mp4
+  start: 96.5333
+  end: 102.2333
+- kind: transition
+  first_frame: 3067
+  frames: 22
+  from_scene: 13
+  to_scene: 14
+  path: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/clips/bed-028-xfade-cc068e7652daca5a.mp4
+  start: 102.2333
+  end: 102.9667
+- kind: scene
+  first_frame: 3089
+  frames: 181
+  scene: 14
+  path: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/clips/bed-029-scene-09761710551291ad.mp4
+  start: 102.9667
+  end: 109.0
+- kind: transition
+  first_frame: 3270
+  frames: 22
+  from_scene: 14
+  to_scene: 15
+  path: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/clips/bed-030-xfade-7e3db93345453578.mp4
+  start: 109.0
+  end: 109.7333
+- kind: scene
+  first_frame: 3292
+  frames: 173
+  scene: 15
+  path: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/clips/bed-031-scene-374d632ad5903d9c.mp4
+  start: 109.7333
+  end: 115.5
+- kind: transition
+  first_frame: 3465
+  frames: 22
+  from_scene: 15
+  to_scene: 16
+  path: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/clips/bed-032-xfade-124085c81f219dab.mp4
+  start: 115.5
+  end: 116.2333
+- kind: scene
+  first_frame: 3487
+  frames: 134
+  scene: 16
+  path: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/clips/bed-033-scene-5794dac2fe94e42f.mp4
+  start: 116.2333
+  end: 120.7
+- kind: transition
+  first_frame: 3621
+  frames: 22
+  from_scene: 16
+  to_scene: 17
+  path: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/clips/bed-034-xfade-dd7b4373b8fba7f7.mp4
+  start: 120.7
+  end: 121.4333
+- kind: scene
+  first_frame: 3643
+  frames: 208
+  scene: 17
+  path: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/clips/bed-035-scene-d6ec86d00f4b785a.mp4
+  start: 121.4333
+  end: 128.3667
+- kind: transition
+  first_frame: 3851
+  frames: 22
+  from_scene: 17
+  to_scene: 18
+  path: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/clips/bed-036-xfade-0de90fb0fd5312b4.mp4
+  start: 128.3667
+  end: 129.1
+- kind: scene
+  first_frame: 3873
+  frames: 175
+  scene: 18
+  path: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/clips/bed-037-scene-2a694c0162a6f79b.mp4
+  start: 129.1
+  end: 134.9333
+- kind: transition
+  first_frame: 4048
+  frames: 22
+  from_scene: 18
+  to_scene: 19
+  path: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/clips/bed-038-xfade-66621aafc237dad7.mp4
+  start: 134.9333
+  end: 135.6667
+- kind: scene
+  first_frame: 4070
+  frames: 178
+  scene: 19
+  path: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/clips/bed-039-scene-6d8edb5e058ab74a.mp4
+  start: 135.6667
+  end: 141.6
+- kind: transition
+  first_frame: 4248
+  frames: 22
+  from_scene: 19
+  to_scene: 20
+  path: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/clips/bed-040-xfade-e3de38e0a3192fff.mp4
+  start: 141.6
+  end: 142.3333
+- kind: scene
+  first_frame: 4270
+  frames: 198
+  scene: 20
+  path: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/clips/bed-041-scene-df6c1a76e603df7a.mp4
+  start: 142.3333
+  end: 148.9333
+- kind: transition
+  first_frame: 4468
+  frames: 22
+  from_scene: 20
+  to_scene: 21
+  path: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/clips/bed-042-xfade-c8ddfc103a5eebdb.mp4
+  start: 148.9333
+  end: 149.6667
+- kind: scene
+  first_frame: 4490
+  frames: 177
+  scene: 21
+  path: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/clips/bed-043-scene-389561c1e3dd57c3.mp4
+  start: 149.6667
+  end: 155.5667
+- kind: transition
+  first_frame: 4667
+  frames: 22
+  from_scene: 21
+  to_scene: 22
+  path: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/clips/bed-044-xfade-e1f84e99b56023cc.mp4
+  start: 155.5667
+  end: 156.3
+- kind: scene
+  first_frame: 4689
+  frames: 176
+  scene: 22
+  path: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/clips/bed-045-scene-16190cfe16bbfc6d.mp4
+  start: 156.3
+  end: 162.1667
+- kind: transition
+  first_frame: 4865
+  frames: 22
+  from_scene: 22
+  to_scene: 23
+  path: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/clips/bed-046-xfade-72aff75cf053177c.mp4
+  start: 162.1667
+  end: 162.9
+- kind: scene
+  first_frame: 4887
+  frames: 184
+  scene: 23
+  path: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/clips/bed-047-scene-231248bdc0e401bb.mp4
+  start: 162.9
+  end: 169.0333
+- kind: transition
+  first_frame: 5071
+  frames: 22
+  from_scene: 23
+  to_scene: 24
+  path: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/clips/bed-048-xfade-cd1b39e72dc3321a.mp4
+  start: 169.0333
+  end: 169.7667
+- kind: scene
+  first_frame: 5093
+  frames: 171
+  scene: 24
+  path: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/clips/bed-049-scene-b28d866005c9e26c.mp4
+  start: 169.7667
+  end: 175.4667
+- kind: transition
+  first_frame: 5264
+  frames: 22
+  from_scene: 24
+  to_scene: 25
+  path: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/clips/bed-050-xfade-ead1ebb0240a8fed.mp4
+  start: 175.4667
+  end: 176.2
+- kind: scene
+  first_frame: 5286
+  frames: 176
+  scene: 25
+  path: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/clips/bed-051-scene-71115af2fc8557b5.mp4
+  start: 176.2
+  end: 182.0667
+- kind: transition
+  first_frame: 5462
+  frames: 22
+  from_scene: 25
+  to_scene: 26
+  path: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/clips/bed-052-xfade-10c2863392eacc18.mp4
+  start: 182.0667
+  end: 182.8
+- kind: scene
+  first_frame: 5484
+  frames: 176
+  scene: 26
+  path: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/clips/bed-053-scene-7ff81ea063d01e6f.mp4
+  start: 182.8
+  end: 188.6667
+- kind: transition
+  first_frame: 5660
+  frames: 22
+  from_scene: 26
+  to_scene: 27
+  path: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/clips/bed-054-xfade-032fec578ce1e95c.mp4
+  start: 188.6667
+  end: 189.4
+- kind: scene
+  first_frame: 5682
+  frames: 186
+  scene: 27
+  path: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/clips/bed-055-scene-40f89d7ce08294b9.mp4
+  start: 189.4
+  end: 195.6
+- kind: transition
+  first_frame: 5868
+  frames: 22
+  from_scene: 27
+  to_scene: 28
+  path: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/clips/bed-056-xfade-a85b280ca08bed0c.mp4
+  start: 195.6
+  end: 196.3333
+- kind: scene
+  first_frame: 5890
+  frames: 251
+  scene: 28
+  path: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/clips/bed-057-scene-b1d49d00551d5f95.mp4
+  start: 196.3333
+  end: 204.7
+- kind: transition
+  first_frame: 6141
+  frames: 22
+  from_scene: 28
+  to_scene: 29
+  path: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/clips/bed-058-xfade-2ef7ae97110a294b.mp4
+  start: 204.7
+  end: 205.4333
+- kind: scene
+  first_frame: 6163
+  frames: 176
+  scene: 29
+  path: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/clips/bed-059-scene-050114821a04c45a.mp4
+  start: 205.4333
+  end: 211.3
+- kind: transition
+  first_frame: 6339
+  frames: 22
+  from_scene: 29
+  to_scene: 30
+  path: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/clips/bed-060-xfade-5e86bf25c929bbf4.mp4
+  start: 211.3
+  end: 212.0333
+- kind: scene
+  first_frame: 6361
+  frames: 177
+  scene: 30
+  path: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/clips/bed-061-scene-316813e1194a244c.mp4
+  start: 212.0333
+  end: 217.9333
+- kind: transition
+  first_frame: 6538
+  frames: 22
+  from_scene: 30
+  to_scene: 31
+  path: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/clips/bed-062-xfade-70a8c90178228323.mp4
+  start: 217.9333
+  end: 218.6667
+- kind: scene
+  first_frame: 6560
+  frames: 191
+  scene: 31
+  path: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/clips/bed-063-scene-deaa70ca34fdabed.mp4
+  start: 218.6667
+  end: 225.0333
+- kind: transition
+  first_frame: 6751
+  frames: 22
+  from_scene: 31
+  to_scene: 32
+  path: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/clips/bed-064-xfade-b0c2ed0757bdd52d.mp4
+  start: 225.0333
+  end: 225.7667
+- kind: scene
+  first_frame: 6773
+  frames: 177
+  scene: 32
+  path: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/clips/bed-065-scene-d5be9779be7afec4.mp4
+  start: 225.7667
+  end: 231.6667
+- kind: transition
+  first_frame: 6950
+  frames: 22
+  from_scene: 32
+  to_scene: 33
+  path: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/clips/bed-066-xfade-a68d2e1c82aa1163.mp4
+  start: 231.6667
+  end: 232.4
+- kind: scene
+  first_frame: 6972
+  frames: 176
+  scene: 33
+  path: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/clips/bed-067-scene-1ef71c5084b05cd1.mp4
+  start: 232.4
+  end: 238.2667
+- kind: transition
+  first_frame: 7148
+  frames: 22
+  from_scene: 33
+  to_scene: 34
+  path: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/clips/bed-068-xfade-d12453a3f163ad78.mp4
+  start: 238.2667
+  end: 239.0
+- kind: scene
+  first_frame: 7170
+  frames: 196
+  scene: 34
+  path: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/clips/bed-069-scene-df7600c22e544d61.mp4
+  start: 239.0
+  end: 245.5333
+- kind: transition
+  first_frame: 7366
+  frames: 22
+  from_scene: 34
+  to_scene: 35
+  path: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/clips/bed-070-xfade-fa291645a1ea36fd.mp4
+  start: 245.5333
+  end: 246.2667
+- kind: scene
+  first_frame: 7388
+  frames: 280
+  scene: 35
+  path: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/clips/bed-071-scene-7b525c25621b4233.mp4
+  start: 246.2667
+  end: 255.6
+- kind: transition
+  first_frame: 7668
+  frames: 22
+  from_scene: 35
+  to_scene: 36
+  path: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/clips/bed-072-xfade-3340939b6796ebee.mp4
+  start: 255.6
+  end: 256.3333
+- kind: scene
+  first_frame: 7690
+  frames: 290
+  scene: 36
+  path: /Users/jatroche/code/video-lyrics-creator/work/in-the-end/clips/bed-073-scene-334d8ab65656069f.mp4
+  start: 256.3333
+  end: 266.0
