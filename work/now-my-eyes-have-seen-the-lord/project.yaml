@@ -1,0 +1,1495 @@
+schema_version: 1
+title: Now my eyes have seen the Lord
+author: José Troche
+audio: /Users/jatroche/Music/From beginning to end you are God/03 Job - Now my eyes have seen the Lord.wav
+lyrics_source: /Users/jatroche/Google Drive/Songs/From beginning to end you are God/Now my eyes have seen the Lord.gdoc
+visual_style: cinematic photographic realism
+context: ''
+work_dir: /Users/jatroche/code/video-lyrics-creator/work
+video:
+  width: 1920
+  height: 1080
+  fps: 30
+  transition: 0.75
+  title_duration: 12.0
+  title_fade: 0.75
+  font: Avenir Next Demi Bold
+  font_size: 58
+  margin_v: 72
+  zoom: 1.2
+  lyric_lead: 0.35
+  lyric_fade: 0.2
+  audio_fade: 1.0
+image_generation:
+  provider: chatgpt
+  lines_per_image: 1
+  source_dir: null
+  chatgpt_headless: false
+  chatgpt_profile_dir: null
+  chatgpt_min_delay: 1.0
+  chatgpt_max_delay: 4.0
+  chatgpt_composer_selector: null
+  chatgpt_image_selector: null
+  chatgpt_channel: chrome
+  meta_headless: false
+  meta_profile_dir: null
+  meta_min_delay: 1.0
+  meta_max_delay: 4.0
+  meta_composer_selector: null
+  meta_image_selector: null
+  meta_channel: null
+alignment:
+  model: medium.en
+  language: en
+  vad: false
+  prompt_hint: false
+  min_confidence: 0.5
+  min_matched_words: 2
+  min_duration: 1.0
+  max_gap_fill: 0.7
+  scene_gap: 2.5
+  min_scene_duration: 4.0
+  max_scene_duration: 15.0
+  engine: forced
+  vocals: true
+  forced_model: facebook/wav2vec2-base-960h
+  forced_min_score: 0.05
+  tail_extend: 1.2
+  tail_level: 0.45
+render:
+  engine: ffmpeg
+  output: /Users/jatroche/code/video-lyrics-creator/output/now-my-eyes-have-seen-the-lord.mp4
+  format: mp4
+  codec: H264
+  audio_codec: aac
+  replace_existing: true
+  lyrics_mode: overlay
+  intermediate: h264
+  last_output: /Users/jatroche/code/video-lyrics-creator/output/now-my-eyes-have-seen-the-lord.mp4
+lyric_lines:
+- Now my eyes have seen the Lord
+- In the affliction, in the night
+- In the questions I can’t fight
+- You are sovereign, You are near
+- Even when I’m crushed by fear
+- When the losses take their toll
+- And there’s sorrow in my soul
+- I will lift my hands and sing
+- You are worthy, You are King
+- Through the trial, through the test
+- You reveal Yourself and give me rest
+- I had heard of You before
+- Now my eyes have seen the Lord
+- You laid the earth’s foundation
+- Made the stars in their formation
+- Who am I to doubt Your grace?
+- You are perfect in Your ways
+- You have bound the cords of light
+- You command the seas at night
+- Still You hear my faintest cry
+- You will lift my head on high
+- Through the trial, through the test
+- You reveal Yourself and give me rest
+- I had heard of You before
+- Now my eyes have seen the Lord
+- You are holy, You are wise
+- You are Lord of earth and skies
+- Though I suffer, I have peace
+- For your mercies never cease
+- You are holy, You are wise
+- You are Lord of earth and skies
+- Though I suffer, I have peace
+- For your mercies never cease
+- Through the trial, through the test
+- You reveal Yourself and give me rest
+- I had heard of You before
+- Now my eyes have seen the Lord
+- Now my eyes… have seen the Lord
+lyric_section_starts:
+- 0
+- 1
+- 5
+- 9
+- 13
+- 17
+- 21
+- 25
+- 33
+- 37
+duration: 284.84
+transcript:
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/transcript.json
+  engine: forced
+  model: facebook/wav2vec2-base-960h
+  words: 225
+lyrics:
+- start: 13.619
+  end: 19.87
+  text: In the affliction, in the night
+  line_index: 1
+  alignment_confidence: 0.667
+- start: 21.775
+  end: 25.74
+  text: In the questions I can’t fight
+  line_index: 2
+  alignment_confidence: 0.714
+- start: 28.18
+  end: 32.85
+  text: You are sovereign, You are near
+  line_index: 3
+  alignment_confidence: 1.0
+- start: 34.905
+  end: 39.007
+  text: Even when I’m crushed by fear
+  line_index: 4
+  alignment_confidence: 0.714
+- start: 41.329
+  end: 45.75
+  text: When the losses take their toll
+  line_index: 5
+  alignment_confidence: 1.0
+- start: 47.974
+  end: 53.24
+  text: And there’s sorrow in my soul
+  line_index: 6
+  alignment_confidence: 0.714
+- start: 54.618
+  end: 59.24
+  text: I will lift my hands and sing
+  line_index: 7
+  alignment_confidence: 1.0
+- start: 61.043
+  end: 67.095
+  text: You are worthy, You are King
+  line_index: 8
+  alignment_confidence: 0.833
+- start: 67.095
+  end: 73.051
+  text: Through the trial, through the test
+  line_index: 9
+  alignment_confidence: 0.833
+- start: 74.212
+  end: 79.336
+  text: You reveal Yourself and give me rest
+  line_index: 10
+  alignment_confidence: 1.0
+- start: 80.917
+  end: 86.39
+  text: I had heard of You before
+  line_index: 11
+  alignment_confidence: 0.833
+- start: 87.381
+  end: 94.026
+  text: Now my eyes have seen the Lord
+  line_index: 12
+  alignment_confidence: 1.0
+- start: 103.493
+  end: 108.73
+  text: You laid the earth’s foundation
+  line_index: 13
+  alignment_confidence: 0.667
+- start: 110.378
+  end: 115.29
+  text: Made the stars in their formation
+  line_index: 14
+  alignment_confidence: 1.0
+- start: 116.962
+  end: 121.245
+  text: Who am I to doubt Your grace?
+  line_index: 15
+  alignment_confidence: 1.0
+- start: 123.467
+  end: 128.13
+  text: You are perfect in Your ways
+  line_index: 16
+  alignment_confidence: 1.0
+- start: 130.071
+  end: 134.7
+  text: You have bound the cords of light
+  line_index: 17
+  alignment_confidence: 1.0
+- start: 136.676
+  end: 142.98
+  text: You command the seas at night
+  line_index: 18
+  alignment_confidence: 1.0
+- start: 142.98
+  end: 149.805
+  text: Still You hear my faintest cry
+  line_index: 19
+  alignment_confidence: 0.833
+- start: 149.805
+  end: 156.51
+  text: You will lift my head on high
+  line_index: 20
+  alignment_confidence: 1.0
+- start: 156.51
+  end: 161.734
+  text: Through the trial, through the test
+  line_index: 21
+  alignment_confidence: 1.0
+- start: 162.934
+  end: 168.078
+  text: You reveal Yourself and give me rest
+  line_index: 22
+  alignment_confidence: 1.0
+- start: 169.699
+  end: 175.11
+  text: I had heard of You before
+  line_index: 23
+  alignment_confidence: 0.833
+- start: 176.104
+  end: 184.229
+  text: Now my eyes have seen the Lord
+  line_index: 24
+  alignment_confidence: 1.0
+- start: 186.031
+  end: 190.774
+  text: You are holy, You are wise
+  line_index: 25
+  alignment_confidence: 1.0
+- start: 192.535
+  end: 198.019
+  text: You are Lord of earth and skies
+  line_index: 26
+  alignment_confidence: 1.0
+- start: 199.14
+  end: 204.404
+  text: Though I suffer, I have peace
+  line_index: 27
+  alignment_confidence: 0.833
+- start: 205.684
+  end: 212.269
+  text: For your mercies never cease
+  line_index: 28
+  alignment_confidence: 1.0
+- start: 212.269
+  end: 217.79
+  text: You are holy, You are wise
+  line_index: 29
+  alignment_confidence: 1.0
+- start: 218.854
+  end: 224.438
+  text: You are Lord of earth and skies
+  line_index: 30
+  alignment_confidence: 0.857
+- start: 225.398
+  end: 230.702
+  text: Though I suffer, I have peace
+  line_index: 31
+  alignment_confidence: 0.833
+- start: 232.003
+  end: 238.547
+  text: For your mercies never cease
+  line_index: 32
+  alignment_confidence: 1.0
+- start: 238.547
+  end: 244.051
+  text: Through the trial, through the test
+  line_index: 33
+  alignment_confidence: 1.0
+- start: 245.112
+  end: 250.196
+  text: You reveal Yourself and give me rest
+  line_index: 34
+  alignment_confidence: 1.0
+- start: 251.877
+  end: 257.31
+  text: I had heard of You before
+  line_index: 35
+  alignment_confidence: 1.0
+- start: 258.281
+  end: 265.967
+  text: Now my eyes have seen the Lord
+  line_index: 36
+  alignment_confidence: 1.0
+- start: 268.188
+  end: 276.73
+  text: Now my eyes… have seen the Lord
+  line_index: 37
+  alignment_confidence: 1.0
+scenes:
+- start: 0.0
+  end: 13.619
+  lines: []
+  prompt: cinematic photographic realism. Create a cinematic lyric-video scene for an instrumental passage of the song "Now my eyes have seen the Lord" — the opening, before the first line "In the affliction, in the night". Wide, atmospheric, no people speaking; intentional composition, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a wide establishing shot, distinctly different in vantage, subject and composition from the scenes either side of it.
+  index: 1
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/images/scene-001-3f51e80f.png
+  motion_first_frame: 0
+  motion_frames: 420
+- start: 13.619
+  end: 21.775
+  lines:
+  - In the affliction, in the night
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''In the affliction, in the night''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a low angle close to the ground, looking up, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 2
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/images/scene-002-688e6153.png
+  motion_first_frame: 398
+  motion_frames: 266
+- start: 21.775
+  end: 28.18
+  lines:
+  - In the questions I can’t fight
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''In the questions I can’t fight''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as an intimate mid-shot centred on a single subject, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 3
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/images/scene-003-a11fe533.png
+  motion_first_frame: 642
+  motion_frames: 214
+- start: 28.18
+  end: 34.905
+  lines:
+  - You are sovereign, You are near
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''You are sovereign, You are near''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a high, distant vantage looking down, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 4
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/images/scene-004-c01e125e.png
+  motion_first_frame: 834
+  motion_frames: 224
+- start: 34.905
+  end: 41.329
+  lines:
+  - Even when I’m crushed by fear
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Even when I’m crushed by fear''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a tight foreground detail with the rest falling away soft, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 5
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/images/scene-005-6afd78e8.png
+  motion_first_frame: 1036
+  motion_frames: 215
+- start: 41.329
+  end: 47.974
+  lines:
+  - When the losses take their toll
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''When the losses take their toll''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a head-on symmetrical composition, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 6
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/images/scene-006-df124607.png
+  motion_first_frame: 1229
+  motion_frames: 221
+- start: 47.974
+  end: 54.618
+  lines:
+  - And there’s sorrow in my soul
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''And there’s sorrow in my soul''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a view through a natural frame - an arch, branches, a doorway, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 7
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/images/scene-007-7af8136c.png
+  motion_first_frame: 1428
+  motion_frames: 222
+- start: 54.618
+  end: 61.043
+  lines:
+  - I will lift my hands and sing
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''I will lift my hands and sing''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a wide establishing shot, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 8
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/images/scene-008-f367c6b8.png
+  motion_first_frame: 1628
+  motion_frames: 214
+- start: 61.043
+  end: 67.095
+  lines:
+  - You are worthy, You are King
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''You are worthy, You are King''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a low angle close to the ground, looking up, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 9
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/images/scene-009-d77ae85d.png
+  motion_first_frame: 1820
+  motion_frames: 204
+- start: 67.095
+  end: 74.212
+  lines:
+  - Through the trial, through the test
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Through the trial, through the test''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as an intimate mid-shot centred on a single subject, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 10
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/images/scene-010-69d678a1.png
+  motion_first_frame: 2002
+  motion_frames: 235
+- start: 74.212
+  end: 80.917
+  lines:
+  - You reveal Yourself and give me rest
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''You reveal Yourself and give me rest''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a high, distant vantage looking down, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 11
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/images/scene-011-33aceefb.png
+  motion_first_frame: 2215
+  motion_frames: 224
+- start: 80.917
+  end: 87.381
+  lines:
+  - I had heard of You before
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''I had heard of You before''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a tight foreground detail with the rest falling away soft, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 12
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/images/scene-012-4ebb1919.png
+  motion_first_frame: 2417
+  motion_frames: 215
+- start: 87.381
+  end: 94.026
+  lines:
+  - Now my eyes have seen the Lord
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Now my eyes have seen the Lord''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a head-on symmetrical composition, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 13
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/images/scene-013-c2753b4c.png
+  motion_first_frame: 2610
+  motion_frames: 222
+- start: 94.026
+  end: 103.493
+  lines: []
+  prompt: cinematic photographic realism. Create a cinematic lyric-video scene for an instrumental passage of the song "Now my eyes have seen the Lord" — an instrumental break after "Now my eyes have seen the Lord". Wide, atmospheric, no people speaking; intentional composition, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a view through a natural frame - an arch, branches, a doorway, distinctly different in vantage, subject and composition from the scenes either side of it.
+  index: 14
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/images/scene-014-67a37e8b.png
+  motion_first_frame: 2810
+  motion_frames: 306
+- start: 103.493
+  end: 110.378
+  lines:
+  - You laid the earth’s foundation
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''You laid the earth’s foundation''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a wide establishing shot, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 15
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/images/scene-015-41dd2c7e.png
+  motion_first_frame: 3094
+  motion_frames: 228
+- start: 110.378
+  end: 116.962
+  lines:
+  - Made the stars in their formation
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Made the stars in their formation''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a low angle close to the ground, looking up, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 16
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/images/scene-016-5124fbed.png
+  motion_first_frame: 3300
+  motion_frames: 220
+- start: 116.962
+  end: 123.467
+  lines:
+  - Who am I to doubt Your grace?
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Who am I to doubt Your grace?''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as an intimate mid-shot centred on a single subject, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 17
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/images/scene-017-2cef7c54.png
+  motion_first_frame: 3498
+  motion_frames: 217
+- start: 123.467
+  end: 130.071
+  lines:
+  - You are perfect in Your ways
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''You are perfect in Your ways''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a high, distant vantage looking down, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 18
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/images/scene-018-24339795.png
+  motion_first_frame: 3693
+  motion_frames: 220
+- start: 130.071
+  end: 136.676
+  lines:
+  - You have bound the cords of light
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''You have bound the cords of light'', which refers to God controlling the constellations like Pleiades or Orion. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a tight foreground detail with the rest falling away soft, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 19
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/images/scene-019-be89913c.png
+  motion_first_frame: 3891
+  motion_frames: 220
+- start: 136.676
+  end: 142.98
+  lines:
+  - You command the seas at night
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''You command the seas at night''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a head-on symmetrical composition, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 20
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/images/scene-020-e6af90e9.png
+  motion_first_frame: 4089
+  motion_frames: 211
+- start: 142.98
+  end: 149.805
+  lines:
+  - Still You hear my faintest cry
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Still You hear my faintest cry''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a view through a natural frame - an arch, branches, a doorway, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 21
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/images/scene-021-881e2781.png
+  motion_first_frame: 4278
+  motion_frames: 227
+- start: 149.805
+  end: 156.51
+  lines:
+  - You will lift my head on high
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''You will lift my head on high''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a wide establishing shot, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 22
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/images/scene-022-685ece7e.png
+  motion_first_frame: 4483
+  motion_frames: 223
+- start: 156.51
+  end: 162.934
+  lines:
+  - Through the trial, through the test
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Through the trial, through the test''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a low angle close to the ground, looking up, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 23
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/images/scene-023-6977a65a.png
+  motion_first_frame: 4684
+  motion_frames: 215
+- start: 162.934
+  end: 169.699
+  lines:
+  - You reveal Yourself and give me rest
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''You reveal Yourself and give me rest''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as an intimate mid-shot centred on a single subject, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 24
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/images/scene-024-6df6e75b.png
+  motion_first_frame: 4877
+  motion_frames: 225
+- start: 169.699
+  end: 176.104
+  lines:
+  - I had heard of You before
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''I had heard of You before''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a high, distant vantage looking down, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 25
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/images/scene-025-9d542805.png
+  motion_first_frame: 5080
+  motion_frames: 214
+- start: 176.104
+  end: 186.031
+  lines:
+  - Now my eyes have seen the Lord
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Now my eyes have seen the Lord''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a tight foreground detail with the rest falling away soft, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 26
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/images/scene-026-49cc920c.png
+  motion_first_frame: 5272
+  motion_frames: 320
+- start: 186.031
+  end: 192.535
+  lines:
+  - You are holy, You are wise
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''You are holy, You are wise''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a head-on symmetrical composition, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 27
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/images/scene-027-1e335a99.png
+  motion_first_frame: 5570
+  motion_frames: 217
+- start: 192.535
+  end: 199.14
+  lines:
+  - You are Lord of earth and skies
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''You are Lord of earth and skies''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a view through a natural frame - an arch, branches, a doorway, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 28
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/images/scene-028-4f9365e0.png
+  motion_first_frame: 5765
+  motion_frames: 220
+- start: 199.14
+  end: 205.684
+  lines:
+  - Though I suffer, I have peace
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Though I suffer, I have peace''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a wide establishing shot, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 29
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/images/scene-029-74271356.png
+  motion_first_frame: 5963
+  motion_frames: 219
+- start: 205.684
+  end: 212.269
+  lines:
+  - For your mercies never cease
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''For your mercies never cease''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a low angle close to the ground, looking up, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 30
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/images/scene-030-e16c71a4.png
+  motion_first_frame: 6160
+  motion_frames: 219
+- start: 212.269
+  end: 218.854
+  lines:
+  - You are holy, You are wise
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''You are holy, You are wise''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as an intimate mid-shot centred on a single subject, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 31
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/images/scene-031-497e33a6.png
+  motion_first_frame: 6357
+  motion_frames: 220
+- start: 218.854
+  end: 225.398
+  lines:
+  - You are Lord of earth and skies
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''You are Lord of earth and skies''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a high, distant vantage looking down, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 32
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/images/scene-032-9c9b8ed3.png
+  motion_first_frame: 6555
+  motion_frames: 218
+- start: 225.398
+  end: 232.003
+  lines:
+  - Though I suffer, I have peace
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Though I suffer, I have peace''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a tight foreground detail with the rest falling away soft, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 33
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/images/scene-033-3aaebff2.png
+  motion_first_frame: 6751
+  motion_frames: 220
+- start: 232.003
+  end: 238.547
+  lines:
+  - For your mercies never cease
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''For your mercies never cease''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a head-on symmetrical composition, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 34
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/images/scene-034-3201d1ad.png
+  motion_first_frame: 6949
+  motion_frames: 218
+- start: 238.547
+  end: 245.112
+  lines:
+  - Through the trial, through the test
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Through the trial, through the test''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a view through a natural frame - an arch, branches, a doorway, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 35
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/images/scene-035-84ca5267.png
+  motion_first_frame: 7145
+  motion_frames: 219
+- start: 245.112
+  end: 251.877
+  lines:
+  - You reveal Yourself and give me rest
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''You reveal Yourself and give me rest''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a wide establishing shot, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 36
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/images/scene-036-235dcfe6.png
+  motion_first_frame: 7342
+  motion_frames: 225
+- start: 251.877
+  end: 258.281
+  lines:
+  - I had heard of You before
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''I had heard of You before''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a low angle close to the ground, looking up, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 37
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/images/scene-037-c332f614.png
+  motion_first_frame: 7545
+  motion_frames: 214
+- start: 258.281
+  end: 268.188
+  lines:
+  - Now my eyes have seen the Lord
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Now my eyes have seen the Lord''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as an intimate mid-shot centred on a single subject, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 38
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/images/scene-038-fba390ec.png
+  motion_first_frame: 7737
+  motion_frames: 320
+- start: 268.188
+  end: 276.73
+  lines:
+  - Now my eyes… have seen the Lord
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Now my eyes… have seen the Lord''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a high, distant vantage looking down, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 39
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/images/scene-039-b421e16d.png
+  motion_first_frame: 8035
+  motion_frames: 278
+- start: 276.73
+  end: 284.84
+  lines: []
+  prompt: cinematic photographic realism. Create a cinematic lyric-video scene for an instrumental passage of the song "Now my eyes have seen the Lord" — an instrumental break after "Now my eyes… have seen the Lord". A divine figure opening his welcoming arms, facing the viewer (but his face is not shown up, just his upper body). Bright sun behind teh figure. Wide, atmospheric, no people speaking; intentional composition, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a tight foreground detail with the rest falling away soft, distinctly different in vantage, subject and composition from the scenes either side of it.
+  index: 40
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/images/scene-040-981fa567.png
+  motion_first_frame: 8291
+  motion_frames: 254
+overlays:
+  title:
+    image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlays/title-db163becca259a16.png
+    start: 0.0
+    end: 12.0
+    fade: 0.75
+    clip: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlay-clips/title-db163becca259a16-819e4d65f5045246.mov
+  lyrics:
+  - start: 13.269
+    end: 19.87
+    text: In the affliction, in the night
+    image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlays/lyric-001-13c7bfc745830d13.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlay-clips/lyric-001-13c7bfc745830d13-40e5badea221af15.mov
+  - start: 21.425
+    end: 25.74
+    text: In the questions I can’t fight
+    image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlays/lyric-002-b0783547db0dfc27.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlay-clips/lyric-002-b0783547db0dfc27-45bf1e4b329ba188.mov
+  - start: 27.83
+    end: 32.85
+    text: You are sovereign, You are near
+    image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlays/lyric-003-b54915c52100bbae.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlay-clips/lyric-003-b54915c52100bbae-3f96d5f3687e4708.mov
+  - start: 34.555
+    end: 39.007
+    text: Even when I’m crushed by fear
+    image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlays/lyric-004-bd8c2b8b9c38829b.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlay-clips/lyric-004-bd8c2b8b9c38829b-a6c5b49fd2a3cd28.mov
+  - start: 40.979
+    end: 45.75
+    text: When the losses take their toll
+    image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlays/lyric-005-7dd18a22c28c7277.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlay-clips/lyric-005-7dd18a22c28c7277-6cee93340a961ad1.mov
+  - start: 47.624
+    end: 53.24
+    text: And there’s sorrow in my soul
+    image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlays/lyric-006-1e32ade29cf051a4.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlay-clips/lyric-006-1e32ade29cf051a4-da218e1961cc5172.mov
+  - start: 54.268
+    end: 59.24
+    text: I will lift my hands and sing
+    image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlays/lyric-007-085c0a9a15445114.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlay-clips/lyric-007-085c0a9a15445114-366ed8104d965367.mov
+  - start: 60.693
+    end: 67.095
+    text: You are worthy, You are King
+    image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlays/lyric-008-6f3c5d0fb114315b.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlay-clips/lyric-008-6f3c5d0fb114315b-40f0d850264de84e.mov
+  - start: 67.095
+    end: 73.051
+    text: Through the trial, through the test
+    image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlays/lyric-009-0e33c046aa777d45.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlay-clips/lyric-009-0e33c046aa777d45-3baac42cf54be132.mov
+  - start: 73.862
+    end: 79.336
+    text: You reveal Yourself and give me rest
+    image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlays/lyric-010-944a8f1fca288ea3.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlay-clips/lyric-010-944a8f1fca288ea3-f9971d9ea21937fa.mov
+  - start: 80.567
+    end: 86.39
+    text: I had heard of You before
+    image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlays/lyric-011-be131138de0f4ef9.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlay-clips/lyric-011-be131138de0f4ef9-c4e8ba7475c6da31.mov
+  - start: 87.031
+    end: 94.026
+    text: Now my eyes have seen the Lord
+    image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlays/lyric-012-4057a4d72bb04b22.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlay-clips/lyric-012-4057a4d72bb04b22-aeaf2f16058d9d00.mov
+  - start: 103.143
+    end: 108.73
+    text: You laid the earth’s foundation
+    image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlays/lyric-013-4b9e85bcb5bca935.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlay-clips/lyric-013-4b9e85bcb5bca935-30ea13cb547f125d.mov
+  - start: 110.028
+    end: 115.29
+    text: Made the stars in their formation
+    image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlays/lyric-014-2f0e0fd1c5a1c6d4.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlay-clips/lyric-014-2f0e0fd1c5a1c6d4-d7223f53e3fae94b.mov
+  - start: 116.612
+    end: 121.245
+    text: Who am I to doubt Your grace?
+    image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlays/lyric-015-51c2edd9c711dc2b.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlay-clips/lyric-015-51c2edd9c711dc2b-b66dfe0336b20efa.mov
+  - start: 123.117
+    end: 128.13
+    text: You are perfect in Your ways
+    image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlays/lyric-016-9356679f70baf956.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlay-clips/lyric-016-9356679f70baf956-d256590b5c333a1a.mov
+  - start: 129.721
+    end: 134.7
+    text: You have bound the cords of light
+    image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlays/lyric-017-607f7d1427823ace.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlay-clips/lyric-017-607f7d1427823ace-7ae586ac27eaba84.mov
+  - start: 136.326
+    end: 142.98
+    text: You command the seas at night
+    image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlays/lyric-018-27518f4418cb584f.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlay-clips/lyric-018-27518f4418cb584f-3853b40bebdc0429.mov
+  - start: 142.98
+    end: 149.805
+    text: Still You hear my faintest cry
+    image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlays/lyric-019-91ea7a6888826533.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlay-clips/lyric-019-91ea7a6888826533-5ced7e68dc8e728a.mov
+  - start: 149.805
+    end: 156.51
+    text: You will lift my head on high
+    image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlays/lyric-020-d1a5ef23cb7a898b.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlay-clips/lyric-020-d1a5ef23cb7a898b-677c288d859ef4a0.mov
+  - start: 156.51
+    end: 161.734
+    text: Through the trial, through the test
+    image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlays/lyric-021-0e33c046aa777d45.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlay-clips/lyric-021-0e33c046aa777d45-368f8b4c2ff033b7.mov
+  - start: 162.584
+    end: 168.078
+    text: You reveal Yourself and give me rest
+    image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlays/lyric-022-944a8f1fca288ea3.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlay-clips/lyric-022-944a8f1fca288ea3-c912ea84d3876ad7.mov
+  - start: 169.349
+    end: 175.11
+    text: I had heard of You before
+    image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlays/lyric-023-be131138de0f4ef9.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlay-clips/lyric-023-be131138de0f4ef9-3374a37d14366546.mov
+  - start: 175.754
+    end: 184.229
+    text: Now my eyes have seen the Lord
+    image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlays/lyric-024-4057a4d72bb04b22.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlay-clips/lyric-024-4057a4d72bb04b22-98c7db77813061af.mov
+  - start: 185.681
+    end: 190.774
+    text: You are holy, You are wise
+    image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlays/lyric-025-820d72faac756bec.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlay-clips/lyric-025-820d72faac756bec-1775e7c1953f84a2.mov
+  - start: 192.185
+    end: 198.019
+    text: You are Lord of earth and skies
+    image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlays/lyric-026-c3a1e5b75c728559.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlay-clips/lyric-026-c3a1e5b75c728559-4da104d59b8a9d28.mov
+  - start: 198.79
+    end: 204.404
+    text: Though I suffer, I have peace
+    image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlays/lyric-027-6ac3eaa10e5dde90.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlay-clips/lyric-027-6ac3eaa10e5dde90-adb2115e02b1962b.mov
+  - start: 205.334
+    end: 212.269
+    text: For your mercies never cease
+    image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlays/lyric-028-a811f1ba3ffd73e7.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlay-clips/lyric-028-a811f1ba3ffd73e7-49189a3d1e9036ec.mov
+  - start: 212.269
+    end: 217.79
+    text: You are holy, You are wise
+    image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlays/lyric-029-820d72faac756bec.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlay-clips/lyric-029-820d72faac756bec-9011b6f2c70d6630.mov
+  - start: 218.504
+    end: 224.438
+    text: You are Lord of earth and skies
+    image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlays/lyric-030-c3a1e5b75c728559.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlay-clips/lyric-030-c3a1e5b75c728559-256c8290f172b170.mov
+  - start: 225.048
+    end: 230.702
+    text: Though I suffer, I have peace
+    image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlays/lyric-031-6ac3eaa10e5dde90.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlay-clips/lyric-031-6ac3eaa10e5dde90-78242547a9d8fde7.mov
+  - start: 231.653
+    end: 238.547
+    text: For your mercies never cease
+    image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlays/lyric-032-a811f1ba3ffd73e7.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlay-clips/lyric-032-a811f1ba3ffd73e7-c1aa23ec8da0c583.mov
+  - start: 238.547
+    end: 244.051
+    text: Through the trial, through the test
+    image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlays/lyric-033-0e33c046aa777d45.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlay-clips/lyric-033-0e33c046aa777d45-8e5223690ea06866.mov
+  - start: 244.762
+    end: 250.196
+    text: You reveal Yourself and give me rest
+    image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlays/lyric-034-944a8f1fca288ea3.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlay-clips/lyric-034-944a8f1fca288ea3-52f6fbf5b3d05355.mov
+  - start: 251.527
+    end: 257.31
+    text: I had heard of You before
+    image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlays/lyric-035-be131138de0f4ef9.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlay-clips/lyric-035-be131138de0f4ef9-aa9778bb57591ec5.mov
+  - start: 257.931
+    end: 265.967
+    text: Now my eyes have seen the Lord
+    image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlays/lyric-036-4057a4d72bb04b22.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlay-clips/lyric-036-4057a4d72bb04b22-7fc9e7fed7981591.mov
+  - start: 267.838
+    end: 276.73
+    text: Now my eyes… have seen the Lord
+    image: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlays/lyric-037-e921b24e3f3cb547.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/overlay-clips/lyric-037-e921b24e3f3cb547-b3979179252f0f99.mov
+  srt: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/lyrics.srt
+bed:
+- kind: scene
+  first_frame: 0
+  frames: 398
+  scene: 0
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-001-scene-38aafc6df97e86b1.mp4
+  start: 0.0
+  end: 13.2667
+- kind: transition
+  first_frame: 398
+  frames: 22
+  from_scene: 0
+  to_scene: 1
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-002-xfade-9221c311d1bc3d25.mp4
+  start: 13.2667
+  end: 14.0
+- kind: scene
+  first_frame: 420
+  frames: 222
+  scene: 1
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-003-scene-07e66264caa7a442.mp4
+  start: 14.0
+  end: 21.4
+- kind: transition
+  first_frame: 642
+  frames: 22
+  from_scene: 1
+  to_scene: 2
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-004-xfade-9a04979cbb4f426e.mp4
+  start: 21.4
+  end: 22.1333
+- kind: scene
+  first_frame: 664
+  frames: 170
+  scene: 2
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-005-scene-9ad2641e75ba1d49.mp4
+  start: 22.1333
+  end: 27.8
+- kind: transition
+  first_frame: 834
+  frames: 22
+  from_scene: 2
+  to_scene: 3
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-006-xfade-68518679ab6f4c73.mp4
+  start: 27.8
+  end: 28.5333
+- kind: scene
+  first_frame: 856
+  frames: 180
+  scene: 3
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-007-scene-e2973bdbd4a29e5b.mp4
+  start: 28.5333
+  end: 34.5333
+- kind: transition
+  first_frame: 1036
+  frames: 22
+  from_scene: 3
+  to_scene: 4
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-008-xfade-4b1ee641511b85eb.mp4
+  start: 34.5333
+  end: 35.2667
+- kind: scene
+  first_frame: 1058
+  frames: 171
+  scene: 4
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-009-scene-114cfda1d14f6b50.mp4
+  start: 35.2667
+  end: 40.9667
+- kind: transition
+  first_frame: 1229
+  frames: 22
+  from_scene: 4
+  to_scene: 5
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-010-xfade-73a5c42ab05b1218.mp4
+  start: 40.9667
+  end: 41.7
+- kind: scene
+  first_frame: 1251
+  frames: 177
+  scene: 5
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-011-scene-642a424b6757bce0.mp4
+  start: 41.7
+  end: 47.6
+- kind: transition
+  first_frame: 1428
+  frames: 22
+  from_scene: 5
+  to_scene: 6
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-012-xfade-33c591adc8b2622d.mp4
+  start: 47.6
+  end: 48.3333
+- kind: scene
+  first_frame: 1450
+  frames: 178
+  scene: 6
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-013-scene-1bc6935ec80b5c23.mp4
+  start: 48.3333
+  end: 54.2667
+- kind: transition
+  first_frame: 1628
+  frames: 22
+  from_scene: 6
+  to_scene: 7
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-014-xfade-78b11aeca91df52d.mp4
+  start: 54.2667
+  end: 55.0
+- kind: scene
+  first_frame: 1650
+  frames: 170
+  scene: 7
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-015-scene-872be21168771c11.mp4
+  start: 55.0
+  end: 60.6667
+- kind: transition
+  first_frame: 1820
+  frames: 22
+  from_scene: 7
+  to_scene: 8
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-016-xfade-ba064543ba9b980c.mp4
+  start: 60.6667
+  end: 61.4
+- kind: scene
+  first_frame: 1842
+  frames: 160
+  scene: 8
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-017-scene-664c6a65710811b7.mp4
+  start: 61.4
+  end: 66.7333
+- kind: transition
+  first_frame: 2002
+  frames: 22
+  from_scene: 8
+  to_scene: 9
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-018-xfade-4bf4abc787e39436.mp4
+  start: 66.7333
+  end: 67.4667
+- kind: scene
+  first_frame: 2024
+  frames: 191
+  scene: 9
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-019-scene-6e1881422b326287.mp4
+  start: 67.4667
+  end: 73.8333
+- kind: transition
+  first_frame: 2215
+  frames: 22
+  from_scene: 9
+  to_scene: 10
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-020-xfade-6f0cd2d0466991d7.mp4
+  start: 73.8333
+  end: 74.5667
+- kind: scene
+  first_frame: 2237
+  frames: 180
+  scene: 10
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-021-scene-6a2587658c0588c5.mp4
+  start: 74.5667
+  end: 80.5667
+- kind: transition
+  first_frame: 2417
+  frames: 22
+  from_scene: 10
+  to_scene: 11
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-022-xfade-596851c2550df1fd.mp4
+  start: 80.5667
+  end: 81.3
+- kind: scene
+  first_frame: 2439
+  frames: 171
+  scene: 11
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-023-scene-915c0496d3534467.mp4
+  start: 81.3
+  end: 87.0
+- kind: transition
+  first_frame: 2610
+  frames: 22
+  from_scene: 11
+  to_scene: 12
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-024-xfade-ad5a328bd7a4f012.mp4
+  start: 87.0
+  end: 87.7333
+- kind: scene
+  first_frame: 2632
+  frames: 178
+  scene: 12
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-025-scene-288d62a8b08d5ca2.mp4
+  start: 87.7333
+  end: 93.6667
+- kind: transition
+  first_frame: 2810
+  frames: 22
+  from_scene: 12
+  to_scene: 13
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-026-xfade-77bf7b45f7b365ed.mp4
+  start: 93.6667
+  end: 94.4
+- kind: scene
+  first_frame: 2832
+  frames: 262
+  scene: 13
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-027-scene-8cdde9b785424bb2.mp4
+  start: 94.4
+  end: 103.1333
+- kind: transition
+  first_frame: 3094
+  frames: 22
+  from_scene: 13
+  to_scene: 14
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-028-xfade-f424ac6378a9cd85.mp4
+  start: 103.1333
+  end: 103.8667
+- kind: scene
+  first_frame: 3116
+  frames: 184
+  scene: 14
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-029-scene-746a8c68bf53147d.mp4
+  start: 103.8667
+  end: 110.0
+- kind: transition
+  first_frame: 3300
+  frames: 22
+  from_scene: 14
+  to_scene: 15
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-030-xfade-0e0ecb3788799ce2.mp4
+  start: 110.0
+  end: 110.7333
+- kind: scene
+  first_frame: 3322
+  frames: 176
+  scene: 15
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-031-scene-5d3300c89388e40a.mp4
+  start: 110.7333
+  end: 116.6
+- kind: transition
+  first_frame: 3498
+  frames: 22
+  from_scene: 15
+  to_scene: 16
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-032-xfade-6033c5f290d6516a.mp4
+  start: 116.6
+  end: 117.3333
+- kind: scene
+  first_frame: 3520
+  frames: 173
+  scene: 16
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-033-scene-e9aeb564882f873f.mp4
+  start: 117.3333
+  end: 123.1
+- kind: transition
+  first_frame: 3693
+  frames: 22
+  from_scene: 16
+  to_scene: 17
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-034-xfade-c14c4fc80728559e.mp4
+  start: 123.1
+  end: 123.8333
+- kind: scene
+  first_frame: 3715
+  frames: 176
+  scene: 17
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-035-scene-ed94e69516786160.mp4
+  start: 123.8333
+  end: 129.7
+- kind: transition
+  first_frame: 3891
+  frames: 22
+  from_scene: 17
+  to_scene: 18
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-036-xfade-6252eef1e9b4929d.mp4
+  start: 129.7
+  end: 130.4333
+- kind: scene
+  first_frame: 3913
+  frames: 176
+  scene: 18
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-037-scene-308365f651ca23db.mp4
+  start: 130.4333
+  end: 136.3
+- kind: transition
+  first_frame: 4089
+  frames: 22
+  from_scene: 18
+  to_scene: 19
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-038-xfade-eb22d6fac4d63d98.mp4
+  start: 136.3
+  end: 137.0333
+- kind: scene
+  first_frame: 4111
+  frames: 167
+  scene: 19
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-039-scene-8f520a1524e1d87f.mp4
+  start: 137.0333
+  end: 142.6
+- kind: transition
+  first_frame: 4278
+  frames: 22
+  from_scene: 19
+  to_scene: 20
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-040-xfade-393d18b9303e93cb.mp4
+  start: 142.6
+  end: 143.3333
+- kind: scene
+  first_frame: 4300
+  frames: 183
+  scene: 20
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-041-scene-0d26c215e0ee4959.mp4
+  start: 143.3333
+  end: 149.4333
+- kind: transition
+  first_frame: 4483
+  frames: 22
+  from_scene: 20
+  to_scene: 21
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-042-xfade-580125d1be233ea6.mp4
+  start: 149.4333
+  end: 150.1667
+- kind: scene
+  first_frame: 4505
+  frames: 179
+  scene: 21
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-043-scene-f42ea6f0d36916e6.mp4
+  start: 150.1667
+  end: 156.1333
+- kind: transition
+  first_frame: 4684
+  frames: 22
+  from_scene: 21
+  to_scene: 22
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-044-xfade-665c3152e60dc98d.mp4
+  start: 156.1333
+  end: 156.8667
+- kind: scene
+  first_frame: 4706
+  frames: 171
+  scene: 22
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-045-scene-ac6c91bf05920eab.mp4
+  start: 156.8667
+  end: 162.5667
+- kind: transition
+  first_frame: 4877
+  frames: 22
+  from_scene: 22
+  to_scene: 23
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-046-xfade-47c5bae82402e069.mp4
+  start: 162.5667
+  end: 163.3
+- kind: scene
+  first_frame: 4899
+  frames: 181
+  scene: 23
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-047-scene-181e05140d6b5c19.mp4
+  start: 163.3
+  end: 169.3333
+- kind: transition
+  first_frame: 5080
+  frames: 22
+  from_scene: 23
+  to_scene: 24
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-048-xfade-722977317ec2f3e6.mp4
+  start: 169.3333
+  end: 170.0667
+- kind: scene
+  first_frame: 5102
+  frames: 170
+  scene: 24
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-049-scene-b0ffe93426d0bf6a.mp4
+  start: 170.0667
+  end: 175.7333
+- kind: transition
+  first_frame: 5272
+  frames: 22
+  from_scene: 24
+  to_scene: 25
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-050-xfade-fcc4cd87a5230b06.mp4
+  start: 175.7333
+  end: 176.4667
+- kind: scene
+  first_frame: 5294
+  frames: 276
+  scene: 25
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-051-scene-f99f9c75c20a4a61.mp4
+  start: 176.4667
+  end: 185.6667
+- kind: transition
+  first_frame: 5570
+  frames: 22
+  from_scene: 25
+  to_scene: 26
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-052-xfade-cce5128473f60cd9.mp4
+  start: 185.6667
+  end: 186.4
+- kind: scene
+  first_frame: 5592
+  frames: 173
+  scene: 26
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-053-scene-a33e40139b00725a.mp4
+  start: 186.4
+  end: 192.1667
+- kind: transition
+  first_frame: 5765
+  frames: 22
+  from_scene: 26
+  to_scene: 27
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-054-xfade-cb75c0c07bb450a4.mp4
+  start: 192.1667
+  end: 192.9
+- kind: scene
+  first_frame: 5787
+  frames: 176
+  scene: 27
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-055-scene-f6220f913fae2fd0.mp4
+  start: 192.9
+  end: 198.7667
+- kind: transition
+  first_frame: 5963
+  frames: 22
+  from_scene: 27
+  to_scene: 28
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-056-xfade-28075b1c1f5acd95.mp4
+  start: 198.7667
+  end: 199.5
+- kind: scene
+  first_frame: 5985
+  frames: 175
+  scene: 28
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-057-scene-3b057c92c820778a.mp4
+  start: 199.5
+  end: 205.3333
+- kind: transition
+  first_frame: 6160
+  frames: 22
+  from_scene: 28
+  to_scene: 29
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-058-xfade-3c54d1b573308b54.mp4
+  start: 205.3333
+  end: 206.0667
+- kind: scene
+  first_frame: 6182
+  frames: 175
+  scene: 29
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-059-scene-c72e476c3f61409b.mp4
+  start: 206.0667
+  end: 211.9
+- kind: transition
+  first_frame: 6357
+  frames: 22
+  from_scene: 29
+  to_scene: 30
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-060-xfade-7a1f21e4035256b4.mp4
+  start: 211.9
+  end: 212.6333
+- kind: scene
+  first_frame: 6379
+  frames: 176
+  scene: 30
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-061-scene-e22d4fcf36fee2a7.mp4
+  start: 212.6333
+  end: 218.5
+- kind: transition
+  first_frame: 6555
+  frames: 22
+  from_scene: 30
+  to_scene: 31
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-062-xfade-50e4e925ee4a9e39.mp4
+  start: 218.5
+  end: 219.2333
+- kind: scene
+  first_frame: 6577
+  frames: 174
+  scene: 31
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-063-scene-12a6e26c95db5b4c.mp4
+  start: 219.2333
+  end: 225.0333
+- kind: transition
+  first_frame: 6751
+  frames: 22
+  from_scene: 31
+  to_scene: 32
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-064-xfade-d0805ce77b40c002.mp4
+  start: 225.0333
+  end: 225.7667
+- kind: scene
+  first_frame: 6773
+  frames: 176
+  scene: 32
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-065-scene-cccb7d145daa43cc.mp4
+  start: 225.7667
+  end: 231.6333
+- kind: transition
+  first_frame: 6949
+  frames: 22
+  from_scene: 32
+  to_scene: 33
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-066-xfade-3d60ebff3e87c3c5.mp4
+  start: 231.6333
+  end: 232.3667
+- kind: scene
+  first_frame: 6971
+  frames: 174
+  scene: 33
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-067-scene-4cf7e8b1e40f155b.mp4
+  start: 232.3667
+  end: 238.1667
+- kind: transition
+  first_frame: 7145
+  frames: 22
+  from_scene: 33
+  to_scene: 34
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-068-xfade-61b2654e023d51a9.mp4
+  start: 238.1667
+  end: 238.9
+- kind: scene
+  first_frame: 7167
+  frames: 175
+  scene: 34
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-069-scene-bb72908d3d0d50e6.mp4
+  start: 238.9
+  end: 244.7333
+- kind: transition
+  first_frame: 7342
+  frames: 22
+  from_scene: 34
+  to_scene: 35
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-070-xfade-31d14aab7dfded70.mp4
+  start: 244.7333
+  end: 245.4667
+- kind: scene
+  first_frame: 7364
+  frames: 181
+  scene: 35
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-071-scene-1c7987ee6814b738.mp4
+  start: 245.4667
+  end: 251.5
+- kind: transition
+  first_frame: 7545
+  frames: 22
+  from_scene: 35
+  to_scene: 36
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-072-xfade-856743bb9d6f48b9.mp4
+  start: 251.5
+  end: 252.2333
+- kind: scene
+  first_frame: 7567
+  frames: 170
+  scene: 36
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-073-scene-944ff92457f1c98f.mp4
+  start: 252.2333
+  end: 257.9
+- kind: transition
+  first_frame: 7737
+  frames: 22
+  from_scene: 36
+  to_scene: 37
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-074-xfade-a546cea73ecd5d93.mp4
+  start: 257.9
+  end: 258.6333
+- kind: scene
+  first_frame: 7759
+  frames: 276
+  scene: 37
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-075-scene-3430164a3bfd1121.mp4
+  start: 258.6333
+  end: 267.8333
+- kind: transition
+  first_frame: 8035
+  frames: 22
+  from_scene: 37
+  to_scene: 38
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-076-xfade-e3d0c84763687a0e.mp4
+  start: 267.8333
+  end: 268.5667
+- kind: scene
+  first_frame: 8057
+  frames: 234
+  scene: 38
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-077-scene-176b6de7532c196c.mp4
+  start: 268.5667
+  end: 276.3667
+- kind: transition
+  first_frame: 8291
+  frames: 22
+  from_scene: 38
+  to_scene: 39
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-078-xfade-312aee886f2adebf.mp4
+  start: 276.3667
+  end: 277.1
+- kind: scene
+  first_frame: 8313
+  frames: 232
+  scene: 39
+  path: /Users/jatroche/code/video-lyrics-creator/work/now-my-eyes-have-seen-the-lord/clips/bed-079-scene-24a9cb02f1eaa590.mp4
+  start: 277.1
+  end: 284.8333
