@@ -512,6 +512,14 @@ lines up with images already generated.
 **`work/<song>/overlay-clips/`** holds the lyric and title clips as QuickTime
 Animation movies with an alpha channel and their fades already in the pixels.
 
+**The lead-in.** A line goes up `video.lyric_lead` (0.35s) before it is sung, so it
+can be read before it is heard. Only one line fits on screen, though, and lines are
+sung back to back all the time — so where the line before is still up, the lead
+comes out of *its* tail rather than out of this line's start. The outgoing line has
+been up for its whole phrase and has already been read; the incoming one arriving
+late is the thing that reads as being out of time. No line is ever cut below 0.8s
+on screen to make that room.
+
 `work/<song>/lyrics.srt` is written too, so the lyrics can be uploaded to YouTube
 as a subtitle track — or, with the Resolve engine, used instead of the burnt-in
 overlays (`video-lyrics set render.lyrics_mode subtitle`).

@@ -14,15 +14,35 @@ from .util import ensure_dir, format_timecode, log, run, short_hash, which
 # transparency; DaVinci Resolve and ffmpeg both read it without extra setup.
 ALPHA_CODEC_ARGS = ["-c:v", "qtrle", "-pix_fmt", "argb"]
 
+MIN_VISIBLE = 0.8   # a line is never cut shorter than this to let the next one in (s)
 
-def cue_display_times(
-    cue: dict[str, Any], *, lead: float, previous_end: float | None
-) -> tuple[float, float]:
-    """Apply the lead-in without letting a cue collide with the one before it."""
-    start = max(0.0, cue["start"] - lead)
-    if previous_end is not None:
-        start = max(start, previous_end)
-    return start, max(start, cue["end"])
+
+def display_times(
+    cues: list[dict[str, Any]], *, lead: float
+) -> list[tuple[float, float]]:
+    """When each lyric goes on and comes off screen, once the lead-in is applied.
+
+    A line goes up `lead` seconds before it is sung, so that it can be read before it
+    is heard.  Only one line can be on screen at a time, though, and lines are sung
+    back to back all the time - so where the one before is still up, the lead comes
+    out of *its* tail rather than out of this line's start.  A line arriving late is
+    the thing that reads as being out of time with the song; the line leaving has been
+    on screen for its whole phrase and has already been read.
+
+    What the outgoing line may not be cut down to is a flash, so nothing is ever
+    trimmed below `MIN_VISIBLE` - a line shorter than that keeps every second it has,
+    and the one after it starts when it is sung.
+    """
+    times: list[list[float]] = []
+    for cue in cues:
+        start = max(0.0, float(cue["start"]) - lead)
+        if times:
+            previous = times[-1]
+            keep = min(previous[1], previous[0] + MIN_VISIBLE)
+            previous[1] = max(start, keep)
+            start = max(start, previous[1])
+        times.append([start, max(start, float(cue["end"]))])
+    return [(round(start, 3), round(end, 3)) for start, end in times]
 
 
 def render_lyrics(
@@ -43,10 +63,7 @@ def render_lyrics(
     max_width = width - 2 * margin_h
 
     results: list[dict[str, Any]] = []
-    previous_end: float | None = None
-    for index, cue in enumerate(cues, start=1):
-        start, end = cue_display_times(cue, lead=lead, previous_end=previous_end)
-        previous_end = end
+    for index, (cue, (start, end)) in enumerate(zip(cues, display_times(cues, lead=lead)), start=1):
         path = directory / f"lyric-{index:03d}-{short_hash(cue['text'], font_name, font_size, size)}.png"
         if force or not path.is_file():
             _draw_lyric(cue["text"], path, size, font_name, font_size, margin_v, max_width)
@@ -142,10 +159,7 @@ def title_window(
 def write_srt(cues: list[dict[str, Any]], path: Path, *, lead: float = 0.0) -> Path:
     """A standard SRT, ready for a DaVinci Resolve subtitle track or any player."""
     blocks: list[str] = []
-    previous_end: float | None = None
-    for index, cue in enumerate(cues, start=1):
-        start, end = cue_display_times(cue, lead=lead, previous_end=previous_end)
-        previous_end = end
+    for index, (cue, (start, end)) in enumerate(zip(cues, display_times(cues, lead=lead)), start=1):
         blocks.append(
             f"{index}\n{format_timecode(start)} --> {format_timecode(end)}\n{cue['text']}\n"
         )

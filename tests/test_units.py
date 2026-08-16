@@ -287,14 +287,26 @@ def test_srt_is_written_with_the_lead_in_applied(tmp_path):
     ]
     path = overlays.write_srt(cues, tmp_path / "lyrics.srt", lead=0.5)
     body = path.read_text(encoding="utf-8")
-    assert "00:00:04,500 --> 00:00:07,000" in body
+    assert "00:00:04,500 --> 00:00:06,500" in body   # line 2 takes its lead out of line 1
     assert "second line" in body
 
 
-def test_a_lead_in_never_pushes_a_cue_over_the_one_before_it():
-    previous = 7.0
-    start, end = overlays.cue_display_times({"start": 7.2, "end": 9.0}, lead=0.5, previous_end=previous)
-    assert start == previous
+def test_a_lead_in_comes_out_of_the_line_before_it():
+    cues = [{"start": 5.0, "end": 7.2}, {"start": 7.2, "end": 9.0}]
+    times = overlays.display_times(cues, lead=0.5)
+    assert times == [(4.5, 6.7), (6.7, 9.0)]
+
+
+def test_a_short_line_is_never_cut_short_to_make_room():
+    # The whole lead would leave the first line on screen for 0.6s, so it keeps the
+    # 0.8s it is owed and the second one goes up with what is left of the lead.
+    cues = [{"start": 5.0, "end": 5.6}, {"start": 5.6, "end": 8.0}]
+    times = overlays.display_times(cues, lead=0.5)
+    assert times == [(4.5, 5.3), (5.3, 8.0)]
+
+
+def test_a_lead_in_never_reaches_before_the_song():
+    assert overlays.display_times([{"start": 0.2, "end": 3.0}], lead=0.5) == [(0.0, 3.0)]
 
 
 def test_the_title_card_ends_before_the_first_lyric():
