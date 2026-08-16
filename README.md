@@ -320,6 +320,28 @@ against the line itself. It reads the isolated vocal when there is one — over 
 full mix the band keeps the level up on its own, and most lines simply run to the
 cap.
 
+### Late attacks
+
+The same envelope fixes the other edge, and it is the edge that shows. An aligner
+is *late* to a note it is perfectly sure of: a CTC model has to hear enough of a
+letter before it will commit to it, and on a word opening with a vowel — "In the
+end", "our God" — it commits up to a third of a second after the singer opened his
+mouth. That is small enough to survive every check on the numbers and plain enough
+to see, because a line arriving late is exactly what reads as being out of time.
+
+So each start walks *back* while the sound is still near the level the line sits
+at, and stops where it falls away: the first bucket after that quiet is where the
+line begins. Finding the quiet is the whole safety of it — a line that never does
+within `alignment.attack_reach` (0.6s) is left where it was, which is what happens
+over a full mix, where the band plays straight through the breath before a line.
+`alignment.attack_level` (0.45) sets how loud counts as still sounding. Over the
+two songs it was built on, the median start moved 20–50ms and the worst 0.41s, and
+no line then reached the screen after it was sung.
+
+Songs made before this existed keep their timing: the setting defaults to `0` for
+a project that has never seen it. To catch them up:
+`video-lyrics set alignment.attack_reach 0.6`, then `video-lyrics align --force`.
+
 ### Forced alignment (the default for a new song)
 
 Transcription asks the recording what was sung and then has to be argued with. But

@@ -82,6 +82,44 @@ def envelope(*levels, resolution=100):
     return peaks
 
 
+def test_a_late_start_is_moved_back_onto_the_attack():
+    # The voice comes in at 1.0s; the aligner only committed to the word at 1.3s.
+    cues = [{"start": 1.3, "end": 3.0, "text": "late", "line_index": 0}]
+    caught = align.catch_attacks(cues, envelope((1.0, 0.02), (5.0, 0.8)), reach=0.4)
+    assert caught == 1
+    assert cues[0]["start"] == 1.0
+
+
+def test_a_start_already_on_the_note_is_left_alone():
+    cues = [{"start": 1.0, "end": 3.0, "text": "punctual", "line_index": 0}]
+    assert align.catch_attacks(cues, envelope((1.0, 0.02), (5.0, 0.8)), reach=0.4) == 0
+    assert cues[0]["start"] == 1.0
+
+
+def test_no_attack_is_found_where_the_sound_never_falls_away():
+    # A full mix: the band plays straight through, so there is nothing to move onto.
+    cues = [{"start": 1.3, "end": 3.0, "text": "buried", "line_index": 0}]
+    assert align.catch_attacks(cues, envelope((9.0, 0.8)), reach=0.4) == 0
+    assert cues[0]["start"] == 1.3
+
+
+def test_an_attack_is_never_caught_back_over_the_line_before():
+    cues = [
+        {"start": 1.0, "end": 2.0, "text": "one", "line_index": 0},
+        {"start": 2.1, "end": 3.0, "text": "two", "line_index": 1},
+    ]
+    align.catch_attacks(cues, envelope((1.0, 0.02), (0.9, 0.8), (0.2, 0.3), (5.0, 0.8)), reach=0.4)
+    assert cues[1]["start"] >= cues[0]["end"]
+
+
+def test_catching_attacks_is_off_without_an_envelope_or_a_reach():
+    cues = [{"start": 1.3, "end": 3.0, "text": "late", "line_index": 0}]
+    full = envelope((1.0, 0.02), (5.0, 0.8))
+    assert align.catch_attacks(cues, full, reach=0.0) == 0
+    assert align.catch_attacks(cues, None, reach=0.4) == 0
+    assert cues[0]["start"] == 1.3
+
+
 def test_a_held_note_keeps_its_line_on_screen():
     # Sung 1.0-2.0s, but the singer holds the last vowel out to 2.8s.
     cues = [{"start": 1.0, "end": 2.0, "text": "held", "line_index": 0}]

@@ -92,6 +92,10 @@ NEW_SONG_ALIGNMENT: dict[str, Any] = {
     "engine": "forced",       # measured over seven songs: a line lands within 0.28s
                               # of where it is sung, against 1.02s from the transcript
     "vocals": True,           # ... which only holds on the isolated voice
+    "attack_reach": 0.6,      # ... and most of that 0.28s is the aligner being late to
+                              # a note it is sure of; the envelope says where the voice
+                              # really came in.  Measured over the same songs, no line
+                              # then reaches the screen after it is sung.
 }
 
 ALIGN_DEFAULTS: dict[str, Any] = {
@@ -112,6 +116,10 @@ ALIGN_DEFAULTS: dict[str, Any] = {
                               # still on the note (s); 0 turns the whole thing off
     "tail_level": 0.45,       # ... for as long as the sound stays this loud, against
                               # how loud that line itself was
+    "attack_reach": 0.0,      # start a line up to this much earlier, on the attack the
+                              # aligner was late for (s); 0 turns the whole thing off
+    "attack_level": 0.45,     # ... walking back for as long as the sound stays this
+                              # loud, against how loud that line itself was
     "scene_gap": 2.5,         # a musical gap this long starts a new image
     "min_scene_duration": 4.0,   # no image is shown for less than this (s)
     "max_scene_duration": 15.0,  # ... or for longer than this (s)

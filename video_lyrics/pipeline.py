@@ -209,6 +209,7 @@ def stage_align(project: Project, *, force: bool = False, **_: Any) -> None:
 
     settings = project.alignment
     tail_extend = float(settings.get("tail_extend", 0.0))
+    attack_reach = float(settings.get("attack_reach", 0.0))
     cues = align_mod.align(
         lines,
         transcript.get("words", []),
@@ -217,9 +218,15 @@ def stage_align(project: Project, *, force: bool = False, **_: Any) -> None:
         min_matched_words=int(settings.get("min_matched_words", 2)),
         min_duration=float(settings["min_duration"]),
         max_gap_fill=float(settings["max_gap_fill"]),
-        energy=audio_mod.envelope(_listening_to(project)) if tail_extend > 0 else None,
+        energy=(
+            audio_mod.envelope(_listening_to(project))
+            if tail_extend > 0 or attack_reach > 0
+            else None
+        ),
         tail_extend=tail_extend,
         tail_level=float(settings.get("tail_level", 0.45)),
+        attack_reach=attack_reach,
+        attack_level=float(settings.get("attack_level", 0.45)),
         rescue=transcript.get("engine", "whisper") != "forced",
     )
     project.data["lyrics"] = cues

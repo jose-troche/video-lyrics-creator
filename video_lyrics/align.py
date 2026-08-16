@@ -12,8 +12,9 @@ the stretches of audio that ended up unclaimed: lyric documents often hold draft
 prose and headings alongside the final words, and in the first pass a half-matching
 draft line can swallow the words that belonged to the line that was really sung.
 
-A last pass hands each line back the tail its singer is still holding; see
-`hold_tails`.
+Two last passes put each line back on the note it is actually sung on: `catch_attacks`
+hands it back the attack the aligner was late for, and `hold_tails` the tail its singer
+is still holding.
 """
 
 from __future__ import annotations
@@ -64,12 +65,15 @@ def align(
     energy: list[float] | None = None,
     tail_extend: float = 0.0,
     tail_level: float = 0.45,
+    attack_reach: float = 0.0,
+    attack_level: float = 0.45,
     rescue: bool = True,
 ) -> list[dict[str, Any]]:
     """Return time-ordered cues: [{start, end, text, line_index, alignment_confidence}].
 
-    `energy` is the song's loudness envelope (`audio.envelope`); given one, a line is
-    held for as long as its last note is - see `hold_tails`.
+    `energy` is the song's loudness envelope (`audio.envelope`); given one, a line
+    starts where its first note does and is held for as long as its last one is - see
+    `catch_attacks` and `hold_tails`.
 
     `rescue` is the second pass, and belongs to transcripts.  Words that were forced
     onto the lyrics are already in the lyrics' own order and spelling, so the first
@@ -128,6 +132,7 @@ def align(
         )
 
     cues.sort(key=lambda cue: (cue["start"], cue["line_index"]))
+    catch_attacks(cues, energy, reach=attack_reach, level=attack_level)
     hold_tails(cues, energy, limit=tail_extend, level=tail_level)
     return tidy(cues, duration=duration, min_duration=min_duration, max_gap_fill=max_gap_fill)
 
@@ -230,6 +235,71 @@ def _rescue(
         pending.append((low, cue["first_word"]))
         pending.append((cue["last_word"] + 1, high))
     return rescued
+
+
+def catch_attacks(
+    cues: list[dict[str, Any]],
+    energy: list[float] | None,
+    *,
+    resolution: int = ENVELOPE_RESOLUTION,
+    reach: float = 0.0,
+    level: float = 0.45,
+) -> int:
+    """Start a line where the voice comes in, not where the aligner first heard it.
+    Returns how many moved.
+
+    An aligner is late to a note it is perfectly sure of.  A CTC model has to hear
+    enough of a letter before it will commit to it, and on a word opening with a vowel
+    or a soft consonant - "In the end", "our God" - it commits a third of a second
+    after the singer opened his mouth.  Whisper is later still.  The line then goes up
+    on a phrase that is already under way, which is exactly the lag that reads as being
+    out of time; the lead-in (`video.lyric_lead`) is spent absorbing it instead of
+    giving the reader a head start.
+
+    The envelope knows the attack to a hundredth of a second, so walk *back* from the
+    aligner's start while the sound is still within `level` of how loud the line is,
+    and stop where it falls away: the first bucket after that quiet is where the line
+    begins.  A start already sitting on the note steps back a bucket or two and stops.
+
+    Finding the quiet is the whole safety of this, and a line that never does is left
+    alone - whether it ran out of `reach` or straight back into the line before it.  On
+    a full mix that is nearly every line: the band plays through the breath before each
+    one and there is no attack there to see.  Like `hold_tails`, this reads on an
+    isolated vocal (`alignment.vocals`).
+    """
+    if not energy or reach <= 0:
+        return 0
+
+    caught = 0
+    previous_end = 0
+    for cue in cues:
+        first = int(cue["start"] * resolution)
+        last = int(cue["end"] * resolution)
+        span = energy[first:last]
+        # The median, for the same reason `hold_tails` uses one: the level the line
+        # sits at, not the loudest moment in it.
+        floor = sorted(span)[len(span) // 2] * level if span else 0.0
+        # How far back the walk may go: the reach, and never over the line before.
+        limit = max(previous_end, first - int(reach * resolution), 0)
+        previous_end = last
+        if floor <= 0:
+            continue
+
+        edge = first
+        while edge > limit and energy[edge - 1] >= floor:
+            edge -= 1
+        if edge <= limit < first:      # never went quiet: no attack to be found here
+            continue
+
+        start = round(edge / resolution, 3)
+        if start < cue["start"]:
+            cue["start"] = start
+            caught += 1
+
+    if caught:
+        log.info("Moved %d line%s back onto the note it starts on.",
+                 caught, "" if caught == 1 else "s")
+    return caught
 
 
 def hold_tails(
