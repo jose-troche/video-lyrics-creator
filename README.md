@@ -38,6 +38,10 @@ a Google Cloud **Desktop app** OAuth client id and secret, then run
 `video-lyrics google-auth` (it writes `GOOGLE_DRIVE_REFRESH_TOKEN` back into
 `.env`). A Drive-for-desktop `.gdoc` file then works anywhere a `.txt` does.
 
+A variable already exported in your shell wins over `.env`. If `run` fails with
+`invalid_grant` right after a fresh `google-auth`, a stale
+`GOOGLE_DRIVE_REFRESH_TOKEN` is probably set in the terminal: `unset` it and retry.
+
 ## Quick start
 
 ```bash

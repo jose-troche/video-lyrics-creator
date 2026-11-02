@@ -1,0 +1,2112 @@
+schema_version: 1
+title: Dinner for 5000
+author: José Troche
+audio: /Users/jatroche/Music/From beginning to end you are God/06 Dinner for 5k.wav
+lyrics_source: /Users/jatroche/Google Drive/Songs/From beginning to end you are God/Dinner for 5k.gdoc
+visual_style: cinematic photographic realism
+context: when fish and loaves are shown together, make sure there are exactly two fish and five loaves
+work_dir: /Users/jatroche/code/video-lyrics-creator/work
+alignment:
+  engine: forced
+  vocals: true
+  attack_reach: 0.6
+  model: medium.en
+  forced_model: facebook/wav2vec2-base-960h
+  forced_min_score: 0.05
+  language: en
+  vad: false
+  prompt_hint: false
+  min_confidence: 0.5
+  min_matched_words: 2
+  min_duration: 1.0
+  max_gap_fill: 0.7
+  tail_extend: 1.2
+  tail_level: 0.45
+  attack_level: 0.45
+  scene_gap: 2.5
+  min_scene_duration: 4.0
+  max_scene_duration: 15.0
+video:
+  width: 1920
+  height: 1080
+  fps: 30
+  transition: 0.75
+  title_duration: 12.0
+  title_fade: 0.75
+  font: Avenir Next Demi Bold
+  font_size: 58
+  margin_v: 72
+  zoom: 1.2
+  lyric_lead: 0.35
+  lyric_fade: 0.2
+  audio_fade: 1.0
+image_generation:
+  provider: chatgpt
+  lines_per_image: 1
+  source_dir: null
+  chatgpt_headless: false
+  chatgpt_profile_dir: null
+  chatgpt_min_delay: 1.0
+  chatgpt_max_delay: 4.0
+  chatgpt_composer_selector: null
+  chatgpt_image_selector: null
+  chatgpt_channel: chrome
+  meta_headless: false
+  meta_profile_dir: null
+  meta_min_delay: 1.0
+  meta_max_delay: 4.0
+  meta_composer_selector: null
+  meta_image_selector: null
+  meta_channel: null
+render:
+  engine: ffmpeg
+  output: /Users/jatroche/code/video-lyrics-creator/output/dinner-for-5000.mp4
+  format: mp4
+  codec: H264
+  audio_codec: aac
+  replace_existing: true
+  lyrics_mode: overlay
+  intermediate: h264
+  last_output: /Users/jatroche/code/video-lyrics-creator/output/dinner-for-5000.mp4
+lyric_lines:
+- Dinner for 5k
+- Out in the wilderness, middle of nowhere
+- No GPS signal, no food trucks to share
+- Jesus was teaching, the crowd kept growing
+- Families with children, the numbers were showing
+- Five thousand people, maybe even more
+- Kids getting cranky, parents getting sore
+- The sun's getting low and the hour is late
+- But where do you get food for this dinner date?
+- What you gonna do when you gotta feed a crowd?
+- And your pantry's empty, wallet's not too proud
+- No Walmart, no Costco, no Amazon Prime
+- Just empty stomachs and dinner time
+- What you gonna do? What you gonna do?
+- When impossible seems to be staring at you!
+- Disciples are panicking, doing the math
+- '"Two hundred denarii won''t clear this path!"'
+- That's like a year's salary, maybe much more
+- To feed all these people by the lakeshore
+- They searched through the crowd with a desperate plea
+- '"Anyone got food? We''ll take what we see!"'
+- One little boy stepped up with a grin
+- '"I got five loaves and two fish - let''s begin!"'
+- What you gonna do when you gotta feed a crowd?
+- And your pantry's empty, wallet's not too proud
+- No Walmart, no Costco, no Amazon Prime
+- Just empty stomachs and dinner time
+- What you gonna do? What you gonna do?
+- When impossible seems to be staring at you!
+- Jesus took that lunch, just a humble man
+- But holding in His hands the Creator's plan
+- He spoke one word, the laws of nature bent
+- The God who made the stars, Jesus was there
+- Loaves multiplying by the power of His voice
+- The One who fills the universe made His choice
+- Baskets overflowing, creation obeyed
+- When the Word made flesh authority displayed!
+- Now when life gets crazy and bills pile high
+- When you lose your job and you wonder why
+- We fumble around with our little plans
+- But Jesus holds the universe in His hands
+- Human efforts fail, our strength runs dry
+- But the Lord of heaven hears every cry
+- When we're at our weakest, He shows His might
+- The omnipotent Savior makes everything right!
+- What you gonna do when you gotta feed a crowd?
+- When life gets heavy and troubles get loud
+- No human wisdom, no earthly plan
+- Just Jesus standing as the God-man
+- What you gonna do?
+- The Creator of all things is here with you!
+- Five loaves, two fish, and the Word made flesh
+- The omnipotent God making all things fresh
+- Behind simple eyes burns the power of stars
+- The almighty Savior who heals all our scars!
+- What you gonna do?
+- Trust the God Jesus - infinite and true!
+lyric_section_starts:
+- 0
+- 1
+- 5
+- 9
+- 15
+- 19
+- 23
+- 29
+- 37
+- 41
+- 45
+- 51
+- 55
+duration: 196.96
+transcript:
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/transcript.json
+  engine: forced
+  model: facebook/wav2vec2-base-960h
+  words: 410
+lyrics:
+- start: 10.23
+  end: 13.06
+  text: Out in the wilderness, middle of nowhere
+  line_index: 1
+  alignment_confidence: 0.857
+- start: 13.06
+  end: 15.78
+  text: No GPS signal, no food trucks to share
+  line_index: 2
+  alignment_confidence: 1.0
+- start: 15.78
+  end: 18.53
+  text: Jesus was teaching, the crowd kept growing
+  line_index: 3
+  alignment_confidence: 1.0
+- start: 18.53
+  end: 21.29
+  text: Families with children, the numbers were showing
+  line_index: 4
+  alignment_confidence: 1.0
+- start: 21.29
+  end: 24.12
+  text: Five thousand people, maybe even more
+  line_index: 5
+  alignment_confidence: 1.0
+- start: 24.12
+  end: 27.11
+  text: Kids getting cranky, parents getting sore
+  line_index: 6
+  alignment_confidence: 1.0
+- start: 27.11
+  end: 29.64
+  text: The sun's getting low and the hour is late
+  line_index: 7
+  alignment_confidence: 1.0
+- start: 29.64
+  end: 33.26
+  text: But where do you get food for this dinner date?
+  line_index: 8
+  alignment_confidence: 0.9
+- start: 33.26
+  end: 36.36
+  text: What you gonna do when you gotta feed a crowd?
+  line_index: 9
+  alignment_confidence: 1.0
+- start: 36.36
+  end: 39.16
+  text: And your pantry's empty, wallet's not too proud
+  line_index: 10
+  alignment_confidence: 1.0
+- start: 39.16
+  end: 42.03
+  text: No Walmart, no Costco, no Amazon Prime
+  line_index: 11
+  alignment_confidence: 1.0
+- start: 42.03
+  end: 45.08
+  text: Just empty stomachs and dinner time
+  line_index: 12
+  alignment_confidence: 1.0
+- start: 45.08
+  end: 47.24
+  text: What you gonna do? What you gonna do?
+  line_index: 13
+  alignment_confidence: 0.5
+- start: 47.24
+  end: 50.12
+  text: When impossible seems to be staring at you!
+  line_index: 14
+  alignment_confidence: 1.0
+- start: 54.56
+  end: 57.08
+  text: Disciples are panicking, doing the math
+  line_index: 15
+  alignment_confidence: 1.0
+- start: 57.08
+  end: 59.81
+  text: '"Two hundred denarii won''t clear this path!"'
+  line_index: 16
+  alignment_confidence: 1.0
+- start: 59.81
+  end: 62.76
+  text: That's like a year's salary, maybe much more
+  line_index: 17
+  alignment_confidence: 0.875
+- start: 62.76
+  end: 65.5
+  text: To feed all these people by the lakeshore
+  line_index: 18
+  alignment_confidence: 1.0
+- start: 65.5
+  end: 68.05
+  text: They searched through the crowd with a desperate plea
+  line_index: 19
+  alignment_confidence: 1.0
+- start: 68.05
+  end: 71.04
+  text: '"Anyone got food? We''ll take what we see!"'
+  line_index: 20
+  alignment_confidence: 1.0
+- start: 71.04
+  end: 73.73
+  text: One little boy stepped up with a grin
+  line_index: 21
+  alignment_confidence: 1.0
+- start: 73.73
+  end: 77.11
+  text: '"I got five loaves and two fish - let''s begin!"'
+  line_index: 22
+  alignment_confidence: 1.0
+- start: 77.11
+  end: 80.25
+  text: What you gonna do when you gotta feed a crowd?
+  line_index: 23
+  alignment_confidence: 1.0
+- start: 80.25
+  end: 83.07
+  text: And your pantry's empty, wallet's not too proud
+  line_index: 24
+  alignment_confidence: 1.0
+- start: 83.07
+  end: 85.89
+  text: No Walmart, no Costco, no Amazon Prime
+  line_index: 25
+  alignment_confidence: 1.0
+- start: 85.89
+  end: 88.95
+  text: Just empty stomachs and dinner time
+  line_index: 26
+  alignment_confidence: 1.0
+- start: 88.95
+  end: 91.18
+  text: What you gonna do? What you gonna do?
+  line_index: 27
+  alignment_confidence: 0.5
+- start: 91.18
+  end: 94.01
+  text: When impossible seems to be staring at you!
+  line_index: 28
+  alignment_confidence: 1.0
+- start: 98.19
+  end: 101.15
+  text: Jesus took that lunch, just a humble man
+  line_index: 29
+  alignment_confidence: 1.0
+- start: 101.15
+  end: 103.62
+  text: But holding in His hands the Creator's plan
+  line_index: 30
+  alignment_confidence: 1.0
+- start: 103.62
+  end: 106.65
+  text: He spoke one word, the laws of nature bent
+  line_index: 31
+  alignment_confidence: 1.0
+- start: 106.65
+  end: 109.198
+  text: The God who made the stars, Jesus was there
+  line_index: 32
+  alignment_confidence: 1.0
+- start: 109.198
+  end: 112.14
+  text: Loaves multiplying by the power of His voice
+  line_index: 33
+  alignment_confidence: 0.875
+- start: 112.14
+  end: 115.03
+  text: The One who fills the universe made His choice
+  line_index: 34
+  alignment_confidence: 1.0
+- start: 115.03
+  end: 117.37
+  text: Baskets overflowing, creation obeyed
+  line_index: 35
+  alignment_confidence: 1.0
+- start: 117.37
+  end: 120.32
+  text: When the Word made flesh authority displayed!
+  line_index: 36
+  alignment_confidence: 1.0
+- start: 124.23
+  end: 127.05
+  text: Now when life gets crazy and bills pile high
+  line_index: 37
+  alignment_confidence: 1.0
+- start: 127.05
+  end: 129.74
+  text: When you lose your job and you wonder why
+  line_index: 38
+  alignment_confidence: 1.0
+- start: 129.74
+  end: 132.69
+  text: We fumble around with our little plans
+  line_index: 39
+  alignment_confidence: 1.0
+- start: 132.69
+  end: 135.19
+  text: But Jesus holds the universe in His hands
+  line_index: 40
+  alignment_confidence: 1.0
+- start: 135.19
+  end: 137.97
+  text: Human efforts fail, our strength runs dry
+  line_index: 41
+  alignment_confidence: 1.0
+- start: 137.97
+  end: 140.74
+  text: But the Lord of heaven hears every cry
+  line_index: 42
+  alignment_confidence: 0.875
+- start: 140.74
+  end: 143.45
+  text: When we're at our weakest, He shows His might
+  line_index: 43
+  alignment_confidence: 0.889
+- start: 143.45
+  end: 148.566
+  text: The omnipotent Savior makes everything right!
+  line_index: 44
+  alignment_confidence: 1.0
+- start: 149.79
+  end: 152.428
+  text: What you gonna do when you gotta feed a crowd?
+  line_index: 45
+  alignment_confidence: 0.8
+- start: 152.428
+  end: 155.08
+  text: When life gets heavy and troubles get loud
+  line_index: 46
+  alignment_confidence: 1.0
+- start: 155.08
+  end: 157.892
+  text: No human wisdom, no earthly plan
+  line_index: 47
+  alignment_confidence: 1.0
+- start: 157.892
+  end: 160.7
+  text: Just Jesus standing as the God-man
+  line_index: 48
+  alignment_confidence: 0.714
+- start: 160.7
+  end: 163.21
+  text: What you gonna do?
+  line_index: 49
+  alignment_confidence: 0.5
+- start: 163.21
+  end: 166.7
+  text: The Creator of all things is here with you!
+  line_index: 50
+  alignment_confidence: 0.889
+- start: 170.89
+  end: 173.68
+  text: Five loaves, two fish, and the Word made flesh
+  line_index: 51
+  alignment_confidence: 1.0
+- start: 173.68
+  end: 176.61
+  text: The omnipotent God making all things fresh
+  line_index: 52
+  alignment_confidence: 1.0
+- start: 176.61
+  end: 179.35
+  text: Behind simple eyes burns the power of stars
+  line_index: 53
+  alignment_confidence: 1.0
+- start: 179.35
+  end: 184.58
+  text: The almighty Savior who heals all our scars!
+  line_index: 54
+  alignment_confidence: 1.0
+- start: 184.58
+  end: 186.01
+  text: What you gonna do?
+  line_index: 55
+  alignment_confidence: 0.75
+- start: 188.21
+  end: 191.4
+  text: Trust the God Jesus - infinite and true!
+  line_index: 56
+  alignment_confidence: 1.0
+scenes:
+- start: 0.0
+  end: 13.06
+  lines:
+  - Out in the wilderness, middle of nowhere
+  prompt: 'cinematic photographic realism. Context for the whole video: when fish and loaves are shown together, make sure there are exactly two fish and five loaves. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''Out in the wilderness, middle of nowhere''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a wide establishing shot, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 1
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/images/scene-001-b29fc888.png
+  motion_first_frame: 0
+  motion_frames: 403
+- start: 13.06
+  end: 15.78
+  lines:
+  - No GPS signal, no food trucks to share
+  prompt: 'cinematic photographic realism. Context for the whole video: when fish and loaves are shown together, make sure there are exactly two fish and five loaves. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''No GPS signal, no food trucks to share''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a low angle close to the ground, looking up, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 2
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/images/scene-002-40efc755.png
+  motion_first_frame: 381
+  motion_frames: 103
+- start: 15.78
+  end: 18.53
+  lines:
+  - Jesus was teaching, the crowd kept growing
+  prompt: 'cinematic photographic realism. Context for the whole video: when fish and loaves are shown together, make sure there are exactly two fish and five loaves. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''Jesus was teaching, the crowd kept growing''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as an intimate mid-shot centred on a single subject, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 3
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/images/scene-003-823d1d7c.png
+  motion_first_frame: 462
+  motion_frames: 105
+- start: 18.53
+  end: 21.29
+  lines:
+  - Families with children, the numbers were showing
+  prompt: 'cinematic photographic realism. Context for the whole video: when fish and loaves are shown together, make sure there are exactly two fish and five loaves. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''Families with children, the numbers were showing''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a high, distant vantage looking down, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 4
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/images/scene-004-9e253eda.png
+  motion_first_frame: 545
+  motion_frames: 105
+- start: 21.29
+  end: 24.12
+  lines:
+  - Five thousand people, maybe even more
+  prompt: 'cinematic photographic realism. Context for the whole video: when fish and loaves are shown together, make sure there are exactly two fish and five loaves. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''Five thousand people, maybe even more''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a tight foreground detail with the rest falling away soft, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 5
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/images/scene-005-5db1782a.png
+  motion_first_frame: 628
+  motion_frames: 107
+- start: 24.12
+  end: 27.11
+  lines:
+  - Kids getting cranky, parents getting sore
+  prompt: 'cinematic photographic realism. Context for the whole video: when fish and loaves are shown together, make sure there are exactly two fish and five loaves. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''Kids getting cranky, parents getting sore''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a head-on symmetrical composition, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 6
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/images/scene-006-06b47ebb.png
+  motion_first_frame: 713
+  motion_frames: 111
+- start: 27.11
+  end: 29.64
+  lines:
+  - The sun's getting low and the hour is late
+  prompt: 'cinematic photographic realism. Context for the whole video: when fish and loaves are shown together, make sure there are exactly two fish and five loaves. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''The sun''s getting low and the hour is late''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a view through a natural frame - an arch, branches, a doorway, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 7
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/images/scene-007-74749eed.png
+  motion_first_frame: 802
+  motion_frames: 98
+- start: 29.64
+  end: 33.26
+  lines:
+  - But where do you get food for this dinner date?
+  prompt: 'cinematic photographic realism. Context for the whole video: when fish and loaves are shown together, make sure there are exactly two fish and five loaves. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''But where do you get food for this dinner date?''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a wide establishing shot, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 8
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/images/scene-008-4a6d9338.png
+  motion_first_frame: 878
+  motion_frames: 131
+- start: 33.26
+  end: 36.36
+  lines:
+  - What you gonna do when you gotta feed a crowd?
+  prompt: 'cinematic photographic realism. Context for the whole video: when fish and loaves are shown together, make sure there are exactly two fish and five loaves. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''What you gonna do when you gotta feed a crowd?''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a low angle close to the ground, looking up, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 9
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/images/scene-009-e5ec7df7.png
+  motion_first_frame: 987
+  motion_frames: 115
+- start: 36.36
+  end: 39.16
+  lines:
+  - And your pantry's empty, wallet's not too proud
+  prompt: 'cinematic photographic realism. Context for the whole video: when fish and loaves are shown together, make sure there are exactly two fish and five loaves. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''And your pantry''s empty, wallet''s not too proud''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as an intimate mid-shot centred on a single subject, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 10
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/images/scene-010-d6c8fdae.png
+  motion_first_frame: 1080
+  motion_frames: 106
+- start: 39.16
+  end: 42.03
+  lines:
+  - No Walmart, no Costco, no Amazon Prime
+  prompt: 'cinematic photographic realism. Context for the whole video: when fish and loaves are shown together, make sure there are exactly two fish and five loaves. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''No Walmart, no Costco, no Amazon Prime''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a high, distant vantage looking down, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 11
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/images/scene-011-97daa95e.png
+  motion_first_frame: 1164
+  motion_frames: 108
+- start: 42.03
+  end: 45.08
+  lines:
+  - Just empty stomachs and dinner time
+  prompt: 'cinematic photographic realism. Context for the whole video: when fish and loaves are shown together, make sure there are exactly two fish and five loaves. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''Just empty stomachs and dinner time''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a tight foreground detail with the rest falling away soft, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 12
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/images/scene-012-b6304093.png
+  motion_first_frame: 1250
+  motion_frames: 113
+- start: 45.08
+  end: 47.24
+  lines:
+  - What you gonna do? What you gonna do?
+  prompt: 'cinematic photographic realism. Context for the whole video: when fish and loaves are shown together, make sure there are exactly two fish and five loaves. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''What you gonna do? What you gonna do?''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a head-on symmetrical composition, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 13
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/images/scene-013-6fc0a353.png
+  motion_first_frame: 1341
+  motion_frames: 87
+- start: 47.24
+  end: 54.56
+  lines:
+  - When impossible seems to be staring at you!
+  prompt: 'cinematic photographic realism. Context for the whole video: when fish and loaves are shown together, make sure there are exactly two fish and five loaves. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''When impossible seems to be staring at you!''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a view through a natural frame - an arch, branches, a doorway, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 14
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/images/scene-014-44f31fd0.png
+  motion_first_frame: 1406
+  motion_frames: 242
+- start: 54.56
+  end: 57.08
+  lines:
+  - Disciples are panicking, doing the math
+  prompt: 'cinematic photographic realism. Context for the whole video: when fish and loaves are shown together, make sure there are exactly two fish and five loaves. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''Disciples are panicking, doing the math''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a wide establishing shot, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 15
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/images/scene-015-3a7b4675.png
+  motion_first_frame: 1626
+  motion_frames: 97
+- start: 57.08
+  end: 59.81
+  lines:
+  - '"Two hundred denarii won''t clear this path!"'
+  prompt: 'cinematic photographic realism. Context for the whole video: when fish and loaves are shown together, make sure there are exactly two fish and five loaves. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''"Two hundred denarii won''t clear this path!"''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a low angle close to the ground, looking up, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 16
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/images/scene-016-4ade692d.png
+  motion_first_frame: 1701
+  motion_frames: 104
+- start: 59.81
+  end: 62.76
+  lines:
+  - That's like a year's salary, maybe much more
+  prompt: 'cinematic photographic realism. Context for the whole video: when fish and loaves are shown together, make sure there are exactly two fish and five loaves. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''That''s like a year''s salary, maybe much more''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as an intimate mid-shot centred on a single subject, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 17
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/images/scene-017-f6cf2631.png
+  motion_first_frame: 1783
+  motion_frames: 111
+- start: 62.76
+  end: 65.5
+  lines:
+  - To feed all these people by the lakeshore
+  prompt: 'cinematic photographic realism. Context for the whole video: when fish and loaves are shown together, make sure there are exactly two fish and five loaves. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''To feed all these people by the lakeshore''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a high, distant vantage looking down, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 18
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/images/scene-018-926d5d85.png
+  motion_first_frame: 1872
+  motion_frames: 104
+- start: 65.5
+  end: 68.05
+  lines:
+  - They searched through the crowd with a desperate plea
+  prompt: 'cinematic photographic realism. Context for the whole video: when fish and loaves are shown together, make sure there are exactly two fish and five loaves. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''They searched through the crowd with a desperate plea''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a tight foreground detail with the rest falling away soft, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 19
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/images/scene-019-1f034bdd.png
+  motion_first_frame: 1954
+  motion_frames: 99
+- start: 68.05
+  end: 71.04
+  lines:
+  - '"Anyone got food? We''ll take what we see!"'
+  prompt: 'cinematic photographic realism. Context for the whole video: when fish and loaves are shown together, make sure there are exactly two fish and five loaves. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''"Anyone got food? We''ll take what we see!"''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a head-on symmetrical composition, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 20
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/images/scene-020-a9aaf3d2.png
+  motion_first_frame: 2031
+  motion_frames: 111
+- start: 71.04
+  end: 73.73
+  lines:
+  - One little boy stepped up with a grin
+  prompt: 'cinematic photographic realism. Context for the whole video: when fish and loaves are shown together, make sure there are exactly two fish and five loaves. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''One little boy stepped up with a grin''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a view through a natural frame - an arch, branches, a doorway, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 21
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/images/scene-021-d05991d3.png
+  motion_first_frame: 2120
+  motion_frames: 103
+- start: 73.73
+  end: 77.11
+  lines:
+  - '"I got five loaves and two fish - let''s begin!"'
+  prompt: 'cinematic photographic realism. Context for the whole video: when fish and loaves are shown together, make sure there are exactly two fish and five loaves. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''"I got five loaves and two fish - let''s begin!"''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a wide establishing shot, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 22
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/images/scene-022-269f2140.png
+  motion_first_frame: 2201
+  motion_frames: 123
+- start: 77.11
+  end: 80.25
+  lines:
+  - What you gonna do when you gotta feed a crowd?
+  prompt: 'cinematic photographic realism. Context for the whole video: when fish and loaves are shown together, make sure there are exactly two fish and five loaves. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''What you gonna do when you gotta feed a crowd?''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a low angle close to the ground, looking up, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 23
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/images/scene-023-e5ec7df7.png
+  motion_first_frame: 2302
+  motion_frames: 117
+- start: 80.25
+  end: 83.07
+  lines:
+  - And your pantry's empty, wallet's not too proud
+  prompt: 'cinematic photographic realism. Context for the whole video: when fish and loaves are shown together, make sure there are exactly two fish and five loaves. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''And your pantry''s empty, wallet''s not too proud''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as an intimate mid-shot centred on a single subject, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 24
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/images/scene-024-d6c8fdae.png
+  motion_first_frame: 2397
+  motion_frames: 106
+- start: 83.07
+  end: 85.89
+  lines:
+  - No Walmart, no Costco, no Amazon Prime
+  prompt: 'cinematic photographic realism. Context for the whole video: when fish and loaves are shown together, make sure there are exactly two fish and five loaves. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''No Walmart, no Costco, no Amazon Prime''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a high, distant vantage looking down, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 25
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/images/scene-025-97daa95e.png
+  motion_first_frame: 2481
+  motion_frames: 107
+- start: 85.89
+  end: 88.95
+  lines:
+  - Just empty stomachs and dinner time
+  prompt: 'cinematic photographic realism. Context for the whole video: when fish and loaves are shown together, make sure there are exactly two fish and five loaves. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''Just empty stomachs and dinner time''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a tight foreground detail with the rest falling away soft, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 26
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/images/scene-026-b6304093.png
+  motion_first_frame: 2566
+  motion_frames: 113
+- start: 88.95
+  end: 91.18
+  lines:
+  - What you gonna do? What you gonna do?
+  prompt: 'cinematic photographic realism. Context for the whole video: when fish and loaves are shown together, make sure there are exactly two fish and five loaves. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''What you gonna do? What you gonna do?''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a head-on symmetrical composition, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 27
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/images/scene-027-6fc0a353.png
+  motion_first_frame: 2657
+  motion_frames: 89
+- start: 91.18
+  end: 98.19
+  lines:
+  - When impossible seems to be staring at you!
+  prompt: 'cinematic photographic realism. Context for the whole video: when fish and loaves are shown together, make sure there are exactly two fish and five loaves. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''When impossible seems to be staring at you!''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a view through a natural frame - an arch, branches, a doorway, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 28
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/images/scene-028-44f31fd0.png
+  motion_first_frame: 2724
+  motion_frames: 233
+- start: 98.19
+  end: 101.15
+  lines:
+  - Jesus took that lunch, just a humble man
+  prompt: 'cinematic photographic realism. Context for the whole video: when fish and loaves are shown together, make sure there are exactly two fish and five loaves. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''Jesus took that lunch, just a humble man''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a wide establishing shot, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 29
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/images/scene-029-0aa1b036.png
+  motion_first_frame: 2935
+  motion_frames: 110
+- start: 101.15
+  end: 103.62
+  lines:
+  - But holding in His hands the Creator's plan
+  prompt: 'cinematic photographic realism. Context for the whole video: when fish and loaves are shown together, make sure there are exactly two fish and five loaves. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''But holding in His hands the Creator''s plan''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a low angle close to the ground, looking up, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 30
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/images/scene-030-10dc0b89.png
+  motion_first_frame: 3023
+  motion_frames: 97
+- start: 103.62
+  end: 106.65
+  lines:
+  - He spoke one word, the laws of nature bent
+  prompt: 'cinematic photographic realism. Context for the whole video: when fish and loaves are shown together, make sure there are exactly two fish and five loaves. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''He spoke one word, the laws of nature bent''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as an intimate mid-shot centred on a single subject, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 31
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/images/scene-031-526d0083.png
+  motion_first_frame: 3098
+  motion_frames: 113
+- start: 106.65
+  end: 109.198
+  lines:
+  - The God who made the stars, Jesus was there
+  prompt: 'cinematic photographic realism. Context for the whole video: when fish and loaves are shown together, make sure there are exactly two fish and five loaves. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''The God who made the stars, Jesus was there''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a high, distant vantage looking down, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 32
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/images/scene-032-f046fe2a.png
+  motion_first_frame: 3189
+  motion_frames: 98
+- start: 109.198
+  end: 112.14
+  lines:
+  - Loaves multiplying by the power of His voice
+  prompt: 'cinematic photographic realism. Context for the whole video: when fish and loaves are shown together, make sure there are exactly two fish and five loaves. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''Loaves multiplying by the power of His voice''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a tight foreground detail with the rest falling away soft, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 33
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/images/scene-033-7b60d694.png
+  motion_first_frame: 3265
+  motion_frames: 110
+- start: 112.14
+  end: 115.03
+  lines:
+  - The One who fills the universe made His choice
+  prompt: 'cinematic photographic realism. Context for the whole video: when fish and loaves are shown together, make sure there are exactly two fish and five loaves. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''The One who fills the universe made His choice''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a head-on symmetrical composition, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 34
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/images/scene-034-d0f350e9.png
+  motion_first_frame: 3353
+  motion_frames: 109
+- start: 115.03
+  end: 117.37
+  lines:
+  - Baskets overflowing, creation obeyed
+  prompt: 'cinematic photographic realism. Context for the whole video: when fish and loaves are shown together, make sure there are exactly two fish and five loaves. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''Baskets overflowing, creation obeyed''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a view through a natural frame - an arch, branches, a doorway, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 35
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/images/scene-035-7d7a098b.png
+  motion_first_frame: 3440
+  motion_frames: 92
+- start: 117.37
+  end: 124.23
+  lines:
+  - When the Word made flesh authority displayed!
+  prompt: 'cinematic photographic realism. Context for the whole video: when fish and loaves are shown together, make sure there are exactly two fish and five loaves. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''When the Word made flesh authority displayed!''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a wide establishing shot, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 36
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/images/scene-036-815ee684.png
+  motion_first_frame: 3510
+  motion_frames: 228
+- start: 124.23
+  end: 127.05
+  lines:
+  - Now when life gets crazy and bills pile high
+  prompt: 'cinematic photographic realism. Context for the whole video: when fish and loaves are shown together, make sure there are exactly two fish and five loaves. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''Now when life gets crazy and bills pile high''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a low angle close to the ground, looking up, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 37
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/images/scene-037-ab0a63bc.png
+  motion_first_frame: 3716
+  motion_frames: 107
+- start: 127.05
+  end: 129.74
+  lines:
+  - When you lose your job and you wonder why
+  prompt: 'cinematic photographic realism. Context for the whole video: when fish and loaves are shown together, make sure there are exactly two fish and five loaves. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''When you lose your job and you wonder why''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as an intimate mid-shot centred on a single subject, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 38
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/images/scene-038-d2586df2.png
+  motion_first_frame: 3801
+  motion_frames: 102
+- start: 129.74
+  end: 132.69
+  lines:
+  - We fumble around with our little plans
+  prompt: 'cinematic photographic realism. Context for the whole video: when fish and loaves are shown together, make sure there are exactly two fish and five loaves. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''We fumble around with our little plans''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a high, distant vantage looking down, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 39
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/images/scene-039-eafea645.png
+  motion_first_frame: 3881
+  motion_frames: 111
+- start: 132.69
+  end: 135.19
+  lines:
+  - But Jesus holds the universe in His hands
+  prompt: 'cinematic photographic realism. Context for the whole video: when fish and loaves are shown together, make sure there are exactly two fish and five loaves. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''But Jesus holds the universe in His hands''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a tight foreground detail with the rest falling away soft, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 40
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/images/scene-040-643d474e.png
+  motion_first_frame: 3970
+  motion_frames: 97
+- start: 135.19
+  end: 137.97
+  lines:
+  - Human efforts fail, our strength runs dry
+  prompt: 'cinematic photographic realism. Context for the whole video: when fish and loaves are shown together, make sure there are exactly two fish and five loaves. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''Human efforts fail, our strength runs dry''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a head-on symmetrical composition, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 41
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/images/scene-041-e3277e1e.png
+  motion_first_frame: 4045
+  motion_frames: 105
+- start: 137.97
+  end: 140.74
+  lines:
+  - But the Lord of heaven hears every cry
+  prompt: 'cinematic photographic realism. Context for the whole video: when fish and loaves are shown together, make sure there are exactly two fish and five loaves. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''But the Lord of heaven hears every cry''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a view through a natural frame - an arch, branches, a doorway, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 42
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/images/scene-042-dd4a997c.png
+  motion_first_frame: 4128
+  motion_frames: 105
+- start: 140.74
+  end: 143.45
+  lines:
+  - When we're at our weakest, He shows His might
+  prompt: 'cinematic photographic realism. Context for the whole video: when fish and loaves are shown together, make sure there are exactly two fish and five loaves. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''When we''re at our weakest, He shows His might''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a wide establishing shot, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 43
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/images/scene-043-664b0246.png
+  motion_first_frame: 4211
+  motion_frames: 104
+- start: 143.45
+  end: 149.79
+  lines:
+  - The omnipotent Savior makes everything right!
+  prompt: 'cinematic photographic realism. Context for the whole video: when fish and loaves are shown together, make sure there are exactly two fish and five loaves. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''The omnipotent Savior makes everything right!''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a low angle close to the ground, looking up, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 44
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/images/scene-044-22994c47.png
+  motion_first_frame: 4293
+  motion_frames: 212
+- start: 149.79
+  end: 152.428
+  lines:
+  - What you gonna do when you gotta feed a crowd?
+  prompt: 'cinematic photographic realism. Context for the whole video: when fish and loaves are shown together, make sure there are exactly two fish and five loaves. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''What you gonna do when you gotta feed a crowd?''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as an intimate mid-shot centred on a single subject, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 45
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/images/scene-045-8ab8eb19.png
+  motion_first_frame: 4483
+  motion_frames: 101
+- start: 152.428
+  end: 155.08
+  lines:
+  - When life gets heavy and troubles get loud
+  prompt: 'cinematic photographic realism. Context for the whole video: when fish and loaves are shown together, make sure there are exactly two fish and five loaves. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''When life gets heavy and troubles get loud''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a high, distant vantage looking down, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 46
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/images/scene-046-26cf2727.png
+  motion_first_frame: 4562
+  motion_frames: 101
+- start: 155.08
+  end: 157.892
+  lines:
+  - No human wisdom, no earthly plan
+  prompt: 'cinematic photographic realism. Context for the whole video: when fish and loaves are shown together, make sure there are exactly two fish and five loaves. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''No human wisdom, no earthly plan''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a tight foreground detail with the rest falling away soft, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 47
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/images/scene-047-fd753a37.png
+  motion_first_frame: 4641
+  motion_frames: 107
+- start: 157.892
+  end: 160.7
+  lines:
+  - Just Jesus standing as the God-man
+  prompt: 'cinematic photographic realism. Context for the whole video: when fish and loaves are shown together, make sure there are exactly two fish and five loaves. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''Just Jesus standing as the God-man''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a head-on symmetrical composition, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 48
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/images/scene-048-b0612a55.png
+  motion_first_frame: 4726
+  motion_frames: 106
+- start: 160.7
+  end: 163.21
+  lines:
+  - What you gonna do?
+  prompt: 'cinematic photographic realism. Context for the whole video: when fish and loaves are shown together, make sure there are exactly two fish and five loaves. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''What you gonna do?''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a view through a natural frame - an arch, branches, a doorway, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 49
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/images/scene-049-becced2d.png
+  motion_first_frame: 4810
+  motion_frames: 97
+- start: 163.21
+  end: 170.89
+  lines:
+  - The Creator of all things is here with you!
+  prompt: 'cinematic photographic realism. Context for the whole video: when fish and loaves are shown together, make sure there are exactly two fish and five loaves. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''The Creator of all things is here with you!''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a wide establishing shot, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 50
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/images/scene-049-a6964cd1.png
+  motion_first_frame: 4885
+  motion_frames: 253
+- start: 170.89
+  end: 173.68
+  lines:
+  - Five loaves, two fish, and the Word made flesh
+  prompt: 'cinematic photographic realism. Context for the whole video: when fish and loaves are shown together, make sure there are exactly two fish and five loaves. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''Five loaves, two fish, and the Word made flesh''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a low angle close to the ground, looking up, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 51
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/images/scene-050-5684b637.png
+  motion_first_frame: 5116
+  motion_frames: 105
+- start: 173.68
+  end: 176.61
+  lines:
+  - The omnipotent God making all things fresh
+  prompt: 'cinematic photographic realism. Context for the whole video: when fish and loaves are shown together, make sure there are exactly two fish and five loaves. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''The omnipotent God making all things fresh''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as an intimate mid-shot centred on a single subject, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 52
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/images/scene-051-d29c618b.png
+  motion_first_frame: 5199
+  motion_frames: 110
+- start: 176.61
+  end: 179.35
+  lines:
+  - Behind simple eyes burns the power of stars
+  prompt: 'cinematic photographic realism. Context for the whole video: when fish and loaves are shown together, make sure there are exactly two fish and five loaves. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''Behind simple eyes burns the power of stars''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a high, distant vantage looking down, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 53
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/images/scene-053-71ad4d59.png
+  motion_first_frame: 5287
+  motion_frames: 104
+- start: 179.35
+  end: 184.58
+  lines:
+  - The almighty Savior who heals all our scars!
+  prompt: 'cinematic photographic realism. Context for the whole video: when fish and loaves are shown together, make sure there are exactly two fish and five loaves. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''The almighty Savior who heals all our scars!''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a tight foreground detail with the rest falling away soft, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 54
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/images/scene-053-25e494d7.png
+  motion_first_frame: 5369
+  motion_frames: 179
+- start: 184.58
+  end: 188.21
+  lines:
+  - What you gonna do?
+  prompt: 'cinematic photographic realism. Context for the whole video: when fish and loaves are shown together, make sure there are exactly two fish and five loaves. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''What you gonna do?''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a head-on symmetrical composition, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 55
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/images/scene-054-3c157f8a.png
+  motion_first_frame: 5526
+  motion_frames: 131
+- start: 188.21
+  end: 196.96
+  lines:
+  - Trust the God Jesus - infinite and true!
+  prompt: 'cinematic photographic realism. Context for the whole video: when fish and loaves are shown together, make sure there are exactly two fish and five loaves. Every scene belongs to that same story, setting and world - keep them consistent with it. Create a cinematic lyric-video scene inspired by this passage: ''Trust the God Jesus - infinite and true!''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a view through a natural frame - an arch, branches, a doorway, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 56
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/images/scene-055-14c669c6.png
+  motion_first_frame: 5635
+  motion_frames: 274
+overlays:
+  title:
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlays/title-36c18247911cb7fc.png
+    start: 0.0
+    end: 9.318
+    fade: 0.75
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlay-clips/title-36c18247911cb7fc-a988bbe3bf8f37d1.mov
+  lyrics:
+  - start: 9.88
+    end: 12.71
+    text: Out in the wilderness, middle of nowhere
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlays/lyric-001-5742d6e9d59e8a19.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlay-clips/lyric-001-5742d6e9d59e8a19-bc849461fecac2d5.mov
+  - start: 12.71
+    end: 15.43
+    text: No GPS signal, no food trucks to share
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlays/lyric-002-a5280c867ff84ba0.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlay-clips/lyric-002-a5280c867ff84ba0-1ce71201440d530b.mov
+  - start: 15.43
+    end: 18.18
+    text: Jesus was teaching, the crowd kept growing
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlays/lyric-003-338ac0010e8da697.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlay-clips/lyric-003-338ac0010e8da697-2b40c0bcab2c0603.mov
+  - start: 18.18
+    end: 20.94
+    text: Families with children, the numbers were showing
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlays/lyric-004-91d3d598f650785b.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlay-clips/lyric-004-91d3d598f650785b-ef483149769a1754.mov
+  - start: 20.94
+    end: 23.77
+    text: Five thousand people, maybe even more
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlays/lyric-005-5fe8ca069586f53f.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlay-clips/lyric-005-5fe8ca069586f53f-bc849461fecac2d5.mov
+  - start: 23.77
+    end: 26.76
+    text: Kids getting cranky, parents getting sore
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlays/lyric-006-9d04cf49811a5013.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlay-clips/lyric-006-9d04cf49811a5013-0abc867cf0ed84de.mov
+  - start: 26.76
+    end: 29.29
+    text: The sun's getting low and the hour is late
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlays/lyric-007-b6f1695a4583cf20.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlay-clips/lyric-007-b6f1695a4583cf20-48467730caf1d7b8.mov
+  - start: 29.29
+    end: 32.91
+    text: But where do you get food for this dinner date?
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlays/lyric-008-9c4427d7cf17f040.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlay-clips/lyric-008-9c4427d7cf17f040-e6a7406134fa01d5.mov
+  - start: 32.91
+    end: 36.01
+    text: What you gonna do when you gotta feed a crowd?
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlays/lyric-009-729949afccad70ba.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlay-clips/lyric-009-729949afccad70ba-d6e3a04bcaf473ee.mov
+  - start: 36.01
+    end: 38.81
+    text: And your pantry's empty, wallet's not too proud
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlays/lyric-010-838f0bba649b8e57.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlay-clips/lyric-010-838f0bba649b8e57-f8f95772a72dc9fa.mov
+  - start: 38.81
+    end: 41.68
+    text: No Walmart, no Costco, no Amazon Prime
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlays/lyric-011-6d63115723201360.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlay-clips/lyric-011-6d63115723201360-0f0fd922794309c8.mov
+  - start: 41.68
+    end: 44.73
+    text: Just empty stomachs and dinner time
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlays/lyric-012-e6f97d3e5cf67aab.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlay-clips/lyric-012-e6f97d3e5cf67aab-9106a3121cc3f3a4.mov
+  - start: 44.73
+    end: 46.89
+    text: What you gonna do? What you gonna do?
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlays/lyric-013-1be5c052b2d95e90.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlay-clips/lyric-013-1be5c052b2d95e90-02b7b7f969421baa.mov
+  - start: 46.89
+    end: 54.21
+    text: When impossible seems to be staring at you!
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlays/lyric-014-2914fb552c3aed7a.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlay-clips/lyric-014-2914fb552c3aed7a-4e7976ad0b69d35a.mov
+  - start: 54.21
+    end: 56.73
+    text: Disciples are panicking, doing the math
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlays/lyric-015-a344d8add857a327.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlay-clips/lyric-015-a344d8add857a327-a17db5f9105c0e26.mov
+  - start: 56.73
+    end: 59.46
+    text: '"Two hundred denarii won''t clear this path!"'
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlays/lyric-016-043faa6ea8323206.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlay-clips/lyric-016-043faa6ea8323206-915f9949ff8f5eb0.mov
+  - start: 59.46
+    end: 62.41
+    text: That's like a year's salary, maybe much more
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlays/lyric-017-8427aa25503d759b.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlay-clips/lyric-017-8427aa25503d759b-7f2fe6f621928989.mov
+  - start: 62.41
+    end: 65.15
+    text: To feed all these people by the lakeshore
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlays/lyric-018-16fb3a0fd8190bc9.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlay-clips/lyric-018-16fb3a0fd8190bc9-c096477169400ff5.mov
+  - start: 65.15
+    end: 67.7
+    text: They searched through the crowd with a desperate plea
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlays/lyric-019-65b658921e6e9b96.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlay-clips/lyric-019-65b658921e6e9b96-9fbcdd87b5d64f37.mov
+  - start: 67.7
+    end: 70.69
+    text: '"Anyone got food? We''ll take what we see!"'
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlays/lyric-020-7bdef810af487c55.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlay-clips/lyric-020-7bdef810af487c55-0abc867cf0ed84de.mov
+  - start: 70.69
+    end: 73.38
+    text: One little boy stepped up with a grin
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlays/lyric-021-efa337e4f5b83d42.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlay-clips/lyric-021-efa337e4f5b83d42-98fc721e20827aef.mov
+  - start: 73.38
+    end: 76.76
+    text: '"I got five loaves and two fish - let''s begin!"'
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlays/lyric-022-d35df053a9b3a5e8.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlay-clips/lyric-022-d35df053a9b3a5e8-edafaf24aa5892bc.mov
+  - start: 76.76
+    end: 79.9
+    text: What you gonna do when you gotta feed a crowd?
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlays/lyric-023-729949afccad70ba.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlay-clips/lyric-023-729949afccad70ba-01e66f47a67738be.mov
+  - start: 79.9
+    end: 82.72
+    text: And your pantry's empty, wallet's not too proud
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlays/lyric-024-838f0bba649b8e57.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlay-clips/lyric-024-838f0bba649b8e57-0bdb6ce76fe76870.mov
+  - start: 82.72
+    end: 85.54
+    text: No Walmart, no Costco, no Amazon Prime
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlays/lyric-025-6d63115723201360.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlay-clips/lyric-025-6d63115723201360-0bdb6ce76fe76870.mov
+  - start: 85.54
+    end: 88.6
+    text: Just empty stomachs and dinner time
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlays/lyric-026-e6f97d3e5cf67aab.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlay-clips/lyric-026-e6f97d3e5cf67aab-097ee0b5e07cb86d.mov
+  - start: 88.6
+    end: 90.83
+    text: What you gonna do? What you gonna do?
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlays/lyric-027-1be5c052b2d95e90.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlay-clips/lyric-027-1be5c052b2d95e90-ab992012ed8b626e.mov
+  - start: 90.83
+    end: 97.84
+    text: When impossible seems to be staring at you!
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlays/lyric-028-2914fb552c3aed7a.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlay-clips/lyric-028-2914fb552c3aed7a-fcdb505c014abd26.mov
+  - start: 97.84
+    end: 100.8
+    text: Jesus took that lunch, just a humble man
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlays/lyric-029-db460675f10223ad.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlay-clips/lyric-029-db460675f10223ad-68cad902032c770c.mov
+  - start: 100.8
+    end: 103.27
+    text: But holding in His hands the Creator's plan
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlays/lyric-030-991cfd85bfaaa30e.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlay-clips/lyric-030-991cfd85bfaaa30e-134ce99aebb5281a.mov
+  - start: 103.27
+    end: 106.3
+    text: He spoke one word, the laws of nature bent
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlays/lyric-031-d11ed872bff76448.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlay-clips/lyric-031-d11ed872bff76448-d57cfced97d8840a.mov
+  - start: 106.3
+    end: 108.848
+    text: The God who made the stars, Jesus was there
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlays/lyric-032-be942d16906def77.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlay-clips/lyric-032-be942d16906def77-b751f1237ba34306.mov
+  - start: 108.848
+    end: 111.79
+    text: Loaves multiplying by the power of His voice
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlays/lyric-033-ab78b83222ac070a.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlay-clips/lyric-033-ab78b83222ac070a-ecd628848f16e653.mov
+  - start: 111.79
+    end: 114.68
+    text: The One who fills the universe made His choice
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlays/lyric-034-f6398a4f1062c07b.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlay-clips/lyric-034-f6398a4f1062c07b-b8955c5969c82659.mov
+  - start: 114.68
+    end: 117.02
+    text: Baskets overflowing, creation obeyed
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlays/lyric-035-2333d0eed4ad30a1.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlay-clips/lyric-035-2333d0eed4ad30a1-94b5664f9c0b5377.mov
+  - start: 117.02
+    end: 123.88
+    text: When the Word made flesh authority displayed!
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlays/lyric-036-1e2259a3caf04e53.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlay-clips/lyric-036-1e2259a3caf04e53-f6a1bcb7b735bfa2.mov
+  - start: 123.88
+    end: 126.7
+    text: Now when life gets crazy and bills pile high
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlays/lyric-037-22e2635b19de95a7.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlay-clips/lyric-037-22e2635b19de95a7-0bdb6ce76fe76870.mov
+  - start: 126.7
+    end: 129.39
+    text: When you lose your job and you wonder why
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlays/lyric-038-29e75ab3fda846de.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlay-clips/lyric-038-29e75ab3fda846de-98fc721e20827aef.mov
+  - start: 129.39
+    end: 132.34
+    text: We fumble around with our little plans
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlays/lyric-039-2b74eb90140e513b.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlay-clips/lyric-039-2b74eb90140e513b-7f2fe6f621928989.mov
+  - start: 132.34
+    end: 134.84
+    text: But Jesus holds the universe in His hands
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlays/lyric-040-801cc501d2e74892.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlay-clips/lyric-040-801cc501d2e74892-826a34d270d16d25.mov
+  - start: 134.84
+    end: 137.62
+    text: Human efforts fail, our strength runs dry
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlays/lyric-041-38dc7198b2c90d48.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlay-clips/lyric-041-38dc7198b2c90d48-671afdd7a934d9d5.mov
+  - start: 137.62
+    end: 140.39
+    text: But the Lord of heaven hears every cry
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlays/lyric-042-a1c160b010be25fb.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlay-clips/lyric-042-a1c160b010be25fb-5c5dd90cdca29161.mov
+  - start: 140.39
+    end: 143.1
+    text: When we're at our weakest, He shows His might
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlays/lyric-043-2aed5e4884cd0a63.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlay-clips/lyric-043-2aed5e4884cd0a63-be85263753e0909b.mov
+  - start: 143.1
+    end: 149.44
+    text: The omnipotent Savior makes everything right!
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlays/lyric-044-f31d7a54fbca8a81.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlay-clips/lyric-044-f31d7a54fbca8a81-635e17109296a4ea.mov
+  - start: 149.44
+    end: 152.078
+    text: What you gonna do when you gotta feed a crowd?
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlays/lyric-045-729949afccad70ba.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlay-clips/lyric-045-729949afccad70ba-56544b6a2b7f7620.mov
+  - start: 152.078
+    end: 154.73
+    text: When life gets heavy and troubles get loud
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlays/lyric-046-c158a61641849f07.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlay-clips/lyric-046-c158a61641849f07-d24984dd18bbcd5e.mov
+  - start: 154.73
+    end: 157.542
+    text: No human wisdom, no earthly plan
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlays/lyric-047-ee6cc824345f7109.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlay-clips/lyric-047-ee6cc824345f7109-c3aafc0176f0a86e.mov
+  - start: 157.542
+    end: 160.35
+    text: Just Jesus standing as the God-man
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlays/lyric-048-042cd9e446e9f4cb.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlay-clips/lyric-048-042cd9e446e9f4cb-4efef64103691d77.mov
+  - start: 160.35
+    end: 162.86
+    text: What you gonna do?
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlays/lyric-049-e21032e23c72e6b9.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlay-clips/lyric-049-e21032e23c72e6b9-cda3cc0f7c79a8db.mov
+  - start: 162.86
+    end: 170.54
+    text: The Creator of all things is here with you!
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlays/lyric-050-3495053e004df7e9.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlay-clips/lyric-050-3495053e004df7e9-a858128ed215ba05.mov
+  - start: 170.54
+    end: 173.33
+    text: Five loaves, two fish, and the Word made flesh
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlays/lyric-051-387732ebe31d1875.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlay-clips/lyric-051-387732ebe31d1875-deec6bbe7b410825.mov
+  - start: 173.33
+    end: 176.26
+    text: The omnipotent God making all things fresh
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlays/lyric-052-3c45fcdd6aa0c93c.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlay-clips/lyric-052-3c45fcdd6aa0c93c-69b854e5e514755d.mov
+  - start: 176.26
+    end: 179.0
+    text: Behind simple eyes burns the power of stars
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlays/lyric-053-56060f15e5d79035.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlay-clips/lyric-053-56060f15e5d79035-c096477169400ff5.mov
+  - start: 179.0
+    end: 184.23
+    text: The almighty Savior who heals all our scars!
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlays/lyric-054-0913bc601f760137.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlay-clips/lyric-054-0913bc601f760137-4cc89d97494588fc.mov
+  - start: 184.23
+    end: 187.86
+    text: What you gonna do?
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlays/lyric-055-e21032e23c72e6b9.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlay-clips/lyric-055-e21032e23c72e6b9-a7745154b5f05f03.mov
+  - start: 187.86
+    end: 191.4
+    text: Trust the God Jesus - infinite and true!
+    image: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlays/lyric-056-7e4a2eeb506ef44b.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/overlay-clips/lyric-056-7e4a2eeb506ef44b-5b12862a476d1f3e.mov
+  srt: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/lyrics.srt
+bed:
+- kind: scene
+  first_frame: 0
+  frames: 381
+  scene: 0
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-001-scene-fc387f086dec6593.mp4
+  start: 0.0
+  end: 12.7
+- kind: transition
+  first_frame: 381
+  frames: 22
+  from_scene: 0
+  to_scene: 1
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-002-xfade-4e6130b14466e771.mp4
+  start: 12.7
+  end: 13.4333
+- kind: scene
+  first_frame: 403
+  frames: 59
+  scene: 1
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-003-scene-c883c47589ea11b7.mp4
+  start: 13.4333
+  end: 15.4
+- kind: transition
+  first_frame: 462
+  frames: 22
+  from_scene: 1
+  to_scene: 2
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-004-xfade-73dbbeb0d2ba8595.mp4
+  start: 15.4
+  end: 16.1333
+- kind: scene
+  first_frame: 484
+  frames: 61
+  scene: 2
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-005-scene-b6af10dbc13a06fd.mp4
+  start: 16.1333
+  end: 18.1667
+- kind: transition
+  first_frame: 545
+  frames: 22
+  from_scene: 2
+  to_scene: 3
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-006-xfade-dfec521527875700.mp4
+  start: 18.1667
+  end: 18.9
+- kind: scene
+  first_frame: 567
+  frames: 61
+  scene: 3
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-007-scene-25fd6213b5b86a0c.mp4
+  start: 18.9
+  end: 20.9333
+- kind: transition
+  first_frame: 628
+  frames: 22
+  from_scene: 3
+  to_scene: 4
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-008-xfade-1d27a98790cbdef2.mp4
+  start: 20.9333
+  end: 21.6667
+- kind: scene
+  first_frame: 650
+  frames: 63
+  scene: 4
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-009-scene-4cc65094e1169af5.mp4
+  start: 21.6667
+  end: 23.7667
+- kind: transition
+  first_frame: 713
+  frames: 22
+  from_scene: 4
+  to_scene: 5
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-010-xfade-aa6cd3150f6de6fb.mp4
+  start: 23.7667
+  end: 24.5
+- kind: scene
+  first_frame: 735
+  frames: 67
+  scene: 5
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-011-scene-2dba8d906ea48e1b.mp4
+  start: 24.5
+  end: 26.7333
+- kind: transition
+  first_frame: 802
+  frames: 22
+  from_scene: 5
+  to_scene: 6
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-012-xfade-c9dec1a2a1861b01.mp4
+  start: 26.7333
+  end: 27.4667
+- kind: scene
+  first_frame: 824
+  frames: 54
+  scene: 6
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-013-scene-fe42c4704c06f784.mp4
+  start: 27.4667
+  end: 29.2667
+- kind: transition
+  first_frame: 878
+  frames: 22
+  from_scene: 6
+  to_scene: 7
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-014-xfade-9801ff111458f384.mp4
+  start: 29.2667
+  end: 30.0
+- kind: scene
+  first_frame: 900
+  frames: 87
+  scene: 7
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-015-scene-ba1a42deaa735e51.mp4
+  start: 30.0
+  end: 32.9
+- kind: transition
+  first_frame: 987
+  frames: 22
+  from_scene: 7
+  to_scene: 8
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-016-xfade-2b08db6ae3fcc027.mp4
+  start: 32.9
+  end: 33.6333
+- kind: scene
+  first_frame: 1009
+  frames: 71
+  scene: 8
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-017-scene-9e524b3a8813ae34.mp4
+  start: 33.6333
+  end: 36.0
+- kind: transition
+  first_frame: 1080
+  frames: 22
+  from_scene: 8
+  to_scene: 9
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-018-xfade-780735faa11f4554.mp4
+  start: 36.0
+  end: 36.7333
+- kind: scene
+  first_frame: 1102
+  frames: 62
+  scene: 9
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-019-scene-8d4ee342a9baa5a8.mp4
+  start: 36.7333
+  end: 38.8
+- kind: transition
+  first_frame: 1164
+  frames: 22
+  from_scene: 9
+  to_scene: 10
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-020-xfade-dc6c6907f1ba046d.mp4
+  start: 38.8
+  end: 39.5333
+- kind: scene
+  first_frame: 1186
+  frames: 64
+  scene: 10
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-021-scene-aaecc7bcb5338d21.mp4
+  start: 39.5333
+  end: 41.6667
+- kind: transition
+  first_frame: 1250
+  frames: 22
+  from_scene: 10
+  to_scene: 11
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-022-xfade-2789f390fc88875c.mp4
+  start: 41.6667
+  end: 42.4
+- kind: scene
+  first_frame: 1272
+  frames: 69
+  scene: 11
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-023-scene-cea138a84d199edf.mp4
+  start: 42.4
+  end: 44.7
+- kind: transition
+  first_frame: 1341
+  frames: 22
+  from_scene: 11
+  to_scene: 12
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-024-xfade-e255b4f65363b065.mp4
+  start: 44.7
+  end: 45.4333
+- kind: scene
+  first_frame: 1363
+  frames: 43
+  scene: 12
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-025-scene-3942bcc0b2a2d05f.mp4
+  start: 45.4333
+  end: 46.8667
+- kind: transition
+  first_frame: 1406
+  frames: 22
+  from_scene: 12
+  to_scene: 13
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-026-xfade-e6dc6eaf8be0ec9e.mp4
+  start: 46.8667
+  end: 47.6
+- kind: scene
+  first_frame: 1428
+  frames: 198
+  scene: 13
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-027-scene-3e00c4846e00947d.mp4
+  start: 47.6
+  end: 54.2
+- kind: transition
+  first_frame: 1626
+  frames: 22
+  from_scene: 13
+  to_scene: 14
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-028-xfade-322e59f92a9f84b2.mp4
+  start: 54.2
+  end: 54.9333
+- kind: scene
+  first_frame: 1648
+  frames: 53
+  scene: 14
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-029-scene-b2c15511e88c86e5.mp4
+  start: 54.9333
+  end: 56.7
+- kind: transition
+  first_frame: 1701
+  frames: 22
+  from_scene: 14
+  to_scene: 15
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-030-xfade-142b6ac1e7d99926.mp4
+  start: 56.7
+  end: 57.4333
+- kind: scene
+  first_frame: 1723
+  frames: 60
+  scene: 15
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-031-scene-832322b83107291f.mp4
+  start: 57.4333
+  end: 59.4333
+- kind: transition
+  first_frame: 1783
+  frames: 22
+  from_scene: 15
+  to_scene: 16
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-032-xfade-1765c8193fa7014f.mp4
+  start: 59.4333
+  end: 60.1667
+- kind: scene
+  first_frame: 1805
+  frames: 67
+  scene: 16
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-033-scene-bb84d3d441a3f11c.mp4
+  start: 60.1667
+  end: 62.4
+- kind: transition
+  first_frame: 1872
+  frames: 22
+  from_scene: 16
+  to_scene: 17
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-034-xfade-e574a13f71bf719a.mp4
+  start: 62.4
+  end: 63.1333
+- kind: scene
+  first_frame: 1894
+  frames: 60
+  scene: 17
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-035-scene-3b5e17683d0ea072.mp4
+  start: 63.1333
+  end: 65.1333
+- kind: transition
+  first_frame: 1954
+  frames: 22
+  from_scene: 17
+  to_scene: 18
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-036-xfade-06446c7aedad1b26.mp4
+  start: 65.1333
+  end: 65.8667
+- kind: scene
+  first_frame: 1976
+  frames: 55
+  scene: 18
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-037-scene-52b27c932961fb29.mp4
+  start: 65.8667
+  end: 67.7
+- kind: transition
+  first_frame: 2031
+  frames: 22
+  from_scene: 18
+  to_scene: 19
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-038-xfade-0bf98455558e9bd3.mp4
+  start: 67.7
+  end: 68.4333
+- kind: scene
+  first_frame: 2053
+  frames: 67
+  scene: 19
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-039-scene-790ae97d49e413e2.mp4
+  start: 68.4333
+  end: 70.6667
+- kind: transition
+  first_frame: 2120
+  frames: 22
+  from_scene: 19
+  to_scene: 20
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-040-xfade-6d04997a63425099.mp4
+  start: 70.6667
+  end: 71.4
+- kind: scene
+  first_frame: 2142
+  frames: 59
+  scene: 20
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-041-scene-48999b88d7995a31.mp4
+  start: 71.4
+  end: 73.3667
+- kind: transition
+  first_frame: 2201
+  frames: 22
+  from_scene: 20
+  to_scene: 21
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-042-xfade-b195d9731315480c.mp4
+  start: 73.3667
+  end: 74.1
+- kind: scene
+  first_frame: 2223
+  frames: 79
+  scene: 21
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-043-scene-4b18ff0349d66672.mp4
+  start: 74.1
+  end: 76.7333
+- kind: transition
+  first_frame: 2302
+  frames: 22
+  from_scene: 21
+  to_scene: 22
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-044-xfade-f429e06d0ceca99b.mp4
+  start: 76.7333
+  end: 77.4667
+- kind: scene
+  first_frame: 2324
+  frames: 73
+  scene: 22
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-045-scene-c74548ccccef5e48.mp4
+  start: 77.4667
+  end: 79.9
+- kind: transition
+  first_frame: 2397
+  frames: 22
+  from_scene: 22
+  to_scene: 23
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-046-xfade-c1cd42c154ce6521.mp4
+  start: 79.9
+  end: 80.6333
+- kind: scene
+  first_frame: 2419
+  frames: 62
+  scene: 23
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-047-scene-74b40793fe20adfc.mp4
+  start: 80.6333
+  end: 82.7
+- kind: transition
+  first_frame: 2481
+  frames: 22
+  from_scene: 23
+  to_scene: 24
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-048-xfade-ed057aa86f0d0ee4.mp4
+  start: 82.7
+  end: 83.4333
+- kind: scene
+  first_frame: 2503
+  frames: 63
+  scene: 24
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-049-scene-b1cd038776053203.mp4
+  start: 83.4333
+  end: 85.5333
+- kind: transition
+  first_frame: 2566
+  frames: 22
+  from_scene: 24
+  to_scene: 25
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-050-xfade-fba05530a226c388.mp4
+  start: 85.5333
+  end: 86.2667
+- kind: scene
+  first_frame: 2588
+  frames: 69
+  scene: 25
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-051-scene-af34ab112bcd6e18.mp4
+  start: 86.2667
+  end: 88.5667
+- kind: transition
+  first_frame: 2657
+  frames: 22
+  from_scene: 25
+  to_scene: 26
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-052-xfade-71119a9b5bf573d6.mp4
+  start: 88.5667
+  end: 89.3
+- kind: scene
+  first_frame: 2679
+  frames: 45
+  scene: 26
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-053-scene-cbaa0f615c28d257.mp4
+  start: 89.3
+  end: 90.8
+- kind: transition
+  first_frame: 2724
+  frames: 22
+  from_scene: 26
+  to_scene: 27
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-054-xfade-7b0e77ff5bf37eb0.mp4
+  start: 90.8
+  end: 91.5333
+- kind: scene
+  first_frame: 2746
+  frames: 189
+  scene: 27
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-055-scene-015d702202b39409.mp4
+  start: 91.5333
+  end: 97.8333
+- kind: transition
+  first_frame: 2935
+  frames: 22
+  from_scene: 27
+  to_scene: 28
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-056-xfade-056f5f52af26e858.mp4
+  start: 97.8333
+  end: 98.5667
+- kind: scene
+  first_frame: 2957
+  frames: 66
+  scene: 28
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-057-scene-4f05f7f71690e0b4.mp4
+  start: 98.5667
+  end: 100.7667
+- kind: transition
+  first_frame: 3023
+  frames: 22
+  from_scene: 28
+  to_scene: 29
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-058-xfade-3b0cde07a45ea9b5.mp4
+  start: 100.7667
+  end: 101.5
+- kind: scene
+  first_frame: 3045
+  frames: 53
+  scene: 29
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-059-scene-e3ff3ea51bd5f732.mp4
+  start: 101.5
+  end: 103.2667
+- kind: transition
+  first_frame: 3098
+  frames: 22
+  from_scene: 29
+  to_scene: 30
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-060-xfade-f8d2f59832aebce8.mp4
+  start: 103.2667
+  end: 104.0
+- kind: scene
+  first_frame: 3120
+  frames: 69
+  scene: 30
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-061-scene-dc34ac78aa038ec7.mp4
+  start: 104.0
+  end: 106.3
+- kind: transition
+  first_frame: 3189
+  frames: 22
+  from_scene: 30
+  to_scene: 31
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-062-xfade-8c167e317a0c70a3.mp4
+  start: 106.3
+  end: 107.0333
+- kind: scene
+  first_frame: 3211
+  frames: 54
+  scene: 31
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-063-scene-31d43d6ce58ad2eb.mp4
+  start: 107.0333
+  end: 108.8333
+- kind: transition
+  first_frame: 3265
+  frames: 22
+  from_scene: 31
+  to_scene: 32
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-064-xfade-3f27a07528420fba.mp4
+  start: 108.8333
+  end: 109.5667
+- kind: scene
+  first_frame: 3287
+  frames: 66
+  scene: 32
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-065-scene-0c2934f7cc24e5d1.mp4
+  start: 109.5667
+  end: 111.7667
+- kind: transition
+  first_frame: 3353
+  frames: 22
+  from_scene: 32
+  to_scene: 33
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-066-xfade-430f7c1d7b7782ac.mp4
+  start: 111.7667
+  end: 112.5
+- kind: scene
+  first_frame: 3375
+  frames: 65
+  scene: 33
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-067-scene-c402ff3c0c928cbf.mp4
+  start: 112.5
+  end: 114.6667
+- kind: transition
+  first_frame: 3440
+  frames: 22
+  from_scene: 33
+  to_scene: 34
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-068-xfade-5fe0e28acdefc65f.mp4
+  start: 114.6667
+  end: 115.4
+- kind: scene
+  first_frame: 3462
+  frames: 48
+  scene: 34
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-069-scene-0a56177ba54ca4fa.mp4
+  start: 115.4
+  end: 117.0
+- kind: transition
+  first_frame: 3510
+  frames: 22
+  from_scene: 34
+  to_scene: 35
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-070-xfade-f9a2549d351dfdb1.mp4
+  start: 117.0
+  end: 117.7333
+- kind: scene
+  first_frame: 3532
+  frames: 184
+  scene: 35
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-071-scene-d26db76c53ddb546.mp4
+  start: 117.7333
+  end: 123.8667
+- kind: transition
+  first_frame: 3716
+  frames: 22
+  from_scene: 35
+  to_scene: 36
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-072-xfade-e346b7b7c59d5ae8.mp4
+  start: 123.8667
+  end: 124.6
+- kind: scene
+  first_frame: 3738
+  frames: 63
+  scene: 36
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-073-scene-32f101954186673e.mp4
+  start: 124.6
+  end: 126.7
+- kind: transition
+  first_frame: 3801
+  frames: 22
+  from_scene: 36
+  to_scene: 37
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-074-xfade-149a53fdf144039b.mp4
+  start: 126.7
+  end: 127.4333
+- kind: scene
+  first_frame: 3823
+  frames: 58
+  scene: 37
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-075-scene-446aa36c139f4237.mp4
+  start: 127.4333
+  end: 129.3667
+- kind: transition
+  first_frame: 3881
+  frames: 22
+  from_scene: 37
+  to_scene: 38
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-076-xfade-7b9e9b8deb8d81c9.mp4
+  start: 129.3667
+  end: 130.1
+- kind: scene
+  first_frame: 3903
+  frames: 67
+  scene: 38
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-077-scene-f1c1e5dbc5ee30fc.mp4
+  start: 130.1
+  end: 132.3333
+- kind: transition
+  first_frame: 3970
+  frames: 22
+  from_scene: 38
+  to_scene: 39
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-078-xfade-c528b0d05be49f06.mp4
+  start: 132.3333
+  end: 133.0667
+- kind: scene
+  first_frame: 3992
+  frames: 53
+  scene: 39
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-079-scene-892b41777e9c2dd7.mp4
+  start: 133.0667
+  end: 134.8333
+- kind: transition
+  first_frame: 4045
+  frames: 22
+  from_scene: 39
+  to_scene: 40
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-080-xfade-0c6dec24a4ff9c95.mp4
+  start: 134.8333
+  end: 135.5667
+- kind: scene
+  first_frame: 4067
+  frames: 61
+  scene: 40
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-081-scene-0f86a9641c4e5f63.mp4
+  start: 135.5667
+  end: 137.6
+- kind: transition
+  first_frame: 4128
+  frames: 22
+  from_scene: 40
+  to_scene: 41
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-082-xfade-8009fcf3055ee4d1.mp4
+  start: 137.6
+  end: 138.3333
+- kind: scene
+  first_frame: 4150
+  frames: 61
+  scene: 41
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-083-scene-8507f58cddb08481.mp4
+  start: 138.3333
+  end: 140.3667
+- kind: transition
+  first_frame: 4211
+  frames: 22
+  from_scene: 41
+  to_scene: 42
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-084-xfade-d77d8c60c2be3da6.mp4
+  start: 140.3667
+  end: 141.1
+- kind: scene
+  first_frame: 4233
+  frames: 60
+  scene: 42
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-085-scene-3dccbf0cd4736ad3.mp4
+  start: 141.1
+  end: 143.1
+- kind: transition
+  first_frame: 4293
+  frames: 22
+  from_scene: 42
+  to_scene: 43
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-086-xfade-5417c30bdfe17ed4.mp4
+  start: 143.1
+  end: 143.8333
+- kind: scene
+  first_frame: 4315
+  frames: 168
+  scene: 43
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-087-scene-25ff4d385a854f50.mp4
+  start: 143.8333
+  end: 149.4333
+- kind: transition
+  first_frame: 4483
+  frames: 22
+  from_scene: 43
+  to_scene: 44
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-088-xfade-ef58412d94784e28.mp4
+  start: 149.4333
+  end: 150.1667
+- kind: scene
+  first_frame: 4505
+  frames: 57
+  scene: 44
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-089-scene-9e5db22bd5a3d409.mp4
+  start: 150.1667
+  end: 152.0667
+- kind: transition
+  first_frame: 4562
+  frames: 22
+  from_scene: 44
+  to_scene: 45
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-090-xfade-cfe2dda029b7eff5.mp4
+  start: 152.0667
+  end: 152.8
+- kind: scene
+  first_frame: 4584
+  frames: 57
+  scene: 45
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-091-scene-b9e10d00a9f7685d.mp4
+  start: 152.8
+  end: 154.7
+- kind: transition
+  first_frame: 4641
+  frames: 22
+  from_scene: 45
+  to_scene: 46
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-092-xfade-33872e0fc27d4b9d.mp4
+  start: 154.7
+  end: 155.4333
+- kind: scene
+  first_frame: 4663
+  frames: 63
+  scene: 46
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-093-scene-33b3c512751a3dcb.mp4
+  start: 155.4333
+  end: 157.5333
+- kind: transition
+  first_frame: 4726
+  frames: 22
+  from_scene: 46
+  to_scene: 47
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-094-xfade-64d094f8a3e3867a.mp4
+  start: 157.5333
+  end: 158.2667
+- kind: scene
+  first_frame: 4748
+  frames: 62
+  scene: 47
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-095-scene-c5bcc144bf1bb6b9.mp4
+  start: 158.2667
+  end: 160.3333
+- kind: transition
+  first_frame: 4810
+  frames: 22
+  from_scene: 47
+  to_scene: 48
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-096-xfade-4219fbe13fc52049.mp4
+  start: 160.3333
+  end: 161.0667
+- kind: scene
+  first_frame: 4832
+  frames: 53
+  scene: 48
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-097-scene-3fb93430982d736b.mp4
+  start: 161.0667
+  end: 162.8333
+- kind: transition
+  first_frame: 4885
+  frames: 22
+  from_scene: 48
+  to_scene: 49
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-098-xfade-b8ee96eff9dbf256.mp4
+  start: 162.8333
+  end: 163.5667
+- kind: scene
+  first_frame: 4907
+  frames: 209
+  scene: 49
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-099-scene-a3bafde456383c5a.mp4
+  start: 163.5667
+  end: 170.5333
+- kind: transition
+  first_frame: 5116
+  frames: 22
+  from_scene: 49
+  to_scene: 50
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-100-xfade-44215bb45463c1ff.mp4
+  start: 170.5333
+  end: 171.2667
+- kind: scene
+  first_frame: 5138
+  frames: 61
+  scene: 50
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-101-scene-8fc7877f8b951e6d.mp4
+  start: 171.2667
+  end: 173.3
+- kind: transition
+  first_frame: 5199
+  frames: 22
+  from_scene: 50
+  to_scene: 51
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-102-xfade-aa66c14bcf59e0e6.mp4
+  start: 173.3
+  end: 174.0333
+- kind: scene
+  first_frame: 5221
+  frames: 66
+  scene: 51
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-103-scene-a44bd19693356d54.mp4
+  start: 174.0333
+  end: 176.2333
+- kind: transition
+  first_frame: 5287
+  frames: 22
+  from_scene: 51
+  to_scene: 52
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-104-xfade-af7f63a052963f65.mp4
+  start: 176.2333
+  end: 176.9667
+- kind: scene
+  first_frame: 5309
+  frames: 60
+  scene: 52
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-105-scene-9a441cbdc1983932.mp4
+  start: 176.9667
+  end: 178.9667
+- kind: transition
+  first_frame: 5369
+  frames: 22
+  from_scene: 52
+  to_scene: 53
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-106-xfade-126ab265ee520284.mp4
+  start: 178.9667
+  end: 179.7
+- kind: scene
+  first_frame: 5391
+  frames: 135
+  scene: 53
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-107-scene-97a5e926729c550f.mp4
+  start: 179.7
+  end: 184.2
+- kind: transition
+  first_frame: 5526
+  frames: 22
+  from_scene: 53
+  to_scene: 54
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-108-xfade-b8c7714914b17cdd.mp4
+  start: 184.2
+  end: 184.9333
+- kind: scene
+  first_frame: 5548
+  frames: 87
+  scene: 54
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-109-scene-782d5cf470e1a601.mp4
+  start: 184.9333
+  end: 187.8333
+- kind: transition
+  first_frame: 5635
+  frames: 22
+  from_scene: 54
+  to_scene: 55
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-110-xfade-fc2841d098f04e8d.mp4
+  start: 187.8333
+  end: 188.5667
+- kind: scene
+  first_frame: 5657
+  frames: 252
+  scene: 55
+  path: /Users/jatroche/code/video-lyrics-creator/work/dinner-for-5000/clips/bed-111-scene-0317e52b8c6cd1b7.mp4
+  start: 188.5667
+  end: 196.9667

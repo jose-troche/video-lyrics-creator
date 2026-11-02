@@ -1,0 +1,1243 @@
+schema_version: 1
+title: The heavens declare the glory of God
+author: José Troche
+audio: /Users/jatroche/Media/Psalms/01 The heavens declare the glory of God.wav
+lyrics_source: /Users/jatroche/Google Drive/Songs/Psalms/The heavens declare the glory of God.gdoc
+visual_style: cinematic photographic realism
+context: ''
+work_dir: /Users/jatroche/code/video-lyrics-creator/work
+alignment:
+  engine: forced
+  vocals: true
+  attack_reach: 0.6
+  model: medium.en
+  forced_model: facebook/wav2vec2-base-960h
+  forced_min_score: 0.05
+  language: en
+  vad: false
+  prompt_hint: false
+  min_confidence: 0.5
+  min_matched_words: 2
+  min_duration: 1.0
+  max_gap_fill: 0.7
+  tail_extend: 1.2
+  tail_level: 0.45
+  attack_level: 0.45
+  scene_gap: 2.5
+  min_scene_duration: 4.0
+  max_scene_duration: 15.0
+video:
+  width: 1920
+  height: 1080
+  fps: 30
+  transition: 0.75
+  title_duration: 12.0
+  title_fade: 0.75
+  font: Avenir Next Demi Bold
+  font_size: 58
+  margin_v: 72
+  zoom: 1.2
+  lyric_lead: 0.35
+  lyric_fade: 0.2
+  audio_fade: 1.0
+image_generation:
+  provider: meta
+  lines_per_image: 1
+  source_dir: null
+  chatgpt_headless: false
+  chatgpt_profile_dir: null
+  chatgpt_min_delay: 1.0
+  chatgpt_max_delay: 4.0
+  chatgpt_composer_selector: null
+  chatgpt_image_selector: null
+  chatgpt_channel: chrome
+  meta_headless: false
+  meta_profile_dir: null
+  meta_min_delay: 1.0
+  meta_max_delay: 4.0
+  meta_composer_selector: null
+  meta_image_selector: null
+  meta_channel: null
+render:
+  engine: ffmpeg
+  output: /Users/jatroche/code/video-lyrics-creator/output/the-heavens-declare-the-glory-of-god.mp4
+  format: mp4
+  codec: H264
+  audio_codec: aac
+  replace_existing: true
+  lyrics_mode: overlay
+  intermediate: h264
+  last_output: /Users/jatroche/code/video-lyrics-creator/output/the-heavens-declare-the-glory-of-god.mp4
+lyric_lines:
+- The heavens declare the glory of God
+- God made the cosmos, awesome, astounding
+- He formed the stars, colossal and dazzling
+- Galaxies, black holes, quasars abounding
+- Shouting his greatness, praises resounding
+- Day after day delivers oration
+- Announcing the truth in full adoration
+- Night after night heralds the speech
+- Persistent, continual, eager they preach
+- The heavens declare the glory of God
+- The work of his hands proclaimed by the sky
+- His grandeur and fame are lifted on high
+- The heavens declare the glory of God
+- God made the cosmos, awesome, astounding
+- He formed the stars, colossal and dazzling
+- Galaxies, black holes, quasars abounding
+- Shouting his greatness, praises resounding
+- The sun runs on the firmament's highway
+- A fierce warrior racing on its pathway
+- From dawn until dusk, it blazes with might
+- Reflecting God’s glory with explosive light
+- Though God is unseen, his glory is shown
+- All he created makes his greatness known
+- God’s divine nature revealed in his work
+- His infinite power and his endless worth
+- The heavens declare the glory of God
+- The work of his hands proclaimed by the sky
+- His grandeur and fame are lifted on high
+- The heavens declare the glory of God
+- The heavens declare the glory of God
+- The heavens declare the glory of God
+lyric_section_starts:
+- 0
+- 1
+- 5
+- 9
+- 13
+- 17
+- 21
+- 25
+duration: 212.4
+transcript:
+  path: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/transcript.json
+  engine: forced
+  model: facebook/wav2vec2-base-960h
+  words: 199
+lyrics:
+- start: 14.82
+  end: 17.38
+  text: God made the cosmos, awesome, astounding
+  line_index: 1
+  alignment_confidence: 0.667
+- start: 17.38
+  end: 21.26
+  text: He formed the stars, colossal and dazzling
+  line_index: 2
+  alignment_confidence: 1.0
+- start: 21.26
+  end: 24.84
+  text: Galaxies, black holes, quasars abounding
+  line_index: 3
+  alignment_confidence: 1.0
+- start: 24.84
+  end: 29.49
+  text: Shouting his greatness, praises resounding
+  line_index: 4
+  alignment_confidence: 1.0
+- start: 35.82
+  end: 39.27
+  text: Day after day delivers oration
+  line_index: 5
+  alignment_confidence: 1.0
+- start: 39.27
+  end: 42.97
+  text: Announcing the truth in full adoration
+  line_index: 6
+  alignment_confidence: 0.833
+- start: 42.97
+  end: 46.54
+  text: Night after night heralds the speech
+  line_index: 7
+  alignment_confidence: 1.0
+- start: 46.54
+  end: 50.12
+  text: Persistent, continual, eager they preach
+  line_index: 8
+  alignment_confidence: 1.0
+- start: 50.12
+  end: 56.402
+  text: The heavens declare the glory of God
+  line_index: 9
+  alignment_confidence: 1.0
+- start: 57.41
+  end: 63.23
+  text: The work of his hands proclaimed by the sky
+  line_index: 10
+  alignment_confidence: 1.0
+- start: 64.71
+  end: 70.49
+  text: His grandeur and fame are lifted on high
+  line_index: 11
+  alignment_confidence: 0.875
+- start: 71.97
+  end: 81.041
+  text: The heavens declare the glory of God
+  line_index: 12
+  alignment_confidence: 1.0
+- start: 83.18
+  end: 86.59
+  text: God made the cosmos, awesome, astounding
+  line_index: 13
+  alignment_confidence: 1.0
+- start: 86.59
+  end: 90.43
+  text: He formed the stars, colossal and dazzling
+  line_index: 14
+  alignment_confidence: 1.0
+- start: 90.43
+  end: 94.05
+  text: Galaxies, black holes, quasars abounding
+  line_index: 15
+  alignment_confidence: 1.0
+- start: 94.05
+  end: 97.974
+  text: Shouting his greatness, praises resounding
+  line_index: 16
+  alignment_confidence: 1.0
+- start: 97.974
+  end: 101.216
+  text: The sun runs on the firmament's highway
+  line_index: 17
+  alignment_confidence: 1.0
+- start: 101.216
+  end: 104.77
+  text: A fierce warrior racing on its pathway
+  line_index: 18
+  alignment_confidence: 1.0
+- start: 104.77
+  end: 108.37
+  text: From dawn until dusk, it blazes with might
+  line_index: 19
+  alignment_confidence: 1.0
+- start: 108.37
+  end: 115.787
+  text: Reflecting God’s glory with explosive light
+  line_index: 20
+  alignment_confidence: 0.714
+- start: 130.21
+  end: 136.06
+  text: Though God is unseen, his glory is shown
+  line_index: 21
+  alignment_confidence: 1.0
+- start: 137.87
+  end: 143.91
+  text: All he created makes his greatness known
+  line_index: 22
+  alignment_confidence: 1.0
+- start: 143.91
+  end: 151.13
+  text: God’s divine nature revealed in his work
+  line_index: 23
+  alignment_confidence: 0.75
+- start: 152.44
+  end: 159.83
+  text: His infinite power and his endless worth
+  line_index: 24
+  alignment_confidence: 1.0
+- start: 159.83
+  end: 165.09
+  text: The heavens declare the glory of God
+  line_index: 25
+  alignment_confidence: 1.0
+- start: 167.03
+  end: 172.83
+  text: The work of his hands proclaimed by the sky
+  line_index: 26
+  alignment_confidence: 1.0
+- start: 174.29
+  end: 180.06
+  text: His grandeur and fame are lifted on high
+  line_index: 27
+  alignment_confidence: 0.875
+- start: 181.54
+  end: 188.85
+  text: The heavens declare the glory of God
+  line_index: 28
+  alignment_confidence: 1.0
+- start: 188.85
+  end: 196.08
+  text: The heavens declare the glory of God
+  line_index: 29
+  alignment_confidence: 1.0
+- start: 196.08
+  end: 204.134
+  text: The heavens declare the glory of God
+  line_index: 30
+  alignment_confidence: 1.0
+scenes:
+- start: 0.0
+  end: 14.82
+  lines: []
+  prompt: cinematic photographic realism. Create a cinematic lyric-video scene for an instrumental passage of the song "The heavens declare the glory of God" — the opening, before the first line "God made the cosmos, awesome, astounding". Wide, atmospheric, no people speaking; intentional composition, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a wide establishing shot, distinctly different in vantage, subject and composition from the scenes either side of it.
+  index: 1
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/images/scene-001-fb141608.webp
+  motion_first_frame: 0
+  motion_frames: 456
+- start: 14.82
+  end: 17.38
+  lines:
+  - God made the cosmos, awesome, astounding
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''God made the cosmos, awesome, astounding''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a low angle close to the ground, looking up, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 2
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/images/scene-002-2ce5b6ec.webp
+  motion_first_frame: 434
+  motion_frames: 98
+- start: 17.38
+  end: 21.26
+  lines:
+  - He formed the stars, colossal and dazzling
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''He formed the stars, colossal and dazzling''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as an intimate mid-shot centred on a single subject, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 3
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/images/scene-003-fd358964.webp
+  motion_first_frame: 510
+  motion_frames: 139
+- start: 21.26
+  end: 24.84
+  lines:
+  - Galaxies, black holes, quasars abounding
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Galaxies, black holes, quasars abounding''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a high, distant vantage looking down, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 4
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/images/scene-004-1519de34.webp
+  motion_first_frame: 627
+  motion_frames: 129
+- start: 24.84
+  end: 35.82
+  lines:
+  - Shouting his greatness, praises resounding
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Shouting his greatness, praises resounding''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a tight foreground detail with the rest falling away soft, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 5
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/images/scene-005-73b46bc7.webp
+  motion_first_frame: 734
+  motion_frames: 352
+- start: 35.82
+  end: 39.27
+  lines:
+  - Day after day delivers oration
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Day after day delivers oration''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a head-on symmetrical composition, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 6
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/images/scene-006-4e2ee24d.webp
+  motion_first_frame: 1064
+  motion_frames: 125
+- start: 39.27
+  end: 42.97
+  lines:
+  - Announcing the truth in full adoration
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Announcing the truth in full adoration''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a view through a natural frame - an arch, branches, a doorway, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 7
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/images/scene-007-85adf87b.webp
+  motion_first_frame: 1167
+  motion_frames: 133
+- start: 42.97
+  end: 46.54
+  lines:
+  - Night after night heralds the speech
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Night after night heralds the speech''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a wide establishing shot, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 8
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/images/scene-008-6d3439fb.webp
+  motion_first_frame: 1278
+  motion_frames: 129
+- start: 46.54
+  end: 50.12
+  lines:
+  - Persistent, continual, eager they preach
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Persistent, continual, eager they preach''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a low angle close to the ground, looking up, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 9
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/images/scene-009-5580bd9f.webp
+  motion_first_frame: 1385
+  motion_frames: 130
+- start: 50.12
+  end: 57.41
+  lines:
+  - The heavens declare the glory of God
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''The heavens declare the glory of God''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as an intimate mid-shot centred on a single subject, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 10
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/images/scene-010-420c2155.webp
+  motion_first_frame: 1493
+  motion_frames: 240
+- start: 57.41
+  end: 64.71
+  lines:
+  - The work of his hands proclaimed by the sky
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''The work of his hands proclaimed by the sky''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a high, distant vantage looking down, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 11
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/images/scene-011-3b60552e.webp
+  motion_first_frame: 1711
+  motion_frames: 241
+- start: 64.71
+  end: 71.97
+  lines:
+  - His grandeur and fame are lifted on high
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''His grandeur and fame are lifted on high''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a tight foreground detail with the rest falling away soft, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 12
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/images/scene-012-5b03d559.webp
+  motion_first_frame: 1930
+  motion_frames: 240
+- start: 71.97
+  end: 83.18
+  lines:
+  - The heavens declare the glory of God
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''The heavens declare the glory of God''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a head-on symmetrical composition, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 13
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/images/scene-013-ba2087a9.webp
+  motion_first_frame: 2148
+  motion_frames: 358
+- start: 83.18
+  end: 86.59
+  lines:
+  - God made the cosmos, awesome, astounding
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''God made the cosmos, awesome, astounding''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a view through a natural frame - an arch, branches, a doorway, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 14
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/images/scene-014-8949f1fc.webp
+  motion_first_frame: 2484
+  motion_frames: 125
+- start: 86.59
+  end: 90.43
+  lines:
+  - He formed the stars, colossal and dazzling
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''He formed the stars, colossal and dazzling''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a wide establishing shot, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 15
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/images/scene-015-4179044e.webp
+  motion_first_frame: 2587
+  motion_frames: 137
+- start: 90.43
+  end: 94.05
+  lines:
+  - Galaxies, black holes, quasars abounding
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Galaxies, black holes, quasars abounding''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a low angle close to the ground, looking up, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 16
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/images/scene-016-321b2f38.webp
+  motion_first_frame: 2702
+  motion_frames: 131
+- start: 94.05
+  end: 97.974
+  lines:
+  - Shouting his greatness, praises resounding
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Shouting his greatness, praises resounding''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as an intimate mid-shot centred on a single subject, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 17
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/images/scene-017-7392db84.webp
+  motion_first_frame: 2811
+  motion_frames: 139
+- start: 97.974
+  end: 101.216
+  lines:
+  - The sun runs on the firmament's highway
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''The sun runs on the firmament''s highway''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a high, distant vantage looking down, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 18
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/images/scene-018-78ff6233.webp
+  motion_first_frame: 2928
+  motion_frames: 119
+- start: 101.216
+  end: 104.77
+  lines:
+  - A fierce warrior racing on its pathway
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''A fierce warrior racing on its pathway''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a tight foreground detail with the rest falling away soft, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 19
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/images/scene-019-108f08f9.webp
+  motion_first_frame: 3025
+  motion_frames: 129
+- start: 104.77
+  end: 108.37
+  lines:
+  - From dawn until dusk, it blazes with might
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''From dawn until dusk, it blazes with might''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a head-on symmetrical composition, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 20
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/images/scene-020-e0b25003.webp
+  motion_first_frame: 3132
+  motion_frames: 130
+- start: 108.37
+  end: 115.787
+  lines:
+  - Reflecting God’s glory with explosive light
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Reflecting God’s glory with explosive light''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a view through a natural frame - an arch, branches, a doorway, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 21
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/images/scene-021-66b8ad92.webp
+  motion_first_frame: 3240
+  motion_frames: 245
+- start: 115.787
+  end: 130.21
+  lines: []
+  prompt: cinematic photographic realism. Create a cinematic lyric-video scene for an instrumental passage of the song "The heavens declare the glory of God" — an instrumental break after "Reflecting God’s glory with explosive light". Wide, atmospheric, no people speaking; intentional composition, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a wide establishing shot, distinctly different in vantage, subject and composition from the scenes either side of it.
+  index: 22
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/images/scene-022-9942c0c3.webp
+  motion_first_frame: 3463
+  motion_frames: 454
+- start: 130.21
+  end: 137.87
+  lines:
+  - Though God is unseen, his glory is shown
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''Though God is unseen, his glory is shown''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a low angle close to the ground, looking up, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 23
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/images/scene-023-02fdb74f.webp
+  motion_first_frame: 3895
+  motion_frames: 252
+- start: 137.87
+  end: 143.91
+  lines:
+  - All he created makes his greatness known
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''All he created makes his greatness known''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as an intimate mid-shot centred on a single subject, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 24
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/images/scene-024-e4e027c5.webp
+  motion_first_frame: 4125
+  motion_frames: 203
+- start: 143.91
+  end: 152.44
+  lines:
+  - God’s divine nature revealed in his work
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''God’s divine nature revealed in his work''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a high, distant vantage looking down, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 25
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/images/scene-025-8badf7c2.webp
+  motion_first_frame: 4306
+  motion_frames: 278
+- start: 152.44
+  end: 159.83
+  lines:
+  - His infinite power and his endless worth
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''His infinite power and his endless worth''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a tight foreground detail with the rest falling away soft, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 26
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/images/scene-026-296535e7.webp
+  motion_first_frame: 4562
+  motion_frames: 244
+- start: 159.83
+  end: 167.03
+  lines:
+  - The heavens declare the glory of God
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''The heavens declare the glory of God''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a head-on symmetrical composition, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 27
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/images/scene-027-ba2087a9.webp
+  motion_first_frame: 4784
+  motion_frames: 238
+- start: 167.03
+  end: 174.29
+  lines:
+  - The work of his hands proclaimed by the sky
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''The work of his hands proclaimed by the sky''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a view through a natural frame - an arch, branches, a doorway, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 28
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/images/scene-028-64e069bf.webp
+  motion_first_frame: 5000
+  motion_frames: 240
+- start: 174.29
+  end: 181.54
+  lines:
+  - His grandeur and fame are lifted on high
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''His grandeur and fame are lifted on high''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a wide establishing shot, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 29
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/images/scene-029-32e378eb.webp
+  motion_first_frame: 5218
+  motion_frames: 239
+- start: 181.54
+  end: 188.85
+  lines:
+  - The heavens declare the glory of God
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''The heavens declare the glory of God''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a low angle close to the ground, looking up, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 30
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/images/scene-030-6edd8686.webp
+  motion_first_frame: 5435
+  motion_frames: 242
+- start: 188.85
+  end: 196.08
+  lines:
+  - The heavens declare the glory of God
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''The heavens declare the glory of God''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as an intimate mid-shot centred on a single subject, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 31
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/images/scene-031-420c2155.webp
+  motion_first_frame: 5655
+  motion_frames: 238
+- start: 196.08
+  end: 204.134
+  lines:
+  - The heavens declare the glory of God
+  prompt: 'cinematic photographic realism. Create a cinematic lyric-video scene inspired by this passage: ''The heavens declare the glory of God''. Express its meaning and emotion through a coherent visual metaphor; intentional composition, strong subject separation, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a high, distant vantage looking down, distinctly different in vantage, subject and composition from the scenes either side of it.'
+  index: 32
+  motion: zoom_out
+  image: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/images/scene-032-246d7641.webp
+  motion_first_frame: 5871
+  motion_frames: 264
+- start: 204.134
+  end: 212.4
+  lines: []
+  prompt: cinematic photographic realism. Create a cinematic lyric-video scene for an instrumental passage of the song "The heavens declare the glory of God" — an instrumental break after "The heavens declare the glory of God". Wide, atmospheric, no people speaking; intentional composition, atmospheric lighting, consistent palette and era, landscape 16:9 framing with safe space near the lower third. Leave generous margin all around the main subject - it will be slowly zoomed in and out, so nothing important can sit at the very edge or be cropped away as the view tightens. No words, letters, captions, logos, watermarks, borders, or typography. If God or Jesus is portrayed in the image, keep his face naturally concealed, blurred, or turned away — never a sharp, detailed face. Frame this particular scene as a tight foreground detail with the rest falling away soft, distinctly different in vantage, subject and composition from the scenes either side of it.
+  index: 33
+  motion: zoom_in
+  image: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/images/scene-033-06eba26f.webp
+  motion_first_frame: 6113
+  motion_frames: 259
+overlays:
+  title:
+    image: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/overlays/title-fef4ece0d8b08c1f.png
+    start: 0.0
+    end: 12.0
+    fade: 0.75
+    clip: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/overlay-clips/title-fef4ece0d8b08c1f-819e4d65f5045246.mov
+  lyrics:
+  - start: 14.47
+    end: 17.03
+    text: God made the cosmos, awesome, astounding
+    image: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/overlays/lyric-001-25978d34705227f1.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/overlay-clips/lyric-001-25978d34705227f1-c19282f72ca59981.mov
+  - start: 17.03
+    end: 20.91
+    text: He formed the stars, colossal and dazzling
+    image: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/overlays/lyric-002-04a1c8b68ba21e62.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/overlay-clips/lyric-002-04a1c8b68ba21e62-43d9ae1cdbab306d.mov
+  - start: 20.91
+    end: 24.49
+    text: Galaxies, black holes, quasars abounding
+    image: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/overlays/lyric-003-68bc668c0cc25869.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/overlay-clips/lyric-003-68bc668c0cc25869-b7350a95f0972502.mov
+  - start: 24.49
+    end: 35.47
+    text: Shouting his greatness, praises resounding
+    image: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/overlays/lyric-004-02475bc4938f1080.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/overlay-clips/lyric-004-02475bc4938f1080-47235e74529cf744.mov
+  - start: 35.47
+    end: 38.92
+    text: Day after day delivers oration
+    image: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/overlays/lyric-005-9e69bc8da33b0217.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/overlay-clips/lyric-005-9e69bc8da33b0217-22e7e43daac29cc7.mov
+  - start: 38.92
+    end: 42.62
+    text: Announcing the truth in full adoration
+    image: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/overlays/lyric-006-6c52022b5852ba3c.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/overlay-clips/lyric-006-6c52022b5852ba3c-4c6d73215f93433e.mov
+  - start: 42.62
+    end: 46.19
+    text: Night after night heralds the speech
+    image: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/overlays/lyric-007-279691a4bbba7d80.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/overlay-clips/lyric-007-279691a4bbba7d80-f065ec07f644c1b0.mov
+  - start: 46.19
+    end: 49.77
+    text: Persistent, continual, eager they preach
+    image: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/overlays/lyric-008-71c12d486f68a617.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/overlay-clips/lyric-008-71c12d486f68a617-b7350a95f0972502.mov
+  - start: 49.77
+    end: 57.06
+    text: The heavens declare the glory of God
+    image: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/overlays/lyric-009-e3ceecb6b5729ef4.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/overlay-clips/lyric-009-e3ceecb6b5729ef4-94b0fb26f203d61e.mov
+  - start: 57.06
+    end: 64.36
+    text: The work of his hands proclaimed by the sky
+    image: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/overlays/lyric-010-f284c693e7467960.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/overlay-clips/lyric-010-f284c693e7467960-97f9c79eb1c3805d.mov
+  - start: 64.36
+    end: 71.62
+    text: His grandeur and fame are lifted on high
+    image: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/overlays/lyric-011-a05cfa1f84abb1f1.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/overlay-clips/lyric-011-a05cfa1f84abb1f1-de4899450c62c1ec.mov
+  - start: 71.62
+    end: 82.83
+    text: The heavens declare the glory of God
+    image: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/overlays/lyric-012-e3ceecb6b5729ef4.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/overlay-clips/lyric-012-e3ceecb6b5729ef4-c4dbe9fea994d015.mov
+  - start: 82.83
+    end: 86.24
+    text: God made the cosmos, awesome, astounding
+    image: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/overlays/lyric-013-25978d34705227f1.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/overlay-clips/lyric-013-25978d34705227f1-1a4188159f138504.mov
+  - start: 86.24
+    end: 90.08
+    text: He formed the stars, colossal and dazzling
+    image: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/overlays/lyric-014-04a1c8b68ba21e62.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/overlay-clips/lyric-014-04a1c8b68ba21e62-f79b03eb91993338.mov
+  - start: 90.08
+    end: 93.7
+    text: Galaxies, black holes, quasars abounding
+    image: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/overlays/lyric-015-68bc668c0cc25869.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/overlay-clips/lyric-015-68bc668c0cc25869-e6a7406134fa01d5.mov
+  - start: 93.7
+    end: 97.624
+    text: Shouting his greatness, praises resounding
+    image: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/overlays/lyric-016-02475bc4938f1080.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/overlay-clips/lyric-016-02475bc4938f1080-a3ddea04dba32641.mov
+  - start: 97.624
+    end: 100.866
+    text: The sun runs on the firmament's highway
+    image: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/overlays/lyric-017-ab086cf273830a66.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/overlay-clips/lyric-017-ab086cf273830a66-5f75dbccefd35cf4.mov
+  - start: 100.866
+    end: 104.42
+    text: A fierce warrior racing on its pathway
+    image: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/overlays/lyric-018-b8b8dc3f1de24391.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/overlay-clips/lyric-018-b8b8dc3f1de24391-df8a8f72d8a13f6e.mov
+  - start: 104.42
+    end: 108.02
+    text: From dawn until dusk, it blazes with might
+    image: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/overlays/lyric-019-c8dd2fc4f9149a4d.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/overlay-clips/lyric-019-c8dd2fc4f9149a4d-b1e07ef2baab4b37.mov
+  - start: 108.02
+    end: 129.86
+    text: Reflecting God’s glory with explosive light
+    image: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/overlays/lyric-020-578648550c69022d.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/overlay-clips/lyric-020-578648550c69022d-1fd3eb28dc2b24fb.mov
+  - start: 129.86
+    end: 137.52
+    text: Though God is unseen, his glory is shown
+    image: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/overlays/lyric-021-7971552a7bd1fe71.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/overlay-clips/lyric-021-7971552a7bd1fe71-c2c2e232f07c8f65.mov
+  - start: 137.52
+    end: 143.56
+    text: All he created makes his greatness known
+    image: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/overlays/lyric-022-a3b26ee9db81a0e7.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/overlay-clips/lyric-022-a3b26ee9db81a0e7-b132708651ff05ef.mov
+  - start: 143.56
+    end: 152.09
+    text: God’s divine nature revealed in his work
+    image: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/overlays/lyric-023-7926376f4faf5897.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/overlay-clips/lyric-023-7926376f4faf5897-aa4e2c97279a8d14.mov
+  - start: 152.09
+    end: 159.48
+    text: His infinite power and his endless worth
+    image: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/overlays/lyric-024-a9799f3ebb73376f.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/overlay-clips/lyric-024-a9799f3ebb73376f-e9e16598bb2109f7.mov
+  - start: 159.48
+    end: 166.68
+    text: The heavens declare the glory of God
+    image: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/overlays/lyric-025-e3ceecb6b5729ef4.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/overlay-clips/lyric-025-e3ceecb6b5729ef4-b5157663bde1974a.mov
+  - start: 166.68
+    end: 173.94
+    text: The work of his hands proclaimed by the sky
+    image: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/overlays/lyric-026-f284c693e7467960.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/overlay-clips/lyric-026-f284c693e7467960-de4899450c62c1ec.mov
+  - start: 173.94
+    end: 181.19
+    text: His grandeur and fame are lifted on high
+    image: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/overlays/lyric-027-a05cfa1f84abb1f1.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/overlay-clips/lyric-027-a05cfa1f84abb1f1-18e079c6baf5873f.mov
+  - start: 181.19
+    end: 188.5
+    text: The heavens declare the glory of God
+    image: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/overlays/lyric-028-e3ceecb6b5729ef4.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/overlay-clips/lyric-028-e3ceecb6b5729ef4-d08afffa8a19bb1d.mov
+  - start: 188.5
+    end: 195.73
+    text: The heavens declare the glory of God
+    image: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/overlays/lyric-029-e3ceecb6b5729ef4.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/overlay-clips/lyric-029-e3ceecb6b5729ef4-0560a28e6743f42a.mov
+  - start: 195.73
+    end: 204.134
+    text: The heavens declare the glory of God
+    image: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/overlays/lyric-030-e3ceecb6b5729ef4.png
+    clip: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/overlay-clips/lyric-030-e3ceecb6b5729ef4-be9f6501b5c60ada.mov
+  srt: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/lyrics.srt
+bed:
+- kind: scene
+  first_frame: 0
+  frames: 434
+  scene: 0
+  path: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/clips/bed-001-scene-5e1ee05c33d79ec9.mp4
+  start: 0.0
+  end: 14.4667
+- kind: transition
+  first_frame: 434
+  frames: 22
+  from_scene: 0
+  to_scene: 1
+  path: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/clips/bed-002-xfade-a2c88622495a4bc0.mp4
+  start: 14.4667
+  end: 15.2
+- kind: scene
+  first_frame: 456
+  frames: 54
+  scene: 1
+  path: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/clips/bed-003-scene-308b65ead774625c.mp4
+  start: 15.2
+  end: 17.0
+- kind: transition
+  first_frame: 510
+  frames: 22
+  from_scene: 1
+  to_scene: 2
+  path: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/clips/bed-004-xfade-7c71ae30702ce2ec.mp4
+  start: 17.0
+  end: 17.7333
+- kind: scene
+  first_frame: 532
+  frames: 95
+  scene: 2
+  path: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/clips/bed-005-scene-fa1e3d9bd868e01a.mp4
+  start: 17.7333
+  end: 20.9
+- kind: transition
+  first_frame: 627
+  frames: 22
+  from_scene: 2
+  to_scene: 3
+  path: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/clips/bed-006-xfade-e7054c3920bfcadf.mp4
+  start: 20.9
+  end: 21.6333
+- kind: scene
+  first_frame: 649
+  frames: 85
+  scene: 3
+  path: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/clips/bed-007-scene-f967169fc956e746.mp4
+  start: 21.6333
+  end: 24.4667
+- kind: transition
+  first_frame: 734
+  frames: 22
+  from_scene: 3
+  to_scene: 4
+  path: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/clips/bed-008-xfade-95b0638fc61eb3a9.mp4
+  start: 24.4667
+  end: 25.2
+- kind: scene
+  first_frame: 756
+  frames: 308
+  scene: 4
+  path: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/clips/bed-009-scene-12947096a00a30cb.mp4
+  start: 25.2
+  end: 35.4667
+- kind: transition
+  first_frame: 1064
+  frames: 22
+  from_scene: 4
+  to_scene: 5
+  path: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/clips/bed-010-xfade-41cfcc16d16e6d13.mp4
+  start: 35.4667
+  end: 36.2
+- kind: scene
+  first_frame: 1086
+  frames: 81
+  scene: 5
+  path: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/clips/bed-011-scene-583b510a30443805.mp4
+  start: 36.2
+  end: 38.9
+- kind: transition
+  first_frame: 1167
+  frames: 22
+  from_scene: 5
+  to_scene: 6
+  path: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/clips/bed-012-xfade-6082462af1f94e97.mp4
+  start: 38.9
+  end: 39.6333
+- kind: scene
+  first_frame: 1189
+  frames: 89
+  scene: 6
+  path: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/clips/bed-013-scene-a0ab8632af285a40.mp4
+  start: 39.6333
+  end: 42.6
+- kind: transition
+  first_frame: 1278
+  frames: 22
+  from_scene: 6
+  to_scene: 7
+  path: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/clips/bed-014-xfade-b2b57c9eb1cce23b.mp4
+  start: 42.6
+  end: 43.3333
+- kind: scene
+  first_frame: 1300
+  frames: 85
+  scene: 7
+  path: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/clips/bed-015-scene-4b540bf26aaa8197.mp4
+  start: 43.3333
+  end: 46.1667
+- kind: transition
+  first_frame: 1385
+  frames: 22
+  from_scene: 7
+  to_scene: 8
+  path: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/clips/bed-016-xfade-de5839ae064c8cee.mp4
+  start: 46.1667
+  end: 46.9
+- kind: scene
+  first_frame: 1407
+  frames: 86
+  scene: 8
+  path: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/clips/bed-017-scene-ec7aa26dea8757bb.mp4
+  start: 46.9
+  end: 49.7667
+- kind: transition
+  first_frame: 1493
+  frames: 22
+  from_scene: 8
+  to_scene: 9
+  path: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/clips/bed-018-xfade-a68a0d41a1c0ed17.mp4
+  start: 49.7667
+  end: 50.5
+- kind: scene
+  first_frame: 1515
+  frames: 196
+  scene: 9
+  path: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/clips/bed-019-scene-aa0e596b7f37b1a7.mp4
+  start: 50.5
+  end: 57.0333
+- kind: transition
+  first_frame: 1711
+  frames: 22
+  from_scene: 9
+  to_scene: 10
+  path: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/clips/bed-020-xfade-0ca3416fe65b5dd2.mp4
+  start: 57.0333
+  end: 57.7667
+- kind: scene
+  first_frame: 1733
+  frames: 197
+  scene: 10
+  path: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/clips/bed-021-scene-cc80a054b28ab554.mp4
+  start: 57.7667
+  end: 64.3333
+- kind: transition
+  first_frame: 1930
+  frames: 22
+  from_scene: 10
+  to_scene: 11
+  path: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/clips/bed-022-xfade-2f5580234e5fc246.mp4
+  start: 64.3333
+  end: 65.0667
+- kind: scene
+  first_frame: 1952
+  frames: 196
+  scene: 11
+  path: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/clips/bed-023-scene-205d980eaf0777e8.mp4
+  start: 65.0667
+  end: 71.6
+- kind: transition
+  first_frame: 2148
+  frames: 22
+  from_scene: 11
+  to_scene: 12
+  path: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/clips/bed-024-xfade-45d334b5dd7f7342.mp4
+  start: 71.6
+  end: 72.3333
+- kind: scene
+  first_frame: 2170
+  frames: 314
+  scene: 12
+  path: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/clips/bed-025-scene-d8eb3b1426326bb6.mp4
+  start: 72.3333
+  end: 82.8
+- kind: transition
+  first_frame: 2484
+  frames: 22
+  from_scene: 12
+  to_scene: 13
+  path: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/clips/bed-026-xfade-8e0d4895ba68f77d.mp4
+  start: 82.8
+  end: 83.5333
+- kind: scene
+  first_frame: 2506
+  frames: 81
+  scene: 13
+  path: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/clips/bed-027-scene-2175ad4c7108971a.mp4
+  start: 83.5333
+  end: 86.2333
+- kind: transition
+  first_frame: 2587
+  frames: 22
+  from_scene: 13
+  to_scene: 14
+  path: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/clips/bed-028-xfade-559e89c335e285a9.mp4
+  start: 86.2333
+  end: 86.9667
+- kind: scene
+  first_frame: 2609
+  frames: 93
+  scene: 14
+  path: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/clips/bed-029-scene-6a69897f7a001ea3.mp4
+  start: 86.9667
+  end: 90.0667
+- kind: transition
+  first_frame: 2702
+  frames: 22
+  from_scene: 14
+  to_scene: 15
+  path: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/clips/bed-030-xfade-f6d84e81b8bfb23b.mp4
+  start: 90.0667
+  end: 90.8
+- kind: scene
+  first_frame: 2724
+  frames: 87
+  scene: 15
+  path: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/clips/bed-031-scene-066f6d9f9281739f.mp4
+  start: 90.8
+  end: 93.7
+- kind: transition
+  first_frame: 2811
+  frames: 22
+  from_scene: 15
+  to_scene: 16
+  path: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/clips/bed-032-xfade-ea0b3f8225b6426c.mp4
+  start: 93.7
+  end: 94.4333
+- kind: scene
+  first_frame: 2833
+  frames: 95
+  scene: 16
+  path: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/clips/bed-033-scene-f93c01e2e6f94c41.mp4
+  start: 94.4333
+  end: 97.6
+- kind: transition
+  first_frame: 2928
+  frames: 22
+  from_scene: 16
+  to_scene: 17
+  path: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/clips/bed-034-xfade-dfc9c340e6422d3b.mp4
+  start: 97.6
+  end: 98.3333
+- kind: scene
+  first_frame: 2950
+  frames: 75
+  scene: 17
+  path: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/clips/bed-035-scene-26d547bc7251ba60.mp4
+  start: 98.3333
+  end: 100.8333
+- kind: transition
+  first_frame: 3025
+  frames: 22
+  from_scene: 17
+  to_scene: 18
+  path: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/clips/bed-036-xfade-963b2469dad80639.mp4
+  start: 100.8333
+  end: 101.5667
+- kind: scene
+  first_frame: 3047
+  frames: 85
+  scene: 18
+  path: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/clips/bed-037-scene-85f2c838d0cc2255.mp4
+  start: 101.5667
+  end: 104.4
+- kind: transition
+  first_frame: 3132
+  frames: 22
+  from_scene: 18
+  to_scene: 19
+  path: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/clips/bed-038-xfade-1345067c347c209d.mp4
+  start: 104.4
+  end: 105.1333
+- kind: scene
+  first_frame: 3154
+  frames: 86
+  scene: 19
+  path: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/clips/bed-039-scene-dd51b6acbb33f60f.mp4
+  start: 105.1333
+  end: 108.0
+- kind: transition
+  first_frame: 3240
+  frames: 22
+  from_scene: 19
+  to_scene: 20
+  path: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/clips/bed-040-xfade-d8108923bf923728.mp4
+  start: 108.0
+  end: 108.7333
+- kind: scene
+  first_frame: 3262
+  frames: 201
+  scene: 20
+  path: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/clips/bed-041-scene-60405fcec72dac9e.mp4
+  start: 108.7333
+  end: 115.4333
+- kind: transition
+  first_frame: 3463
+  frames: 22
+  from_scene: 20
+  to_scene: 21
+  path: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/clips/bed-042-xfade-e8827c161c2252cd.mp4
+  start: 115.4333
+  end: 116.1667
+- kind: scene
+  first_frame: 3485
+  frames: 410
+  scene: 21
+  path: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/clips/bed-043-scene-24e0cd7a55eb142c.mp4
+  start: 116.1667
+  end: 129.8333
+- kind: transition
+  first_frame: 3895
+  frames: 22
+  from_scene: 21
+  to_scene: 22
+  path: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/clips/bed-044-xfade-ecca84405f6431e1.mp4
+  start: 129.8333
+  end: 130.5667
+- kind: scene
+  first_frame: 3917
+  frames: 208
+  scene: 22
+  path: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/clips/bed-045-scene-49ba270e4cd0eda1.mp4
+  start: 130.5667
+  end: 137.5
+- kind: transition
+  first_frame: 4125
+  frames: 22
+  from_scene: 22
+  to_scene: 23
+  path: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/clips/bed-046-xfade-20bd9bb12db9e1fa.mp4
+  start: 137.5
+  end: 138.2333
+- kind: scene
+  first_frame: 4147
+  frames: 159
+  scene: 23
+  path: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/clips/bed-047-scene-30c1e5b32074b59f.mp4
+  start: 138.2333
+  end: 143.5333
+- kind: transition
+  first_frame: 4306
+  frames: 22
+  from_scene: 23
+  to_scene: 24
+  path: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/clips/bed-048-xfade-ba72632419279bff.mp4
+  start: 143.5333
+  end: 144.2667
+- kind: scene
+  first_frame: 4328
+  frames: 234
+  scene: 24
+  path: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/clips/bed-049-scene-6a09f5adf14041c2.mp4
+  start: 144.2667
+  end: 152.0667
+- kind: transition
+  first_frame: 4562
+  frames: 22
+  from_scene: 24
+  to_scene: 25
+  path: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/clips/bed-050-xfade-562de11f1561a721.mp4
+  start: 152.0667
+  end: 152.8
+- kind: scene
+  first_frame: 4584
+  frames: 200
+  scene: 25
+  path: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/clips/bed-051-scene-56355284908251a1.mp4
+  start: 152.8
+  end: 159.4667
+- kind: transition
+  first_frame: 4784
+  frames: 22
+  from_scene: 25
+  to_scene: 26
+  path: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/clips/bed-052-xfade-e5704c64e0316e48.mp4
+  start: 159.4667
+  end: 160.2
+- kind: scene
+  first_frame: 4806
+  frames: 194
+  scene: 26
+  path: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/clips/bed-053-scene-6b01ae4cd0564956.mp4
+  start: 160.2
+  end: 166.6667
+- kind: transition
+  first_frame: 5000
+  frames: 22
+  from_scene: 26
+  to_scene: 27
+  path: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/clips/bed-054-xfade-907d53a9b4201cee.mp4
+  start: 166.6667
+  end: 167.4
+- kind: scene
+  first_frame: 5022
+  frames: 196
+  scene: 27
+  path: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/clips/bed-055-scene-cd2a62c2123f5b07.mp4
+  start: 167.4
+  end: 173.9333
+- kind: transition
+  first_frame: 5218
+  frames: 22
+  from_scene: 27
+  to_scene: 28
+  path: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/clips/bed-056-xfade-30f97f27a159ab52.mp4
+  start: 173.9333
+  end: 174.6667
+- kind: scene
+  first_frame: 5240
+  frames: 195
+  scene: 28
+  path: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/clips/bed-057-scene-f9de667c5058770d.mp4
+  start: 174.6667
+  end: 181.1667
+- kind: transition
+  first_frame: 5435
+  frames: 22
+  from_scene: 28
+  to_scene: 29
+  path: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/clips/bed-058-xfade-718c4bab8e0598fd.mp4
+  start: 181.1667
+  end: 181.9
+- kind: scene
+  first_frame: 5457
+  frames: 198
+  scene: 29
+  path: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/clips/bed-059-scene-34eb58169744d54f.mp4
+  start: 181.9
+  end: 188.5
+- kind: transition
+  first_frame: 5655
+  frames: 22
+  from_scene: 29
+  to_scene: 30
+  path: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/clips/bed-060-xfade-006a167d28b87363.mp4
+  start: 188.5
+  end: 189.2333
+- kind: scene
+  first_frame: 5677
+  frames: 194
+  scene: 30
+  path: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/clips/bed-061-scene-0805cace89d3c5d8.mp4
+  start: 189.2333
+  end: 195.7
+- kind: transition
+  first_frame: 5871
+  frames: 22
+  from_scene: 30
+  to_scene: 31
+  path: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/clips/bed-062-xfade-0a8176a509bd1584.mp4
+  start: 195.7
+  end: 196.4333
+- kind: scene
+  first_frame: 5893
+  frames: 220
+  scene: 31
+  path: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/clips/bed-063-scene-847960641d00f4e6.mp4
+  start: 196.4333
+  end: 203.7667
+- kind: transition
+  first_frame: 6113
+  frames: 22
+  from_scene: 31
+  to_scene: 32
+  path: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/clips/bed-064-xfade-df1aa3cb9a419ecb.mp4
+  start: 203.7667
+  end: 204.5
+- kind: scene
+  first_frame: 6135
+  frames: 237
+  scene: 32
+  path: /Users/jatroche/code/video-lyrics-creator/work/the-heavens-declare-the-glory-of-god/clips/bed-065-scene-ef314f8462e96394.mp4
+  start: 204.5
+  end: 212.4
